@@ -5,17 +5,17 @@
   
   <title>Asp.net知识点总结(二) | 当然我在瞎扯</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="VIEWSTATE简介：ASP.NET的 .aspx页面特有，页面级的；就是在页面上的一个隐藏域中保存客户端单独使用的数据的一种方式；服务器端控件的值都自动保存在ViewState中方式：用户数据保存方式：1ViewState[”myKey”]=”MyData”; 读取数据方式：123string myData;if(ViewState[”myKey”]!=null)&amp;#123;  myData=">
+  <meta name="description" content="VIEWSTATE简介：ASP.NET的 .aspx页面特有，页面级的；就是在页面上的一个隐藏域中保存客户端单独使用的数据的一种方式；服务器端控件的值都自动保存在ViewState中">
 <meta name="keywords" content="ASP.NET,技术教程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Asp.net知识点总结(二)">
 <meta property="og:url" content="http://xj8c.cc/2015/07/04/asp.net-knowledge-point-summary-2/index.html">
 <meta property="og:site_name" content="当然我在瞎扯">
-<meta property="og:description" content="VIEWSTATE简介：ASP.NET的 .aspx页面特有，页面级的；就是在页面上的一个隐藏域中保存客户端单独使用的数据的一种方式；服务器端控件的值都自动保存在ViewState中方式：用户数据保存方式：1ViewState[”myKey”]=”MyData”; 读取数据方式：123string myData;if(ViewState[”myKey”]!=null)&amp;#123;  myData=">
-<meta property="og:updated_time" content="2017-05-26T03:21:03.573Z">
+<meta property="og:description" content="VIEWSTATE简介：ASP.NET的 .aspx页面特有，页面级的；就是在页面上的一个隐藏域中保存客户端单独使用的数据的一种方式；服务器端控件的值都自动保存在ViewState中">
+<meta property="og:updated_time" content="2017-05-26T06:29:50.076Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Asp.net知识点总结(二)">
-<meta name="twitter:description" content="VIEWSTATE简介：ASP.NET的 .aspx页面特有，页面级的；就是在页面上的一个隐藏域中保存客户端单独使用的数据的一种方式；服务器端控件的值都自动保存在ViewState中方式：用户数据保存方式：1ViewState[”myKey”]=”MyData”; 读取数据方式：123string myData;if(ViewState[”myKey”]!=null)&amp;#123;  myData=">
+<meta name="twitter:description" content="VIEWSTATE简介：ASP.NET的 .aspx页面特有，页面级的；就是在页面上的一个隐藏域中保存客户端单独使用的数据的一种方式；服务器端控件的值都自动保存在ViewState中">
   
     <link rel="alternative" href="/atom.xml" title="当然我在瞎扯" type="application/atom+xml">
   
@@ -153,6 +153,14 @@
                                                             zhihu
                                                         </a>
                                                         
+                                                        <a class="fl QQ" target="_blank" href="//wpa.qq.com/msgrd?uin=494910887" title="QQ">
+                                                            QQ
+                                                        </a>
+                                                        
+                                                        <a class="fl wechat" target="_blank" href="http://xj8c.cc/img/wechatimg.jpg" title="wechat">
+                                                            wechat
+                                                        </a>
+                                                        
                                                         <a class="fl rss" target="_blank" href="/atom.xml" title="rss">
                                                             rss
                                                         </a>
@@ -229,6 +237,10 @@
                     
                         <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">zhihu</a>
                     
+                        <a class="QQ" target="_blank" href="//wpa.qq.com/msgrd?uin=494910887" title="QQ">QQ</a>
+                    
+                        <a class="wechat" target="_blank" href="http://xj8c.cc/img/wechatimg.jpg" title="wechat">wechat</a>
+                    
                         <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
                     
                 </div>
@@ -274,7 +286,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="VIEWSTATE"><a href="#VIEWSTATE" class="headerlink" title="VIEWSTATE"></a>VIEWSTATE</h2><h1 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h1><h3 id="ASP-NET的-aspx页面特有，页面级的；"><a href="#ASP-NET的-aspx页面特有，页面级的；" class="headerlink" title="ASP.NET的 .aspx页面特有，页面级的；"></a>ASP.NET的 .aspx页面特有，页面级的；</h3><h3 id="就是在页面上的一个隐藏域中保存客户端单独使用的数据的一种方式；"><a href="#就是在页面上的一个隐藏域中保存客户端单独使用的数据的一种方式；" class="headerlink" title="就是在页面上的一个隐藏域中保存客户端单独使用的数据的一种方式；"></a>就是在页面上的一个隐藏域中保存客户端单独使用的数据的一种方式；</h3><h3 id="服务器端控件的值都自动保存在ViewState中"><a href="#服务器端控件的值都自动保存在ViewState中" class="headerlink" title="服务器端控件的值都自动保存在ViewState中"></a>服务器端控件的值都自动保存在ViewState中</h3><h1 id="方式："><a href="#方式：" class="headerlink" title="方式："></a>方式：</h1><h3 id="用户数据保存方式："><a href="#用户数据保存方式：" class="headerlink" title="用户数据保存方式："></a>用户数据保存方式：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ViewState[”myKey”]=”MyData”;</div></pre></td></tr></table></figure>
+        <h2 id="VIEWSTATE"><a href="#VIEWSTATE" class="headerlink" title="VIEWSTATE"></a>VIEWSTATE</h2><h1 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h1><h3 id="ASP-NET的-aspx页面特有，页面级的；"><a href="#ASP-NET的-aspx页面特有，页面级的；" class="headerlink" title="ASP.NET的 .aspx页面特有，页面级的；"></a>ASP.NET的 .aspx页面特有，页面级的；</h3><h3 id="就是在页面上的一个隐藏域中保存客户端单独使用的数据的一种方式；"><a href="#就是在页面上的一个隐藏域中保存客户端单独使用的数据的一种方式；" class="headerlink" title="就是在页面上的一个隐藏域中保存客户端单独使用的数据的一种方式；"></a>就是在页面上的一个隐藏域中保存客户端单独使用的数据的一种方式；</h3><h3 id="服务器端控件的值都自动保存在ViewState中"><a href="#服务器端控件的值都自动保存在ViewState中" class="headerlink" title="服务器端控件的值都自动保存在ViewState中"></a>服务器端控件的值都自动保存在ViewState中</h3><a id="more"></a>
+<h1 id="方式："><a href="#方式：" class="headerlink" title="方式："></a>方式：</h1><h3 id="用户数据保存方式："><a href="#用户数据保存方式：" class="headerlink" title="用户数据保存方式："></a>用户数据保存方式：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ViewState[”myKey”]=”MyData”;</div></pre></td></tr></table></figure>
 <h3 id="读取数据方式："><a href="#读取数据方式：" class="headerlink" title="读取数据方式："></a>读取数据方式：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">string myData;</div><div class="line">if(ViewState[”myKey”]!=null)</div><div class="line">&#123;  myData=(string)ViewState[”myKey”];  &#125;</div></pre></td></tr></table></figure>
 <h1 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h1><h3 id="ViewState不能存储所有的数据类型，仅支持可序列化对象。"><a href="#ViewState不能存储所有的数据类型，仅支持可序列化对象。" class="headerlink" title="ViewState不能存储所有的数据类型，仅支持可序列化对象。"></a>ViewState不能存储所有的数据类型，仅支持可序列化对象。</h3><h3 id="非单值服务器控件的状态也自动保存在ViewState中"><a href="#非单值服务器控件的状态也自动保存在ViewState中" class="headerlink" title="非单值服务器控件的状态也自动保存在ViewState中"></a>非单值服务器控件的状态也自动保存在ViewState中</h3><p>列入：下拉框。（文本框是单值控件，所以不会保存在ViewState中）</p>
 <h1 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h1><h3 id="使用ViewState的前提："><a href="#使用ViewState的前提：" class="headerlink" title="使用ViewState的前提："></a>使用ViewState的前提：</h3><p>页面上必须有一个服务器端窗体标记 &lt;form runat=“server”&gt;<br>服务器在接收到用户请求一个页面后，会自动在请求报文中找看是否包含<strong>VIEWSTATE的隐藏域，如果有，则将中间的值解码后添加到页面的ViewState属性中。<br>服务器在输出的时候，也会自动的将ViewState中的值添加到表单里名叫</strong>VIEWSTATE的隐藏域中</p>
@@ -339,7 +352,7 @@
         <p><span>本文标题:</span><a href="/2015/07/04/asp.net-knowledge-point-summary-2/">Asp.net知识点总结(二)</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 阿星Plus 的个人博客">阿星Plus</a></p>
         <p><span>发布时间:</span>2015年07月04日 - 21时02分</p>
-        <p><span>最后更新:</span>2017年05月26日 - 11时21分</p>
+        <p><span>最后更新:</span>2017年05月26日 - 14时29分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2015/07/04/asp.net-knowledge-point-summary-2/" title="Asp.net知识点总结(二)">http://xj8c.cc/2015/07/04/asp.net-knowledge-point-summary-2/</a>
             <span class="copy-path" data-clipboard-text="原文: http://xj8c.cc/2015/07/04/asp.net-knowledge-point-summary-2/　　作者: 阿星Plus" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -525,27 +538,6 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 
 
 
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
 
 
 <div class="scroll" id="scroll">

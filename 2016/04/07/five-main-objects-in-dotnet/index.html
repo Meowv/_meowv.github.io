@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://xj8c.cc/2016/04/07/five-main-objects-in-dotnet/index.html">
 <meta property="og:site_name" content="当然我在瞎扯">
 <meta property="og:description" content="Connection主要是开启程序和数据库之间的连接，没有利用连接对象将数据库打开，是无法从数据库中取得数据的。 Close和Dispose的区别，Close以后还可以Open，Dispose以后则不能再用。 Command主要可以用来对数据库发出一些指令，例如可以对数据库下达增、删、改、查数据等指令，以及调用存在数据库中的存储过程等。 这个对象是架构在Connection对象上，也就是Comma">
-<meta property="og:updated_time" content="2017-05-26T03:05:20.209Z">
+<meta property="og:updated_time" content="2017-05-26T06:29:50.350Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ADO.NET中的五个主要对象？">
 <meta name="twitter:description" content="Connection主要是开启程序和数据库之间的连接，没有利用连接对象将数据库打开，是无法从数据库中取得数据的。 Close和Dispose的区别，Close以后还可以Open，Dispose以后则不能再用。 Command主要可以用来对数据库发出一些指令，例如可以对数据库下达增、删、改、查数据等指令，以及调用存在数据库中的存储过程等。 这个对象是架构在Connection对象上，也就是Comma">
@@ -153,6 +153,14 @@
                                                             zhihu
                                                         </a>
                                                         
+                                                        <a class="fl QQ" target="_blank" href="//wpa.qq.com/msgrd?uin=494910887" title="QQ">
+                                                            QQ
+                                                        </a>
+                                                        
+                                                        <a class="fl wechat" target="_blank" href="http://xj8c.cc/img/wechatimg.jpg" title="wechat">
+                                                            wechat
+                                                        </a>
+                                                        
                                                         <a class="fl rss" target="_blank" href="/atom.xml" title="rss">
                                                             rss
                                                         </a>
@@ -229,6 +237,10 @@
                     
                         <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">zhihu</a>
                     
+                        <a class="QQ" target="_blank" href="//wpa.qq.com/msgrd?uin=494910887" title="QQ">QQ</a>
+                    
+                        <a class="wechat" target="_blank" href="http://xj8c.cc/img/wechatimg.jpg" title="wechat">wechat</a>
+                    
                         <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
                     
                 </div>
@@ -279,7 +291,7 @@
 <h3 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h3><p>主要可以用来对数据库发出一些指令，例如可以对数据库下达增、删、改、查数据等指令，以及调用存在数据库中的存储过程等。</p>
 <p>这个对象是架构在Connection对象上，也就是Command对象是透过连接到数据源。</p>
 <h3 id="DataAdapter"><a href="#DataAdapter" class="headerlink" title="DataAdapter"></a>DataAdapter</h3><p>主要是在数据源以及DataSet之间执行数据传输的工作，它可以透过Command对象下达命令后，并将取得的数据放入DataSet对象中。</p>
-<p>这个对象是架构在Command对象上，并提供了许多配合DataSet使用的功能。</p>
+<p>这个对象是架构在Command对象上，并提供了许多配合DataSet使用的功能。<br><a id="more"></a></p>
 <h3 id="DataSet"><a href="#DataSet" class="headerlink" title="DataSet"></a>DataSet</h3><p>这个对象可以视为一个暂存区(Cache)，可以把从数据中所查询到的数据保留起来，甚至可以将整个数据库显示出来，DataSet是存在内存中。</p>
 <p>DataSet的能力不只是可以存储多个Table而已，还可以透过DataAdapter对象取得一些例如主键等的数据表结构，并可以记录数据表间的关联。</p>
 <p>DataSet对象可以说是ADO.NET中重量级的对象，这个对象架构在DataAdapter对象上，本身不具备和数据源沟通的能力；也就是说我们是将DataAdapter对象当做DataSet对象以及数据源传输数据的桥梁。</p>
@@ -346,7 +358,7 @@
         <p><span>本文标题:</span><a href="/2016/04/07/five-main-objects-in-dotnet/">ADO.NET中的五个主要对象？</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 阿星Plus 的个人博客">阿星Plus</a></p>
         <p><span>发布时间:</span>2016年04月07日 - 23时34分</p>
-        <p><span>最后更新:</span>2017年05月26日 - 11时05分</p>
+        <p><span>最后更新:</span>2017年05月26日 - 14时29分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/04/07/five-main-objects-in-dotnet/" title="ADO.NET中的五个主要对象？">http://xj8c.cc/2016/04/07/five-main-objects-in-dotnet/</a>
             <span class="copy-path" data-clipboard-text="原文: http://xj8c.cc/2016/04/07/five-main-objects-in-dotnet/　　作者: 阿星Plus" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -532,27 +544,6 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 
 
 
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
 
 
 <div class="scroll" id="scroll">

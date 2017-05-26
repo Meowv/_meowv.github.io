@@ -5,17 +5,17 @@
   
   <title>测试用例设计进阶（上） | 当然我在瞎扯</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="判定表法设计测试用例 — 判定表相关概念判定表是分析和表达多逻辑条件下执行不同操作的工具。判定表是由条件桩、动作桩、条件项、动作项四部分内容构成的表格。 条件桩（Condition Stub）列出了问题的所有条件。通常认为列出条件的次序无关紧要。 动作桩（Action Stub）列出了问题规定可能采取的操作。这些操作的排列顺序没有约束。 条件项（Condition Entry）列出针对所列条件的取">
+  <meta name="description" content="判定表法设计测试用例 — 判定表相关概念判定表是分析和表达多逻辑条件下执行不同操作的工具。判定表是由条件桩、动作桩、条件项、动作项四部分内容构成的表格。 条件桩（Condition Stub）列出了问题的所有条件。通常认为列出条件的次序无关紧要。 动作桩（Action Stub）列出了问题规定可能采取的操作。这些操作的排列顺序没有约束。">
 <meta name="keywords" content="软件测试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="测试用例设计进阶（上）">
 <meta property="og:url" content="http://xj8c.cc/2015/10/28/test-case-design-in-order(upper)/index.html">
 <meta property="og:site_name" content="当然我在瞎扯">
-<meta property="og:description" content="判定表法设计测试用例 — 判定表相关概念判定表是分析和表达多逻辑条件下执行不同操作的工具。判定表是由条件桩、动作桩、条件项、动作项四部分内容构成的表格。 条件桩（Condition Stub）列出了问题的所有条件。通常认为列出条件的次序无关紧要。 动作桩（Action Stub）列出了问题规定可能采取的操作。这些操作的排列顺序没有约束。 条件项（Condition Entry）列出针对所列条件的取">
-<meta property="og:updated_time" content="2017-05-26T04:48:07.352Z">
+<meta property="og:description" content="判定表法设计测试用例 — 判定表相关概念判定表是分析和表达多逻辑条件下执行不同操作的工具。判定表是由条件桩、动作桩、条件项、动作项四部分内容构成的表格。 条件桩（Condition Stub）列出了问题的所有条件。通常认为列出条件的次序无关紧要。 动作桩（Action Stub）列出了问题规定可能采取的操作。这些操作的排列顺序没有约束。">
+<meta property="og:updated_time" content="2017-05-26T06:29:50.818Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="测试用例设计进阶（上）">
-<meta name="twitter:description" content="判定表法设计测试用例 — 判定表相关概念判定表是分析和表达多逻辑条件下执行不同操作的工具。判定表是由条件桩、动作桩、条件项、动作项四部分内容构成的表格。 条件桩（Condition Stub）列出了问题的所有条件。通常认为列出条件的次序无关紧要。 动作桩（Action Stub）列出了问题规定可能采取的操作。这些操作的排列顺序没有约束。 条件项（Condition Entry）列出针对所列条件的取">
+<meta name="twitter:description" content="判定表法设计测试用例 — 判定表相关概念判定表是分析和表达多逻辑条件下执行不同操作的工具。判定表是由条件桩、动作桩、条件项、动作项四部分内容构成的表格。 条件桩（Condition Stub）列出了问题的所有条件。通常认为列出条件的次序无关紧要。 动作桩（Action Stub）列出了问题规定可能采取的操作。这些操作的排列顺序没有约束。">
   
     <link rel="alternative" href="/atom.xml" title="当然我在瞎扯" type="application/atom+xml">
   
@@ -153,6 +153,14 @@
                                                             zhihu
                                                         </a>
                                                         
+                                                        <a class="fl QQ" target="_blank" href="//wpa.qq.com/msgrd?uin=494910887" title="QQ">
+                                                            QQ
+                                                        </a>
+                                                        
+                                                        <a class="fl wechat" target="_blank" href="http://xj8c.cc/img/wechatimg.jpg" title="wechat">
+                                                            wechat
+                                                        </a>
+                                                        
                                                         <a class="fl rss" target="_blank" href="/atom.xml" title="rss">
                                                             rss
                                                         </a>
@@ -229,6 +237,10 @@
                     
                         <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">zhihu</a>
                     
+                        <a class="QQ" target="_blank" href="//wpa.qq.com/msgrd?uin=494910887" title="QQ">QQ</a>
+                    
+                        <a class="wechat" target="_blank" href="http://xj8c.cc/img/wechatimg.jpg" title="wechat">wechat</a>
+                    
                         <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
                     
                 </div>
@@ -276,7 +288,7 @@
           
         <h2 id="判定表法设计测试用例-—-判定表相关概念"><a href="#判定表法设计测试用例-—-判定表相关概念" class="headerlink" title="判定表法设计测试用例 — 判定表相关概念"></a>判定表法设计测试用例 — 判定表相关概念</h2><h3 id="判定表"><a href="#判定表" class="headerlink" title="判定表"></a>判定表</h3><p>是分析和表达多逻辑条件下执行不同操作的工具。<br>判定表是由条件桩、动作桩、条件项、动作项四部分内容构成的表格。</p>
 <h3 id="条件桩（Condition-Stub）"><a href="#条件桩（Condition-Stub）" class="headerlink" title="条件桩（Condition Stub）"></a>条件桩（Condition Stub）</h3><p>列出了问题的所有条件。通常认为列出条件的次序无关紧要。</p>
-<h3 id="动作桩（Action-Stub）"><a href="#动作桩（Action-Stub）" class="headerlink" title="动作桩（Action Stub）"></a>动作桩（Action Stub）</h3><p>列出了问题规定可能采取的操作。这些操作的排列顺序没有约束。</p>
+<h3 id="动作桩（Action-Stub）"><a href="#动作桩（Action-Stub）" class="headerlink" title="动作桩（Action Stub）"></a>动作桩（Action Stub）</h3><p>列出了问题规定可能采取的操作。这些操作的排列顺序没有约束。<br><a id="more"></a></p>
 <h3 id="条件项（Condition-Entry）"><a href="#条件项（Condition-Entry）" class="headerlink" title="条件项（Condition Entry）"></a>条件项（Condition Entry）</h3><p>列出针对所列条件的取值。在所有可能情况下的真假值。</p>
 <h3 id="动作项（Action-Entry）"><a href="#动作项（Action-Entry）" class="headerlink" title="动作项（Action Entry）"></a>动作项（Action Entry）</h3><p>列出在条件项的各种取值情况下应该采取的动作。</p>
 <h3 id="判定表中的规则"><a href="#判定表中的规则" class="headerlink" title="判定表中的规则"></a>判定表中的规则</h3><p>任何一个条件组合的特定取值及其相应要执行的操作称为规则。在判定表中贯穿条件项和动作项的一列就是一条规则。</p>
@@ -364,7 +376,7 @@
         <p><span>本文标题:</span><a href="/2015/10/28/test-case-design-in-order(upper)/">测试用例设计进阶（上）</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 阿星Plus 的个人博客">阿星Plus</a></p>
         <p><span>发布时间:</span>2015年10月28日 - 21时43分</p>
-        <p><span>最后更新:</span>2017年05月26日 - 12时48分</p>
+        <p><span>最后更新:</span>2017年05月26日 - 14时29分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2015/10/28/test-case-design-in-order(upper)/" title="测试用例设计进阶（上）">http://xj8c.cc/2015/10/28/test-case-design-in-order(upper)/</a>
             <span class="copy-path" data-clipboard-text="原文: http://xj8c.cc/2015/10/28/test-case-design-in-order(upper)/　　作者: 阿星Plus" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -550,27 +562,6 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 
 
 
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
 
 
 <div class="scroll" id="scroll">

@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://xj8c.cc/2015/07/03/asp.net-knowledge-point-summary-1/index.html">
 <meta property="og:site_name" content="当然我在瞎扯">
 <meta property="og:description" content="Asp.net六大对象1.Request–&amp;gt;读取客户端在Web请求期间发送的值常用方法: 1、Request.UrlReferrer请求的来源，可以根据这个判断从百度搜的哪个关键词、防下载盗链、防图片盗链，可以伪造(比如迅雷)。 (使用全局一般处理程序)2、Request.UserHostAddress获得访问者的IP地址3、Request.MapPath(virtulPath)将虚拟路径转">
-<meta property="og:updated_time" content="2017-05-26T04:04:35.741Z">
+<meta property="og:updated_time" content="2017-05-26T06:29:50.012Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Asp.net知识点总结(一)">
 <meta name="twitter:description" content="Asp.net六大对象1.Request–&amp;gt;读取客户端在Web请求期间发送的值常用方法: 1、Request.UrlReferrer请求的来源，可以根据这个判断从百度搜的哪个关键词、防下载盗链、防图片盗链，可以伪造(比如迅雷)。 (使用全局一般处理程序)2、Request.UserHostAddress获得访问者的IP地址3、Request.MapPath(virtulPath)将虚拟路径转">
@@ -153,6 +153,14 @@
                                                             zhihu
                                                         </a>
                                                         
+                                                        <a class="fl QQ" target="_blank" href="//wpa.qq.com/msgrd?uin=494910887" title="QQ">
+                                                            QQ
+                                                        </a>
+                                                        
+                                                        <a class="fl wechat" target="_blank" href="http://xj8c.cc/img/wechatimg.jpg" title="wechat">
+                                                            wechat
+                                                        </a>
+                                                        
                                                         <a class="fl rss" target="_blank" href="/atom.xml" title="rss">
                                                             rss
                                                         </a>
@@ -229,6 +237,10 @@
                     
                         <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">zhihu</a>
                     
+                        <a class="QQ" target="_blank" href="//wpa.qq.com/msgrd?uin=494910887" title="QQ">QQ</a>
+                    
+                        <a class="wechat" target="_blank" href="http://xj8c.cc/img/wechatimg.jpg" title="wechat">wechat</a>
+                    
                         <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
                     
                 </div>
@@ -275,7 +287,8 @@
       
           
         <h2 id="Asp-net六大对象"><a href="#Asp-net六大对象" class="headerlink" title="Asp.net六大对象"></a>Asp.net六大对象</h2><h1 id="1-Request–-gt-读取客户端在Web请求期间发送的值"><a href="#1-Request–-gt-读取客户端在Web请求期间发送的值" class="headerlink" title="1.Request–&gt;读取客户端在Web请求期间发送的值"></a>1.Request–&gt;读取客户端在Web请求期间发送的值</h1><p>常用方法:</p>
-<h3 id="1、Request-UrlReferrer请求的来源，可以根据这个判断从百度搜的哪个关键词、防下载盗链、防图片盗链，可以伪造-比如迅雷-。-使用全局一般处理程序"><a href="#1、Request-UrlReferrer请求的来源，可以根据这个判断从百度搜的哪个关键词、防下载盗链、防图片盗链，可以伪造-比如迅雷-。-使用全局一般处理程序" class="headerlink" title="1、Request.UrlReferrer请求的来源，可以根据这个判断从百度搜的哪个关键词、防下载盗链、防图片盗链，可以伪造(比如迅雷)。 (使用全局一般处理程序)"></a>1、Request.UrlReferrer请求的来源，可以根据这个判断从百度搜的哪个关键词、防下载盗链、防图片盗链，可以伪造(比如迅雷)。 (使用全局一般处理程序)</h3><h3 id="2、Request-UserHostAddress获得访问者的IP地址"><a href="#2、Request-UserHostAddress获得访问者的IP地址" class="headerlink" title="2、Request.UserHostAddress获得访问者的IP地址"></a>2、Request.UserHostAddress获得访问者的IP地址</h3><h3 id="3、Request-MapPath-virtulPath-将虚拟路径转换为磁盘上的物理路径-Request-MapPath-“-a-b-aspx”-就会得到D-WebSites-a-b-aspx"><a href="#3、Request-MapPath-virtulPath-将虚拟路径转换为磁盘上的物理路径-Request-MapPath-“-a-b-aspx”-就会得到D-WebSites-a-b-aspx" class="headerlink" title="3、Request.MapPath(virtulPath)将虚拟路径转换为磁盘上的物理路径,Request.MapPath(“./a/b.aspx”)就会得到D:\WebSites\a\b.aspx"></a>3、Request.MapPath(virtulPath)将虚拟路径转换为磁盘上的物理路径,Request.MapPath(“./a/b.aspx”)就会得到D:\WebSites\a\b.aspx</h3><p>Server.MapPath里就是调用的Request.MapPath</p>
+<h3 id="1、Request-UrlReferrer请求的来源，可以根据这个判断从百度搜的哪个关键词、防下载盗链、防图片盗链，可以伪造-比如迅雷-。-使用全局一般处理程序"><a href="#1、Request-UrlReferrer请求的来源，可以根据这个判断从百度搜的哪个关键词、防下载盗链、防图片盗链，可以伪造-比如迅雷-。-使用全局一般处理程序" class="headerlink" title="1、Request.UrlReferrer请求的来源，可以根据这个判断从百度搜的哪个关键词、防下载盗链、防图片盗链，可以伪造(比如迅雷)。 (使用全局一般处理程序)"></a>1、Request.UrlReferrer请求的来源，可以根据这个判断从百度搜的哪个关键词、防下载盗链、防图片盗链，可以伪造(比如迅雷)。 (使用全局一般处理程序)</h3><h3 id="2、Request-UserHostAddress获得访问者的IP地址"><a href="#2、Request-UserHostAddress获得访问者的IP地址" class="headerlink" title="2、Request.UserHostAddress获得访问者的IP地址"></a>2、Request.UserHostAddress获得访问者的IP地址</h3><h3 id="3、Request-MapPath-virtulPath-将虚拟路径转换为磁盘上的物理路径-Request-MapPath-“-a-b-aspx”-就会得到D-WebSites-a-b-aspx"><a href="#3、Request-MapPath-virtulPath-将虚拟路径转换为磁盘上的物理路径-Request-MapPath-“-a-b-aspx”-就会得到D-WebSites-a-b-aspx" class="headerlink" title="3、Request.MapPath(virtulPath)将虚拟路径转换为磁盘上的物理路径,Request.MapPath(“./a/b.aspx”)就会得到D:\WebSites\a\b.aspx"></a>3、Request.MapPath(virtulPath)将虚拟路径转换为磁盘上的物理路径,Request.MapPath(“./a/b.aspx”)就会得到D:\WebSites\a\b.aspx</h3><a id="more"></a>
+<p>Server.MapPath里就是调用的Request.MapPath</p>
 <h3 id="4、Request-Url-GetComponents-UriComponents-HostAndPort-UriFormat-SafeUnescaped-获取当前请求的网站的域名和端口号"><a href="#4、Request-Url-GetComponents-UriComponents-HostAndPort-UriFormat-SafeUnescaped-获取当前请求的网站的域名和端口号" class="headerlink" title="4、Request.Url.GetComponents(UriComponents.HostAndPort,UriFormat.SafeUnescaped) 获取当前请求的网站的域名和端口号"></a>4、Request.Url.GetComponents(UriComponents.HostAndPort,UriFormat.SafeUnescaped) 获取当前请求的网站的域名和端口号</h3><h3 id="Request对象主要是让服务器取得客户端浏览器的一些数据-包括从HTML表单用Post或者GET方法传递的参数、Cookie和用户认证。因为Request对象是Page对象的成员之一，所以在程序中不需要做任何的声明即可直接使用；"><a href="#Request对象主要是让服务器取得客户端浏览器的一些数据-包括从HTML表单用Post或者GET方法传递的参数、Cookie和用户认证。因为Request对象是Page对象的成员之一，所以在程序中不需要做任何的声明即可直接使用；" class="headerlink" title="Request对象主要是让服务器取得客户端浏览器的一些数据,包括从HTML表单用Post或者GET方法传递的参数、Cookie和用户认证。因为Request对象是Page对象的成员之一，所以在程序中不需要做任何的声明即可直接使用；"></a>Request对象主要是让服务器取得客户端浏览器的一些数据,包括从HTML表单用Post或者GET方法传递的参数、Cookie和用户认证。因为Request对象是Page对象的成员之一，所以在程序中不需要做任何的声明即可直接使用；</h3><h1 id="其类名为HttpRequest"><a href="#其类名为HttpRequest" class="headerlink" title="其类名为HttpRequest"></a>其类名为HttpRequest</h1><p>属性很多，但方法很少，只有一个BinaryRead() </p>
 <h3 id="1-使用Request-Form属性获取数据"><a href="#1-使用Request-Form属性获取数据" class="headerlink" title="1.使用Request.Form属性获取数据"></a>1.使用Request.Form属性获取数据</h3><p>通过该属性，读取<form></form>之间的表单数据.注意：提交方式要设置为“Post”。<br>与Get方法相比较，使用Post方法可以将大量数据发送到服务器端 </p>
 <h3 id="2-利用Request-QueryString属性获取数据"><a href="#2-利用Request-QueryString属性获取数据" class="headerlink" title="2.利用Request.QueryString属性获取数据"></a>2.利用Request.QueryString属性获取数据</h3><p>Request对象的QuerySting属性可以获取HTTP查询字符串变量集合。</p>
@@ -426,7 +439,7 @@
         <p><span>本文标题:</span><a href="/2015/07/03/asp.net-knowledge-point-summary-1/">Asp.net知识点总结(一)</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 阿星Plus 的个人博客">阿星Plus</a></p>
         <p><span>发布时间:</span>2015年07月03日 - 18时25分</p>
-        <p><span>最后更新:</span>2017年05月26日 - 12时04分</p>
+        <p><span>最后更新:</span>2017年05月26日 - 14时29分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2015/07/03/asp.net-knowledge-point-summary-1/" title="Asp.net知识点总结(一)">http://xj8c.cc/2015/07/03/asp.net-knowledge-point-summary-1/</a>
             <span class="copy-path" data-clipboard-text="原文: http://xj8c.cc/2015/07/03/asp.net-knowledge-point-summary-1/　　作者: 阿星Plus" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -612,27 +625,6 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 
 
 
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
 
 
 <div class="scroll" id="scroll">

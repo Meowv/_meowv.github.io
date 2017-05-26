@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://xj8c.cc/2015/07/07/asp.net-knowledge-point-summary-3/index.html">
 <meta property="og:site_name" content="当然我在瞎扯">
 <meta property="og:description" content="关于服务器响应码：（常用）浏览器向服务器发出请求，服务器处理可能是成功、可能是失败、可能没有权限访问等原因，服务器会通过响应码来告诉浏览器处理结果。 “200” : OK “302” : Found重定向. “400” : Bad Request错误请求，发出错误的不符合Http协议的请求 “403” : Forbidden禁止 “404” : Not Found未找到。演示访问一个不存在的页面看">
-<meta property="og:updated_time" content="2017-05-26T03:18:30.026Z">
+<meta property="og:updated_time" content="2017-05-26T06:29:50.164Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Asp.net知识点总结(三)">
 <meta name="twitter:description" content="关于服务器响应码：（常用）浏览器向服务器发出请求，服务器处理可能是成功、可能是失败、可能没有权限访问等原因，服务器会通过响应码来告诉浏览器处理结果。 “200” : OK “302” : Found重定向. “400” : Bad Request错误请求，发出错误的不符合Http协议的请求 “403” : Forbidden禁止 “404” : Not Found未找到。演示访问一个不存在的页面看">
@@ -153,6 +153,14 @@
                                                             zhihu
                                                         </a>
                                                         
+                                                        <a class="fl QQ" target="_blank" href="//wpa.qq.com/msgrd?uin=494910887" title="QQ">
+                                                            QQ
+                                                        </a>
+                                                        
+                                                        <a class="fl wechat" target="_blank" href="http://xj8c.cc/img/wechatimg.jpg" title="wechat">
+                                                            wechat
+                                                        </a>
+                                                        
                                                         <a class="fl rss" target="_blank" href="/atom.xml" title="rss">
                                                             rss
                                                         </a>
@@ -229,6 +237,10 @@
                     
                         <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">zhihu</a>
                     
+                        <a class="QQ" target="_blank" href="//wpa.qq.com/msgrd?uin=494910887" title="QQ">QQ</a>
+                    
+                        <a class="wechat" target="_blank" href="http://xj8c.cc/img/wechatimg.jpg" title="wechat">wechat</a>
+                    
                         <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
                     
                 </div>
@@ -282,7 +294,7 @@
 <p>“404” : Not Found未找到。演示访问一个不存在的页面看报文</p>
 <p>“500” : Internal Server Error服务器内部错误。演示页面抛出异常。</p>
 <p>“503” : Service Unavailable。一般是访问人数过多。</p>
-<p>200段是成功；300段需要对请求做进一步的处理；400段表示客户端请求错误；500段是服务器的错误。</p>
+<p>200段是成功；300段需要对请求做进一步的处理；400段表示客户端请求错误；500段是服务器的错误。<br><a id="more"></a></p>
 <h2 id="关于报文响应一些属性介绍："><a href="#关于报文响应一些属性介绍：" class="headerlink" title="关于报文响应一些属性介绍："></a>关于报文响应一些属性介绍：</h2><p>Server: Cassini/3.5.0.5表示服务器的类型</p>
 <p>Content-Type: text/html; charset=utf-8表示返回数据的类型</p>
 <p>Content-Length: 19944表示响应报文体的字节长度，报文头只是描述，返回的具体数据（比如HTML文本、图片数据等）在两个回车之后的内容中。</p>
@@ -364,7 +376,7 @@
         <p><span>本文标题:</span><a href="/2015/07/07/asp.net-knowledge-point-summary-3/">Asp.net知识点总结(三)</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 阿星Plus 的个人博客">阿星Plus</a></p>
         <p><span>发布时间:</span>2015年07月07日 - 20时30分</p>
-        <p><span>最后更新:</span>2017年05月26日 - 11时18分</p>
+        <p><span>最后更新:</span>2017年05月26日 - 14时29分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2015/07/07/asp.net-knowledge-point-summary-3/" title="Asp.net知识点总结(三)">http://xj8c.cc/2015/07/07/asp.net-knowledge-point-summary-3/</a>
             <span class="copy-path" data-clipboard-text="原文: http://xj8c.cc/2015/07/07/asp.net-knowledge-point-summary-3/　　作者: 阿星Plus" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -550,27 +562,6 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 
 
 
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
 
 
 <div class="scroll" id="scroll">

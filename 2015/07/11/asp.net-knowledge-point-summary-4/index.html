@@ -5,17 +5,17 @@
   
   <title>Asp.net知识点总结(四) | 当然我在瞎扯</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ASP.Net服务器端控件(部分)Repeater1.  Repeater控件使用数据源返回的一组记录呈现只读列表。与FormView控件类似，Repeater控件不指定内置布局。您可以使用模板创建Repeater控件的布局。2.  Repeater相当于一个foreach循环.3.  特征：自由定制；分页功能需要手写。4.Repeatera)   头部模版,通常用来做表格头部信息的展示。b)">
+  <meta name="description" content="ASP.Net服务器端控件(部分)Repeater1.  Repeater控件使用数据源返回的一组记录呈现只读列表。与FormView控件类似，Repeater控件不指定内置布局。您可以使用模板创建Repeater控件的布局。2.  Repeater相当于一个foreach循环.3.  特征：自由定制；分页功能需要手写。">
 <meta name="keywords" content="ASP.NET,技术教程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Asp.net知识点总结(四)">
 <meta property="og:url" content="http://xj8c.cc/2015/07/11/asp.net-knowledge-point-summary-4/index.html">
 <meta property="og:site_name" content="当然我在瞎扯">
-<meta property="og:description" content="ASP.Net服务器端控件(部分)Repeater1.  Repeater控件使用数据源返回的一组记录呈现只读列表。与FormView控件类似，Repeater控件不指定内置布局。您可以使用模板创建Repeater控件的布局。2.  Repeater相当于一个foreach循环.3.  特征：自由定制；分页功能需要手写。4.Repeatera)   头部模版,通常用来做表格头部信息的展示。b)">
-<meta property="og:updated_time" content="2017-05-26T03:32:32.948Z">
+<meta property="og:description" content="ASP.Net服务器端控件(部分)Repeater1.  Repeater控件使用数据源返回的一组记录呈现只读列表。与FormView控件类似，Repeater控件不指定内置布局。您可以使用模板创建Repeater控件的布局。2.  Repeater相当于一个foreach循环.3.  特征：自由定制；分页功能需要手写。">
+<meta property="og:updated_time" content="2017-05-26T06:29:50.097Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Asp.net知识点总结(四)">
-<meta name="twitter:description" content="ASP.Net服务器端控件(部分)Repeater1.  Repeater控件使用数据源返回的一组记录呈现只读列表。与FormView控件类似，Repeater控件不指定内置布局。您可以使用模板创建Repeater控件的布局。2.  Repeater相当于一个foreach循环.3.  特征：自由定制；分页功能需要手写。4.Repeatera)   头部模版,通常用来做表格头部信息的展示。b)">
+<meta name="twitter:description" content="ASP.Net服务器端控件(部分)Repeater1.  Repeater控件使用数据源返回的一组记录呈现只读列表。与FormView控件类似，Repeater控件不指定内置布局。您可以使用模板创建Repeater控件的布局。2.  Repeater相当于一个foreach循环.3.  特征：自由定制；分页功能需要手写。">
   
     <link rel="alternative" href="/atom.xml" title="当然我在瞎扯" type="application/atom+xml">
   
@@ -153,6 +153,14 @@
                                                             zhihu
                                                         </a>
                                                         
+                                                        <a class="fl QQ" target="_blank" href="//wpa.qq.com/msgrd?uin=494910887" title="QQ">
+                                                            QQ
+                                                        </a>
+                                                        
+                                                        <a class="fl wechat" target="_blank" href="http://xj8c.cc/img/wechatimg.jpg" title="wechat">
+                                                            wechat
+                                                        </a>
+                                                        
                                                         <a class="fl rss" target="_blank" href="/atom.xml" title="rss">
                                                             rss
                                                         </a>
@@ -229,6 +237,10 @@
                     
                         <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">zhihu</a>
                     
+                        <a class="QQ" target="_blank" href="//wpa.qq.com/msgrd?uin=494910887" title="QQ">QQ</a>
+                    
+                        <a class="wechat" target="_blank" href="http://xj8c.cc/img/wechatimg.jpg" title="wechat">wechat</a>
+                    
                         <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
                     
                 </div>
@@ -274,7 +286,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="ASP-Net服务器端控件-部分"><a href="#ASP-Net服务器端控件-部分" class="headerlink" title="ASP.Net服务器端控件(部分)"></a>ASP.Net服务器端控件(部分)</h2><h1 id="Repeater"><a href="#Repeater" class="headerlink" title="Repeater"></a>Repeater</h1><h3 id="1-Repeater控件使用数据源返回的一组记录呈现只读列表。与FormView控件类似，Repeater控件不指定内置布局。您可以使用模板创建Repeater控件的布局。"><a href="#1-Repeater控件使用数据源返回的一组记录呈现只读列表。与FormView控件类似，Repeater控件不指定内置布局。您可以使用模板创建Repeater控件的布局。" class="headerlink" title="1.  Repeater控件使用数据源返回的一组记录呈现只读列表。与FormView控件类似，Repeater控件不指定内置布局。您可以使用模板创建Repeater控件的布局。"></a>1.  Repeater控件使用数据源返回的一组记录呈现只读列表。与FormView控件类似，Repeater控件不指定内置布局。您可以使用模板创建Repeater控件的布局。</h3><h3 id="2-Repeater相当于一个foreach循环"><a href="#2-Repeater相当于一个foreach循环" class="headerlink" title="2.  Repeater相当于一个foreach循环."></a>2.  Repeater相当于一个foreach循环.</h3><h3 id="3-特征：自由定制；分页功能需要手写。"><a href="#3-特征：自由定制；分页功能需要手写。" class="headerlink" title="3.  特征：自由定制；分页功能需要手写。"></a>3.  特征：自由定制；分页功能需要手写。</h3><h3 id="4-Repeater"><a href="#4-Repeater" class="headerlink" title="4.Repeater"></a>4.Repeater</h3><p>a)   头部模版<headertemplate>,通常用来做表格头部信息的展示。<br>b)   项模版<itemtemplate> 通常用来做数据的绑定用<br>c)   交替模版<alternatingitemtemplate> 通常用来做各行变色,和项模版搭配使用.</alternatingitemtemplate></itemtemplate></headertemplate></p>
+        <h2 id="ASP-Net服务器端控件-部分"><a href="#ASP-Net服务器端控件-部分" class="headerlink" title="ASP.Net服务器端控件(部分)"></a>ASP.Net服务器端控件(部分)</h2><h1 id="Repeater"><a href="#Repeater" class="headerlink" title="Repeater"></a>Repeater</h1><h3 id="1-Repeater控件使用数据源返回的一组记录呈现只读列表。与FormView控件类似，Repeater控件不指定内置布局。您可以使用模板创建Repeater控件的布局。"><a href="#1-Repeater控件使用数据源返回的一组记录呈现只读列表。与FormView控件类似，Repeater控件不指定内置布局。您可以使用模板创建Repeater控件的布局。" class="headerlink" title="1.  Repeater控件使用数据源返回的一组记录呈现只读列表。与FormView控件类似，Repeater控件不指定内置布局。您可以使用模板创建Repeater控件的布局。"></a>1.  Repeater控件使用数据源返回的一组记录呈现只读列表。与FormView控件类似，Repeater控件不指定内置布局。您可以使用模板创建Repeater控件的布局。</h3><h3 id="2-Repeater相当于一个foreach循环"><a href="#2-Repeater相当于一个foreach循环" class="headerlink" title="2.  Repeater相当于一个foreach循环."></a>2.  Repeater相当于一个foreach循环.</h3><h3 id="3-特征：自由定制；分页功能需要手写。"><a href="#3-特征：自由定制；分页功能需要手写。" class="headerlink" title="3.  特征：自由定制；分页功能需要手写。"></a>3.  特征：自由定制；分页功能需要手写。</h3><a id="more"></a>
+<h3 id="4-Repeater"><a href="#4-Repeater" class="headerlink" title="4.Repeater"></a>4.Repeater</h3><p>a)   头部模版<headertemplate>,通常用来做表格头部信息的展示。<br>b)   项模版<itemtemplate> 通常用来做数据的绑定用<br>c)   交替模版<alternatingitemtemplate> 通常用来做各行变色,和项模版搭配使用.</alternatingitemtemplate></itemtemplate></headertemplate></p>
 <h3 id="5-数据的绑定"><a href="#5-数据的绑定" class="headerlink" title="5.  数据的绑定"></a>5.  数据的绑定</h3><p>a)   数据的绑定通常和数据源做搭配来绑定数据(数据源会在后面文档最后做介绍)<br>b)   数据绑定的方式有两种:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1&gt;  Eval方式： &lt;td&gt;&lt;%# Eval(“ID”) %&gt;&lt;/td&gt;</div><div class="line">2&gt;  Bind方式:  &lt;asp:TextBox ID=”IDTextBox” runat=”server” Text=’&lt;%# Bind(“ID”) %&gt;’ /&gt;</div></pre></td></tr></table></figure>
 <p>c)   内部服务器控件的事件的触发规则:</p>
@@ -347,7 +360,7 @@
         <p><span>本文标题:</span><a href="/2015/07/11/asp.net-knowledge-point-summary-4/">Asp.net知识点总结(四)</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 阿星Plus 的个人博客">阿星Plus</a></p>
         <p><span>发布时间:</span>2015年07月11日 - 22时32分</p>
-        <p><span>最后更新:</span>2017年05月26日 - 11时32分</p>
+        <p><span>最后更新:</span>2017年05月26日 - 14时29分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2015/07/11/asp.net-knowledge-point-summary-4/" title="Asp.net知识点总结(四)">http://xj8c.cc/2015/07/11/asp.net-knowledge-point-summary-4/</a>
             <span class="copy-path" data-clipboard-text="原文: http://xj8c.cc/2015/07/11/asp.net-knowledge-point-summary-4/　　作者: 阿星Plus" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -533,27 +546,6 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 
 
 
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
 
 
 <div class="scroll" id="scroll">
