@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Asp.net知识点总结(四) | 当然我在瞎扯</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ASP.Net服务器端控件(部分)Repeater1.  Repeater控件使用数据源返回的一组记录呈现只读列表。与FormView控件类似，Repeater控件不指定内置布局。您可以使用模板创建Repeater控件的布局。2.  Repeater相当于一个foreach循环.3.  特征：自由定制；分页功能需要手写。4.Repeatera)   头部模版,通常用来做表格头部信息的展示。b)">
+<meta name="keywords" content="ASP.NET,技术教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Asp.net知识点总结(四)">
+<meta property="og:url" content="http://xj8c.cc/2015/07/11/asp.net-knowledge-point-summary-4/index.html">
+<meta property="og:site_name" content="当然我在瞎扯">
+<meta property="og:description" content="ASP.Net服务器端控件(部分)Repeater1.  Repeater控件使用数据源返回的一组记录呈现只读列表。与FormView控件类似，Repeater控件不指定内置布局。您可以使用模板创建Repeater控件的布局。2.  Repeater相当于一个foreach循环.3.  特征：自由定制；分页功能需要手写。4.Repeatera)   头部模版,通常用来做表格头部信息的展示。b)">
+<meta property="og:updated_time" content="2017-05-26T03:32:32.948Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Asp.net知识点总结(四)">
+<meta name="twitter:description" content="ASP.Net服务器端控件(部分)Repeater1.  Repeater控件使用数据源返回的一组记录呈现只读列表。与FormView控件类似，Repeater控件不指定内置布局。您可以使用模板创建Repeater控件的布局。2.  Repeater相当于一个foreach循环.3.  特征：自由定制；分页功能需要手写。4.Repeatera)   头部模版,通常用来做表格头部信息的展示。b)">
+  
+    <link rel="alternative" href="/atom.xml" title="当然我在瞎扯" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+                <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+        </a>
+
+        <hgroup>
+            <h1 class="header-author">
+                <a href="/" title="Hello World">
+                    阿星Plus
+                </a>
+            </h1>
+        </hgroup>
+
+        
+            <p class="header-subtitle">
+                生命不息，奋斗不止
+            </p>
+            
+                
+                        
+                            <div id="switch-btn" class="switch-btn">
+                                <div class="icon">
+                                    <div class="icon-ctn">
+                                        <div class="icon-wrap icon-house" data-idx="0">
+                                            <div class="birdhouse"></div>
+                                            <div class="birdhouse_holes"></div>
+                                        </div>
+                                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                                            <div class="ribbon"></div>
+                                        </div>
+                                        
+                                            <div class="icon-wrap icon-link hide" data-idx="2">
+                                                <div class="loopback_l"></div>
+                                                <div class="loopback_r"></div>
+                                            </div>
+                                            
+                                                
+                                    </div>
+
+                                </div>
+                                <div class="tips-box hide">
+                                    <div class="tips-arrow"></div>
+                                    <ul class="tips-inner">
+                                        <li>菜单</li>
+                                        <li>标签</li>
+                                        
+                                            <li>友情链接</li>
+                                            
+                                                
+                                    </ul>
+                                </div>
+                            </div>
+                            
+
+                                <div id="switch-area" class="switch-area">
+                                    <div class="switch-wrap">
+                                        <section class="switch-part switch-part1">
+                                            <nav class="header-menu">
+                                                <ul>
+                                                    
+                                                        <li>
+                                                            <a href="/">
+                                                                Home
+                                                            </a>
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            <a href="/archives">
+                                                                Archives
+                                                            </a>
+                                                        </li>
+                                                        
+                                                </ul>
+                                            </nav>
+                                            <nav class="header-nav">
+                                                <ul class="social">
+                                                    
+                                                        <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=w-Lx8IOupqy0te2grK4" title="mail">
+                                                            mail
+                                                        </a>
+                                                        
+                                                        <a class="fl weibo" target="_blank" href="http://weibo.com/Tencentgou" title="weibo">
+                                                            weibo
+                                                        </a>
+                                                        
+                                                        <a class="fl github" target="_blank" href="https://github.com/Meowv" title="github">
+                                                            github
+                                                        </a>
+                                                        
+                                                        <a class="fl twitter" target="_blank" href="https://twitter.com/hackxing" title="twitter">
+                                                            twitter
+                                                        </a>
+                                                        
+                                                        <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">
+                                                            zhihu
+                                                        </a>
+                                                        
+                                                        <a class="fl rss" target="_blank" href="/atom.xml" title="rss">
+                                                            rss
+                                                        </a>
+                                                        
+                                                </ul>
+                                            </nav>
+                                        </section>
+
+                                        
+                                            <section class="switch-part switch-part2">
+                                                <div class="widget tagcloud" id="js-tagcloud">
+                                                    <a href="/tags/ASP-NET/" style="font-size: 20px;">ASP.NET</a> <a href="/tags/C/" style="font-size: 12px;">C#</a> <a href="/tags/CEAC/" style="font-size: 10px;">CEAC</a> <a href="/tags/IT/" style="font-size: 12px;">IT</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Photoshop/" style="font-size: 10px;">Photoshop</a> <a href="/tags/SqlServer/" style="font-size: 10px;">SqlServer</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/office2010/" style="font-size: 14px;">office2010</a> <a href="/tags/win10/" style="font-size: 12px;">win10</a> <a href="/tags/win7/" style="font-size: 10px;">win7</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/三层架构/" style="font-size: 10px;">三层架构</a> <a href="/tags/互联网/" style="font-size: 14px;">互联网</a> <a href="/tags/原版系统/" style="font-size: 10px;">原版系统</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/实习感受/" style="font-size: 10px;">实习感受</a> <a href="/tags/小说/" style="font-size: 10px;">小说</a> <a href="/tags/微软/" style="font-size: 10px;">微软</a> <a href="/tags/手机/" style="font-size: 10px;">手机</a> <a href="/tags/技术教程/" style="font-size: 18px;">技术教程</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/春天/" style="font-size: 10px;">春天</a> <a href="/tags/琅琊榜/" style="font-size: 10px;">琅琊榜</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/知乎/" style="font-size: 10px;">知乎</a> <a href="/tags/程序员/" style="font-size: 10px;">程序员</a> <a href="/tags/绿色软件/" style="font-size: 16px;">绿色软件</a> <a href="/tags/编程/" style="font-size: 10px;">编程</a> <a href="/tags/计算机一级/" style="font-size: 10px;">计算机一级</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/诗文/" style="font-size: 10px;">诗文</a> <a href="/tags/软件测试/" style="font-size: 18px;">软件测试</a> <a href="/tags/进制转换/" style="font-size: 10px;">进制转换</a> <a href="/tags/逆袭/" style="font-size: 10px;">逆袭</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/黑客/" style="font-size: 10px;">黑客</a>
+                                                </div>
+                                            </section>
+                                            
+
+                                                
+                                                    <section class="switch-part switch-part3">
+                                                        <div id="js-friends">
+                                                            
+                                                                <a target="_blank" class="main-nav-link switch-friends-link" href="http://meowv.com/">
+                                                                    喵呜网
+                                                                </a>
+                                                                
+                                                        </div>
+                                                    </section>
+                                                    
+
+                                                        
+                                    </div>
+                                </div>
+    </header>
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">阿星Plus</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">阿星Plus</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">生命不息，奋斗不止</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">Home</a></li>
+                
+                    <li><a href="/archives">Archives</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=w-Lx8IOupqy0te2grK4" title="mail">mail</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/Tencentgou" title="weibo">weibo</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/Meowv" title="github">github</a>
+                    
+                        <a class="twitter" target="_blank" href="https://twitter.com/hackxing" title="twitter">twitter</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">zhihu</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-asp.net-knowledge-point-summary-4" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/11/asp.net-knowledge-point-summary-4/" class="article-date">
+      <time datetime="2015-07-11T14:32:58.000Z" itemprop="datePublished">2015-07-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Asp.net知识点总结(四)
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ASP-NET/">ASP.NET</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术教程/">技术教程</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="ASP-Net服务器端控件-部分"><a href="#ASP-Net服务器端控件-部分" class="headerlink" title="ASP.Net服务器端控件(部分)"></a>ASP.Net服务器端控件(部分)</h2><h1 id="Repeater"><a href="#Repeater" class="headerlink" title="Repeater"></a>Repeater</h1><h3 id="1-Repeater控件使用数据源返回的一组记录呈现只读列表。与FormView控件类似，Repeater控件不指定内置布局。您可以使用模板创建Repeater控件的布局。"><a href="#1-Repeater控件使用数据源返回的一组记录呈现只读列表。与FormView控件类似，Repeater控件不指定内置布局。您可以使用模板创建Repeater控件的布局。" class="headerlink" title="1.  Repeater控件使用数据源返回的一组记录呈现只读列表。与FormView控件类似，Repeater控件不指定内置布局。您可以使用模板创建Repeater控件的布局。"></a>1.  Repeater控件使用数据源返回的一组记录呈现只读列表。与FormView控件类似，Repeater控件不指定内置布局。您可以使用模板创建Repeater控件的布局。</h3><h3 id="2-Repeater相当于一个foreach循环"><a href="#2-Repeater相当于一个foreach循环" class="headerlink" title="2.  Repeater相当于一个foreach循环."></a>2.  Repeater相当于一个foreach循环.</h3><h3 id="3-特征：自由定制；分页功能需要手写。"><a href="#3-特征：自由定制；分页功能需要手写。" class="headerlink" title="3.  特征：自由定制；分页功能需要手写。"></a>3.  特征：自由定制；分页功能需要手写。</h3><h3 id="4-Repeater"><a href="#4-Repeater" class="headerlink" title="4.Repeater"></a>4.Repeater</h3><p>a)   头部模版<headertemplate>,通常用来做表格头部信息的展示。<br>b)   项模版<itemtemplate> 通常用来做数据的绑定用<br>c)   交替模版<alternatingitemtemplate> 通常用来做各行变色,和项模版搭配使用.</alternatingitemtemplate></itemtemplate></headertemplate></p>
+<h3 id="5-数据的绑定"><a href="#5-数据的绑定" class="headerlink" title="5.  数据的绑定"></a>5.  数据的绑定</h3><p>a)   数据的绑定通常和数据源做搭配来绑定数据(数据源会在后面文档最后做介绍)<br>b)   数据绑定的方式有两种:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1&gt;  Eval方式： &lt;td&gt;&lt;%# Eval(“ID”) %&gt;&lt;/td&gt;</div><div class="line">2&gt;  Bind方式:  &lt;asp:TextBox ID=”IDTextBox” runat=”server” Text=’&lt;%# Bind(“ID”) %&gt;’ /&gt;</div></pre></td></tr></table></figure>
+<p>c)   内部服务器控件的事件的触发规则:</p>
+<p><strong>1&gt;  在服务器端的数据控件中如果包含了其他的服务器控件,那么其他的服务器控件的事件只能通过数据控件(Repeater)的ItemCommand事件来出发,在额外的服务器控件中需要给定CommandName和CommandArgument以方便后台在ItemCommand事件中处理此事件;</strong><br>2&gt;  前台代码示例：</p>
+<p>3&gt;  后台代码示例：</p>
+<h2 id="ListView"><a href="#ListView" class="headerlink" title="ListView"></a>ListView</h2><h3 id="1-这个控件既可实现像GridView一样的效果，也可实现像DataList一样的效果（怪不得名字叫ListView），这东西应用起来也要复杂些。要点是：LayoutTemplate下面必须有一个服务器端控件，即runat-”server”，其ID必须为itemPlaceholder（除非更改ListView的ItemPlaceholderID），注意大小写，ItemTemplate模板中的内容输出时就是插入到itemPlaceholder的。"><a href="#1-这个控件既可实现像GridView一样的效果，也可实现像DataList一样的效果（怪不得名字叫ListView），这东西应用起来也要复杂些。要点是：LayoutTemplate下面必须有一个服务器端控件，即runat-”server”，其ID必须为itemPlaceholder（除非更改ListView的ItemPlaceholderID），注意大小写，ItemTemplate模板中的内容输出时就是插入到itemPlaceholder的。" class="headerlink" title="1.  这个控件既可实现像GridView一样的效果，也可实现像DataList一样的效果（怪不得名字叫ListView），这东西应用起来也要复杂些。要点是：LayoutTemplate下面必须有一个服务器端控件，即runat=”server”，其ID必须为itemPlaceholder（除非更改ListView的ItemPlaceholderID），注意大小写，ItemTemplate模板中的内容输出时就是插入到itemPlaceholder的。"></a>1.  这个控件既可实现像GridView一样的效果，也可实现像DataList一样的效果（怪不得名字叫ListView），这东西应用起来也要复杂些。要点是：LayoutTemplate下面必须有一个服务器端控件，即runat=”server”，其ID必须为itemPlaceholder（除非更改ListView的ItemPlaceholderID），注意大小写，ItemTemplate模板中的内容输出时就是插入到itemPlaceholder的。</h3><h3 id="2-但ListView分页却不是那么复杂，在LayoutTemplate模板中拖入一个DataPager控件，指定好DataPager的Fields就可以了。但DataPager并不会向DataSource发送startRowIndex和maximumRows这两个参数，也就是说这种分页是取出所有的记录，只是显示部分，并不是一种高效的分页。。"><a href="#2-但ListView分页却不是那么复杂，在LayoutTemplate模板中拖入一个DataPager控件，指定好DataPager的Fields就可以了。但DataPager并不会向DataSource发送startRowIndex和maximumRows这两个参数，也就是说这种分页是取出所有的记录，只是显示部分，并不是一种高效的分页。。" class="headerlink" title="2.  但ListView分页却不是那么复杂，在LayoutTemplate模板中拖入一个DataPager控件，指定好DataPager的Fields就可以了。但DataPager并不会向DataSource发送startRowIndex和maximumRows这两个参数，也就是说这种分页是取出所有的记录，只是显示部分，并不是一种高效的分页。。"></a>2.  但ListView分页却不是那么复杂，在LayoutTemplate模板中拖入一个DataPager控件，指定好DataPager的Fields就可以了。但DataPager并不会向DataSource发送startRowIndex和maximumRows这两个参数，也就是说这种分页是取出所有的记录，只是显示部分，并不是一种高效的分页。。</h3><h3 id="3-特征：自由定制，功能强大；应用复杂；分页功能需要手写。"><a href="#3-特征：自由定制，功能强大；应用复杂；分页功能需要手写。" class="headerlink" title="3.  特征：自由定制，功能强大；应用复杂；分页功能需要手写。"></a>3.  特征：自由定制，功能强大；应用复杂；分页功能需要手写。</h3><h3 id="4-模版包括"><a href="#4-模版包括" class="headerlink" title="4.  模版包括:"></a>4.  模版包括:</h3><p>a)   AlternatingItemTemplate: 交替模版: 交替模版<alternatingitemtemplate> 通常用来做各行变色,和项模版搭配使用.<br>b)   EditItemTemplate: 编辑模版,通常用来做行的数据编辑:可以在里面放入其他服务器控件: 按钮、 A标签等、<br>c)   EmptyDataTemplate空模版: 顾名思义,空模版服务器返回数据为空的时候显示的: 也可以在里面自定义其他的空页面<br>d)   InsertItemTemplate添加模版: 用来做添加数据用的,和普通的添加数据页面一样,只不过数据的绑定方式使用了<figure class="highlight plain"><figcaption><span>Bind(“UserName”) %>’)``` 双向数据绑定类型.</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">e)   ItemTemplate: 数据项目模版,用来绑定数据:绑定方式和Repeater一样也分两种: Eval() 和  Bind();</div><div class="line">f)   LayoutTempalate布局模版:</div><div class="line"></div><div class="line">### 1&gt;  使用LayoutTemplate属性可以为ListView控件的根容器定义自定义用户界面 (UI)。</div><div class="line"></div><div class="line">### 2&gt;  若要指定布局模板，请在ListView控件内添加一个LayoutTemplate元素。 然后可以将模板的内容添加到LayoutTemplate元素。 </div><div class="line"></div><div class="line">### 3&gt;  LayoutTemplate内容必须包含一个占位符控件，例如由ItemTemplate模板定义的项或由 </div><div class="line"></div><div class="line">### 4&gt;  GroupTemplate模板定义的组的表行 (tr) 元素。 占位符控件必须将runat特性设置为“server”，</div><div class="line"></div><div class="line">### 5&gt;  将ID特性设置为ItemPlaceholderID或GroupPlaceholderID属性的值（具体取决于ListView控件是否使用组）。 </div><div class="line"></div><div class="line">### 6&gt;  LayoutTemplate模板不是ListView控件所必需的。 您可以使用不带LayoutTemplate的ListView </div><div class="line"></div><div class="line">### 7&gt;  控件，也可以使用没有占位符服务器控件但具有已知ID的控件。</div><div class="line"></div><div class="line">g)   SelectedItemTemplate选择模版:指定当前选中的内容,可在里面添加按钮a标签或者一个复选框,以实现选择的效果</div><div class="line"></div><div class="line">### 5、数据源控件之ObjectDataSource</div><div class="line"></div><div class="line"># ObjectDataSource的概述</div><div class="line"></div><div class="line">### ObjectDataSource控件对象模型类似于SqlDataSource控件。ObjectDataSource公开一个TypeName属性（而不是ConnectionString属性），该属性指定要实例化来执行数据操作的对象类型（类名）。类似于SqlDataSource的命令属性，ObjectDataSource控件支持诸如SelectMethod、UpdateMethod、InsertMethod和DeleteMethod的属性，用于指定要调用来执行这些数据操作的关联类型的方法。本节介绍一些方法，用于构建数据访问层和业务逻辑层组件并通过ObjectDataSource控件公开这些组件。 下面是该控件的声明方式：</div><div class="line"></div><div class="line"># &lt;asp:ObjectDataSource</div><div class="line"></div><div class="line">```CacheDuration=”string|Infinite” CacheExpirationPolicy=”Absolute|Sliding”</div></pre></td></tr></table></figure></alternatingitemtemplate></p>
+<h1 id="CacheKeyDependency-”string”"><a href="#CacheKeyDependency-”string”" class="headerlink" title="CacheKeyDependency=”string”"></a>CacheKeyDependency=”string”</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">ConflictDetection=”OverwriteChanges|CompareAllValues”</div><div class="line">    ConvertNullToDBNull=”True|False”    DataObjectTypeName=”string”</div><div class="line">    DeleteMethod=”string”    EnableCaching=”True|False”</div><div class="line">    EnablePaging=”True|False”    EnableTheming=”True|False”</div><div class="line">    EnableViewState=”True|False”    FilterExpression=\’#\’” &gt;</div><div class="line">    ID=”string”    InsertMethod=”string”</div><div class="line">MaximumRowsParameterName=”string”</div><div class="line">OldValuesParameterFormatString=”string”</div><div class="line">OnDataBinding=”DataBinding event handler”</div><div class="line">    OnDeleted=”Deleted event handler”    OnDeleting=”Deleting event handler”</div><div class="line">    OnDisposed=”Disposed event handler”    OnFiltering=”Filtering event handler”</div><div class="line">    OnInit=”Init event handler”    OnInserted=”Inserted event handler”</div><div class="line">    OnInserting=”Inserting event handler”    OnLoad=”Load event handler”</div><div class="line">OnObjectCreated=”ObjectCreated event handler”</div><div class="line">OnObjectCreating=”ObjectCreating event handler”</div><div class="line">OnObjectDisposing=”ObjectDisposing event handler”</div><div class="line">    OnPreRender=”PreRender event handler”    OnSelected=”Selected event handler”</div><div class="line">    OnSelecting=”Selecting event handler”    OnUnload=”Unload event handler”</div><div class="line">    OnUpdated=”Updated event handler”    OnUpdating=”Updating event handler”</div><div class="line">    runat=”server”    SelectCountMethod=”string”</div><div class="line">    SelectMethod=”string”    SortParameterName=”string”</div><div class="line">    SqlCacheDependency=”string”    StartRowIndexParameterName=”string”</div><div class="line">    TypeName=”string”    UpdateMethod=”string”&gt;</div><div class="line">&lt;DeleteParameters&gt;</div></pre></td></tr></table></figure>
+<h1 id="lt-asp-ControlParameter-ControlID-”string”"><a href="#lt-asp-ControlParameter-ControlID-”string”" class="headerlink" title="&lt;asp:ControlParameter        ControlID=”string”"></a>&lt;asp:ControlParameter        ControlID=”string”</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">ConvertEmptyStringToNull=”True|False”</div><div class="line">DefaultValue=”string”</div><div class="line">Direction=”Input|Output|InputOutput|ReturnValue”</div><div class="line">Name=”string”</div><div class="line">PropertyName=”string”</div><div class="line">Size=”integer”</div><div class="line">Type=”Empty|Object|DBNull|Boolean|Char|SByte|</div><div class="line">Byte|Int16|UInt16|Int32|UInt32|Int64|UInt64|</div><div class="line">Single|Double|Decimal|DateTime|String”/&gt; </div><div class="line">                &lt;asp:CookieParameter           CookieName=”string” /&gt;</div><div class="line">                &lt;asp:FormParameter             FormField=”string” /&gt;</div><div class="line">                &lt;asp:Parameter                  Name=”string” /&gt;</div><div class="line">                &lt;asp:ProfileParameter          PropertyName=”string” /&gt;</div><div class="line">                &lt;asp:QueryStringParameter     QueryStringField=”string” /&gt;</div><div class="line">                &lt;asp:SessionParameter          SessionField=”string”  /&gt;</div><div class="line">&lt;/DeleteParameters&gt;</div><div class="line">&lt;FilterParameters&gt;... ...&lt;/FilterParameters&gt;</div><div class="line">&lt;InsertParameters&gt;... ...&lt;/InsertParameters&gt;</div><div class="line">&lt;SelectParameters&gt;... ...&lt;/SelectParameters&gt;</div><div class="line">&lt;UpdateParameters&gt;... ...&lt;/UpdateParameters&gt;</div><div class="line">&lt;/asp:ObjectDataSource&gt;</div></pre></td></tr></table></figure>
+<h2 id="绑定到数据访问层"><a href="#绑定到数据访问层" class="headerlink" title="绑定到数据访问层"></a>绑定到数据访问层</h2><h3 id="数据访问层组件封装ADO-NET代码以通过SQL命令查询和修改数据库。它通常提炼创建ADO-NET连接和命令的详细信息，并通过可使用适当的参数调用的方法公开这些详细信息。典型的数据访问层组件可按如下方式公开："><a href="#数据访问层组件封装ADO-NET代码以通过SQL命令查询和修改数据库。它通常提炼创建ADO-NET连接和命令的详细信息，并通过可使用适当的参数调用的方法公开这些详细信息。典型的数据访问层组件可按如下方式公开：" class="headerlink" title="数据访问层组件封装ADO.NET代码以通过SQL命令查询和修改数据库。它通常提炼创建ADO.NET连接和命令的详细信息，并通过可使用适当的参数调用的方法公开这些详细信息。典型的数据访问层组件可按如下方式公开："></a>数据访问层组件封装ADO.NET代码以通过SQL命令查询和修改数据库。它通常提炼创建ADO.NET连接和命令的详细信息，并通过可使用适当的参数调用的方法公开这些详细信息。典型的数据访问层组件可按如下方式公开：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">public class MyDataBllLayer &#123;  </div><div class="line">public DataView GetRecords();  </div><div class="line">public int UpdateRecord(int recordID, String recordData); </div><div class="line">public int DeleteRecord(int recordID); </div><div class="line">public int InsertRecord(int recordID, String recordData);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>也就是,通常是在业务逻辑访问层定义对数据库里记录的操作，上面就定义了GetRecords、UpdateRecord、DeleteRecord和InsertRecord四个方法来读取、更新、删除和插入数据库里的数据，这些方法基本上是根据SQL里的Select、Update、Delete和Insert语句而定义。<br>和上面方法相对应， ObjectDataSource提供了四个属性来设置该控件引用的数据处理，可以按照如下方式关联到该类型，代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&amp;lt;asp:ObjectDataSource TypeName=”MyDataLayer”   runat=”server”</div><div class="line">SelectMethod=”GetRecords” </div><div class="line">UpdateMethod=”UpdateRecord”  </div><div class="line">DeleteMethod=”DeleteRecord”</div></pre></td></tr></table></figure></p>
+<h1 id="InsertMethod-”InsertRecord”-gt"><a href="#InsertMethod-”InsertRecord”-gt" class="headerlink" title="InsertMethod=”InsertRecord” /&gt;"></a>InsertMethod=”InsertRecord” /&gt;</h1><p>这里的SelectMethon设置为MyDataBllLayer里的GetRecords()方法，在使用时需要注意ObjectDataSource旨在以声明的方式简化数据的开发，所以这里设置SelectMethod的值为GetRecords而不是GetRecords()。</p>
+<h3 id="同样依次类推，UpdateMethod、DeleteMethod、InsertMethod分别对应的是UpdateRecord"><a href="#同样依次类推，UpdateMethod、DeleteMethod、InsertMethod分别对应的是UpdateRecord" class="headerlink" title="同样依次类推，UpdateMethod、DeleteMethod、InsertMethod分别对应的是UpdateRecord"></a>同样依次类推，UpdateMethod、DeleteMethod、InsertMethod分别对应的是UpdateRecord</h3><h1 id="DeleteRecord、InsertRecord方法。"><a href="#DeleteRecord、InsertRecord方法。" class="headerlink" title="DeleteRecord、InsertRecord方法。"></a>DeleteRecord、InsertRecord方法。</h1><p>在上面GetRecords（）的定义时，读者可以看到该方法返回的类型是DataView，由于ObjectDataSource将来需要作为绑定控件的数据来源，所以它的返回类型必须如下的返回类型之一：</p>
+<h3 id="Ienumerable、DataTable、DataView、DataSet或者Object。"><a href="#Ienumerable、DataTable、DataView、DataSet或者Object。" class="headerlink" title="Ienumerable、DataTable、DataView、DataSet或者Object。"></a>Ienumerable、DataTable、DataView、DataSet或者Object。</h3><p>除此以外，ObjectDataSource还有一个重要的属性TypeName，ObjectDataSource控件使用反射技术来从来从业务逻辑程序层的类对象调用相应的方法，所以TypeName的属性值就是用来标识该控件工作时使用的类名称，下面通过Simple_ObjectDataSource.aspx来说明ObjectDataSource的基本使用。</p>
+<h2 id="建立数据业务逻辑层"><a href="#建立数据业务逻辑层" class="headerlink" title="建立数据业务逻辑层"></a>建立数据业务逻辑层</h2><p>为了方装业务逻辑我建立了ProductDAL.cs文件。在该文件里定义了GetProduct方法获取产品列表，UpdateProduct方法更新产品记录，DeleteProduct删除产品记录，为了便于共享，将该文件放置在App_Code目录下，完整代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">using System;</div><div class="line">using System.Collections.Generic;</div><div class="line">using System.ComponentModel;</div><div class="line">using System.Configuration;</div><div class="line">using System.Data;</div><div class="line">using System.Data.Common;</div><div class="line">using System.Data.SqlClient;</div><div class="line">using System.Web;</div><div class="line"></div><div class="line">/// &lt;summary&gt;</div><div class="line">/// Summary description for ProductBLL</div><div class="line">/// &lt;/summary&gt;</div><div class="line">public class ProductDAL</div><div class="line">&#123;</div><div class="line">    protected int _count = -1;</div><div class="line">    public ProductDAL()</div><div class="line">    &#123;   &#125;</div><div class="line">     string   _connectionString = ConfigurationManager.ConnectionStrings[”ConnectionString”].ConnectionString;</div><div class="line">    public SqlDataReader GetProduct()</div><div class="line">    &#123;</div><div class="line">        SqlConnection con = new SqlConnection(_connectionString);</div><div class="line">        string selectString = “SELECT * FROM Products”;</div><div class="line">        SqlCommand cmd = new SqlCommand(selectString, con);</div><div class="line">        con.Open();</div><div class="line">        SqlDataReader dtr = cmd.ExecuteReader(CommandBehavior.CloseConnection);</div><div class="line">        return dtr;</div><div class="line">         &#125;</div><div class="line">    public void UpdateProduct(int productID, string productName, int categoryID, decimal price, Int16 inStore,string description)</div><div class="line">    &#123;</div><div class="line">        SqlConnection con = new SqlConnection(_connectionString);</div><div class="line">        string updateString = “UPDATE Products set ProductName=@ProductName,CategoryID=@CategoryID,Price=@Price,InStore=@InStore,Description=@Description where ProductID=@ProductID”;</div><div class="line">        SqlCommand cmd = new SqlCommand(updateString, con);</div><div class="line">        cmd.Parameters.AddWithValue(“@ProductID”,productID);</div><div class="line">        cmd.Parameters.AddWithValue(“@ProductName”,productName);</div><div class="line">        cmd.Parameters.AddWithValue(“@CategoryID”,categoryID);</div><div class="line">        cmd.Parameters.AddWithValue(“@Price”,price);</div><div class="line">        cmd.Parameters.AddWithValue(“@InStore”,inStore);</div><div class="line">        cmd.Parameters.AddWithValue(“@Description”,description);</div><div class="line">        con.Open();</div><div class="line">        cmd.ExecuteNonQuery();</div><div class="line">        con.Close();</div><div class="line">    &#125;</div><div class="line">    public   void DeleteProduct(int ProductId)</div><div class="line">        &#123;</div><div class="line">            SqlConnection con = new SqlConnection(_connectionString);</div><div class="line">            string deleteString = “DELETE FROM  Products  WHERE ProductID=@ProductID”</div><div class="line">            SqlCommand cmd = new SqlCommand(deleteString, con);</div><div class="line">            cmd.Parameters.AddWithValue(“@ProductID”, ProductId);</div><div class="line">            con.Open();</div><div class="line">            cmd.ExecuteNonQuery();</div><div class="line">            con.Close();</div><div class="line">        &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="建立表示层"><a href="#建立表示层" class="headerlink" title="建立表示层"></a>建立表示层</h2><p>建立一个页面Simple_ObjectDataSource.aspx然后将ObjectDataSource控件托方到Web窗体创，使用默认的ID。Visual Stduio为我们建立业务逻辑提供了强大的支持。选中ObjectDataSource1，在其智能配置里选择配置数据源。<br>……<br>最后生成代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;asp:ObjectDataSource ID=”ObjectDataSource1” runat=”server” DeleteMethod=”DeleteProduct”</div><div class="line">            SelectMethod=”GetProduct” TypeName=”ProductDAL” UpdateMethod=”UpdateProduct”&gt;</div><div class="line">            &lt;DeleteParameters&gt;</div><div class="line">                &lt;asp:Parameter Name=”ProductId” Type=”Int32” /&gt;</div><div class="line">            &lt;/DeleteParameters&gt;</div><div class="line">            &lt;UpdateParameters&gt;</div><div class="line">                &lt;asp:Parameter Name=”productID” Type=”Int32” /&gt;</div><div class="line">                &lt;asp:Parameter Name=”productName” Type=”String” /&gt;</div><div class="line">                &lt;asp:Parameter Name=”categoryID” Type=”Int32” /&gt;</div><div class="line">                &lt;asp:Parameter Name=”price” Type=”Decimal” /&gt;</div><div class="line">                &lt;asp:Parameter Name=”inStore” Type=”Int16” /&gt;</div><div class="line">                &lt;asp:Parameter Name=”description” Type=”String” /&gt;</div><div class="line">            &lt;/UpdateParameters&gt;</div><div class="line">        &lt;/asp:ObjectDataSource&gt;</div></pre></td></tr></table></figure></p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">×</a>
+            <div class="shang_tit">
+              <p>谢谢你请我吃辣条</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2015/07/11/asp.net-knowledge-point-summary-4/">Asp.net知识点总结(四)</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 阿星Plus 的个人博客">阿星Plus</a></p>
+        <p><span>发布时间:</span>2015年07月11日 - 22时32分</p>
+        <p><span>最后更新:</span>2017年05月26日 - 11时32分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2015/07/11/asp.net-knowledge-point-summary-4/" title="Asp.net知识点总结(四)">http://xj8c.cc/2015/07/11/asp.net-knowledge-point-summary-4/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://xj8c.cc/2015/07/11/asp.net-knowledge-point-summary-4/　　作者: 阿星Plus" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2015/07/13/ten-programming-languages/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          你必须知道的十个编程语言
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/07/07/asp.net-knowledge-point-summary-3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Asp.net知识点总结(三)</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ASP-Net服务器端控件-部分"><span class="toc-number">1.</span> <span class="toc-text">ASP.Net服务器端控件(部分)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Repeater"><span class="toc-number"></span> <span class="toc-text">Repeater</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Repeater控件使用数据源返回的一组记录呈现只读列表。与FormView控件类似，Repeater控件不指定内置布局。您可以使用模板创建Repeater控件的布局。"><span class="toc-number">0.1.</span> <span class="toc-text">1.  Repeater控件使用数据源返回的一组记录呈现只读列表。与FormView控件类似，Repeater控件不指定内置布局。您可以使用模板创建Repeater控件的布局。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Repeater相当于一个foreach循环"><span class="toc-number">0.2.</span> <span class="toc-text">2.  Repeater相当于一个foreach循环.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-特征：自由定制；分页功能需要手写。"><span class="toc-number">0.3.</span> <span class="toc-text">3.  特征：自由定制；分页功能需要手写。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Repeater"><span class="toc-number">0.4.</span> <span class="toc-text">4.Repeater</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-数据的绑定"><span class="toc-number">0.5.</span> <span class="toc-text">5.  数据的绑定</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ListView"><span class="toc-number">1.</span> <span class="toc-text">ListView</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-这个控件既可实现像GridView一样的效果，也可实现像DataList一样的效果（怪不得名字叫ListView），这东西应用起来也要复杂些。要点是：LayoutTemplate下面必须有一个服务器端控件，即runat-”server”，其ID必须为itemPlaceholder（除非更改ListView的ItemPlaceholderID），注意大小写，ItemTemplate模板中的内容输出时就是插入到itemPlaceholder的。"><span class="toc-number">1.1.</span> <span class="toc-text">1.  这个控件既可实现像GridView一样的效果，也可实现像DataList一样的效果（怪不得名字叫ListView），这东西应用起来也要复杂些。要点是：LayoutTemplate下面必须有一个服务器端控件，即runat=”server”，其ID必须为itemPlaceholder（除非更改ListView的ItemPlaceholderID），注意大小写，ItemTemplate模板中的内容输出时就是插入到itemPlaceholder的。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-但ListView分页却不是那么复杂，在LayoutTemplate模板中拖入一个DataPager控件，指定好DataPager的Fields就可以了。但DataPager并不会向DataSource发送startRowIndex和maximumRows这两个参数，也就是说这种分页是取出所有的记录，只是显示部分，并不是一种高效的分页。。"><span class="toc-number">1.2.</span> <span class="toc-text">2.  但ListView分页却不是那么复杂，在LayoutTemplate模板中拖入一个DataPager控件，指定好DataPager的Fields就可以了。但DataPager并不会向DataSource发送startRowIndex和maximumRows这两个参数，也就是说这种分页是取出所有的记录，只是显示部分，并不是一种高效的分页。。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-特征：自由定制，功能强大；应用复杂；分页功能需要手写。"><span class="toc-number">1.3.</span> <span class="toc-text">3.  特征：自由定制，功能强大；应用复杂；分页功能需要手写。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-模版包括"><span class="toc-number">1.4.</span> <span class="toc-text">4.  模版包括:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CacheKeyDependency-”string”"><span class="toc-number"></span> <span class="toc-text">CacheKeyDependency=”string”</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#lt-asp-ControlParameter-ControlID-”string”"><span class="toc-number"></span> <span class="toc-text"><asp:ControlParameter        ControlID=”string”</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#绑定到数据访问层"><span class="toc-number">1.</span> <span class="toc-text">绑定到数据访问层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据访问层组件封装ADO-NET代码以通过SQL命令查询和修改数据库。它通常提炼创建ADO-NET连接和命令的详细信息，并通过可使用适当的参数调用的方法公开这些详细信息。典型的数据访问层组件可按如下方式公开："><span class="toc-number">1.1.</span> <span class="toc-text">数据访问层组件封装ADO.NET代码以通过SQL命令查询和修改数据库。它通常提炼创建ADO.NET连接和命令的详细信息，并通过可使用适当的参数调用的方法公开这些详细信息。典型的数据访问层组件可按如下方式公开：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#InsertMethod-”InsertRecord”-gt"><span class="toc-number"></span> <span class="toc-text">InsertMethod=”InsertRecord” /></span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#同样依次类推，UpdateMethod、DeleteMethod、InsertMethod分别对应的是UpdateRecord"><span class="toc-number">0.1.</span> <span class="toc-text">同样依次类推，UpdateMethod、DeleteMethod、InsertMethod分别对应的是UpdateRecord</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DeleteRecord、InsertRecord方法。"><span class="toc-number"></span> <span class="toc-text">DeleteRecord、InsertRecord方法。</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Ienumerable、DataTable、DataView、DataSet或者Object。"><span class="toc-number">0.1.</span> <span class="toc-text">Ienumerable、DataTable、DataView、DataSet或者Object。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#建立数据业务逻辑层"><span class="toc-number">1.</span> <span class="toc-text">建立数据业务逻辑层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#建立表示层"><span class="toc-number">2.</span> <span class="toc-text">建立表示层</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="Asp.net知识点总结(四)"></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cyt1UJT89'; 
+var conf = 'prod_a66df9b8bf4687f6662a946344b221b7'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2015/07/13/ten-programming-languages/" title="上一篇: 你必须知道的十个编程语言">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2015/07/07/asp.net-knowledge-point-summary-3/" title="下一篇: Asp.net知识点总结(三)">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/08/31/csharp7/">C＃7.0中有哪些新特性？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/18/internship-experience/">武汉路博特工程科技有限公司实习“满月”工作感受</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/16/asp.net-knowledge-point-interview/">ASP.NET知识点面试篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/08/what-is-a-three-tier-architecture/">三层架构到底是个什么玩意？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/07/five-main-objects-in-dotnet/">ADO.NET中的五个主要对象？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/10/the-students-with-poor-grades-reversed/">一个学渣的逆袭</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/21/computer-computing-infrastructure/">计算机运算基础荟萃</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/08/CEAC-office2010/">CEAC-office2010实操题练习评测系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/28/test-case-design-advanced(bottom)/">测试用例设计进阶(下)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/28/test-case-design-in-order(upper)/">测试用例设计进阶（上）</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/25/boundary-value/">边界值分析法相关概念 — 边界点相关概念</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/24/basic-knowledge-of-software-testing/">软件测试基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/24/overview-of-software-testing/">软件测试概述</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/20/xml-note-1/">XML学习笔记(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/12/when-the-deepest-counsel-comes-to-the-most-clear-ideal/">当最深沉的筹谋换来最清明的理想</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/01/10-best-javascript-development-practices/">10个最佳 javascript 开发实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/07/the-30-most-difficult-questions-to-answer-in-history/">史上最难回答的30个问题，没有一人都能答对！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/05/windows10-iso.md/">Win10正式版微软官方原版ISO系统镜像下载大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/02/the-work-of-a-programmer/">一本关于程序员的修真小说</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/02/Win10-ten-points/">Win10的十个亮点</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/01/Zhihu-god-reply/">一大波，知乎神回复在接近了！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/27/vs-shortcuts/">必须知道的 Visual Studio 快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/16/asp.net-knowledge-point-summary-5/">Asp.net知识点总结(五)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/13/ten-programming-languages/">你必须知道的十个编程语言</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/11/asp.net-knowledge-point-summary-4/">Asp.net知识点总结(四)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/07/asp.net-knowledge-point-summary-3/">Asp.net知识点总结(三)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/06/bigdata-internet-thinking-O2O-crowdfunding/">什么是大数据，什么是红海、蓝海、互联网思维？什么是O2O？什么是众筹？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/04/asp.net-knowledge-point-summary-2/">Asp.net知识点总结(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/03/asp.net-knowledge-point-summary-1/">Asp.net知识点总结(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/25/shopping-online/">Shopping Online</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/04/SqlServer2008/">sql数据库|SqlServer2008 R2_x86&x64</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/17/why-is-the-chinese-mobile-number-11/">揭秘：中国手机号码为什么是11位数？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/14/33-poems-of-the-most-artistic-conception-in-China/">中国最有意境的33句诗文，欣赏下吧！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/05/win7-cmd/">Win7运行命令大全|开始-运行-命令总汇</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/31/please-don't-be-a-fickle-IT-man/">请不要做浮躁的IT人</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/29/the-name-of-the-big-internet-companies/">各大互联网公司命名的由来，值得你了解。</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/25/30-the-hacker-movie/">30部黑客电影，你看过哪几部？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/22/top 10 IT jobs in 2015/">2015年 十大热门 IT 工作</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/10/a-years-plan-starts-with-spring/">A year's plan starts with spring ！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/28/cherish-every-day/">珍惜每一天</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/28/adobe-photoshop/">Adobe Photoshop 绿色安装版</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/20/national-computer-level-office2010/">全国计算机一级Office2010+win7版（未来教育）考试练习软件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/15/microsoft-office-2010/">Microsoft office 2010</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy;
+                2017
+                    阿星Plus
+            </div>
+            <div class="footer-right">
+                Blog By <a href="http://hexo.io/" target="_blank">Hexo</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站访问量: 
+                            <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                    </span>
+                    
+                        
+                            <span>, </span>
+                            
+                                
+                                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                                    </span>
+                                    </span>
+                                    
+            </div>
+            
+    </div>
+</footer>
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

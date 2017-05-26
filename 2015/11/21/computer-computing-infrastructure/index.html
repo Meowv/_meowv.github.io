@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>计算机运算基础荟萃 | 当然我在瞎扯</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="二进制数的运算方法电子计算机具有强大的运算能力，它可以进行两种运算：算术运算和逻辑运算。 1．二进制数的算术运算二进制数的算术运算包括：加、减、乘、除四则运算，下面分别予以介绍。 （1）二进制数的加法根据“逢二进一”规则，二进制数加法的法则为：12340＋0＝00＋1＝1＋0＝11＋1＝0　（进位为1） 1＋1＋1＝1 （进位为1） 例如：1110和1011相加过程如下：…  （2）二进制数的减法">
+<meta name="keywords" content="计算机基础,进制转换">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机运算基础荟萃">
+<meta property="og:url" content="http://xj8c.cc/2015/11/21/computer-computing-infrastructure/index.html">
+<meta property="og:site_name" content="当然我在瞎扯">
+<meta property="og:description" content="二进制数的运算方法电子计算机具有强大的运算能力，它可以进行两种运算：算术运算和逻辑运算。 1．二进制数的算术运算二进制数的算术运算包括：加、减、乘、除四则运算，下面分别予以介绍。 （1）二进制数的加法根据“逢二进一”规则，二进制数加法的法则为：12340＋0＝00＋1＝1＋0＝11＋1＝0　（进位为1） 1＋1＋1＝1 （进位为1） 例如：1110和1011相加过程如下：…  （2）二进制数的减法">
+<meta property="og:updated_time" content="2017-05-26T04:51:09.369Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机运算基础荟萃">
+<meta name="twitter:description" content="二进制数的运算方法电子计算机具有强大的运算能力，它可以进行两种运算：算术运算和逻辑运算。 1．二进制数的算术运算二进制数的算术运算包括：加、减、乘、除四则运算，下面分别予以介绍。 （1）二进制数的加法根据“逢二进一”规则，二进制数加法的法则为：12340＋0＝00＋1＝1＋0＝11＋1＝0　（进位为1） 1＋1＋1＝1 （进位为1） 例如：1110和1011相加过程如下：…  （2）二进制数的减法">
+  
+    <link rel="alternative" href="/atom.xml" title="当然我在瞎扯" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+                <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+        </a>
+
+        <hgroup>
+            <h1 class="header-author">
+                <a href="/" title="Hello World">
+                    阿星Plus
+                </a>
+            </h1>
+        </hgroup>
+
+        
+            <p class="header-subtitle">
+                生命不息，奋斗不止
+            </p>
+            
+                
+                        
+                            <div id="switch-btn" class="switch-btn">
+                                <div class="icon">
+                                    <div class="icon-ctn">
+                                        <div class="icon-wrap icon-house" data-idx="0">
+                                            <div class="birdhouse"></div>
+                                            <div class="birdhouse_holes"></div>
+                                        </div>
+                                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                                            <div class="ribbon"></div>
+                                        </div>
+                                        
+                                            <div class="icon-wrap icon-link hide" data-idx="2">
+                                                <div class="loopback_l"></div>
+                                                <div class="loopback_r"></div>
+                                            </div>
+                                            
+                                                
+                                    </div>
+
+                                </div>
+                                <div class="tips-box hide">
+                                    <div class="tips-arrow"></div>
+                                    <ul class="tips-inner">
+                                        <li>菜单</li>
+                                        <li>标签</li>
+                                        
+                                            <li>友情链接</li>
+                                            
+                                                
+                                    </ul>
+                                </div>
+                            </div>
+                            
+
+                                <div id="switch-area" class="switch-area">
+                                    <div class="switch-wrap">
+                                        <section class="switch-part switch-part1">
+                                            <nav class="header-menu">
+                                                <ul>
+                                                    
+                                                        <li>
+                                                            <a href="/">
+                                                                Home
+                                                            </a>
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            <a href="/archives">
+                                                                Archives
+                                                            </a>
+                                                        </li>
+                                                        
+                                                </ul>
+                                            </nav>
+                                            <nav class="header-nav">
+                                                <ul class="social">
+                                                    
+                                                        <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=w-Lx8IOupqy0te2grK4" title="mail">
+                                                            mail
+                                                        </a>
+                                                        
+                                                        <a class="fl weibo" target="_blank" href="http://weibo.com/Tencentgou" title="weibo">
+                                                            weibo
+                                                        </a>
+                                                        
+                                                        <a class="fl github" target="_blank" href="https://github.com/Meowv" title="github">
+                                                            github
+                                                        </a>
+                                                        
+                                                        <a class="fl twitter" target="_blank" href="https://twitter.com/hackxing" title="twitter">
+                                                            twitter
+                                                        </a>
+                                                        
+                                                        <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">
+                                                            zhihu
+                                                        </a>
+                                                        
+                                                        <a class="fl rss" target="_blank" href="/atom.xml" title="rss">
+                                                            rss
+                                                        </a>
+                                                        
+                                                </ul>
+                                            </nav>
+                                        </section>
+
+                                        
+                                            <section class="switch-part switch-part2">
+                                                <div class="widget tagcloud" id="js-tagcloud">
+                                                    <a href="/tags/ASP-NET/" style="font-size: 20px;">ASP.NET</a> <a href="/tags/C/" style="font-size: 12px;">C#</a> <a href="/tags/CEAC/" style="font-size: 10px;">CEAC</a> <a href="/tags/IT/" style="font-size: 12px;">IT</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Photoshop/" style="font-size: 10px;">Photoshop</a> <a href="/tags/SqlServer/" style="font-size: 10px;">SqlServer</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/office2010/" style="font-size: 14px;">office2010</a> <a href="/tags/win10/" style="font-size: 12px;">win10</a> <a href="/tags/win7/" style="font-size: 10px;">win7</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/三层架构/" style="font-size: 10px;">三层架构</a> <a href="/tags/互联网/" style="font-size: 14px;">互联网</a> <a href="/tags/原版系统/" style="font-size: 10px;">原版系统</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/实习感受/" style="font-size: 10px;">实习感受</a> <a href="/tags/小说/" style="font-size: 10px;">小说</a> <a href="/tags/微软/" style="font-size: 10px;">微软</a> <a href="/tags/手机/" style="font-size: 10px;">手机</a> <a href="/tags/技术教程/" style="font-size: 18px;">技术教程</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/春天/" style="font-size: 10px;">春天</a> <a href="/tags/琅琊榜/" style="font-size: 10px;">琅琊榜</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/知乎/" style="font-size: 10px;">知乎</a> <a href="/tags/程序员/" style="font-size: 10px;">程序员</a> <a href="/tags/绿色软件/" style="font-size: 16px;">绿色软件</a> <a href="/tags/编程/" style="font-size: 10px;">编程</a> <a href="/tags/计算机一级/" style="font-size: 10px;">计算机一级</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/诗文/" style="font-size: 10px;">诗文</a> <a href="/tags/软件测试/" style="font-size: 18px;">软件测试</a> <a href="/tags/进制转换/" style="font-size: 10px;">进制转换</a> <a href="/tags/逆袭/" style="font-size: 10px;">逆袭</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/黑客/" style="font-size: 10px;">黑客</a>
+                                                </div>
+                                            </section>
+                                            
+
+                                                
+                                                    <section class="switch-part switch-part3">
+                                                        <div id="js-friends">
+                                                            
+                                                                <a target="_blank" class="main-nav-link switch-friends-link" href="http://meowv.com/">
+                                                                    喵呜网
+                                                                </a>
+                                                                
+                                                        </div>
+                                                    </section>
+                                                    
+
+                                                        
+                                    </div>
+                                </div>
+    </header>
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">阿星Plus</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">阿星Plus</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">生命不息，奋斗不止</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">Home</a></li>
+                
+                    <li><a href="/archives">Archives</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=w-Lx8IOupqy0te2grK4" title="mail">mail</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/Tencentgou" title="weibo">weibo</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/Meowv" title="github">github</a>
+                    
+                        <a class="twitter" target="_blank" href="https://twitter.com/hackxing" title="twitter">twitter</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">zhihu</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-computer-computing-infrastructure" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/21/computer-computing-infrastructure/" class="article-date">
+      <time datetime="2015-11-20T17:24:48.000Z" itemprop="datePublished">2015-11-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      计算机运算基础荟萃
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机基础/">计算机基础</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/进制转换/">进制转换</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="二进制数的运算方法"><a href="#二进制数的运算方法" class="headerlink" title="二进制数的运算方法"></a>二进制数的运算方法</h2><p>电子计算机具有强大的运算能力，它可以进行两种运算：算术运算和逻辑运算。</p>
+<h1 id="1．二进制数的算术运算"><a href="#1．二进制数的算术运算" class="headerlink" title="1．二进制数的算术运算"></a>1．二进制数的算术运算</h1><p>二进制数的算术运算包括：加、减、乘、除四则运算，下面分别予以介绍。</p>
+<h3 id="（1）二进制数的加法"><a href="#（1）二进制数的加法" class="headerlink" title="（1）二进制数的加法"></a>（1）二进制数的加法</h3><p>根据“逢二进一”规则，二进制数加法的法则为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">0＋0＝0</div><div class="line">0＋1＝1＋0＝1</div><div class="line">1＋1＝0　（进位为1） </div><div class="line">1＋1＋1＝1 （进位为1）</div></pre></td></tr></table></figure></p>
+<p>例如：1110和1011相加过程如下：<br>…</p>
+<hr>
+<h3 id="（2）二进制数的减法"><a href="#（2）二进制数的减法" class="headerlink" title="（2）二进制数的减法"></a>（2）二进制数的减法</h3><p>根据“借一有二”的规则，二进制数减法的法则为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">0－0＝0</div><div class="line">1－1＝0</div><div class="line">1－0＝1</div><div class="line">0－1＝1 （借位为1）</div></pre></td></tr></table></figure></p>
+<p>例如：1101减去1011的过程如下：<br>…</p>
+<hr>
+<h3 id="（3）二进制数的乘法"><a href="#（3）二进制数的乘法" class="headerlink" title="（3）二进制数的乘法"></a>（3）二进制数的乘法</h3><p>二进制数乘法过程可仿照十进制数乘法进行。但由于二进制数只有0或1两种可能的乘数位，导致二进制乘法更为简单。二进制数乘法的法则为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">0×0＝0</div><div class="line">0×1＝1×0＝0</div><div class="line">1×1＝1</div></pre></td></tr></table></figure></p>
+<p>例如：1001和1010相乘的过程如下：<br>…</p>
+<p>由低位到高位，用乘数的每一位去乘被乘数，若乘数的某一位为1，则该次部分积为被乘数；若乘数的某一位为0，则该次部分积为0。某次部分积的最低位必须和本位乘数对齐，所有部分积相加的结果则为相乘得到的乘积。</p>
+<hr>
+<h3 id="（4）二进制数的除法"><a href="#（4）二进制数的除法" class="headerlink" title="（4）二进制数的除法"></a>（4）二进制数的除法</h3><p>二进制数除法与十进制数除法很类似。可先从被除数的最高位开始，将被除数（或中间余数）与除数相比较，若被除数（或中间余数）大于除数，则用被除数（或中间余数）减去除数，商为1，并得相减之后的中间余数，否则商为0。再将被除数的下一位移下补充到中间余数的末位，重复以上过程，就可得到所要求的各位商数和最终的余数。</p>
+<p>例如：100110÷110的过程如下：<br>…</p>
+<p>所以，100110÷110＝110余10。</p>
+<hr>
+<h1 id="2．二进制数的逻辑运算"><a href="#2．二进制数的逻辑运算" class="headerlink" title="2．二进制数的逻辑运算"></a>2．二进制数的逻辑运算</h1><p>二进制数的逻辑运算包括逻辑加法（“或”运算）、逻辑乘法（“与”运算）、逻辑否定（“非”运算）和逻辑“异或”运算。</p>
+<h3 id="（1）逻辑“或”运算"><a href="#（1）逻辑“或”运算" class="headerlink" title="（1）逻辑“或”运算"></a>（1）逻辑“或”运算</h3><p>又称为逻辑加，可用符号“＋”或“∨”来表示。逻辑“或”运算的规则如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">0＋0＝0或0∨0＝0</div><div class="line">0＋1＝1或0∨1＝1</div><div class="line">1＋0＝1或1∨0＝1</div><div class="line">1＋1＝1或1∨1＝1</div></pre></td></tr></table></figure></p>
+<p>可见，两个相“或”的逻辑变量中，只要有一个为1，“或”运算的结果就为1。仅当两个变量都为0时，或运算的结果才为0。计算时，要特别注意和算术运算的加法加以区别。</p>
+<hr>
+<h3 id="（2）逻辑“与”运算"><a href="#（2）逻辑“与”运算" class="headerlink" title="（2）逻辑“与”运算"></a>（2）逻辑“与”运算</h3><p>又称为逻辑乘，常用符号“×”或“· ”或“∧”表示。“与”运算遵循如下运算规则：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">0×1＝0或0·1＝0或0∧1＝0</div><div class="line">1×0＝0或1·0＝0或1∧0＝0</div><div class="line">1×1＝1或1·1＝1或1∧1＝1</div></pre></td></tr></table></figure></p>
+<p>可见，两个相“与”的逻辑变量中，只要有一个为0，“与”运算的结果就为0。仅当两个变量都为1时，“与”运算的结果才为1。</p>
+<hr>
+<h3 id="（3）逻辑“非”运算"><a href="#（3）逻辑“非”运算" class="headerlink" title="（3）逻辑“非”运算"></a>（3）逻辑“非”运算</h3><p>又称为逻辑否定，实际上就是将原逻辑变量的状态求反，其运算规则如下：<br>…</p>
+<p>可见，在变量的上方加一横线表示“非”。逻辑变量为0时，“非”运算的结果为1。逻辑变量为1时，“非”运算的结果为0。</p>
+<hr>
+<h3 id="（4）逻辑“异或”运算"><a href="#（4）逻辑“异或”运算" class="headerlink" title="（4）逻辑“异或”运算"></a>（4）逻辑“异或”运算</h3><p>“异或”运算，常用符号“”或“”来表示，其运算规则为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">00＝0 或 00＝0</div><div class="line">01＝1 或 01＝1</div><div class="line">10＝1 或 10＝1</div><div class="line">11＝0 或 11＝0</div></pre></td></tr></table></figure></p>
+<p>可见：两个相“异或”的逻辑运算变量取值相同时，“异或”的结果为0。取值相异时，“异或”的结果为1<br>以上仅就逻辑变量只有一位的情况得到了逻辑“与”、“或”、“非”、“异或”运算的运算规则。当逻辑变量为多位时，可在两个逻辑变量对应位之间按上述规则进行运算。特别注意，所有的逻辑运算都是按位进行的，位与位之间没有任何联系，即不存在算术运算过程中的进位或借位关系。下面举例说明。</p>
+<h3 id="【例1-1】-如两变量的取值-X＝00FFH，Y＝5555H，求Z1＝X∧Y；Z2＝X∨Y；Z3＝；Z4＝XY的值。"><a href="#【例1-1】-如两变量的取值-X＝00FFH，Y＝5555H，求Z1＝X∧Y；Z2＝X∨Y；Z3＝；Z4＝XY的值。" class="headerlink" title="【例1.1】 如两变量的取值 X＝00FFH，Y＝5555H，求Z1＝X∧Y；Z2＝X∨Y；Z3＝；Z4＝XY的值。"></a>【例1.1】 如两变量的取值 X＝00FFH，Y＝5555H，求Z1＝X∧Y；Z2＝X∨Y；Z3＝；Z4＝XY的值。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">解：</div><div class="line">&amp;nbsp;&amp;nbsp;X＝0000000011111111</div><div class="line">&amp;nbsp;&amp;nbsp;Y＝0101010101010101</div><div class="line">则：</div><div class="line">&amp;nbsp;&amp;nbsp;Z1＝0000000001010101＝0055H</div><div class="line">&amp;nbsp;&amp;nbsp;Z2＝0101010111111111＝55FFH</div><div class="line">&amp;nbsp;&amp;nbsp;Z3＝1111111100000000＝FF00H</div><div class="line">&amp;nbsp;&amp;nbsp;Z4＝0101010110101010＝55AAH</div></pre></td></tr></table></figure>
+<p>算术运算及逻辑运算规则见下表:<br>…</p>
+<h2 id="数在计算机中的表示"><a href="#数在计算机中的表示" class="headerlink" title="数在计算机中的表示"></a>数在计算机中的表示</h2><h3 id="在计算机中要处理的数有无符号数和有符号数。这些数在计算机中是如何表示的呢？"><a href="#在计算机中要处理的数有无符号数和有符号数。这些数在计算机中是如何表示的呢？" class="headerlink" title="在计算机中要处理的数有无符号数和有符号数。这些数在计算机中是如何表示的呢？"></a>在计算机中要处理的数有无符号数和有符号数。这些数在计算机中是如何表示的呢？</h3><h3 id="1．无符号数"><a href="#1．无符号数" class="headerlink" title="1．无符号数"></a>1．无符号数</h3><p>所谓无符号数，通常表示一个数的绝对值，即数的各位都用来表示数值的大小。一个字节（8位）二进制数只能表示0～255范围内的数。因此，要表示大于255的数，必须采用多个字节来表示，它的长度可以为任意倍字节长，其数据格式如图1.1所示。<br>…</p>
+<h3 id="2．有符号数"><a href="#2．有符号数" class="headerlink" title="2．有符号数"></a>2．有符号数</h3><p>所谓有符号数，即用来表示一个任意位长的正数或负数。我们知道，在普通数字中，区分正负数是在数的绝对值前面加上符号来表示，即“＋”表示正数，“－”表示负数。在计算机中数的符号也数码化了，即用一位二进制数位来表示符号。一般是，用一个数的最高位来表示符号位，用“0”表示正号，用“1”表示负号，而其余位为数值位。其数据格式如图1.2所示。<br>…</p>
+<h3 id="3．有符号数的原码、反码、补码及补码运算"><a href="#3．有符号数的原码、反码、补码及补码运算" class="headerlink" title="3．有符号数的原码、反码、补码及补码运算"></a>3．有符号数的原码、反码、补码及补码运算</h3><p>带正、负号的二进制数称为数的真值表示。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">例如：X＝＋1010110</div><div class="line">　　　Y＝－0110101</div></pre></td></tr></table></figure></p>
+<p>为了运算方便，在计算机里的有符号数，有三种表示方法，即原码、反码和补码，称为机器数。</p>
+<h4 id="（1）原码"><a href="#（1）原码" class="headerlink" title="（1）原码"></a>（1）原码</h4><p>正数的符号位用“0”表示，负数的符号位用“1”表示，其余数字位表示数值本身，这种表示法称为原码。<br>例如：上例中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[X]原＝01010110</div><div class="line">[Y]原＝10110101</div></pre></td></tr></table></figure></p>
+<p>对于0，可以认为它是＋0，也可以认为它是－0。因此在原码中，0有下列两种表示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[＋0]原＝00000000</div><div class="line">[－0]原＝10000000</div></pre></td></tr></table></figure></p>
+<p>原码表示数的方法很简单，只需要在真值的基础上，将符号位用数码“0”和“1”表示即可。但采用原码表示的数在计算机中进行加减运算时很麻烦。如：遇到两个异号数相加，或两个同号数相减时，就要用减法运算。为了把减法运算转变成加法运算，则引入了反码和补码。</p>
+<hr>
+<h4 id="（2）反码"><a href="#（2）反码" class="headerlink" title="（2）反码"></a>（2）反码</h4><p>在原码表示的基础上很容易求得一个数的反码。正数的反码与原码相同，而负数的反码则是在原码的基础上，符号位不变（仍为1），其余数位按位求反，即0→1，1→0。<br>例如：上例中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[X]反＝01010110</div><div class="line">[Y]反＝11001010</div><div class="line">而：[＋0]反＝00000000</div><div class="line">　　[－0]反＝11111111</div></pre></td></tr></table></figure></p>
+<hr>
+<h4 id="（3）补码"><a href="#（3）补码" class="headerlink" title="（3）补码"></a>（3）补码</h4><p>一个数的补码也很容易求得。如果是正数，补码同原码也同反码，如果是负数，则在反码的基础上最末位加1。<br>例如：上例中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[X]补＝01010110＝[X]反＝[X]原 </div><div class="line">[Y]补＝11001011</div><div class="line">注：补码中0只有一种表示，无正负之分，即：</div><div class="line">[＋0]补＝[－0]补＝00000000</div><div class="line">不难证明，补码具有如下特性：</div><div class="line">[[X]补]补＝[X]原</div></pre></td></tr></table></figure></p>
+<p>用8位二进制数来表示无符号数及有符号数的原码、反码、补码时的对应关系见表1.5。</p>
+<p>由表1.5可知，用8位二进制数，表示无符号数为0～255；表示原码为－127～＋127；表示反码为－127～＋127；表示补码为－128～＋127。</p>
+<hr>
+<h4 id="（4）补码运算"><a href="#（4）补码运算" class="headerlink" title="（4）补码运算"></a>（4）补码运算</h4><p>两个用补码表示的带符号数进行加减运算时，特点是把符号位上表示正负的“1”和“0”也看成数，与数值部分一同进行运算，所得的结果也为补码形式，即结果的符号位为“0”，表示正数，结果的符号位为“1”表示负数。下面分加、减两种情况予以讨论。<br>两个带符号的数X和Y进行相加时，是将两个数分别转换为补码的形式，然后进行补码加运算，所得的结果为和的补码形式。即：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[X＋Y]补＝[X]补＋[Y]补</div></pre></td></tr></table></figure></p>
+<h3 id="【例1-2】-用补码进行下列运算-＋18-＋-－15-；-－18-＋-＋15-；-－18-＋-－11"><a href="#【例1-2】-用补码进行下列运算-＋18-＋-－15-；-－18-＋-＋15-；-－18-＋-－11" class="headerlink" title="【例1.2】 用补码进行下列运算 (＋18)＋(－15)；(－18)＋(＋15)；(－18)＋(－11)"></a>【例1.2】 用补码进行下列运算 (＋18)＋(－15)；(－18)＋(＋15)；(－18)＋(－11)</h3><p>解：…</p>
+<p>由例1.2可知：当带符号的数采用补码形式进行相加时，可把符号位也当作普通数字一样与数值部分一起进行加法运算，若符号位上产生进位时，则自动丢掉，所得的结果为两数之和的补码形式。如果想得到运算后原码的结果，可对运算结果再求一次补码即可。</p>
+<h3 id="两个带符号数相减，可通过下面的公式进行："><a href="#两个带符号数相减，可通过下面的公式进行：" class="headerlink" title="两个带符号数相减，可通过下面的公式进行："></a>两个带符号数相减，可通过下面的公式进行：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">X－Y＝X＋（－Y）</div><div class="line">则　[X－Y]补＝[X＋(－Y)]补＝[X]补＋[－Y]补</div></pre></td></tr></table></figure>
+<p>可见：求[X－Y]补，可以用[X]补和[－Y]补相加来实现。这里关键在于求[－Y]补。如果已知[Y]补，那么对[Y]补的每一位（包括符号位）都按位求反，然后再在末位加1，结果即为[－Y]补。（证明从略）。一般称[－Y]补为对[Y]补的“变补”，即[[Y]补]变补＝[－Y]补；已知[Y]补求[－Y]补的过程叫变补。<br>这样一来，求两个带符号的二进制数之差，可以用“减数（补码）变补与被减数（补码）相加”来实现。这是补码表示法的主要优点之一。 </p>
+<hr>
+<h3 id="【例1-3】-用补码进行下列运算：①-96－19；-②-－56-－-－17"><a href="#【例1-3】-用补码进行下列运算：①-96－19；-②-－56-－-－17" class="headerlink" title="【例1.3】 用补码进行下列运算：① 96－19； ② (－56)－(－17)"></a>【例1.3】 用补码进行下列运算：① 96－19； ② (－56)－(－17)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">解：① X＝96，Y＝19 则[X]补＝01100000　　　　　　　　　　　　　　　　　　　</div><div class="line">[Y]补＝00010011</div><div class="line">[－Y]补＝11101101故 [X－Y]补＝[X－Y]原＝01001101＝＋77</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">② X＝－56，Y＝－17， 则</div><div class="line">[X]补＝11001000</div><div class="line">[Y]补＝11101111</div><div class="line">[－Y]补＝00010001</div><div class="line">则 [X－Y]补＝11011001</div><div class="line">故 [X－Y]原 ＝[[X－Y]补]补＝10100111＝－39</div><div class="line">综上所述，对于补码的加、减运算可用下边一般公式表示：</div><div class="line">[X±Y]补＝[X]补＋[±Y]补 （都小于2n+1）</div></pre></td></tr></table></figure>
+<hr>
+<h4 id="（5）溢出判断"><a href="#（5）溢出判断" class="headerlink" title="（5）溢出判断"></a>（5）溢出判断</h4><p>当两个有符号数进行补码运算时，若运算结果的绝对值超出运算装置容量时，数值部分就会发生溢出，占据符号位的位置，导致错误的结果。这种现象通常称为补码溢出，简称溢出。这和正常运算时符号位的进位自动丢失在性质上是不同的。下面举例说明。例如：某运算装置共有五位，除最高位表示符号位外，还有四位用来表示数值。先看下面两组运算。</p>
+<p>① 计算13＋7＝？</p>
+<p>② 计算(－4)＋(－4)＝？</p>
+<h3 id="①-的运算结果显然是错误的，因为两个正数相加不可能得到负数的结果，产生错误的原因是由于两个数相加后的数值超出了加法装置所允许位数（数值部分4位，可以表示的最大数值为24＝16），因而从数值的最高位向符号位产生了进位，或说这种现象是由于“溢出”而造成的。"><a href="#①-的运算结果显然是错误的，因为两个正数相加不可能得到负数的结果，产生错误的原因是由于两个数相加后的数值超出了加法装置所允许位数（数值部分4位，可以表示的最大数值为24＝16），因而从数值的最高位向符号位产生了进位，或说这种现象是由于“溢出”而造成的。" class="headerlink" title="① 的运算结果显然是错误的，因为两个正数相加不可能得到负数的结果，产生错误的原因是由于两个数相加后的数值超出了加法装置所允许位数（数值部分4位，可以表示的最大数值为24＝16），因而从数值的最高位向符号位产生了进位，或说这种现象是由于“溢出”而造成的。"></a>① 的运算结果显然是错误的，因为两个正数相加不可能得到负数的结果，产生错误的原因是由于两个数相加后的数值超出了加法装置所允许位数（数值部分4位，可以表示的最大数值为24＝16），因而从数值的最高位向符号位产生了进位，或说这种现象是由于“溢出”而造成的。</h3><h3 id="②-的结果显然是正确的，由符号位产生的进位自动丢失。"><a href="#②-的结果显然是正确的，由符号位产生的进位自动丢失。" class="headerlink" title="② 的结果显然是正确的，由符号位产生的进位自动丢失。"></a>② 的结果显然是正确的，由符号位产生的进位自动丢失。</h3><p>为了保证运算结果的正确性，计算机必须能够判别出是正常进位还是发生了溢出错误。<br>微机中常用的溢出判别称为双高位判别法，并常用“异或”电路来实现溢出判别。其表达式为..</p>
+<h2 id="数的编码方法"><a href="#数的编码方法" class="headerlink" title="数的编码方法"></a>数的编码方法</h2><p>在计算机里，所有用到的数字、字母、符号、指令等都必须用特定的二进制码来表示，这就是二进制编码。</p>
+<h3 id="1．二进制编码的十进制数"><a href="#1．二进制编码的十进制数" class="headerlink" title="1．二进制编码的十进制数"></a>1．二进制编码的十进制数</h3><h4 id="计算机只能识别二进制数，但是，人们却熟悉十进制数。所以，在计算机输入和输出数据时，往往采用十进制数表示。不过，这样的十进制数是用二进制编码表示的，称为二进制编码的十进制数——BCD（binary-code-decimal）码。"><a href="#计算机只能识别二进制数，但是，人们却熟悉十进制数。所以，在计算机输入和输出数据时，往往采用十进制数表示。不过，这样的十进制数是用二进制编码表示的，称为二进制编码的十进制数——BCD（binary-code-decimal）码。" class="headerlink" title="计算机只能识别二进制数，但是，人们却熟悉十进制数。所以，在计算机输入和输出数据时，往往采用十进制数表示。不过，这样的十进制数是用二进制编码表示的，称为二进制编码的十进制数——BCD（binary code decimal）码。"></a>计算机只能识别二进制数，但是，人们却熟悉十进制数。所以，在计算机输入和输出数据时，往往采用十进制数表示。不过，这样的十进制数是用二进制编码表示的，称为二进制编码的十进制数——BCD（binary code decimal）码。</h4><h4 id="用二进制数为十进制数编码，每一位十进制数需要由四位二进制数来表示。四位二进制数共有16种编码形式，由于十进制数只有0～9十个数码，故有六个码是多余的，放弃不用。而这种多余性便产生了多种不同的BCD码。在计算机中较常用的是8421-BCD码（在以后的章节中简称BCD码）。这种BCD码用四位二进制数表示一位十进制数的数码0～9，而这四位的权从高位到低位依次为8，4，2，1。十进制数0～15与8421-BCD码的编码关系见表1-6。"><a href="#用二进制数为十进制数编码，每一位十进制数需要由四位二进制数来表示。四位二进制数共有16种编码形式，由于十进制数只有0～9十个数码，故有六个码是多余的，放弃不用。而这种多余性便产生了多种不同的BCD码。在计算机中较常用的是8421-BCD码（在以后的章节中简称BCD码）。这种BCD码用四位二进制数表示一位十进制数的数码0～9，而这四位的权从高位到低位依次为8，4，2，1。十进制数0～15与8421-BCD码的编码关系见表1-6。" class="headerlink" title="用二进制数为十进制数编码，每一位十进制数需要由四位二进制数来表示。四位二进制数共有16种编码形式，由于十进制数只有0～9十个数码，故有六个码是多余的，放弃不用。而这种多余性便产生了多种不同的BCD码。在计算机中较常用的是8421 BCD码（在以后的章节中简称BCD码）。这种BCD码用四位二进制数表示一位十进制数的数码0～9，而这四位的权从高位到低位依次为8，4，2，1。十进制数0～15与8421 BCD码的编码关系见表1.6。"></a>用二进制数为十进制数编码，每一位十进制数需要由四位二进制数来表示。四位二进制数共有16种编码形式，由于十进制数只有0～9十个数码，故有六个码是多余的，放弃不用。而这种多余性便产生了多种不同的BCD码。在计算机中较常用的是8421 BCD码（在以后的章节中简称BCD码）。这种BCD码用四位二进制数表示一位十进制数的数码0～9，而这四位的权从高位到低位依次为8，4，2，1。十进制数0～15与8421 BCD码的编码关系见表1.6。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">例如：(208)10＝(0010 0000 1000)8421 BCD</div><div class="line">　　　(1001 0001 0111 0101)8421 BCD＝(9175)10</div></pre></td></tr></table></figure>
+<h3 id="2．字母与符号的编码"><a href="#2．字母与符号的编码" class="headerlink" title="2．字母与符号的编码"></a>2．字母与符号的编码</h3><h4 id="在计算机里，字母和符号也必须用特定的二进制编码来表示。目前，在微机、通信设备和仪器仪表中广泛采用的是美国标准信息交换码ASCII（american-standard-code-for-information-interchange）码。它用七位二进制码表示一个字母或符号，共能表示27＝128个不同的字符。其中包括数字0～9、英文26个大、小写字母、运算符、标点及其他的一些控制符号。常用的七位ASCII码见表1-7。"><a href="#在计算机里，字母和符号也必须用特定的二进制编码来表示。目前，在微机、通信设备和仪器仪表中广泛采用的是美国标准信息交换码ASCII（american-standard-code-for-information-interchange）码。它用七位二进制码表示一个字母或符号，共能表示27＝128个不同的字符。其中包括数字0～9、英文26个大、小写字母、运算符、标点及其他的一些控制符号。常用的七位ASCII码见表1-7。" class="headerlink" title="在计算机里，字母和符号也必须用特定的二进制编码来表示。目前，在微机、通信设备和仪器仪表中广泛采用的是美国标准信息交换码ASCII（american standard code for information interchange）码。它用七位二进制码表示一个字母或符号，共能表示27＝128个不同的字符。其中包括数字0～9、英文26个大、小写字母、运算符、标点及其他的一些控制符号。常用的七位ASCII码见表1.7。"></a>在计算机里，字母和符号也必须用特定的二进制编码来表示。目前，在微机、通信设备和仪器仪表中广泛采用的是美国标准信息交换码ASCII（american standard code for information interchange）码。它用七位二进制码表示一个字母或符号，共能表示27＝128个不同的字符。其中包括数字0～9、英文26个大、小写字母、运算符、标点及其他的一些控制符号。常用的七位ASCII码见表1.7。</h4><p>例如：数字0的ASCII码为0110000B 或 30H<br>　　　数字9的ASCII码为0111001B 或 39H<br>　　　字母A的ASCII码为1000001B　或 41H</p>
+<h4 id="ASCII码多用于微型计算机的输入-输出设备（如电传打字机）及在数据传送过程中进行奇偶校验。"><a href="#ASCII码多用于微型计算机的输入-输出设备（如电传打字机）及在数据传送过程中进行奇偶校验。" class="headerlink" title="ASCII码多用于微型计算机的输入/输出设备（如电传打字机）及在数据传送过程中进行奇偶校验。"></a>ASCII码多用于微型计算机的输入/输出设备（如电传打字机）及在数据传送过程中进行奇偶校验。</h4>
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">×</a>
+            <div class="shang_tit">
+              <p>谢谢你请我吃辣条</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2015/11/21/computer-computing-infrastructure/">计算机运算基础荟萃</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 阿星Plus 的个人博客">阿星Plus</a></p>
+        <p><span>发布时间:</span>2015年11月21日 - 01时24分</p>
+        <p><span>最后更新:</span>2017年05月26日 - 12时51分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2015/11/21/computer-computing-infrastructure/" title="计算机运算基础荟萃">http://xj8c.cc/2015/11/21/computer-computing-infrastructure/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://xj8c.cc/2015/11/21/computer-computing-infrastructure/　　作者: 阿星Plus" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2015/12/10/the-students-with-poor-grades-reversed/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          一个学渣的逆袭
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/11/08/CEAC-office2010/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CEAC-office2010实操题练习评测系统</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#二进制数的运算方法"><span class="toc-number">1.</span> <span class="toc-text">二进制数的运算方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1．二进制数的算术运算"><span class="toc-number"></span> <span class="toc-text">1．二进制数的算术运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）二进制数的加法"><span class="toc-number">0.1.</span> <span class="toc-text">（1）二进制数的加法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）二进制数的减法"><span class="toc-number">0.2.</span> <span class="toc-text">（2）二进制数的减法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）二进制数的乘法"><span class="toc-number">0.3.</span> <span class="toc-text">（3）二进制数的乘法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（4）二进制数的除法"><span class="toc-number">0.4.</span> <span class="toc-text">（4）二进制数的除法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2．二进制数的逻辑运算"><span class="toc-number"></span> <span class="toc-text">2．二进制数的逻辑运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）逻辑“或”运算"><span class="toc-number">0.1.</span> <span class="toc-text">（1）逻辑“或”运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）逻辑“与”运算"><span class="toc-number">0.2.</span> <span class="toc-text">（2）逻辑“与”运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）逻辑“非”运算"><span class="toc-number">0.3.</span> <span class="toc-text">（3）逻辑“非”运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（4）逻辑“异或”运算"><span class="toc-number">0.4.</span> <span class="toc-text">（4）逻辑“异或”运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#【例1-1】-如两变量的取值-X＝00FFH，Y＝5555H，求Z1＝X∧Y；Z2＝X∨Y；Z3＝；Z4＝XY的值。"><span class="toc-number">0.5.</span> <span class="toc-text">【例1.1】 如两变量的取值 X＝00FFH，Y＝5555H，求Z1＝X∧Y；Z2＝X∨Y；Z3＝；Z4＝XY的值。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数在计算机中的表示"><span class="toc-number">1.</span> <span class="toc-text">数在计算机中的表示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在计算机中要处理的数有无符号数和有符号数。这些数在计算机中是如何表示的呢？"><span class="toc-number">1.1.</span> <span class="toc-text">在计算机中要处理的数有无符号数和有符号数。这些数在计算机中是如何表示的呢？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1．无符号数"><span class="toc-number">1.2.</span> <span class="toc-text">1．无符号数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2．有符号数"><span class="toc-number">1.3.</span> <span class="toc-text">2．有符号数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3．有符号数的原码、反码、补码及补码运算"><span class="toc-number">1.4.</span> <span class="toc-text">3．有符号数的原码、反码、补码及补码运算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（1）原码"><span class="toc-number">1.4.1.</span> <span class="toc-text">（1）原码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（2）反码"><span class="toc-number">1.4.2.</span> <span class="toc-text">（2）反码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（3）补码"><span class="toc-number">1.4.3.</span> <span class="toc-text">（3）补码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#（4）补码运算"><span class="toc-number">1.4.4.</span> <span class="toc-text">（4）补码运算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#【例1-2】-用补码进行下列运算-＋18-＋-－15-；-－18-＋-＋15-；-－18-＋-－11"><span class="toc-number">1.5.</span> <span class="toc-text">【例1.2】 用补码进行下列运算 (＋18)＋(－15)；(－18)＋(＋15)；(－18)＋(－11)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#两个带符号数相减，可通过下面的公式进行："><span class="toc-number">1.6.</span> <span class="toc-text">两个带符号数相减，可通过下面的公式进行：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#【例1-3】-用补码进行下列运算：①-96－19；-②-－56-－-－17"><span class="toc-number">1.7.</span> <span class="toc-text">【例1.3】 用补码进行下列运算：① 96－19； ② (－56)－(－17)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（5）溢出判断"><span class="toc-number">1.7.1.</span> <span class="toc-text">（5）溢出判断</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#①-的运算结果显然是错误的，因为两个正数相加不可能得到负数的结果，产生错误的原因是由于两个数相加后的数值超出了加法装置所允许位数（数值部分4位，可以表示的最大数值为24＝16），因而从数值的最高位向符号位产生了进位，或说这种现象是由于“溢出”而造成的。"><span class="toc-number">1.8.</span> <span class="toc-text">① 的运算结果显然是错误的，因为两个正数相加不可能得到负数的结果，产生错误的原因是由于两个数相加后的数值超出了加法装置所允许位数（数值部分4位，可以表示的最大数值为24＝16），因而从数值的最高位向符号位产生了进位，或说这种现象是由于“溢出”而造成的。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#②-的结果显然是正确的，由符号位产生的进位自动丢失。"><span class="toc-number">1.9.</span> <span class="toc-text">② 的结果显然是正确的，由符号位产生的进位自动丢失。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数的编码方法"><span class="toc-number">2.</span> <span class="toc-text">数的编码方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1．二进制编码的十进制数"><span class="toc-number">2.1.</span> <span class="toc-text">1．二进制编码的十进制数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#计算机只能识别二进制数，但是，人们却熟悉十进制数。所以，在计算机输入和输出数据时，往往采用十进制数表示。不过，这样的十进制数是用二进制编码表示的，称为二进制编码的十进制数——BCD（binary-code-decimal）码。"><span class="toc-number">2.1.1.</span> <span class="toc-text">计算机只能识别二进制数，但是，人们却熟悉十进制数。所以，在计算机输入和输出数据时，往往采用十进制数表示。不过，这样的十进制数是用二进制编码表示的，称为二进制编码的十进制数——BCD（binary code decimal）码。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用二进制数为十进制数编码，每一位十进制数需要由四位二进制数来表示。四位二进制数共有16种编码形式，由于十进制数只有0～9十个数码，故有六个码是多余的，放弃不用。而这种多余性便产生了多种不同的BCD码。在计算机中较常用的是8421-BCD码（在以后的章节中简称BCD码）。这种BCD码用四位二进制数表示一位十进制数的数码0～9，而这四位的权从高位到低位依次为8，4，2，1。十进制数0～15与8421-BCD码的编码关系见表1-6。"><span class="toc-number">2.1.2.</span> <span class="toc-text">用二进制数为十进制数编码，每一位十进制数需要由四位二进制数来表示。四位二进制数共有16种编码形式，由于十进制数只有0～9十个数码，故有六个码是多余的，放弃不用。而这种多余性便产生了多种不同的BCD码。在计算机中较常用的是8421 BCD码（在以后的章节中简称BCD码）。这种BCD码用四位二进制数表示一位十进制数的数码0～9，而这四位的权从高位到低位依次为8，4，2，1。十进制数0～15与8421 BCD码的编码关系见表1.6。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2．字母与符号的编码"><span class="toc-number">2.2.</span> <span class="toc-text">2．字母与符号的编码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#在计算机里，字母和符号也必须用特定的二进制编码来表示。目前，在微机、通信设备和仪器仪表中广泛采用的是美国标准信息交换码ASCII（american-standard-code-for-information-interchange）码。它用七位二进制码表示一个字母或符号，共能表示27＝128个不同的字符。其中包括数字0～9、英文26个大、小写字母、运算符、标点及其他的一些控制符号。常用的七位ASCII码见表1-7。"><span class="toc-number">2.2.1.</span> <span class="toc-text">在计算机里，字母和符号也必须用特定的二进制编码来表示。目前，在微机、通信设备和仪器仪表中广泛采用的是美国标准信息交换码ASCII（american standard code for information interchange）码。它用七位二进制码表示一个字母或符号，共能表示27＝128个不同的字符。其中包括数字0～9、英文26个大、小写字母、运算符、标点及其他的一些控制符号。常用的七位ASCII码见表1.7。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ASCII码多用于微型计算机的输入-输出设备（如电传打字机）及在数据传送过程中进行奇偶校验。"><span class="toc-number">2.2.2.</span> <span class="toc-text">ASCII码多用于微型计算机的输入/输出设备（如电传打字机）及在数据传送过程中进行奇偶校验。</span></a></li></ol></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="计算机运算基础荟萃"></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cyt1UJT89'; 
+var conf = 'prod_a66df9b8bf4687f6662a946344b221b7'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2015/12/10/the-students-with-poor-grades-reversed/" title="上一篇: 一个学渣的逆袭">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2015/11/08/CEAC-office2010/" title="下一篇: CEAC-office2010实操题练习评测系统">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/08/31/csharp7/">C＃7.0中有哪些新特性？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/18/internship-experience/">武汉路博特工程科技有限公司实习“满月”工作感受</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/16/asp.net-knowledge-point-interview/">ASP.NET知识点面试篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/08/what-is-a-three-tier-architecture/">三层架构到底是个什么玩意？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/07/five-main-objects-in-dotnet/">ADO.NET中的五个主要对象？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/10/the-students-with-poor-grades-reversed/">一个学渣的逆袭</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/21/computer-computing-infrastructure/">计算机运算基础荟萃</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/08/CEAC-office2010/">CEAC-office2010实操题练习评测系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/28/test-case-design-advanced(bottom)/">测试用例设计进阶(下)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/28/test-case-design-in-order(upper)/">测试用例设计进阶（上）</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/25/boundary-value/">边界值分析法相关概念 — 边界点相关概念</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/24/basic-knowledge-of-software-testing/">软件测试基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/24/overview-of-software-testing/">软件测试概述</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/20/xml-note-1/">XML学习笔记(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/12/when-the-deepest-counsel-comes-to-the-most-clear-ideal/">当最深沉的筹谋换来最清明的理想</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/01/10-best-javascript-development-practices/">10个最佳 javascript 开发实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/07/the-30-most-difficult-questions-to-answer-in-history/">史上最难回答的30个问题，没有一人都能答对！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/05/windows10-iso.md/">Win10正式版微软官方原版ISO系统镜像下载大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/02/the-work-of-a-programmer/">一本关于程序员的修真小说</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/02/Win10-ten-points/">Win10的十个亮点</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/01/Zhihu-god-reply/">一大波，知乎神回复在接近了！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/27/vs-shortcuts/">必须知道的 Visual Studio 快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/16/asp.net-knowledge-point-summary-5/">Asp.net知识点总结(五)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/13/ten-programming-languages/">你必须知道的十个编程语言</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/11/asp.net-knowledge-point-summary-4/">Asp.net知识点总结(四)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/07/asp.net-knowledge-point-summary-3/">Asp.net知识点总结(三)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/06/bigdata-internet-thinking-O2O-crowdfunding/">什么是大数据，什么是红海、蓝海、互联网思维？什么是O2O？什么是众筹？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/04/asp.net-knowledge-point-summary-2/">Asp.net知识点总结(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/03/asp.net-knowledge-point-summary-1/">Asp.net知识点总结(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/25/shopping-online/">Shopping Online</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/04/SqlServer2008/">sql数据库|SqlServer2008 R2_x86&x64</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/17/why-is-the-chinese-mobile-number-11/">揭秘：中国手机号码为什么是11位数？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/14/33-poems-of-the-most-artistic-conception-in-China/">中国最有意境的33句诗文，欣赏下吧！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/05/win7-cmd/">Win7运行命令大全|开始-运行-命令总汇</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/31/please-don't-be-a-fickle-IT-man/">请不要做浮躁的IT人</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/29/the-name-of-the-big-internet-companies/">各大互联网公司命名的由来，值得你了解。</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/25/30-the-hacker-movie/">30部黑客电影，你看过哪几部？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/22/top 10 IT jobs in 2015/">2015年 十大热门 IT 工作</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/10/a-years-plan-starts-with-spring/">A year's plan starts with spring ！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/28/cherish-every-day/">珍惜每一天</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/28/adobe-photoshop/">Adobe Photoshop 绿色安装版</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/20/national-computer-level-office2010/">全国计算机一级Office2010+win7版（未来教育）考试练习软件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/15/microsoft-office-2010/">Microsoft office 2010</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy;
+                2017
+                    阿星Plus
+            </div>
+            <div class="footer-right">
+                Blog By <a href="http://hexo.io/" target="_blank">Hexo</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站访问量: 
+                            <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                    </span>
+                    
+                        
+                            <span>, </span>
+                            
+                                
+                                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                                    </span>
+                                    </span>
+                                    
+            </div>
+            
+    </div>
+</footer>
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

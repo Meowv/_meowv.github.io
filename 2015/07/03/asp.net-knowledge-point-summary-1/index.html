@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Asp.net知识点总结(一) | 当然我在瞎扯</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Asp.net六大对象1.Request–&amp;gt;读取客户端在Web请求期间发送的值常用方法: 1、Request.UrlReferrer请求的来源，可以根据这个判断从百度搜的哪个关键词、防下载盗链、防图片盗链，可以伪造(比如迅雷)。 (使用全局一般处理程序)2、Request.UserHostAddress获得访问者的IP地址3、Request.MapPath(virtulPath)将虚拟路径转">
+<meta name="keywords" content="ASP.NET,技术教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Asp.net知识点总结(一)">
+<meta property="og:url" content="http://xj8c.cc/2015/07/03/asp.net-knowledge-point-summary-1/index.html">
+<meta property="og:site_name" content="当然我在瞎扯">
+<meta property="og:description" content="Asp.net六大对象1.Request–&amp;gt;读取客户端在Web请求期间发送的值常用方法: 1、Request.UrlReferrer请求的来源，可以根据这个判断从百度搜的哪个关键词、防下载盗链、防图片盗链，可以伪造(比如迅雷)。 (使用全局一般处理程序)2、Request.UserHostAddress获得访问者的IP地址3、Request.MapPath(virtulPath)将虚拟路径转">
+<meta property="og:updated_time" content="2017-05-26T04:04:35.741Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Asp.net知识点总结(一)">
+<meta name="twitter:description" content="Asp.net六大对象1.Request–&amp;gt;读取客户端在Web请求期间发送的值常用方法: 1、Request.UrlReferrer请求的来源，可以根据这个判断从百度搜的哪个关键词、防下载盗链、防图片盗链，可以伪造(比如迅雷)。 (使用全局一般处理程序)2、Request.UserHostAddress获得访问者的IP地址3、Request.MapPath(virtulPath)将虚拟路径转">
+  
+    <link rel="alternative" href="/atom.xml" title="当然我在瞎扯" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+                <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+        </a>
+
+        <hgroup>
+            <h1 class="header-author">
+                <a href="/" title="Hello World">
+                    阿星Plus
+                </a>
+            </h1>
+        </hgroup>
+
+        
+            <p class="header-subtitle">
+                生命不息，奋斗不止
+            </p>
+            
+                
+                        
+                            <div id="switch-btn" class="switch-btn">
+                                <div class="icon">
+                                    <div class="icon-ctn">
+                                        <div class="icon-wrap icon-house" data-idx="0">
+                                            <div class="birdhouse"></div>
+                                            <div class="birdhouse_holes"></div>
+                                        </div>
+                                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                                            <div class="ribbon"></div>
+                                        </div>
+                                        
+                                            <div class="icon-wrap icon-link hide" data-idx="2">
+                                                <div class="loopback_l"></div>
+                                                <div class="loopback_r"></div>
+                                            </div>
+                                            
+                                                
+                                    </div>
+
+                                </div>
+                                <div class="tips-box hide">
+                                    <div class="tips-arrow"></div>
+                                    <ul class="tips-inner">
+                                        <li>菜单</li>
+                                        <li>标签</li>
+                                        
+                                            <li>友情链接</li>
+                                            
+                                                
+                                    </ul>
+                                </div>
+                            </div>
+                            
+
+                                <div id="switch-area" class="switch-area">
+                                    <div class="switch-wrap">
+                                        <section class="switch-part switch-part1">
+                                            <nav class="header-menu">
+                                                <ul>
+                                                    
+                                                        <li>
+                                                            <a href="/">
+                                                                Home
+                                                            </a>
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            <a href="/archives">
+                                                                Archives
+                                                            </a>
+                                                        </li>
+                                                        
+                                                </ul>
+                                            </nav>
+                                            <nav class="header-nav">
+                                                <ul class="social">
+                                                    
+                                                        <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=w-Lx8IOupqy0te2grK4" title="mail">
+                                                            mail
+                                                        </a>
+                                                        
+                                                        <a class="fl weibo" target="_blank" href="http://weibo.com/Tencentgou" title="weibo">
+                                                            weibo
+                                                        </a>
+                                                        
+                                                        <a class="fl github" target="_blank" href="https://github.com/Meowv" title="github">
+                                                            github
+                                                        </a>
+                                                        
+                                                        <a class="fl twitter" target="_blank" href="https://twitter.com/hackxing" title="twitter">
+                                                            twitter
+                                                        </a>
+                                                        
+                                                        <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">
+                                                            zhihu
+                                                        </a>
+                                                        
+                                                        <a class="fl rss" target="_blank" href="/atom.xml" title="rss">
+                                                            rss
+                                                        </a>
+                                                        
+                                                </ul>
+                                            </nav>
+                                        </section>
+
+                                        
+                                            <section class="switch-part switch-part2">
+                                                <div class="widget tagcloud" id="js-tagcloud">
+                                                    <a href="/tags/ASP-NET/" style="font-size: 20px;">ASP.NET</a> <a href="/tags/C/" style="font-size: 12px;">C#</a> <a href="/tags/CEAC/" style="font-size: 10px;">CEAC</a> <a href="/tags/IT/" style="font-size: 12px;">IT</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Photoshop/" style="font-size: 10px;">Photoshop</a> <a href="/tags/SqlServer/" style="font-size: 10px;">SqlServer</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/office2010/" style="font-size: 14px;">office2010</a> <a href="/tags/win10/" style="font-size: 12px;">win10</a> <a href="/tags/win7/" style="font-size: 10px;">win7</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/三层架构/" style="font-size: 10px;">三层架构</a> <a href="/tags/互联网/" style="font-size: 14px;">互联网</a> <a href="/tags/原版系统/" style="font-size: 10px;">原版系统</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/实习感受/" style="font-size: 10px;">实习感受</a> <a href="/tags/小说/" style="font-size: 10px;">小说</a> <a href="/tags/微软/" style="font-size: 10px;">微软</a> <a href="/tags/手机/" style="font-size: 10px;">手机</a> <a href="/tags/技术教程/" style="font-size: 18px;">技术教程</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/春天/" style="font-size: 10px;">春天</a> <a href="/tags/琅琊榜/" style="font-size: 10px;">琅琊榜</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/知乎/" style="font-size: 10px;">知乎</a> <a href="/tags/程序员/" style="font-size: 10px;">程序员</a> <a href="/tags/绿色软件/" style="font-size: 16px;">绿色软件</a> <a href="/tags/编程/" style="font-size: 10px;">编程</a> <a href="/tags/计算机一级/" style="font-size: 10px;">计算机一级</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/诗文/" style="font-size: 10px;">诗文</a> <a href="/tags/软件测试/" style="font-size: 18px;">软件测试</a> <a href="/tags/进制转换/" style="font-size: 10px;">进制转换</a> <a href="/tags/逆袭/" style="font-size: 10px;">逆袭</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/黑客/" style="font-size: 10px;">黑客</a>
+                                                </div>
+                                            </section>
+                                            
+
+                                                
+                                                    <section class="switch-part switch-part3">
+                                                        <div id="js-friends">
+                                                            
+                                                                <a target="_blank" class="main-nav-link switch-friends-link" href="http://meowv.com/">
+                                                                    喵呜网
+                                                                </a>
+                                                                
+                                                        </div>
+                                                    </section>
+                                                    
+
+                                                        
+                                    </div>
+                                </div>
+    </header>
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">阿星Plus</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">阿星Plus</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">生命不息，奋斗不止</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">Home</a></li>
+                
+                    <li><a href="/archives">Archives</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=w-Lx8IOupqy0te2grK4" title="mail">mail</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/Tencentgou" title="weibo">weibo</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/Meowv" title="github">github</a>
+                    
+                        <a class="twitter" target="_blank" href="https://twitter.com/hackxing" title="twitter">twitter</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">zhihu</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-asp.net-knowledge-point-summary-1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/03/asp.net-knowledge-point-summary-1/" class="article-date">
+      <time datetime="2015-07-03T10:25:50.000Z" itemprop="datePublished">2015-07-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Asp.net知识点总结(一)
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ASP-NET/">ASP.NET</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术教程/">技术教程</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="Asp-net六大对象"><a href="#Asp-net六大对象" class="headerlink" title="Asp.net六大对象"></a>Asp.net六大对象</h2><h1 id="1-Request–-gt-读取客户端在Web请求期间发送的值"><a href="#1-Request–-gt-读取客户端在Web请求期间发送的值" class="headerlink" title="1.Request–&gt;读取客户端在Web请求期间发送的值"></a>1.Request–&gt;读取客户端在Web请求期间发送的值</h1><p>常用方法:</p>
+<h3 id="1、Request-UrlReferrer请求的来源，可以根据这个判断从百度搜的哪个关键词、防下载盗链、防图片盗链，可以伪造-比如迅雷-。-使用全局一般处理程序"><a href="#1、Request-UrlReferrer请求的来源，可以根据这个判断从百度搜的哪个关键词、防下载盗链、防图片盗链，可以伪造-比如迅雷-。-使用全局一般处理程序" class="headerlink" title="1、Request.UrlReferrer请求的来源，可以根据这个判断从百度搜的哪个关键词、防下载盗链、防图片盗链，可以伪造(比如迅雷)。 (使用全局一般处理程序)"></a>1、Request.UrlReferrer请求的来源，可以根据这个判断从百度搜的哪个关键词、防下载盗链、防图片盗链，可以伪造(比如迅雷)。 (使用全局一般处理程序)</h3><h3 id="2、Request-UserHostAddress获得访问者的IP地址"><a href="#2、Request-UserHostAddress获得访问者的IP地址" class="headerlink" title="2、Request.UserHostAddress获得访问者的IP地址"></a>2、Request.UserHostAddress获得访问者的IP地址</h3><h3 id="3、Request-MapPath-virtulPath-将虚拟路径转换为磁盘上的物理路径-Request-MapPath-“-a-b-aspx”-就会得到D-WebSites-a-b-aspx"><a href="#3、Request-MapPath-virtulPath-将虚拟路径转换为磁盘上的物理路径-Request-MapPath-“-a-b-aspx”-就会得到D-WebSites-a-b-aspx" class="headerlink" title="3、Request.MapPath(virtulPath)将虚拟路径转换为磁盘上的物理路径,Request.MapPath(“./a/b.aspx”)就会得到D:\WebSites\a\b.aspx"></a>3、Request.MapPath(virtulPath)将虚拟路径转换为磁盘上的物理路径,Request.MapPath(“./a/b.aspx”)就会得到D:\WebSites\a\b.aspx</h3><p>Server.MapPath里就是调用的Request.MapPath</p>
+<h3 id="4、Request-Url-GetComponents-UriComponents-HostAndPort-UriFormat-SafeUnescaped-获取当前请求的网站的域名和端口号"><a href="#4、Request-Url-GetComponents-UriComponents-HostAndPort-UriFormat-SafeUnescaped-获取当前请求的网站的域名和端口号" class="headerlink" title="4、Request.Url.GetComponents(UriComponents.HostAndPort,UriFormat.SafeUnescaped) 获取当前请求的网站的域名和端口号"></a>4、Request.Url.GetComponents(UriComponents.HostAndPort,UriFormat.SafeUnescaped) 获取当前请求的网站的域名和端口号</h3><h3 id="Request对象主要是让服务器取得客户端浏览器的一些数据-包括从HTML表单用Post或者GET方法传递的参数、Cookie和用户认证。因为Request对象是Page对象的成员之一，所以在程序中不需要做任何的声明即可直接使用；"><a href="#Request对象主要是让服务器取得客户端浏览器的一些数据-包括从HTML表单用Post或者GET方法传递的参数、Cookie和用户认证。因为Request对象是Page对象的成员之一，所以在程序中不需要做任何的声明即可直接使用；" class="headerlink" title="Request对象主要是让服务器取得客户端浏览器的一些数据,包括从HTML表单用Post或者GET方法传递的参数、Cookie和用户认证。因为Request对象是Page对象的成员之一，所以在程序中不需要做任何的声明即可直接使用；"></a>Request对象主要是让服务器取得客户端浏览器的一些数据,包括从HTML表单用Post或者GET方法传递的参数、Cookie和用户认证。因为Request对象是Page对象的成员之一，所以在程序中不需要做任何的声明即可直接使用；</h3><h1 id="其类名为HttpRequest"><a href="#其类名为HttpRequest" class="headerlink" title="其类名为HttpRequest"></a>其类名为HttpRequest</h1><p>属性很多，但方法很少，只有一个BinaryRead() </p>
+<h3 id="1-使用Request-Form属性获取数据"><a href="#1-使用Request-Form属性获取数据" class="headerlink" title="1.使用Request.Form属性获取数据"></a>1.使用Request.Form属性获取数据</h3><p>通过该属性，读取<form></form>之间的表单数据.注意：提交方式要设置为“Post”。<br>与Get方法相比较，使用Post方法可以将大量数据发送到服务器端 </p>
+<h3 id="2-利用Request-QueryString属性获取数据"><a href="#2-利用Request-QueryString属性获取数据" class="headerlink" title="2.利用Request.QueryString属性获取数据"></a>2.利用Request.QueryString属性获取数据</h3><p>Request对象的QuerySting属性可以获取HTTP查询字符串变量集合。</p>
+<p>通过该属性，我们可以读取地址信息<a href="http://localhost/aaa.aspx?uid=tom&amp;pwd=abc其中标识为红色部分的数据" target="_blank" rel="external">http://localhost/aaa.aspx?uid=tom&amp;pwd=abc其中标识为红色部分的数据</a>.<br>注意：提交方式要设置为“Get” </p>
+<h3 id="3-问题：Request-Form用于表单提交方式为Post的情况，而Request-QueryString用于表单提交方式为Get的情况，如果用错，则获取不到数据。"><a href="#3-问题：Request-Form用于表单提交方式为Post的情况，而Request-QueryString用于表单提交方式为Get的情况，如果用错，则获取不到数据。" class="headerlink" title="3.问题：Request.Form用于表单提交方式为Post的情况，而Request.QueryString用于表单提交方式为Get的情况，如果用错，则获取不到数据。"></a>3.问题：Request.Form用于表单提交方式为Post的情况，而Request.QueryString用于表单提交方式为Get的情况，如果用错，则获取不到数据。</h3><p>解决方法：利用Request(“元素名”)来简化操作。 </p>
+<h3 id="4-Request-ServerVariables-“环境变量名称”-类似的还有：UserHostAddress-Browser-Cookies-ContentType-IsAuthenticated-Item-Params"><a href="#4-Request-ServerVariables-“环境变量名称”-类似的还有：UserHostAddress-Browser-Cookies-ContentType-IsAuthenticated-Item-Params" class="headerlink" title="4.Request.ServerVariables(“环境变量名称”) 类似的还有：UserHostAddress,Browser,Cookies,ContentType,IsAuthenticated Item,Params"></a>4.Request.ServerVariables(“环境变量名称”) 类似的还有：UserHostAddress,Browser,Cookies,ContentType,IsAuthenticated Item,Params</h3><h2 id="2-Response–-gt-封装了页面执行期后返回到Http客户端的输出"><a href="#2-Response–-gt-封装了页面执行期后返回到Http客户端的输出" class="headerlink" title="2.Response–&gt;封装了页面执行期后返回到Http客户端的输出"></a>2.Response–&gt;封装了页面执行期后返回到Http客户端的输出</h2><h1 id="Response对象用语输出数据到客户端，包括向浏览器输出数据、重定向浏览器到另一个URL或向浏览器输出Cookie文件。"><a href="#Response对象用语输出数据到客户端，包括向浏览器输出数据、重定向浏览器到另一个URL或向浏览器输出Cookie文件。" class="headerlink" title="Response对象用语输出数据到客户端，包括向浏览器输出数据、重定向浏览器到另一个URL或向浏览器输出Cookie文件。"></a>Response对象用语输出数据到客户端，包括向浏览器输出数据、重定向浏览器到另一个URL或向浏览器输出Cookie文件。</h1><p>其类名为httpResponse </p>
+<p>属性和方法 </p>
+<p>Response.Write() 向客户端发送字符串信息 </p>
+<p>Response.Buffer、Response.BufferOutput：经过Reflector反编译，发现两个属性是一样的，Buffer内部就是调用的BufferOutput。这个属性用来控制是否采用响应缓存，默认是true。 </p>
+<p>Response.Clear()清空缓存区中的数据，这样在缓存区中的没有发送到浏览器端的数据被清空，不会被发送到浏览器。</p>
+<h1 id="Redirect-网页转向地址"><a href="#Redirect-网页转向地址" class="headerlink" title="Redirect() 网页转向地址"></a>Redirect() 网页转向地址</h1><p>Response.ContentEncoding输出流的编码。</p>
+<p>Response.ContentType输出流的内容类型，比如是html（text/html）还是普通文本（text/plain）还是JPEG图片（image/JPEG）。 </p>
+<p>Response.OutputStream输出流，在输出图片、Excel文件等非文本内容的时候要使用它</p>
+<p>Response.End() 终止响应，将之前缓存中的数据发给浏览器，End()之后的代码不会被继续执行,End方法里调用了Flush()方法。在终止一些非法请求的时候，比如盗链等可以用End()立即终止请求。</p>
+<h1 id="WriteFile-读取一个文件，并且写入客户端输出流"><a href="#WriteFile-读取一个文件，并且写入客户端输出流" class="headerlink" title="WriteFile() 读取一个文件，并且写入客户端输出流"></a>WriteFile() 读取一个文件，并且写入客户端输出流</h1><p>（实质：打开文件，并且输出到客户端。） </p>
+<h3 id="1-Response-Write变量数据或字符串"><a href="#1-Response-Write变量数据或字符串" class="headerlink" title="1.Response.Write变量数据或字符串"></a>1.Response.Write变量数据或字符串</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Response.Write (变量数据或字符串) </div><div class="line">  &lt;%=…%&gt; </div><div class="line">Response.Write(“&lt;script language=javascript&gt;alert(‘欢迎学习ASP.NET’)&lt;/script&gt;”)  </div><div class="line">Response.Write(“&lt;script&gt;window.open(‘WebForm2.aspx’)&lt;/script&gt;”)</div></pre></td></tr></table></figure>
+<h3 id="2-Response对象的Redirect方法将客户端浏览器重定向到另外的URL上，即跳转到另一个网页。"><a href="#2-Response对象的Redirect方法将客户端浏览器重定向到另外的URL上，即跳转到另一个网页。" class="headerlink" title="2.Response对象的Redirect方法将客户端浏览器重定向到另外的URL上，即跳转到另一个网页。"></a>2.Response对象的Redirect方法将客户端浏览器重定向到另外的URL上，即跳转到另一个网页。</h3><p>例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Response.Redirect(“http://www.163.net/”)</div></pre></td></tr></table></figure></p>
+<h3 id="3-Response-End-终止当前页的运行"><a href="#3-Response-End-终止当前页的运行" class="headerlink" title="3. Response.End() 终止当前页的运行"></a>3. Response.End() 终止当前页的运行</h3><h3 id="4-Response-WriteFile-FileName"><a href="#4-Response-WriteFile-FileName" class="headerlink" title="4.Response.WriteFile(FileName)"></a>4.Response.WriteFile(FileName)</h3><p>其中： FileName指代需向浏览器输出的文件的文件名 </p>
+<h2 id="3-Server–-gt-提供对服务器上的属性和方法的访问"><a href="#3-Server–-gt-提供对服务器上的属性和方法的访问" class="headerlink" title="3.Server–&gt;提供对服务器上的属性和方法的访问"></a>3.Server–&gt;提供对服务器上的属性和方法的访问</h2><p>Server对象提供对服务器上的方法和属性进行的访问 .其类名称是HttpServerUtility. </p>
+<h3 id="Server对象的主要属性有："><a href="#Server对象的主要属性有：" class="headerlink" title="Server对象的主要属性有："></a>Server对象的主要属性有：</h3><p>MachineName：获取服务器的计算机名称。</p>
+<p>ScriptTimeout：获取和设置请求超时（以秒计）。 </p>
+<p>方法名称 说明<br>CreateObject创建COM对象的一个服务器实例。 </p>
+<p>Execute执行当前服务器上的另一个aspx页，执行完该页后再返回本页继续执行 </p>
+<p>HtmlEncode对要在浏览器中显示的字符串进行HTML编码并返回已编码的字符串。 </p>
+<p>HtmlDecode对HTML编码的字符串进行解码，并返回已解码的字符串。 </p>
+<p>MapPath返回与Web服务器上的指定虚拟路径相对应的物理文件路径。 </p>
+<p>Transfer终止当前页的执行，并为当前请求开始执行新页。 </p>
+<p>UrlEncode将代表URL的字符串进行编码，以便通过URL从Web服务器到客户端进行可靠的HTTP传输。</p>
+<p>UrlDecode对已被编码的URL字符串进行解码，并返回已解码的字符串。 </p>
+<p>UrlPathEncode对URL字符串的路径部分进行URL编码，并返回已编码的字符串。 </p>
+<p>编码： Server.HtmlEncode(“HTML代码”) </p>
+<p>解码： Server.HtmlDecode(“已编码的HTML”) </p>
+<p>Server对象的MapPath方法将虚拟路径或相对于当前页的相对路径转化为Web服务器上的物理文件路径。</p>
+<h3 id="语法：Server-MapPath-“虚拟路径”"><a href="#语法：Server-MapPath-“虚拟路径”" class="headerlink" title="语法：Server.MapPath(“虚拟路径”)"></a>语法：Server.MapPath(“虚拟路径”)</h3><p>String FilePath </p>
+<p>FilePath = Server.MapPath(“/”) </p>
+<p>Response.Write(FilePath) </p>
+<p>Server.HtmlDecode()、Server.HtmlEncode() Server.UrlEncode()、 Server.UrlDecode()是对HttpUtility类中相应方法的一个代理调用。</p>
+<p>推荐总是使用HttpUtility，因为有的地方很难拿到Server对象，而且Server的存在是为以前ASP程序员习惯而留的。</p>
+<p>别把HtmlEncode、UrlEncode混了，UrlEncode是处理超链接中的中文问题， HtmlEncode是处理html代码的。还是推荐用HttpUtility.HtmlEncode。</p>
+<p>Server.Transfer(path) 内部重定向请求，Server.Transfer(“JieBanRen.aspx”)将用户的请求重定向给JieBanRen.aspx处理，是服务器内部的接管（不能重定向到外部网站），浏览器是意识不到这个接管的，不是象Response.Redirect那样经历“通知浏览器‘请重新访问url这个网址’和浏览器接到命令访问新网址的过程”，是一次http请求，因此浏览器地址栏不会变化。</p>
+<p>因为是内部接管，所以在被重定向到的页面中是可以访问到Request、Cookies等这些来源页面接受的参数的，就像这些参数是传递给他的，而Redirect则不行，因为是让浏览器去访问的。</p>
+<p>注意Transfer是内部接管，因此不能像Redirect那样重定向到外部网站。 (常考)Response.Redirect就可以重定向到外部网站。</p>
+<p>不能内部重定向到ashx，否则会报错“执行子请求出错”.</p>
+<h2 id="4-Application–-gt-作用于整个运行期的状态对象"><a href="#4-Application–-gt-作用于整个运行期的状态对象" class="headerlink" title="4.Application–&gt;作用于整个运行期的状态对象"></a>4.Application–&gt;作用于整个运行期的状态对象</h2><p>Application对象在实际网络开发中的用途就是记录整个网络的信息，如上线人数、在线名单、意见调查和网上选举等。</p>
+<p>在给定的应用程序的多有用户之间共享信息，并在服务器运行期间持久的保存数据。</p>
+<p>而且Application对象还有控制访问应用层数据的方法和可用于在应用程序启动和停止时触发过程的事件。 </p>
+<h3 id="1-使用Application对象保存信息"><a href="#1-使用Application对象保存信息" class="headerlink" title="1.使用Application对象保存信息"></a>1.使用Application对象保存信息</h3><p>使用Application对象保存信息</p>
+<p>Application(“键名”) = 值 或 Application(“键名”，值) </p>
+<p>获取Application对象信息 </p>
+<p>变量名 = Application(“键名”) 或：变量名 = Application.Item(“键名”) 或：变量名 = Application.Get(“键名”) </p>
+<p>更新Application对象的值 </p>
+<p>Application.Set(“键名”, 值) </p>
+<p>删除一个键<br>Application.Remove(“键名”, 值) </p>
+<p>删除所有键<br>Application.RemoveAll() 或Application.Clear() </p>
+<h3 id="2-有可能存在多个用户同时存取同一个Application对象的情况。这样就有可能出现多个用户修改同一个Application命名对象，造成数据不一致的问题。"><a href="#2-有可能存在多个用户同时存取同一个Application对象的情况。这样就有可能出现多个用户修改同一个Application命名对象，造成数据不一致的问题。" class="headerlink" title="2.有可能存在多个用户同时存取同一个Application对象的情况。这样就有可能出现多个用户修改同一个Application命名对象，造成数据不一致的问题。"></a>2.有可能存在多个用户同时存取同一个Application对象的情况。这样就有可能出现多个用户修改同一个Application命名对象，造成数据不一致的问题。</h3><p>HttpApplicationState类提供两种方法Lock和Unlock，以解决对Application对象的访问同步问题，一次只允许一个线程访问应用程序状态变量。 </p>
+<p>关于锁定与解锁 </p>
+<p>锁定：Application.Lock() </p>
+<p>访问：Application(“键名”) = 值 </p>
+<p>解锁：Application.Unlock() </p>
+<p>注意：Lock方法和UnLock方法应该成对使用。  </p>
+<p>可用于网站访问人数，聊天室等设备 </p>
+<h3 id="3-使用Application事件"><a href="#3-使用Application事件" class="headerlink" title="3. 使用Application事件"></a>3. 使用Application事件</h3><p>在ASP.NET应用程序中可以包含一个特殊的可选文件—Global.asax文件，也称作ASP.NET应用程序文件，它包含用于响应ASP.NET或HTTP模块引发的应用程序级别事件的代码。  </p>
+<h1 id="Global-asax文件提供了7个事件，其中5个应用于Application对象"><a href="#Global-asax文件提供了7个事件，其中5个应用于Application对象" class="headerlink" title="Global.asax文件提供了7个事件，其中5个应用于Application对象"></a>Global.asax文件提供了7个事件，其中5个应用于Application对象</h1><p>事件名称 说明<br>Application_Start在应用程序启动时激发  </p>
+<p>Application_BeginRequest在每个请求开始时激发  </p>
+<p>Application_AuthenticateRequest尝试对使用者进行身份验证时激发  </p>
+<p>Application_Error在发生错误时激发  </p>
+<p>Application_End在应用程序结束时激发  </p>
+<h2 id="5-Session–-gt-会话期状态保持对象，用于跟踪单一用户的会话"><a href="#5-Session–-gt-会话期状态保持对象，用于跟踪单一用户的会话" class="headerlink" title="5.Session–&gt;会话期状态保持对象，用于跟踪单一用户的会话"></a>5.Session–&gt;会话期状态保持对象，用于跟踪单一用户的会话</h2><p>Session即会话，是指一个用户在一段时间内对某一个站点的一次访问。  </p>
+<p>Session对象在.NET中对应HttpSessionState类，表示“会话状态”，可以保存与当前用户会话相关的信息。 </p>
+<p>Session对象用于存储从一个用户开始访问某个特定的aspx的页面起，到用户离开为止，特定的用户会话所需要的信息。用户在应用程序的页面切换时，Session对象的变量不会被清除。 </p>
+<p>对于一个Web应用程序而言，所有用户访问到的Application对象的内容是完全一样的；而不同用户会话访问到的Session对象的内容则各不相同。 </p>
+<p> Session可以保存变量，该变量只能供一个用户使用，也就是说，每一个网页浏览者都有自己的Session对象变量，即Session对象具有唯一性。 </p>
+<h3 id="（1）将新的项添加到会话状态中"><a href="#（1）将新的项添加到会话状态中" class="headerlink" title="（1）将新的项添加到会话状态中"></a>（1）将新的项添加到会话状态中</h3><p>语法格式为： </p>
+<p>Session (“键名”) = 值 或者 Session.Add( “键名” , 值) </p>
+<h3 id="（2）按名称获取会话状态中的值"><a href="#（2）按名称获取会话状态中的值" class="headerlink" title="（2）按名称获取会话状态中的值"></a>（2）按名称获取会话状态中的值</h3><p>语法格式为： </p>
+<p>变量 = Session (“键名”)  或者 变量 = Session.Item(“键名”) </p>
+<h3 id="（3）删除会话状态集合中的项"><a href="#（3）删除会话状态集合中的项" class="headerlink" title="（3）删除会话状态集合中的项"></a>（3）删除会话状态集合中的项</h3><p>语法格式为： Session.Remove(“键名”) </p>
+<h3 id="（4）清除会话状态中的所有值"><a href="#（4）清除会话状态中的所有值" class="headerlink" title="（4）清除会话状态中的所有值"></a>（4）清除会话状态中的所有值</h3><p>语法格式为： </p>
+<p>Session.RemoveAll() 或者 Session.Clear() </p>
+<h3 id="（5）取消当前会话"><a href="#（5）取消当前会话" class="headerlink" title="（5）取消当前会话"></a>（5）取消当前会话</h3><p>语法格式为： Session.Abandon() </p>
+<h3 id="（6）设置会话状态的超时期限，以分钟为单位。"><a href="#（6）设置会话状态的超时期限，以分钟为单位。" class="headerlink" title="（6）设置会话状态的超时期限，以分钟为单位。"></a>（6）设置会话状态的超时期限，以分钟为单位。</h3><p>语法格式为： Session.TimeOut = 数值 </p>
+<p>Global.asax文件中有2个事件应用于Session对象  </p>
+<p>事件名称 说明 </p>
+<p>Session_Start在会话启动时激发 </p>
+<p>Session_End在会话结束时激发 </p>
+<h2 id="6-Cookie–-gt-客户端保持会话信息的一种方式"><a href="#6-Cookie–-gt-客户端保持会话信息的一种方式" class="headerlink" title="6.Cookie–&gt;客户端保持会话信息的一种方式"></a>6.Cookie–&gt;客户端保持会话信息的一种方式</h2><p>Cookie就是Web服务器保存在用户硬盘上的一段文本。</p>
+<p>Cookie允许一个Web站点在用户的电脑上保存信息并且随后再取回它。信息的片断以‘键/值’对的形式存储。  </p>
+<p>Cookie是保存在客户机硬盘上的一个文本文件，可以存储有关特定客户端、会话或应用程序的信息，在.NET中对应HttpCookie类。  </p>
+<p>有两种类型的Cookie：会话Cookie（Session Cookie）和持久性Cookie。</p>
+<p>前者是临时性的，一旦会话状态结束它将不复存在；后者则具有确定的过期日期，在过期之前Cookie在用户的计算机上以文本文件的形式存储。  </p>
+<p>在服务器上创建并向客户端输出Cookie可以利用Response对象实现。  </p>
+<p>Response对象支持一个名为Cookies的集合，可以将Cookie对象添加到该集合中，从而向客户端输出Cookie。  </p>
+<p>通过Request对象的Cookies集合来访问Cookie </p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">×</a>
+            <div class="shang_tit">
+              <p>谢谢你请我吃辣条</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2015/07/03/asp.net-knowledge-point-summary-1/">Asp.net知识点总结(一)</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 阿星Plus 的个人博客">阿星Plus</a></p>
+        <p><span>发布时间:</span>2015年07月03日 - 18时25分</p>
+        <p><span>最后更新:</span>2017年05月26日 - 12时04分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2015/07/03/asp.net-knowledge-point-summary-1/" title="Asp.net知识点总结(一)">http://xj8c.cc/2015/07/03/asp.net-knowledge-point-summary-1/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://xj8c.cc/2015/07/03/asp.net-knowledge-point-summary-1/　　作者: 阿星Plus" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2015/07/04/asp.net-knowledge-point-summary-2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Asp.net知识点总结(二)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/05/25/shopping-online/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Shopping Online</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Asp-net六大对象"><span class="toc-number">1.</span> <span class="toc-text">Asp.net六大对象</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Request–-gt-读取客户端在Web请求期间发送的值"><span class="toc-number"></span> <span class="toc-text">1.Request–>读取客户端在Web请求期间发送的值</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、Request-UrlReferrer请求的来源，可以根据这个判断从百度搜的哪个关键词、防下载盗链、防图片盗链，可以伪造-比如迅雷-。-使用全局一般处理程序"><span class="toc-number">0.1.</span> <span class="toc-text">1、Request.UrlReferrer请求的来源，可以根据这个判断从百度搜的哪个关键词、防下载盗链、防图片盗链，可以伪造(比如迅雷)。 (使用全局一般处理程序)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、Request-UserHostAddress获得访问者的IP地址"><span class="toc-number">0.2.</span> <span class="toc-text">2、Request.UserHostAddress获得访问者的IP地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、Request-MapPath-virtulPath-将虚拟路径转换为磁盘上的物理路径-Request-MapPath-“-a-b-aspx”-就会得到D-WebSites-a-b-aspx"><span class="toc-number">0.3.</span> <span class="toc-text">3、Request.MapPath(virtulPath)将虚拟路径转换为磁盘上的物理路径,Request.MapPath(“./a/b.aspx”)就会得到D:\WebSites\a\b.aspx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、Request-Url-GetComponents-UriComponents-HostAndPort-UriFormat-SafeUnescaped-获取当前请求的网站的域名和端口号"><span class="toc-number">0.4.</span> <span class="toc-text">4、Request.Url.GetComponents(UriComponents.HostAndPort,UriFormat.SafeUnescaped) 获取当前请求的网站的域名和端口号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Request对象主要是让服务器取得客户端浏览器的一些数据-包括从HTML表单用Post或者GET方法传递的参数、Cookie和用户认证。因为Request对象是Page对象的成员之一，所以在程序中不需要做任何的声明即可直接使用；"><span class="toc-number">0.5.</span> <span class="toc-text">Request对象主要是让服务器取得客户端浏览器的一些数据,包括从HTML表单用Post或者GET方法传递的参数、Cookie和用户认证。因为Request对象是Page对象的成员之一，所以在程序中不需要做任何的声明即可直接使用；</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其类名为HttpRequest"><span class="toc-number"></span> <span class="toc-text">其类名为HttpRequest</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-使用Request-Form属性获取数据"><span class="toc-number">0.1.</span> <span class="toc-text">1.使用Request.Form属性获取数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-利用Request-QueryString属性获取数据"><span class="toc-number">0.2.</span> <span class="toc-text">2.利用Request.QueryString属性获取数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-问题：Request-Form用于表单提交方式为Post的情况，而Request-QueryString用于表单提交方式为Get的情况，如果用错，则获取不到数据。"><span class="toc-number">0.3.</span> <span class="toc-text">3.问题：Request.Form用于表单提交方式为Post的情况，而Request.QueryString用于表单提交方式为Get的情况，如果用错，则获取不到数据。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Request-ServerVariables-“环境变量名称”-类似的还有：UserHostAddress-Browser-Cookies-ContentType-IsAuthenticated-Item-Params"><span class="toc-number">0.4.</span> <span class="toc-text">4.Request.ServerVariables(“环境变量名称”) 类似的还有：UserHostAddress,Browser,Cookies,ContentType,IsAuthenticated Item,Params</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Response–-gt-封装了页面执行期后返回到Http客户端的输出"><span class="toc-number">1.</span> <span class="toc-text">2.Response–>封装了页面执行期后返回到Http客户端的输出</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Response对象用语输出数据到客户端，包括向浏览器输出数据、重定向浏览器到另一个URL或向浏览器输出Cookie文件。"><span class="toc-number"></span> <span class="toc-text">Response对象用语输出数据到客户端，包括向浏览器输出数据、重定向浏览器到另一个URL或向浏览器输出Cookie文件。</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Redirect-网页转向地址"><span class="toc-number"></span> <span class="toc-text">Redirect() 网页转向地址</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#WriteFile-读取一个文件，并且写入客户端输出流"><span class="toc-number"></span> <span class="toc-text">WriteFile() 读取一个文件，并且写入客户端输出流</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Response-Write变量数据或字符串"><span class="toc-number">0.1.</span> <span class="toc-text">1.Response.Write变量数据或字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Response对象的Redirect方法将客户端浏览器重定向到另外的URL上，即跳转到另一个网页。"><span class="toc-number">0.2.</span> <span class="toc-text">2.Response对象的Redirect方法将客户端浏览器重定向到另外的URL上，即跳转到另一个网页。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Response-End-终止当前页的运行"><span class="toc-number">0.3.</span> <span class="toc-text">3. Response.End() 终止当前页的运行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Response-WriteFile-FileName"><span class="toc-number">0.4.</span> <span class="toc-text">4.Response.WriteFile(FileName)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Server–-gt-提供对服务器上的属性和方法的访问"><span class="toc-number">1.</span> <span class="toc-text">3.Server–>提供对服务器上的属性和方法的访问</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Server对象的主要属性有："><span class="toc-number">1.1.</span> <span class="toc-text">Server对象的主要属性有：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语法：Server-MapPath-“虚拟路径”"><span class="toc-number">1.2.</span> <span class="toc-text">语法：Server.MapPath(“虚拟路径”)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Application–-gt-作用于整个运行期的状态对象"><span class="toc-number">2.</span> <span class="toc-text">4.Application–>作用于整个运行期的状态对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-使用Application对象保存信息"><span class="toc-number">2.1.</span> <span class="toc-text">1.使用Application对象保存信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-有可能存在多个用户同时存取同一个Application对象的情况。这样就有可能出现多个用户修改同一个Application命名对象，造成数据不一致的问题。"><span class="toc-number">2.2.</span> <span class="toc-text">2.有可能存在多个用户同时存取同一个Application对象的情况。这样就有可能出现多个用户修改同一个Application命名对象，造成数据不一致的问题。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-使用Application事件"><span class="toc-number">2.3.</span> <span class="toc-text">3. 使用Application事件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Global-asax文件提供了7个事件，其中5个应用于Application对象"><span class="toc-number"></span> <span class="toc-text">Global.asax文件提供了7个事件，其中5个应用于Application对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Session–-gt-会话期状态保持对象，用于跟踪单一用户的会话"><span class="toc-number">1.</span> <span class="toc-text">5.Session–>会话期状态保持对象，用于跟踪单一用户的会话</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#（1）将新的项添加到会话状态中"><span class="toc-number">1.1.</span> <span class="toc-text">（1）将新的项添加到会话状态中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（2）按名称获取会话状态中的值"><span class="toc-number">1.2.</span> <span class="toc-text">（2）按名称获取会话状态中的值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（3）删除会话状态集合中的项"><span class="toc-number">1.3.</span> <span class="toc-text">（3）删除会话状态集合中的项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（4）清除会话状态中的所有值"><span class="toc-number">1.4.</span> <span class="toc-text">（4）清除会话状态中的所有值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（5）取消当前会话"><span class="toc-number">1.5.</span> <span class="toc-text">（5）取消当前会话</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（6）设置会话状态的超时期限，以分钟为单位。"><span class="toc-number">1.6.</span> <span class="toc-text">（6）设置会话状态的超时期限，以分钟为单位。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Cookie–-gt-客户端保持会话信息的一种方式"><span class="toc-number">2.</span> <span class="toc-text">6.Cookie–>客户端保持会话信息的一种方式</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="Asp.net知识点总结(一)"></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cyt1UJT89'; 
+var conf = 'prod_a66df9b8bf4687f6662a946344b221b7'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2015/07/04/asp.net-knowledge-point-summary-2/" title="上一篇: Asp.net知识点总结(二)">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2015/05/25/shopping-online/" title="下一篇: Shopping Online">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/08/31/csharp7/">C＃7.0中有哪些新特性？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/18/internship-experience/">武汉路博特工程科技有限公司实习“满月”工作感受</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/16/asp.net-knowledge-point-interview/">ASP.NET知识点面试篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/08/what-is-a-three-tier-architecture/">三层架构到底是个什么玩意？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/07/five-main-objects-in-dotnet/">ADO.NET中的五个主要对象？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/10/the-students-with-poor-grades-reversed/">一个学渣的逆袭</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/21/computer-computing-infrastructure/">计算机运算基础荟萃</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/08/CEAC-office2010/">CEAC-office2010实操题练习评测系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/28/test-case-design-advanced(bottom)/">测试用例设计进阶(下)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/28/test-case-design-in-order(upper)/">测试用例设计进阶（上）</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/25/boundary-value/">边界值分析法相关概念 — 边界点相关概念</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/24/basic-knowledge-of-software-testing/">软件测试基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/24/overview-of-software-testing/">软件测试概述</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/20/xml-note-1/">XML学习笔记(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/12/when-the-deepest-counsel-comes-to-the-most-clear-ideal/">当最深沉的筹谋换来最清明的理想</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/01/10-best-javascript-development-practices/">10个最佳 javascript 开发实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/07/the-30-most-difficult-questions-to-answer-in-history/">史上最难回答的30个问题，没有一人都能答对！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/05/windows10-iso.md/">Win10正式版微软官方原版ISO系统镜像下载大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/02/the-work-of-a-programmer/">一本关于程序员的修真小说</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/02/Win10-ten-points/">Win10的十个亮点</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/01/Zhihu-god-reply/">一大波，知乎神回复在接近了！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/27/vs-shortcuts/">必须知道的 Visual Studio 快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/16/asp.net-knowledge-point-summary-5/">Asp.net知识点总结(五)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/13/ten-programming-languages/">你必须知道的十个编程语言</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/11/asp.net-knowledge-point-summary-4/">Asp.net知识点总结(四)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/07/asp.net-knowledge-point-summary-3/">Asp.net知识点总结(三)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/06/bigdata-internet-thinking-O2O-crowdfunding/">什么是大数据，什么是红海、蓝海、互联网思维？什么是O2O？什么是众筹？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/04/asp.net-knowledge-point-summary-2/">Asp.net知识点总结(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/03/asp.net-knowledge-point-summary-1/">Asp.net知识点总结(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/25/shopping-online/">Shopping Online</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/04/SqlServer2008/">sql数据库|SqlServer2008 R2_x86&x64</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/17/why-is-the-chinese-mobile-number-11/">揭秘：中国手机号码为什么是11位数？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/14/33-poems-of-the-most-artistic-conception-in-China/">中国最有意境的33句诗文，欣赏下吧！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/05/win7-cmd/">Win7运行命令大全|开始-运行-命令总汇</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/31/please-don't-be-a-fickle-IT-man/">请不要做浮躁的IT人</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/29/the-name-of-the-big-internet-companies/">各大互联网公司命名的由来，值得你了解。</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/25/30-the-hacker-movie/">30部黑客电影，你看过哪几部？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/22/top 10 IT jobs in 2015/">2015年 十大热门 IT 工作</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/10/a-years-plan-starts-with-spring/">A year's plan starts with spring ！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/28/cherish-every-day/">珍惜每一天</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/28/adobe-photoshop/">Adobe Photoshop 绿色安装版</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/20/national-computer-level-office2010/">全国计算机一级Office2010+win7版（未来教育）考试练习软件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/15/microsoft-office-2010/">Microsoft office 2010</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy;
+                2017
+                    阿星Plus
+            </div>
+            <div class="footer-right">
+                Blog By <a href="http://hexo.io/" target="_blank">Hexo</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站访问量: 
+                            <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                    </span>
+                    
+                        
+                            <span>, </span>
+                            
+                                
+                                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                                    </span>
+                                    </span>
+                                    
+            </div>
+            
+    </div>
+</footer>
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

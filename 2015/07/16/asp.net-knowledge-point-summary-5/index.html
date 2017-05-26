@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Asp.net知识点总结(五) | 当然我在瞎扯</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ASP.NET高级配置Cache缓存机制缓存的参数：第一个为缓存的主键；第二个人为缓存的值；第三个为缓存的依赖项；第四个为缓存移除的时间；第五个为缓存时间的间隔 设置一般缓存1//this.Cache.Insert(“w”, DateTime.Now.ToLongTimeString(), null, DateTime.Now.AddSeconds(10), TimeSpan.Zero); 设置滑">
+<meta name="keywords" content="ASP.NET,技术教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Asp.net知识点总结(五)">
+<meta property="og:url" content="http://xj8c.cc/2015/07/16/asp.net-knowledge-point-summary-5/index.html">
+<meta property="og:site_name" content="当然我在瞎扯">
+<meta property="og:description" content="ASP.NET高级配置Cache缓存机制缓存的参数：第一个为缓存的主键；第二个人为缓存的值；第三个为缓存的依赖项；第四个为缓存移除的时间；第五个为缓存时间的间隔 设置一般缓存1//this.Cache.Insert(“w”, DateTime.Now.ToLongTimeString(), null, DateTime.Now.AddSeconds(10), TimeSpan.Zero); 设置滑">
+<meta property="og:updated_time" content="2017-05-26T03:29:07.632Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Asp.net知识点总结(五)">
+<meta name="twitter:description" content="ASP.NET高级配置Cache缓存机制缓存的参数：第一个为缓存的主键；第二个人为缓存的值；第三个为缓存的依赖项；第四个为缓存移除的时间；第五个为缓存时间的间隔 设置一般缓存1//this.Cache.Insert(“w”, DateTime.Now.ToLongTimeString(), null, DateTime.Now.AddSeconds(10), TimeSpan.Zero); 设置滑">
+  
+    <link rel="alternative" href="/atom.xml" title="当然我在瞎扯" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+                <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+        </a>
+
+        <hgroup>
+            <h1 class="header-author">
+                <a href="/" title="Hello World">
+                    阿星Plus
+                </a>
+            </h1>
+        </hgroup>
+
+        
+            <p class="header-subtitle">
+                生命不息，奋斗不止
+            </p>
+            
+                
+                        
+                            <div id="switch-btn" class="switch-btn">
+                                <div class="icon">
+                                    <div class="icon-ctn">
+                                        <div class="icon-wrap icon-house" data-idx="0">
+                                            <div class="birdhouse"></div>
+                                            <div class="birdhouse_holes"></div>
+                                        </div>
+                                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                                            <div class="ribbon"></div>
+                                        </div>
+                                        
+                                            <div class="icon-wrap icon-link hide" data-idx="2">
+                                                <div class="loopback_l"></div>
+                                                <div class="loopback_r"></div>
+                                            </div>
+                                            
+                                                
+                                    </div>
+
+                                </div>
+                                <div class="tips-box hide">
+                                    <div class="tips-arrow"></div>
+                                    <ul class="tips-inner">
+                                        <li>菜单</li>
+                                        <li>标签</li>
+                                        
+                                            <li>友情链接</li>
+                                            
+                                                
+                                    </ul>
+                                </div>
+                            </div>
+                            
+
+                                <div id="switch-area" class="switch-area">
+                                    <div class="switch-wrap">
+                                        <section class="switch-part switch-part1">
+                                            <nav class="header-menu">
+                                                <ul>
+                                                    
+                                                        <li>
+                                                            <a href="/">
+                                                                Home
+                                                            </a>
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            <a href="/archives">
+                                                                Archives
+                                                            </a>
+                                                        </li>
+                                                        
+                                                </ul>
+                                            </nav>
+                                            <nav class="header-nav">
+                                                <ul class="social">
+                                                    
+                                                        <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=w-Lx8IOupqy0te2grK4" title="mail">
+                                                            mail
+                                                        </a>
+                                                        
+                                                        <a class="fl weibo" target="_blank" href="http://weibo.com/Tencentgou" title="weibo">
+                                                            weibo
+                                                        </a>
+                                                        
+                                                        <a class="fl github" target="_blank" href="https://github.com/Meowv" title="github">
+                                                            github
+                                                        </a>
+                                                        
+                                                        <a class="fl twitter" target="_blank" href="https://twitter.com/hackxing" title="twitter">
+                                                            twitter
+                                                        </a>
+                                                        
+                                                        <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">
+                                                            zhihu
+                                                        </a>
+                                                        
+                                                        <a class="fl rss" target="_blank" href="/atom.xml" title="rss">
+                                                            rss
+                                                        </a>
+                                                        
+                                                </ul>
+                                            </nav>
+                                        </section>
+
+                                        
+                                            <section class="switch-part switch-part2">
+                                                <div class="widget tagcloud" id="js-tagcloud">
+                                                    <a href="/tags/ASP-NET/" style="font-size: 20px;">ASP.NET</a> <a href="/tags/C/" style="font-size: 12px;">C#</a> <a href="/tags/CEAC/" style="font-size: 10px;">CEAC</a> <a href="/tags/IT/" style="font-size: 12px;">IT</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Photoshop/" style="font-size: 10px;">Photoshop</a> <a href="/tags/SqlServer/" style="font-size: 10px;">SqlServer</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/office2010/" style="font-size: 14px;">office2010</a> <a href="/tags/win10/" style="font-size: 12px;">win10</a> <a href="/tags/win7/" style="font-size: 10px;">win7</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/三层架构/" style="font-size: 10px;">三层架构</a> <a href="/tags/互联网/" style="font-size: 14px;">互联网</a> <a href="/tags/原版系统/" style="font-size: 10px;">原版系统</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/实习感受/" style="font-size: 10px;">实习感受</a> <a href="/tags/小说/" style="font-size: 10px;">小说</a> <a href="/tags/微软/" style="font-size: 10px;">微软</a> <a href="/tags/手机/" style="font-size: 10px;">手机</a> <a href="/tags/技术教程/" style="font-size: 18px;">技术教程</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/春天/" style="font-size: 10px;">春天</a> <a href="/tags/琅琊榜/" style="font-size: 10px;">琅琊榜</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/知乎/" style="font-size: 10px;">知乎</a> <a href="/tags/程序员/" style="font-size: 10px;">程序员</a> <a href="/tags/绿色软件/" style="font-size: 16px;">绿色软件</a> <a href="/tags/编程/" style="font-size: 10px;">编程</a> <a href="/tags/计算机一级/" style="font-size: 10px;">计算机一级</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/诗文/" style="font-size: 10px;">诗文</a> <a href="/tags/软件测试/" style="font-size: 18px;">软件测试</a> <a href="/tags/进制转换/" style="font-size: 10px;">进制转换</a> <a href="/tags/逆袭/" style="font-size: 10px;">逆袭</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/黑客/" style="font-size: 10px;">黑客</a>
+                                                </div>
+                                            </section>
+                                            
+
+                                                
+                                                    <section class="switch-part switch-part3">
+                                                        <div id="js-friends">
+                                                            
+                                                                <a target="_blank" class="main-nav-link switch-friends-link" href="http://meowv.com/">
+                                                                    喵呜网
+                                                                </a>
+                                                                
+                                                        </div>
+                                                    </section>
+                                                    
+
+                                                        
+                                    </div>
+                                </div>
+    </header>
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">阿星Plus</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">阿星Plus</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">生命不息，奋斗不止</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">Home</a></li>
+                
+                    <li><a href="/archives">Archives</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=w-Lx8IOupqy0te2grK4" title="mail">mail</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/Tencentgou" title="weibo">weibo</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/Meowv" title="github">github</a>
+                    
+                        <a class="twitter" target="_blank" href="https://twitter.com/hackxing" title="twitter">twitter</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">zhihu</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-asp.net-knowledge-point-summary-5" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/16/asp.net-knowledge-point-summary-5/" class="article-date">
+      <time datetime="2015-07-16T11:47:48.000Z" itemprop="datePublished">2015-07-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Asp.net知识点总结(五)
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ASP-NET/">ASP.NET</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术教程/">技术教程</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="ASP-NET高级配置"><a href="#ASP-NET高级配置" class="headerlink" title="ASP.NET高级配置"></a>ASP.NET高级配置</h2><h3 id="Cache缓存机制"><a href="#Cache缓存机制" class="headerlink" title="Cache缓存机制"></a>Cache缓存机制</h3><p>缓存的参数：第一个为缓存的主键；第二个人为缓存的值；第三个为缓存的依赖项；第四个为缓存移除的时间；第五个为缓存时间的间隔</p>
+<h3 id="设置一般缓存"><a href="#设置一般缓存" class="headerlink" title="设置一般缓存"></a>设置一般缓存</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">//this.Cache.Insert(“w”, DateTime.Now.ToLongTimeString(), null, DateTime.Now.AddSeconds(10), TimeSpan.Zero);</div></pre></td></tr></table></figure>
+<h3 id="设置滑动缓存"><a href="#设置滑动缓存" class="headerlink" title="设置滑动缓存"></a>设置滑动缓存</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">//this.Cache.Insert(“w”,DateTime.Now.ToLocalTime(),null,DateTime.MaxValue,new TimeSpan(0,0,5));</div></pre></td></tr></table></figure>
+<h3 id="缓存依赖为文件"><a href="#缓存依赖为文件" class="headerlink" title="缓存依赖为文件"></a>缓存依赖为文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">//this.Cache.Insert(“w”, DateTime.Now.ToLocalTime(), new CacheDependency(Server.MapPath(“a.html”)));</div></pre></td></tr></table></figure>
+<h3 id="缓存数据库"><a href="#缓存数据库" class="headerlink" title="缓存数据库"></a>缓存数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">// this.Cache.Insert(“w”,DateTime.Now.ToLocalTime(),new SqlCacheDependency(“web.config文件中的配置数据库连接名”,”数据库缓存表名的名字”));</div></pre></td></tr></table></figure>
+<h1 id="配置缓存数据库"><a href="#配置缓存数据库" class="headerlink" title="配置缓存数据库"></a>配置缓存数据库</h1><h3 id="数据库缓存依赖"><a href="#数据库缓存依赖" class="headerlink" title="数据库缓存依赖"></a>数据库缓存依赖</h3><p>S服务器名称  -E集成身份验证  -ed启动 -d数据库名称 -et指定缓冲依赖的表名 -t表名**</p>
+<p>在vs2010的命令提示符中运行（切换到aspnet_regsql.exe所在的目录）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">aspnet_regsql -S . -E -ed -d HKCorpData -et -t HKSJ_USERS</div></pre></td></tr></table></figure>
+<p>缓存依赖禁用该数据库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">aspnet_regsql -S . -E -dd -d HKCorpData</div></pre></td></tr></table></figure></p>
+<h3 id="web-config配置文件如下："><a href="#web-config配置文件如下：" class="headerlink" title="web.config配置文件如下："></a>web.config配置文件如下：</h3><p>connectionString为连接字符串的名称</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">/* &lt;caching&gt;</div><div class="line">&lt;sqlCacheDependency enabled=”true”&gt;</div><div class="line">&lt;databases&gt;</div><div class="line">&lt;add name=”数据库名” connectionStringName=”connectionString” pollTime=”500”/&gt;</div><div class="line">&lt;/databases&gt;</div><div class="line">&lt;/sqlCacheDependency&gt;</div><div class="line">&lt;/caching&gt;*/</div></pre></td></tr></table></figure>
+<h1 id="session使用"><a href="#session使用" class="headerlink" title="session使用"></a>session使用</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/*stateServer数据必须是能可序列化的数据*/</div></pre></td></tr></table></figure>
+<h3 id="1-进程内使用"><a href="#1-进程内使用" class="headerlink" title="1.进程内使用"></a>1.进程内使用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">session[”key”]=”value”;</div><div class="line">object obj=session[”key”];</div></pre></td></tr></table></figure>
+<h3 id="2-进程外使用"><a href="#2-进程外使用" class="headerlink" title="2.进程外使用"></a>2.进程外使用</h3><p>配置web.config文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;sessionState mode=”StateServer” stateConnectionString=”tcpip=localhost:42424”&gt;&lt;/sessionState&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="如果是远程的stateserver配置注册表"><a href="#如果是远程的stateserver配置注册表" class="headerlink" title="如果是远程的stateserver配置注册表"></a>如果是远程的stateserver配置注册表</h3><p>命令：cmd → regedit.exe<br>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\aspnet_state\Parameters\AllowRemoteConnection</p>
+<h3 id="3-数据库服务器上使用"><a href="#3-数据库服务器上使用" class="headerlink" title="3.数据库服务器上使用"></a>3.数据库服务器上使用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">aspnet_regsql.exe -S 127.0.0.1 -U sa -P 123 -ssadd -sstype c -d SessionTest</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;sessionState mode=”SQLServer” allowCustomSqlDatabase=”true” sqlConnectionString=”Data Source=.;Initial Catalog=SessionTest;uid=sa;pwd=123”&gt;&lt;/sessionState&gt;</div></pre></td></tr></table></figure>
+<h1 id="全局文件的使用"><a href="#全局文件的使用" class="headerlink" title="全局文件的使用"></a>全局文件的使用</h1><h3 id="全局文件介绍："><a href="#全局文件介绍：" class="headerlink" title="全局文件介绍："></a>全局文件介绍：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line">//网站在iis上开启使用运行的方法，并对变量进行初始化</div><div class="line">protected void Application_Start(object sender, EventArgs e)</div><div class="line">&#123;</div><div class="line">//这里的变量为全局变量，也就是静态变量，可以被整个网站共用例：</div><div class="line">Application[”isbackground”] = “bluk”;</div><div class="line">//需要使用的这个颜色的时候可以直接调用Application[”isbackground”]</div><div class="line">//或者网站访问量</div><div class="line">Application[”number”] = 0;</div><div class="line">&#125;</div><div class="line">//当用户访问网站的时候执行此方法</div><div class="line">protected void Session_Start(object sender, EventArgs e)</div><div class="line">&#123;</div><div class="line">//在这里可以验证用户是否登入或者在线统计</div><div class="line">lock (Session[”Id”])</div><div class="line">    &#123;</div><div class="line">//在线人数统计</div><div class="line">Session[”Id”] = (int)Session[”Id”] + 1;</div><div class="line">//访问次数统计</div><div class="line">Application[”number”] = (int)Application[”number”] + 1;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//浏览器请求iis服务器到达管道中的第一个事件，在管道中触发</div><div class="line">protected void Application_BeginRequest(object sender, EventArgs e)</div><div class="line">&#123;</div><div class="line">//在这里可以对用户请求过滤例如：防盗链设置</div><div class="line">if (Request.RawUrl.Contains(“images/”))</div><div class="line">&#123;</div><div class="line">if (Request.UrlReferrer == null || !IsSameDomain(Request.UrlReferrer, Request.Url))</div><div class="line">    &#123;</div><div class="line">Response.ContentType = “image/jpeg”;</div><div class="line">string path = Request.MapPath(“~/daolian.jpg”);</div><div class="line">Response.WriteFile(path);</div><div class="line">//结束请求</div><div class="line">Response.End();</div><div class="line">     &#125;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">//判断两个域名是否相等</div><div class="line">public bool IsSameDomain(Uri u1, Uri u2)</div><div class="line">&#123;</div><div class="line">return Uri.Compare(u1, u2, UriComponents.HostAndPort, UriFormat.SafeUnescaped, StringComparison.CurrentCultureIgnoreCase) == 0 ? true : false;</div><div class="line">&#125;</div><div class="line">//管道中的第二个事件，验证请求，开始检查用户的身份</div><div class="line">protected void Application_AuthenticateRequest(object sender, EventArgs e)</div><div class="line">&#123;</div><div class="line">//一般用来获取用户信息</div><div class="line">//获取用户的访问证书</div><div class="line">HttpClientCertificate hr = new HttpClientCertificate();</div><div class="line">hr=  Context.Request.ClientCertificate;</div><div class="line">//获取用户的访问地址</div><div class="line">string str=  Request.UserHostAddress;</div><div class="line">&#125;</div><div class="line">//网站出错时运行此方法</div><div class="line">protected void Application_Error(object sender, EventArgs e)</div><div class="line">&#123;</div><div class="line">//可以将访问的地址更改为其他不出错的地址页面上去</div><div class="line">Response.Redirect(Server.MapPath(“a.html”));</div><div class="line">&#125;</div><div class="line">//当用户下线或者不在访问该网站时执行此方法</div><div class="line">protected void Session_End(object sender, EventArgs e)</div><div class="line">&#123;</div><div class="line">lock (Session[”Id”])</div><div class="line">    &#123;</div><div class="line">if ((int)Session[”Id”] &gt; 0)</div><div class="line">        &#123;</div><div class="line">Session[”Id”] = (int)Session[”Id”] - 1;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//网站停止或者重启时运行此方法</div><div class="line">protected void Application_End(object sender, EventArgs e)</div><div class="line">&#123;</div><div class="line">//可以保存当前网站的一些信息到文件中</div><div class="line">//将网站的访问量包存到文件中</div><div class="line">File.WriteAllText(“log.txt”, Application[”number”].ToString());</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="同时管道中的事件也可以在这里注册，下面是请求管道中的已经公开的19个事件："><a href="#同时管道中的事件也可以在这里注册，下面是请求管道中的已经公开的19个事件：" class="headerlink" title="同时管道中的事件也可以在这里注册，下面是请求管道中的已经公开的19个事件："></a>同时管道中的事件也可以在这里注册，下面是请求管道中的已经公开的19个事件：</h1><h3 id="1-BeginRequest-开始处理请求"><a href="#1-BeginRequest-开始处理请求" class="headerlink" title="(1)BeginRequest: 开始处理请求"></a>(1)BeginRequest: 开始处理请求</h3><h3 id="2-AuthenticateRequest授权验证请求，获取用户授权信息"><a href="#2-AuthenticateRequest授权验证请求，获取用户授权信息" class="headerlink" title="(2)AuthenticateRequest授权验证请求，获取用户授权信息"></a>(2)AuthenticateRequest授权验证请求，获取用户授权信息</h3><h3 id="3-PostAuthenticateRequest获取成功"><a href="#3-PostAuthenticateRequest获取成功" class="headerlink" title="(3):PostAuthenticateRequest获取成功"></a>(3):PostAuthenticateRequest获取成功</h3><h3 id="4-AunthorizeRequest授权，一般来检查用户是否获得权限"><a href="#4-AunthorizeRequest授权，一般来检查用户是否获得权限" class="headerlink" title="(4): AunthorizeRequest授权，一般来检查用户是否获得权限"></a>(4): AunthorizeRequest授权，一般来检查用户是否获得权限</h3><h3 id="5-PostAuthorizeRequest-获得授权"><a href="#5-PostAuthorizeRequest-获得授权" class="headerlink" title="(5):PostAuthorizeRequest:获得授权"></a>(5):PostAuthorizeRequest:获得授权</h3><h3 id="6-ResolveRequestCache-获取页面缓存结果"><a href="#6-ResolveRequestCache-获取页面缓存结果" class="headerlink" title="(6):ResolveRequestCache:获取页面缓存结果"></a>(6):ResolveRequestCache:获取页面缓存结果</h3><h3 id="7-PostResolveRequestCache已获取缓存-当前请求映射到MvcHandler（pr）：-创建控制器工厂-，创建控制器，调用action执行，view→responseaction-Handler-PR"><a href="#7-PostResolveRequestCache已获取缓存-当前请求映射到MvcHandler（pr）：-创建控制器工厂-，创建控制器，调用action执行，view→responseaction-Handler-PR" class="headerlink" title="(7):PostResolveRequestCache已获取缓存   当前请求映射到MvcHandler（pr）：  创建控制器工厂 ，创建控制器，调用action执行，view→responseaction   Handler : PR()"></a>(7):PostResolveRequestCache已获取缓存   当前请求映射到MvcHandler（pr）：  创建控制器工厂 ，创建控制器，调用action执行，view→responseaction   Handler : PR()</h3><h3 id="8-PostMapRequestHandler创建页面对象-创建-最终处理当前http请求的Handler-实例：-第一从HttpContext中获取当前的PR-Handler-，Create"><a href="#8-PostMapRequestHandler创建页面对象-创建-最终处理当前http请求的Handler-实例：-第一从HttpContext中获取当前的PR-Handler-，Create" class="headerlink" title="(8):PostMapRequestHandler创建页面对象:创建 最终处理当前http请求的Handler  实例：  第一从HttpContext中获取当前的PR Handler   ，Create"></a>(8):PostMapRequestHandler创建页面对象:创建 最终处理当前http请求的Handler  实例：  第一从HttpContext中获取当前的PR Handler   ，Create</h3><h3 id="9-PostAcquireRequestState获取Session"><a href="#9-PostAcquireRequestState获取Session" class="headerlink" title="(9):PostAcquireRequestState获取Session"></a>(9):PostAcquireRequestState获取Session</h3><h3 id="10-PostAcquireRequestState获得Session"><a href="#10-PostAcquireRequestState获得Session" class="headerlink" title="(10)PostAcquireRequestState获得Session"></a>(10)PostAcquireRequestState获得Session</h3><h3 id="11-PreRequestHandlerExecute-准备执行页面对象"><a href="#11-PreRequestHandlerExecute-准备执行页面对象" class="headerlink" title="(11)PreRequestHandlerExecute:准备执行页面对象"></a>(11)PreRequestHandlerExecute:准备执行页面对象</h3><p>执行页面对象的ProcessRequest方法</p>
+<h3 id="12-PostRequestHandlerExecute执行完页面对象了"><a href="#12-PostRequestHandlerExecute执行完页面对象了" class="headerlink" title="(12)PostRequestHandlerExecute执行完页面对象了"></a>(12)PostRequestHandlerExecute执行完页面对象了</h3><h3 id="13-ReleaseRequestState释放请求状态"><a href="#13-ReleaseRequestState释放请求状态" class="headerlink" title="(13)ReleaseRequestState释放请求状态"></a>(13)ReleaseRequestState释放请求状态</h3><h3 id="14-PostReleaseRequestState已释放请求状态"><a href="#14-PostReleaseRequestState已释放请求状态" class="headerlink" title="(14)PostReleaseRequestState已释放请求状态"></a>(14)PostReleaseRequestState已释放请求状态</h3><h3 id="15-UpdateRequestCache更新缓存"><a href="#15-UpdateRequestCache更新缓存" class="headerlink" title="(15)UpdateRequestCache更新缓存"></a>(15)UpdateRequestCache更新缓存</h3><h3 id="16-PostUpdateRequestCache已更新缓存"><a href="#16-PostUpdateRequestCache已更新缓存" class="headerlink" title="(16)PostUpdateRequestCache已更新缓存"></a>(16)PostUpdateRequestCache已更新缓存</h3><h3 id="17-LogRequest日志记录"><a href="#17-LogRequest日志记录" class="headerlink" title="(17)LogRequest日志记录"></a>(17)LogRequest日志记录</h3><h3 id="18-PostLogRequest已完成日志"><a href="#18-PostLogRequest已完成日志" class="headerlink" title="(18)PostLogRequest已完成日志"></a>(18)PostLogRequest已完成日志</h3><h3 id="19-EndRequest完成、"><a href="#19-EndRequest完成、" class="headerlink" title="(19)EndRequest完成、"></a>(19)EndRequest完成、</h3><h3 id="IHttpModule接口的使用："><a href="#IHttpModule接口的使用：" class="headerlink" title="IHttpModule接口的使用："></a>IHttpModule接口的使用：</h3><p>此接口中有两个方法Dispose和Init，在Init中也可以注册管道中的19事件</p>
+<h2 id="配置web-config文件："><a href="#配置web-config文件：" class="headerlink" title="配置web.config文件："></a>配置web.config文件：</h2><h3 id="在system-web节点下配置"><a href="#在system-web节点下配置" class="headerlink" title="在system.web节点下配置"></a>在system.web节点下配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;httpModules&gt;</div><div class="line">&lt;add name=”文件名称” type=”类的全名称”/&gt;</div><div class="line">&lt;!--&lt;add name=”MyHttpModuleDemo” type=”CZBK.WebSite.Web.HttpModule.MyHttpModuleDemo”/&gt;--&gt;</div><div class="line">&lt;/httpModules&gt;</div><div class="line">//对象释放式执行</div><div class="line">public void Dispose()</div><div class="line">&#123;&#125;</div><div class="line">/// &lt;summary&gt;</div><div class="line">/// 初始化时执行，可以对管道中的公开的事件进行注册</div><div class="line">/// &lt;/summary&gt;</div><div class="line">/// &lt;param name=”context”&gt;上下文对像&lt;/param&gt;</div><div class="line">public void Init(HttpApplication context)</div><div class="line">&#123;</div><div class="line">//例：注册管道中的第一事件</div><div class="line">//注册开始处理请求事件</div><div class="line">context.BeginRequest += new EventHandler(context_BeginRequest);</div><div class="line">&#125;</div><div class="line">/// &lt;summary&gt;</div><div class="line">///注册管道中的第一个事件的方法</div><div class="line">/// &lt;/summary&gt;</div><div class="line">/// &lt;param name=”sender”&gt;请求信息&lt;/param&gt;</div><div class="line">/// &lt;param name=”e”&gt;与事件有关的基类对象&lt;/param&gt;</div><div class="line">private void context_BeginRequest(object sender, EventArgs e)</div><div class="line">&#123;</div><div class="line">//将sender中的信息转化为应用程序的基类对像</div><div class="line">HttpApplication application = sender as HttpApplication;</div><div class="line">application.Context.Response.Write(“我是在继承了IHttpModle的类中注册的管道中的事件”);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="错误页配置："><a href="#错误页配置：" class="headerlink" title="错误页配置："></a>错误页配置：</h3><p>在web.config文件中的system.web配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;customErrors mode=”错误页配置模式：On开启, Off关闭，RemoteOnly远程开启  “ defaultRedirect=”默认错误发生时跳转的页面”&gt;</div><div class="line">&lt;error statusCode=”http状态错误代码” redirect=”指定跳转的页面”/&gt;</div><div class="line">&lt;/customErrors&gt;</div></pre></td></tr></table></figure></p>
+<p>例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;customErrors mode=”RemoteOnly” defaultRedirect=”myErrorpage.aspx”&gt;</div><div class="line">&lt;error statusCode=”404” redirect=”error.html”/&gt;</div><div class="line">&lt;error statusCode=”403” redirect=”error.html”/&gt;</div><div class="line">&lt;/customErrors&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="url重写原理"><a href="#url重写原理" class="headerlink" title="url重写原理"></a>url重写原理</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">void Application_BeginRequest(object sender, EventArgs e)</div><div class="line">    &#123;</div><div class="line">//url重写</div><div class="line">HttpApplication app = sender as HttpApplication;</div><div class="line">string url = app.Request.RawUrl;</div><div class="line">/根据请求的地址解析出实际地址来</div><div class="line">Regex r = new Regex(“/(\\d+)/details\\.htm&quot;,RegexOptions.IgnoreCase);</div><div class="line">Match m = r.Match(url);</div><div class="line">if (m.Success)</div><div class="line">        &#123;</div><div class="line">string id = m.Groups[1].Value;</div><div class="line">app.Context.RewritePath(“~/PhotoDetails.aspx?id=” + id);</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h1 id="urlRewriter"><a href="#urlRewriter" class="headerlink" title="urlRewriter"></a>urlRewriter</h1><h3 id="1、在节点加入"><a href="#1、在节点加入" class="headerlink" title="1、在节点加入"></a>1、在<configsections>节点加入</configsections></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;section name=”RewriterConfig”type=”URLRewriter.Config.RewriterConfigSerializerSectionHandler, URLRewriter” /&gt;</div></pre></td></tr></table></figure>
+<h3 id="2、在之后加入"><a href="#2、在之后加入" class="headerlink" title="2、在之后加入"></a>2、在之后加入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;RewriterConfig&gt;</div><div class="line">&lt;Rules&gt;</div><div class="line">&lt;RewriterRule&gt;</div><div class="line">&lt;LookFor&gt;~/(\d&#123;4&#125;)/(\d&#123;2&#125;)/Default\.aspx&lt;/LookFor&gt;</div><div class="line">&lt;SendTo&gt;~/Default.aspx?ID=$1&lt;/SendTo&gt;</div><div class="line">&lt;/RewriterRule&gt;</div><div class="line">&lt;/Rules&gt;</div><div class="line">&lt;/RewriterConfig&gt;</div></pre></td></tr></table></figure>
+<h3 id="3、中加入"><a href="#3、中加入" class="headerlink" title="3、中加入"></a>3、<httphandlers>中加入</httphandlers></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;add verb=”*” path=”*.aspx” type=”URLRewriter.RewriterFactoryHandler, URLRewriter” /&gt;</div></pre></td></tr></table></figure>
+<h2 id="数据绑定："><a href="#数据绑定：" class="headerlink" title="数据绑定："></a>数据绑定：</h2><h3 id="1-lt-Eval-gt-Eval单向绑定-只是计算表达式的值输出"><a href="#1-lt-Eval-gt-Eval单向绑定-只是计算表达式的值输出" class="headerlink" title="1.&lt;%#Eval()%&gt;Eval单向绑定,只是计算表达式的值输出"></a>1.&lt;%#Eval()%&gt;Eval单向绑定,只是计算表达式的值输出</h3><h3 id="2-lt-gt-将绑定的数据进行格式化后再显示在页面上"><a href="#2-lt-gt-将绑定的数据进行格式化后再显示在页面上" class="headerlink" title="2.&lt;%: %&gt;将绑定的数据进行格式化后再显示在页面上"></a>2.&lt;%: %&gt;将绑定的数据进行格式化后再显示在页面上</h3><h3 id="3-lt-gt-将绑定的数据直接输出来不做什么处理"><a href="#3-lt-gt-将绑定的数据直接输出来不做什么处理" class="headerlink" title="3.&lt;%= %&gt;将绑定的数据直接输出来不做什么处理"></a>3.&lt;%= %&gt;将绑定的数据直接输出来不做什么处理</h3><h3 id="4-lt-Bind-gt-双向绑定-不仅可以计算表达式的值输出，还可以将用户填入的值更新到数据中"><a href="#4-lt-Bind-gt-双向绑定-不仅可以计算表达式的值输出，还可以将用户填入的值更新到数据中" class="headerlink" title="4.&lt;%#Bind()%&gt;双向绑定,不仅可以计算表达式的值输出，还可以将用户填入的值更新到数据中"></a>4.&lt;%#Bind()%&gt;双向绑定,不仅可以计算表达式的值输出，还可以将用户填入的值更新到数据中</h3><h3 id="5-第二种方法的方法重载"><a href="#5-第二种方法的方法重载" class="headerlink" title="5.第二种方法的方法重载:"></a>5.第二种方法的方法重载:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;a href=’&lt;%# Eval(“userId”,”Default.aspx?id=&#123;0&#125;”)%&gt;’&gt;&lt;%# Eval(“userName”) %&gt;&lt;/a&gt;</div></pre></td></tr></table></figure>
+<h3 id="6-eval同时绑定两个值"><a href="#6-eval同时绑定两个值" class="headerlink" title="6.eval同时绑定两个值"></a>6.eval同时绑定两个值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;a href=’&lt;%# string.Format(“Default.aspx?id=&#123;0&#125;&amp;role=&#123;1&#125;”, Eval(“userId”),Eval(“userRole”))%&gt;’&gt;&lt;%# Eval(“userName”) %&gt;&lt;/a&gt;</div></pre></td></tr></table></figure>
+<p>注意%和后面的#不能有空格或其他发符号</p>
+<h3 id="WebRequest类使用"><a href="#WebRequest类使用" class="headerlink" title="WebRequest类使用:"></a>WebRequest类使用:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">PageUrl = “http://xj8c.cc “; //需要获取源代码的网页</div><div class="line">WebRequest request = WebRequest.Create(PageUrl); //WebRequest.Create方法，返回WebRequest的子类HttpWebRequest</div><div class="line">WebResponse response = request.GetResponse(); //WebRequest.GetResponse方法，返回对Internet请求的响应</div><div class="line">Stream resStream = response.GetResponseStream(); //WebResponse.GetResponseStream方法，从Internet资源返回数据流。</div><div class="line">Encoding enc = Encoding.GetEncoding(“GB2312”); // 如果是乱码就改成utf-8 / GB2312</div><div class="line">StreamReader sr = new StreamReader(resStream, enc); //命名空间:System.IO。 StreamReader类实现一个TextReader (TextReader类，表示可读取连续字符系列的读取器)，使其以一种特定的编码从字节流中读取字符。</div><div class="line">ContentHtml.Text = sr.ReadToEnd(); //输出(HTML代码)，ContentHtml为Multiline模式的TextBox控件</div><div class="line">resStream.Close();</div><div class="line">sr.Close();</div></pre></td></tr></table></figure>
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">×</a>
+            <div class="shang_tit">
+              <p>谢谢你请我吃辣条</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2015/07/16/asp.net-knowledge-point-summary-5/">Asp.net知识点总结(五)</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 阿星Plus 的个人博客">阿星Plus</a></p>
+        <p><span>发布时间:</span>2015年07月16日 - 19时47分</p>
+        <p><span>最后更新:</span>2017年05月26日 - 11时29分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2015/07/16/asp.net-knowledge-point-summary-5/" title="Asp.net知识点总结(五)">http://xj8c.cc/2015/07/16/asp.net-knowledge-point-summary-5/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://xj8c.cc/2015/07/16/asp.net-knowledge-point-summary-5/　　作者: 阿星Plus" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2015/07/27/vs-shortcuts/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          必须知道的 Visual Studio 快捷键
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/07/13/ten-programming-languages/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">你必须知道的十个编程语言</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ASP-NET高级配置"><span class="toc-number">1.</span> <span class="toc-text">ASP.NET高级配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Cache缓存机制"><span class="toc-number">1.1.</span> <span class="toc-text">Cache缓存机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置一般缓存"><span class="toc-number">1.2.</span> <span class="toc-text">设置一般缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置滑动缓存"><span class="toc-number">1.3.</span> <span class="toc-text">设置滑动缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存依赖为文件"><span class="toc-number">1.4.</span> <span class="toc-text">缓存依赖为文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存数据库"><span class="toc-number">1.5.</span> <span class="toc-text">缓存数据库</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置缓存数据库"><span class="toc-number"></span> <span class="toc-text">配置缓存数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库缓存依赖"><span class="toc-number">0.1.</span> <span class="toc-text">数据库缓存依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-config配置文件如下："><span class="toc-number">0.2.</span> <span class="toc-text">web.config配置文件如下：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#session使用"><span class="toc-number"></span> <span class="toc-text">session使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-进程内使用"><span class="toc-number">0.1.</span> <span class="toc-text">1.进程内使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-进程外使用"><span class="toc-number">0.2.</span> <span class="toc-text">2.进程外使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如果是远程的stateserver配置注册表"><span class="toc-number">0.3.</span> <span class="toc-text">如果是远程的stateserver配置注册表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-数据库服务器上使用"><span class="toc-number">0.4.</span> <span class="toc-text">3.数据库服务器上使用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#全局文件的使用"><span class="toc-number"></span> <span class="toc-text">全局文件的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#全局文件介绍："><span class="toc-number">0.1.</span> <span class="toc-text">全局文件介绍：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#同时管道中的事件也可以在这里注册，下面是请求管道中的已经公开的19个事件："><span class="toc-number"></span> <span class="toc-text">同时管道中的事件也可以在这里注册，下面是请求管道中的已经公开的19个事件：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-BeginRequest-开始处理请求"><span class="toc-number">0.1.</span> <span class="toc-text">(1)BeginRequest: 开始处理请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-AuthenticateRequest授权验证请求，获取用户授权信息"><span class="toc-number">0.2.</span> <span class="toc-text">(2)AuthenticateRequest授权验证请求，获取用户授权信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-PostAuthenticateRequest获取成功"><span class="toc-number">0.3.</span> <span class="toc-text">(3):PostAuthenticateRequest获取成功</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-AunthorizeRequest授权，一般来检查用户是否获得权限"><span class="toc-number">0.4.</span> <span class="toc-text">(4): AunthorizeRequest授权，一般来检查用户是否获得权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-PostAuthorizeRequest-获得授权"><span class="toc-number">0.5.</span> <span class="toc-text">(5):PostAuthorizeRequest:获得授权</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-ResolveRequestCache-获取页面缓存结果"><span class="toc-number">0.6.</span> <span class="toc-text">(6):ResolveRequestCache:获取页面缓存结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-PostResolveRequestCache已获取缓存-当前请求映射到MvcHandler（pr）：-创建控制器工厂-，创建控制器，调用action执行，view→responseaction-Handler-PR"><span class="toc-number">0.7.</span> <span class="toc-text">(7):PostResolveRequestCache已获取缓存   当前请求映射到MvcHandler（pr）：  创建控制器工厂 ，创建控制器，调用action执行，view→responseaction   Handler : PR()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-PostMapRequestHandler创建页面对象-创建-最终处理当前http请求的Handler-实例：-第一从HttpContext中获取当前的PR-Handler-，Create"><span class="toc-number">0.8.</span> <span class="toc-text">(8):PostMapRequestHandler创建页面对象:创建 最终处理当前http请求的Handler  实例：  第一从HttpContext中获取当前的PR Handler   ，Create</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-PostAcquireRequestState获取Session"><span class="toc-number">0.9.</span> <span class="toc-text">(9):PostAcquireRequestState获取Session</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-PostAcquireRequestState获得Session"><span class="toc-number">0.10.</span> <span class="toc-text">(10)PostAcquireRequestState获得Session</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-PreRequestHandlerExecute-准备执行页面对象"><span class="toc-number">0.11.</span> <span class="toc-text">(11)PreRequestHandlerExecute:准备执行页面对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-PostRequestHandlerExecute执行完页面对象了"><span class="toc-number">0.12.</span> <span class="toc-text">(12)PostRequestHandlerExecute执行完页面对象了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-ReleaseRequestState释放请求状态"><span class="toc-number">0.13.</span> <span class="toc-text">(13)ReleaseRequestState释放请求状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-PostReleaseRequestState已释放请求状态"><span class="toc-number">0.14.</span> <span class="toc-text">(14)PostReleaseRequestState已释放请求状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-UpdateRequestCache更新缓存"><span class="toc-number">0.15.</span> <span class="toc-text">(15)UpdateRequestCache更新缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-PostUpdateRequestCache已更新缓存"><span class="toc-number">0.16.</span> <span class="toc-text">(16)PostUpdateRequestCache已更新缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-LogRequest日志记录"><span class="toc-number">0.17.</span> <span class="toc-text">(17)LogRequest日志记录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-PostLogRequest已完成日志"><span class="toc-number">0.18.</span> <span class="toc-text">(18)PostLogRequest已完成日志</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19-EndRequest完成、"><span class="toc-number">0.19.</span> <span class="toc-text">(19)EndRequest完成、</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IHttpModule接口的使用："><span class="toc-number">0.20.</span> <span class="toc-text">IHttpModule接口的使用：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置web-config文件："><span class="toc-number">1.</span> <span class="toc-text">配置web.config文件：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在system-web节点下配置"><span class="toc-number">1.1.</span> <span class="toc-text">在system.web节点下配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#错误页配置："><span class="toc-number">1.2.</span> <span class="toc-text">错误页配置：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#url重写原理"><span class="toc-number">2.</span> <span class="toc-text">url重写原理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#urlRewriter"><span class="toc-number"></span> <span class="toc-text">urlRewriter</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、在节点加入"><span class="toc-number">0.1.</span> <span class="toc-text">1、在节点加入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、在之后加入"><span class="toc-number">0.2.</span> <span class="toc-text">2、在之后加入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、中加入"><span class="toc-number">0.3.</span> <span class="toc-text">3、中加入</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据绑定："><span class="toc-number">1.</span> <span class="toc-text">数据绑定：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-lt-Eval-gt-Eval单向绑定-只是计算表达式的值输出"><span class="toc-number">1.1.</span> <span class="toc-text">1.<%#Eval()%>Eval单向绑定,只是计算表达式的值输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-lt-gt-将绑定的数据进行格式化后再显示在页面上"><span class="toc-number">1.2.</span> <span class="toc-text">2.<%: %>将绑定的数据进行格式化后再显示在页面上</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-lt-gt-将绑定的数据直接输出来不做什么处理"><span class="toc-number">1.3.</span> <span class="toc-text">3.<%= %>将绑定的数据直接输出来不做什么处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-lt-Bind-gt-双向绑定-不仅可以计算表达式的值输出，还可以将用户填入的值更新到数据中"><span class="toc-number">1.4.</span> <span class="toc-text">4.<%#Bind()%>双向绑定,不仅可以计算表达式的值输出，还可以将用户填入的值更新到数据中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-第二种方法的方法重载"><span class="toc-number">1.5.</span> <span class="toc-text">5.第二种方法的方法重载:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-eval同时绑定两个值"><span class="toc-number">1.6.</span> <span class="toc-text">6.eval同时绑定两个值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WebRequest类使用"><span class="toc-number">1.7.</span> <span class="toc-text">WebRequest类使用:</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="Asp.net知识点总结(五)"></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cyt1UJT89'; 
+var conf = 'prod_a66df9b8bf4687f6662a946344b221b7'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2015/07/27/vs-shortcuts/" title="上一篇: 必须知道的 Visual Studio 快捷键">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2015/07/13/ten-programming-languages/" title="下一篇: 你必须知道的十个编程语言">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/08/31/csharp7/">C＃7.0中有哪些新特性？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/18/internship-experience/">武汉路博特工程科技有限公司实习“满月”工作感受</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/16/asp.net-knowledge-point-interview/">ASP.NET知识点面试篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/08/what-is-a-three-tier-architecture/">三层架构到底是个什么玩意？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/07/five-main-objects-in-dotnet/">ADO.NET中的五个主要对象？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/10/the-students-with-poor-grades-reversed/">一个学渣的逆袭</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/21/computer-computing-infrastructure/">计算机运算基础荟萃</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/08/CEAC-office2010/">CEAC-office2010实操题练习评测系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/28/test-case-design-advanced(bottom)/">测试用例设计进阶(下)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/28/test-case-design-in-order(upper)/">测试用例设计进阶（上）</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/25/boundary-value/">边界值分析法相关概念 — 边界点相关概念</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/24/basic-knowledge-of-software-testing/">软件测试基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/24/overview-of-software-testing/">软件测试概述</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/20/xml-note-1/">XML学习笔记(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/12/when-the-deepest-counsel-comes-to-the-most-clear-ideal/">当最深沉的筹谋换来最清明的理想</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/01/10-best-javascript-development-practices/">10个最佳 javascript 开发实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/07/the-30-most-difficult-questions-to-answer-in-history/">史上最难回答的30个问题，没有一人都能答对！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/05/windows10-iso.md/">Win10正式版微软官方原版ISO系统镜像下载大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/02/the-work-of-a-programmer/">一本关于程序员的修真小说</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/02/Win10-ten-points/">Win10的十个亮点</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/01/Zhihu-god-reply/">一大波，知乎神回复在接近了！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/27/vs-shortcuts/">必须知道的 Visual Studio 快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/16/asp.net-knowledge-point-summary-5/">Asp.net知识点总结(五)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/13/ten-programming-languages/">你必须知道的十个编程语言</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/11/asp.net-knowledge-point-summary-4/">Asp.net知识点总结(四)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/07/asp.net-knowledge-point-summary-3/">Asp.net知识点总结(三)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/06/bigdata-internet-thinking-O2O-crowdfunding/">什么是大数据，什么是红海、蓝海、互联网思维？什么是O2O？什么是众筹？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/04/asp.net-knowledge-point-summary-2/">Asp.net知识点总结(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/03/asp.net-knowledge-point-summary-1/">Asp.net知识点总结(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/25/shopping-online/">Shopping Online</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/04/SqlServer2008/">sql数据库|SqlServer2008 R2_x86&x64</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/17/why-is-the-chinese-mobile-number-11/">揭秘：中国手机号码为什么是11位数？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/14/33-poems-of-the-most-artistic-conception-in-China/">中国最有意境的33句诗文，欣赏下吧！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/05/win7-cmd/">Win7运行命令大全|开始-运行-命令总汇</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/31/please-don't-be-a-fickle-IT-man/">请不要做浮躁的IT人</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/29/the-name-of-the-big-internet-companies/">各大互联网公司命名的由来，值得你了解。</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/25/30-the-hacker-movie/">30部黑客电影，你看过哪几部？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/22/top 10 IT jobs in 2015/">2015年 十大热门 IT 工作</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/10/a-years-plan-starts-with-spring/">A year's plan starts with spring ！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/28/cherish-every-day/">珍惜每一天</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/28/adobe-photoshop/">Adobe Photoshop 绿色安装版</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/20/national-computer-level-office2010/">全国计算机一级Office2010+win7版（未来教育）考试练习软件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/15/microsoft-office-2010/">Microsoft office 2010</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy;
+                2017
+                    阿星Plus
+            </div>
+            <div class="footer-right">
+                Blog By <a href="http://hexo.io/" target="_blank">Hexo</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站访问量: 
+                            <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                    </span>
+                    
+                        
+                            <span>, </span>
+                            
+                                
+                                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                                    </span>
+                                    </span>
+                                    
+            </div>
+            
+    </div>
+</footer>
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

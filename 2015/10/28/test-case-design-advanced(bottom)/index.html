@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>测试用例设计进阶(下) | 当然我在瞎扯</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="场景分析法设计测试用例 — 场景分析相关概念场景应用软件一般都是用事件触发来控制流程的，事件触发时的情景便形成了场景。 事件流同一事件不同的触发顺序和处理结果就形成事件流，事件流分为基本流和备选流。 基本流程序从开始执行直到成功结束所经过的最短路径。 备选流一个备选流可能从基本流开始，在某个特定条件下执行，然后重新加入基本流中；也可能起源于另一个备选流，执行后加入基本流或者终止用例。 一个典型的场">
+<meta name="keywords" content="软件测试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="测试用例设计进阶(下)">
+<meta property="og:url" content="http://xj8c.cc/2015/10/28/test-case-design-advanced(bottom)/index.html">
+<meta property="og:site_name" content="当然我在瞎扯">
+<meta property="og:description" content="场景分析法设计测试用例 — 场景分析相关概念场景应用软件一般都是用事件触发来控制流程的，事件触发时的情景便形成了场景。 事件流同一事件不同的触发顺序和处理结果就形成事件流，事件流分为基本流和备选流。 基本流程序从开始执行直到成功结束所经过的最短路径。 备选流一个备选流可能从基本流开始，在某个特定条件下执行，然后重新加入基本流中；也可能起源于另一个备选流，执行后加入基本流或者终止用例。 一个典型的场">
+<meta property="og:updated_time" content="2017-05-26T04:47:33.220Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="测试用例设计进阶(下)">
+<meta name="twitter:description" content="场景分析法设计测试用例 — 场景分析相关概念场景应用软件一般都是用事件触发来控制流程的，事件触发时的情景便形成了场景。 事件流同一事件不同的触发顺序和处理结果就形成事件流，事件流分为基本流和备选流。 基本流程序从开始执行直到成功结束所经过的最短路径。 备选流一个备选流可能从基本流开始，在某个特定条件下执行，然后重新加入基本流中；也可能起源于另一个备选流，执行后加入基本流或者终止用例。 一个典型的场">
+  
+    <link rel="alternative" href="/atom.xml" title="当然我在瞎扯" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+                <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+        </a>
+
+        <hgroup>
+            <h1 class="header-author">
+                <a href="/" title="Hello World">
+                    阿星Plus
+                </a>
+            </h1>
+        </hgroup>
+
+        
+            <p class="header-subtitle">
+                生命不息，奋斗不止
+            </p>
+            
+                
+                        
+                            <div id="switch-btn" class="switch-btn">
+                                <div class="icon">
+                                    <div class="icon-ctn">
+                                        <div class="icon-wrap icon-house" data-idx="0">
+                                            <div class="birdhouse"></div>
+                                            <div class="birdhouse_holes"></div>
+                                        </div>
+                                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                                            <div class="ribbon"></div>
+                                        </div>
+                                        
+                                            <div class="icon-wrap icon-link hide" data-idx="2">
+                                                <div class="loopback_l"></div>
+                                                <div class="loopback_r"></div>
+                                            </div>
+                                            
+                                                
+                                    </div>
+
+                                </div>
+                                <div class="tips-box hide">
+                                    <div class="tips-arrow"></div>
+                                    <ul class="tips-inner">
+                                        <li>菜单</li>
+                                        <li>标签</li>
+                                        
+                                            <li>友情链接</li>
+                                            
+                                                
+                                    </ul>
+                                </div>
+                            </div>
+                            
+
+                                <div id="switch-area" class="switch-area">
+                                    <div class="switch-wrap">
+                                        <section class="switch-part switch-part1">
+                                            <nav class="header-menu">
+                                                <ul>
+                                                    
+                                                        <li>
+                                                            <a href="/">
+                                                                Home
+                                                            </a>
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            <a href="/archives">
+                                                                Archives
+                                                            </a>
+                                                        </li>
+                                                        
+                                                </ul>
+                                            </nav>
+                                            <nav class="header-nav">
+                                                <ul class="social">
+                                                    
+                                                        <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=w-Lx8IOupqy0te2grK4" title="mail">
+                                                            mail
+                                                        </a>
+                                                        
+                                                        <a class="fl weibo" target="_blank" href="http://weibo.com/Tencentgou" title="weibo">
+                                                            weibo
+                                                        </a>
+                                                        
+                                                        <a class="fl github" target="_blank" href="https://github.com/Meowv" title="github">
+                                                            github
+                                                        </a>
+                                                        
+                                                        <a class="fl twitter" target="_blank" href="https://twitter.com/hackxing" title="twitter">
+                                                            twitter
+                                                        </a>
+                                                        
+                                                        <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">
+                                                            zhihu
+                                                        </a>
+                                                        
+                                                        <a class="fl rss" target="_blank" href="/atom.xml" title="rss">
+                                                            rss
+                                                        </a>
+                                                        
+                                                </ul>
+                                            </nav>
+                                        </section>
+
+                                        
+                                            <section class="switch-part switch-part2">
+                                                <div class="widget tagcloud" id="js-tagcloud">
+                                                    <a href="/tags/ASP-NET/" style="font-size: 20px;">ASP.NET</a> <a href="/tags/C/" style="font-size: 12px;">C#</a> <a href="/tags/CEAC/" style="font-size: 10px;">CEAC</a> <a href="/tags/IT/" style="font-size: 12px;">IT</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Photoshop/" style="font-size: 10px;">Photoshop</a> <a href="/tags/SqlServer/" style="font-size: 10px;">SqlServer</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/office2010/" style="font-size: 14px;">office2010</a> <a href="/tags/win10/" style="font-size: 12px;">win10</a> <a href="/tags/win7/" style="font-size: 10px;">win7</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/三层架构/" style="font-size: 10px;">三层架构</a> <a href="/tags/互联网/" style="font-size: 14px;">互联网</a> <a href="/tags/原版系统/" style="font-size: 10px;">原版系统</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/实习感受/" style="font-size: 10px;">实习感受</a> <a href="/tags/小说/" style="font-size: 10px;">小说</a> <a href="/tags/微软/" style="font-size: 10px;">微软</a> <a href="/tags/手机/" style="font-size: 10px;">手机</a> <a href="/tags/技术教程/" style="font-size: 18px;">技术教程</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/春天/" style="font-size: 10px;">春天</a> <a href="/tags/琅琊榜/" style="font-size: 10px;">琅琊榜</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/知乎/" style="font-size: 10px;">知乎</a> <a href="/tags/程序员/" style="font-size: 10px;">程序员</a> <a href="/tags/绿色软件/" style="font-size: 16px;">绿色软件</a> <a href="/tags/编程/" style="font-size: 10px;">编程</a> <a href="/tags/计算机一级/" style="font-size: 10px;">计算机一级</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/诗文/" style="font-size: 10px;">诗文</a> <a href="/tags/软件测试/" style="font-size: 18px;">软件测试</a> <a href="/tags/进制转换/" style="font-size: 10px;">进制转换</a> <a href="/tags/逆袭/" style="font-size: 10px;">逆袭</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/黑客/" style="font-size: 10px;">黑客</a>
+                                                </div>
+                                            </section>
+                                            
+
+                                                
+                                                    <section class="switch-part switch-part3">
+                                                        <div id="js-friends">
+                                                            
+                                                                <a target="_blank" class="main-nav-link switch-friends-link" href="http://meowv.com/">
+                                                                    喵呜网
+                                                                </a>
+                                                                
+                                                        </div>
+                                                    </section>
+                                                    
+
+                                                        
+                                    </div>
+                                </div>
+    </header>
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">阿星Plus</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">阿星Plus</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">生命不息，奋斗不止</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">Home</a></li>
+                
+                    <li><a href="/archives">Archives</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=w-Lx8IOupqy0te2grK4" title="mail">mail</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/Tencentgou" title="weibo">weibo</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/Meowv" title="github">github</a>
+                    
+                        <a class="twitter" target="_blank" href="https://twitter.com/hackxing" title="twitter">twitter</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">zhihu</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-test-case-design-advanced(bottom)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/28/test-case-design-advanced(bottom)/" class="article-date">
+      <time datetime="2015-10-28T13:58:11.000Z" itemprop="datePublished">2015-10-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      测试用例设计进阶(下)
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/软件测试/">软件测试</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="场景分析法设计测试用例-—-场景分析相关概念"><a href="#场景分析法设计测试用例-—-场景分析相关概念" class="headerlink" title="场景分析法设计测试用例 — 场景分析相关概念"></a>场景分析法设计测试用例 — 场景分析相关概念</h2><h3 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h3><p>应用软件一般都是用事件触发来控制流程的，事件触发时的情景便形成了场景。</p>
+<h3 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h3><p>同一事件不同的触发顺序和处理结果就形成事件流，事件流分为基本流和备选流。</p>
+<h3 id="基本流"><a href="#基本流" class="headerlink" title="基本流"></a>基本流</h3><p>程序从开始执行直到成功结束所经过的最短路径。</p>
+<h3 id="备选流"><a href="#备选流" class="headerlink" title="备选流"></a>备选流</h3><p>一个备选流可能从基本流开始，在某个特定条件下执行，然后重新加入基本流中；也可能起源于另一个备选流，执行后加入基本流或者终止用例。</p>
+<h3 id="一个典型的场景分析图"><a href="#一个典型的场景分析图" class="headerlink" title="一个典型的场景分析图"></a>一个典型的场景分析图</h3><h2 id="场景分析法设计测试用例-—-使用场景分析设计测试用例"><a href="#场景分析法设计测试用例-—-使用场景分析设计测试用例" class="headerlink" title="场景分析法设计测试用例 — 使用场景分析设计测试用例"></a>场景分析法设计测试用例 — 使用场景分析设计测试用例</h2><h3 id="场景分析法"><a href="#场景分析法" class="headerlink" title="场景分析法"></a>场景分析法</h3><p>通过分析事件流设计测试用例的方法。</p>
+<h3 id="场景分析法的使用场景"><a href="#场景分析法的使用场景" class="headerlink" title="场景分析法的使用场景"></a>场景分析法的使用场景</h3><p>场景分析一般在分析业务流程或流程化处理功能时使用。</p>
+<h3 id="场景分析法的优点"><a href="#场景分析法的优点" class="headerlink" title="场景分析法的优点"></a>场景分析法的优点</h3><p>场景分析法可以比较生动地描绘出事件触发时的情景，有利于测试设计者设计测试用例，同时使测试用例更容易理解和执行。</p>
+<h3 id="场景分析法设计测试用例的步骤："><a href="#场景分析法设计测试用例的步骤：" class="headerlink" title="场景分析法设计测试用例的步骤："></a>场景分析法设计测试用例的步骤：</h3><h4 id="1、分析软件规格说明描述，整理出基本流和备选流。"><a href="#1、分析软件规格说明描述，整理出基本流和备选流。" class="headerlink" title="1、分析软件规格说明描述，整理出基本流和备选流。"></a>1、分析软件规格说明描述，整理出基本流和备选流。</h4><h4 id="2、根据基本流和备选流组合关系生成场景。"><a href="#2、根据基本流和备选流组合关系生成场景。" class="headerlink" title="2、根据基本流和备选流组合关系生成场景。"></a>2、根据基本流和备选流组合关系生成场景。</h4><h4 id="3、分析所有场景，合并测试内容重复的场景。"><a href="#3、分析所有场景，合并测试内容重复的场景。" class="headerlink" title="3、分析所有场景，合并测试内容重复的场景。"></a>3、分析所有场景，合并测试内容重复的场景。</h4><h4 id="4、根据场景逐一设计测试用例。"><a href="#4、根据场景逐一设计测试用例。" class="headerlink" title="4、根据场景逐一设计测试用例。"></a>4、根据场景逐一设计测试用例。</h4><p>例、在用信用卡网上支付时，输入信用卡卡号、查询密码和实时短信验证码，信息全部正确且账户金额充足的情况下可以完成付款。如果相关信息不正确则给出对应提示信息；多条信息不正确时按输入顺序提示；短信验证码一分钟内有效，出错三次则退出本次支付。</p>
+<h3 id="1）整理基本流和备选流"><a href="#1）整理基本流和备选流" class="headerlink" title="1）整理基本流和备选流"></a>1）整理基本流和备选流</h3><h4 id="基本流：正常支付"><a href="#基本流：正常支付" class="headerlink" title="基本流：正常支付"></a>基本流：正常支付</h4><h4 id="备选流1：账户不存在；"><a href="#备选流1：账户不存在；" class="headerlink" title="备选流1：账户不存在；"></a>备选流1：账户不存在；</h4><h4 id="备选流2：查询密码不正确；"><a href="#备选流2：查询密码不正确；" class="headerlink" title="备选流2：查询密码不正确；"></a>备选流2：查询密码不正确；</h4><h4 id="备选流3：短信验证码不正确；"><a href="#备选流3：短信验证码不正确；" class="headerlink" title="备选流3：短信验证码不正确；"></a>备选流3：短信验证码不正确；</h4><h4 id="备选流4：短信验证码失效；"><a href="#备选流4：短信验证码失效；" class="headerlink" title="备选流4：短信验证码失效；"></a>备选流4：短信验证码失效；</h4><h4 id="备选流5：账户余额不足；"><a href="#备选流5：账户余额不足；" class="headerlink" title="备选流5：账户余额不足；"></a>备选流5：账户余额不足；</h4><h4 id="备选流6：退出支付"><a href="#备选流6：退出支付" class="headerlink" title="备选流6：退出支付"></a>备选流6：退出支付</h4><h3 id="2）根据事件流生成场景"><a href="#2）根据事件流生成场景" class="headerlink" title="2）根据事件流生成场景"></a>2）根据事件流生成场景</h3><h4 id="场景1：基本流"><a href="#场景1：基本流" class="headerlink" title="场景1：基本流"></a>场景1：基本流</h4><h4 id="场景2：基本流-备选流1"><a href="#场景2：基本流-备选流1" class="headerlink" title="场景2：基本流-备选流1"></a>场景2：基本流-备选流1</h4><h4 id="场景3：基本流-备选流2"><a href="#场景3：基本流-备选流2" class="headerlink" title="场景3：基本流-备选流2"></a>场景3：基本流-备选流2</h4><h4 id="场景4：基本流-备选流3"><a href="#场景4：基本流-备选流3" class="headerlink" title="场景4：基本流-备选流3"></a>场景4：基本流-备选流3</h4><h4 id="场景5：基本流-备选流4"><a href="#场景5：基本流-备选流4" class="headerlink" title="场景5：基本流-备选流4"></a>场景5：基本流-备选流4</h4><h4 id="场景6：基本流-备选流5-备选流6"><a href="#场景6：基本流-备选流5-备选流6" class="headerlink" title="场景6：基本流-备选流5-备选流6"></a>场景6：基本流-备选流5-备选流6</h4><h4 id="场景7：基本流-备选流1-备选流2-备选流3-备选流6"><a href="#场景7：基本流-备选流1-备选流2-备选流3-备选流6" class="headerlink" title="场景7：基本流-备选流1-备选流2-备选流3-备选流6"></a>场景7：基本流-备选流1-备选流2-备选流3-备选流6</h4><h4 id="场景8：基本流-备选流3-备选流4-备选流5-备选流6"><a href="#场景8：基本流-备选流3-备选流4-备选流5-备选流6" class="headerlink" title="场景8：基本流-备选流3-备选流4-备选流5-备选流6"></a>场景8：基本流-备选流3-备选流4-备选流5-备选流6</h4><h3 id="3）合并重复场景"><a href="#3）合并重复场景" class="headerlink" title="3）合并重复场景"></a>3）合并重复场景</h3><h4 id="场景1：基本流-1"><a href="#场景1：基本流-1" class="headerlink" title="场景1：基本流"></a>场景1：基本流</h4><h4 id="场景2：基本流-备选流5-备选流6"><a href="#场景2：基本流-备选流5-备选流6" class="headerlink" title="场景2：基本流-备选流5-备选流6"></a>场景2：基本流-备选流5-备选流6</h4><h4 id="场景3：基本流-备选流1-备选流2-备选流3-备选流6"><a href="#场景3：基本流-备选流1-备选流2-备选流3-备选流6" class="headerlink" title="场景3：基本流-备选流1-备选流2-备选流3-备选流6"></a>场景3：基本流-备选流1-备选流2-备选流3-备选流6</h4><h4 id="场景4：基本流-备选流3-备选流4-备选流5-备选流6"><a href="#场景4：基本流-备选流3-备选流4-备选流5-备选流6" class="headerlink" title="场景4：基本流-备选流3-备选流4-备选流5-备选流6"></a>场景4：基本流-备选流3-备选流4-备选流5-备选流6</h4><h3 id="4）根据最终的场景逐一设计测试用例"><a href="#4）根据最终的场景逐一设计测试用例" class="headerlink" title="4）根据最终的场景逐一设计测试用例"></a>4）根据最终的场景逐一设计测试用例</h3><h2 id="测试用例总结-—-测试用例设计策略"><a href="#测试用例总结-—-测试用例设计策略" class="headerlink" title="测试用例总结 — 测试用例设计策略"></a>测试用例总结 — 测试用例设计策略</h2><h3 id="1、任何情况下都要使用边界值分析法设计测试用例，经验表明这种测试用例发现程序错误的能力最强。"><a href="#1、任何情况下都要使用边界值分析法设计测试用例，经验表明这种测试用例发现程序错误的能力最强。" class="headerlink" title="1、任何情况下都要使用边界值分析法设计测试用例，经验表明这种测试用例发现程序错误的能力最强。"></a>1、任何情况下都要使用边界值分析法设计测试用例，经验表明这种测试用例发现程序错误的能力最强。</h3><h3 id="2、使用等价类划分法补充必要的测试用例。"><a href="#2、使用等价类划分法补充必要的测试用例。" class="headerlink" title="2、使用等价类划分法补充必要的测试用例。"></a>2、使用等价类划分法补充必要的测试用例。</h3><h3 id="3、如果程序规格说明中多个条件决定多个动作，每个条件的取值只有两种，并且条件和动作之间的逻辑关系明确，那么使用判定表法设计测试用例。"><a href="#3、如果程序规格说明中多个条件决定多个动作，每个条件的取值只有两种，并且条件和动作之间的逻辑关系明确，那么使用判定表法设计测试用例。" class="headerlink" title="3、如果程序规格说明中多个条件决定多个动作，每个条件的取值只有两种，并且条件和动作之间的逻辑关系明确，那么使用判定表法设计测试用例。"></a>3、如果程序规格说明中多个条件决定多个动作，每个条件的取值只有两种，并且条件和动作之间的逻辑关系明确，那么使用判定表法设计测试用例。</h3><h3 id="4、针对程序规格说明中含有多个条件的组合，输入与输出关系比较复杂的情况，使用因果图法设计测试用例。"><a href="#4、针对程序规格说明中含有多个条件的组合，输入与输出关系比较复杂的情况，使用因果图法设计测试用例。" class="headerlink" title="4、针对程序规格说明中含有多个条件的组合，输入与输出关系比较复杂的情况，使用因果图法设计测试用例。"></a>4、针对程序规格说明中含有多个条件的组合，输入与输出关系比较复杂的情况，使用因果图法设计测试用例。</h3><h3 id="5、针对程序规格说明中的复杂业务流程、操作流程等，使用场景分析法设计测试用例。"><a href="#5、针对程序规格说明中的复杂业务流程、操作流程等，使用场景分析法设计测试用例。" class="headerlink" title="5、针对程序规格说明中的复杂业务流程、操作流程等，使用场景分析法设计测试用例。"></a>5、针对程序规格说明中的复杂业务流程、操作流程等，使用场景分析法设计测试用例。</h3><h3 id="6、对照程序实现逻辑，检查已设计出的测试用例的逻辑覆盖程度，如果没有达到覆盖要求，应当分析具体情况，补充足够的测试用例。"><a href="#6、对照程序实现逻辑，检查已设计出的测试用例的逻辑覆盖程度，如果没有达到覆盖要求，应当分析具体情况，补充足够的测试用例。" class="headerlink" title="6、对照程序实现逻辑，检查已设计出的测试用例的逻辑覆盖程度，如果没有达到覆盖要求，应当分析具体情况，补充足够的测试用例。"></a>6、对照程序实现逻辑，检查已设计出的测试用例的逻辑覆盖程度，如果没有达到覆盖要求，应当分析具体情况，补充足够的测试用例。</h3><h3 id="7、分析程序规格说明，使用错误推测法补充一部分测试用例。"><a href="#7、分析程序规格说明，使用错误推测法补充一部分测试用例。" class="headerlink" title="7、分析程序规格说明，使用错误推测法补充一部分测试用例。"></a>7、分析程序规格说明，使用错误推测法补充一部分测试用例。</h3><h3 id="8、测试过程中针对具体实现，将已有测试用例未覆盖的部分，选用合适的测试用例设计方法再补充一些必要的测试用例。"><a href="#8、测试过程中针对具体实现，将已有测试用例未覆盖的部分，选用合适的测试用例设计方法再补充一些必要的测试用例。" class="headerlink" title="8、测试过程中针对具体实现，将已有测试用例未覆盖的部分，选用合适的测试用例设计方法再补充一些必要的测试用例。"></a>8、测试过程中针对具体实现，将已有测试用例未覆盖的部分，选用合适的测试用例设计方法再补充一些必要的测试用例。</h3><h2 id="测试用例总结-—-测试用例编写策略"><a href="#测试用例总结-—-测试用例编写策略" class="headerlink" title="测试用例总结 — 测试用例编写策略"></a>测试用例总结 — 测试用例编写策略</h2><h3 id="1、功能测试用例覆盖的功能点需要尽量小，方便测试执行时提取用例。"><a href="#1、功能测试用例覆盖的功能点需要尽量小，方便测试执行时提取用例。" class="headerlink" title="1、功能测试用例覆盖的功能点需要尽量小，方便测试执行时提取用例。"></a>1、功能测试用例覆盖的功能点需要尽量小，方便测试执行时提取用例。</h3><h3 id="2、对于常用控件的测试可以整理出针对控件的通用测试点，在具体的功能测试用例中就可以不再编写通用测试点已经覆盖的内容了。"><a href="#2、对于常用控件的测试可以整理出针对控件的通用测试点，在具体的功能测试用例中就可以不再编写通用测试点已经覆盖的内容了。" class="headerlink" title="2、对于常用控件的测试可以整理出针对控件的通用测试点，在具体的功能测试用例中就可以不再编写通用测试点已经覆盖的内容了。"></a>2、对于常用控件的测试可以整理出针对控件的通用测试点，在具体的功能测试用例中就可以不再编写通用测试点已经覆盖的内容了。</h3><h3 id="3、对于系统相关流程的测试用例，可以提取出来，编写有针对性的流程测试用例。"><a href="#3、对于系统相关流程的测试用例，可以提取出来，编写有针对性的流程测试用例。" class="headerlink" title="3、对于系统相关流程的测试用例，可以提取出来，编写有针对性的流程测试用例。"></a>3、对于系统相关流程的测试用例，可以提取出来，编写有针对性的流程测试用例。</h3><h3 id="4、对于业务关联性比较强的功能，可以提取出来，针对存在的业务场景编写功能测试用例。"><a href="#4、对于业务关联性比较强的功能，可以提取出来，针对存在的业务场景编写功能测试用例。" class="headerlink" title="4、对于业务关联性比较强的功能，可以提取出来，针对存在的业务场景编写功能测试用例。"></a>4、对于业务关联性比较强的功能，可以提取出来，针对存在的业务场景编写功能测试用例。</h3><h2 id="测试用例总结-—-测试用例的维护管理"><a href="#测试用例总结-—-测试用例的维护管理" class="headerlink" title="测试用例总结 — 测试用例的维护管理"></a>测试用例总结 — 测试用例的维护管理</h2><p>测试用例伴随着软件产品的整个生命周期，随着软件功能的日渐完善，测试用例也在不断改进、扩充和完善。在这个过程中，如何维护和管理测试用例将是直接影响软件测试质量的重要工作内容。</p>
+<h3 id="维护测试用例的原因"><a href="#维护测试用例的原因" class="headerlink" title="维护测试用例的原因"></a>维护测试用例的原因</h3><h4 id="软件需求变更"><a href="#软件需求变更" class="headerlink" title="软件需求变更"></a>软件需求变更</h4><h4 id="需求分析错误"><a href="#需求分析错误" class="headerlink" title="需求分析错误"></a>需求分析错误</h4><h4 id="测试需求误解或遗漏"><a href="#测试需求误解或遗漏" class="headerlink" title="测试需求误解或遗漏"></a>测试需求误解或遗漏</h4><h4 id="测试用例遗漏"><a href="#测试用例遗漏" class="headerlink" title="测试用例遗漏"></a>测试用例遗漏</h4><h3 id="测试用例的维护"><a href="#测试用例的维护" class="headerlink" title="测试用例的维护"></a>测试用例的维护</h3><p>日常维护主要有测试用例修改、测试用例删除和测试用例增加。</p>
+<h3 id="用例修改"><a href="#用例修改" class="headerlink" title="用例修改"></a>用例修改</h3><p>测试设计人员在设计测试用例时考虑不够全面，对测试需求的理解偏差或误解，功能实现和设计存在出入等都是造成测试用例修改的直接原因。</p>
+<h3 id="用例删除"><a href="#用例删除" class="headerlink" title="用例删除"></a>用例删除</h3><p>测试用例的删除主要是因为软件相关功能发生较大变化或已去掉，对应测试用例已不适用时，就需要删除对应用例；冗余的测试用例也需要删除。</p>
+<h3 id="用例增加"><a href="#用例增加" class="headerlink" title="用例增加"></a>用例增加</h3><p>测试人员在测试过程中发现有测试用例未覆盖的功能，用例评审时发现有未覆盖的测试需求，需求分析错误或收到新的需求时都需要新增对应功能的测试用例。</p>
+<h3 id="用例维护注意事项"><a href="#用例维护注意事项" class="headerlink" title="用例维护注意事项"></a>用例维护注意事项</h3><h4 id="用例的维护都需要保留维护记录。"><a href="#用例的维护都需要保留维护记录。" class="headerlink" title="用例的维护都需要保留维护记录。"></a>用例的维护都需要保留维护记录。</h4><h4 id="同一软件不同现场功能出入较大的话，需要根据现场维护不同的测试用例。"><a href="#同一软件不同现场功能出入较大的话，需要根据现场维护不同的测试用例。" class="headerlink" title="同一软件不同现场功能出入较大的话，需要根据现场维护不同的测试用例。"></a>同一软件不同现场功能出入较大的话，需要根据现场维护不同的测试用例。</h4><h4 id="同一软件多版本共存的话，需要在测试用例中标注不同版本的用例差异。"><a href="#同一软件多版本共存的话，需要在测试用例中标注不同版本的用例差异。" class="headerlink" title="同一软件多版本共存的话，需要在测试用例中标注不同版本的用例差异。"></a>同一软件多版本共存的话，需要在测试用例中标注不同版本的用例差异。</h4><h3 id="测试用例的管理"><a href="#测试用例的管理" class="headerlink" title="测试用例的管理"></a>测试用例的管理</h3><p>测试用例根据公司代码和文档管理体制的不同采用对应的管理方式。如果公司资料文档使用同一个管理软件的话，将测试用例直接纳入管理软件测试相关目录即可；如果测试是作为一个完全独立的部门，相关资料文档有自己的管理软件的话，则将测试用例纳入自己软件的相关目录。</p>
+<h3 id="管理测试用例的作用"><a href="#管理测试用例的作用" class="headerlink" title="管理测试用例的作用"></a>管理测试用例的作用</h3><h4 id="保护测试人员工作成果。"><a href="#保护测试人员工作成果。" class="headerlink" title="保护测试人员工作成果。"></a>保护测试人员工作成果。</h4><h4 id="测试人员变动不会影响测试工作的正常进行。"><a href="#测试人员变动不会影响测试工作的正常进行。" class="headerlink" title="测试人员变动不会影响测试工作的正常进行。"></a>测试人员变动不会影响测试工作的正常进行。</h4><h3 id="用例管理注意事项"><a href="#用例管理注意事项" class="headerlink" title="用例管理注意事项"></a>用例管理注意事项</h3><h4 id="用例设计人员只有上传和更新用例文档的权限，不具有删除用例文档的权限，删除用例文档需经过相关人员核准。"><a href="#用例设计人员只有上传和更新用例文档的权限，不具有删除用例文档的权限，删除用例文档需经过相关人员核准。" class="headerlink" title="用例设计人员只有上传和更新用例文档的权限，不具有删除用例文档的权限，删除用例文档需经过相关人员核准。"></a>用例设计人员只有上传和更新用例文档的权限，不具有删除用例文档的权限，删除用例文档需经过相关人员核准。</h4><h4 id="用例文档更新的人员、日期等历史信息需要能够查询。"><a href="#用例文档更新的人员、日期等历史信息需要能够查询。" class="headerlink" title="用例文档更新的人员、日期等历史信息需要能够查询。"></a>用例文档更新的人员、日期等历史信息需要能够查询。</h4><h4 id="用例执行人员不具有编辑用例文档的权限。"><a href="#用例执行人员不具有编辑用例文档的权限。" class="headerlink" title="用例执行人员不具有编辑用例文档的权限。"></a>用例执行人员不具有编辑用例文档的权限。</h4><h4 id="所有的用例评审结论文档都需要纳入文档管理系统。"><a href="#所有的用例评审结论文档都需要纳入文档管理系统。" class="headerlink" title="所有的用例评审结论文档都需要纳入文档管理系统。"></a>所有的用例评审结论文档都需要纳入文档管理系统。</h4>
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">×</a>
+            <div class="shang_tit">
+              <p>谢谢你请我吃辣条</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2015/10/28/test-case-design-advanced(bottom)/">测试用例设计进阶(下)</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 阿星Plus 的个人博客">阿星Plus</a></p>
+        <p><span>发布时间:</span>2015年10月28日 - 21时58分</p>
+        <p><span>最后更新:</span>2017年05月26日 - 12时47分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2015/10/28/test-case-design-advanced(bottom)/" title="测试用例设计进阶(下)">http://xj8c.cc/2015/10/28/test-case-design-advanced(bottom)/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://xj8c.cc/2015/10/28/test-case-design-advanced(bottom)/　　作者: 阿星Plus" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2015/11/08/CEAC-office2010/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          CEAC-office2010实操题练习评测系统
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/10/28/test-case-design-in-order(upper)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">测试用例设计进阶（上）</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#场景分析法设计测试用例-—-场景分析相关概念"><span class="toc-number">1.</span> <span class="toc-text">场景分析法设计测试用例 — 场景分析相关概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#场景"><span class="toc-number">1.1.</span> <span class="toc-text">场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件流"><span class="toc-number">1.2.</span> <span class="toc-text">事件流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本流"><span class="toc-number">1.3.</span> <span class="toc-text">基本流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#备选流"><span class="toc-number">1.4.</span> <span class="toc-text">备选流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一个典型的场景分析图"><span class="toc-number">1.5.</span> <span class="toc-text">一个典型的场景分析图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#场景分析法设计测试用例-—-使用场景分析设计测试用例"><span class="toc-number">2.</span> <span class="toc-text">场景分析法设计测试用例 — 使用场景分析设计测试用例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#场景分析法"><span class="toc-number">2.1.</span> <span class="toc-text">场景分析法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#场景分析法的使用场景"><span class="toc-number">2.2.</span> <span class="toc-text">场景分析法的使用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#场景分析法的优点"><span class="toc-number">2.3.</span> <span class="toc-text">场景分析法的优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#场景分析法设计测试用例的步骤："><span class="toc-number">2.4.</span> <span class="toc-text">场景分析法设计测试用例的步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、分析软件规格说明描述，整理出基本流和备选流。"><span class="toc-number">2.4.1.</span> <span class="toc-text">1、分析软件规格说明描述，整理出基本流和备选流。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、根据基本流和备选流组合关系生成场景。"><span class="toc-number">2.4.2.</span> <span class="toc-text">2、根据基本流和备选流组合关系生成场景。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、分析所有场景，合并测试内容重复的场景。"><span class="toc-number">2.4.3.</span> <span class="toc-text">3、分析所有场景，合并测试内容重复的场景。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、根据场景逐一设计测试用例。"><span class="toc-number">2.4.4.</span> <span class="toc-text">4、根据场景逐一设计测试用例。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1）整理基本流和备选流"><span class="toc-number">2.5.</span> <span class="toc-text">1）整理基本流和备选流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本流：正常支付"><span class="toc-number">2.5.1.</span> <span class="toc-text">基本流：正常支付</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#备选流1：账户不存在；"><span class="toc-number">2.5.2.</span> <span class="toc-text">备选流1：账户不存在；</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#备选流2：查询密码不正确；"><span class="toc-number">2.5.3.</span> <span class="toc-text">备选流2：查询密码不正确；</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#备选流3：短信验证码不正确；"><span class="toc-number">2.5.4.</span> <span class="toc-text">备选流3：短信验证码不正确；</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#备选流4：短信验证码失效；"><span class="toc-number">2.5.5.</span> <span class="toc-text">备选流4：短信验证码失效；</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#备选流5：账户余额不足；"><span class="toc-number">2.5.6.</span> <span class="toc-text">备选流5：账户余额不足；</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#备选流6：退出支付"><span class="toc-number">2.5.7.</span> <span class="toc-text">备选流6：退出支付</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2）根据事件流生成场景"><span class="toc-number">2.6.</span> <span class="toc-text">2）根据事件流生成场景</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#场景1：基本流"><span class="toc-number">2.6.1.</span> <span class="toc-text">场景1：基本流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#场景2：基本流-备选流1"><span class="toc-number">2.6.2.</span> <span class="toc-text">场景2：基本流-备选流1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#场景3：基本流-备选流2"><span class="toc-number">2.6.3.</span> <span class="toc-text">场景3：基本流-备选流2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#场景4：基本流-备选流3"><span class="toc-number">2.6.4.</span> <span class="toc-text">场景4：基本流-备选流3</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#场景5：基本流-备选流4"><span class="toc-number">2.6.5.</span> <span class="toc-text">场景5：基本流-备选流4</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#场景6：基本流-备选流5-备选流6"><span class="toc-number">2.6.6.</span> <span class="toc-text">场景6：基本流-备选流5-备选流6</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#场景7：基本流-备选流1-备选流2-备选流3-备选流6"><span class="toc-number">2.6.7.</span> <span class="toc-text">场景7：基本流-备选流1-备选流2-备选流3-备选流6</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#场景8：基本流-备选流3-备选流4-备选流5-备选流6"><span class="toc-number">2.6.8.</span> <span class="toc-text">场景8：基本流-备选流3-备选流4-备选流5-备选流6</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3）合并重复场景"><span class="toc-number">2.7.</span> <span class="toc-text">3）合并重复场景</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#场景1：基本流-1"><span class="toc-number">2.7.1.</span> <span class="toc-text">场景1：基本流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#场景2：基本流-备选流5-备选流6"><span class="toc-number">2.7.2.</span> <span class="toc-text">场景2：基本流-备选流5-备选流6</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#场景3：基本流-备选流1-备选流2-备选流3-备选流6"><span class="toc-number">2.7.3.</span> <span class="toc-text">场景3：基本流-备选流1-备选流2-备选流3-备选流6</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#场景4：基本流-备选流3-备选流4-备选流5-备选流6"><span class="toc-number">2.7.4.</span> <span class="toc-text">场景4：基本流-备选流3-备选流4-备选流5-备选流6</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4）根据最终的场景逐一设计测试用例"><span class="toc-number">2.8.</span> <span class="toc-text">4）根据最终的场景逐一设计测试用例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试用例总结-—-测试用例设计策略"><span class="toc-number">3.</span> <span class="toc-text">测试用例总结 — 测试用例设计策略</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、任何情况下都要使用边界值分析法设计测试用例，经验表明这种测试用例发现程序错误的能力最强。"><span class="toc-number">3.1.</span> <span class="toc-text">1、任何情况下都要使用边界值分析法设计测试用例，经验表明这种测试用例发现程序错误的能力最强。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、使用等价类划分法补充必要的测试用例。"><span class="toc-number">3.2.</span> <span class="toc-text">2、使用等价类划分法补充必要的测试用例。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、如果程序规格说明中多个条件决定多个动作，每个条件的取值只有两种，并且条件和动作之间的逻辑关系明确，那么使用判定表法设计测试用例。"><span class="toc-number">3.3.</span> <span class="toc-text">3、如果程序规格说明中多个条件决定多个动作，每个条件的取值只有两种，并且条件和动作之间的逻辑关系明确，那么使用判定表法设计测试用例。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、针对程序规格说明中含有多个条件的组合，输入与输出关系比较复杂的情况，使用因果图法设计测试用例。"><span class="toc-number">3.4.</span> <span class="toc-text">4、针对程序规格说明中含有多个条件的组合，输入与输出关系比较复杂的情况，使用因果图法设计测试用例。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、针对程序规格说明中的复杂业务流程、操作流程等，使用场景分析法设计测试用例。"><span class="toc-number">3.5.</span> <span class="toc-text">5、针对程序规格说明中的复杂业务流程、操作流程等，使用场景分析法设计测试用例。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、对照程序实现逻辑，检查已设计出的测试用例的逻辑覆盖程度，如果没有达到覆盖要求，应当分析具体情况，补充足够的测试用例。"><span class="toc-number">3.6.</span> <span class="toc-text">6、对照程序实现逻辑，检查已设计出的测试用例的逻辑覆盖程度，如果没有达到覆盖要求，应当分析具体情况，补充足够的测试用例。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、分析程序规格说明，使用错误推测法补充一部分测试用例。"><span class="toc-number">3.7.</span> <span class="toc-text">7、分析程序规格说明，使用错误推测法补充一部分测试用例。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、测试过程中针对具体实现，将已有测试用例未覆盖的部分，选用合适的测试用例设计方法再补充一些必要的测试用例。"><span class="toc-number">3.8.</span> <span class="toc-text">8、测试过程中针对具体实现，将已有测试用例未覆盖的部分，选用合适的测试用例设计方法再补充一些必要的测试用例。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试用例总结-—-测试用例编写策略"><span class="toc-number">4.</span> <span class="toc-text">测试用例总结 — 测试用例编写策略</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、功能测试用例覆盖的功能点需要尽量小，方便测试执行时提取用例。"><span class="toc-number">4.1.</span> <span class="toc-text">1、功能测试用例覆盖的功能点需要尽量小，方便测试执行时提取用例。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、对于常用控件的测试可以整理出针对控件的通用测试点，在具体的功能测试用例中就可以不再编写通用测试点已经覆盖的内容了。"><span class="toc-number">4.2.</span> <span class="toc-text">2、对于常用控件的测试可以整理出针对控件的通用测试点，在具体的功能测试用例中就可以不再编写通用测试点已经覆盖的内容了。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、对于系统相关流程的测试用例，可以提取出来，编写有针对性的流程测试用例。"><span class="toc-number">4.3.</span> <span class="toc-text">3、对于系统相关流程的测试用例，可以提取出来，编写有针对性的流程测试用例。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、对于业务关联性比较强的功能，可以提取出来，针对存在的业务场景编写功能测试用例。"><span class="toc-number">4.4.</span> <span class="toc-text">4、对于业务关联性比较强的功能，可以提取出来，针对存在的业务场景编写功能测试用例。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试用例总结-—-测试用例的维护管理"><span class="toc-number">5.</span> <span class="toc-text">测试用例总结 — 测试用例的维护管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#维护测试用例的原因"><span class="toc-number">5.1.</span> <span class="toc-text">维护测试用例的原因</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#软件需求变更"><span class="toc-number">5.1.1.</span> <span class="toc-text">软件需求变更</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#需求分析错误"><span class="toc-number">5.1.2.</span> <span class="toc-text">需求分析错误</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试需求误解或遗漏"><span class="toc-number">5.1.3.</span> <span class="toc-text">测试需求误解或遗漏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试用例遗漏"><span class="toc-number">5.1.4.</span> <span class="toc-text">测试用例遗漏</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试用例的维护"><span class="toc-number">5.2.</span> <span class="toc-text">测试用例的维护</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用例修改"><span class="toc-number">5.3.</span> <span class="toc-text">用例修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用例删除"><span class="toc-number">5.4.</span> <span class="toc-text">用例删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用例增加"><span class="toc-number">5.5.</span> <span class="toc-text">用例增加</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用例维护注意事项"><span class="toc-number">5.6.</span> <span class="toc-text">用例维护注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#用例的维护都需要保留维护记录。"><span class="toc-number">5.6.1.</span> <span class="toc-text">用例的维护都需要保留维护记录。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#同一软件不同现场功能出入较大的话，需要根据现场维护不同的测试用例。"><span class="toc-number">5.6.2.</span> <span class="toc-text">同一软件不同现场功能出入较大的话，需要根据现场维护不同的测试用例。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#同一软件多版本共存的话，需要在测试用例中标注不同版本的用例差异。"><span class="toc-number">5.6.3.</span> <span class="toc-text">同一软件多版本共存的话，需要在测试用例中标注不同版本的用例差异。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试用例的管理"><span class="toc-number">5.7.</span> <span class="toc-text">测试用例的管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#管理测试用例的作用"><span class="toc-number">5.8.</span> <span class="toc-text">管理测试用例的作用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#保护测试人员工作成果。"><span class="toc-number">5.8.1.</span> <span class="toc-text">保护测试人员工作成果。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试人员变动不会影响测试工作的正常进行。"><span class="toc-number">5.8.2.</span> <span class="toc-text">测试人员变动不会影响测试工作的正常进行。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用例管理注意事项"><span class="toc-number">5.9.</span> <span class="toc-text">用例管理注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#用例设计人员只有上传和更新用例文档的权限，不具有删除用例文档的权限，删除用例文档需经过相关人员核准。"><span class="toc-number">5.9.1.</span> <span class="toc-text">用例设计人员只有上传和更新用例文档的权限，不具有删除用例文档的权限，删除用例文档需经过相关人员核准。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用例文档更新的人员、日期等历史信息需要能够查询。"><span class="toc-number">5.9.2.</span> <span class="toc-text">用例文档更新的人员、日期等历史信息需要能够查询。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用例执行人员不具有编辑用例文档的权限。"><span class="toc-number">5.9.3.</span> <span class="toc-text">用例执行人员不具有编辑用例文档的权限。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#所有的用例评审结论文档都需要纳入文档管理系统。"><span class="toc-number">5.9.4.</span> <span class="toc-text">所有的用例评审结论文档都需要纳入文档管理系统。</span></a></li></ol></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="测试用例设计进阶(下)"></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cyt1UJT89'; 
+var conf = 'prod_a66df9b8bf4687f6662a946344b221b7'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2015/11/08/CEAC-office2010/" title="上一篇: CEAC-office2010实操题练习评测系统">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2015/10/28/test-case-design-in-order(upper)/" title="下一篇: 测试用例设计进阶（上）">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/08/31/csharp7/">C＃7.0中有哪些新特性？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/18/internship-experience/">武汉路博特工程科技有限公司实习“满月”工作感受</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/16/asp.net-knowledge-point-interview/">ASP.NET知识点面试篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/08/what-is-a-three-tier-architecture/">三层架构到底是个什么玩意？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/07/five-main-objects-in-dotnet/">ADO.NET中的五个主要对象？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/10/the-students-with-poor-grades-reversed/">一个学渣的逆袭</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/21/computer-computing-infrastructure/">计算机运算基础荟萃</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/08/CEAC-office2010/">CEAC-office2010实操题练习评测系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/28/test-case-design-advanced(bottom)/">测试用例设计进阶(下)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/28/test-case-design-in-order(upper)/">测试用例设计进阶（上）</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/25/boundary-value/">边界值分析法相关概念 — 边界点相关概念</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/24/basic-knowledge-of-software-testing/">软件测试基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/24/overview-of-software-testing/">软件测试概述</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/20/xml-note-1/">XML学习笔记(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/12/when-the-deepest-counsel-comes-to-the-most-clear-ideal/">当最深沉的筹谋换来最清明的理想</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/01/10-best-javascript-development-practices/">10个最佳 javascript 开发实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/07/the-30-most-difficult-questions-to-answer-in-history/">史上最难回答的30个问题，没有一人都能答对！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/05/windows10-iso.md/">Win10正式版微软官方原版ISO系统镜像下载大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/02/the-work-of-a-programmer/">一本关于程序员的修真小说</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/02/Win10-ten-points/">Win10的十个亮点</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/01/Zhihu-god-reply/">一大波，知乎神回复在接近了！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/27/vs-shortcuts/">必须知道的 Visual Studio 快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/16/asp.net-knowledge-point-summary-5/">Asp.net知识点总结(五)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/13/ten-programming-languages/">你必须知道的十个编程语言</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/11/asp.net-knowledge-point-summary-4/">Asp.net知识点总结(四)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/07/asp.net-knowledge-point-summary-3/">Asp.net知识点总结(三)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/06/bigdata-internet-thinking-O2O-crowdfunding/">什么是大数据，什么是红海、蓝海、互联网思维？什么是O2O？什么是众筹？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/04/asp.net-knowledge-point-summary-2/">Asp.net知识点总结(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/03/asp.net-knowledge-point-summary-1/">Asp.net知识点总结(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/25/shopping-online/">Shopping Online</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/04/SqlServer2008/">sql数据库|SqlServer2008 R2_x86&x64</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/17/why-is-the-chinese-mobile-number-11/">揭秘：中国手机号码为什么是11位数？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/14/33-poems-of-the-most-artistic-conception-in-China/">中国最有意境的33句诗文，欣赏下吧！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/05/win7-cmd/">Win7运行命令大全|开始-运行-命令总汇</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/31/please-don't-be-a-fickle-IT-man/">请不要做浮躁的IT人</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/29/the-name-of-the-big-internet-companies/">各大互联网公司命名的由来，值得你了解。</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/25/30-the-hacker-movie/">30部黑客电影，你看过哪几部？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/22/top 10 IT jobs in 2015/">2015年 十大热门 IT 工作</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/10/a-years-plan-starts-with-spring/">A year's plan starts with spring ！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/28/cherish-every-day/">珍惜每一天</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/28/adobe-photoshop/">Adobe Photoshop 绿色安装版</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/20/national-computer-level-office2010/">全国计算机一级Office2010+win7版（未来教育）考试练习软件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/15/microsoft-office-2010/">Microsoft office 2010</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy;
+                2017
+                    阿星Plus
+            </div>
+            <div class="footer-right">
+                Blog By <a href="http://hexo.io/" target="_blank">Hexo</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站访问量: 
+                            <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                    </span>
+                    
+                        
+                            <span>, </span>
+                            
+                                
+                                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                                    </span>
+                                    </span>
+                                    
+            </div>
+            
+    </div>
+</footer>
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

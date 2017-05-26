@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ASP.NET知识点面试篇 | 当然我在瞎扯</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="列举ASP.NET页面之间传递值的几种方式？1，使用QueryString，如：…Test?id=1 Redirect()..2，使用Session变量3，使用Server.Transfer4，Cookie传值什么是code-Behind技术就是代码隐藏，在ASP.NET中通过ASPX页面指向cs文件的方法实现显示逻辑和处理逻辑的分离，这样有助于web应用程序的创建。比如分工，美工和编程的可以各干">
+<meta name="keywords" content="ASP.NET,面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ASP.NET知识点面试篇">
+<meta property="og:url" content="http://xj8c.cc/2016/04/16/asp.net-knowledge-point-interview/index.html">
+<meta property="og:site_name" content="当然我在瞎扯">
+<meta property="og:description" content="列举ASP.NET页面之间传递值的几种方式？1，使用QueryString，如：…Test?id=1 Redirect()..2，使用Session变量3，使用Server.Transfer4，Cookie传值什么是code-Behind技术就是代码隐藏，在ASP.NET中通过ASPX页面指向cs文件的方法实现显示逻辑和处理逻辑的分离，这样有助于web应用程序的创建。比如分工，美工和编程的可以各干">
+<meta property="og:updated_time" content="2017-05-26T05:04:11.655Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ASP.NET知识点面试篇">
+<meta name="twitter:description" content="列举ASP.NET页面之间传递值的几种方式？1，使用QueryString，如：…Test?id=1 Redirect()..2，使用Session变量3，使用Server.Transfer4，Cookie传值什么是code-Behind技术就是代码隐藏，在ASP.NET中通过ASPX页面指向cs文件的方法实现显示逻辑和处理逻辑的分离，这样有助于web应用程序的创建。比如分工，美工和编程的可以各干">
+  
+    <link rel="alternative" href="/atom.xml" title="当然我在瞎扯" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+                <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+        </a>
+
+        <hgroup>
+            <h1 class="header-author">
+                <a href="/" title="Hello World">
+                    阿星Plus
+                </a>
+            </h1>
+        </hgroup>
+
+        
+            <p class="header-subtitle">
+                生命不息，奋斗不止
+            </p>
+            
+                
+                        
+                            <div id="switch-btn" class="switch-btn">
+                                <div class="icon">
+                                    <div class="icon-ctn">
+                                        <div class="icon-wrap icon-house" data-idx="0">
+                                            <div class="birdhouse"></div>
+                                            <div class="birdhouse_holes"></div>
+                                        </div>
+                                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                                            <div class="ribbon"></div>
+                                        </div>
+                                        
+                                            <div class="icon-wrap icon-link hide" data-idx="2">
+                                                <div class="loopback_l"></div>
+                                                <div class="loopback_r"></div>
+                                            </div>
+                                            
+                                                
+                                    </div>
+
+                                </div>
+                                <div class="tips-box hide">
+                                    <div class="tips-arrow"></div>
+                                    <ul class="tips-inner">
+                                        <li>菜单</li>
+                                        <li>标签</li>
+                                        
+                                            <li>友情链接</li>
+                                            
+                                                
+                                    </ul>
+                                </div>
+                            </div>
+                            
+
+                                <div id="switch-area" class="switch-area">
+                                    <div class="switch-wrap">
+                                        <section class="switch-part switch-part1">
+                                            <nav class="header-menu">
+                                                <ul>
+                                                    
+                                                        <li>
+                                                            <a href="/">
+                                                                Home
+                                                            </a>
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            <a href="/archives">
+                                                                Archives
+                                                            </a>
+                                                        </li>
+                                                        
+                                                </ul>
+                                            </nav>
+                                            <nav class="header-nav">
+                                                <ul class="social">
+                                                    
+                                                        <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=w-Lx8IOupqy0te2grK4" title="mail">
+                                                            mail
+                                                        </a>
+                                                        
+                                                        <a class="fl weibo" target="_blank" href="http://weibo.com/Tencentgou" title="weibo">
+                                                            weibo
+                                                        </a>
+                                                        
+                                                        <a class="fl github" target="_blank" href="https://github.com/Meowv" title="github">
+                                                            github
+                                                        </a>
+                                                        
+                                                        <a class="fl twitter" target="_blank" href="https://twitter.com/hackxing" title="twitter">
+                                                            twitter
+                                                        </a>
+                                                        
+                                                        <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">
+                                                            zhihu
+                                                        </a>
+                                                        
+                                                        <a class="fl rss" target="_blank" href="/atom.xml" title="rss">
+                                                            rss
+                                                        </a>
+                                                        
+                                                </ul>
+                                            </nav>
+                                        </section>
+
+                                        
+                                            <section class="switch-part switch-part2">
+                                                <div class="widget tagcloud" id="js-tagcloud">
+                                                    <a href="/tags/ASP-NET/" style="font-size: 20px;">ASP.NET</a> <a href="/tags/C/" style="font-size: 12px;">C#</a> <a href="/tags/CEAC/" style="font-size: 10px;">CEAC</a> <a href="/tags/IT/" style="font-size: 12px;">IT</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Photoshop/" style="font-size: 10px;">Photoshop</a> <a href="/tags/SqlServer/" style="font-size: 10px;">SqlServer</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/office2010/" style="font-size: 14px;">office2010</a> <a href="/tags/win10/" style="font-size: 12px;">win10</a> <a href="/tags/win7/" style="font-size: 10px;">win7</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/三层架构/" style="font-size: 10px;">三层架构</a> <a href="/tags/互联网/" style="font-size: 14px;">互联网</a> <a href="/tags/原版系统/" style="font-size: 10px;">原版系统</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/实习感受/" style="font-size: 10px;">实习感受</a> <a href="/tags/小说/" style="font-size: 10px;">小说</a> <a href="/tags/微软/" style="font-size: 10px;">微软</a> <a href="/tags/手机/" style="font-size: 10px;">手机</a> <a href="/tags/技术教程/" style="font-size: 18px;">技术教程</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/春天/" style="font-size: 10px;">春天</a> <a href="/tags/琅琊榜/" style="font-size: 10px;">琅琊榜</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/知乎/" style="font-size: 10px;">知乎</a> <a href="/tags/程序员/" style="font-size: 10px;">程序员</a> <a href="/tags/绿色软件/" style="font-size: 16px;">绿色软件</a> <a href="/tags/编程/" style="font-size: 10px;">编程</a> <a href="/tags/计算机一级/" style="font-size: 10px;">计算机一级</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/诗文/" style="font-size: 10px;">诗文</a> <a href="/tags/软件测试/" style="font-size: 18px;">软件测试</a> <a href="/tags/进制转换/" style="font-size: 10px;">进制转换</a> <a href="/tags/逆袭/" style="font-size: 10px;">逆袭</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/黑客/" style="font-size: 10px;">黑客</a>
+                                                </div>
+                                            </section>
+                                            
+
+                                                
+                                                    <section class="switch-part switch-part3">
+                                                        <div id="js-friends">
+                                                            
+                                                                <a target="_blank" class="main-nav-link switch-friends-link" href="http://meowv.com/">
+                                                                    喵呜网
+                                                                </a>
+                                                                
+                                                        </div>
+                                                    </section>
+                                                    
+
+                                                        
+                                    </div>
+                                </div>
+    </header>
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">阿星Plus</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">阿星Plus</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">生命不息，奋斗不止</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">Home</a></li>
+                
+                    <li><a href="/archives">Archives</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=w-Lx8IOupqy0te2grK4" title="mail">mail</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/Tencentgou" title="weibo">weibo</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/Meowv" title="github">github</a>
+                    
+                        <a class="twitter" target="_blank" href="https://twitter.com/hackxing" title="twitter">twitter</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">zhihu</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-asp.net-knowledge-point-interview" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/16/asp.net-knowledge-point-interview/" class="article-date">
+      <time datetime="2016-04-16T09:13:19.000Z" itemprop="datePublished">2016-04-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ASP.NET知识点面试篇
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ASP-NET/">ASP.NET</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="列举ASP-NET页面之间传递值的几种方式？"><a href="#列举ASP-NET页面之间传递值的几种方式？" class="headerlink" title="列举ASP.NET页面之间传递值的几种方式？"></a>列举ASP.NET页面之间传递值的几种方式？</h2><h3 id="1，使用QueryString，如：…Test-id-1-Redirect"><a href="#1，使用QueryString，如：…Test-id-1-Redirect" class="headerlink" title="1，使用QueryString，如：…Test?id=1 Redirect().."></a>1，使用QueryString，如：…Test?id=1 Redirect()..</h3><h3 id="2，使用Session变量"><a href="#2，使用Session变量" class="headerlink" title="2，使用Session变量"></a>2，使用Session变量</h3><h3 id="3，使用Server-Transfer"><a href="#3，使用Server-Transfer" class="headerlink" title="3，使用Server.Transfer"></a>3，使用Server.Transfer</h3><h3 id="4，Cookie传值"><a href="#4，Cookie传值" class="headerlink" title="4，Cookie传值"></a>4，Cookie传值</h3><h2 id="什么是code-Behind技术"><a href="#什么是code-Behind技术" class="headerlink" title="什么是code-Behind技术"></a>什么是code-Behind技术</h2><h3 id="就是代码隐藏，在ASP-NET中通过ASPX页面指向cs文件的方法实现显示逻辑和处理逻辑的分离，这样有助于web应用程序的创建。比如分工，美工和编程的可以各干各的，不用再像以前asp那样代码和HTML代码混在一起，难以维护。"><a href="#就是代码隐藏，在ASP-NET中通过ASPX页面指向cs文件的方法实现显示逻辑和处理逻辑的分离，这样有助于web应用程序的创建。比如分工，美工和编程的可以各干各的，不用再像以前asp那样代码和HTML代码混在一起，难以维护。" class="headerlink" title="就是代码隐藏，在ASP.NET中通过ASPX页面指向cs文件的方法实现显示逻辑和处理逻辑的分离，这样有助于web应用程序的创建。比如分工，美工和编程的可以各干各的，不用再像以前asp那样代码和HTML代码混在一起，难以维护。"></a>就是代码隐藏，在ASP.NET中通过ASPX页面指向cs文件的方法实现显示逻辑和处理逻辑的分离，这样有助于web应用程序的创建。比如分工，美工和编程的可以各干各的，不用再像以前asp那样代码和HTML代码混在一起，难以维护。</h3><h2 id="请解释ASP-NET中的web页面与其隐藏类之间的关系"><a href="#请解释ASP-NET中的web页面与其隐藏类之间的关系" class="headerlink" title="请解释ASP.NET中的web页面与其隐藏类之间的关系"></a>请解释ASP.NET中的web页面与其隐藏类之间的关系</h2><h3 id="一个ASP-NET页面一般都应对一个隐藏类，一般都在ASP-NET页面的声明中指定了隐藏类例如一个页面Test-aspx的页面声明如下："><a href="#一个ASP-NET页面一般都应对一个隐藏类，一般都在ASP-NET页面的声明中指定了隐藏类例如一个页面Test-aspx的页面声明如下：" class="headerlink" title="一个ASP.NET页面一般都应对一个隐藏类，一般都在ASP.NET页面的声明中指定了隐藏类例如一个页面Test.aspx的页面声明如下："></a>一个ASP.NET页面一般都应对一个隐藏类，一般都在ASP.NET页面的声明中指定了隐藏类例如一个页面Test.aspx的页面声明如下：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%@ Page language=&quot;c#&quot; Codebehind=&quot;Test.aspx.cs&quot; AutoEventWireup=&quot;false&quot; Inherits=&quot;T1.Test&quot; %&gt;</div></pre></td></tr></table></figure>
+<h3 id="Codebehind-”Test-aspx-cs”表明经编译此页面时使用哪一个代码文件"><a href="#Codebehind-”Test-aspx-cs”表明经编译此页面时使用哪一个代码文件" class="headerlink" title="Codebehind=”Test.aspx.cs”表明经编译此页面时使用哪一个代码文件"></a>Codebehind=”Test.aspx.cs”表明经编译此页面时使用哪一个代码文件</h3><h3 id="Inherits-”T1-Test”表示运行时使用哪一个隐藏类"><a href="#Inherits-”T1-Test”表示运行时使用哪一个隐藏类" class="headerlink" title="Inherits=”T1.Test”表示运行时使用哪一个隐藏类"></a>Inherits=”T1.Test”表示运行时使用哪一个隐藏类</h3><h3 id="aspx页面会编译生成一个类，这个类从隐藏类继承"><a href="#aspx页面会编译生成一个类，这个类从隐藏类继承" class="headerlink" title="aspx页面会编译生成一个类，这个类从隐藏类继承"></a>aspx页面会编译生成一个类，这个类从隐藏类继承</h3><h2 id="通过超链接怎样传递中文参数？"><a href="#通过超链接怎样传递中文参数？" class="headerlink" title="通过超链接怎样传递中文参数？"></a>通过超链接怎样传递中文参数？</h2><h3 id="用URL编码，通过QueryString传递，用urlencode编码，urldecode解码"><a href="#用URL编码，通过QueryString传递，用urlencode编码，urldecode解码" class="headerlink" title="用URL编码，通过QueryString传递，用urlencode编码，urldecode解码"></a>用URL编码，通过QueryString传递，用urlencode编码，urldecode解码</h3><h2 id="Server-Transfer和Response-Redirect的区别是什么？"><a href="#Server-Transfer和Response-Redirect的区别是什么？" class="headerlink" title="Server.Transfer和Response.Redirect的区别是什么？"></a>Server.Transfer和Response.Redirect的区别是什么？</h2><h3 id="Server-Transfer仅是服务器中控制权的转向，在客户端浏览器地址栏中不会显示转向后的地址；Response-Redirect则是完全的跳转，浏览器将会得到跳转的地址，并重新发送请求链接。这样，从浏览器的地址栏中看到跳转后的链接地址。"><a href="#Server-Transfer仅是服务器中控制权的转向，在客户端浏览器地址栏中不会显示转向后的地址；Response-Redirect则是完全的跳转，浏览器将会得到跳转的地址，并重新发送请求链接。这样，从浏览器的地址栏中看到跳转后的链接地址。" class="headerlink" title="Server.Transfer仅是服务器中控制权的转向，在客户端浏览器地址栏中不会显示转向后的地址；Response.Redirect则是完全的跳转，浏览器将会得到跳转的地址，并重新发送请求链接。这样，从浏览器的地址栏中看到跳转后的链接地址。"></a>Server.Transfer仅是服务器中控制权的转向，在客户端浏览器地址栏中不会显示转向后的地址；Response.Redirect则是完全的跳转，浏览器将会得到跳转的地址，并重新发送请求链接。这样，从浏览器的地址栏中看到跳转后的链接地址。</h3><h3 id="Server-Transfer是服务器请求资源，服务器直接访问目标地址的URL，把那个URL的相应内容读取过来，然后把这些内容再发给浏览器，浏览器根本不知道服务器发送的内容是从哪里来的，所以它的地址栏还是原来的地址。这个过程中浏览器和web服务器之间经过一次交互。"><a href="#Server-Transfer是服务器请求资源，服务器直接访问目标地址的URL，把那个URL的相应内容读取过来，然后把这些内容再发给浏览器，浏览器根本不知道服务器发送的内容是从哪里来的，所以它的地址栏还是原来的地址。这个过程中浏览器和web服务器之间经过一次交互。" class="headerlink" title="Server.Transfer是服务器请求资源，服务器直接访问目标地址的URL，把那个URL的相应内容读取过来，然后把这些内容再发给浏览器，浏览器根本不知道服务器发送的内容是从哪里来的，所以它的地址栏还是原来的地址。这个过程中浏览器和web服务器之间经过一次交互。"></a>Server.Transfer是服务器请求资源，服务器直接访问目标地址的URL，把那个URL的相应内容读取过来，然后把这些内容再发给浏览器，浏览器根本不知道服务器发送的内容是从哪里来的，所以它的地址栏还是原来的地址。这个过程中浏览器和web服务器之间经过一次交互。</h3><h3 id="Response-Redirect就是服务端根据逻辑，发送一个状态吗，告诉浏览器重新去请求那个地址，一般来说浏览器会用刚才请求的所有参数重新请求。这个过程中浏览器和web服务器之间经过了两次交互。"><a href="#Response-Redirect就是服务端根据逻辑，发送一个状态吗，告诉浏览器重新去请求那个地址，一般来说浏览器会用刚才请求的所有参数重新请求。这个过程中浏览器和web服务器之间经过了两次交互。" class="headerlink" title="Response.Redirect就是服务端根据逻辑，发送一个状态吗，告诉浏览器重新去请求那个地址，一般来说浏览器会用刚才请求的所有参数重新请求。这个过程中浏览器和web服务器之间经过了两次交互。"></a>Response.Redirect就是服务端根据逻辑，发送一个状态吗，告诉浏览器重新去请求那个地址，一般来说浏览器会用刚才请求的所有参数重新请求。这个过程中浏览器和web服务器之间经过了两次交互。</h3><h2 id="说出一些常用的类，接口"><a href="#说出一些常用的类，接口" class="headerlink" title="说出一些常用的类，接口"></a>说出一些常用的类，接口</h2><h3 id="常用的类：StreamReader、WebClient、Dictionary、StringBuilder、SqlConnection、FileStream、File、Regex、List"><a href="#常用的类：StreamReader、WebClient、Dictionary、StringBuilder、SqlConnection、FileStream、File、Regex、List" class="headerlink" title="常用的类：StreamReader、WebClient、Dictionary、StringBuilder、SqlConnection、FileStream、File、Regex、List"></a>常用的类：StreamReader、WebClient、Dictionary<k,v>、StringBuilder、SqlConnection、FileStream、File、Regex、List<t></t></k,v></h3><h3 id="常用的接口：IDisposable、IEnumerable、IDbConnection、IComparable、ICollection、IList、IDictionary"><a href="#常用的接口：IDisposable、IEnumerable、IDbConnection、IComparable、ICollection、IList、IDictionary" class="headerlink" title="常用的接口：IDisposable、IEnumerable、IDbConnection、IComparable、ICollection、IList、IDictionary"></a>常用的接口：IDisposable、IEnumerable、IDbConnection、IComparable、ICollection、IList、IDictionary</h3><h2 id="post、get的区别"><a href="#post、get的区别" class="headerlink" title="post、get的区别"></a>post、get的区别</h2><h3 id="get的参数会显示在浏览器地址栏中，而post的参数不会显示在浏览器地址栏中"><a href="#get的参数会显示在浏览器地址栏中，而post的参数不会显示在浏览器地址栏中" class="headerlink" title="get的参数会显示在浏览器地址栏中，而post的参数不会显示在浏览器地址栏中"></a>get的参数会显示在浏览器地址栏中，而post的参数不会显示在浏览器地址栏中</h3><h3 id="使用post提交的页面再点击刷新按钮的时候浏览器一般会提示“是否重新提交”，而get则不会"><a href="#使用post提交的页面再点击刷新按钮的时候浏览器一般会提示“是否重新提交”，而get则不会" class="headerlink" title="使用post提交的页面再点击刷新按钮的时候浏览器一般会提示“是否重新提交”，而get则不会"></a>使用post提交的页面再点击刷新按钮的时候浏览器一般会提示“是否重新提交”，而get则不会</h3><h3 id="用get的页面可以被搜索引擎抓取，而用post的则不可以"><a href="#用get的页面可以被搜索引擎抓取，而用post的则不可以" class="headerlink" title="用get的页面可以被搜索引擎抓取，而用post的则不可以"></a>用get的页面可以被搜索引擎抓取，而用post的则不可以</h3><h3 id="用post可以进行文件的提交，而用get则不可以"><a href="#用post可以进行文件的提交，而用get则不可以" class="headerlink" title="用post可以进行文件的提交，而用get则不可以"></a>用post可以进行文件的提交，而用get则不可以</h3><h3 id="用post可以提交的数据量非常大，而用get可以提交的数据量则非常小-2K-，受限于网页地址的长度。"><a href="#用post可以提交的数据量非常大，而用get可以提交的数据量则非常小-2K-，受限于网页地址的长度。" class="headerlink" title="用post可以提交的数据量非常大，而用get可以提交的数据量则非常小(2K)，受限于网页地址的长度。"></a>用post可以提交的数据量非常大，而用get可以提交的数据量则非常小(2K)，受限于网页地址的长度。</h3><h2 id="Application、Cookie和Session两种会话有什么不同？"><a href="#Application、Cookie和Session两种会话有什么不同？" class="headerlink" title="Application、Cookie和Session两种会话有什么不同？"></a>Application、Cookie和Session两种会话有什么不同？</h2><h3 id="Application是用来存取整个网站全局的信息，而Session是用来存取与具体某个访问者关联的信息。Cookie是保存在客户端的，机密信息不能保存在Cookie中，只能放小数据；Session是保存在服务器端的，比较安全，可以放大数据。"><a href="#Application是用来存取整个网站全局的信息，而Session是用来存取与具体某个访问者关联的信息。Cookie是保存在客户端的，机密信息不能保存在Cookie中，只能放小数据；Session是保存在服务器端的，比较安全，可以放大数据。" class="headerlink" title="Application是用来存取整个网站全局的信息，而Session是用来存取与具体某个访问者关联的信息。Cookie是保存在客户端的，机密信息不能保存在Cookie中，只能放小数据；Session是保存在服务器端的，比较安全，可以放大数据。"></a>Application是用来存取整个网站全局的信息，而Session是用来存取与具体某个访问者关联的信息。Cookie是保存在客户端的，机密信息不能保存在Cookie中，只能放小数据；Session是保存在服务器端的，比较安全，可以放大数据。</h3><h2 id="http状态吗各是什么意思？"><a href="#http状态吗各是什么意思？" class="headerlink" title="http状态吗各是什么意思？"></a>http状态吗各是什么意思？</h2><h3 id="302：重定向"><a href="#302：重定向" class="headerlink" title="302：重定向"></a>302：重定向</h3><h3 id="301：永久重定向"><a href="#301：永久重定向" class="headerlink" title="301：永久重定向"></a>301：永久重定向</h3><h3 id="404：页面不存在"><a href="#404：页面不存在" class="headerlink" title="404：页面不存在"></a>404：页面不存在</h3><h3 id="500：服务器内部错误"><a href="#500：服务器内部错误" class="headerlink" title="500：服务器内部错误"></a>500：服务器内部错误</h3><h2 id="Session有什么重大的BUG，微软提出了什么方法加以解决？"><a href="#Session有什么重大的BUG，微软提出了什么方法加以解决？" class="headerlink" title="Session有什么重大的BUG，微软提出了什么方法加以解决？"></a>Session有什么重大的BUG，微软提出了什么方法加以解决？</h2><h3 id="iis中有由于有进程回收机制，系统繁忙的话Session会丢失，iis重启也会造成Session丢失。这样用户就要重新登录或者重新添加信息到Session中。可以用StateServer或SqlServer数据库的方式存储Session不过这种方式比较慢，而且无法捕获Session的end事件。但是我认为这不是bug，只能说是In-Proc方式存储Session的缺陷，缺陷和bug是不一样的，In-Proc方式存储Session会由服务器来决定什么时候释放Session，这是By-Design，In-Proc方式不满足要求的话完全可以用StateServer和数据库的方式。"><a href="#iis中有由于有进程回收机制，系统繁忙的话Session会丢失，iis重启也会造成Session丢失。这样用户就要重新登录或者重新添加信息到Session中。可以用StateServer或SqlServer数据库的方式存储Session不过这种方式比较慢，而且无法捕获Session的end事件。但是我认为这不是bug，只能说是In-Proc方式存储Session的缺陷，缺陷和bug是不一样的，In-Proc方式存储Session会由服务器来决定什么时候释放Session，这是By-Design，In-Proc方式不满足要求的话完全可以用StateServer和数据库的方式。" class="headerlink" title="iis中有由于有进程回收机制，系统繁忙的话Session会丢失，iis重启也会造成Session丢失。这样用户就要重新登录或者重新添加信息到Session中。可以用StateServer或SqlServer数据库的方式存储Session不过这种方式比较慢，而且无法捕获Session的end事件。但是我认为这不是bug，只能说是In-Proc方式存储Session的缺陷，缺陷和bug是不一样的，In-Proc方式存储Session会由服务器来决定什么时候释放Session，这是By Design，In-Proc方式不满足要求的话完全可以用StateServer和数据库的方式。"></a>iis中有由于有进程回收机制，系统繁忙的话Session会丢失，iis重启也会造成Session丢失。这样用户就要重新登录或者重新添加信息到Session中。可以用StateServer或SqlServer数据库的方式存储Session不过这种方式比较慢，而且无法捕获Session的end事件。但是我认为这不是bug，只能说是In-Proc方式存储Session的缺陷，缺陷和bug是不一样的，In-Proc方式存储Session会由服务器来决定什么时候释放Session，这是By Design，In-Proc方式不满足要求的话完全可以用StateServer和数据库的方式。</h3><h3 id="StsteServer还可以解决集群Session共享的问题"><a href="#StsteServer还可以解决集群Session共享的问题" class="headerlink" title="StsteServer还可以解决集群Session共享的问题"></a>StsteServer还可以解决集群Session共享的问题</h3><h3 id="配置StateServer的方法：略"><a href="#配置StateServer的方法：略" class="headerlink" title="配置StateServer的方法：略"></a>配置StateServer的方法：略</h3><h2 id="asp-net中-lt-gt-、-lt-gt-、-lt-的区别是什么？-gt"><a href="#asp-net中-lt-gt-、-lt-gt-、-lt-的区别是什么？-gt" class="headerlink" title="asp.net中&lt;% %&gt;、&lt;% = %&gt;、&lt;% # %的区别是什么？&gt;"></a>asp.net中&lt;% %&gt;、&lt;% = %&gt;、&lt;% # %的区别是什么？&gt;</h2><h3 id="lt-gt-是执行-lt-gt-中的C-代码，-lt-gt-是将-后的表达式的值输出到Response中，-lt-gt-是数据绑定，一般用来ListView、GridView、Repeater等控件的绑定中。数据绑定分为，Eval：单向绑定和Bind：双向绑定。"><a href="#lt-gt-是执行-lt-gt-中的C-代码，-lt-gt-是将-后的表达式的值输出到Response中，-lt-gt-是数据绑定，一般用来ListView、GridView、Repeater等控件的绑定中。数据绑定分为，Eval：单向绑定和Bind：双向绑定。" class="headerlink" title="&lt;% %&gt;是执行&lt;% %&gt;中的C#代码，&lt;% = %&gt;是将=后的表达式的值输出到Response中，&lt;% # %&gt;是数据绑定，一般用来ListView、GridView、Repeater等控件的绑定中。数据绑定分为，Eval：单向绑定和Bind：双向绑定。"></a>&lt;% %&gt;是执行&lt;% %&gt;中的C#代码，&lt;% = %&gt;是将=后的表达式的值输出到Response中，&lt;% # %&gt;是数据绑定，一般用来ListView、GridView、Repeater等控件的绑定中。数据绑定分为，Eval：单向绑定和Bind：双向绑定。</h3><h2 id="asp-net中的错误机制"><a href="#asp-net中的错误机制" class="headerlink" title="asp.net中的错误机制"></a>asp.net中的错误机制</h2><h3 id="定制错误页来将显示一个友好的报错页面"><a href="#定制错误页来将显示一个友好的报错页面" class="headerlink" title="定制错误页来将显示一个友好的报错页面"></a>定制错误页来将显示一个友好的报错页面</h3><h3 id="页面中未捕捉一样会触发Page-Error，应用程序中的未捕获异常会触发"><a href="#页面中未捕捉一样会触发Page-Error，应用程序中的未捕获异常会触发" class="headerlink" title="页面中未捕捉一样会触发Page_Error，应用程序中的未捕获异常会触发"></a>页面中未捕捉一样会触发Page_Error，应用程序中的未捕获异常会触发</h3><h3 id="Application-Error。通过HttpContext-Current-Server-GetLastError-拿到未捕捉异常，记录到Log4Net日志中。"><a href="#Application-Error。通过HttpContext-Current-Server-GetLastError-拿到未捕捉异常，记录到Log4Net日志中。" class="headerlink" title="Application_Error。通过HttpContext.Current.Server.GetLastError();拿到未捕捉异常，记录到Log4Net日志中。"></a>Application_Error。通过HttpContext.Current.Server.GetLastError();拿到未捕捉异常，记录到Log4Net日志中。</h3>
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">×</a>
+            <div class="shang_tit">
+              <p>谢谢你请我吃辣条</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/04/16/asp.net-knowledge-point-interview/">ASP.NET知识点面试篇</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 阿星Plus 的个人博客">阿星Plus</a></p>
+        <p><span>发布时间:</span>2016年04月16日 - 17时13分</p>
+        <p><span>最后更新:</span>2017年05月26日 - 13时04分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/04/16/asp.net-knowledge-point-interview/" title="ASP.NET知识点面试篇">http://xj8c.cc/2016/04/16/asp.net-knowledge-point-interview/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://xj8c.cc/2016/04/16/asp.net-knowledge-point-interview/　　作者: 阿星Plus" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2016/05/18/internship-experience/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          武汉路博特工程科技有限公司实习“满月”工作感受
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/08/what-is-a-three-tier-architecture/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">三层架构到底是个什么玩意？</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#列举ASP-NET页面之间传递值的几种方式？"><span class="toc-number">1.</span> <span class="toc-text">列举ASP.NET页面之间传递值的几种方式？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1，使用QueryString，如：…Test-id-1-Redirect"><span class="toc-number">1.1.</span> <span class="toc-text">1，使用QueryString，如：…Test?id=1 Redirect()..</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2，使用Session变量"><span class="toc-number">1.2.</span> <span class="toc-text">2，使用Session变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3，使用Server-Transfer"><span class="toc-number">1.3.</span> <span class="toc-text">3，使用Server.Transfer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4，Cookie传值"><span class="toc-number">1.4.</span> <span class="toc-text">4，Cookie传值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是code-Behind技术"><span class="toc-number">2.</span> <span class="toc-text">什么是code-Behind技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#就是代码隐藏，在ASP-NET中通过ASPX页面指向cs文件的方法实现显示逻辑和处理逻辑的分离，这样有助于web应用程序的创建。比如分工，美工和编程的可以各干各的，不用再像以前asp那样代码和HTML代码混在一起，难以维护。"><span class="toc-number">2.1.</span> <span class="toc-text">就是代码隐藏，在ASP.NET中通过ASPX页面指向cs文件的方法实现显示逻辑和处理逻辑的分离，这样有助于web应用程序的创建。比如分工，美工和编程的可以各干各的，不用再像以前asp那样代码和HTML代码混在一起，难以维护。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#请解释ASP-NET中的web页面与其隐藏类之间的关系"><span class="toc-number">3.</span> <span class="toc-text">请解释ASP.NET中的web页面与其隐藏类之间的关系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一个ASP-NET页面一般都应对一个隐藏类，一般都在ASP-NET页面的声明中指定了隐藏类例如一个页面Test-aspx的页面声明如下："><span class="toc-number">3.1.</span> <span class="toc-text">一个ASP.NET页面一般都应对一个隐藏类，一般都在ASP.NET页面的声明中指定了隐藏类例如一个页面Test.aspx的页面声明如下：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Codebehind-”Test-aspx-cs”表明经编译此页面时使用哪一个代码文件"><span class="toc-number">3.2.</span> <span class="toc-text">Codebehind=”Test.aspx.cs”表明经编译此页面时使用哪一个代码文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Inherits-”T1-Test”表示运行时使用哪一个隐藏类"><span class="toc-number">3.3.</span> <span class="toc-text">Inherits=”T1.Test”表示运行时使用哪一个隐藏类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#aspx页面会编译生成一个类，这个类从隐藏类继承"><span class="toc-number">3.4.</span> <span class="toc-text">aspx页面会编译生成一个类，这个类从隐藏类继承</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过超链接怎样传递中文参数？"><span class="toc-number">4.</span> <span class="toc-text">通过超链接怎样传递中文参数？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#用URL编码，通过QueryString传递，用urlencode编码，urldecode解码"><span class="toc-number">4.1.</span> <span class="toc-text">用URL编码，通过QueryString传递，用urlencode编码，urldecode解码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Server-Transfer和Response-Redirect的区别是什么？"><span class="toc-number">5.</span> <span class="toc-text">Server.Transfer和Response.Redirect的区别是什么？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Server-Transfer仅是服务器中控制权的转向，在客户端浏览器地址栏中不会显示转向后的地址；Response-Redirect则是完全的跳转，浏览器将会得到跳转的地址，并重新发送请求链接。这样，从浏览器的地址栏中看到跳转后的链接地址。"><span class="toc-number">5.1.</span> <span class="toc-text">Server.Transfer仅是服务器中控制权的转向，在客户端浏览器地址栏中不会显示转向后的地址；Response.Redirect则是完全的跳转，浏览器将会得到跳转的地址，并重新发送请求链接。这样，从浏览器的地址栏中看到跳转后的链接地址。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Server-Transfer是服务器请求资源，服务器直接访问目标地址的URL，把那个URL的相应内容读取过来，然后把这些内容再发给浏览器，浏览器根本不知道服务器发送的内容是从哪里来的，所以它的地址栏还是原来的地址。这个过程中浏览器和web服务器之间经过一次交互。"><span class="toc-number">5.2.</span> <span class="toc-text">Server.Transfer是服务器请求资源，服务器直接访问目标地址的URL，把那个URL的相应内容读取过来，然后把这些内容再发给浏览器，浏览器根本不知道服务器发送的内容是从哪里来的，所以它的地址栏还是原来的地址。这个过程中浏览器和web服务器之间经过一次交互。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Response-Redirect就是服务端根据逻辑，发送一个状态吗，告诉浏览器重新去请求那个地址，一般来说浏览器会用刚才请求的所有参数重新请求。这个过程中浏览器和web服务器之间经过了两次交互。"><span class="toc-number">5.3.</span> <span class="toc-text">Response.Redirect就是服务端根据逻辑，发送一个状态吗，告诉浏览器重新去请求那个地址，一般来说浏览器会用刚才请求的所有参数重新请求。这个过程中浏览器和web服务器之间经过了两次交互。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#说出一些常用的类，接口"><span class="toc-number">6.</span> <span class="toc-text">说出一些常用的类，接口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常用的类：StreamReader、WebClient、Dictionary、StringBuilder、SqlConnection、FileStream、File、Regex、List"><span class="toc-number">6.1.</span> <span class="toc-text">常用的类：StreamReader、WebClient、Dictionary、StringBuilder、SqlConnection、FileStream、File、Regex、List</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用的接口：IDisposable、IEnumerable、IDbConnection、IComparable、ICollection、IList、IDictionary"><span class="toc-number">6.2.</span> <span class="toc-text">常用的接口：IDisposable、IEnumerable、IDbConnection、IComparable、ICollection、IList、IDictionary</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#post、get的区别"><span class="toc-number">7.</span> <span class="toc-text">post、get的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#get的参数会显示在浏览器地址栏中，而post的参数不会显示在浏览器地址栏中"><span class="toc-number">7.1.</span> <span class="toc-text">get的参数会显示在浏览器地址栏中，而post的参数不会显示在浏览器地址栏中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用post提交的页面再点击刷新按钮的时候浏览器一般会提示“是否重新提交”，而get则不会"><span class="toc-number">7.2.</span> <span class="toc-text">使用post提交的页面再点击刷新按钮的时候浏览器一般会提示“是否重新提交”，而get则不会</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用get的页面可以被搜索引擎抓取，而用post的则不可以"><span class="toc-number">7.3.</span> <span class="toc-text">用get的页面可以被搜索引擎抓取，而用post的则不可以</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用post可以进行文件的提交，而用get则不可以"><span class="toc-number">7.4.</span> <span class="toc-text">用post可以进行文件的提交，而用get则不可以</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用post可以提交的数据量非常大，而用get可以提交的数据量则非常小-2K-，受限于网页地址的长度。"><span class="toc-number">7.5.</span> <span class="toc-text">用post可以提交的数据量非常大，而用get可以提交的数据量则非常小(2K)，受限于网页地址的长度。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Application、Cookie和Session两种会话有什么不同？"><span class="toc-number">8.</span> <span class="toc-text">Application、Cookie和Session两种会话有什么不同？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Application是用来存取整个网站全局的信息，而Session是用来存取与具体某个访问者关联的信息。Cookie是保存在客户端的，机密信息不能保存在Cookie中，只能放小数据；Session是保存在服务器端的，比较安全，可以放大数据。"><span class="toc-number">8.1.</span> <span class="toc-text">Application是用来存取整个网站全局的信息，而Session是用来存取与具体某个访问者关联的信息。Cookie是保存在客户端的，机密信息不能保存在Cookie中，只能放小数据；Session是保存在服务器端的，比较安全，可以放大数据。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http状态吗各是什么意思？"><span class="toc-number">9.</span> <span class="toc-text">http状态吗各是什么意思？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#302：重定向"><span class="toc-number">9.1.</span> <span class="toc-text">302：重定向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#301：永久重定向"><span class="toc-number">9.2.</span> <span class="toc-text">301：永久重定向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#404：页面不存在"><span class="toc-number">9.3.</span> <span class="toc-text">404：页面不存在</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#500：服务器内部错误"><span class="toc-number">9.4.</span> <span class="toc-text">500：服务器内部错误</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Session有什么重大的BUG，微软提出了什么方法加以解决？"><span class="toc-number">10.</span> <span class="toc-text">Session有什么重大的BUG，微软提出了什么方法加以解决？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#iis中有由于有进程回收机制，系统繁忙的话Session会丢失，iis重启也会造成Session丢失。这样用户就要重新登录或者重新添加信息到Session中。可以用StateServer或SqlServer数据库的方式存储Session不过这种方式比较慢，而且无法捕获Session的end事件。但是我认为这不是bug，只能说是In-Proc方式存储Session的缺陷，缺陷和bug是不一样的，In-Proc方式存储Session会由服务器来决定什么时候释放Session，这是By-Design，In-Proc方式不满足要求的话完全可以用StateServer和数据库的方式。"><span class="toc-number">10.1.</span> <span class="toc-text">iis中有由于有进程回收机制，系统繁忙的话Session会丢失，iis重启也会造成Session丢失。这样用户就要重新登录或者重新添加信息到Session中。可以用StateServer或SqlServer数据库的方式存储Session不过这种方式比较慢，而且无法捕获Session的end事件。但是我认为这不是bug，只能说是In-Proc方式存储Session的缺陷，缺陷和bug是不一样的，In-Proc方式存储Session会由服务器来决定什么时候释放Session，这是By Design，In-Proc方式不满足要求的话完全可以用StateServer和数据库的方式。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#StsteServer还可以解决集群Session共享的问题"><span class="toc-number">10.2.</span> <span class="toc-text">StsteServer还可以解决集群Session共享的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置StateServer的方法：略"><span class="toc-number">10.3.</span> <span class="toc-text">配置StateServer的方法：略</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#asp-net中-lt-gt-、-lt-gt-、-lt-的区别是什么？-gt"><span class="toc-number">11.</span> <span class="toc-text">asp.net中<% %>、<% = %>、<% # %的区别是什么？></span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#lt-gt-是执行-lt-gt-中的C-代码，-lt-gt-是将-后的表达式的值输出到Response中，-lt-gt-是数据绑定，一般用来ListView、GridView、Repeater等控件的绑定中。数据绑定分为，Eval：单向绑定和Bind：双向绑定。"><span class="toc-number">11.1.</span> <span class="toc-text"><% %>是执行<% %>中的C#代码，<% = %>是将=后的表达式的值输出到Response中，<% # %>是数据绑定，一般用来ListView、GridView、Repeater等控件的绑定中。数据绑定分为，Eval：单向绑定和Bind：双向绑定。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#asp-net中的错误机制"><span class="toc-number">12.</span> <span class="toc-text">asp.net中的错误机制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定制错误页来将显示一个友好的报错页面"><span class="toc-number">12.1.</span> <span class="toc-text">定制错误页来将显示一个友好的报错页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#页面中未捕捉一样会触发Page-Error，应用程序中的未捕获异常会触发"><span class="toc-number">12.2.</span> <span class="toc-text">页面中未捕捉一样会触发Page_Error，应用程序中的未捕获异常会触发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Application-Error。通过HttpContext-Current-Server-GetLastError-拿到未捕捉异常，记录到Log4Net日志中。"><span class="toc-number">12.3.</span> <span class="toc-text">Application_Error。通过HttpContext.Current.Server.GetLastError();拿到未捕捉异常，记录到Log4Net日志中。</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="ASP.NET知识点面试篇"></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cyt1UJT89'; 
+var conf = 'prod_a66df9b8bf4687f6662a946344b221b7'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/05/18/internship-experience/" title="上一篇: 武汉路博特工程科技有限公司实习“满月”工作感受">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/04/08/what-is-a-three-tier-architecture/" title="下一篇: 三层架构到底是个什么玩意？">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/08/31/csharp7/">C＃7.0中有哪些新特性？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/18/internship-experience/">武汉路博特工程科技有限公司实习“满月”工作感受</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/16/asp.net-knowledge-point-interview/">ASP.NET知识点面试篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/08/what-is-a-three-tier-architecture/">三层架构到底是个什么玩意？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/07/five-main-objects-in-dotnet/">ADO.NET中的五个主要对象？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/10/the-students-with-poor-grades-reversed/">一个学渣的逆袭</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/21/computer-computing-infrastructure/">计算机运算基础荟萃</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/08/CEAC-office2010/">CEAC-office2010实操题练习评测系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/28/test-case-design-advanced(bottom)/">测试用例设计进阶(下)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/28/test-case-design-in-order(upper)/">测试用例设计进阶（上）</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/25/boundary-value/">边界值分析法相关概念 — 边界点相关概念</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/24/basic-knowledge-of-software-testing/">软件测试基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/24/overview-of-software-testing/">软件测试概述</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/20/xml-note-1/">XML学习笔记(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/12/when-the-deepest-counsel-comes-to-the-most-clear-ideal/">当最深沉的筹谋换来最清明的理想</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/01/10-best-javascript-development-practices/">10个最佳 javascript 开发实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/07/the-30-most-difficult-questions-to-answer-in-history/">史上最难回答的30个问题，没有一人都能答对！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/05/windows10-iso.md/">Win10正式版微软官方原版ISO系统镜像下载大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/02/the-work-of-a-programmer/">一本关于程序员的修真小说</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/02/Win10-ten-points/">Win10的十个亮点</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/01/Zhihu-god-reply/">一大波，知乎神回复在接近了！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/27/vs-shortcuts/">必须知道的 Visual Studio 快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/16/asp.net-knowledge-point-summary-5/">Asp.net知识点总结(五)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/13/ten-programming-languages/">你必须知道的十个编程语言</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/11/asp.net-knowledge-point-summary-4/">Asp.net知识点总结(四)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/07/asp.net-knowledge-point-summary-3/">Asp.net知识点总结(三)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/06/bigdata-internet-thinking-O2O-crowdfunding/">什么是大数据，什么是红海、蓝海、互联网思维？什么是O2O？什么是众筹？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/04/asp.net-knowledge-point-summary-2/">Asp.net知识点总结(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/03/asp.net-knowledge-point-summary-1/">Asp.net知识点总结(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/25/shopping-online/">Shopping Online</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/04/SqlServer2008/">sql数据库|SqlServer2008 R2_x86&x64</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/17/why-is-the-chinese-mobile-number-11/">揭秘：中国手机号码为什么是11位数？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/14/33-poems-of-the-most-artistic-conception-in-China/">中国最有意境的33句诗文，欣赏下吧！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/05/win7-cmd/">Win7运行命令大全|开始-运行-命令总汇</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/31/please-don't-be-a-fickle-IT-man/">请不要做浮躁的IT人</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/29/the-name-of-the-big-internet-companies/">各大互联网公司命名的由来，值得你了解。</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/25/30-the-hacker-movie/">30部黑客电影，你看过哪几部？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/22/top 10 IT jobs in 2015/">2015年 十大热门 IT 工作</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/10/a-years-plan-starts-with-spring/">A year's plan starts with spring ！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/28/cherish-every-day/">珍惜每一天</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/28/adobe-photoshop/">Adobe Photoshop 绿色安装版</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/20/national-computer-level-office2010/">全国计算机一级Office2010+win7版（未来教育）考试练习软件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/15/microsoft-office-2010/">Microsoft office 2010</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy;
+                2017
+                    阿星Plus
+            </div>
+            <div class="footer-right">
+                Blog By <a href="http://hexo.io/" target="_blank">Hexo</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站访问量: 
+                            <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                    </span>
+                    
+                        
+                            <span>, </span>
+                            
+                                
+                                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                                    </span>
+                                    </span>
+                                    
+            </div>
+            
+    </div>
+</footer>
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

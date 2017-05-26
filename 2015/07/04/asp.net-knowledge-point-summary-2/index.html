@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Asp.net知识点总结(二) | 当然我在瞎扯</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="VIEWSTATE简介：ASP.NET的 .aspx页面特有，页面级的；就是在页面上的一个隐藏域中保存客户端单独使用的数据的一种方式；服务器端控件的值都自动保存在ViewState中方式：用户数据保存方式：1ViewState[”myKey”]=”MyData”; 读取数据方式：123string myData;if(ViewState[”myKey”]!=null)&amp;#123;  myData=">
+<meta name="keywords" content="ASP.NET,技术教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Asp.net知识点总结(二)">
+<meta property="og:url" content="http://xj8c.cc/2015/07/04/asp.net-knowledge-point-summary-2/index.html">
+<meta property="og:site_name" content="当然我在瞎扯">
+<meta property="og:description" content="VIEWSTATE简介：ASP.NET的 .aspx页面特有，页面级的；就是在页面上的一个隐藏域中保存客户端单独使用的数据的一种方式；服务器端控件的值都自动保存在ViewState中方式：用户数据保存方式：1ViewState[”myKey”]=”MyData”; 读取数据方式：123string myData;if(ViewState[”myKey”]!=null)&amp;#123;  myData=">
+<meta property="og:updated_time" content="2017-05-26T03:21:03.573Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Asp.net知识点总结(二)">
+<meta name="twitter:description" content="VIEWSTATE简介：ASP.NET的 .aspx页面特有，页面级的；就是在页面上的一个隐藏域中保存客户端单独使用的数据的一种方式；服务器端控件的值都自动保存在ViewState中方式：用户数据保存方式：1ViewState[”myKey”]=”MyData”; 读取数据方式：123string myData;if(ViewState[”myKey”]!=null)&amp;#123;  myData=">
+  
+    <link rel="alternative" href="/atom.xml" title="当然我在瞎扯" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+                <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+        </a>
+
+        <hgroup>
+            <h1 class="header-author">
+                <a href="/" title="Hello World">
+                    阿星Plus
+                </a>
+            </h1>
+        </hgroup>
+
+        
+            <p class="header-subtitle">
+                生命不息，奋斗不止
+            </p>
+            
+                
+                        
+                            <div id="switch-btn" class="switch-btn">
+                                <div class="icon">
+                                    <div class="icon-ctn">
+                                        <div class="icon-wrap icon-house" data-idx="0">
+                                            <div class="birdhouse"></div>
+                                            <div class="birdhouse_holes"></div>
+                                        </div>
+                                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                                            <div class="ribbon"></div>
+                                        </div>
+                                        
+                                            <div class="icon-wrap icon-link hide" data-idx="2">
+                                                <div class="loopback_l"></div>
+                                                <div class="loopback_r"></div>
+                                            </div>
+                                            
+                                                
+                                    </div>
+
+                                </div>
+                                <div class="tips-box hide">
+                                    <div class="tips-arrow"></div>
+                                    <ul class="tips-inner">
+                                        <li>菜单</li>
+                                        <li>标签</li>
+                                        
+                                            <li>友情链接</li>
+                                            
+                                                
+                                    </ul>
+                                </div>
+                            </div>
+                            
+
+                                <div id="switch-area" class="switch-area">
+                                    <div class="switch-wrap">
+                                        <section class="switch-part switch-part1">
+                                            <nav class="header-menu">
+                                                <ul>
+                                                    
+                                                        <li>
+                                                            <a href="/">
+                                                                Home
+                                                            </a>
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            <a href="/archives">
+                                                                Archives
+                                                            </a>
+                                                        </li>
+                                                        
+                                                </ul>
+                                            </nav>
+                                            <nav class="header-nav">
+                                                <ul class="social">
+                                                    
+                                                        <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=w-Lx8IOupqy0te2grK4" title="mail">
+                                                            mail
+                                                        </a>
+                                                        
+                                                        <a class="fl weibo" target="_blank" href="http://weibo.com/Tencentgou" title="weibo">
+                                                            weibo
+                                                        </a>
+                                                        
+                                                        <a class="fl github" target="_blank" href="https://github.com/Meowv" title="github">
+                                                            github
+                                                        </a>
+                                                        
+                                                        <a class="fl twitter" target="_blank" href="https://twitter.com/hackxing" title="twitter">
+                                                            twitter
+                                                        </a>
+                                                        
+                                                        <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">
+                                                            zhihu
+                                                        </a>
+                                                        
+                                                        <a class="fl rss" target="_blank" href="/atom.xml" title="rss">
+                                                            rss
+                                                        </a>
+                                                        
+                                                </ul>
+                                            </nav>
+                                        </section>
+
+                                        
+                                            <section class="switch-part switch-part2">
+                                                <div class="widget tagcloud" id="js-tagcloud">
+                                                    <a href="/tags/ASP-NET/" style="font-size: 20px;">ASP.NET</a> <a href="/tags/C/" style="font-size: 12px;">C#</a> <a href="/tags/CEAC/" style="font-size: 10px;">CEAC</a> <a href="/tags/IT/" style="font-size: 12px;">IT</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Photoshop/" style="font-size: 10px;">Photoshop</a> <a href="/tags/SqlServer/" style="font-size: 10px;">SqlServer</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/office2010/" style="font-size: 14px;">office2010</a> <a href="/tags/win10/" style="font-size: 12px;">win10</a> <a href="/tags/win7/" style="font-size: 10px;">win7</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/三层架构/" style="font-size: 10px;">三层架构</a> <a href="/tags/互联网/" style="font-size: 14px;">互联网</a> <a href="/tags/原版系统/" style="font-size: 10px;">原版系统</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/实习感受/" style="font-size: 10px;">实习感受</a> <a href="/tags/小说/" style="font-size: 10px;">小说</a> <a href="/tags/微软/" style="font-size: 10px;">微软</a> <a href="/tags/手机/" style="font-size: 10px;">手机</a> <a href="/tags/技术教程/" style="font-size: 18px;">技术教程</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/春天/" style="font-size: 10px;">春天</a> <a href="/tags/琅琊榜/" style="font-size: 10px;">琅琊榜</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/知乎/" style="font-size: 10px;">知乎</a> <a href="/tags/程序员/" style="font-size: 10px;">程序员</a> <a href="/tags/绿色软件/" style="font-size: 16px;">绿色软件</a> <a href="/tags/编程/" style="font-size: 10px;">编程</a> <a href="/tags/计算机一级/" style="font-size: 10px;">计算机一级</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/诗文/" style="font-size: 10px;">诗文</a> <a href="/tags/软件测试/" style="font-size: 18px;">软件测试</a> <a href="/tags/进制转换/" style="font-size: 10px;">进制转换</a> <a href="/tags/逆袭/" style="font-size: 10px;">逆袭</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/黑客/" style="font-size: 10px;">黑客</a>
+                                                </div>
+                                            </section>
+                                            
+
+                                                
+                                                    <section class="switch-part switch-part3">
+                                                        <div id="js-friends">
+                                                            
+                                                                <a target="_blank" class="main-nav-link switch-friends-link" href="http://meowv.com/">
+                                                                    喵呜网
+                                                                </a>
+                                                                
+                                                        </div>
+                                                    </section>
+                                                    
+
+                                                        
+                                    </div>
+                                </div>
+    </header>
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">阿星Plus</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">阿星Plus</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">生命不息，奋斗不止</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">Home</a></li>
+                
+                    <li><a href="/archives">Archives</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=w-Lx8IOupqy0te2grK4" title="mail">mail</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/Tencentgou" title="weibo">weibo</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/Meowv" title="github">github</a>
+                    
+                        <a class="twitter" target="_blank" href="https://twitter.com/hackxing" title="twitter">twitter</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">zhihu</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-asp.net-knowledge-point-summary-2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/04/asp.net-knowledge-point-summary-2/" class="article-date">
+      <time datetime="2015-07-04T13:02:22.000Z" itemprop="datePublished">2015-07-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Asp.net知识点总结(二)
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ASP-NET/">ASP.NET</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术教程/">技术教程</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="VIEWSTATE"><a href="#VIEWSTATE" class="headerlink" title="VIEWSTATE"></a>VIEWSTATE</h2><h1 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h1><h3 id="ASP-NET的-aspx页面特有，页面级的；"><a href="#ASP-NET的-aspx页面特有，页面级的；" class="headerlink" title="ASP.NET的 .aspx页面特有，页面级的；"></a>ASP.NET的 .aspx页面特有，页面级的；</h3><h3 id="就是在页面上的一个隐藏域中保存客户端单独使用的数据的一种方式；"><a href="#就是在页面上的一个隐藏域中保存客户端单独使用的数据的一种方式；" class="headerlink" title="就是在页面上的一个隐藏域中保存客户端单独使用的数据的一种方式；"></a>就是在页面上的一个隐藏域中保存客户端单独使用的数据的一种方式；</h3><h3 id="服务器端控件的值都自动保存在ViewState中"><a href="#服务器端控件的值都自动保存在ViewState中" class="headerlink" title="服务器端控件的值都自动保存在ViewState中"></a>服务器端控件的值都自动保存在ViewState中</h3><h1 id="方式："><a href="#方式：" class="headerlink" title="方式："></a>方式：</h1><h3 id="用户数据保存方式："><a href="#用户数据保存方式：" class="headerlink" title="用户数据保存方式："></a>用户数据保存方式：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ViewState[”myKey”]=”MyData”;</div></pre></td></tr></table></figure>
+<h3 id="读取数据方式："><a href="#读取数据方式：" class="headerlink" title="读取数据方式："></a>读取数据方式：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">string myData;</div><div class="line">if(ViewState[”myKey”]!=null)</div><div class="line">&#123;  myData=(string)ViewState[”myKey”];  &#125;</div></pre></td></tr></table></figure>
+<h1 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h1><h3 id="ViewState不能存储所有的数据类型，仅支持可序列化对象。"><a href="#ViewState不能存储所有的数据类型，仅支持可序列化对象。" class="headerlink" title="ViewState不能存储所有的数据类型，仅支持可序列化对象。"></a>ViewState不能存储所有的数据类型，仅支持可序列化对象。</h3><h3 id="非单值服务器控件的状态也自动保存在ViewState中"><a href="#非单值服务器控件的状态也自动保存在ViewState中" class="headerlink" title="非单值服务器控件的状态也自动保存在ViewState中"></a>非单值服务器控件的状态也自动保存在ViewState中</h3><p>列入：下拉框。（文本框是单值控件，所以不会保存在ViewState中）</p>
+<h1 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h1><h3 id="使用ViewState的前提："><a href="#使用ViewState的前提：" class="headerlink" title="使用ViewState的前提："></a>使用ViewState的前提：</h3><p>页面上必须有一个服务器端窗体标记 &lt;form runat=“server”&gt;<br>服务器在接收到用户请求一个页面后，会自动在请求报文中找看是否包含<strong>VIEWSTATE的隐藏域，如果有，则将中间的值解码后添加到页面的ViewState属性中。<br>服务器在输出的时候，也会自动的将ViewState中的值添加到表单里名叫</strong>VIEWSTATE的隐藏域中</p>
+<h3 id="VIEWSTATE适用于同一个页面在不关闭的情况下多次与服务器交互"><a href="#VIEWSTATE适用于同一个页面在不关闭的情况下多次与服务器交互" class="headerlink" title="VIEWSTATE适用于同一个页面在不关闭的情况下多次与服务器交互"></a>VIEWSTATE适用于同一个页面在不关闭的情况下多次与服务器交互</h3><h1 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h1><h3 id="ViewState禁用（知道）："><a href="#ViewState禁用（知道）：" class="headerlink" title="ViewState禁用（知道）："></a>ViewState禁用（知道）：</h3><p>禁用ViewState的方法，禁用单个控件的ViewState设定enableviewstate=false，禁用ViewState以后TextBox版本不受影响，Div版本受影响，因为input的value不依靠ViewState。<br>禁用整个页面的，在aspx的Page指令区加上EnableViewState=”false” 。内网系统、互联网的后台可以尽情的用ViewState。<br>当某些控件的某些属性不属于浏览器表单的提交范围时，fw将会把这些属性添加到ViewState中保存。</p>
+<h3 id="WebForm的IsPostBack依赖于-ViewState"><a href="#WebForm的IsPostBack依赖于-ViewState" class="headerlink" title="WebForm的IsPostBack依赖于__ViewState"></a>WebForm的IsPostBack依赖于__ViewState</h3><h2 id="IsPostBack"><a href="#IsPostBack" class="headerlink" title="IsPostBack"></a>IsPostBack</h2><p>IsPostBack是Page类有一个bool类型的属性，用来判断针对当前Form的请求是第一次还是非第一次请求。当IsPostBack＝true时表示非第一次请求，我们称为PostBack，当IsPostBack＝false时表示第一次请求。<br>IsPostBack是用来判断是否是回发数据的，在页面生命周期的第二步会判断，如果不是回发的，则为false，ViewState等不会加载，如果是回发的，则为true，ViewState等会在之后加载等，IsPostBack属性可以用来模拟ViewState的执行原理。</p>
+<h2 id="http协议"><a href="#http协议" class="headerlink" title="http协议"></a>http协议</h2><h1 id="什么是协议？"><a href="#什么是协议？" class="headerlink" title="什么是协议？"></a>什么是协议？</h1><p>协议是指计算机通信网络中两台计算机之间进行通信所必须共同遵守的规定或规则。</p>
+<h1 id="什么是HTTP协议？"><a href="#什么是HTTP协议？" class="headerlink" title="什么是HTTP协议？"></a>什么是HTTP协议？</h1><p>HTTP,即超文本传输协议是一种通信协议，是一个基于应用层的通信规范，它允许将超文本标记语言(HTML)文档从Web服务器传送到客户端的浏览器。目前主流的是Http/1.1版本</p>
+<h3 id="TCP协议：通俗–两个电话机通过电话线进行数据交互的格式约定"><a href="#TCP协议：通俗–两个电话机通过电话线进行数据交互的格式约定" class="headerlink" title="TCP协议：通俗–两个电话机通过电话线进行数据交互的格式约定"></a>TCP协议：通俗–两个电话机通过电话线进行数据交互的格式约定</h3><h3 id="HTTP协议：通俗–两个人通过电话机说话的语法。"><a href="#HTTP协议：通俗–两个人通过电话机说话的语法。" class="headerlink" title="HTTP协议：通俗–两个人通过电话机说话的语法。"></a>HTTP协议：通俗–两个人通过电话机说话的语法。</h3><h1 id="Http协议的几个概念："><a href="#Http协议的几个概念：" class="headerlink" title="Http协议的几个概念："></a>Http协议的几个概念：</h1><h3 id="1-连接-Connection-：浏览器和服务器之间传输数据的通道。-一般请求完毕就关闭，http不保持连接。不保持连接会降低处理速度（因为建立连接速度很慢），保持连接的话就会降低服务器的处理的客户端请求数，而不保持连接服务器可以处理更多的请求。"><a href="#1-连接-Connection-：浏览器和服务器之间传输数据的通道。-一般请求完毕就关闭，http不保持连接。不保持连接会降低处理速度（因为建立连接速度很慢），保持连接的话就会降低服务器的处理的客户端请求数，而不保持连接服务器可以处理更多的请求。" class="headerlink" title="1.连接(Connection)：浏览器和服务器之间传输数据的通道。 一般请求完毕就关闭，http不保持连接。不保持连接会降低处理速度（因为建立连接速度很慢），保持连接的话就会降低服务器的处理的客户端请求数，而不保持连接服务器可以处理更多的请求。"></a>1.连接(Connection)：浏览器和服务器之间传输数据的通道。 一般请求完毕就关闭，http不保持连接。不保持连接会降低处理速度（因为建立连接速度很慢），保持连接的话就会降低服务器的处理的客户端请求数，而不保持连接服务器可以处理更多的请求。</h3><h3 id="2-请求-Request-：浏览器向服务器发送的“我要-”的消息，包含请求的类型、请求的数据、浏览器的信息（语言、浏览器版本等）。"><a href="#2-请求-Request-：浏览器向服务器发送的“我要-”的消息，包含请求的类型、请求的数据、浏览器的信息（语言、浏览器版本等）。" class="headerlink" title="2.请求(Request)：浏览器向服务器发送的“我要*”的消息，包含请求的类型、请求的数据、浏览器的信息（语言、浏览器版本等）。"></a>2.请求(Request)：浏览器向服务器发送的“我要<em>*</em>”的消息，包含请求的类型、请求的数据、浏览器的信息（语言、浏览器版本等）。</h3><h3 id="3-响应-Response-：服务器对浏览器请求的返回的数据，包含是否成功、状态码等。"><a href="#3-响应-Response-：服务器对浏览器请求的返回的数据，包含是否成功、状态码等。" class="headerlink" title="3.响应(Response)：服务器对浏览器请求的返回的数据，包含是否成功、状态码等。"></a>3.响应(Response)：服务器对浏览器请求的返回的数据，包含是否成功、状态码等。</h3>
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">×</a>
+            <div class="shang_tit">
+              <p>谢谢你请我吃辣条</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2015/07/04/asp.net-knowledge-point-summary-2/">Asp.net知识点总结(二)</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 阿星Plus 的个人博客">阿星Plus</a></p>
+        <p><span>发布时间:</span>2015年07月04日 - 21时02分</p>
+        <p><span>最后更新:</span>2017年05月26日 - 11时21分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2015/07/04/asp.net-knowledge-point-summary-2/" title="Asp.net知识点总结(二)">http://xj8c.cc/2015/07/04/asp.net-knowledge-point-summary-2/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://xj8c.cc/2015/07/04/asp.net-knowledge-point-summary-2/　　作者: 阿星Plus" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2015/07/06/bigdata-internet-thinking-O2O-crowdfunding/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          什么是大数据，什么是红海、蓝海、互联网思维？什么是O2O？什么是众筹？
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/07/03/asp.net-knowledge-point-summary-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Asp.net知识点总结(一)</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#VIEWSTATE"><span class="toc-number">1.</span> <span class="toc-text">VIEWSTATE</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#简介："><span class="toc-number"></span> <span class="toc-text">简介：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ASP-NET的-aspx页面特有，页面级的；"><span class="toc-number">0.1.</span> <span class="toc-text">ASP.NET的 .aspx页面特有，页面级的；</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#就是在页面上的一个隐藏域中保存客户端单独使用的数据的一种方式；"><span class="toc-number">0.2.</span> <span class="toc-text">就是在页面上的一个隐藏域中保存客户端单独使用的数据的一种方式；</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#服务器端控件的值都自动保存在ViewState中"><span class="toc-number">0.3.</span> <span class="toc-text">服务器端控件的值都自动保存在ViewState中</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#方式："><span class="toc-number"></span> <span class="toc-text">方式：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#用户数据保存方式："><span class="toc-number">0.1.</span> <span class="toc-text">用户数据保存方式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#读取数据方式："><span class="toc-number">0.2.</span> <span class="toc-text">读取数据方式：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#注意："><span class="toc-number"></span> <span class="toc-text">注意：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ViewState不能存储所有的数据类型，仅支持可序列化对象。"><span class="toc-number">0.1.</span> <span class="toc-text">ViewState不能存储所有的数据类型，仅支持可序列化对象。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非单值服务器控件的状态也自动保存在ViewState中"><span class="toc-number">0.2.</span> <span class="toc-text">非单值服务器控件的状态也自动保存在ViewState中</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#原理："><span class="toc-number"></span> <span class="toc-text">原理：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用ViewState的前提："><span class="toc-number">0.1.</span> <span class="toc-text">使用ViewState的前提：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VIEWSTATE适用于同一个页面在不关闭的情况下多次与服务器交互"><span class="toc-number">0.2.</span> <span class="toc-text">VIEWSTATE适用于同一个页面在不关闭的情况下多次与服务器交互</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于"><span class="toc-number"></span> <span class="toc-text">关于</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ViewState禁用（知道）："><span class="toc-number">0.1.</span> <span class="toc-text">ViewState禁用（知道）：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WebForm的IsPostBack依赖于-ViewState"><span class="toc-number">0.2.</span> <span class="toc-text">WebForm的IsPostBack依赖于__ViewState</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IsPostBack"><span class="toc-number">1.</span> <span class="toc-text">IsPostBack</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http协议"><span class="toc-number">2.</span> <span class="toc-text">http协议</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#什么是协议？"><span class="toc-number"></span> <span class="toc-text">什么是协议？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#什么是HTTP协议？"><span class="toc-number"></span> <span class="toc-text">什么是HTTP协议？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP协议：通俗–两个电话机通过电话线进行数据交互的格式约定"><span class="toc-number">0.1.</span> <span class="toc-text">TCP协议：通俗–两个电话机通过电话线进行数据交互的格式约定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP协议：通俗–两个人通过电话机说话的语法。"><span class="toc-number">0.2.</span> <span class="toc-text">HTTP协议：通俗–两个人通过电话机说话的语法。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Http协议的几个概念："><span class="toc-number"></span> <span class="toc-text">Http协议的几个概念：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-连接-Connection-：浏览器和服务器之间传输数据的通道。-一般请求完毕就关闭，http不保持连接。不保持连接会降低处理速度（因为建立连接速度很慢），保持连接的话就会降低服务器的处理的客户端请求数，而不保持连接服务器可以处理更多的请求。"><span class="toc-number">0.1.</span> <span class="toc-text">1.连接(Connection)：浏览器和服务器之间传输数据的通道。 一般请求完毕就关闭，http不保持连接。不保持连接会降低处理速度（因为建立连接速度很慢），保持连接的话就会降低服务器的处理的客户端请求数，而不保持连接服务器可以处理更多的请求。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-请求-Request-：浏览器向服务器发送的“我要-”的消息，包含请求的类型、请求的数据、浏览器的信息（语言、浏览器版本等）。"><span class="toc-number">0.2.</span> <span class="toc-text">2.请求(Request)：浏览器向服务器发送的“我要*”的消息，包含请求的类型、请求的数据、浏览器的信息（语言、浏览器版本等）。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-响应-Response-：服务器对浏览器请求的返回的数据，包含是否成功、状态码等。"><span class="toc-number">0.3.</span> <span class="toc-text">3.响应(Response)：服务器对浏览器请求的返回的数据，包含是否成功、状态码等。</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="Asp.net知识点总结(二)"></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cyt1UJT89'; 
+var conf = 'prod_a66df9b8bf4687f6662a946344b221b7'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2015/07/06/bigdata-internet-thinking-O2O-crowdfunding/" title="上一篇: 什么是大数据，什么是红海、蓝海、互联网思维？什么是O2O？什么是众筹？">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2015/07/03/asp.net-knowledge-point-summary-1/" title="下一篇: Asp.net知识点总结(一)">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/08/31/csharp7/">C＃7.0中有哪些新特性？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/18/internship-experience/">武汉路博特工程科技有限公司实习“满月”工作感受</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/16/asp.net-knowledge-point-interview/">ASP.NET知识点面试篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/08/what-is-a-three-tier-architecture/">三层架构到底是个什么玩意？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/07/five-main-objects-in-dotnet/">ADO.NET中的五个主要对象？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/10/the-students-with-poor-grades-reversed/">一个学渣的逆袭</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/21/computer-computing-infrastructure/">计算机运算基础荟萃</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/08/CEAC-office2010/">CEAC-office2010实操题练习评测系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/28/test-case-design-advanced(bottom)/">测试用例设计进阶(下)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/28/test-case-design-in-order(upper)/">测试用例设计进阶（上）</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/25/boundary-value/">边界值分析法相关概念 — 边界点相关概念</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/24/basic-knowledge-of-software-testing/">软件测试基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/24/overview-of-software-testing/">软件测试概述</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/20/xml-note-1/">XML学习笔记(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/12/when-the-deepest-counsel-comes-to-the-most-clear-ideal/">当最深沉的筹谋换来最清明的理想</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/01/10-best-javascript-development-practices/">10个最佳 javascript 开发实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/07/the-30-most-difficult-questions-to-answer-in-history/">史上最难回答的30个问题，没有一人都能答对！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/05/windows10-iso.md/">Win10正式版微软官方原版ISO系统镜像下载大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/02/the-work-of-a-programmer/">一本关于程序员的修真小说</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/02/Win10-ten-points/">Win10的十个亮点</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/01/Zhihu-god-reply/">一大波，知乎神回复在接近了！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/27/vs-shortcuts/">必须知道的 Visual Studio 快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/16/asp.net-knowledge-point-summary-5/">Asp.net知识点总结(五)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/13/ten-programming-languages/">你必须知道的十个编程语言</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/11/asp.net-knowledge-point-summary-4/">Asp.net知识点总结(四)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/07/asp.net-knowledge-point-summary-3/">Asp.net知识点总结(三)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/06/bigdata-internet-thinking-O2O-crowdfunding/">什么是大数据，什么是红海、蓝海、互联网思维？什么是O2O？什么是众筹？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/04/asp.net-knowledge-point-summary-2/">Asp.net知识点总结(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/03/asp.net-knowledge-point-summary-1/">Asp.net知识点总结(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/25/shopping-online/">Shopping Online</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/04/SqlServer2008/">sql数据库|SqlServer2008 R2_x86&x64</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/17/why-is-the-chinese-mobile-number-11/">揭秘：中国手机号码为什么是11位数？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/14/33-poems-of-the-most-artistic-conception-in-China/">中国最有意境的33句诗文，欣赏下吧！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/05/win7-cmd/">Win7运行命令大全|开始-运行-命令总汇</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/31/please-don't-be-a-fickle-IT-man/">请不要做浮躁的IT人</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/29/the-name-of-the-big-internet-companies/">各大互联网公司命名的由来，值得你了解。</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/25/30-the-hacker-movie/">30部黑客电影，你看过哪几部？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/22/top 10 IT jobs in 2015/">2015年 十大热门 IT 工作</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/10/a-years-plan-starts-with-spring/">A year's plan starts with spring ！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/28/cherish-every-day/">珍惜每一天</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/28/adobe-photoshop/">Adobe Photoshop 绿色安装版</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/20/national-computer-level-office2010/">全国计算机一级Office2010+win7版（未来教育）考试练习软件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/15/microsoft-office-2010/">Microsoft office 2010</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy;
+                2017
+                    阿星Plus
+            </div>
+            <div class="footer-right">
+                Blog By <a href="http://hexo.io/" target="_blank">Hexo</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站访问量: 
+                            <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                    </span>
+                    
+                        
+                            <span>, </span>
+                            
+                                
+                                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                                    </span>
+                                    </span>
+                                    
+            </div>
+            
+    </div>
+</footer>
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
