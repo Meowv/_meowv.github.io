@@ -1,0 +1,12 @@
+---
+title: Shopping Online
+date: 2015-05-25 17:50:23
+---
+
+Electronic Commerce has become a fact of modern life, with millions of people now regularly shopping from the convenience of their computers. With the development of technology, online shopping has become popular in people’s life.
+
+The advantage of online shopping is obvious, it can save time, for those who are busy with work and study. By clicking on them, they can get whatever they want.
+<!--more-->
+Take Taobao as an example, introduce how to shop. First open the Taobao - in search box to enter the items you need to buy or service. For example, "autumn dress was thin". After clicking on the search, you will see a lot of products for your recommendation, and if you can see it too wide, you can also filter it out. To find their favorite products, the point to see the goods, if you meet the needs can be purchased. Pay attention to choosing the size of the goods, color, view the seller reputation, commodity profile, etc. Select the size, color, style, etc. to tick, if you now buy, click on the purchase, if you want to choose a look, you can click to join a shopping cart ".To immediately buy as an example, click on immediately after the purchase will jump out of the dialog box, need to log in information - user name, password, click to confirm. In order to determine the link, select your fill in the delivery address, contact information, the recipient information Message to the seller, fill in your other requirements or remarks. Finally click submit orders. Enter the payment page, you can choose to pay PayPal (if your PayPal money, then), enter the password can be. Also choose to pay online banking, more convenient is quick payment, do not need to password and other links, enter the password can be. If you do not choose a shortcut, you need to choose a bank card, and follow the instructions, enter the bank card number, password, payment password payment. After the payment of the success of the success of the page to pay a successful payment, the purchase process end.
+
+The advantage of online shopping is no doubt, I hope that through my explanation can give you help, and finally I wish you a pleasant online shopping.
