@@ -72,6 +72,23 @@
 
     
   <url>
+    <loc>http://xj8c.cc/2015/10/20/xml-note-1/</loc>
+    <lastmod>2017-05-26T06:29:50.786Z</lastmod>
+    <data>
+        <display>
+        <title>XML学习笔记(一)</title>
+        <pubTime>2015-10-20T14:52:19.000Z</pubTime>
+        
+        <tag>xml</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xj8c.cc/2015/03/22/top%2010%20IT%20jobs%20in%202015/</loc>
     <lastmod>2017-05-26T06:29:50.786Z</lastmod>
     <data>
@@ -82,23 +99,6 @@
         <tag>互联网</tag>
          
         <tag>IT</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xj8c.cc/2015/10/20/xml-note-1/</loc>
-    <lastmod>2017-05-26T06:29:50.786Z</lastmod>
-    <data>
-        <display>
-        <title>XML学习笔记(一)</title>
-        <pubTime>2015-10-20T14:52:19.000Z</pubTime>
-        
-        <tag>xml</tag>
          
          
            
@@ -144,25 +144,6 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/08/02/Win10-ten-points/</loc>
-    <lastmod>2017-05-26T06:29:50.724Z</lastmod>
-    <data>
-        <display>
-        <title>Win10的十个亮点</title>
-        <pubTime>2015-08-02T01:45:08.000Z</pubTime>
-        
-        <tag>win10</tag>
-         
-        <tag>微软</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://xj8c.cc/2015/08/05/windows10-iso.md/</loc>
     <lastmod>2017-05-26T06:29:50.724Z</lastmod>
     <data>
@@ -173,6 +154,25 @@
         <tag>win10</tag>
          
         <tag>原版系统</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xj8c.cc/2015/08/02/Win10-ten-points/</loc>
+    <lastmod>2017-05-26T06:29:50.724Z</lastmod>
+    <data>
+        <display>
+        <title>Win10的十个亮点</title>
+        <pubTime>2015-08-02T01:45:08.000Z</pubTime>
+        
+        <tag>win10</tag>
+         
+        <tag>微软</tag>
          
          
            
@@ -199,14 +199,14 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/07/27/vs-shortcuts/</loc>
+    <loc>http://xj8c.cc/2015/04/17/why-is-the-chinese-mobile-number-11/</loc>
     <lastmod>2017-05-26T06:29:50.633Z</lastmod>
     <data>
         <display>
-        <title>必须知道的 Visual Studio 快捷键</title>
-        <pubTime>2015-07-27T12:21:47.000Z</pubTime>
+        <title>揭秘：中国手机号码为什么是11位数？</title>
+        <pubTime>2015-04-17T08:37:14.000Z</pubTime>
         
-        <tag>Visual Studio</tag>
+        <tag>手机</tag>
          
          
            
@@ -235,14 +235,14 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/04/17/why-is-the-chinese-mobile-number-11/</loc>
+    <loc>http://xj8c.cc/2015/07/27/vs-shortcuts/</loc>
     <lastmod>2017-05-26T06:29:50.633Z</lastmod>
     <data>
         <display>
-        <title>揭秘：中国手机号码为什么是11位数？</title>
-        <pubTime>2015-04-17T08:37:14.000Z</pubTime>
+        <title>必须知道的 Visual Studio 快捷键</title>
+        <pubTime>2015-07-27T12:21:47.000Z</pubTime>
         
-        <tag>手机</tag>
+        <tag>Visual Studio</tag>
          
          
            
@@ -361,11 +361,11 @@
         <title>sql数据库|SqlServer2008 R2_x86&x64</title>
         <pubTime>2015-05-04T13:13:08.000Z</pubTime>
         
+        <tag>绿色软件</tag>
+         
         <tag>SqlServer</tag>
          
         <tag>数据库</tag>
-         
-        <tag>绿色软件</tag>
          
          
            
@@ -467,9 +467,9 @@
         <title>Microsoft office 2010</title>
         <pubTime>2015-02-15T08:08:30.000Z</pubTime>
         
-        <tag>绿色软件</tag>
-         
         <tag>office2010</tag>
+         
+        <tag>绿色软件</tag>
          
          
            
@@ -558,11 +558,11 @@
         <title>CEAC-office2010实操题练习评测系统</title>
         <pubTime>2015-11-07T16:01:20.000Z</pubTime>
         
-        <tag>绿色软件</tag>
-         
         <tag>CEAC</tag>
          
         <tag>office2010</tag>
+         
+        <tag>绿色软件</tag>
          
          
            
@@ -606,6 +606,23 @@
 
     
   <url>
+    <loc>http://xj8c.cc/2015/10/25/boundary-value/</loc>
+    <lastmod>2017-05-26T06:29:50.154Z</lastmod>
+    <data>
+        <display>
+        <title>边界值分析法相关概念 — 边界点相关概念</title>
+        <pubTime>2015-10-25T05:21:45.000Z</pubTime>
+        
+        <tag>软件测试</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xj8c.cc/2015/07/06/bigdata-internet-thinking-O2O-crowdfunding/</loc>
     <lastmod>2017-05-26T06:29:50.154Z</lastmod>
     <data>
@@ -616,23 +633,6 @@
         <tag>互联网</tag>
          
         <tag>大数据</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xj8c.cc/2015/10/25/boundary-value/</loc>
-    <lastmod>2017-05-26T06:29:50.154Z</lastmod>
-    <data>
-        <display>
-        <title>边界值分析法相关概念 — 边界点相关概念</title>
-        <pubTime>2015-10-25T05:21:45.000Z</pubTime>
-        
-        <tag>软件测试</tag>
          
          
            
@@ -699,42 +699,6 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2016/04/16/asp.net-knowledge-point-interview/</loc>
-    <lastmod>2017-05-26T06:29:50.012Z</lastmod>
-    <data>
-        <display>
-        <title>ASP.NET知识点面试篇</title>
-        <pubTime>2016-04-16T09:13:19.000Z</pubTime>
-        
-        <tag>ASP.NET</tag>
-         
-        <tag>面试</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xj8c.cc/2015/03/10/a-years-plan-starts-with-spring/</loc>
-    <lastmod>2017-05-26T06:29:50.012Z</lastmod>
-    <data>
-        <display>
-        <title>A year's plan starts with spring ！</title>
-        <pubTime>2015-03-10T09:30:33.000Z</pubTime>
-        
-        <tag>春天</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://xj8c.cc/2015/07/03/asp.net-knowledge-point-summary-1/</loc>
     <lastmod>2017-05-26T06:29:50.012Z</lastmod>
     <data>
@@ -754,6 +718,25 @@
 
     
   <url>
+    <loc>http://xj8c.cc/2016/04/16/asp.net-knowledge-point-interview/</loc>
+    <lastmod>2017-05-26T06:29:50.012Z</lastmod>
+    <data>
+        <display>
+        <title>ASP.NET知识点面试篇</title>
+        <pubTime>2016-04-16T09:13:19.000Z</pubTime>
+        
+        <tag>ASP.NET</tag>
+         
+        <tag>面试</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xj8c.cc/2015/02/28/adobe-photoshop/</loc>
     <lastmod>2017-05-26T06:29:50.012Z</lastmod>
     <data>
@@ -764,6 +747,23 @@
         <tag>绿色软件</tag>
          
         <tag>Photoshop</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xj8c.cc/2015/03/10/a-years-plan-starts-with-spring/</loc>
+    <lastmod>2017-05-26T06:29:50.012Z</lastmod>
+    <data>
+        <display>
+        <title>A year's plan starts with spring ！</title>
+        <pubTime>2015-03-10T09:30:33.000Z</pubTime>
+        
+        <tag>春天</tag>
          
          
            
