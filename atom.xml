@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xj8c.cc/"/>
-  <updated>2017-06-05T10:13:01.164Z</updated>
+  <updated>2017-06-15T01:45:39.891Z</updated>
   <id>http://xj8c.cc/</id>
   
   <author>
@@ -20,10 +20,12 @@
     <link href="http://xj8c.cc/2017/06/01/my-internship-record/"/>
     <id>http://xj8c.cc/2017/06/01/my-internship-record/</id>
     <published>2017-05-31T16:00:00.000Z</published>
-    <updated>2017-06-05T10:13:01.164Z</updated>
+    <updated>2017-06-15T01:45:39.891Z</updated>
     
     <content type="html"><![CDATA[<h3 id="2017年6月5日星期一-—-2017年6月9日星五"><a href="#2017年6月5日星期一-—-2017年6月9日星五" class="headerlink" title="2017年6月5日星期一 — 2017年6月9日星五"></a>2017年6月5日星期一 — 2017年6月9日星五</h3><p>1、AC项目上线前的数据增量整理导出导入，Bug修改，业务功能刚改等</p>
-<p>2、…</p>
+<p>2、动态报名表单实现 可创建表单，将创建的表单解析成html，根据创建的表单进行报名登记数据</p>
+<p>3、因公司内部原因，居家办公一周，6月15日恢复公司上班</p>
+<p>4、…</p>
 <h3 id="2017年5月31日星期三-—-2017年6月2日星五"><a href="#2017年5月31日星期三-—-2017年6月2日星五" class="headerlink" title="2017年5月31日星期三 — 2017年6月2日星五"></a>2017年5月31日星期三 — 2017年6月2日星五</h3><p>1、动态表单研究</p>
 <p>2、微信编辑器修改出版</p>
 <p>3、AC项目需求更改，写业务代码</p>
@@ -1029,7 +1031,9 @@
     <summary type="html">
     
       &lt;h3 id=&quot;2017年6月5日星期一-—-2017年6月9日星五&quot;&gt;&lt;a href=&quot;#2017年6月5日星期一-—-2017年6月9日星五&quot; class=&quot;headerlink&quot; title=&quot;2017年6月5日星期一 — 2017年6月9日星五&quot;&gt;&lt;/a&gt;2017年6月5日星期一 — 2017年6月9日星五&lt;/h3&gt;&lt;p&gt;1、AC项目上线前的数据增量整理导出导入，Bug修改，业务功能刚改等&lt;/p&gt;
-&lt;p&gt;2、…&lt;/p&gt;
+&lt;p&gt;2、动态报名表单实现 可创建表单，将创建的表单解析成html，根据创建的表单进行报名登记数据&lt;/p&gt;
+&lt;p&gt;3、因公司内部原因，居家办公一周，6月15日恢复公司上班&lt;/p&gt;
+&lt;p&gt;4、…&lt;/p&gt;
 &lt;h3 id=&quot;2017年5月31日星期三-—-2017年6月2日星五&quot;&gt;&lt;a href=&quot;#2017年5月31日星期三-—-2017年6月2日星五&quot; class=&quot;headerlink&quot; title=&quot;2017年5月31日星期三 — 2017年6月2日星五&quot;&gt;&lt;/a&gt;2017年5月31日星期三 — 2017年6月2日星五&lt;/h3&gt;&lt;p&gt;1、动态表单研究&lt;/p&gt;
 &lt;p&gt;2、微信编辑器修改出版&lt;/p&gt;
 &lt;p&gt;3、AC项目需求更改，写业务代码&lt;/p&gt;

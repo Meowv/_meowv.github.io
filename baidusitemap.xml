@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://xj8c.cc/2017/06/01/my-internship-record/</loc>
-    <lastmod>2017-06-05T10:13:01.164Z</lastmod>
+    <lastmod>2017-06-15T01:45:39.891Z</lastmod>
     <data>
         <display>
         <title>我的实习记录</title>
@@ -144,25 +144,6 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/08/05/windows10-iso/</loc>
-    <lastmod>2017-05-26T06:29:50.724Z</lastmod>
-    <data>
-        <display>
-        <title>Win10正式版微软官方原版ISO系统镜像下载大全</title>
-        <pubTime>2015-08-05T10:22:37.000Z</pubTime>
-        
-        <tag>win10</tag>
-         
-        <tag>原版系统</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://xj8c.cc/2015/08/02/Win10-ten-points/</loc>
     <lastmod>2017-05-26T06:29:50.724Z</lastmod>
     <data>
@@ -173,6 +154,25 @@
         <tag>win10</tag>
          
         <tag>微软</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xj8c.cc/2015/08/05/windows10-iso/</loc>
+    <lastmod>2017-05-26T06:29:50.724Z</lastmod>
+    <data>
+        <display>
+        <title>Win10正式版微软官方原版ISO系统镜像下载大全</title>
+        <pubTime>2015-08-05T10:22:37.000Z</pubTime>
+        
+        <tag>win10</tag>
+         
+        <tag>原版系统</tag>
          
          
            
@@ -216,6 +216,23 @@
 
     
   <url>
+    <loc>http://xj8c.cc/2015/07/27/vs-shortcuts/</loc>
+    <lastmod>2017-05-26T06:29:50.633Z</lastmod>
+    <data>
+        <display>
+        <title>必须知道的 Visual Studio 快捷键</title>
+        <pubTime>2015-07-27T12:21:47.000Z</pubTime>
+        
+        <tag>Visual Studio</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xj8c.cc/2016/04/08/what-is-a-three-tier-architecture/</loc>
     <lastmod>2017-05-26T06:29:50.633Z</lastmod>
     <data>
@@ -226,23 +243,6 @@
         <tag>ASP.NET</tag>
          
         <tag>三层架构</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xj8c.cc/2015/07/27/vs-shortcuts/</loc>
-    <lastmod>2017-05-26T06:29:50.633Z</lastmod>
-    <data>
-        <display>
-        <title>必须知道的 Visual Studio 快捷键</title>
-        <pubTime>2015-07-27T12:21:47.000Z</pubTime>
-        
-        <tag>Visual Studio</tag>
          
          
            
@@ -288,6 +288,21 @@
 
     
   <url>
+    <loc>http://xj8c.cc/2015/08/07/the-30-most-difficult-questions-to-answer-in-history/</loc>
+    <lastmod>2017-05-26T06:29:50.551Z</lastmod>
+    <data>
+        <display>
+        <title>史上最难回答的30个问题，没有一人都能答对！</title>
+        <pubTime>2015-08-07T12:55:58.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xj8c.cc/2015/10/28/test-case-design-advanced(bottom)/</loc>
     <lastmod>2017-05-26T06:29:50.551Z</lastmod>
     <data>
@@ -297,21 +312,6 @@
         
         <tag>软件测试</tag>
          
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xj8c.cc/2015/08/07/the-30-most-difficult-questions-to-answer-in-history/</loc>
-    <lastmod>2017-05-26T06:29:50.551Z</lastmod>
-    <data>
-        <display>
-        <title>史上最难回答的30个问题，没有一人都能答对！</title>
-        <pubTime>2015-08-07T12:55:58.000Z</pubTime>
-        
          
            
         </display>
@@ -606,6 +606,25 @@
 
     
   <url>
+    <loc>http://xj8c.cc/2015/07/16/asp.net-knowledge-point-summary-5/</loc>
+    <lastmod>2017-05-26T06:29:50.154Z</lastmod>
+    <data>
+        <display>
+        <title>Asp.net知识点总结(五)</title>
+        <pubTime>2015-07-16T11:47:48.000Z</pubTime>
+        
+        <tag>ASP.NET</tag>
+         
+        <tag>技术教程</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xj8c.cc/2015/10/25/boundary-value/</loc>
     <lastmod>2017-05-26T06:29:50.154Z</lastmod>
     <data>
@@ -642,25 +661,6 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/07/16/asp.net-knowledge-point-summary-5/</loc>
-    <lastmod>2017-05-26T06:29:50.154Z</lastmod>
-    <data>
-        <display>
-        <title>Asp.net知识点总结(五)</title>
-        <pubTime>2015-07-16T11:47:48.000Z</pubTime>
-        
-        <tag>ASP.NET</tag>
-         
-        <tag>技术教程</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://xj8c.cc/2015/07/11/asp.net-knowledge-point-summary-4/</loc>
     <lastmod>2017-05-26T06:29:50.097Z</lastmod>
     <data>
@@ -686,6 +686,25 @@
         <display>
         <title>Asp.net知识点总结(二)</title>
         <pubTime>2015-07-04T13:02:22.000Z</pubTime>
+        
+        <tag>ASP.NET</tag>
+         
+        <tag>技术教程</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xj8c.cc/2015/07/03/asp.net-knowledge-point-summary-1/</loc>
+    <lastmod>2017-05-26T06:29:50.012Z</lastmod>
+    <data>
+        <display>
+        <title>Asp.net知识点总结(一)</title>
+        <pubTime>2015-07-03T10:25:50.000Z</pubTime>
         
         <tag>ASP.NET</tag>
          
@@ -745,25 +764,6 @@
         <pubTime>2015-03-10T09:30:33.000Z</pubTime>
         
         <tag>春天</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xj8c.cc/2015/07/03/asp.net-knowledge-point-summary-1/</loc>
-    <lastmod>2017-05-26T06:29:50.012Z</lastmod>
-    <data>
-        <display>
-        <title>Asp.net知识点总结(一)</title>
-        <pubTime>2015-07-03T10:25:50.000Z</pubTime>
-        
-        <tag>ASP.NET</tag>
-         
-        <tag>技术教程</tag>
          
          
            
