@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://xj8c.cc/2017/06/01/my-internship-record/</loc>
-    <lastmod>2017-06-15T01:45:39.891Z</lastmod>
+    <lastmod>2017-06-20T03:12:53.607Z</lastmod>
     <data>
         <display>
         <title>我的实习记录</title>
@@ -72,23 +72,6 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/10/20/xml-note-1/</loc>
-    <lastmod>2017-05-26T06:29:50.786Z</lastmod>
-    <data>
-        <display>
-        <title>XML学习笔记(一)</title>
-        <pubTime>2015-10-20T14:52:19.000Z</pubTime>
-        
-        <tag>xml</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://xj8c.cc/2015/03/22/top%2010%20IT%20jobs%20in%202015/</loc>
     <lastmod>2017-05-26T06:29:50.786Z</lastmod>
     <data>
@@ -99,6 +82,23 @@
         <tag>互联网</tag>
          
         <tag>IT</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xj8c.cc/2015/10/20/xml-note-1/</loc>
+    <lastmod>2017-05-26T06:29:50.786Z</lastmod>
+    <data>
+        <display>
+        <title>XML学习笔记(一)</title>
+        <pubTime>2015-10-20T14:52:19.000Z</pubTime>
+        
+        <tag>xml</tag>
          
          
            
@@ -125,25 +125,6 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/04/05/win7-cmd/</loc>
-    <lastmod>2017-05-26T06:29:50.724Z</lastmod>
-    <data>
-        <display>
-        <title>Win7运行命令大全|开始-运行-命令总汇</title>
-        <pubTime>2015-04-05T13:29:05.000Z</pubTime>
-        
-        <tag>win7</tag>
-         
-        <tag>命令行</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://xj8c.cc/2015/08/02/Win10-ten-points/</loc>
     <lastmod>2017-05-26T06:29:50.724Z</lastmod>
     <data>
@@ -154,6 +135,25 @@
         <tag>win10</tag>
          
         <tag>微软</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xj8c.cc/2015/04/05/win7-cmd/</loc>
+    <lastmod>2017-05-26T06:29:50.724Z</lastmod>
+    <data>
+        <display>
+        <title>Win7运行命令大全|开始-运行-命令总汇</title>
+        <pubTime>2015-04-05T13:29:05.000Z</pubTime>
+        
+        <tag>win7</tag>
+         
+        <tag>命令行</tag>
          
          
            
@@ -199,6 +199,25 @@
 
     
   <url>
+    <loc>http://xj8c.cc/2016/04/08/what-is-a-three-tier-architecture/</loc>
+    <lastmod>2017-05-26T06:29:50.633Z</lastmod>
+    <data>
+        <display>
+        <title>三层架构到底是个什么玩意？</title>
+        <pubTime>2016-04-07T16:12:44.000Z</pubTime>
+        
+        <tag>ASP.NET</tag>
+         
+        <tag>三层架构</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xj8c.cc/2015/04/17/why-is-the-chinese-mobile-number-11/</loc>
     <lastmod>2017-05-26T06:29:50.633Z</lastmod>
     <data>
@@ -224,25 +243,6 @@
         <pubTime>2015-07-27T12:21:47.000Z</pubTime>
         
         <tag>Visual Studio</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xj8c.cc/2016/04/08/what-is-a-three-tier-architecture/</loc>
-    <lastmod>2017-05-26T06:29:50.633Z</lastmod>
-    <data>
-        <display>
-        <title>三层架构到底是个什么玩意？</title>
-        <pubTime>2016-04-07T16:12:44.000Z</pubTime>
-        
-        <tag>ASP.NET</tag>
-         
-        <tag>三层架构</tag>
          
          
            
@@ -303,14 +303,14 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/10/28/test-case-design-advanced(bottom)/</loc>
+    <loc>http://xj8c.cc/2015/12/10/the-students-with-poor-grades-reversed/</loc>
     <lastmod>2017-05-26T06:29:50.551Z</lastmod>
     <data>
         <display>
-        <title>测试用例设计进阶(下)</title>
-        <pubTime>2015-10-28T13:58:11.000Z</pubTime>
+        <title>一个学渣的逆袭</title>
+        <pubTime>2015-12-10T08:05:19.000Z</pubTime>
         
-        <tag>软件测试</tag>
+        <tag>逆袭</tag>
          
          
            
@@ -320,14 +320,14 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/12/10/the-students-with-poor-grades-reversed/</loc>
+    <loc>http://xj8c.cc/2015/10/28/test-case-design-advanced(bottom)/</loc>
     <lastmod>2017-05-26T06:29:50.551Z</lastmod>
     <data>
         <display>
-        <title>一个学渣的逆袭</title>
-        <pubTime>2015-12-10T08:05:19.000Z</pubTime>
+        <title>测试用例设计进阶(下)</title>
+        <pubTime>2015-10-28T13:58:11.000Z</pubTime>
         
-        <tag>逆袭</tag>
+        <tag>软件测试</tag>
          
          
            
@@ -361,11 +361,11 @@
         <title>sql数据库|SqlServer2008 R2_x86&x64</title>
         <pubTime>2015-05-04T13:13:08.000Z</pubTime>
         
+        <tag>绿色软件</tag>
+         
         <tag>SqlServer</tag>
          
         <tag>数据库</tag>
-         
-        <tag>绿色软件</tag>
          
          
            
@@ -467,9 +467,9 @@
         <title>Microsoft office 2010</title>
         <pubTime>2015-02-15T08:08:30.000Z</pubTime>
         
-        <tag>绿色软件</tag>
-         
         <tag>office2010</tag>
+         
+        <tag>绿色软件</tag>
          
          
            
@@ -558,11 +558,11 @@
         <title>CEAC-office2010实操题练习评测系统</title>
         <pubTime>2015-11-07T16:01:20.000Z</pubTime>
         
-        <tag>绿色软件</tag>
-         
         <tag>CEAC</tag>
          
         <tag>office2010</tag>
+         
+        <tag>绿色软件</tag>
          
          
            
@@ -606,16 +606,16 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/07/16/asp.net-knowledge-point-summary-5/</loc>
+    <loc>http://xj8c.cc/2015/07/06/bigdata-internet-thinking-O2O-crowdfunding/</loc>
     <lastmod>2017-05-26T06:29:50.154Z</lastmod>
     <data>
         <display>
-        <title>Asp.net知识点总结(五)</title>
-        <pubTime>2015-07-16T11:47:48.000Z</pubTime>
+        <title>什么是大数据，什么是红海、蓝海、互联网思维？什么是O2O？什么是众筹？</title>
+        <pubTime>2015-07-06T07:41:52.000Z</pubTime>
         
-        <tag>ASP.NET</tag>
+        <tag>互联网</tag>
          
-        <tag>技术教程</tag>
+        <tag>大数据</tag>
          
          
            
@@ -642,16 +642,16 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/07/06/bigdata-internet-thinking-O2O-crowdfunding/</loc>
+    <loc>http://xj8c.cc/2015/07/16/asp.net-knowledge-point-summary-5/</loc>
     <lastmod>2017-05-26T06:29:50.154Z</lastmod>
     <data>
         <display>
-        <title>什么是大数据，什么是红海、蓝海、互联网思维？什么是O2O？什么是众筹？</title>
-        <pubTime>2015-07-06T07:41:52.000Z</pubTime>
+        <title>Asp.net知识点总结(五)</title>
+        <pubTime>2015-07-16T11:47:48.000Z</pubTime>
         
-        <tag>互联网</tag>
+        <tag>ASP.NET</tag>
          
-        <tag>大数据</tag>
+        <tag>技术教程</tag>
          
          
            
@@ -699,25 +699,6 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/07/03/asp.net-knowledge-point-summary-1/</loc>
-    <lastmod>2017-05-26T06:29:50.012Z</lastmod>
-    <data>
-        <display>
-        <title>Asp.net知识点总结(一)</title>
-        <pubTime>2015-07-03T10:25:50.000Z</pubTime>
-        
-        <tag>ASP.NET</tag>
-         
-        <tag>技术教程</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://xj8c.cc/2016/04/16/asp.net-knowledge-point-interview/</loc>
     <lastmod>2017-05-26T06:29:50.012Z</lastmod>
     <data>
@@ -747,6 +728,25 @@
         <tag>绿色软件</tag>
          
         <tag>Photoshop</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xj8c.cc/2015/07/03/asp.net-knowledge-point-summary-1/</loc>
+    <lastmod>2017-05-26T06:29:50.012Z</lastmod>
+    <data>
+        <display>
+        <title>Asp.net知识点总结(一)</title>
+        <pubTime>2015-07-03T10:25:50.000Z</pubTime>
+        
+        <tag>ASP.NET</tag>
+         
+        <tag>技术教程</tag>
          
          
            
