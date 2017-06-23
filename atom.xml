@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xj8c.cc/"/>
-  <updated>2017-06-20T03:12:53.607Z</updated>
+  <updated>2017-06-23T05:35:54.469Z</updated>
   <id>http://xj8c.cc/</id>
   
   <author>
@@ -20,11 +20,12 @@
     <link href="http://xj8c.cc/2017/06/01/my-internship-record/"/>
     <id>http://xj8c.cc/2017/06/01/my-internship-record/</id>
     <published>2017-05-31T16:00:00.000Z</published>
-    <updated>2017-06-20T03:12:53.607Z</updated>
+    <updated>2017-06-23T05:35:54.469Z</updated>
     
     <content type="html"><![CDATA[<h3 id="2017年6月19日星期一-—-2017年6月23日星期五"><a href="#2017年6月19日星期一-—-2017年6月23日星期五" class="headerlink" title="2017年6月19日星期一 — 2017年6月23日星期五"></a>2017年6月19日星期一 — 2017年6月23日星期五</h3><p>1、重装系统/开发环境</p>
 <p>2、动态表单设计开发完成</p>
 <p>3、请假两天回武汉领毕业证、办理党员组织关系手续</p>
+<p>4、表单Bootstrap美化</p>
 <h3 id="2017年6月5日星期三-—-2017年6月9日星期五"><a href="#2017年6月5日星期三-—-2017年6月9日星期五" class="headerlink" title="2017年6月5日星期三 — 2017年6月9日星期五"></a>2017年6月5日星期三 — 2017年6月9日星期五</h3><p>1、AC项目上线前的数据增量整理导出导入，Bug修改，业务功能刚改等</p>
 <p>2、动态报名表单实现 可创建表单，将创建的表单解析成html，根据创建的表单进行报名登记数据</p>
 <p>3、因公司内部原因，居家办公一周，6月15日恢复公司上班</p>
@@ -1035,6 +1036,7 @@
       &lt;h3 id=&quot;2017年6月19日星期一-—-2017年6月23日星期五&quot;&gt;&lt;a href=&quot;#2017年6月19日星期一-—-2017年6月23日星期五&quot; class=&quot;headerlink&quot; title=&quot;2017年6月19日星期一 — 2017年6月23日星期五&quot;&gt;&lt;/a&gt;2017年6月19日星期一 — 2017年6月23日星期五&lt;/h3&gt;&lt;p&gt;1、重装系统/开发环境&lt;/p&gt;
 &lt;p&gt;2、动态表单设计开发完成&lt;/p&gt;
 &lt;p&gt;3、请假两天回武汉领毕业证、办理党员组织关系手续&lt;/p&gt;
+&lt;p&gt;4、表单Bootstrap美化&lt;/p&gt;
 &lt;h3 id=&quot;2017年6月5日星期三-—-2017年6月9日星期五&quot;&gt;&lt;a href=&quot;#2017年6月5日星期三-—-2017年6月9日星期五&quot; class=&quot;headerlink&quot; title=&quot;2017年6月5日星期三 — 2017年6月9日星期五&quot;&gt;&lt;/a&gt;2017年6月5日星期三 — 2017年6月9日星期五&lt;/h3&gt;&lt;p&gt;1、AC项目上线前的数据增量整理导出导入，Bug修改，业务功能刚改等&lt;/p&gt;
 &lt;p&gt;2、动态报名表单实现 可创建表单，将创建的表单解析成html，根据创建的表单进行报名登记数据&lt;/p&gt;
 &lt;p&gt;3、因公司内部原因，居家办公一周，6月15日恢复公司上班&lt;/p&gt;
