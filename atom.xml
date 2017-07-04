@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xj8c.cc/"/>
-  <updated>2017-06-23T05:35:54.469Z</updated>
+  <updated>2017-07-04T09:51:36.189Z</updated>
   <id>http://xj8c.cc/</id>
   
   <author>
@@ -20,21 +20,24 @@
     <link href="http://xj8c.cc/2017/06/01/my-internship-record/"/>
     <id>http://xj8c.cc/2017/06/01/my-internship-record/</id>
     <published>2017-05-31T16:00:00.000Z</published>
-    <updated>2017-06-23T05:35:54.469Z</updated>
+    <updated>2017-07-04T09:51:36.189Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="2017年6月19日星期一-—-2017年6月23日星期五"><a href="#2017年6月19日星期一-—-2017年6月23日星期五" class="headerlink" title="2017年6月19日星期一 — 2017年6月23日星期五"></a>2017年6月19日星期一 — 2017年6月23日星期五</h3><p>1、重装系统/开发环境</p>
+    <content type="html"><![CDATA[<h3 id="2017年7月"><a href="#2017年7月" class="headerlink" title="2017年7月"></a>2017年7月</h3><p>1、签订劳动合同，转正，实习期结束</p>
+<p>2、React-Native 学习研究</p>
+<h3 id="2017年6月19日星期一-—-2017年6月23日星期五"><a href="#2017年6月19日星期一-—-2017年6月23日星期五" class="headerlink" title="2017年6月19日星期一 — 2017年6月23日星期五"></a>2017年6月19日星期一 — 2017年6月23日星期五</h3><p>1、重装系统/开发环境</p>
 <p>2、动态表单设计开发完成</p>
 <p>3、请假两天回武汉领毕业证、办理党员组织关系手续</p>
 <p>4、表单Bootstrap美化</p>
 <h3 id="2017年6月5日星期三-—-2017年6月9日星期五"><a href="#2017年6月5日星期三-—-2017年6月9日星期五" class="headerlink" title="2017年6月5日星期三 — 2017年6月9日星期五"></a>2017年6月5日星期三 — 2017年6月9日星期五</h3><p>1、AC项目上线前的数据增量整理导出导入，Bug修改，业务功能刚改等</p>
 <p>2、动态报名表单实现 可创建表单，将创建的表单解析成html，根据创建的表单进行报名登记数据</p>
 <p>3、因公司内部原因，居家办公一周，6月15日恢复公司上班</p>
+<a id="more"></a>
 <h3 id="2017年5月31日星期三-—-2017年6月2日星五"><a href="#2017年5月31日星期三-—-2017年6月2日星五" class="headerlink" title="2017年5月31日星期三 — 2017年6月2日星五"></a>2017年5月31日星期三 — 2017年6月2日星五</h3><p>1、动态表单研究</p>
 <p>2、微信编辑器修改出版</p>
 <p>3、AC项目需求更改，写业务代码</p>
 <h3 id="2017年5月22日星期一-—-2017年5月27日星期六"><a href="#2017年5月22日星期一-—-2017年5月27日星期六" class="headerlink" title="2017年5月22日星期一 — 2017年5月27日星期六"></a>2017年5月22日星期一 — 2017年5月27日星期六</h3><p>1、仿活动行表单自定义设计器-简版</p>
 <p>2、AC项目遗漏问题解决</p>
-<p>3、服务器折腾、Hexo+Github折腾<br><a id="more"></a></p>
+<p>3、服务器折腾、Hexo+Github折腾</p>
 <h3 id="2017年5月15日星期四-—-2017年5月19日星期五"><a href="#2017年5月15日星期四-—-2017年5月19日星期五" class="headerlink" title="2017年5月15日星期四 — 2017年5月19日星期五"></a>2017年5月15日星期四 — 2017年5月19日星期五</h3><p>1、AC bug修复、需求更改 上线</p>
 <p>2、微信编辑器研究，demo</p>
 <p>3、自我学习</p>
@@ -1033,19 +1036,15 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;2017年6月19日星期一-—-2017年6月23日星期五&quot;&gt;&lt;a href=&quot;#2017年6月19日星期一-—-2017年6月23日星期五&quot; class=&quot;headerlink&quot; title=&quot;2017年6月19日星期一 — 2017年6月23日星期五&quot;&gt;&lt;/a&gt;2017年6月19日星期一 — 2017年6月23日星期五&lt;/h3&gt;&lt;p&gt;1、重装系统/开发环境&lt;/p&gt;
+      &lt;h3 id=&quot;2017年7月&quot;&gt;&lt;a href=&quot;#2017年7月&quot; class=&quot;headerlink&quot; title=&quot;2017年7月&quot;&gt;&lt;/a&gt;2017年7月&lt;/h3&gt;&lt;p&gt;1、签订劳动合同，转正，实习期结束&lt;/p&gt;
+&lt;p&gt;2、React-Native 学习研究&lt;/p&gt;
+&lt;h3 id=&quot;2017年6月19日星期一-—-2017年6月23日星期五&quot;&gt;&lt;a href=&quot;#2017年6月19日星期一-—-2017年6月23日星期五&quot; class=&quot;headerlink&quot; title=&quot;2017年6月19日星期一 — 2017年6月23日星期五&quot;&gt;&lt;/a&gt;2017年6月19日星期一 — 2017年6月23日星期五&lt;/h3&gt;&lt;p&gt;1、重装系统/开发环境&lt;/p&gt;
 &lt;p&gt;2、动态表单设计开发完成&lt;/p&gt;
 &lt;p&gt;3、请假两天回武汉领毕业证、办理党员组织关系手续&lt;/p&gt;
 &lt;p&gt;4、表单Bootstrap美化&lt;/p&gt;
 &lt;h3 id=&quot;2017年6月5日星期三-—-2017年6月9日星期五&quot;&gt;&lt;a href=&quot;#2017年6月5日星期三-—-2017年6月9日星期五&quot; class=&quot;headerlink&quot; title=&quot;2017年6月5日星期三 — 2017年6月9日星期五&quot;&gt;&lt;/a&gt;2017年6月5日星期三 — 2017年6月9日星期五&lt;/h3&gt;&lt;p&gt;1、AC项目上线前的数据增量整理导出导入，Bug修改，业务功能刚改等&lt;/p&gt;
 &lt;p&gt;2、动态报名表单实现 可创建表单，将创建的表单解析成html，根据创建的表单进行报名登记数据&lt;/p&gt;
 &lt;p&gt;3、因公司内部原因，居家办公一周，6月15日恢复公司上班&lt;/p&gt;
-&lt;h3 id=&quot;2017年5月31日星期三-—-2017年6月2日星五&quot;&gt;&lt;a href=&quot;#2017年5月31日星期三-—-2017年6月2日星五&quot; class=&quot;headerlink&quot; title=&quot;2017年5月31日星期三 — 2017年6月2日星五&quot;&gt;&lt;/a&gt;2017年5月31日星期三 — 2017年6月2日星五&lt;/h3&gt;&lt;p&gt;1、动态表单研究&lt;/p&gt;
-&lt;p&gt;2、微信编辑器修改出版&lt;/p&gt;
-&lt;p&gt;3、AC项目需求更改，写业务代码&lt;/p&gt;
-&lt;h3 id=&quot;2017年5月22日星期一-—-2017年5月27日星期六&quot;&gt;&lt;a href=&quot;#2017年5月22日星期一-—-2017年5月27日星期六&quot; class=&quot;headerlink&quot; title=&quot;2017年5月22日星期一 — 2017年5月27日星期六&quot;&gt;&lt;/a&gt;2017年5月22日星期一 — 2017年5月27日星期六&lt;/h3&gt;&lt;p&gt;1、仿活动行表单自定义设计器-简版&lt;/p&gt;
-&lt;p&gt;2、AC项目遗漏问题解决&lt;/p&gt;
-&lt;p&gt;3、服务器折腾、Hexo+Github折腾&lt;br&gt;
     
     </summary>
     
