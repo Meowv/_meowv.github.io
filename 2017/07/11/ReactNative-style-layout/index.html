@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>React Native中的样式，Flexbox布局及其他内容 | 当然我在瞎扯</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="是时候说说样式与布局了本章提要  样式 布局 Dimensions  样式在前几章说了一些样式，是不是有点懵了呢？没关系，我们一起看看样式在React Native中的使用。 在React Native中，写样式和写CSS差不多，只不过是把-的连接方式换成了小驼峰式。又把;换成了,，有的时候要把值加上分号，比如这样：">
+<meta name="keywords" content="ReactNative">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React Native中的样式，Flexbox布局及其他内容">
+<meta property="og:url" content="http://xj8c.cc/2017/07/11/ReactNative-style-layout/index.html">
+<meta property="og:site_name" content="当然我在瞎扯">
+<meta property="og:description" content="是时候说说样式与布局了本章提要  样式 布局 Dimensions  样式在前几章说了一些样式，是不是有点懵了呢？没关系，我们一起看看样式在React Native中的使用。 在React Native中，写样式和写CSS差不多，只不过是把-的连接方式换成了小驼峰式。又把;换成了,，有的时候要把值加上分号，比如这样：">
+<meta property="og:image" content="http://xj8c.cc/2017/07/11/images/5.1.png">
+<meta property="og:image" content="http://xj8c.cc/2017/07/11/images/5.2.png">
+<meta property="og:image" content="http://xj8c.cc/2017/07/11/images/5.3.png">
+<meta property="og:image" content="http://xj8c.cc/2017/07/11/images/5.4.png">
+<meta property="og:image" content="http://xj8c.cc/2017/07/11/images/5.5.png">
+<meta property="og:image" content="http://xj8c.cc/2017/07/11/images/5.6.png">
+<meta property="og:image" content="http://xj8c.cc/2017/07/11/images/5.7.png">
+<meta property="og:updated_time" content="2017-07-19T08:37:44.039Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React Native中的样式，Flexbox布局及其他内容">
+<meta name="twitter:description" content="是时候说说样式与布局了本章提要  样式 布局 Dimensions  样式在前几章说了一些样式，是不是有点懵了呢？没关系，我们一起看看样式在React Native中的使用。 在React Native中，写样式和写CSS差不多，只不过是把-的连接方式换成了小驼峰式。又把;换成了,，有的时候要把值加上分号，比如这样：">
+<meta name="twitter:image" content="http://xj8c.cc/2017/07/11/images/5.1.png">
+  
+    <link rel="alternative" href="/atom.xml" title="当然我在瞎扯" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+                <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+        </a>
+
+        <hgroup>
+            <h1 class="header-author">
+                <a href="/" title="Hello World">
+                    阿星Plus
+                </a>
+            </h1>
+        </hgroup>
+
+        
+            <p class="header-subtitle">
+                生命不息，奋斗不止
+            </p>
+            
+                
+                        
+                            <div id="switch-btn" class="switch-btn">
+                                <div class="icon">
+                                    <div class="icon-ctn">
+                                        <div class="icon-wrap icon-house" data-idx="0">
+                                            <div class="birdhouse"></div>
+                                            <div class="birdhouse_holes"></div>
+                                        </div>
+                                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                                            <div class="ribbon"></div>
+                                        </div>
+                                        
+                                            <div class="icon-wrap icon-link hide" data-idx="2">
+                                                <div class="loopback_l"></div>
+                                                <div class="loopback_r"></div>
+                                            </div>
+                                            
+                                                
+                                    </div>
+
+                                </div>
+                                <div class="tips-box hide">
+                                    <div class="tips-arrow"></div>
+                                    <ul class="tips-inner">
+                                        <li>菜单</li>
+                                        <li>标签</li>
+                                        
+                                            <li>友情链接</li>
+                                            
+                                                
+                                    </ul>
+                                </div>
+                            </div>
+                            
+
+                                <div id="switch-area" class="switch-area">
+                                    <div class="switch-wrap">
+                                        <section class="switch-part switch-part1">
+                                            <nav class="header-menu">
+                                                <ul>
+                                                    
+                                                        <li>
+                                                            <a href="/">
+                                                                Home
+                                                            </a>
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            <a href="/archives">
+                                                                Archives
+                                                            </a>
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            <a href="http://v.xj8c.cc/">
+                                                                VIP Movie Online
+                                                            </a>
+                                                        </li>
+                                                        
+                                                </ul>
+                                            </nav>
+                                            <nav class="header-nav">
+                                                <ul class="social">
+                                                    
+                                                        <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=w-Lx8IOupqy0te2grK4" title="mail">
+                                                            mail
+                                                        </a>
+                                                        
+                                                        <a class="fl weibo" target="_blank" href="http://weibo.com/Tencentgou" title="weibo">
+                                                            weibo
+                                                        </a>
+                                                        
+                                                        <a class="fl github" target="_blank" href="https://github.com/Meowv" title="github">
+                                                            github
+                                                        </a>
+                                                        
+                                                        <a class="fl twitter" target="_blank" href="https://twitter.com/hackxing" title="twitter">
+                                                            twitter
+                                                        </a>
+                                                        
+                                                        <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">
+                                                            zhihu
+                                                        </a>
+                                                        
+                                                        <a class="fl QQ" target="_blank" href="//wpa.qq.com/msgrd?uin=494910887" title="QQ">
+                                                            QQ
+                                                        </a>
+                                                        
+                                                        <a class="fl wechat" target="_blank" href="http://xj8c.cc/img/wechatimg.jpg" title="wechat">
+                                                            wechat
+                                                        </a>
+                                                        
+                                                        <a class="fl rss" target="_blank" href="/atom.xml" title="rss">
+                                                            rss
+                                                        </a>
+                                                        
+                                                </ul>
+                                            </nav>
+                                        </section>
+
+                                        
+                                            <section class="switch-part switch-part2">
+                                                <div class="widget tagcloud" id="js-tagcloud">
+                                                    <a href="/tags/ASP-NET/" style="font-size: 18.33px;">ASP.NET</a> <a href="/tags/C/" style="font-size: 11.67px;">C#</a> <a href="/tags/CEAC/" style="font-size: 10px;">CEAC</a> <a href="/tags/IT/" style="font-size: 11.67px;">IT</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Photoshop/" style="font-size: 10px;">Photoshop</a> <a href="/tags/ReactNative/" style="font-size: 20px;">ReactNative</a> <a href="/tags/SqlServer/" style="font-size: 10px;">SqlServer</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/get/" style="font-size: 10px;">get</a> <a href="/tags/office2010/" style="font-size: 13.33px;">office2010</a> <a href="/tags/post/" style="font-size: 10px;">post</a> <a href="/tags/win10/" style="font-size: 11.67px;">win10</a> <a href="/tags/win7/" style="font-size: 11.67px;">win7</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/三层架构/" style="font-size: 10px;">三层架构</a> <a href="/tags/互联网/" style="font-size: 13.33px;">互联网</a> <a href="/tags/原版系统/" style="font-size: 10px;">原版系统</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/实习/" style="font-size: 10px;">实习</a> <a href="/tags/实习感受/" style="font-size: 10px;">实习感受</a> <a href="/tags/小说/" style="font-size: 10px;">小说</a> <a href="/tags/年终总结/" style="font-size: 10px;">年终总结</a> <a href="/tags/微软/" style="font-size: 10px;">微软</a> <a href="/tags/快捷键/" style="font-size: 10px;">快捷键</a> <a href="/tags/手机/" style="font-size: 10px;">手机</a> <a href="/tags/技术教程/" style="font-size: 16.67px;">技术教程</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/春天/" style="font-size: 10px;">春天</a> <a href="/tags/毕业答辩/" style="font-size: 10px;">毕业答辩</a> <a href="/tags/琅琊榜/" style="font-size: 10px;">琅琊榜</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/知乎/" style="font-size: 10px;">知乎</a> <a href="/tags/程序员/" style="font-size: 10px;">程序员</a> <a href="/tags/绿色软件/" style="font-size: 15px;">绿色软件</a> <a href="/tags/编程/" style="font-size: 10px;">编程</a> <a href="/tags/计算机一级/" style="font-size: 10px;">计算机一级</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/诗文/" style="font-size: 10px;">诗文</a> <a href="/tags/软件测试/" style="font-size: 16.67px;">软件测试</a> <a href="/tags/进制转换/" style="font-size: 10px;">进制转换</a> <a href="/tags/逆袭/" style="font-size: 10px;">逆袭</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/黑客/" style="font-size: 10px;">黑客</a>
+                                                </div>
+                                            </section>
+                                            
+
+                                                
+                                                    <section class="switch-part switch-part3">
+                                                        <div id="js-friends">
+                                                            
+                                                                <a target="_blank" class="main-nav-link switch-friends-link" href="http://meowv.com/">
+                                                                    喵呜网
+                                                                </a>
+                                                                
+                                                        </div>
+                                                    </section>
+                                                    
+
+                                                        
+                                    </div>
+                                </div>
+    </header>
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">阿星Plus</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">阿星Plus</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">生命不息，奋斗不止</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">Home</a></li>
+                
+                    <li><a href="/archives">Archives</a></li>
+                
+                    <li><a href="http://v.xj8c.cc/">VIP Movie Online</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=w-Lx8IOupqy0te2grK4" title="mail">mail</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/Tencentgou" title="weibo">weibo</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/Meowv" title="github">github</a>
+                    
+                        <a class="twitter" target="_blank" href="https://twitter.com/hackxing" title="twitter">twitter</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">zhihu</a>
+                    
+                        <a class="QQ" target="_blank" href="//wpa.qq.com/msgrd?uin=494910887" title="QQ">QQ</a>
+                    
+                        <a class="wechat" target="_blank" href="http://xj8c.cc/img/wechatimg.jpg" title="wechat">wechat</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-ReactNative-style-layout" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/07/11/ReactNative-style-layout/" class="article-date">
+      <time datetime="2017-07-11T08:25:59.000Z" itemprop="datePublished">2017-07-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      React Native中的样式，Flexbox布局及其他内容
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ReactNative/">ReactNative</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="是时候说说样式与布局了"><a href="#是时候说说样式与布局了" class="headerlink" title="是时候说说样式与布局了"></a>是时候说说样式与布局了</h1><p>本章提要</p>
+<ul>
+<li>样式</li>
+<li>布局</li>
+<li>Dimensions</li>
+</ul>
+<h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2><p>在前几章说了一些样式，是不是有点懵了呢？没关系，我们一起看看样式在React Native中的使用。</p>
+<p>在React Native中，写样式和写CSS差不多，只不过是把<code>-</code>的连接方式换成了小驼峰式。又把<code>;</code>换成了<code>,</code>，有的时候要把值加上分号，比如这样：<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">background-color: green; ---&gt;  backgroundColor: &apos;green&apos;,</div></pre></td></tr></table></figure></p>
+<p>实际上，React Native的样式算是CSS的一个子集，当发现有些样式不能用的话不要惊讶，试着换用别的方式来实现就好~</p>
+<p>作者君总结了一些常用的样式放到了附录里，可以作为写样式时的参考。</p>
+<p>我们知道，代码总是会越写越多，样式也一样。所以为了效率，为了样式的整洁，我们写样式用<code>StyleSheet.create</code>比较好，不过只是写着玩玩的话，<br>怎么写都好。下面我们来看看这种定义样式的方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">const styles = StyleSheet.create(&#123;</div><div class="line">    content: &#123;</div><div class="line">        backgroundColor: &apos;#fff&apos;,</div><div class="line">        height: 50,</div><div class="line">        width: 100</div><div class="line">    &#125;,</div><div class="line">    text: &#123;</div><div class="line">        color: &apos;blue&apos;,</div><div class="line">        textAlign: &apos;center&apos;</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>然后在组件中这样使用即可:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;View style=&#123;styles.content&#125;&gt;</div><div class="line">    &lt;Text style=&#123;styles.text&#125;&gt;哈，我是小整洁&lt;/Text&gt;</div><div class="line">    .....</div><div class="line">&lt;/View&gt;</div></pre></td></tr></table></figure>
+<p>这样写后，你的代码可读性会提高不少，毕竟样式都像：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Text style=&#123;&#123; fontStyle:&apos;italic&apos;, fontSize: 20,... &#125;&#125;</div></pre></td></tr></table></figure>
+<p>就会变得乱糟糟一团团了。</p>
+<h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><h3 id="Flexbox"><a href="#Flexbox" class="headerlink" title="Flexbox"></a>Flexbox</h3><p>在React Native中，你可以愉快的使用Flexbox布局，完全不用考虑兼容性（放心，绝对不需要考虑IE6）,<br>如果在浏览器端写过的话，在React Native上继续写这种布局会很是得心应手的。如果没接触过也没关系，这里会很详细的讲的（毕竟很重要）。</p>
+<p>首先，我们先瞅瞅Flexbox布局需要用到什么样式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">flex, flexDiretion, justifyCotent, alignItems, alignSelf, flexWrap, flexShrink, flexGrow</div></pre></td></tr></table></figure>
+<p>嗯，先把这些列在这里，有个大概印象就成，我们一会儿再说。</p>
+<p>对于Flexbox来说，有一个很重要的概念————轴。理解了轴的概念，使用Flexbox也不会有什么问题了。</p>
+<p>对于一个平面来说，它有两个轴，横轴和纵轴，就是下面这样： </p>
+<p><img src="../images/5.1.png" alt="PNG">  </p>
+<p>Flexbox用操作这两个轴的方式来完成布局，不过不叫横纵而是叫主次。</p>
+<p>当横轴为主轴时，次轴是纵轴：</p>
+<p><img src="../images/5.2.png" alt="PNG">  </p>
+<p>当纵轴为主轴时，次轴是横轴：</p>
+<p><img src="../images/5.3.png" alt="PNG">  </p>
+<p>看完预备知识，我们可以看看Flexbox是怎么用的了。</p>
+<p>首先，要有一个flex容器，如果不指定高度和宽度，它会占满能够占领的最大空间，如果给了高度和宽度，那么会占满你给它的空间。</p>
+<p>我们用<code>flex</code>告诉React Native说这是一个使用了弹性布局的组件，就像这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;View style=&#123;&#123; flex:1 &#125;&#125;&gt;&lt;/View&gt;</div></pre></td></tr></table></figure></p>
+<p>flex后面的数字可以简单的理解为比例</p>
+<p>不过呢，我们一般不会只写个<code>flex: 1</code>，我们还得写一些别的东西，就像下面这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;View style=&#123;&#123; flex: 1, flexDirection: &apos;column&apos;, justifyContent:&apos;center&apos;, alignItems:&apos;flex-end&apos; &#125;&#125;&gt;</div><div class="line">&lt;/View&gt;</div></pre></td></tr></table></figure>
+<p>除了<code>flex: 1</code>，剩下的其实就是用来操作横纵轴的。<br>用<code>flexDirection</code>声明主轴是纵轴，次轴是横轴，用<code>justifyContent</code>声明元素处在主轴的中心位置，用<code>alignItems</code>声明元素处在<br>次轴的末尾。</p>
+<p>我们在<code>View</code>容器里填充一些元素进去，就可以很直观的看到效果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;View style=&#123;&#123; flex: 1, flexDirection: &apos;column&apos;, justifyContent:&apos;center&apos;, alignItems:&apos;flex-end&apos; &#125;&#125;&gt;</div><div class="line">    &lt;Text style=&#123;&#123; backgroundColor:&apos;blue&apos;&#125;&#125; &gt;1&lt;/Text&gt;</div><div class="line">    &lt;Text style=&#123;&#123; backgroundColor:&apos;red&apos; &#125;&#125;&gt;2&lt;/Text&gt;</div><div class="line">    &lt;Text style=&#123;&#123; backgroundColor:&apos;green&apos; &#125;&#125;&gt;3&lt;/Text&gt;</div><div class="line">&lt;/View&gt;</div></pre></td></tr></table></figure>
+<p>效果是这样（虽然比较建议你自己敲一下代码，但是还是把图放在这里比较好）：</p>
+<p><img src="../images/5.4.png" alt="PNG">  </p>
+<p>至于为啥这个图看起来有些大，是因为作者君把整个模拟器的屏幕截过来了，毕竟要突出元素在主轴中间的效果嘛。</p>
+<p>这些还不是全部，毕竟不可能每个整体都是统一的，内部总是要有些不一样的。拿上面的那个例子来说：如果我不想让每个元素都在次轴的末尾，那<br>该怎么办呢？ 很简单，这个时候我们就可以使用<code>alignSelf</code>了。<code>alignSelf</code>可以使容器里的元素和父样式不一样，我们来简单的改造一下上面的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Text style=&#123;&#123; backgroundColor:&apos;green&apos;, alignSelf:&apos;flex-start&apos; &#125;&#125;&gt;3&lt;/Text&gt;</div></pre></td></tr></table></figure>
+<p>这样就可以使第三个<code>Text</code>在前面了。就像这样：</p>
+<p><img src="../images/5.5.png" alt="PNG">  </p>
+<p>我们再说回<code>flex</code>。我们知道，<code>flex</code>后面是接数字的，数字是这个容器所占的比例，也就是说，后面的数字越大，容器所占比例也就越大。</p>
+<p>不过，如果只有<code>flex: 1</code>的话，它会自己占领所有地盘，谁叫没有其它的容器和它抢地盘呢。</p>
+<h3 id="position"><a href="#position" class="headerlink" title="position"></a>position</h3><p>对于一个App来说，不可能只用到Flexbox，还得用到其他的布局方式。</p>
+<p>首先来看绝对布局absolute，绝对布局这名字听起来挺霸气的，实际上也确实霸气，规定元素在那里，那元素就得在那里待着。<br>我们使用<code>top,bottom,left,right</code>来声明元素的上下左右距容器有多少距离，从而将元素定在那个位置。我们在用绝对布局的时候<br>需要告诉元素它的布局方式是绝对布局，就像这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Text style=&#123;&#123; position: &apos;absolute&apos;, width: 50, height: 50 &#125;&#125;&gt;&lt;/Text&gt;</div></pre></td></tr></table></figure>
+<p>只不过我们得事先声明元素的宽度和高度，不然样式会变得很奇怪，然后来定位元素的位置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Text style=&#123;&#123; position: &apos;absolute&apos;, width:50, height: 50, bottom: 20, left:10 &#125;&#125;&gt;233&lt;/Text&gt;</div></pre></td></tr></table></figure>
+<p>就像这样：</p>
+<p><img src="../images/5.6.png" alt="PNG">  </p>
+<p>还有一点得注意，我们需要给父容器一个合适的高度和宽度，比如这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;View style=&#123;&#123; height:500,width:500 &#125;&#125;&gt;</div><div class="line">    &lt;Text style=&#123;&#123; position: &apos;absolute&apos;, bottom: 20, left:10, width:50, height: 50 &#125;&#125;&gt;233&lt;/Text&gt;</div><div class="line">    &lt;Text style=&#123;&#123; position: &apos;absolute&apos;, bottom: 20, left:80, width:50, height: 50 &#125;&#125;&gt;233&lt;/Text&gt;</div><div class="line">&lt;/View&gt;</div></pre></td></tr></table></figure>
+<p>既然有绝对布局，就有相对布局，只不过可能会有些难用。你可以把相对布局理解成一个流，只不过<code>bottom,right</code>不能用。<br>可以使用<code>top,left</code>更改元素在流中的上，左偏移大小（top,left初始值为0）。下面是个例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;View style=&#123;&#123;height:500,width:500&#125;&#125;&gt;</div><div class="line">    &lt;Text style=&#123;&#123; position: &apos;relative&apos;,  left:10, width:50, height: 50 &#125;&#125;&gt;233&lt;/Text&gt;</div><div class="line">    &lt;Text style=&#123;&#123; position: &apos;relative&apos;,  left:60, width:50, height: 50 &#125;&#125;&gt;233&lt;/Text&gt;</div><div class="line">    &lt;Text style=&#123;&#123; position: &apos;relative&apos;,  left:120, width:50, height: 50 &#125;&#125;&gt;233&lt;/Text&gt;</div><div class="line">&lt;/View&gt;</div></pre></td></tr></table></figure>
+<p><img src="../images/5.7.png" alt="PNG"> </p>
+<h2 id="Dimensions"><a href="#Dimensions" class="headerlink" title="Dimensions"></a>Dimensions</h2><p>在React Native中，我们不能用<code>width: 60%</code>之类的方式来进行布局，那该怎么办嘞？嗯，我们可以换个方式，那就是<code>Dimensions</code>，<br>我们来请Dimensions出场：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import &#123;</div><div class="line">  Dimensions</div><div class="line">&#125; from &apos;react-native&apos;;</div></pre></td></tr></table></figure>
+<p>然后获取宽度和高度，这里我们用解构赋值的方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">const &#123; width, height &#125; = Dimensions.get(&quot;window&quot;);</div></pre></td></tr></table></figure>
+<p>然后就可以在样式中使用喽：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;View style=&#123;&#123; width: width * 0.5 ,height: height * 0.5 &#125;&#125;&gt;&lt;/View&gt;</div></pre></td></tr></table></figure>
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">×</a>
+            <div class="shang_tit">
+              <p>谢谢你请我吃辣条</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/07/11/ReactNative-style-layout/">React Native中的样式，Flexbox布局及其他内容</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 阿星Plus 的个人博客">阿星Plus</a></p>
+        <p><span>发布时间:</span>2017年07月11日 - 16时25分</p>
+        <p><span>最后更新:</span>2017年07月19日 - 16时37分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/07/11/ReactNative-style-layout/" title="React Native中的样式，Flexbox布局及其他内容">http://xj8c.cc/2017/07/11/ReactNative-style-layout/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://xj8c.cc/2017/07/11/ReactNative-style-layout/　　作者: 阿星Plus" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2017/07/13/ReactNative-ListView-FlatList/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          带你了解ListView及FlatList
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/10/ReactNative-module/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">React Native常用的组件</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#是时候说说样式与布局了"><span class="toc-number">1.</span> <span class="toc-text">是时候说说样式与布局了</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#样式"><span class="toc-number">1.1.</span> <span class="toc-text">样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#布局"><span class="toc-number">1.2.</span> <span class="toc-text">布局</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Flexbox"><span class="toc-number">1.2.1.</span> <span class="toc-text">Flexbox</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#position"><span class="toc-number">1.2.2.</span> <span class="toc-text">position</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dimensions"><span class="toc-number">1.3.</span> <span class="toc-text">Dimensions</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="React Native中的样式，Flexbox布局及其他内容"></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cyt1UJT89'; 
+var conf = 'prod_a66df9b8bf4687f6662a946344b221b7'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/07/13/ReactNative-ListView-FlatList/" title="上一篇: 带你了解ListView及FlatList">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2017/07/10/ReactNative-module/" title="下一篇: React Native常用的组件">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/07/18/ReactNative-resource/">ReactNative开发中一些有用的资源</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/17/ReactNative-styles/">ReactNative样式总览</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/16/ReactNative-build/">打包你的App</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/15/ReactNative-net/">掌握React Native的Fetch Api</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/14/ReactNative-navigation/">是时候用上React Navigation了</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/13/ReactNative-ListView-FlatList/">带你了解ListView及FlatList</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/11/ReactNative-style-layout/">React Native中的样式，Flexbox布局及其他内容</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/10/ReactNative-module/">React Native常用的组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/09/ReactNative-run/">启动你的第一个React Native 应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/08/ReactNative-base/">ReactNative基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/07/ReactNative-introduce/">ReactNative介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/01/my-internship-record/">我的实习记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/30/graduation-report-material/">毕业答辩汇报材料</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/04/2016-year-end-summary/">2016年终总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/31/csharp7/">C＃7.0中有哪些新特性？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/18/internship-experience/">武汉路博特工程科技有限公司实习“满月”工作感受</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/16/asp.net-knowledge-point-interview/">ASP.NET知识点面试篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/08/what-is-a-three-tier-architecture/">三层架构到底是个什么玩意？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/07/five-main-objects-in-dotnet/">ADO.NET中的五个主要对象？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/07/get-and-post/">所谓的Get和Post到底是何方神圣？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/10/the-students-with-poor-grades-reversed/">一个学渣的逆袭</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/21/computer-computing-infrastructure/">计算机运算基础荟萃</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/08/CEAC-office2010/">CEAC-office2010实操题练习评测系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/28/test-case-design-advanced(bottom)/">测试用例设计进阶(下)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/28/test-case-design-in-order(upper)/">测试用例设计进阶（上）</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/25/boundary-value/">边界值分析法相关概念 — 边界点相关概念</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/24/basic-knowledge-of-software-testing/">软件测试基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/24/overview-of-software-testing/">软件测试概述</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/20/xml-note-1/">XML学习笔记(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/12/when-the-deepest-counsel-comes-to-the-most-clear-ideal/">当最深沉的筹谋换来最清明的理想</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/01/10-best-javascript-development-practices/">10个最佳 javascript 开发实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/07/the-30-most-difficult-questions-to-answer-in-history/">史上最难回答的30个问题，没有一人都能答对！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/05/windows10-iso/">Win10正式版微软官方原版ISO系统镜像下载大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/02/the-work-of-a-programmer/">一本关于程序员的修真小说</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/02/Win10-ten-points/">Win10的十个亮点</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/01/Zhihu-god-reply/">一大波，知乎神回复在接近了！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/27/vs-shortcuts/">必须知道的 Visual Studio 快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/16/asp.net-knowledge-point-summary-5/">Asp.net知识点总结(五)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/13/ten-programming-languages/">你必须知道的十个编程语言</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/11/asp.net-knowledge-point-summary-4/">Asp.net知识点总结(四)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/07/asp.net-knowledge-point-summary-3/">Asp.net知识点总结(三)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/06/bigdata-internet-thinking-O2O-crowdfunding/">什么是大数据，什么是红海、蓝海、互联网思维？什么是O2O？什么是众筹？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/04/asp.net-knowledge-point-summary-2/">Asp.net知识点总结(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/03/asp.net-knowledge-point-summary-1/">Asp.net知识点总结(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/25/shopping-online/">Shopping Online</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/04/SqlServer2008/">sql数据库|SqlServer2008 R2_x86&x64</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/17/why-is-the-chinese-mobile-number-11/">揭秘：中国手机号码为什么是11位数？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/14/33-poems-of-the-most-artistic-conception-in-China/">中国最有意境的33句诗文，欣赏下吧！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/05/win7-cmd/">Win7运行命令大全|开始-运行-命令总汇</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/31/please-don't-be-a-fickle-IT-man/">请不要做浮躁的IT人</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/29/the-name-of-the-big-internet-companies/">各大互联网公司命名的由来，值得你了解。</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/25/30-the-hacker-movie/">30部黑客电影，你看过哪几部？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/22/top 10 IT jobs in 2015/">2015年 十大热门 IT 工作</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/10/a-years-plan-starts-with-spring/">A year's plan starts with spring ！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/28/cherish-every-day/">珍惜每一天</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/28/adobe-photoshop/">Adobe Photoshop 绿色安装版</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/20/national-computer-level-office2010/">全国计算机一级Office2010+win7版（未来教育）考试练习软件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/17/win7-shortcuts/">Win7电脑常用快捷键大全有哪些?</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/15/microsoft-office-2010/">Microsoft office 2010</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy;
+                2017
+                    阿星Plus
+            </div>
+            <div class="footer-right">
+                Blog By <a href="http://hexo.io/" target="_blank">Hexo</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站访问量: 
+                            <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                    </span>
+                    
+                        
+                            <span>, </span>
+                            
+                                
+                                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                                    </span>
+                                    </span>
+                                    
+            </div>
+            
+    </div>
+</footer>
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
