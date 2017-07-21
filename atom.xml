@@ -73,10 +73,12 @@
     <link href="http://xj8c.cc/2017/07/17/ReactNative-styles/"/>
     <id>http://xj8c.cc/2017/07/17/ReactNative-styles/</id>
     <published>2017-07-17T08:46:47.000Z</published>
-    <updated>2017-07-19T08:51:30.372Z</updated>
+    <updated>2017-07-21T03:32:22.998Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="边框："><a href="#边框：" class="headerlink" title="边框："></a>边框：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">颜色</div><div class="line">borderColor: color</div><div class="line">borderBottomColor: color</div><div class="line">borderLeftColor: color</div><div class="line">borderTopColor: color</div><div class="line">borderRightColor: color</div><div class="line">圆角</div><div class="line">borderRadius: number</div><div class="line">borderBottomLeftRadius: number</div><div class="line">borderBottomRightRadius: number</div><div class="line">borderTopLeftRadius: number</div><div class="line">borderTopRightRadius: number</div><div class="line"></div><div class="line">宽度</div><div class="line">borderWidth: number</div><div class="line">borderBottomWidth: number</div><div class="line">borderLeftWidth: number</div><div class="line">borderRightWidth: number</div><div class="line">borderTopWidth: number</div><div class="line">样式</div><div class="line">borderStyle: enum(&apos;solid&apos;, &apos;dotted&apos;, &apos;dashed&apos;)</div></pre></td></tr></table></figure>
+    <content type="html"><![CDATA[<h2 id="边框："><a href="#边框：" class="headerlink" title="边框："></a>边框：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">颜色</div><div class="line">borderColor: color</div><div class="line">borderBottomColor: color</div><div class="line">borderLeftColor: color</div><div class="line">borderTopColor: color</div><div class="line">borderRightColor: color</div></pre></td></tr></table></figure>
 <a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">圆角</div><div class="line">borderRadius: number</div><div class="line">borderBottomLeftRadius: number</div><div class="line">borderBottomRightRadius: number</div><div class="line">borderTopLeftRadius: number</div><div class="line">borderTopRightRadius: number</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">宽度</div><div class="line">borderWidth: number</div><div class="line">borderBottomWidth: number</div><div class="line">borderLeftWidth: number</div><div class="line">borderRightWidth: number</div><div class="line">borderTopWidth: number</div><div class="line">样式</div><div class="line">borderStyle: enum(&apos;solid&apos;, &apos;dotted&apos;, &apos;dashed&apos;)</div></pre></td></tr></table></figure>
 <h2 id="边距："><a href="#边距：" class="headerlink" title="边距："></a>边距：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">内边距</div><div class="line">padding: number</div><div class="line">paddingBottom: number</div><div class="line">paddingLeft: number</div><div class="line">paddingRight: number</div><div class="line">paddingTop: number</div><div class="line">paddingHorizontal: number (左右内边距)</div><div class="line">paddingVertical: number (上下内边距)</div><div class="line"></div><div class="line">外边距</div><div class="line">margin: number</div><div class="line">marginBottom: number</div><div class="line">marginLeft: number</div><div class="line">marginRight: number</div><div class="line">marginTop: number</div><div class="line"></div><div class="line">marginHorizontal: number (左右内边距)</div><div class="line">marginVertical: number (上下外边距)</div></pre></td></tr></table></figure>
 <h2 id="文字"><a href="#文字" class="headerlink" title="文字"></a>文字</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">color: color</div><div class="line">fontFamily: string</div><div class="line">fontSize: number</div><div class="line">fontStyle: enum(&apos;normal&apos;, &apos;italic&apos;)</div><div class="line">fontWeight: enum(&apos;normal&apos;, &apos;bold&apos;, &apos;100&apos;, &apos;200&apos;, &apos;300&apos;, &apos;400&apos;, &apos;500&apos;, &apos;600&apos;, &apos;700&apos;, &apos;800&apos;, &apos;900&apos;)</div><div class="line">textDecorationColor: color (文本修饰颜色)</div><div class="line">textDecorationLine: enum(&apos;none&apos;, &apos;underline&apos;, &apos;line-through&apos;, &apos;underline line-through&apos;) </div><div class="line">textDecorationStyle: enum(&apos;solid&apos;, &apos;double&apos;, &apos;dashed&apos;, &apos;dotted&apos;)</div><div class="line">letterSpacing: number</div><div class="line">lineHeight:number</div><div class="line">textAlign: enum(&apos;auto&apos;, &apos;left&apos;, &apos;right&apos;, &apos;center&apos;, &apos;justify&apos;)</div></pre></td></tr></table></figure>
 <h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">backgroundColor: color</div><div class="line"></div><div class="line">flex: number</div><div class="line">flexDirection: enum(&apos;row&apos;, &apos;row-reverse&apos;, &apos;column&apos;, &apos;column-reverse&apos;)</div><div class="line">flexWrap: enum(&apos;wrap&apos;, &apos;nowrap&apos;) </div><div class="line">justifyContent: enum(&apos;flex-start&apos;, &apos;flex-end&apos;, &apos;center&apos;, &apos;space-between&apos;, &apos;space-around&apos;) </div><div class="line">alignItems: enum(&apos;flex-start&apos;, &apos;flex-end&apos;, &apos;center&apos;, &apos;stretch&apos;) </div><div class="line">alignSelf: enum(&apos;auto&apos;, &apos;flex-start&apos;, &apos;flex-end&apos;, &apos;center&apos;, &apos;stretch&apos;) </div><div class="line"></div><div class="line">position: enum(&apos;absolute&apos;, &apos;relative&apos;)</div><div class="line">right: number</div><div class="line">left: number</div><div class="line">top: number</div><div class="line">bottom: number</div><div class="line">width: number</div><div class="line">height: number</div></pre></td></tr></table></figure>
@@ -85,7 +87,7 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;边框：&quot;&gt;&lt;a href=&quot;#边框：&quot; class=&quot;headerlink&quot; title=&quot;边框：&quot;&gt;&lt;/a&gt;边框：&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;颜色&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;borderColor: color&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;borderBottomColor: color&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;borderLeftColor: color&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;borderTopColor: color&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;borderRightColor: color&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;圆角&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;borderRadius: number&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;borderBottomLeftRadius: number&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;borderBottomRightRadius: number&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;borderTopLeftRadius: number&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;borderTopRightRadius: number&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;宽度&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;borderWidth: number&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;borderBottomWidth: number&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;borderLeftWidth: number&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;borderRightWidth: number&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;borderTopWidth: number&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;样式&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;borderStyle: enum(&amp;apos;solid&amp;apos;, &amp;apos;dotted&amp;apos;, &amp;apos;dashed&amp;apos;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+      &lt;h2 id=&quot;边框：&quot;&gt;&lt;a href=&quot;#边框：&quot; class=&quot;headerlink&quot; title=&quot;边框：&quot;&gt;&lt;/a&gt;边框：&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;颜色&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;borderColor: color&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;borderBottomColor: color&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;borderLeftColor: color&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;borderTopColor: color&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;borderRightColor: color&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -99,7 +101,7 @@
     <link href="http://xj8c.cc/2017/07/16/ReactNative-build/"/>
     <id>http://xj8c.cc/2017/07/16/ReactNative-build/</id>
     <published>2017-07-16T08:45:13.000Z</published>
-    <updated>2017-07-19T08:51:34.298Z</updated>
+    <updated>2017-07-21T03:29:02.638Z</updated>
     
     <content type="html"><![CDATA[<h1 id="打包应用"><a href="#打包应用" class="headerlink" title="打包应用"></a>打包应用</h1><p>假设你的应用做完了，总不能还在后台开着packager就把应用发布出去吧。很明显，我们需要让应用可以离线，下边所要讲的就是<br>一个让应用脱离packager的过程<br><a id="more"></a></p>
 <h2 id="生成签名"><a href="#生成签名" class="headerlink" title="生成签名"></a>生成签名</h2><p>没签名直接打包应用是不行的，我们需要实现生成一个签名。在Linux下，我们执行这条命令：</p>
@@ -113,14 +115,14 @@
 <p>在buildTypes中的release下添加：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">signingConfig signingConfigs.release</div></pre></td></tr></table></figure>
 <p>整体就像这样：</p>
-<p><img src="../images/10.1.png" alt="PNG"></p>
+<p><img src="https://meowv.github.io/images/10.1.png" alt="PNG"></p>
 <h2 id="打包应用-1"><a href="#打包应用-1" class="headerlink" title="打包应用"></a>打包应用</h2><p>进入项目所在目录，执行以下命令（packger应该处于开启状态）：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd android &amp;&amp; ./gradlew assembleRelease</div></pre></td></tr></table></figure>
 <p>Windows用户不用写<code>./</code>，漫长的等待过后，我们便可以在<br>android/app/build/outputs/apk下找到我们的应用了，并且这个可以发布到各大应用市场。</p>
 <h2 id="混淆及安全"><a href="#混淆及安全" class="headerlink" title="混淆及安全"></a>混淆及安全</h2><p>为了安全（也为了缩小apk大小），我们需要启用代码混淆。进入android/app目录，然后修改build.gradle文件，<br>将<code>def enableProguardInReleaseBuilds = false</code>改为<code>def enableProguardInReleaseBuilds = true</code></p>
 <p>如果不准备同时支持ARM和X86，那么将<code>enableSeparateBuildPerCPUArchitecture</code>改为true可以给安装包减少4mb大小~</p>
 <h2 id="修改icon"><a href="#修改icon" class="headerlink" title="修改icon"></a>修改icon</h2><p>进入android/app/src/main/res目录，我们可以看到有这么几个子目录：</p>
-<p><img src="../images/10.2.png" alt="PNG"></p>
+<p><img src="https://meowv.github.io/images/10.2.png" alt="PNG"></p>
 <p>然后把这四个目录下的图片换成别的就可以啦，尺寸要对上哟~</p>
 <h2 id="修改应用名称"><a href="#修改应用名称" class="headerlink" title="修改应用名称"></a>修改应用名称</h2><p>假设我们想将应用的名字换成<code>茯苓</code>要怎么办呢？很简单，还是在res目录，我们进入values目录，修改strings.xml即可:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;resources&gt;</div><div class="line">    &lt;string name=&quot;app_name&quot;&gt;茯苓&lt;/string&gt;</div><div class="line">&lt;/resources&gt;</div></pre></td></tr></table></figure>
@@ -142,23 +144,23 @@
     <link href="http://xj8c.cc/2017/07/15/ReactNative-net/"/>
     <id>http://xj8c.cc/2017/07/15/ReactNative-net/</id>
     <published>2017-07-15T08:43:47.000Z</published>
-    <updated>2017-07-19T08:51:38.840Z</updated>
+    <updated>2017-07-21T03:29:11.611Z</updated>
     
     <content type="html"><![CDATA[<h1 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h1><p>这一章呢，不会只讲网络哦~</p>
 <h2 id="Mock-Api"><a href="#Mock-Api" class="headerlink" title="Mock Api"></a>Mock Api</h2><p>Mock Api是一项非常棒的服务，它可以帮助我们快速的模拟后端的REST Api并且不需要你自己的服务器，甚至代码都不用写，它的网址是<br><a href="http://www.mockapi.io/，" target="_blank" rel="external">http://www.mockapi.io/，</a> 可以注册也可以使用GitHub帐号登陆。<br><a id="more"></a><br>点击<code>+</code>来创建一个项目：</p>
-<p><img src="../images/9.1.png" alt="PNG"></p>
+<p><img src="https://meowv.github.io/images/9.1.png" alt="PNG"></p>
 <p>填写项目名称和Api前缀(随便写就行)：</p>
-<p><img src="../images/9.2.png" alt="PNG"></p>
+<p><img src="https://meowv.github.io/images/9.2.png" alt="PNG"></p>
 <p>接下来点击Create Resource来创建资源：</p>
-<p><img src="../images/9.3.png" alt="PNG"></p>
+<p><img src="https://meowv.github.io/images/9.3.png" alt="PNG"></p>
 <p>然后填写资源名称，以及修改Schema，为了方便，我们就留下id和name：</p>
-<p><img src="../images/9.4.png" alt="PNG"></p>
+<p><img src="https://meowv.github.io/images/9.4.png" alt="PNG"></p>
 <p>然后点击next按钮，这一步完了之后，我们就可以通过<code>xxxxxxx.mockapi.io/api/user</code>使用REST Api了。</p>
 <h2 id="Fetch"><a href="#Fetch" class="headerlink" title="Fetch"></a>Fetch</h2><p>在React Native中，我们可以使用Fetch来进行网络请求，由于Fetch API天然支持Promise规范，所以我们的代码可以变得很优雅。</p>
 <p>执行Get操作应该是最为简单的了，我们看下代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">fetch(&apos;http://xxx.mockapi.io/api/user&apos;)</div><div class="line">  .then((response) =&gt; &#123;</div><div class="line">    console.log(response);</div><div class="line">  &#125;)</div><div class="line">  .catch((err) =&gt; console.error(err);)</div></pre></td></tr></table></figure>
 <p>这样便可以在控制台打印出user下的所有内容。你可能会想：喵喵喵？React Native还有控制台？ 当然有啦，不过我们得打开远程调试，首先打开菜单：</p>
-<p><img src="../images/9.5.png" alt="PNG"></p>
+<p><img src="https://meowv.github.io/images/9.5.png" alt="PNG"></p>
 <p>然后选择Debug Js Remotely，之后便会自动打开Chrome。自己打开Chrome的控制台便可以看到<code>console.log</code>的内容了。</p>
 <p>实际应用中，我们会在组件渲染的时候把数据丢到状态或别的地方，然后使用这些数据(一般会用作列表渲染)。不管怎么说，不会直接console就是了。</p>
 <p>然后是Post：</p>
@@ -184,7 +186,7 @@
     <link href="http://xj8c.cc/2017/07/14/ReactNative-navigation/"/>
     <id>http://xj8c.cc/2017/07/14/ReactNative-navigation/</id>
     <published>2017-07-14T08:42:18.000Z</published>
-    <updated>2017-07-19T08:51:13.158Z</updated>
+    <updated>2017-07-21T03:29:06.068Z</updated>
     
     <content type="html"><![CDATA[<h1 id="导航器"><a href="#导航器" class="headerlink" title="导航器"></a>导航器</h1><p>一个应用（普通的那种），总是有好多个界面，只有一个界面的应用怎么能留得住用户呢？（虽然有很多界面的也不一定留得住）<br>所以说，做应用一般不会只做一个页面。我们知道，网页之间可以自由跳转，通过一个<code>&lt;a&gt;&lt;/a&gt;</code>就可以搞定了，但是<br>开发应用不是写网页，React Native中也没有<code>&lt;a&gt;</code>，那当我们需要做界面跳转的时候该怎么办呢？答案是使用<code>Navigator</code>组件。<br>哈哈，逗你的，在0.42版本前使用<code>Navigator</code>来实现导航效果没问题，不过呢，自从0.43版本之后React Native将停止维护这个组件了，<br>因为出现了更好用的<code>React Navigation</code>（半官方）。<br><a id="more"></a><br>首先我们来安装它：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save react-navigation</div></pre></td></tr></table></figure>
@@ -204,9 +206,9 @@
 <p>这里的<code>Home</code>和<code>User</code>是路由别名，在使用<code>navigate</code>时需要用到。然后改一下注册的组件，就像下边那样：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">AppRegistry.registerComponent(&apos;AppName&apos;, () =&gt; MyApp);</div></pre></td></tr></table></figure>
 <p>好啦，我们刷新一下应用：</p>
-<p><img src="../images/8.1.png" alt="PNG"></p>
+<p><img src="https://meowv.github.io/images/8.1.png" alt="PNG"></p>
 <p>然后点一下Go按钮：</p>
-<p><img src="../images/8.2.png" alt="PNG"></p>
+<p><img src="https://meowv.github.io/images/8.2.png" alt="PNG"></p>
 <p>就像这样，几行代码轻轻松松便实现了导航效果，甚至连头部都帮你做好了~</p>
 <h2 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h2><p>很多时候，我们需要像要跳转的界面传递些参数，比如，某条数据的id，用户的名字。我们只需要把上边的例子小小的修改一下就可以传递参数了：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//修改navigate方法</div><div class="line">navigate(&apos;User&apos;, &#123; id: &apos;233333333&apos;, name: &apos;nico&apos; &#125;);</div></pre></td></tr></table></figure>
@@ -218,7 +220,7 @@
 <p>理论上来说，它会在右边显示一个按钮，但是并不行，一脸茫然的作者君去翻了下GitHub，发现别人也遇到了这些问题，然后默默的更新了<br>一下<code>react-navigation</code>，从beta7升到了beta9：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm update react-navigation</div></pre></td></tr></table></figure>
 <p>然后刷新一下应用就可以发现按钮乖乖的显示在那里了：</p>
-<p><img src="../images/8.3.png" alt="PNG"></p>
+<p><img src="https://meowv.github.io/images/8.3.png" alt="PNG"></p>
 <p>除了按钮，你还可以丢个<text>之类的过去，都是可以的。</text></p>
 <h2 id="Tab-Navigator"><a href="#Tab-Navigator" class="headerlink" title="Tab Navigator"></a>Tab Navigator</h2><p>如果需要Tab导航，我们使用其内置的<code>TabNavigator</code>即可，用法和<code>StackNavigator</code>差不多，只要在最后使用<code>TabNavigator</code>即可<br>就像这样：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">const XXX = TabNavigator(&#123;</div><div class="line">  ......</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
@@ -229,11 +231,11 @@
 <p>这里的<code>Hi</code>，<code>world</code>会被作为选项卡（Tab）的名字，然后修改MyApp:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">const MyApp = StackNavigator(&#123;</div><div class="line">  Home: &#123; screen: TabScreen &#125;,</div><div class="line">  User: &#123; screen: UserScreen &#125;,</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>刷新一下应用，会发现公用的头部是空白的：</p>
-<p><img src="../images/8.4.png" alt="PNG"></p>
+<p><img src="https://meowv.github.io/images/8.4.png" alt="PNG"></p>
 <p>没关系，我们来添加一下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">TabScreen.navigationOptions = &#123;</div><div class="line">  title: &apos;这里是Tab&apos;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <p>和别的导航组件，你也可以丢个按钮进去：</p>
-<p><img src="../images/8.5.png" alt="PNG"></p>
+<p><img src="https://meowv.github.io/images/8.5.png" alt="PNG"></p>
 <p>最后，我们来写一个可以跳转到UserScreen的按钮(别忘记navigate)：</p>
 <pre><code>//HiScreen
 const { navigate } = this.props.navigation;
@@ -265,7 +267,7 @@ const { navigate } = this.props.navigation;
     <link href="http://xj8c.cc/2017/07/13/ReactNative-ListView-FlatList/"/>
     <id>http://xj8c.cc/2017/07/13/ReactNative-ListView-FlatList/</id>
     <published>2017-07-13T08:31:08.000Z</published>
-    <updated>2017-07-19T08:37:55.595Z</updated>
+    <updated>2017-07-21T03:28:53.113Z</updated>
     
     <content type="html"><![CDATA[<h1 id="ListView与FlatList"><a href="#ListView与FlatList" class="headerlink" title="ListView与FlatList"></a>ListView与FlatList</h1><p>当你需要给用户在一个页面展示一堆数据的时候，一个一个去渲染对性能来说真的不好，所以我们使用React Native内置的列表<br>来渲染数据。在0.43版本之前，我们一直使用ListView来渲染数据，不过它的性能经常被人吐嘈，社区里也不断提出解决方案。<br>就连Realm都内置了一个性能更好些的ListView。不过自从官方发布了0.43版之后，这种局面应该会离我们远去了，因为官方给出了<br>更好的方案FlatList。不过，ListView虽然老旧了一些，但依然还有学习的必要，所以我们从ListView开始学起<br><a id="more"></a></p>
 <h2 id="ListView"><a href="#ListView" class="headerlink" title="ListView"></a>ListView</h2><p>对于ListView来说，我们需要一个数据源，这样ListView才有渲染视图的原料。这些数据可以放到一个数组里面(从Realm取出的数据可以直接用ListView渲染)，<br>首先定义取值策略，我们一般采用这种方式(上下数据不相等时更新数据)：</p>
@@ -277,7 +279,7 @@ const { navigate } = this.props.navigation;
 <p>然后随便找个视图丢个ListView进去，然后用刚才初始化好的<code>ds</code>来接受数据并使用renderRow渲染数据：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;ListView</div><div class="line">    dataSource=&#123;ds.cloneWithRows(data)&#125;</div><div class="line">    renderRow=&#123;(rowData) =&gt; &lt;Text&gt;id:&#123;rowData.id&#125;，name：&#123;rowData.name&#125;&lt;/Text&gt;&#125;</div><div class="line">/&gt;</div></pre></td></tr></table></figure>
 <p>没加任何样式，不过数据愉快的渲染出来了：</p>
-<p><img src="../images/7.1.png" alt="PNG"></p>
+<p><img src="https://meowv.github.io/images/7.1.png" alt="PNG"></p>
 <p>我们可以用列表渲染文字，图片，在列表里嵌套组件等等，还可以像寻常组件一样为其添加各种样式。因为写样式就像寻常组件一样，所以这里<br>就不再说了。</p>
 <p>除了传递<code>rowData</code>，还可以传递<code>sectionID, rowID</code>来获取section id和 row id，如果对这两个参数感兴趣就自己动手做下试验。</p>
 <p>再提一个和性能有关的属性<code>initialListSize</code>，这个属性可以指定首屏渲染多少数据，避免造成性能损耗。</p>
@@ -285,10 +287,10 @@ const { navigate } = this.props.navigation;
 <h2 id="FlatList"><a href="#FlatList" class="headerlink" title="FlatList"></a>FlatList</h2><p>FlatList是一个高性能的列表，为什么要使用它我们在开篇介绍已经讲过，下面我们来看一个简单的例子：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;FlatList</div><div class="line">    data=&#123;data&#125;</div><div class="line">    renderItem=&#123; (&#123; item &#125;) =&gt; &lt;Text&gt;&#123;item.id&#125;&lt;/Text&gt; &#125;</div><div class="line">/&gt;</div></pre></td></tr></table></figure>
 <p>这里的data是在ListView例子中用过的data，不过呢，这段代码并不能运行，因为FlatList需要每行都有一个不同的key，所以我们<br>需要炮制一下data。至于这个提示，先看前半句：</p>
-<p><img src="../images/7.3.png" alt="PNG"></p>
+<p><img src="https://meowv.github.io/images/7.3.png" alt="PNG"></p>
 <p>之前在创建data的时候我们用了const，为了后边能够修改data，我们将const改成let。<br>然后写一小段代码为data添加key：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">for (let i = 0; i &lt; data.length; i++) &#123;</div><div class="line">  data[i].key = i</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><img src="../images/7.2.png" alt="PNG"></p>
+<p><img src="https://meowv.github.io/images/7.2.png" alt="PNG"></p>
 <p>然后data就可以丢到FlatList中使用了(使用新组件别忘记引入)。另外，在现在的版本中data只能是一个普通数组，不可以是别的复杂数据结构(为了简单)。</p>
 <p>接下来，我们来看FlatList支持的属性。</p>
 <p>FlatList默认竖式布局，但是只要设置<code>horizontal</code>属性为true，列表就会变成横的：</p>
@@ -297,7 +299,7 @@ const { navigate } = this.props.navigation;
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">keyExtractor=&#123; (item, index) =&gt; item.id &#125;</div></pre></td></tr></table></figure>
 <p>然后是三个比较像的组件<code>ListHeaderComponent</code>，<code>ItemSeparatorComponent</code>，<code>ListFooterComponent</code>，<br>在这三个属性中，我们向其中分别会放头部组件，分隔组件，尾部组件。<br>举一个简单的例子：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ListHeaderComponent=&#123;()=&gt;&#123;return &lt;Text&gt;我是头部&lt;/Text&gt;&#125;&#125;</div><div class="line">ItemSeparatorComponent=&#123;()=&gt;&#123;return &lt;Text&gt;我是分隔组件&lt;/Text&gt;&#125;&#125;</div><div class="line">ListFooterComponent=&#123;()=&gt;&#123;return &lt;Text&gt;我是尾部&lt;/Text&gt;&#125;&#125;</div></pre></td></tr></table></figure>
-<p><img src="../images/7.4.png" alt="PNG"></p>
+<p><img src="https://meowv.github.io/images/7.4.png" alt="PNG"></p>
 <p>实际使用的时候记得把组件单独拿出来，这里这么写只是为了方便。<br>FlatList为了优化内存占用并保证流畅滑动会在屏幕外异步绘制列表内容（看不到的地方用空白代替items），所以如果用户滑动过快就会看到空白内容，<br>对于这个问题，我们可以使用<code>getItemLayout</code>属性来有优化，不过你得知道内容的行高才能用：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//xxx是行高</div><div class="line">getItemLayout=&#123;(data, index) =&gt; (</div><div class="line">    &#123; length: xxx, offset: xxx * index, index &#125;</div><div class="line">)&#125;</div></pre></td></tr></table></figure>
 <p>介绍的最后一个组件在当前版本（0.43）有点小问题<code>onEndReached</code>有时候会不触发，所以只好期待下一个版本喽</p>
@@ -318,11 +320,93 @@ const { navigate } = this.props.navigation;
   </entry>
   
   <entry>
+    <title>存储：与AsyncStorage相比，Realm更应该作为重点掌握内容</title>
+    <link href="http://xj8c.cc/2017/07/12/ReactNative-storage/"/>
+    <id>http://xj8c.cc/2017/07/12/ReactNative-storage/</id>
+    <published>2017-07-12T08:28:22.000Z</published>
+    <updated>2017-07-21T03:30:58.721Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="储存"><a href="#储存" class="headerlink" title="储存"></a>储存</h1><p>本章提要<br>  1.AsyncStorage<br>  2.Realm<br>一个应用总是要存些东西的，我们要怎么做才能把数据存起来呢？我们这里有两个选择，一个是使用官方提供的AsyncStorage另一个是使用小型数据库。</p>
+<p>当数据量不大，结构很简单的时候，我们来使用AsyncStorage这个key-value储存系统，当数据量较大的时候，我们就需要使用小型数据库了，这里我们<br>会学习一个叫做Realm的数据库。<br><a id="more"></a><br>首先，我们来看看AsyncStorage吧~</p>
+<h2 id="AsyncStorage"><a href="#AsyncStorage" class="headerlink" title="AsyncStorage"></a>AsyncStorage</h2><p>与数据打交道，免不了对数据进行增加，删除，更改和查找。我们来看看如何用AsyncStorage实现这些。</p>
+<p>增加数据：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">`` </div><div class="line">save(key, value) &#123;</div><div class="line">  AsyncStorage.setItem(key,value).then(</div><div class="line">    (errs)=&gt;&#123;</div><div class="line">      if (!errs) &#123;</div><div class="line">        //xxx</div><div class="line">      &#125;else &#123;</div><div class="line">        //xxx</div><div class="line">      &#125;</div><div class="line">    &#125;)  </div><div class="line">&#125;</div><div class="line">``</div></pre></td></tr></table></figure>
+<p>在这里，我们使用了promise，这样会使代码看起来舒服很多。虽然看起来很多，实际上，只要知道</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">AsyncStorage.setItem(key,value)</div></pre></td></tr></table></figure>
+<p>就可以了，我们用<code>setItem</code>来将key和value存储起来，看到这里想必你已经知道了为什么AsyncStorage是key-value系统了。</p>
+<p>由于有了key，所以我们可以用key进行查询：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">get(key) &#123;</div><div class="line">   AsyncStorage.getItem(key)</div><div class="line">            .then(  </div><div class="line">                (result)=&gt; &#123;   </div><div class="line">                    if (!result) &#123;</div><div class="line">                      //xxx</div><div class="line">                    &#125;</div><div class="line">                    //返回结果</div><div class="line">                &#125;</div><div class="line">            ).catch((error)=&gt; &#123;  </div><div class="line">              //错误处理</div><div class="line">        &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>数据我们存完了，但是如果数据没用了怎么办？删掉呗。和查询数据很像，删除也需要用到key：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">del(key) &#123;</div><div class="line">   AsyncStorage.removeItem(key).</div><div class="line">            then(</div><div class="line">            ()=&gt;&#123;</div><div class="line">              //删除成功</div><div class="line">            &#125;</div><div class="line">          ).catch((error)=&gt; &#123;  </div><div class="line">              //错误处理</div><div class="line">        &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>至于修改数据，其实写法和增加数据一样，当你需要修改一项数据的时候，直接传入key和一个新的值就可以了。</p>
+<h2 id="Realm"><a href="#Realm" class="headerlink" title="Realm"></a>Realm</h2><p>前面的AsyncStorage只能存些小东西，数据量一大就开始捉襟见肘了，到了这种时候就该用Realm了。<br>其实用SQLite也行，不过不怎么好用，索性就不用了。当初作者君在用Realm的时候版本号才是0.14转眼间就到1.0.0了，所以请放心的使用Realm吧。</p>
+<p>Realm并不是React Native自己就有的，所以我们需要安装Realm：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save realm</div></pre></td></tr></table></figure>
+<p>安装好后大概是这样：</p>
+<p><img src="https://meowv.github.io/images/6.1.png" alt="PNG">  </p>
+<p>然后执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">react-native link realm</div></pre></td></tr></table></figure>
+<p><img src="https://meowv.github.io/images/6.2.png" alt="PNG">  </p>
+<p>装完Realm之后得重新构建一下App：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">react-native run-android</div></pre></td></tr></table></figure>
+<p><em>Tips：由于网络的问题呢，可能会构建失败，多试几次就可以构建完成了</em></p>
+<p>接下来测试一下Realm是不是安装成功了，先是引入Realm：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import Realm from &apos;realm&apos;;</div></pre></td></tr></table></figure>
+<p>下面是Realm官方文档的例子的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">export default class &lt;project-name&gt; extends Component &#123;</div><div class="line">  render() &#123;</div><div class="line">    let realm = new Realm(&#123;</div><div class="line">     schema: [&#123;name: &apos;Dog&apos;, properties: &#123;name: &apos;string&apos;&#125;&#125;]</div><div class="line">   &#125;);</div><div class="line"></div><div class="line">   realm.write(() =&gt; &#123;</div><div class="line">     realm.create(&apos;Dog&apos;, &#123;name: &apos;Rex&apos;&#125;);</div><div class="line">   &#125;);</div><div class="line">    return (</div><div class="line">      &lt;View style=&#123;styles.container&#125;&gt;</div><div class="line">        &lt;Text style=&#123;styles.welcome&#125;&gt;</div><div class="line">          Count of Dogs in Realm: &#123;realm.objects(&apos;Dog&apos;).length&#125;</div><div class="line">        &lt;/Text&gt;</div><div class="line">      &lt;/View&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>&lt;project-name&gt;</code>是你的项目名称，别弄错了。然后刷新一下，界面上的数字就会加1。如果程序可以顺利运行，<br>Realm就已经安装好了。</p>
+<p>先简单的解释一下上面的代码，首先我们新建了一个叫做Dog的Schema，下面的<code>write</code>是写入数据，组件中的<br><code>realm.objects(&#39;Dog&#39;).length</code>会返回Dog中的数据个数。每次刷新App，都会写入一条数据，所以数字会加一。</p>
+<p>有了一个简单的认识之后，让我们来详细的了解Realm吧！</p>
+<h3 id="Schema"><a href="#Schema" class="headerlink" title="Schema"></a>Schema</h3><p>在使用Realm的时候离不开Schema，一个大些的App一般会用到多个Schema，所以在正式使用Realm的时候<br>不能像上面的例子一样敷衍，我们需要进行一个简单的封装。新建一个叫Schema.js文件，它可以在app文件夹下（没有app文件夹就自己新建一个），</p>
+<p>在文件头部引入Realm：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import Realm from &apos;realm&apos;;</div></pre></td></tr></table></figure>
+<p>然后创建一个叫Todo的class：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">class Todo extends Realm.Object &#123;&#125;</div></pre></td></tr></table></figure>
+<p>不喜欢这个名字的话，你可以自己随便起一个名字。</p>
+<p>然后来写Schema：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Todo.schema = &#123;</div><div class="line">    name:&apos;Todo&apos;,</div><div class="line">    primaryKey: &apos;id&apos;,</div><div class="line">    properties: &#123;</div><div class="line">        title: &#123;type: &apos;string&apos;&#125;,</div><div class="line">        id: &#123;type: &apos;string&apos;, indexed: true&#125;,</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这里我们用id来作为主键，由于这个id具有唯一性，我们一会儿会写一个小程序来生成id。 </p>
+<p>然后导出模块：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">export default new Realm(&#123;schema: [Todo]&#125;)</div><div class="line">``` </div><div class="line"></div><div class="line">如果你需要多个Schema，在后面加上就好：</div></pre></td></tr></table></figure>
+<p>export default new Realm({schema: [Todo, Category, xxx, xxx]})<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">然后在你需要使用储存的地方引入Schema.js。</div><div class="line"></div><div class="line">比如这样引入：</div></pre></td></tr></table></figure></p>
+<p>import realm from ‘./Schema’;<br>//注意文件位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">然后写一个生成id(为了不生成重复的id，我们使用guid，别管这是啥，只要知道这东西一般不会重复就好了)的函数：</div></pre></td></tr></table></figure></p>
+<p>const guid = () =&gt; {<br>  return ‘xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx’<br>    .replace(/[xy]/g, (c) =&gt; {<br>      var r = Math.random() * 16 | 0, v = c == ‘x’ ? r : (r &amp; 0x3 | 0x8);<br>      return v.toString(16);<br>    });<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">接下来，我们来看如何去用Realm（也就是增删改查）。</div><div class="line"></div><div class="line">我们来写一个输入框来收集数据：</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">![PNG](https://meowv.github.io/images/6.4.png)  </div><div class="line"></div><div class="line">不出意外的话，下边会有一个黄色的提示（前边的章节有说过），先不要管它，我们一会儿解决。</div><div class="line">为了储存数据，我们需要把输入的文字放到state里面，上面的`onChangeText`就是干这个的，对了，别忘记加一个叫title的状态：</div></pre></td></tr></table></figure>
+<p>constructor(props){<br>      super(props);<br>      this.state = {<br>        text: null<br>      };<br>    }<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Ok，搞定这些后我们来写一个写入数据的方法，我们起名叫write，write应该写在constructor下边：</div></pre></td></tr></table></figure></p>
+<p>write(){<br>      realm.write(()=&gt;{<br>        realm.create(‘Todo’,{ title: this.state.title, id: guid() });<br>      });<br>    }<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">写入数据需要用到`realm.write()`和`realm.create()`，Todo是Schema，后边跟着的是要写入的数据，title是从</div><div class="line">state中取出来的，然后我们调用`guid()`来生成一个不重复的id。</div><div class="line">接下来把这个方法绑到按钮上，实现点击添加数据：</div></pre></td></tr></table></figure></p>
+<p><button title="添加" onpress="{" ()=""> this.write() }/&gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">别忘记写this哦，write是内部的方法，不用this会引用不到的。</div><div class="line"></div><div class="line">我们可以在下边写一个文本来显示Todo中数据的条数，就和上面的例子一样，我们在Button下面写个换行符：</div></pre></td></tr></table></figure></button></p>
+<p><text>{‘\n’}</text><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">然后把数据放到state里：</div></pre></td></tr></table></figure></p>
+<p>this.state = {<br>  text: null,<br>  data: realm.objects(‘Todo’)<br>};<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">在换行符下面继续写：</div></pre></td></tr></table></figure></p>
+<p><text>{ this.state.data.length }</text><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">然后才是重点，Realm是可以使数据实时更新的，只要增加一个监听就好了，我们把这个监听写在构造里面：</div></pre></td></tr></table></figure></p>
+<p>this.state = {…}<br>realm.addListener(‘change’, () =&gt; {<br>  this.forceUpdate()<br>});<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">然后输入一个数据，保存，下面的数字就可以实时的变化了~</div><div class="line"></div><div class="line">然后我们来看查询是怎样的，界面的话把上面的代码复制过去，改几个字就好：</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">然后把find放到state里，正如我们之前做过的一样：</div></pre></td></tr></table></figure>
+<p>this.state = {<br>  text: null,<br>  find: null,<br>  data: realm.objects(‘Todo’)<br>};<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">然后我们写一个叫find的方法,这个方法稍稍有些复杂：</div></pre></td></tr></table></figure></p>
+<p>find () {<br>  realm.objects(‘Todo’)<br>      .filtered(‘title = ‘ + ‘“‘ + this.state.find + ‘“‘)<br>      .forEach(result =&gt; ToastAndroid.show(result.id, ToastAndroid.SHORT));<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">我们借助了一个叫做`ToastAndroid`的组件来实现显示查找结果的id，所以别忘记引入这个组件。</div><div class="line">`filtered`是一个过滤器，我们在里面写查询代码，注意喽，查询的值应该是一个字符串所以在外面包裹了双引号。</div><div class="line">由于返回的结果稍稍有些复杂，所以我们用`forEach`来处理一下，使其获得id。</div><div class="line"></div><div class="line">效果应该是这个样子的：</div><div class="line"></div><div class="line">![PNG](https://meowv.github.io/images/6.5.png)  </div><div class="line"></div><div class="line">至于修改和删除就很简单了，所以这里只给出核心代码，作者君知道你很聪明，所以来想想具体怎么用把~</div><div class="line"></div><div class="line">修改：</div></pre></td></tr></table></figure></p>
+<p>realm.write(() =&gt; {<br>  realm.create(‘Todo’, { id: xxx, title: xxx }, true);<br>});<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">删除：</div></pre></td></tr></table></figure></p>
+<p>realm.write(() =&gt; {<br>  const todo = realm.objects(‘Todo.filtered(‘id = xxxxx’);<br>  realm.delete(todo);<br>});<br>```</p>
+<p>小提示：</p>
+<p>唔？ID真的没有用吗？具体可以起到什么作用呢？</p>
+<p>想明白这两点，修改和删除就没问题了。另外，有没有发现修改，增加，删除都是在write中进行的呢？</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;储存&quot;&gt;&lt;a href=&quot;#储存&quot; class=&quot;headerlink&quot; title=&quot;储存&quot;&gt;&lt;/a&gt;储存&lt;/h1&gt;&lt;p&gt;本章提要&lt;br&gt;  1.AsyncStorage&lt;br&gt;  2.Realm&lt;br&gt;一个应用总是要存些东西的，我们要怎么做才能把数据存起来呢？我们这里有两个选择，一个是使用官方提供的AsyncStorage另一个是使用小型数据库。&lt;/p&gt;
+&lt;p&gt;当数据量不大，结构很简单的时候，我们来使用AsyncStorage这个key-value储存系统，当数据量较大的时候，我们就需要使用小型数据库了，这里我们&lt;br&gt;会学习一个叫做Realm的数据库。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="ReactNative" scheme="http://xj8c.cc/tags/ReactNative/"/>
+    
+  </entry>
+  
+  <entry>
     <title>React Native中的样式，Flexbox布局及其他内容</title>
     <link href="http://xj8c.cc/2017/07/11/ReactNative-style-layout/"/>
     <id>http://xj8c.cc/2017/07/11/ReactNative-style-layout/</id>
     <published>2017-07-11T08:25:59.000Z</published>
-    <updated>2017-07-19T08:37:44.039Z</updated>
+    <updated>2017-07-21T03:29:22.951Z</updated>
     
     <content type="html"><![CDATA[<h1 id="是时候说说样式与布局了"><a href="#是时候说说样式与布局了" class="headerlink" title="是时候说说样式与布局了"></a>是时候说说样式与布局了</h1><p>本章提要</p>
 <ul>
@@ -347,12 +431,12 @@ const { navigate } = this.props.navigation;
 <p>嗯，先把这些列在这里，有个大概印象就成，我们一会儿再说。</p>
 <p>对于Flexbox来说，有一个很重要的概念————轴。理解了轴的概念，使用Flexbox也不会有什么问题了。</p>
 <p>对于一个平面来说，它有两个轴，横轴和纵轴，就是下面这样： </p>
-<p><img src="../images/5.1.png" alt="PNG">  </p>
+<p><img src="https://meowv.github.io/images/5.1.png" alt="PNG">  </p>
 <p>Flexbox用操作这两个轴的方式来完成布局，不过不叫横纵而是叫主次。</p>
 <p>当横轴为主轴时，次轴是纵轴：</p>
-<p><img src="../images/5.2.png" alt="PNG">  </p>
+<p><img src="https://meowv.github.io/images/5.2.png" alt="PNG">  </p>
 <p>当纵轴为主轴时，次轴是横轴：</p>
-<p><img src="../images/5.3.png" alt="PNG">  </p>
+<p><img src="https://meowv.github.io/images/5.3.png" alt="PNG">  </p>
 <p>看完预备知识，我们可以看看Flexbox是怎么用的了。</p>
 <p>首先，要有一个flex容器，如果不指定高度和宽度，它会占满能够占领的最大空间，如果给了高度和宽度，那么会占满你给它的空间。</p>
 <p>我们用<code>flex</code>告诉React Native说这是一个使用了弹性布局的组件，就像这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;View style=&#123;&#123; flex:1 &#125;&#125;&gt;&lt;/View&gt;</div></pre></td></tr></table></figure></p>
@@ -363,12 +447,12 @@ const { navigate } = this.props.navigation;
 <p>我们在<code>View</code>容器里填充一些元素进去，就可以很直观的看到效果：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;View style=&#123;&#123; flex: 1, flexDirection: &apos;column&apos;, justifyContent:&apos;center&apos;, alignItems:&apos;flex-end&apos; &#125;&#125;&gt;</div><div class="line">    &lt;Text style=&#123;&#123; backgroundColor:&apos;blue&apos;&#125;&#125; &gt;1&lt;/Text&gt;</div><div class="line">    &lt;Text style=&#123;&#123; backgroundColor:&apos;red&apos; &#125;&#125;&gt;2&lt;/Text&gt;</div><div class="line">    &lt;Text style=&#123;&#123; backgroundColor:&apos;green&apos; &#125;&#125;&gt;3&lt;/Text&gt;</div><div class="line">&lt;/View&gt;</div></pre></td></tr></table></figure>
 <p>效果是这样（虽然比较建议你自己敲一下代码，但是还是把图放在这里比较好）：</p>
-<p><img src="../images/5.4.png" alt="PNG">  </p>
+<p><img src="https://meowv.github.io/images/5.4.png" alt="PNG">  </p>
 <p>至于为啥这个图看起来有些大，是因为作者君把整个模拟器的屏幕截过来了，毕竟要突出元素在主轴中间的效果嘛。</p>
 <p>这些还不是全部，毕竟不可能每个整体都是统一的，内部总是要有些不一样的。拿上面的那个例子来说：如果我不想让每个元素都在次轴的末尾，那<br>该怎么办呢？ 很简单，这个时候我们就可以使用<code>alignSelf</code>了。<code>alignSelf</code>可以使容器里的元素和父样式不一样，我们来简单的改造一下上面的例子：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Text style=&#123;&#123; backgroundColor:&apos;green&apos;, alignSelf:&apos;flex-start&apos; &#125;&#125;&gt;3&lt;/Text&gt;</div></pre></td></tr></table></figure>
 <p>这样就可以使第三个<code>Text</code>在前面了。就像这样：</p>
-<p><img src="../images/5.5.png" alt="PNG">  </p>
+<p><img src="https://meowv.github.io/images/5.5.png" alt="PNG">  </p>
 <p>我们再说回<code>flex</code>。我们知道，<code>flex</code>后面是接数字的，数字是这个容器所占的比例，也就是说，后面的数字越大，容器所占比例也就越大。</p>
 <p>不过，如果只有<code>flex: 1</code>的话，它会自己占领所有地盘，谁叫没有其它的容器和它抢地盘呢。</p>
 <h3 id="position"><a href="#position" class="headerlink" title="position"></a>position</h3><p>对于一个App来说，不可能只用到Flexbox，还得用到其他的布局方式。</p>
@@ -377,12 +461,12 @@ const { navigate } = this.props.navigation;
 <p>只不过我们得事先声明元素的宽度和高度，不然样式会变得很奇怪，然后来定位元素的位置：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Text style=&#123;&#123; position: &apos;absolute&apos;, width:50, height: 50, bottom: 20, left:10 &#125;&#125;&gt;233&lt;/Text&gt;</div></pre></td></tr></table></figure>
 <p>就像这样：</p>
-<p><img src="../images/5.6.png" alt="PNG">  </p>
+<p><img src="https://meowv.github.io/images/5.6.png" alt="PNG">  </p>
 <p>还有一点得注意，我们需要给父容器一个合适的高度和宽度，比如这样：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;View style=&#123;&#123; height:500,width:500 &#125;&#125;&gt;</div><div class="line">    &lt;Text style=&#123;&#123; position: &apos;absolute&apos;, bottom: 20, left:10, width:50, height: 50 &#125;&#125;&gt;233&lt;/Text&gt;</div><div class="line">    &lt;Text style=&#123;&#123; position: &apos;absolute&apos;, bottom: 20, left:80, width:50, height: 50 &#125;&#125;&gt;233&lt;/Text&gt;</div><div class="line">&lt;/View&gt;</div></pre></td></tr></table></figure>
 <p>既然有绝对布局，就有相对布局，只不过可能会有些难用。你可以把相对布局理解成一个流，只不过<code>bottom,right</code>不能用。<br>可以使用<code>top,left</code>更改元素在流中的上，左偏移大小（top,left初始值为0）。下面是个例子：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;View style=&#123;&#123;height:500,width:500&#125;&#125;&gt;</div><div class="line">    &lt;Text style=&#123;&#123; position: &apos;relative&apos;,  left:10, width:50, height: 50 &#125;&#125;&gt;233&lt;/Text&gt;</div><div class="line">    &lt;Text style=&#123;&#123; position: &apos;relative&apos;,  left:60, width:50, height: 50 &#125;&#125;&gt;233&lt;/Text&gt;</div><div class="line">    &lt;Text style=&#123;&#123; position: &apos;relative&apos;,  left:120, width:50, height: 50 &#125;&#125;&gt;233&lt;/Text&gt;</div><div class="line">&lt;/View&gt;</div></pre></td></tr></table></figure>
-<p><img src="../images/5.7.png" alt="PNG"> </p>
+<p><img src="https://meowv.github.io/images/5.7.png" alt="PNG"> </p>
 <h2 id="Dimensions"><a href="#Dimensions" class="headerlink" title="Dimensions"></a>Dimensions</h2><p>在React Native中，我们不能用<code>width: 60%</code>之类的方式来进行布局，那该怎么办嘞？嗯，我们可以换个方式，那就是<code>Dimensions</code>，<br>我们来请Dimensions出场：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import &#123;</div><div class="line">  Dimensions</div><div class="line">&#125; from &apos;react-native&apos;;</div></pre></td></tr></table></figure>
 <p>然后获取宽度和高度，这里我们用解构赋值的方式：</p>
@@ -413,7 +497,7 @@ const { navigate } = this.props.navigation;
     <link href="http://xj8c.cc/2017/07/10/ReactNative-module/"/>
     <id>http://xj8c.cc/2017/07/10/ReactNative-module/</id>
     <published>2017-07-10T08:24:39.000Z</published>
-    <updated>2017-07-19T08:37:27.625Z</updated>
+    <updated>2017-07-21T03:29:16.975Z</updated>
     
     <content type="html"><![CDATA[<h1 id="一些一定要知道的组件"><a href="#一些一定要知道的组件" class="headerlink" title="一些一定要知道的组件"></a>一些一定要知道的组件</h1><p>本章提要</p>
 <ul>
@@ -429,17 +513,17 @@ const { navigate } = this.props.navigation;
 <h2 id="View组件"><a href="#View组件" class="headerlink" title="View组件"></a>View组件</h2><p>这么说吧，第一个就介绍View组件是有原因的。View组件可是最最基础的组件，我们经常需要拿View组件当容器使用~<br>View自己没有固定的样式，我们需要自己为它定义样式。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;View style=&#123;&#123; backgroundColor:&apos;green&apos;, height:50, width:50 &#125;&#125;&gt;&lt;/View&gt;</div></pre></td></tr></table></figure>
 <p>这样，在屏幕上便可以出现一个绿色的，边长为50dp的正方形</p>
-<p><img src="../images/4.1.png" alt="PNG"> </p>
+<p><img src="https://meowv.github.io/images/4.1.png" alt="PNG"> </p>
 <p>样式什么的，我们会在下一章讲到，在这里简单看看就好。</p>
 <h2 id="Text组件"><a href="#Text组件" class="headerlink" title="Text组件"></a>Text组件</h2><p>一般来说，一个应用总是离不开文字的，在React Native中，文字外面需要套上Text组件才可以，<br>我们可以通过Text组件控制文字大小及颜色，文字行数，还可以通过点击Text组件来触发一些动作（函数）。<br>栗子如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;Text numberOfLines=&#123; 1 &#125; style=&#123;&#123; fontSize:20, color:&apos;green&apos; &#125;&#125;&gt;</div><div class="line">略略略,略略略略略略，略略略略略略略略略，略略略略略略略略略略略略</div><div class="line">&lt;/Text&gt;</div></pre></td></tr></table></figure>
 <p>我们通过numberOfLines来控制行数，超过设定的行数便会在设定好的最后一行显示省略号。通过fontSize和color设定了文字的<br>大小及颜色。效果如下：</p>
-<p><img src="../images/4.2.png" alt="PNG"> </p>
+<p><img src="https://meowv.github.io/images/4.2.png" alt="PNG"> </p>
 <h2 id="Button组件"><a href="#Button组件" class="headerlink" title="Button组件"></a>Button组件</h2><p>Button组件大概是在0.37版加入的，在那之前按钮什么的要自己写，如果对官方出的这个不满意的话，那就自己写或找一些第三方组件吧~<br>我们写两个按钮当作栗子：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;View&gt;</div><div class="line">    &lt;Button color=&quot;green&quot; title=&quot;我是一个正常的按钮&quot;/&gt;</div><div class="line">    &lt;Button  disabled=&#123;true&#125; title=&quot;我是一个不可用的按钮&quot;/&gt;</div><div class="line">&lt;/View&gt;</div></pre></td></tr></table></figure>
-<p><img src="../images/4.3.png" alt="PNG"> </p>
+<p><img src="https://meowv.github.io/images/4.3.png" alt="PNG"> </p>
 <p>由于写了两个组件，所以要在外面包裹一层容器，这里我们用View。这两个按钮一个是<br>正常状态，一个是不可用状态，我们通过控制disabled属性来控制是否可用(默认false)。按钮中的文字写在title里，color属性可以控制颜色。<br>由于按钮需要和onPress一起用，所以会有一个这样的警告：</p>
-<p><img src="../images/4.4.png" alt="PNG"> </p>
+<p><img src="https://meowv.github.io/images/4.4.png" alt="PNG"> </p>
 <p>不过暂时没什么问题，咱先不用管，以后用到的时候再写~</p>
 <h2 id="Image组件"><a href="#Image组件" class="headerlink" title="Image组件"></a>Image组件</h2><p>在以前，用React Native引用组件总是很坑，不过现在比以前好多了。由于作者君木有苹果电脑，所以不怎么清楚IOS版是怎么用的，<br>我们就只说安卓的吧。<br>图片的来源有两种，一种是本地图片，一种是网络图片，这两种图片在引入的时候稍稍有些差别，我们先看引入本地图片的例子：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Image source=&#123;require(&apos;./images/avatar.png&apos;)&#125; style=&#123;&#123; height:50, width:50 &#125;&#125; /&gt;</div></pre></td></tr></table></figure>
@@ -636,7 +720,7 @@ const { navigate } = this.props.navigation;
     <link href="http://xj8c.cc/2017/06/01/my-internship-record/"/>
     <id>http://xj8c.cc/2017/06/01/my-internship-record/</id>
     <published>2017-05-31T16:00:00.000Z</published>
-    <updated>2017-07-19T08:38:26.948Z</updated>
+    <updated>2017-07-19T08:58:43.383Z</updated>
     
     <content type="html"><![CDATA[<h3 id="2017年7月"><a href="#2017年7月" class="headerlink" title="2017年7月"></a>2017年7月</h3><p>1、签订劳动合同，转正，实习期结束</p>
 <p>2、React-Native 学习研究</p>
@@ -1927,31 +2011,6 @@ const { navigate } = this.props.navigation;
       <category term="ASP.NET" scheme="http://xj8c.cc/tags/ASP-NET/"/>
     
       <category term="C#" scheme="http://xj8c.cc/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>所谓的Get和Post到底是何方神圣？</title>
-    <link href="http://xj8c.cc/2016/04/07/get-and-post/"/>
-    <id>http://xj8c.cc/2016/04/07/get-and-post/</id>
-    <published>2016-04-07T15:04:07.000Z</published>
-    <updated>2017-07-18T02:30:00.724Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h2><h3 id="Get和Post是表单提交数据的两种基本方式，Get请求数据通过域名后缀URL传送，用户可见，不安全，Post请求数据通过在请求报文正文里面传输，相对来说比较安全。"><a href="#Get和Post是表单提交数据的两种基本方式，Get请求数据通过域名后缀URL传送，用户可见，不安全，Post请求数据通过在请求报文正文里面传输，相对来说比较安全。" class="headerlink" title="Get和Post是表单提交数据的两种基本方式，Get请求数据通过域名后缀URL传送，用户可见，不安全，Post请求数据通过在请求报文正文里面传输，相对来说比较安全。"></a>Get和Post是表单提交数据的两种基本方式，Get请求数据通过域名后缀URL传送，用户可见，不安全，Post请求数据通过在请求报文正文里面传输，相对来说比较安全。</h3><h3 id="Get是通过URL传递表单值，Post通过URL看不到表单域的值；"><a href="#Get是通过URL传递表单值，Post通过URL看不到表单域的值；" class="headerlink" title="Get是通过URL传递表单值，Post通过URL看不到表单域的值；"></a>Get是通过URL传递表单值，Post通过URL看不到表单域的值；</h3><h3 id="Get传递的数据量是有限的，如果要传递大量数据则不能用Get，比如type-”file”上传文章、type-”password”传递密码或者用-gt-textarea-lt-发表大段文章，Post则没有这个限制；"><a href="#Get传递的数据量是有限的，如果要传递大量数据则不能用Get，比如type-”file”上传文章、type-”password”传递密码或者用-gt-textarea-lt-发表大段文章，Post则没有这个限制；" class="headerlink" title="Get传递的数据量是有限的，如果要传递大量数据则不能用Get，比如type=”file”上传文章、type=”password”传递密码或者用&gt;textarea&lt;发表大段文章，Post则没有这个限制；"></a>Get传递的数据量是有限的，如果要传递大量数据则不能用Get，比如type=”file”上传文章、type=”password”传递密码或者用&gt;textarea&lt;发表大段文章，Post则没有这个限制；</h3><h3 id="Post会有浏览器提示重新提交表单的问题，Get则没有。"><a href="#Post会有浏览器提示重新提交表单的问题，Get则没有。" class="headerlink" title="Post会有浏览器提示重新提交表单的问题，Get则没有。"></a>Post会有浏览器提示重新提交表单的问题，Get则没有。</h3><h3 id="对于Post的表单重新敲地址栏再刷新就不会提示重新提交了，因为重新敲地址就没有偷偷提交的的数据了。"><a href="#对于Post的表单重新敲地址栏再刷新就不会提示重新提交了，因为重新敲地址就没有偷偷提交的的数据了。" class="headerlink" title="对于Post的表单重新敲地址栏再刷新就不会提示重新提交了，因为重新敲地址就没有偷偷提交的的数据了。"></a>对于Post的表单重新敲地址栏再刷新就不会提示重新提交了，因为重新敲地址就没有偷偷提交的的数据了。</h3><h3 id="Post方式的正确的地址很难直接发给他人。"><a href="#Post方式的正确的地址很难直接发给他人。" class="headerlink" title="Post方式的正确的地址很难直接发给他人。"></a>Post方式的正确的地址很难直接发给他人。</h3><a id="more"></a>
-<h2 id="GET和POST的区别："><a href="#GET和POST的区别：" class="headerlink" title="GET和POST的区别："></a>GET和POST的区别：</h2><h3 id="1-Get提交的数据会放在URL之后，以？分割URL和传输数据，参数之间以-amp-相连，如Edit-aspx-name-test1-amp-id-123456。Post方法是把提交的数据放在http包的body中。"><a href="#1-Get提交的数据会放在URL之后，以？分割URL和传输数据，参数之间以-amp-相连，如Edit-aspx-name-test1-amp-id-123456。Post方法是把提交的数据放在http包的body中。" class="headerlink" title="1. Get提交的数据会放在URL之后，以？分割URL和传输数据，参数之间以&amp;相连，如Edit.aspx?name=test1&amp;id=123456。Post方法是把提交的数据放在http包的body中。"></a>1. Get提交的数据会放在URL之后，以？分割URL和传输数据，参数之间以&amp;相连，如Edit.aspx?name=test1&amp;id=123456。Post方法是把提交的数据放在http包的body中。</h3><h3 id="2-Get提交的数据大小有限制，因为浏览器对URL的长度是有所限制的，感兴趣的可以自己了解一下。而Post方法是提交的数据没有限制。"><a href="#2-Get提交的数据大小有限制，因为浏览器对URL的长度是有所限制的，感兴趣的可以自己了解一下。而Post方法是提交的数据没有限制。" class="headerlink" title="2. Get提交的数据大小有限制，因为浏览器对URL的长度是有所限制的，感兴趣的可以自己了解一下。而Post方法是提交的数据没有限制。"></a>2. Get提交的数据大小有限制，因为浏览器对URL的长度是有所限制的，感兴趣的可以自己了解一下。而Post方法是提交的数据没有限制。</h3><h3 id="3-Get方式需要使用Request-QueryString来取得变量的值，而Post方式通过Request-Form来获取变量的值。"><a href="#3-Get方式需要使用Request-QueryString来取得变量的值，而Post方式通过Request-Form来获取变量的值。" class="headerlink" title="3. Get方式需要使用Request.QueryString来取得变量的值，而Post方式通过Request.Form来获取变量的值。"></a>3. Get方式需要使用Request.QueryString来取得变量的值，而Post方式通过Request.Form来获取变量的值。</h3><h3 id="4-Get方式提交数据，会带来安全问题，比如一个登录页面，通过Get方式提交数据时，用户名和密码将出现在URL上，如果页面可以被缓存或者其他人可以访问此电脑，就可以从历史记录获得该用户的账号和密码。"><a href="#4-Get方式提交数据，会带来安全问题，比如一个登录页面，通过Get方式提交数据时，用户名和密码将出现在URL上，如果页面可以被缓存或者其他人可以访问此电脑，就可以从历史记录获得该用户的账号和密码。" class="headerlink" title="4. Get方式提交数据，会带来安全问题，比如一个登录页面，通过Get方式提交数据时，用户名和密码将出现在URL上，如果页面可以被缓存或者其他人可以访问此电脑，就可以从历史记录获得该用户的账号和密码。"></a>4. Get方式提交数据，会带来安全问题，比如一个登录页面，通过Get方式提交数据时，用户名和密码将出现在URL上，如果页面可以被缓存或者其他人可以访问此电脑，就可以从历史记录获得该用户的账号和密码。</h3><h3 id="Get是从服务器上获取数据，Post是向服务器传送数据。"><a href="#Get是从服务器上获取数据，Post是向服务器传送数据。" class="headerlink" title="Get是从服务器上获取数据，Post是向服务器传送数据。"></a>Get是从服务器上获取数据，Post是向服务器传送数据。</h3><h3 id="Get是把参数数据队列加到提交表单的action属性所指的URL中，值和表单内各个字段一一对应，在URL中可以看到。Post是通过http-post机制，将表单内各个字段与其内容放置在HTML-HEADER-内一起传送到action属性所指的URL地址。用户是看不到这个过程的。"><a href="#Get是把参数数据队列加到提交表单的action属性所指的URL中，值和表单内各个字段一一对应，在URL中可以看到。Post是通过http-post机制，将表单内各个字段与其内容放置在HTML-HEADER-内一起传送到action属性所指的URL地址。用户是看不到这个过程的。" class="headerlink" title="Get是把参数数据队列加到提交表单的action属性所指的URL中，值和表单内各个字段一一对应，在URL中可以看到。Post是通过http post机制，将表单内各个字段与其内容放置在HTML HEADER 内一起传送到action属性所指的URL地址。用户是看不到这个过程的。"></a>Get是把参数数据队列加到提交表单的action属性所指的URL中，值和表单内各个字段一一对应，在URL中可以看到。Post是通过http post机制，将表单内各个字段与其内容放置在HTML HEADER 内一起传送到action属性所指的URL地址。用户是看不到这个过程的。</h3><h3 id="对于Get方式，服务器端用Request-QueryString获取变量的值，对于Post方式，服务器端用Request-Form获取提交的数据。"><a href="#对于Get方式，服务器端用Request-QueryString获取变量的值，对于Post方式，服务器端用Request-Form获取提交的数据。" class="headerlink" title="对于Get方式，服务器端用Request.QueryString获取变量的值，对于Post方式，服务器端用Request.Form获取提交的数据。"></a>对于Get方式，服务器端用Request.QueryString获取变量的值，对于Post方式，服务器端用Request.Form获取提交的数据。</h3><h3 id="Get传送的数据量小，不能大于2kb-还是因为受URL长度的限制-。Post传送的数据量大，一般被默认为不受限制。但理论上，限制取决于服务器的处理能力。"><a href="#Get传送的数据量小，不能大于2kb-还是因为受URL长度的限制-。Post传送的数据量大，一般被默认为不受限制。但理论上，限制取决于服务器的处理能力。" class="headerlink" title="Get传送的数据量小，不能大于2kb(还是因为受URL长度的限制)。Post传送的数据量大，一般被默认为不受限制。但理论上，限制取决于服务器的处理能力。"></a>Get传送的数据量小，不能大于2kb(还是因为受URL长度的限制)。Post传送的数据量大，一般被默认为不受限制。但理论上，限制取决于服务器的处理能力。</h3><h3 id="Get安全性较低，Post安全性较高。因为Get在传输过程，数据被放在请求的URL中，而如今有很多服务器、代理服务器或者用户代理都会讲请求URL记录到日志文件中，然后放在某个地方，这样就可能会有一些隐私的信息被第三方看到。另外，用户也可以在浏览器上之间看到提交的数据，一些系统内部消息将会一同显示在用户面前。Post的所有操作对用户来说都是不可见的。"><a href="#Get安全性较低，Post安全性较高。因为Get在传输过程，数据被放在请求的URL中，而如今有很多服务器、代理服务器或者用户代理都会讲请求URL记录到日志文件中，然后放在某个地方，这样就可能会有一些隐私的信息被第三方看到。另外，用户也可以在浏览器上之间看到提交的数据，一些系统内部消息将会一同显示在用户面前。Post的所有操作对用户来说都是不可见的。" class="headerlink" title="Get安全性较低，Post安全性较高。因为Get在传输过程，数据被放在请求的URL中，而如今有很多服务器、代理服务器或者用户代理都会讲请求URL记录到日志文件中，然后放在某个地方，这样就可能会有一些隐私的信息被第三方看到。另外，用户也可以在浏览器上之间看到提交的数据，一些系统内部消息将会一同显示在用户面前。Post的所有操作对用户来说都是不可见的。"></a>Get安全性较低，Post安全性较高。因为Get在传输过程，数据被放在请求的URL中，而如今有很多服务器、代理服务器或者用户代理都会讲请求URL记录到日志文件中，然后放在某个地方，这样就可能会有一些隐私的信息被第三方看到。另外，用户也可以在浏览器上之间看到提交的数据，一些系统内部消息将会一同显示在用户面前。Post的所有操作对用户来说都是不可见的。</h3>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;简介：&quot;&gt;&lt;a href=&quot;#简介：&quot; class=&quot;headerlink&quot; title=&quot;简介：&quot;&gt;&lt;/a&gt;简介：&lt;/h2&gt;&lt;h3 id=&quot;Get和Post是表单提交数据的两种基本方式，Get请求数据通过域名后缀URL传送，用户可见，不安全，Post请求数据通过在请求报文正文里面传输，相对来说比较安全。&quot;&gt;&lt;a href=&quot;#Get和Post是表单提交数据的两种基本方式，Get请求数据通过域名后缀URL传送，用户可见，不安全，Post请求数据通过在请求报文正文里面传输，相对来说比较安全。&quot; class=&quot;headerlink&quot; title=&quot;Get和Post是表单提交数据的两种基本方式，Get请求数据通过域名后缀URL传送，用户可见，不安全，Post请求数据通过在请求报文正文里面传输，相对来说比较安全。&quot;&gt;&lt;/a&gt;Get和Post是表单提交数据的两种基本方式，Get请求数据通过域名后缀URL传送，用户可见，不安全，Post请求数据通过在请求报文正文里面传输，相对来说比较安全。&lt;/h3&gt;&lt;h3 id=&quot;Get是通过URL传递表单值，Post通过URL看不到表单域的值；&quot;&gt;&lt;a href=&quot;#Get是通过URL传递表单值，Post通过URL看不到表单域的值；&quot; class=&quot;headerlink&quot; title=&quot;Get是通过URL传递表单值，Post通过URL看不到表单域的值；&quot;&gt;&lt;/a&gt;Get是通过URL传递表单值，Post通过URL看不到表单域的值；&lt;/h3&gt;&lt;h3 id=&quot;Get传递的数据量是有限的，如果要传递大量数据则不能用Get，比如type-”file”上传文章、type-”password”传递密码或者用-gt-textarea-lt-发表大段文章，Post则没有这个限制；&quot;&gt;&lt;a href=&quot;#Get传递的数据量是有限的，如果要传递大量数据则不能用Get，比如type-”file”上传文章、type-”password”传递密码或者用-gt-textarea-lt-发表大段文章，Post则没有这个限制；&quot; class=&quot;headerlink&quot; title=&quot;Get传递的数据量是有限的，如果要传递大量数据则不能用Get，比如type=”file”上传文章、type=”password”传递密码或者用&amp;gt;textarea&amp;lt;发表大段文章，Post则没有这个限制；&quot;&gt;&lt;/a&gt;Get传递的数据量是有限的，如果要传递大量数据则不能用Get，比如type=”file”上传文章、type=”password”传递密码或者用&amp;gt;textarea&amp;lt;发表大段文章，Post则没有这个限制；&lt;/h3&gt;&lt;h3 id=&quot;Post会有浏览器提示重新提交表单的问题，Get则没有。&quot;&gt;&lt;a href=&quot;#Post会有浏览器提示重新提交表单的问题，Get则没有。&quot; class=&quot;headerlink&quot; title=&quot;Post会有浏览器提示重新提交表单的问题，Get则没有。&quot;&gt;&lt;/a&gt;Post会有浏览器提示重新提交表单的问题，Get则没有。&lt;/h3&gt;&lt;h3 id=&quot;对于Post的表单重新敲地址栏再刷新就不会提示重新提交了，因为重新敲地址就没有偷偷提交的的数据了。&quot;&gt;&lt;a href=&quot;#对于Post的表单重新敲地址栏再刷新就不会提示重新提交了，因为重新敲地址就没有偷偷提交的的数据了。&quot; class=&quot;headerlink&quot; title=&quot;对于Post的表单重新敲地址栏再刷新就不会提示重新提交了，因为重新敲地址就没有偷偷提交的的数据了。&quot;&gt;&lt;/a&gt;对于Post的表单重新敲地址栏再刷新就不会提示重新提交了，因为重新敲地址就没有偷偷提交的的数据了。&lt;/h3&gt;&lt;h3 id=&quot;Post方式的正确的地址很难直接发给他人。&quot;&gt;&lt;a href=&quot;#Post方式的正确的地址很难直接发给他人。&quot; class=&quot;headerlink&quot; title=&quot;Post方式的正确的地址很难直接发给他人。&quot;&gt;&lt;/a&gt;Post方式的正确的地址很难直接发给他人。&lt;/h3&gt;
-    
-    </summary>
-    
-    
-      <category term="ASP.NET" scheme="http://xj8c.cc/tags/ASP-NET/"/>
-    
-      <category term="get" scheme="http://xj8c.cc/tags/get/"/>
-    
-      <category term="post" scheme="http://xj8c.cc/tags/post/"/>
     
   </entry>
   

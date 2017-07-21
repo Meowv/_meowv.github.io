@@ -3,19 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>ReactNative基础 | 当然我在瞎扯</title>
+  <title>存储：与AsyncStorage相比，Realm更应该作为重点掌握内容 | 当然我在瞎扯</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="React Native基础本章提要  1.初识JSX 2.组件 3.Props和State  1.初识JSXReact Native抛弃了HTML，所以只好用JSX喽，在这里，我们来简单的了解一下JSX。">
+  <meta name="description" content="储存本章提要  1.AsyncStorage  2.Realm一个应用总是要存些东西的，我们要怎么做才能把数据存起来呢？我们这里有两个选择，一个是使用官方提供的AsyncStorage另一个是使用小型数据库。 当数据量不大，结构很简单的时候，我们来使用AsyncStorage这个key-value储存系统，当数据量较大的时候，我们就需要使用小型数据库了，这里我们会学习一个叫做Realm的数据库。">
 <meta name="keywords" content="ReactNative">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ReactNative基础">
-<meta property="og:url" content="http://xj8c.cc/2017/07/08/ReactNative-base/index.html">
+<meta property="og:title" content="存储：与AsyncStorage相比，Realm更应该作为重点掌握内容">
+<meta property="og:url" content="http://xj8c.cc/2017/07/12/ReactNative-storage/index.html">
 <meta property="og:site_name" content="当然我在瞎扯">
-<meta property="og:description" content="React Native基础本章提要  1.初识JSX 2.组件 3.Props和State  1.初识JSXReact Native抛弃了HTML，所以只好用JSX喽，在这里，我们来简单的了解一下JSX。">
-<meta property="og:updated_time" content="2017-07-19T08:37:34.789Z">
+<meta property="og:description" content="储存本章提要  1.AsyncStorage  2.Realm一个应用总是要存些东西的，我们要怎么做才能把数据存起来呢？我们这里有两个选择，一个是使用官方提供的AsyncStorage另一个是使用小型数据库。 当数据量不大，结构很简单的时候，我们来使用AsyncStorage这个key-value储存系统，当数据量较大的时候，我们就需要使用小型数据库了，这里我们会学习一个叫做Realm的数据库。">
+<meta property="og:image" content="https://meowv.github.io/images/6.1.png">
+<meta property="og:image" content="https://meowv.github.io/images/6.2.png">
+<meta property="og:updated_time" content="2017-07-21T03:30:58.721Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ReactNative基础">
-<meta name="twitter:description" content="React Native基础本章提要  1.初识JSX 2.组件 3.Props和State  1.初识JSXReact Native抛弃了HTML，所以只好用JSX喽，在这里，我们来简单的了解一下JSX。">
+<meta name="twitter:title" content="存储：与AsyncStorage相比，Realm更应该作为重点掌握内容">
+<meta name="twitter:description" content="储存本章提要  1.AsyncStorage  2.Realm一个应用总是要存些东西的，我们要怎么做才能把数据存起来呢？我们这里有两个选择，一个是使用官方提供的AsyncStorage另一个是使用小型数据库。 当数据量不大，结构很简单的时候，我们来使用AsyncStorage这个key-value储存系统，当数据量较大的时候，我们就需要使用小型数据库了，这里我们会学习一个叫做Realm的数据库。">
+<meta name="twitter:image" content="https://meowv.github.io/images/6.1.png">
   
     <link rel="alternative" href="/atom.xml" title="当然我在瞎扯" type="application/atom+xml">
   
@@ -256,11 +259,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-ReactNative-base" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ReactNative-storage" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/07/08/ReactNative-base/" class="article-date">
-      <time datetime="2017-07-08T08:18:48.000Z" itemprop="datePublished">2017-07-08</time>
+      <a href="/2017/07/12/ReactNative-storage/" class="article-date">
+      <time datetime="2017-07-12T08:28:22.000Z" itemprop="datePublished">2017-07-12</time>
 </a>
     </div>
   
@@ -273,7 +276,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      ReactNative基础
+      存储：与AsyncStorage相比，Realm更应该作为重点掌握内容
     </h1>
   
 
@@ -294,46 +297,67 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="React-Native基础"><a href="#React-Native基础" class="headerlink" title="React Native基础"></a>React Native基础</h1><p>本章提要</p>
-<ul>
-<li>1.初识JSX</li>
-<li>2.组件</li>
-<li>3.Props和State</li>
-</ul>
-<h2 id="1-初识JSX"><a href="#1-初识JSX" class="headerlink" title="1.初识JSX"></a>1.初识JSX</h2><p>React Native抛弃了HTML，所以只好用JSX喽，在这里，我们来简单的了解一下JSX。<br><a id="more"></a><br>JSX是一个JS的语法糖，写起来就像XML。嗯，如果你不知道什么是XML的话，就脑补HTML吧，<br>它们都需要一些标签。比如这样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Text&gt;&lt;/Text&gt;</div></pre></td></tr></table></figure>
-<p>还有这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Image /&gt;</div></pre></td></tr></table></figure></p>
-<p>怎么样，有没有一丝熟悉的感觉？<br>JSX就是这样简单，我们只需要一个<code>&lt;</code>加上组件名字和<code>/&gt;</code>就可以了（其中Text，Image就是组件名）</p>
-<h2 id="2-组件"><a href="#2-组件" class="headerlink" title="2.组件"></a>2.组件</h2><p>在React Native中，有这么几种组件，无状态组件，正常的组件和高阶组件。</p>
-<blockquote>
-<p>高阶组件以后补上</p>
-</blockquote>
-<p>无状态组件，顾名思义，就是没有状态的组件，写一个无状态组件就和写一个函数一样简单。由于无状态组件的性能较高，我们<br>一般会在App性能优化的时候使用无状态组件。<br>下面是一个无状态组件的例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const Hello = () =&gt; &#123;</div><div class="line">    return (</div><div class="line">        &lt;Text&gt;我是一个无状态组件&lt;/Text&gt;</div><div class="line">    )</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>其中，Hello是组件的名字，这里有个友情提示，在React Native中，组件的名字最好都是首字母大写，这样可以避免一些奇怪的BUG。<br>然后在return中写组件的内容，注意，使用文字的时候，一定要在文字外面套上Text组件，否则会红屏报错。<br>如果想要用Props(属性)，要传一个props参数，就像这样</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">const Hello = (props) =&gt; &#123;...&#125;</div></pre></td></tr></table></figure>
-<p>如果不知道什么是Props的话，别着急，一会儿会说到的。</p>
-<p>接下来是正常的组件。<br>正常的组件能做的事情比无状态组件多了不少 (´・ω・`)。<br>写起来是酱紫的，稍微复杂一点：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">class Hello extends Component &#123;</div><div class="line">    constructor(props) &#123;</div><div class="line">    super(props);</div><div class="line">    this.state = &#123;&#125;;</div><div class="line">  &#125;</div><div class="line">    render() &#123;</div><div class="line">        return (</div><div class="line">            &lt;View&gt;</div><div class="line">                &lt;Text&gt;Hi,很高兴认识你&lt;/Text&gt;</div><div class="line">            &lt;/View&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>这是一个比较完整的组件，包含了Props和State(状态)。<br>在正常组件中使用state和props，我们需要使用constructor来初始化一下~<br>这里的super(props)是为了可以在constructor使用<code>this.props</code>，<br>当然，如果不需要这些，则不用写（虽然没写，但是按照ES6规范，class需要有一个constructor，所以constructor会被自动加上）。就像这样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">class Hello extends Component &#123;</div><div class="line">    render() &#123;</div><div class="line">        return (</div><div class="line">            &lt;View&gt;</div><div class="line">                &lt;Text&gt;略略略/Text&gt;</div><div class="line">            &lt;/View&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="3-Props和State"><a href="#3-Props和State" class="headerlink" title="3.Props和State"></a>3.Props和State</h2><p>嗯哼，刚才稍微提了一下Props和State，是不是很想知道这俩是啥嘞~<br>别着急，我这就说(´・ω・`)<br>Props的意思是属性，在React中，我们可以实现组件的复用(毕竟不复用组件太浪费了)。为了实现<br>组件的复用，我们希望可以对组件做些定制，这个时候，我们就需要使用Props了。往组件中传些不同的参数，从而使组件具有不同的功能。我们称这些<br>参数为Props。如果不太理解，没关系，来看这个栗子。</p>
-<p>设计师为衣服厂设计了一些衣服，但是为了照顾到不同的人群，所以要有不同的型号。高的，矮的，胖的，瘦的。虽然有不同的型号，但是<br>是同一款衣服，我们可以认为高矮胖瘦是参数，衣服的款式是一个组件。</p>
-<p>我们来看一下Props怎么用。首先写一个叫做Eat的组件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">class Eat extends Component &#123;</div><div class="line">    render() &#123;</div><div class="line">        return (</div><div class="line">                &lt;Text&gt;我想吃&lt;/Text&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>在组件里使用Props，我们需要一对花括号<code>{}</code>(写其他的JS语句也需要花括号)就像这样:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">return (</div><div class="line">    &lt;Text&gt;我想吃&#123;this.props.food&#125;&lt;/Text&gt;</div><div class="line">)</div></pre></td></tr></table></figure>
-<p>在props后面跟着的是属性的名字</p>
-<p>接下来，我们写另一个组件Dinner，并引入Eat组件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">class Dinner extends Component &#123;</div><div class="line">    render() &#123;</div><div class="line">        return (</div><div class="line">                &lt;Eat /&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>然后使用props:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Eat food=&apos;鱼&apos; /&gt;</div></pre></td></tr></table></figure>
-<p>这样最终会显示我想吃鱼，这里的鱼是food的值。到这里，Props的栗子就结束了，我们来看看State。</p>
-<p>一般来说，组件是需要和用户进行交互的，组件会随着随着交互而发生变化，这里的变化指的是State也就是状态。</p>
-<p>下面是一个用到了状态的组件:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">class NeedState extends Component &#123;</div><div class="line">    constructor(props) &#123;</div><div class="line">    super(props);</div><div class="line">    this.state = &#123; text: &apos;&apos; &#125;;</div><div class="line">  &#125;</div><div class="line">    render() &#123;</div><div class="line">        return (</div><div class="line">            &lt;View&gt;</div><div class="line">                &lt;Text onPress=&#123;() =&gt; &#123; this.setState(&#123; text: &apos;状态变了&apos; &#125;)&#125; &#125;&gt;点我！&lt;/Text&gt;</div><div class="line">                &lt;Text&gt;期待会发生的事情&lt;/Text&gt;</div><div class="line">            &lt;/View&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>首先，我们需要constructor函数来初始化状态，别忘记用<code>this.state</code>写入状态的名字。<code>onPress</code>可以帮我们在点了某个组件之后<br>执行一定的动作。我们在这里用它来触发<code>setState</code>来改变状态。</p>
-<p>如果没有什么奇怪的错误的话，点击<code>点我</code>这个文本之后，下面的文字会变成<code>状态变了</code>。</p>
-<p>State大概就是这么用的，没什么难度。在使用React Native的过程中，我们会时常用到Props和State，所以记下它们的用法还是很有必要的。</p>
+        <h1 id="储存"><a href="#储存" class="headerlink" title="储存"></a>储存</h1><p>本章提要<br>  1.AsyncStorage<br>  2.Realm<br>一个应用总是要存些东西的，我们要怎么做才能把数据存起来呢？我们这里有两个选择，一个是使用官方提供的AsyncStorage另一个是使用小型数据库。</p>
+<p>当数据量不大，结构很简单的时候，我们来使用AsyncStorage这个key-value储存系统，当数据量较大的时候，我们就需要使用小型数据库了，这里我们<br>会学习一个叫做Realm的数据库。<br><a id="more"></a><br>首先，我们来看看AsyncStorage吧~</p>
+<h2 id="AsyncStorage"><a href="#AsyncStorage" class="headerlink" title="AsyncStorage"></a>AsyncStorage</h2><p>与数据打交道，免不了对数据进行增加，删除，更改和查找。我们来看看如何用AsyncStorage实现这些。</p>
+<p>增加数据：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">`` </div><div class="line">save(key, value) &#123;</div><div class="line">  AsyncStorage.setItem(key,value).then(</div><div class="line">    (errs)=&gt;&#123;</div><div class="line">      if (!errs) &#123;</div><div class="line">        //xxx</div><div class="line">      &#125;else &#123;</div><div class="line">        //xxx</div><div class="line">      &#125;</div><div class="line">    &#125;)  </div><div class="line">&#125;</div><div class="line">``</div></pre></td></tr></table></figure>
+<p>在这里，我们使用了promise，这样会使代码看起来舒服很多。虽然看起来很多，实际上，只要知道</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">AsyncStorage.setItem(key,value)</div></pre></td></tr></table></figure>
+<p>就可以了，我们用<code>setItem</code>来将key和value存储起来，看到这里想必你已经知道了为什么AsyncStorage是key-value系统了。</p>
+<p>由于有了key，所以我们可以用key进行查询：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">get(key) &#123;</div><div class="line">   AsyncStorage.getItem(key)</div><div class="line">            .then(  </div><div class="line">                (result)=&gt; &#123;   </div><div class="line">                    if (!result) &#123;</div><div class="line">                      //xxx</div><div class="line">                    &#125;</div><div class="line">                    //返回结果</div><div class="line">                &#125;</div><div class="line">            ).catch((error)=&gt; &#123;  </div><div class="line">              //错误处理</div><div class="line">        &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>数据我们存完了，但是如果数据没用了怎么办？删掉呗。和查询数据很像，删除也需要用到key：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">del(key) &#123;</div><div class="line">   AsyncStorage.removeItem(key).</div><div class="line">            then(</div><div class="line">            ()=&gt;&#123;</div><div class="line">              //删除成功</div><div class="line">            &#125;</div><div class="line">          ).catch((error)=&gt; &#123;  </div><div class="line">              //错误处理</div><div class="line">        &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>至于修改数据，其实写法和增加数据一样，当你需要修改一项数据的时候，直接传入key和一个新的值就可以了。</p>
+<h2 id="Realm"><a href="#Realm" class="headerlink" title="Realm"></a>Realm</h2><p>前面的AsyncStorage只能存些小东西，数据量一大就开始捉襟见肘了，到了这种时候就该用Realm了。<br>其实用SQLite也行，不过不怎么好用，索性就不用了。当初作者君在用Realm的时候版本号才是0.14转眼间就到1.0.0了，所以请放心的使用Realm吧。</p>
+<p>Realm并不是React Native自己就有的，所以我们需要安装Realm：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save realm</div></pre></td></tr></table></figure>
+<p>安装好后大概是这样：</p>
+<p><img src="https://meowv.github.io/images/6.1.png" alt="PNG">  </p>
+<p>然后执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">react-native link realm</div></pre></td></tr></table></figure>
+<p><img src="https://meowv.github.io/images/6.2.png" alt="PNG">  </p>
+<p>装完Realm之后得重新构建一下App：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">react-native run-android</div></pre></td></tr></table></figure>
+<p><em>Tips：由于网络的问题呢，可能会构建失败，多试几次就可以构建完成了</em></p>
+<p>接下来测试一下Realm是不是安装成功了，先是引入Realm：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import Realm from &apos;realm&apos;;</div></pre></td></tr></table></figure>
+<p>下面是Realm官方文档的例子的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">export default class &lt;project-name&gt; extends Component &#123;</div><div class="line">  render() &#123;</div><div class="line">    let realm = new Realm(&#123;</div><div class="line">     schema: [&#123;name: &apos;Dog&apos;, properties: &#123;name: &apos;string&apos;&#125;&#125;]</div><div class="line">   &#125;);</div><div class="line"></div><div class="line">   realm.write(() =&gt; &#123;</div><div class="line">     realm.create(&apos;Dog&apos;, &#123;name: &apos;Rex&apos;&#125;);</div><div class="line">   &#125;);</div><div class="line">    return (</div><div class="line">      &lt;View style=&#123;styles.container&#125;&gt;</div><div class="line">        &lt;Text style=&#123;styles.welcome&#125;&gt;</div><div class="line">          Count of Dogs in Realm: &#123;realm.objects(&apos;Dog&apos;).length&#125;</div><div class="line">        &lt;/Text&gt;</div><div class="line">      &lt;/View&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>&lt;project-name&gt;</code>是你的项目名称，别弄错了。然后刷新一下，界面上的数字就会加1。如果程序可以顺利运行，<br>Realm就已经安装好了。</p>
+<p>先简单的解释一下上面的代码，首先我们新建了一个叫做Dog的Schema，下面的<code>write</code>是写入数据，组件中的<br><code>realm.objects(&#39;Dog&#39;).length</code>会返回Dog中的数据个数。每次刷新App，都会写入一条数据，所以数字会加一。</p>
+<p>有了一个简单的认识之后，让我们来详细的了解Realm吧！</p>
+<h3 id="Schema"><a href="#Schema" class="headerlink" title="Schema"></a>Schema</h3><p>在使用Realm的时候离不开Schema，一个大些的App一般会用到多个Schema，所以在正式使用Realm的时候<br>不能像上面的例子一样敷衍，我们需要进行一个简单的封装。新建一个叫Schema.js文件，它可以在app文件夹下（没有app文件夹就自己新建一个），</p>
+<p>在文件头部引入Realm：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import Realm from &apos;realm&apos;;</div></pre></td></tr></table></figure>
+<p>然后创建一个叫Todo的class：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">class Todo extends Realm.Object &#123;&#125;</div></pre></td></tr></table></figure>
+<p>不喜欢这个名字的话，你可以自己随便起一个名字。</p>
+<p>然后来写Schema：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Todo.schema = &#123;</div><div class="line">    name:&apos;Todo&apos;,</div><div class="line">    primaryKey: &apos;id&apos;,</div><div class="line">    properties: &#123;</div><div class="line">        title: &#123;type: &apos;string&apos;&#125;,</div><div class="line">        id: &#123;type: &apos;string&apos;, indexed: true&#125;,</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这里我们用id来作为主键，由于这个id具有唯一性，我们一会儿会写一个小程序来生成id。 </p>
+<p>然后导出模块：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">export default new Realm(&#123;schema: [Todo]&#125;)</div><div class="line">``` </div><div class="line"></div><div class="line">如果你需要多个Schema，在后面加上就好：</div></pre></td></tr></table></figure>
+<p>export default new Realm({schema: [Todo, Category, xxx, xxx]})<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">然后在你需要使用储存的地方引入Schema.js。</div><div class="line"></div><div class="line">比如这样引入：</div></pre></td></tr></table></figure></p>
+<p>import realm from ‘./Schema’;<br>//注意文件位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">然后写一个生成id(为了不生成重复的id，我们使用guid，别管这是啥，只要知道这东西一般不会重复就好了)的函数：</div></pre></td></tr></table></figure></p>
+<p>const guid = () =&gt; {<br>  return ‘xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx’<br>    .replace(/[xy]/g, (c) =&gt; {<br>      var r = Math.random() * 16 | 0, v = c == ‘x’ ? r : (r &amp; 0x3 | 0x8);<br>      return v.toString(16);<br>    });<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">接下来，我们来看如何去用Realm（也就是增删改查）。</div><div class="line"></div><div class="line">我们来写一个输入框来收集数据：</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">![PNG](https://meowv.github.io/images/6.4.png)  </div><div class="line"></div><div class="line">不出意外的话，下边会有一个黄色的提示（前边的章节有说过），先不要管它，我们一会儿解决。</div><div class="line">为了储存数据，我们需要把输入的文字放到state里面，上面的`onChangeText`就是干这个的，对了，别忘记加一个叫title的状态：</div></pre></td></tr></table></figure>
+<p>constructor(props){<br>      super(props);<br>      this.state = {<br>        text: null<br>      };<br>    }<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Ok，搞定这些后我们来写一个写入数据的方法，我们起名叫write，write应该写在constructor下边：</div></pre></td></tr></table></figure></p>
+<p>write(){<br>      realm.write(()=&gt;{<br>        realm.create(‘Todo’,{ title: this.state.title, id: guid() });<br>      });<br>    }<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">写入数据需要用到`realm.write()`和`realm.create()`，Todo是Schema，后边跟着的是要写入的数据，title是从</div><div class="line">state中取出来的，然后我们调用`guid()`来生成一个不重复的id。</div><div class="line">接下来把这个方法绑到按钮上，实现点击添加数据：</div></pre></td></tr></table></figure></p>
+<p><button title="添加" onpress="{" ()=""> this.write() }/&gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">别忘记写this哦，write是内部的方法，不用this会引用不到的。</div><div class="line"></div><div class="line">我们可以在下边写一个文本来显示Todo中数据的条数，就和上面的例子一样，我们在Button下面写个换行符：</div></pre></td></tr></table></figure></button></p>
+<p><text>{‘\n’}</text><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">然后把数据放到state里：</div></pre></td></tr></table></figure></p>
+<p>this.state = {<br>  text: null,<br>  data: realm.objects(‘Todo’)<br>};<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">在换行符下面继续写：</div></pre></td></tr></table></figure></p>
+<p><text>{ this.state.data.length }</text><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">然后才是重点，Realm是可以使数据实时更新的，只要增加一个监听就好了，我们把这个监听写在构造里面：</div></pre></td></tr></table></figure></p>
+<p>this.state = {…}<br>realm.addListener(‘change’, () =&gt; {<br>  this.forceUpdate()<br>});<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">然后输入一个数据，保存，下面的数字就可以实时的变化了~</div><div class="line"></div><div class="line">然后我们来看查询是怎样的，界面的话把上面的代码复制过去，改几个字就好：</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">然后把find放到state里，正如我们之前做过的一样：</div></pre></td></tr></table></figure>
+<p>this.state = {<br>  text: null,<br>  find: null,<br>  data: realm.objects(‘Todo’)<br>};<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">然后我们写一个叫find的方法,这个方法稍稍有些复杂：</div></pre></td></tr></table></figure></p>
+<p>find () {<br>  realm.objects(‘Todo’)<br>      .filtered(‘title = ‘ + ‘“‘ + this.state.find + ‘“‘)<br>      .forEach(result =&gt; ToastAndroid.show(result.id, ToastAndroid.SHORT));<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">我们借助了一个叫做`ToastAndroid`的组件来实现显示查找结果的id，所以别忘记引入这个组件。</div><div class="line">`filtered`是一个过滤器，我们在里面写查询代码，注意喽，查询的值应该是一个字符串所以在外面包裹了双引号。</div><div class="line">由于返回的结果稍稍有些复杂，所以我们用`forEach`来处理一下，使其获得id。</div><div class="line"></div><div class="line">效果应该是这个样子的：</div><div class="line"></div><div class="line">![PNG](https://meowv.github.io/images/6.5.png)  </div><div class="line"></div><div class="line">至于修改和删除就很简单了，所以这里只给出核心代码，作者君知道你很聪明，所以来想想具体怎么用把~</div><div class="line"></div><div class="line">修改：</div></pre></td></tr></table></figure></p>
+<p>realm.write(() =&gt; {<br>  realm.create(‘Todo’, { id: xxx, title: xxx }, true);<br>});<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">删除：</div></pre></td></tr></table></figure></p>
+<p>realm.write(() =&gt; {<br>  const todo = realm.objects(‘Todo.filtered(‘id = xxxxx’);<br>  realm.delete(todo);<br>});<br>```</p>
+<p>小提示：</p>
+<p>唔？ID真的没有用吗？具体可以起到什么作用呢？</p>
+<p>想明白这两点，修改和删除就没问题了。另外，有没有发现修改，增加，删除都是在write中进行的呢？</p>
 
       
       
@@ -388,13 +412,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/07/08/ReactNative-base/">ReactNative基础</a></p>
+        <p><span>本文标题:</span><a href="/2017/07/12/ReactNative-storage/">存储：与AsyncStorage相比，Realm更应该作为重点掌握内容</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 阿星Plus 的个人博客">阿星Plus</a></p>
-        <p><span>发布时间:</span>2017年07月08日 - 16时18分</p>
-        <p><span>最后更新:</span>2017年07月19日 - 16时37分</p>
+        <p><span>发布时间:</span>2017年07月12日 - 16时28分</p>
+        <p><span>最后更新:</span>2017年07月21日 - 11时30分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/07/08/ReactNative-base/" title="ReactNative基础">http://xj8c.cc/2017/07/08/ReactNative-base/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://xj8c.cc/2017/07/08/ReactNative-base/　　作者: 阿星Plus" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/07/12/ReactNative-storage/" title="存储：与AsyncStorage相比，Realm更应该作为重点掌握内容">http://xj8c.cc/2017/07/12/ReactNative-storage/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://xj8c.cc/2017/07/12/ReactNative-storage/　　作者: 阿星Plus" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -407,18 +431,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2017/07/09/ReactNative-run/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/07/13/ReactNative-ListView-FlatList/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          启动你的第一个React Native 应用
+          带你了解ListView及FlatList
         
       </div>
     </a>
   
   
-    <a href="/2017/07/07/ReactNative-introduce/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ReactNative介绍</div>
+    <a href="/2017/07/11/ReactNative-style-layout/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">React Native中的样式，Flexbox布局及其他内容</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -429,7 +453,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#React-Native基础"><span class="toc-number">1.</span> <span class="toc-text">React Native基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-初识JSX"><span class="toc-number">1.1.</span> <span class="toc-text">1.初识JSX</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-组件"><span class="toc-number">1.2.</span> <span class="toc-text">2.组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Props和State"><span class="toc-number">1.3.</span> <span class="toc-text">3.Props和State</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#储存"><span class="toc-number">1.</span> <span class="toc-text">储存</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#AsyncStorage"><span class="toc-number">1.1.</span> <span class="toc-text">AsyncStorage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Realm"><span class="toc-number">1.2.</span> <span class="toc-text">Realm</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Schema"><span class="toc-number">1.2.1.</span> <span class="toc-text">Schema</span></a></li></ol></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -476,7 +500,7 @@
 
     
       <!--PC和WAP自适应版-->
-<div id="SOHUCS" sid="ReactNative基础"></div> 
+<div id="SOHUCS" sid="存储：与AsyncStorage相比，Realm更应该作为重点掌握内容"></div> 
 <script type="text/javascript"> 
 (function(){ 
 var appid = 'cyt1UJT89'; 
@@ -490,13 +514,13 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/07/09/ReactNative-run/" title="上一篇: 启动你的第一个React Native 应用">
+            <a href="/2017/07/13/ReactNative-ListView-FlatList/" title="上一篇: 带你了解ListView及FlatList">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2017/07/07/ReactNative-introduce/" title="下一篇: ReactNative介绍">
+            <a href="/2017/07/11/ReactNative-style-layout/" title="下一篇: React Native中的样式，Flexbox布局及其他内容">
                 <i class="fa fa-angle-right"></i>
             </a>
         

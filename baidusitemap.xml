@@ -4,8 +4,76 @@
 
     
   <url>
+    <loc>http://xj8c.cc/2017/07/17/ReactNative-styles/</loc>
+    <lastmod>2017-07-21T03:32:22.998Z</lastmod>
+    <data>
+        <display>
+        <title>ReactNative样式总览</title>
+        <pubTime>2017-07-17T08:46:47.000Z</pubTime>
+        
+        <tag>ReactNative</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xj8c.cc/2017/07/12/ReactNative-storage/</loc>
+    <lastmod>2017-07-21T03:30:58.721Z</lastmod>
+    <data>
+        <display>
+        <title>存储：与AsyncStorage相比，Realm更应该作为重点掌握内容</title>
+        <pubTime>2017-07-12T08:28:22.000Z</pubTime>
+        
+        <tag>ReactNative</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xj8c.cc/2017/07/11/ReactNative-style-layout/</loc>
+    <lastmod>2017-07-21T03:29:22.951Z</lastmod>
+    <data>
+        <display>
+        <title>React Native中的样式，Flexbox布局及其他内容</title>
+        <pubTime>2017-07-11T08:25:59.000Z</pubTime>
+        
+        <tag>ReactNative</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xj8c.cc/2017/07/10/ReactNative-module/</loc>
+    <lastmod>2017-07-21T03:29:16.975Z</lastmod>
+    <data>
+        <display>
+        <title>React Native常用的组件</title>
+        <pubTime>2017-07-10T08:24:39.000Z</pubTime>
+        
+        <tag>ReactNative</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xj8c.cc/2017/07/15/ReactNative-net/</loc>
-    <lastmod>2017-07-19T08:51:38.840Z</lastmod>
+    <lastmod>2017-07-21T03:29:11.611Z</lastmod>
     <data>
         <display>
         <title>掌握React Native的Fetch Api</title>
@@ -21,8 +89,25 @@
 
     
   <url>
+    <loc>http://xj8c.cc/2017/07/14/ReactNative-navigation/</loc>
+    <lastmod>2017-07-21T03:29:06.068Z</lastmod>
+    <data>
+        <display>
+        <title>是时候用上React Navigation了</title>
+        <pubTime>2017-07-14T08:42:18.000Z</pubTime>
+        
+        <tag>ReactNative</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xj8c.cc/2017/07/16/ReactNative-build/</loc>
-    <lastmod>2017-07-19T08:51:34.298Z</lastmod>
+    <lastmod>2017-07-21T03:29:02.638Z</lastmod>
     <data>
         <display>
         <title>打包你的App</title>
@@ -38,14 +123,31 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2017/07/17/ReactNative-styles/</loc>
-    <lastmod>2017-07-19T08:51:30.372Z</lastmod>
+    <loc>http://xj8c.cc/2017/07/13/ReactNative-ListView-FlatList/</loc>
+    <lastmod>2017-07-21T03:28:53.113Z</lastmod>
     <data>
         <display>
-        <title>ReactNative样式总览</title>
-        <pubTime>2017-07-17T08:46:47.000Z</pubTime>
+        <title>带你了解ListView及FlatList</title>
+        <pubTime>2017-07-13T08:31:08.000Z</pubTime>
         
         <tag>ReactNative</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xj8c.cc/2017/06/01/my-internship-record/</loc>
+    <lastmod>2017-07-19T08:58:43.383Z</lastmod>
+    <data>
+        <display>
+        <title>我的实习记录</title>
+        <pubTime>2017-05-31T16:00:00.000Z</pubTime>
+        
+        <tag>实习</tag>
          
          
            
@@ -72,97 +174,12 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2017/07/14/ReactNative-navigation/</loc>
-    <lastmod>2017-07-19T08:51:13.158Z</lastmod>
-    <data>
-        <display>
-        <title>是时候用上React Navigation了</title>
-        <pubTime>2017-07-14T08:42:18.000Z</pubTime>
-        
-        <tag>ReactNative</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xj8c.cc/2017/06/01/my-internship-record/</loc>
-    <lastmod>2017-07-19T08:38:26.948Z</lastmod>
-    <data>
-        <display>
-        <title>我的实习记录</title>
-        <pubTime>2017-05-31T16:00:00.000Z</pubTime>
-        
-        <tag>实习</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xj8c.cc/2017/07/13/ReactNative-ListView-FlatList/</loc>
-    <lastmod>2017-07-19T08:37:55.595Z</lastmod>
-    <data>
-        <display>
-        <title>带你了解ListView及FlatList</title>
-        <pubTime>2017-07-13T08:31:08.000Z</pubTime>
-        
-        <tag>ReactNative</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xj8c.cc/2017/07/11/ReactNative-style-layout/</loc>
-    <lastmod>2017-07-19T08:37:44.039Z</lastmod>
-    <data>
-        <display>
-        <title>React Native中的样式，Flexbox布局及其他内容</title>
-        <pubTime>2017-07-11T08:25:59.000Z</pubTime>
-        
-        <tag>ReactNative</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://xj8c.cc/2017/07/08/ReactNative-base/</loc>
     <lastmod>2017-07-19T08:37:34.789Z</lastmod>
     <data>
         <display>
         <title>ReactNative基础</title>
         <pubTime>2017-07-08T08:18:48.000Z</pubTime>
-        
-        <tag>ReactNative</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xj8c.cc/2017/07/10/ReactNative-module/</loc>
-    <lastmod>2017-07-19T08:37:27.625Z</lastmod>
-    <data>
-        <display>
-        <title>React Native常用的组件</title>
-        <pubTime>2017-07-10T08:24:39.000Z</pubTime>
         
         <tag>ReactNative</tag>
          
@@ -299,23 +316,6 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/10/20/xml-note-1/</loc>
-    <lastmod>2017-05-26T06:29:50.786Z</lastmod>
-    <data>
-        <display>
-        <title>XML学习笔记(一)</title>
-        <pubTime>2015-10-20T14:52:19.000Z</pubTime>
-        
-        <tag>xml</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://xj8c.cc/2015/03/22/top%2010%20IT%20jobs%20in%202015/</loc>
     <lastmod>2017-05-26T06:29:50.786Z</lastmod>
     <data>
@@ -326,6 +326,23 @@
         <tag>互联网</tag>
          
         <tag>IT</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xj8c.cc/2015/10/20/xml-note-1/</loc>
+    <lastmod>2017-05-26T06:29:50.786Z</lastmod>
+    <data>
+        <display>
+        <title>XML学习笔记(一)</title>
+        <pubTime>2015-10-20T14:52:19.000Z</pubTime>
+        
+        <tag>xml</tag>
          
          
            
@@ -352,16 +369,16 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/08/05/windows10-iso/</loc>
+    <loc>http://xj8c.cc/2015/08/02/Win10-ten-points/</loc>
     <lastmod>2017-05-26T06:29:50.724Z</lastmod>
     <data>
         <display>
-        <title>Win10正式版微软官方原版ISO系统镜像下载大全</title>
-        <pubTime>2015-08-05T10:22:37.000Z</pubTime>
+        <title>Win10的十个亮点</title>
+        <pubTime>2015-08-02T01:45:08.000Z</pubTime>
         
         <tag>win10</tag>
          
-        <tag>原版系统</tag>
+        <tag>微软</tag>
          
          
            
@@ -390,16 +407,16 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/08/02/Win10-ten-points/</loc>
+    <loc>http://xj8c.cc/2015/08/05/windows10-iso/</loc>
     <lastmod>2017-05-26T06:29:50.724Z</lastmod>
     <data>
         <display>
-        <title>Win10的十个亮点</title>
-        <pubTime>2015-08-02T01:45:08.000Z</pubTime>
+        <title>Win10正式版微软官方原版ISO系统镜像下载大全</title>
+        <pubTime>2015-08-05T10:22:37.000Z</pubTime>
         
         <tag>win10</tag>
          
-        <tag>微软</tag>
+        <tag>原版系统</tag>
          
          
            
@@ -445,14 +462,14 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/07/27/vs-shortcuts/</loc>
+    <loc>http://xj8c.cc/2015/04/17/why-is-the-chinese-mobile-number-11/</loc>
     <lastmod>2017-05-26T06:29:50.633Z</lastmod>
     <data>
         <display>
-        <title>必须知道的 Visual Studio 快捷键</title>
-        <pubTime>2015-07-27T12:21:47.000Z</pubTime>
+        <title>揭秘：中国手机号码为什么是11位数？</title>
+        <pubTime>2015-04-17T08:37:14.000Z</pubTime>
         
-        <tag>Visual Studio</tag>
+        <tag>手机</tag>
          
          
            
@@ -462,14 +479,14 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/04/17/why-is-the-chinese-mobile-number-11/</loc>
+    <loc>http://xj8c.cc/2015/07/27/vs-shortcuts/</loc>
     <lastmod>2017-05-26T06:29:50.633Z</lastmod>
     <data>
         <display>
-        <title>揭秘：中国手机号码为什么是11位数？</title>
-        <pubTime>2015-04-17T08:37:14.000Z</pubTime>
+        <title>必须知道的 Visual Studio 快捷键</title>
+        <pubTime>2015-07-27T12:21:47.000Z</pubTime>
         
-        <tag>手机</tag>
+        <tag>Visual Studio</tag>
          
          
            
@@ -515,6 +532,21 @@
 
     
   <url>
+    <loc>http://xj8c.cc/2015/08/07/the-30-most-difficult-questions-to-answer-in-history/</loc>
+    <lastmod>2017-05-26T06:29:50.551Z</lastmod>
+    <data>
+        <display>
+        <title>史上最难回答的30个问题，没有一人都能答对！</title>
+        <pubTime>2015-08-07T12:55:58.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xj8c.cc/2015/10/28/test-case-design-advanced(bottom)/</loc>
     <lastmod>2017-05-26T06:29:50.551Z</lastmod>
     <data>
@@ -524,21 +556,6 @@
         
         <tag>软件测试</tag>
          
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xj8c.cc/2015/08/07/the-30-most-difficult-questions-to-answer-in-history/</loc>
-    <lastmod>2017-05-26T06:29:50.551Z</lastmod>
-    <data>
-        <display>
-        <title>史上最难回答的30个问题，没有一人都能答对！</title>
-        <pubTime>2015-08-07T12:55:58.000Z</pubTime>
-        
          
            
         </display>
@@ -564,23 +581,6 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/07/13/ten-programming-languages/</loc>
-    <lastmod>2017-05-26T06:29:50.509Z</lastmod>
-    <data>
-        <display>
-        <title>你必须知道的十个编程语言</title>
-        <pubTime>2015-07-13T13:44:57.000Z</pubTime>
-        
-        <tag>编程</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://xj8c.cc/2015/05/04/SqlServer2008/</loc>
     <lastmod>2017-05-26T06:29:50.509Z</lastmod>
     <data>
@@ -593,6 +593,23 @@
         <tag>SqlServer</tag>
          
         <tag>数据库</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xj8c.cc/2015/07/13/ten-programming-languages/</loc>
+    <lastmod>2017-05-26T06:29:50.509Z</lastmod>
+    <data>
+        <display>
+        <title>你必须知道的十个编程语言</title>
+        <pubTime>2015-07-13T13:44:57.000Z</pubTime>
+        
+        <tag>编程</tag>
          
          
            
@@ -833,6 +850,25 @@
 
     
   <url>
+    <loc>http://xj8c.cc/2015/07/16/asp.net-knowledge-point-summary-5/</loc>
+    <lastmod>2017-05-26T06:29:50.154Z</lastmod>
+    <data>
+        <display>
+        <title>Asp.net知识点总结(五)</title>
+        <pubTime>2015-07-16T11:47:48.000Z</pubTime>
+        
+        <tag>ASP.NET</tag>
+         
+        <tag>技术教程</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xj8c.cc/2015/07/06/bigdata-internet-thinking-O2O-crowdfunding/</loc>
     <lastmod>2017-05-26T06:29:50.154Z</lastmod>
     <data>
@@ -860,25 +896,6 @@
         <pubTime>2015-10-25T05:21:45.000Z</pubTime>
         
         <tag>软件测试</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xj8c.cc/2015/07/16/asp.net-knowledge-point-summary-5/</loc>
-    <lastmod>2017-05-26T06:29:50.154Z</lastmod>
-    <data>
-        <display>
-        <title>Asp.net知识点总结(五)</title>
-        <pubTime>2015-07-16T11:47:48.000Z</pubTime>
-        
-        <tag>ASP.NET</tag>
-         
-        <tag>技术教程</tag>
          
          
            
