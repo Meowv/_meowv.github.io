@@ -316,6 +316,23 @@
 
     
   <url>
+    <loc>http://xj8c.cc/2015/10/20/xml-note-1/</loc>
+    <lastmod>2017-05-26T06:29:50.786Z</lastmod>
+    <data>
+        <display>
+        <title>XML学习笔记(一)</title>
+        <pubTime>2015-10-20T14:52:19.000Z</pubTime>
+        
+        <tag>xml</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xj8c.cc/2015/03/22/top%2010%20IT%20jobs%20in%202015/</loc>
     <lastmod>2017-05-26T06:29:50.786Z</lastmod>
     <data>
@@ -326,23 +343,6 @@
         <tag>互联网</tag>
          
         <tag>IT</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xj8c.cc/2015/10/20/xml-note-1/</loc>
-    <lastmod>2017-05-26T06:29:50.786Z</lastmod>
-    <data>
-        <display>
-        <title>XML学习笔记(一)</title>
-        <pubTime>2015-10-20T14:52:19.000Z</pubTime>
-        
-        <tag>xml</tag>
          
          
            
@@ -369,25 +369,6 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/08/05/windows10-iso/</loc>
-    <lastmod>2017-05-26T06:29:50.724Z</lastmod>
-    <data>
-        <display>
-        <title>Win10正式版微软官方原版ISO系统镜像下载大全</title>
-        <pubTime>2015-08-05T10:22:37.000Z</pubTime>
-        
-        <tag>win10</tag>
-         
-        <tag>原版系统</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://xj8c.cc/2015/04/05/win7-cmd/</loc>
     <lastmod>2017-05-26T06:29:50.724Z</lastmod>
     <data>
@@ -398,6 +379,25 @@
         <tag>win7</tag>
          
         <tag>命令行</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xj8c.cc/2015/08/05/windows10-iso/</loc>
+    <lastmod>2017-05-26T06:29:50.724Z</lastmod>
+    <data>
+        <display>
+        <title>Win10正式版微软官方原版ISO系统镜像下载大全</title>
+        <pubTime>2015-08-05T10:22:37.000Z</pubTime>
+        
+        <tag>win10</tag>
+         
+        <tag>原版系统</tag>
          
          
            
@@ -532,6 +532,23 @@
 
     
   <url>
+    <loc>http://xj8c.cc/2015/10/28/test-case-design-advanced(bottom)/</loc>
+    <lastmod>2017-05-26T06:29:50.551Z</lastmod>
+    <data>
+        <display>
+        <title>测试用例设计进阶(下)</title>
+        <pubTime>2015-10-28T13:58:11.000Z</pubTime>
+        
+        <tag>软件测试</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xj8c.cc/2015/08/07/the-30-most-difficult-questions-to-answer-in-history/</loc>
     <lastmod>2017-05-26T06:29:50.551Z</lastmod>
     <data>
@@ -555,23 +572,6 @@
         <pubTime>2015-12-10T08:05:19.000Z</pubTime>
         
         <tag>逆袭</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xj8c.cc/2015/10/28/test-case-design-advanced(bottom)/</loc>
-    <lastmod>2017-05-26T06:29:50.551Z</lastmod>
-    <data>
-        <display>
-        <title>测试用例设计进阶(下)</title>
-        <pubTime>2015-10-28T13:58:11.000Z</pubTime>
-        
-        <tag>软件测试</tag>
          
          
            
@@ -619,6 +619,21 @@
 
     
   <url>
+    <loc>http://xj8c.cc/2015/05/25/shopping-online/</loc>
+    <lastmod>2017-05-26T06:29:50.493Z</lastmod>
+    <data>
+        <display>
+        <title>Shopping Online</title>
+        <pubTime>2015-05-25T09:50:23.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xj8c.cc/2015/10/24/overview-of-software-testing/</loc>
     <lastmod>2017-05-26T06:29:50.493Z</lastmod>
     <data>
@@ -628,21 +643,6 @@
         
         <tag>软件测试</tag>
          
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xj8c.cc/2015/05/25/shopping-online/</loc>
-    <lastmod>2017-05-26T06:29:50.493Z</lastmod>
-    <data>
-        <display>
-        <title>Shopping Online</title>
-        <pubTime>2015-05-25T09:50:23.000Z</pubTime>
-        
          
            
         </display>
@@ -850,23 +850,6 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/10/25/boundary-value/</loc>
-    <lastmod>2017-05-26T06:29:50.154Z</lastmod>
-    <data>
-        <display>
-        <title>边界值分析法相关概念 — 边界点相关概念</title>
-        <pubTime>2015-10-25T05:21:45.000Z</pubTime>
-        
-        <tag>软件测试</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://xj8c.cc/2015/07/16/asp.net-knowledge-point-summary-5/</loc>
     <lastmod>2017-05-26T06:29:50.154Z</lastmod>
     <data>
@@ -877,6 +860,23 @@
         <tag>ASP.NET</tag>
          
         <tag>技术教程</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xj8c.cc/2015/10/25/boundary-value/</loc>
+    <lastmod>2017-05-26T06:29:50.154Z</lastmod>
+    <data>
+        <display>
+        <title>边界值分析法相关概念 — 边界点相关概念</title>
+        <pubTime>2015-10-25T05:21:45.000Z</pubTime>
+        
+        <tag>软件测试</tag>
          
          
            
@@ -943,23 +943,6 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/03/10/a-years-plan-starts-with-spring/</loc>
-    <lastmod>2017-05-26T06:29:50.012Z</lastmod>
-    <data>
-        <display>
-        <title>A year's plan starts with spring ！</title>
-        <pubTime>2015-03-10T09:30:33.000Z</pubTime>
-        
-        <tag>春天</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://xj8c.cc/2015/07/03/asp.net-knowledge-point-summary-1/</loc>
     <lastmod>2017-05-26T06:29:50.012Z</lastmod>
     <data>
@@ -1017,6 +1000,23 @@
 
     
   <url>
+    <loc>http://xj8c.cc/2015/03/10/a-years-plan-starts-with-spring/</loc>
+    <lastmod>2017-05-26T06:29:50.012Z</lastmod>
+    <data>
+        <display>
+        <title>A year's plan starts with spring ！</title>
+        <pubTime>2015-03-10T09:30:33.000Z</pubTime>
+        
+        <tag>春天</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xj8c.cc/2015/03/25/30-the-hacker-movie/</loc>
     <lastmod>2017-05-26T06:29:49.941Z</lastmod>
     <data>
@@ -1036,14 +1036,14 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/09/01/10-best-javascript-development-practices/</loc>
+    <loc>http://xj8c.cc/2015/04/14/33-poems-of-the-most-artistic-conception-in-China/</loc>
     <lastmod>2017-05-26T06:29:49.940Z</lastmod>
     <data>
         <display>
-        <title>10个最佳 javascript 开发实践</title>
-        <pubTime>2015-09-01T11:46:01.000Z</pubTime>
+        <title>中国最有意境的33句诗文，欣赏下吧！</title>
+        <pubTime>2015-04-13T16:00:38.000Z</pubTime>
         
-        <tag>JavaScript</tag>
+        <tag>诗文</tag>
          
          
            
@@ -1053,14 +1053,14 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/04/14/33-poems-of-the-most-artistic-conception-in-China/</loc>
+    <loc>http://xj8c.cc/2015/09/01/10-best-javascript-development-practices/</loc>
     <lastmod>2017-05-26T06:29:49.940Z</lastmod>
     <data>
         <display>
-        <title>中国最有意境的33句诗文，欣赏下吧！</title>
-        <pubTime>2015-04-13T16:00:38.000Z</pubTime>
+        <title>10个最佳 javascript 开发实践</title>
+        <pubTime>2015-09-01T11:46:01.000Z</pubTime>
         
-        <tag>诗文</tag>
+        <tag>JavaScript</tag>
          
          
            
