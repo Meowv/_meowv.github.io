@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xj8c.cc/"/>
-  <updated>2017-07-21T03:29:24.226Z</updated>
+  <updated>2017-09-07T01:37:56.671Z</updated>
   <id>http://xj8c.cc/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HtmlAgilityPack爬取每日一文文章</title>
+    <link href="http://xj8c.cc/2017/09/07/HtmlAgilityPack/"/>
+    <id>http://xj8c.cc/2017/09/07/HtmlAgilityPack/</id>
+    <published>2017-09-07T01:23:53.000Z</published>
+    <updated>2017-09-07T01:37:56.671Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="HtmlAgilityPack？"><a href="#HtmlAgilityPack？" class="headerlink" title="HtmlAgilityPack？"></a>HtmlAgilityPack？</h1><p>HtmlAgilityPack 是 .NET 下的一个 HTML 解析类库。支持用 XPath 来解析 HTML 。命名空间： HtmlAgilityPack</p>
+<h1 id="核心程序代码"><a href="#核心程序代码" class="headerlink" title="核心程序代码"></a>核心程序代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var url = &quot;https://meiriyiwen.com/random/&quot;;</div><div class="line"></div><div class="line">HtmlWeb web = new HtmlWeb();</div><div class="line">HtmlDocument doc = web.Load(url);</div><div class="line">HtmlNode node = doc.DocumentNode.SelectSingleNode(&quot;//*[@id=\&quot;article_show\&quot;]&quot;);</div><div class="line">node.Descendants()</div><div class="line">    .Where(n =&gt; n.Name == &quot;script&quot; || n.Name == &quot;style&quot; || n.Name == &quot;#comment&quot; || n.Id == &quot;bdshare&quot;)</div><div class="line">    .ToList().ForEach(n =&gt; n.Remove());</div><div class="line">    </div><div class="line">var title = node.SelectSingleNode(&quot;//h1&quot;).InnerText;</div><div class="line">var author = node.SelectSingleNode(&quot;//*[@class=\&quot;article_author\&quot;]&quot;).InnerText;</div><div class="line">var article = node.SelectSingleNode(&quot;//*[@class=\&quot;article_text\&quot;]&quot;).InnerText.TrimStart();</div></pre></td></tr></table></figure>
+<h1 id="源代码下载"><a href="#源代码下载" class="headerlink" title="源代码下载"></a>源代码下载</h1><p><a href="https://github.com/Meowv/HtmlAgilityPack" target="_blank" rel="external">HtmlAgilityPackDemo</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;HtmlAgilityPack？&quot;&gt;&lt;a href=&quot;#HtmlAgilityPack？&quot; class=&quot;headerlink&quot; title=&quot;HtmlAgilityPack？&quot;&gt;&lt;/a&gt;HtmlAgilityPack？&lt;/h1&gt;&lt;p&gt;HtmlAgilityPac
+    
+    </summary>
+    
+    
+      <category term="HtmlAgilityPack" scheme="http://xj8c.cc/tags/HtmlAgilityPack/"/>
+    
+      <category term="爬虫" scheme="http://xj8c.cc/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>ReactNative开发中一些有用的资源</title>
@@ -1969,48 +1994,6 @@ const { navigate } = this.props.navigation;
       <category term="ASP.NET" scheme="http://xj8c.cc/tags/ASP-NET/"/>
     
       <category term="三层架构" scheme="http://xj8c.cc/tags/%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ADO.NET中的五个主要对象？</title>
-    <link href="http://xj8c.cc/2016/04/07/five-main-objects-in-dotnet/"/>
-    <id>http://xj8c.cc/2016/04/07/five-main-objects-in-dotnet/</id>
-    <published>2016-04-07T15:34:02.000Z</published>
-    <updated>2017-05-26T06:29:50.350Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Connection"><a href="#Connection" class="headerlink" title="Connection"></a>Connection</h3><p>主要是开启程序和数据库之间的连接，没有利用连接对象将数据库打开，是无法从数据库中取得数据的。</p>
-<p>Close和Dispose的区别，Close以后还可以Open，Dispose以后则不能再用。</p>
-<h3 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h3><p>主要可以用来对数据库发出一些指令，例如可以对数据库下达增、删、改、查数据等指令，以及调用存在数据库中的存储过程等。</p>
-<p>这个对象是架构在Connection对象上，也就是Command对象是透过连接到数据源。</p>
-<h3 id="DataAdapter"><a href="#DataAdapter" class="headerlink" title="DataAdapter"></a>DataAdapter</h3><p>主要是在数据源以及DataSet之间执行数据传输的工作，它可以透过Command对象下达命令后，并将取得的数据放入DataSet对象中。</p>
-<p>这个对象是架构在Command对象上，并提供了许多配合DataSet使用的功能。<br><a id="more"></a></p>
-<h3 id="DataSet"><a href="#DataSet" class="headerlink" title="DataSet"></a>DataSet</h3><p>这个对象可以视为一个暂存区(Cache)，可以把从数据中所查询到的数据保留起来，甚至可以将整个数据库显示出来，DataSet是存在内存中。</p>
-<p>DataSet的能力不只是可以存储多个Table而已，还可以透过DataAdapter对象取得一些例如主键等的数据表结构，并可以记录数据表间的关联。</p>
-<p>DataSet对象可以说是ADO.NET中重量级的对象，这个对象架构在DataAdapter对象上，本身不具备和数据源沟通的能力；也就是说我们是将DataAdapter对象当做DataSet对象以及数据源传输数据的桥梁。</p>
-<p>DataSet包含若干DataTable、DataTable包含若干DataRow。</p>
-<h3 id="DataReader"><a href="#DataReader" class="headerlink" title="DataReader"></a>DataReader</h3><p>当我们只需要循序的读取数据而不需要其它操作时，可以使用DataReader对象。</p>
-<p>DataReader对象只是一次一笔向下循序的读取数据源中的数据，这些数据存在数据库服务器中，而不是一次性加载到程序的内存中，只能通过游标读取当前行的数据，而且这些数据是只读的，并不允许做其它的操作。</p>
-<p>因为DataReader字啊读取数据的时候限制了每次只读取一笔，而且只能只读，所以使用起来不但节省资源而且效率很好。</p>
-<p>使用DataReader对象除了效率较好之外，因为不能把数据全部传回，故可以降低网络的负载。</p>
-<p>ADO.NET使用Connection对象来连接数据库，使用Command或DataAdapter，然后再使用取得的DataReader或DataAdapter对象操作数据结果。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Connection&quot;&gt;&lt;a href=&quot;#Connection&quot; class=&quot;headerlink&quot; title=&quot;Connection&quot;&gt;&lt;/a&gt;Connection&lt;/h3&gt;&lt;p&gt;主要是开启程序和数据库之间的连接，没有利用连接对象将数据库打开，是无法从数据库中取得数据的。&lt;/p&gt;
-&lt;p&gt;Close和Dispose的区别，Close以后还可以Open，Dispose以后则不能再用。&lt;/p&gt;
-&lt;h3 id=&quot;Command&quot;&gt;&lt;a href=&quot;#Command&quot; class=&quot;headerlink&quot; title=&quot;Command&quot;&gt;&lt;/a&gt;Command&lt;/h3&gt;&lt;p&gt;主要可以用来对数据库发出一些指令，例如可以对数据库下达增、删、改、查数据等指令，以及调用存在数据库中的存储过程等。&lt;/p&gt;
-&lt;p&gt;这个对象是架构在Connection对象上，也就是Command对象是透过连接到数据源。&lt;/p&gt;
-&lt;h3 id=&quot;DataAdapter&quot;&gt;&lt;a href=&quot;#DataAdapter&quot; class=&quot;headerlink&quot; title=&quot;DataAdapter&quot;&gt;&lt;/a&gt;DataAdapter&lt;/h3&gt;&lt;p&gt;主要是在数据源以及DataSet之间执行数据传输的工作，它可以透过Command对象下达命令后，并将取得的数据放入DataSet对象中。&lt;/p&gt;
-&lt;p&gt;这个对象是架构在Command对象上，并提供了许多配合DataSet使用的功能。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="ASP.NET" scheme="http://xj8c.cc/tags/ASP-NET/"/>
-    
-      <category term="C#" scheme="http://xj8c.cc/tags/C/"/>
     
   </entry>
   
