@@ -276,7 +276,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/07/HtmlAgilityPack/">HtmlAgilityPack爬取每日一文文章</a>
+      <a class="article-title" href="/2017/09/07/HtmlAgilityPack/">HtmlAgilityPack爬取美女图片、每日一文文章、小说</a>
     </h1>
   
 
@@ -286,10 +286,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="HtmlAgilityPack？"><a href="#HtmlAgilityPack？" class="headerlink" title="HtmlAgilityPack？"></a>HtmlAgilityPack？</h1><p>HtmlAgilityPack 是 .NET 下的一个 HTML 解析类库。支持用 XPath 来解析 HTML 。命名空间： HtmlAgilityPack</p>
-<h1 id="核心程序代码"><a href="#核心程序代码" class="headerlink" title="核心程序代码"></a>核心程序代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var url = &quot;https://meiriyiwen.com/random/&quot;;</div><div class="line"></div><div class="line">HtmlWeb web = new HtmlWeb();</div><div class="line">HtmlDocument doc = web.Load(url);</div><div class="line">HtmlNode node = doc.DocumentNode.SelectSingleNode(&quot;//*[@id=\&quot;article_show\&quot;]&quot;);</div><div class="line">node.Descendants()</div><div class="line">    .Where(n =&gt; n.Name == &quot;script&quot; || n.Name == &quot;style&quot; || n.Name == &quot;#comment&quot; || n.Id == &quot;bdshare&quot;)</div><div class="line">    .ToList().ForEach(n =&gt; n.Remove());</div><div class="line">    </div><div class="line">var title = node.SelectSingleNode(&quot;//h1&quot;).InnerText;</div><div class="line">var author = node.SelectSingleNode(&quot;//*[@class=\&quot;article_author\&quot;]&quot;).InnerText;</div><div class="line">var article = node.SelectSingleNode(&quot;//*[@class=\&quot;article_text\&quot;]&quot;).InnerText.TrimStart();</div></pre></td></tr></table></figure>
-<h1 id="源代码下载"><a href="#源代码下载" class="headerlink" title="源代码下载"></a>源代码下载</h1><p><a href="https://github.com/Meowv/HtmlAgilityPack" target="_blank" rel="external">HtmlAgilityPackDemo</a></p>
-
+              <h1 id="HtmlAgilityPack？"><a href="#HtmlAgilityPack？" class="headerlink" title="HtmlAgilityPack？"></a>HtmlAgilityPack？</h1><p>HtmlAgilityPack 是 .NET 下的一个 HTML 解析类库。支持用 XPath 来解析 HTML 。命名空间： HtmlAgilityPack</p>
+<h1 id="爬取美女图片核心代码"><a href="#爬取美女图片核心代码" class="headerlink" title="爬取美女图片核心代码"></a>爬取美女图片核心代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">static void Main(string[] args)</div><div class="line">&#123;</div><div class="line">    HtmlWeb web = new HtmlWeb();</div><div class="line">    string path = @&quot;F:\pic\&quot;;</div><div class="line">    </div><div class="line">    for (int i = 88; i &gt;= 1; i--)</div><div class="line">    &#123;</div><div class="line">        var url = &quot;http://jandan.net/ooxx/page-&quot; + i;</div><div class="line"></div><div class="line">        HtmlDocument doc = web.Load(url);</div><div class="line"></div><div class="line">        List&lt;HtmlNode&gt; nodeList = doc.DocumentNode.SelectNodes(&quot;//*[@class=\&quot;commentlist\&quot;]/li&quot;).AsParallel().ToList();</div><div class="line"></div><div class="line">        foreach (var item in nodeList)</div><div class="line">        &#123;</div><div class="line">            HtmlNode imghtml = item.SelectSingleNode(&quot;.//img&quot;);</div><div class="line">            var imgsrc = &quot;http:&quot; + imghtml.Attributes[&quot;src&quot;].Value;</div><div class="line">            var imgname = Guid.NewGuid().ToString() + imgsrc.Substring(imgsrc.Length - 4, 4);</div><div class="line"></div><div class="line">            Console.WriteLine(imgsrc);</div><div class="line"></div><div class="line">            DownPic(imgsrc, path + imgname);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
       
       
     </div>
@@ -303,6 +302,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HtmlAgilityPack/">HtmlAgilityPack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a  href="/2017/09/07/HtmlAgilityPack/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
