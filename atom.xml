@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xj8c.cc/"/>
-  <updated>2017-09-07T09:51:27.494Z</updated>
+  <updated>2017-09-27T06:25:38.165Z</updated>
   <id>http://xj8c.cc/</id>
   
   <author>
@@ -14,6 +14,157 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>今日头条全站新闻文章数据爬取</title>
+    <link href="http://xj8c.cc/2017/09/27/TouxiaoNews/"/>
+    <id>http://xj8c.cc/2017/09/27/TouxiaoNews/</id>
+    <published>2017-09-27T06:23:48.000Z</published>
+    <updated>2017-09-27T06:25:38.165Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="今日头条全站新闻文章数据爬取"><a href="#今日头条全站新闻文章数据爬取" class="headerlink" title="今日头条全站新闻文章数据爬取"></a>今日头条全站新闻文章数据爬取</h1><p>url:<a href="https://www.toutiao.com/api/pc/feed/" target="_blank" rel="external">https://www.toutiao.com/api/pc/feed/</a></p>
+<p>拼接参数：</p>
+<ul>
+<li><code>category</code>：见下<a href="#category">category</a>表格</li>
+<li><code>utm_source</code>：</li>
+<li><code>widen</code>：</li>
+<li><code>max_behot_time</code>：</li>
+<li><code>max_behot_time_tmp</code>：</li>
+<li><code>tadrequire</code>：</li>
+<li><code>as</code>：</li>
+<li><code>cp</code>：<a id="more"></a>
+<h2 id="category">category 列表</h2>
+
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th style="text-align:center">category值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>推荐</td>
+<td style="text-align:center">__all__</td>
+</tr>
+<tr>
+<td>热点</td>
+<td style="text-align:center">news_hot</td>
+</tr>
+<tr>
+<td>科技</td>
+<td style="text-align:center">news_tech</td>
+</tr>
+<tr>
+<td>社会</td>
+<td style="text-align:center">news_society</td>
+</tr>
+<tr>
+<td>娱乐</td>
+<td style="text-align:center">news_entertainment</td>
+</tr>
+<tr>
+<td>游戏</td>
+<td style="text-align:center">news_game</td>
+</tr>
+<tr>
+<td>体育</td>
+<td style="text-align:center">news_sports</td>
+</tr>
+<tr>
+<td>汽车</td>
+<td style="text-align:center">news_car</td>
+</tr>
+<tr>
+<td>财经</td>
+<td style="text-align:center">news_finance</td>
+</tr>
+<tr>
+<td>搞笑</td>
+<td style="text-align:center">funny</td>
+</tr>
+<tr>
+<td>段子</td>
+<td style="text-align:center">essay_joke</td>
+</tr>
+<tr>
+<td>军事</td>
+<td style="text-align:center">news_military</td>
+</tr>
+<tr>
+<td>国际</td>
+<td style="text-align:center">news_world</td>
+</tr>
+<tr>
+<td>时尚</td>
+<td style="text-align:center">news_fashion</td>
+</tr>
+<tr>
+<td>旅游</td>
+<td style="text-align:center">news_travel</td>
+</tr>
+<tr>
+<td>探索</td>
+<td style="text-align:center">news_discovery</td>
+</tr>
+<tr>
+<td>育儿</td>
+<td style="text-align:center">news_baby</td>
+</tr>
+<tr>
+<td>养生</td>
+<td style="text-align:center">news_regimen</td>
+</tr>
+<tr>
+<td>美文</td>
+<td style="text-align:center">news_essay</td>
+</tr>
+<tr>
+<td>历史</td>
+<td style="text-align:center">news_history</td>
+</tr>
+<tr>
+<td>美食</td>
+<td style="text-align:center">news_food</td>
+</tr>
+<tr>
+<td>…</td>
+<td style="text-align:center">…</td>
+</tr>
+</tbody>
+</table>
+<p>json接口示例:<a href="https://www.toutiao.com/api/pc/feed/?category=news_hot" target="_blank" rel="external">https://www.toutiao.com/api/pc/feed/?category=news_hot</a></p>
+<h1 id="源代码下载"><a href="#源代码下载" class="headerlink" title="源代码下载"></a>源代码下载</h1><p><a href="https://github.com/Meowv/ToutiaoNews" target="_blank" rel="external">ToutiaoNews</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;今日头条全站新闻文章数据爬取&quot;&gt;&lt;a href=&quot;#今日头条全站新闻文章数据爬取&quot; class=&quot;headerlink&quot; title=&quot;今日头条全站新闻文章数据爬取&quot;&gt;&lt;/a&gt;今日头条全站新闻文章数据爬取&lt;/h1&gt;&lt;p&gt;url:&lt;a href=&quot;https://www.toutiao.com/api/pc/feed/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.toutiao.com/api/pc/feed/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;拼接参数：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;category&lt;/code&gt;：见下&lt;a href=&quot;#category&quot;&gt;category&lt;/a&gt;表格&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;utm_source&lt;/code&gt;：&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;widen&lt;/code&gt;：&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;max_behot_time&lt;/code&gt;：&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;max_behot_time_tmp&lt;/code&gt;：&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tadrequire&lt;/code&gt;：&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;as&lt;/code&gt;：&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cp&lt;/code&gt;：
+    
+    </summary>
+    
+    
+      <category term="HtmlAgilityPack" scheme="http://xj8c.cc/tags/HtmlAgilityPack/"/>
+    
+      <category term="爬虫" scheme="http://xj8c.cc/tags/%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="今日头条" scheme="http://xj8c.cc/tags/%E4%BB%8A%E6%97%A5%E5%A4%B4%E6%9D%A1/"/>
+    
+      <category term="Newtonsoft.Json" scheme="http://xj8c.cc/tags/Newtonsoft-Json/"/>
+    
+  </entry>
   
   <entry>
     <title>HtmlAgilityPack爬取美女图片、每日一文文章、小说</title>
@@ -1972,32 +2123,6 @@ const { navigate } = this.props.navigation;
       <category term="ASP.NET" scheme="http://xj8c.cc/tags/ASP-NET/"/>
     
       <category term="面试" scheme="http://xj8c.cc/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>三层架构到底是个什么玩意？</title>
-    <link href="http://xj8c.cc/2016/04/08/what-is-a-three-tier-architecture/"/>
-    <id>http://xj8c.cc/2016/04/08/what-is-a-three-tier-architecture/</id>
-    <published>2016-04-07T16:12:44.000Z</published>
-    <updated>2017-05-26T06:29:50.633Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="名词解释："><a href="#名词解释：" class="headerlink" title="名词解释："></a>名词解释：</h2><h3 id="架构：架构一般是针对整个系统的，并非针对某个单独的问题-单独的问题可以用模式来解决-，针对整个系统的”一个蓝图”，对系统的抽象。"><a href="#架构：架构一般是针对整个系统的，并非针对某个单独的问题-单独的问题可以用模式来解决-，针对整个系统的”一个蓝图”，对系统的抽象。" class="headerlink" title="架构：架构一般是针对整个系统的，并非针对某个单独的问题(单独的问题可以用模式来解决)，针对整个系统的”一个蓝图”，对系统的抽象。"></a><strong>架构</strong>：架构一般是针对整个系统的，并非针对某个单独的问题(单独的问题可以用模式来解决)，针对整个系统的”一个蓝图”，对系统的抽象。</h3><h3 id="模式：软件开发中遇到的一些特定问题，前任总结出来特定的经验、解决方法。"><a href="#模式：软件开发中遇到的一些特定问题，前任总结出来特定的经验、解决方法。" class="headerlink" title="模式：软件开发中遇到的一些特定问题，前任总结出来特定的经验、解决方法。"></a><strong>模式</strong>：软件开发中遇到的一些特定问题，前任总结出来特定的经验、解决方法。</h3><h3 id="框架：架构设计、模式应用的经验积累的具体代码实现，方便以后的复用。"><a href="#框架：架构设计、模式应用的经验积累的具体代码实现，方便以后的复用。" class="headerlink" title="框架：架构设计、模式应用的经验积累的具体代码实现，方便以后的复用。"></a><strong>框架</strong>：架构设计、模式应用的经验积累的具体代码实现，方便以后的复用。</h3><a id="more"></a>
-<h2 id="三层："><a href="#三层：" class="headerlink" title="三层："></a>三层：</h2><h3 id="表现层UI-User-Interface-：通俗讲就是展现给用户的界面，即用户在使用一个系统的时候他的所见所得。"><a href="#表现层UI-User-Interface-：通俗讲就是展现给用户的界面，即用户在使用一个系统的时候他的所见所得。" class="headerlink" title="表现层UI(User Interface)：通俗讲就是展现给用户的界面，即用户在使用一个系统的时候他的所见所得。"></a>表现层UI(User Interface)：通俗讲就是展现给用户的界面，即用户在使用一个系统的时候他的所见所得。</h3><h3 id="业务逻辑层BLL-Business-Logic-Layer-：针对具体问题的操作，也可以说是对数据层的操作，对数据业务逻辑处理。-备注：又称领域层，常用业务规则、数据访问、合法性校验等等-。其实，逻辑层就像房屋中介，租房买房跟快捷了，但消耗的钱也跟多了。"><a href="#业务逻辑层BLL-Business-Logic-Layer-：针对具体问题的操作，也可以说是对数据层的操作，对数据业务逻辑处理。-备注：又称领域层，常用业务规则、数据访问、合法性校验等等-。其实，逻辑层就像房屋中介，租房买房跟快捷了，但消耗的钱也跟多了。" class="headerlink" title="业务逻辑层BLL(Business Logic Layer)：针对具体问题的操作，也可以说是对数据层的操作，对数据业务逻辑处理。(备注：又称领域层，常用业务规则、数据访问、合法性校验等等) 。其实，逻辑层就像房屋中介，租房买房跟快捷了，但消耗的钱也跟多了。"></a>业务逻辑层BLL(Business Logic Layer)：针对具体问题的操作，也可以说是对数据层的操作，对数据业务逻辑处理。(备注：又称领域层，常用业务规则、数据访问、合法性校验等等) 。其实，逻辑层就像房屋中介，租房买房跟快捷了，但消耗的钱也跟多了。</h3><h3 id="数据访问层DAL-Data-Access-Layer-：针对具体问题的操作，也可以说是对数据层的操作，对数据业务逻辑处理。-领域对象：crud"><a href="#数据访问层DAL-Data-Access-Layer-：针对具体问题的操作，也可以说是对数据层的操作，对数据业务逻辑处理。-领域对象：crud" class="headerlink" title="数据访问层DAL(Data Access Layer)：针对具体问题的操作，也可以说是对数据层的操作，对数据业务逻辑处理。(领域对象：crud)"></a>数据访问层DAL(Data Access Layer)：针对具体问题的操作，也可以说是对数据层的操作，对数据业务逻辑处理。(领域对象：crud)</h3><h2 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h2><h3 id="1、开发人员可以只关注整个结构中的其中某一层；"><a href="#1、开发人员可以只关注整个结构中的其中某一层；" class="headerlink" title="1、开发人员可以只关注整个结构中的其中某一层；"></a>1、开发人员可以只关注整个结构中的其中某一层；</h3><h3 id="2、可以很容易的用新的实现来替换原有层次的实现；"><a href="#2、可以很容易的用新的实现来替换原有层次的实现；" class="headerlink" title="2、可以很容易的用新的实现来替换原有层次的实现；"></a>2、可以很容易的用新的实现来替换原有层次的实现；</h3><h3 id="3、可以降低层与层之间的依赖；"><a href="#3、可以降低层与层之间的依赖；" class="headerlink" title="3、可以降低层与层之间的依赖；"></a>3、可以降低层与层之间的依赖；</h3><h3 id="4、有利于标准化；"><a href="#4、有利于标准化；" class="headerlink" title="4、有利于标准化；"></a>4、有利于标准化；</h3><h3 id="5、利于各层逻辑的复用；"><a href="#5、利于各层逻辑的复用；" class="headerlink" title="5、利于各层逻辑的复用；"></a>5、利于各层逻辑的复用；</h3><h3 id="6、结构更加的明确；"><a href="#6、结构更加的明确；" class="headerlink" title="6、结构更加的明确；"></a>6、结构更加的明确；</h3><h3 id="7、在后期维护的时候，极大地降低了维护成本和维护时间。"><a href="#7、在后期维护的时候，极大地降低了维护成本和维护时间。" class="headerlink" title="7、在后期维护的时候，极大地降低了维护成本和维护时间。"></a>7、在后期维护的时候，极大地降低了维护成本和维护时间。</h3><h2 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h2><h3 id="1、降低了系统的性能。这是不言而喻的。如果不采用分层式结构，很多业务可以直接造访数据库，以次获取相应的数据，如今却必须通过中间层来完成。；"><a href="#1、降低了系统的性能。这是不言而喻的。如果不采用分层式结构，很多业务可以直接造访数据库，以次获取相应的数据，如今却必须通过中间层来完成。；" class="headerlink" title="1、降低了系统的性能。这是不言而喻的。如果不采用分层式结构，很多业务可以直接造访数据库，以次获取相应的数据，如今却必须通过中间层来完成。；"></a>1、降低了系统的性能。这是不言而喻的。如果不采用分层式结构，很多业务可以直接造访数据库，以次获取相应的数据，如今却必须通过中间层来完成。；</h3><h3 id="2、有时会导致级联的修改。这种修改尤其体现在自上而下的方向。如果在表现层中需要增加一个功能，为保证其设计符合分层式结构，可能需要在相应的业务逻辑层和数据访问层中都增加相应的代码。；"><a href="#2、有时会导致级联的修改。这种修改尤其体现在自上而下的方向。如果在表现层中需要增加一个功能，为保证其设计符合分层式结构，可能需要在相应的业务逻辑层和数据访问层中都增加相应的代码。；" class="headerlink" title="2、有时会导致级联的修改。这种修改尤其体现在自上而下的方向。如果在表现层中需要增加一个功能，为保证其设计符合分层式结构，可能需要在相应的业务逻辑层和数据访问层中都增加相应的代码。；"></a>2、有时会导致级联的修改。这种修改尤其体现在自上而下的方向。如果在表现层中需要增加一个功能，为保证其设计符合分层式结构，可能需要在相应的业务逻辑层和数据访问层中都增加相应的代码。；</h3><h3 id="3、一定程度上增加了开发的成本。；"><a href="#3、一定程度上增加了开发的成本。；" class="headerlink" title="3、一定程度上增加了开发的成本。；"></a>3、一定程度上增加了开发的成本。；</h3><h2 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h2><p>三层结构的程序不是说把项目分成DAL，BLL，WebUI三个模块就叫三层了。下面这几个问题：</p>
-<h3 id="1、UILayer里面只有少量-或者没有-SQL语句或者存储过程调用，并且这些语句保证不会修改数据？"><a href="#1、UILayer里面只有少量-或者没有-SQL语句或者存储过程调用，并且这些语句保证不会修改数据？" class="headerlink" title="1、UILayer里面只有少量(或者没有)SQL语句或者存储过程调用，并且这些语句保证不会修改数据？"></a>1、UILayer里面只有少量(或者没有)SQL语句或者存储过程调用，并且这些语句保证不会修改数据？</h3><h3 id="2、如果把UILayer拿掉，你的项目还能在Interface-API的层次上提供所有功能吗？"><a href="#2、如果把UILayer拿掉，你的项目还能在Interface-API的层次上提供所有功能吗？" class="headerlink" title="2、如果把UILayer拿掉，你的项目还能在Interface/API的层次上提供所有功能吗？"></a>2、如果把UILayer拿掉，你的项目还能在Interface/API的层次上提供所有功能吗？</h3><h3 id="3、你的DAL可以移植到其他类似环境的项目吗？"><a href="#3、你的DAL可以移植到其他类似环境的项目吗？" class="headerlink" title="3、你的DAL可以移植到其他类似环境的项目吗？"></a>3、你的DAL可以移植到其他类似环境的项目吗？</h3><h3 id="4、三个模块，可以分别运行与不同的服务器吗？"><a href="#4、三个模块，可以分别运行与不同的服务器吗？" class="headerlink" title="4、三个模块，可以分别运行与不同的服务器吗？"></a>4、三个模块，可以分别运行与不同的服务器吗？</h3><p>如果不是所有答案都为YES，那么你的项目还不能算是严格意义上的三层程序。三层程序有一些需要约定遵守的规则：</p>
-<h3 id="1、最关键的，UI层只能作为一个外壳，不能包含任何BizLogic的处理过程"><a href="#1、最关键的，UI层只能作为一个外壳，不能包含任何BizLogic的处理过程" class="headerlink" title="1、最关键的，UI层只能作为一个外壳，不能包含任何BizLogic的处理过程"></a>1、最关键的，UI层只能作为一个外壳，不能包含任何BizLogic的处理过程</h3><h3 id="2、设计时应该从BLL出发，而不是UI出发。BLL层在API上应该实现所有BizLogic，以面向对象的方式"><a href="#2、设计时应该从BLL出发，而不是UI出发。BLL层在API上应该实现所有BizLogic，以面向对象的方式" class="headerlink" title="2、设计时应该从BLL出发，而不是UI出发。BLL层在API上应该实现所有BizLogic，以面向对象的方式"></a>2、设计时应该从BLL出发，而不是UI出发。BLL层在API上应该实现所有BizLogic，以面向对象的方式</h3><h3 id="3、不管数据层是一个简单的SqlHelper也好，还是带有Mapping过的Classes也好，应该在一定的抽象程度上做到系统无关"><a href="#3、不管数据层是一个简单的SqlHelper也好，还是带有Mapping过的Classes也好，应该在一定的抽象程度上做到系统无关" class="headerlink" title="3、不管数据层是一个简单的SqlHelper也好，还是带有Mapping过的Classes也好，应该在一定的抽象程度上做到系统无关"></a>3、不管数据层是一个简单的SqlHelper也好，还是带有Mapping过的Classes也好，应该在一定的抽象程度上做到系统无关</h3><h3 id="4、不管是用COM-Enterprise-Server-，还是Remoting，还是WebService之类的远程对象技术，不管部署的时候是不是真的分别部署到不同的服务器上，最起码在涉及的时候要做这样的考虑，更远的，还得考虑多台服务器通过负载均衡做集群。"><a href="#4、不管是用COM-Enterprise-Server-，还是Remoting，还是WebService之类的远程对象技术，不管部署的时候是不是真的分别部署到不同的服务器上，最起码在涉及的时候要做这样的考虑，更远的，还得考虑多台服务器通过负载均衡做集群。" class="headerlink" title="4、不管是用COM+( Enterprise Server )，还是Remoting，还是WebService之类的远程对象技术，不管部署的时候是不是真的分别部署到不同的服务器上，最起码在涉及的时候要做这样的考虑，更远的，还得考虑多台服务器通过负载均衡做集群。"></a>4、不管是用COM+( Enterprise Server )，还是Remoting，还是WebService之类的远程对象技术，不管部署的时候是不是真的分别部署到不同的服务器上，最起码在涉及的时候要做这样的考虑，更远的，还得考虑多台服务器通过负载均衡做集群。</h3><p>所以考虑一个项目是不是应该应用三层/多层设计时，先得考虑下是不是真的需要？实际上大部分程序就开个WebApplication就足够了，完全没必要做的这么复杂。而多层架构，是用于解决真正复杂的项目需求的。</p>
-<h2 id="三层与MVC的区别"><a href="#三层与MVC的区别" class="headerlink" title="三层与MVC的区别"></a>三层与MVC的区别</h2><h3 id="同样是架构级别的，它们有什么相同点和不同点呢？这篇文章讨论一下它们的异同点。希望能帮助读者理解其中的玄机。"><a href="#同样是架构级别的，它们有什么相同点和不同点呢？这篇文章讨论一下它们的异同点。希望能帮助读者理解其中的玄机。" class="headerlink" title="同样是架构级别的，它们有什么相同点和不同点呢？这篇文章讨论一下它们的异同点。希望能帮助读者理解其中的玄机。"></a>同样是架构级别的，它们有什么相同点和不同点呢？这篇文章讨论一下它们的异同点。希望能帮助读者理解其中的玄机。</h3><h3 id="其实它们相同的地方在于他们都有一个表现层。"><a href="#其实它们相同的地方在于他们都有一个表现层。" class="headerlink" title="其实它们相同的地方在于他们都有一个表现层。"></a>其实它们相同的地方在于他们都有一个表现层。</h3><h3 id="但是他们不同的地方在于其他的两个层。"><a href="#但是他们不同的地方在于其他的两个层。" class="headerlink" title="但是他们不同的地方在于其他的两个层。"></a>但是他们不同的地方在于其他的两个层。</h3><h3 id="首先先解释一下MVC。V即View-是视图的意思。C即Controler-是控制器的意思。而M即Model，是模型的意思。这三个里-最不容易理解的应该是Model-就是什么是Model，而为什么叫Model。我先不说为什么叫Model，先解释Controler。"><a href="#首先先解释一下MVC。V即View-是视图的意思。C即Controler-是控制器的意思。而M即Model，是模型的意思。这三个里-最不容易理解的应该是Model-就是什么是Model，而为什么叫Model。我先不说为什么叫Model，先解释Controler。" class="headerlink" title="首先先解释一下MVC。V即View.是视图的意思。C即Controler.是控制器的意思。而M即Model，是模型的意思。这三个里.最不容易理解的应该是Model.就是什么是Model，而为什么叫Model。我先不说为什么叫Model，先解释Controler。"></a>首先先解释一下MVC。V即View.是视图的意思。C即Controler.是控制器的意思。而M即Model，是模型的意思。这三个里.最不容易理解的应该是Model.就是什么是Model，而为什么叫Model。我先不说为什么叫Model，先解释Controler。</h3><h3 id="Controller是控制器的意思，所谓控制器，就是将用户请求转发给模型层，经过处理后把结果返回到界面展现的一个中间层，那么Controler到底管什么工作呢？先不说-先来看下在Java-Web中这三个层一般的定义，一般在Java-Web里，JSP充当V，Servlet充当C-JavaBean充当M，这里的Servlet管什么工作呢？接受输入，转到Model层去处理，处理结果保存后转发到JSP，然后展现数据。所以它的功能就是控制器的基本功能，它就管转发，在V和M之间转来转去。"><a href="#Controller是控制器的意思，所谓控制器，就是将用户请求转发给模型层，经过处理后把结果返回到界面展现的一个中间层，那么Controler到底管什么工作呢？先不说-先来看下在Java-Web中这三个层一般的定义，一般在Java-Web里，JSP充当V，Servlet充当C-JavaBean充当M，这里的Servlet管什么工作呢？接受输入，转到Model层去处理，处理结果保存后转发到JSP，然后展现数据。所以它的功能就是控制器的基本功能，它就管转发，在V和M之间转来转去。" class="headerlink" title="Controller是控制器的意思，所谓控制器，就是将用户请求转发给模型层，经过处理后把结果返回到界面展现的一个中间层，那么Controler到底管什么工作呢？先不说.先来看下在Java Web中这三个层一般的定义，一般在Java Web里，JSP充当V，Servlet充当C,JavaBean充当M，这里的Servlet管什么工作呢？接受输入，转到Model层去处理，处理结果保存后转发到JSP，然后展现数据。所以它的功能就是控制器的基本功能，它就管转发，在V和M之间转来转去。"></a>Controller是控制器的意思，所谓控制器，就是将用户请求转发给模型层，经过处理后把结果返回到界面展现的一个中间层，那么Controler到底管什么工作呢？先不说.先来看下在Java Web中这三个层一般的定义，一般在Java Web里，JSP充当V，Servlet充当C,JavaBean充当M，这里的Servlet管什么工作呢？接受输入，转到Model层去处理，处理结果保存后转发到JSP，然后展现数据。所以它的功能就是控制器的基本功能，它就管转发，在V和M之间转来转去。</h3><h3 id="再来说说M，即Model，在Java-Web里说的是JavaBean，我认识的很多人都把JavaBean误认为是实体类，其实JavaBean有比实体类更丰富的定义，在JavaBean中除了其属性和字段，还可以有行为及其事件，JavaBean可以理解为普通Java对象。Java普通对象，就是符合Java规范的所有对象，这和实体类完全是两回事。所以，我认为在MVC中。业务逻辑和数据访问应该放在Model层，也就是V负责展示数据，Controler除了转发不做业务逻辑。真正的逻辑事务，数据访问，甚至算法都放到Model去。"><a href="#再来说说M，即Model，在Java-Web里说的是JavaBean，我认识的很多人都把JavaBean误认为是实体类，其实JavaBean有比实体类更丰富的定义，在JavaBean中除了其属性和字段，还可以有行为及其事件，JavaBean可以理解为普通Java对象。Java普通对象，就是符合Java规范的所有对象，这和实体类完全是两回事。所以，我认为在MVC中。业务逻辑和数据访问应该放在Model层，也就是V负责展示数据，Controler除了转发不做业务逻辑。真正的逻辑事务，数据访问，甚至算法都放到Model去。" class="headerlink" title="再来说说M，即Model，在Java Web里说的是JavaBean，我认识的很多人都把JavaBean误认为是实体类，其实JavaBean有比实体类更丰富的定义，在JavaBean中除了其属性和字段，还可以有行为及其事件，JavaBean可以理解为普通Java对象。Java普通对象，就是符合Java规范的所有对象，这和实体类完全是两回事。所以，我认为在MVC中。业务逻辑和数据访问应该放在Model层，也就是V负责展示数据，Controler除了转发不做业务逻辑。真正的逻辑事务，数据访问，甚至算法都放到Model去。"></a>再来说说M，即Model，在Java Web里说的是JavaBean，我认识的很多人都把JavaBean误认为是实体类，其实JavaBean有比实体类更丰富的定义，在JavaBean中除了其属性和字段，还可以有行为及其事件，JavaBean可以理解为普通Java对象。Java普通对象，就是符合Java规范的所有对象，这和实体类完全是两回事。所以，我认为在MVC中。业务逻辑和数据访问应该放在Model层，也就是V负责展示数据，Controler除了转发不做业务逻辑。真正的逻辑事务，数据访问，甚至算法都放到Model去。</h3><h3 id="再说三层架构。三层其实很好理解，界面，业务，数据访问，就这三个，从字面都可以理解出它们的意思。我要说的是它和MVC的区别。在三层架构中没有定义Controler的概念。这是我认为最不同的地方。而MVC也没有把业务的逻辑访问看成两个层，这是采用三层架构或MVC搭建程序最主要的区别。"><a href="#再说三层架构。三层其实很好理解，界面，业务，数据访问，就这三个，从字面都可以理解出它们的意思。我要说的是它和MVC的区别。在三层架构中没有定义Controler的概念。这是我认为最不同的地方。而MVC也没有把业务的逻辑访问看成两个层，这是采用三层架构或MVC搭建程序最主要的区别。" class="headerlink" title="再说三层架构。三层其实很好理解，界面，业务，数据访问，就这三个，从字面都可以理解出它们的意思。我要说的是它和MVC的区别。在三层架构中没有定义Controler的概念。这是我认为最不同的地方。而MVC也没有把业务的逻辑访问看成两个层，这是采用三层架构或MVC搭建程序最主要的区别。"></a>再说三层架构。三层其实很好理解，界面，业务，数据访问，就这三个，从字面都可以理解出它们的意思。我要说的是它和MVC的区别。在三层架构中没有定义Controler的概念。这是我认为最不同的地方。而MVC也没有把业务的逻辑访问看成两个层，这是采用三层架构或MVC搭建程序最主要的区别。</h3><h3 id="当然了。在三层中也提到了Model，但是三层架构中Model的概念与MVC中Model的概念是不一样的，“三层”中典型的Model层是已实体类构成的，而MVC里，则是由业务逻辑与访问数据组成的。不一样的概念。虽然名字一样。"><a href="#当然了。在三层中也提到了Model，但是三层架构中Model的概念与MVC中Model的概念是不一样的，“三层”中典型的Model层是已实体类构成的，而MVC里，则是由业务逻辑与访问数据组成的。不一样的概念。虽然名字一样。" class="headerlink" title="当然了。在三层中也提到了Model，但是三层架构中Model的概念与MVC中Model的概念是不一样的，“三层”中典型的Model层是已实体类构成的，而MVC里，则是由业务逻辑与访问数据组成的。不一样的概念。虽然名字一样。"></a>当然了。在三层中也提到了Model，但是三层架构中Model的概念与MVC中Model的概念是不一样的，“三层”中典型的Model层是已实体类构成的，而MVC里，则是由业务逻辑与访问数据组成的。不一样的概念。虽然名字一样。</h3>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;名词解释：&quot;&gt;&lt;a href=&quot;#名词解释：&quot; class=&quot;headerlink&quot; title=&quot;名词解释：&quot;&gt;&lt;/a&gt;名词解释：&lt;/h2&gt;&lt;h3 id=&quot;架构：架构一般是针对整个系统的，并非针对某个单独的问题-单独的问题可以用模式来解决-，针对整个系统的”一个蓝图”，对系统的抽象。&quot;&gt;&lt;a href=&quot;#架构：架构一般是针对整个系统的，并非针对某个单独的问题-单独的问题可以用模式来解决-，针对整个系统的”一个蓝图”，对系统的抽象。&quot; class=&quot;headerlink&quot; title=&quot;架构：架构一般是针对整个系统的，并非针对某个单独的问题(单独的问题可以用模式来解决)，针对整个系统的”一个蓝图”，对系统的抽象。&quot;&gt;&lt;/a&gt;&lt;strong&gt;架构&lt;/strong&gt;：架构一般是针对整个系统的，并非针对某个单独的问题(单独的问题可以用模式来解决)，针对整个系统的”一个蓝图”，对系统的抽象。&lt;/h3&gt;&lt;h3 id=&quot;模式：软件开发中遇到的一些特定问题，前任总结出来特定的经验、解决方法。&quot;&gt;&lt;a href=&quot;#模式：软件开发中遇到的一些特定问题，前任总结出来特定的经验、解决方法。&quot; class=&quot;headerlink&quot; title=&quot;模式：软件开发中遇到的一些特定问题，前任总结出来特定的经验、解决方法。&quot;&gt;&lt;/a&gt;&lt;strong&gt;模式&lt;/strong&gt;：软件开发中遇到的一些特定问题，前任总结出来特定的经验、解决方法。&lt;/h3&gt;&lt;h3 id=&quot;框架：架构设计、模式应用的经验积累的具体代码实现，方便以后的复用。&quot;&gt;&lt;a href=&quot;#框架：架构设计、模式应用的经验积累的具体代码实现，方便以后的复用。&quot; class=&quot;headerlink&quot; title=&quot;框架：架构设计、模式应用的经验积累的具体代码实现，方便以后的复用。&quot;&gt;&lt;/a&gt;&lt;strong&gt;框架&lt;/strong&gt;：架构设计、模式应用的经验积累的具体代码实现，方便以后的复用。&lt;/h3&gt;
-    
-    </summary>
-    
-    
-      <category term="ASP.NET" scheme="http://xj8c.cc/tags/ASP-NET/"/>
-    
-      <category term="三层架构" scheme="http://xj8c.cc/tags/%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84/"/>
     
   </entry>
   
