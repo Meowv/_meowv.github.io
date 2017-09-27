@@ -3,25 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>掌握React Native的Fetch Api | 当然我在瞎扯</title>
+  <title>今日头条全站新闻文章数据爬取 | 当然我在瞎扯</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="网络这一章呢，不会只讲网络哦~ Mock ApiMock Api是一项非常棒的服务，它可以帮助我们快速的模拟后端的REST Api并且不需要你自己的服务器，甚至代码都不用写，它的网址是http://www.mockapi.io/， 可以注册也可以使用GitHub帐号登陆。">
-<meta name="keywords" content="ReactNative">
+  <meta name="description" content="今日头条全站新闻文章数据爬取url:https://www.toutiao.com/api/pc/feed/ 拼接参数：  category：见下category表格 utm_source： widen： max_behot_time： max_behot_time_tmp： tadrequire： as： cp：">
+<meta name="keywords" content="HtmlAgilityPack,爬虫,今日头条,Newtonsoft.Json">
 <meta property="og:type" content="article">
-<meta property="og:title" content="掌握React Native的Fetch Api">
-<meta property="og:url" content="http://xj8c.cc/2017/07/15/ReactNative-net/index.html">
+<meta property="og:title" content="今日头条全站新闻文章数据爬取">
+<meta property="og:url" content="http://xj8c.cc/2017/09/27/ToutiaoNews/index.html">
 <meta property="og:site_name" content="当然我在瞎扯">
-<meta property="og:description" content="网络这一章呢，不会只讲网络哦~ Mock ApiMock Api是一项非常棒的服务，它可以帮助我们快速的模拟后端的REST Api并且不需要你自己的服务器，甚至代码都不用写，它的网址是http://www.mockapi.io/， 可以注册也可以使用GitHub帐号登陆。">
-<meta property="og:image" content="https://meowv.github.io/images/9.1.png">
-<meta property="og:image" content="https://meowv.github.io/images/9.2.png">
-<meta property="og:image" content="https://meowv.github.io/images/9.3.png">
-<meta property="og:image" content="https://meowv.github.io/images/9.4.png">
-<meta property="og:image" content="https://meowv.github.io/images/9.5.png">
-<meta property="og:updated_time" content="2017-07-21T03:29:11.611Z">
+<meta property="og:description" content="今日头条全站新闻文章数据爬取url:https://www.toutiao.com/api/pc/feed/ 拼接参数：  category：见下category表格 utm_source： widen： max_behot_time： max_behot_time_tmp： tadrequire： as： cp：">
+<meta property="og:updated_time" content="2017-09-27T06:25:38.165Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="掌握React Native的Fetch Api">
-<meta name="twitter:description" content="网络这一章呢，不会只讲网络哦~ Mock ApiMock Api是一项非常棒的服务，它可以帮助我们快速的模拟后端的REST Api并且不需要你自己的服务器，甚至代码都不用写，它的网址是http://www.mockapi.io/， 可以注册也可以使用GitHub帐号登陆。">
-<meta name="twitter:image" content="https://meowv.github.io/images/9.1.png">
+<meta name="twitter:title" content="今日头条全站新闻文章数据爬取">
+<meta name="twitter:description" content="今日头条全站新闻文章数据爬取url:https://www.toutiao.com/api/pc/feed/ 拼接参数：  category：见下category表格 utm_source： widen： max_behot_time： max_behot_time_tmp： tadrequire： as： cp：">
   
     <link rel="alternative" href="/atom.xml" title="当然我在瞎扯" type="application/atom+xml">
   
@@ -262,11 +256,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-ReactNative-net" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ToutiaoNews" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/07/15/ReactNative-net/" class="article-date">
-      <time datetime="2017-07-15T08:43:47.000Z" itemprop="datePublished">2017-07-15</time>
+      <a href="/2017/09/27/ToutiaoNews/" class="article-date">
+      <time datetime="2017-09-27T06:23:48.000Z" itemprop="datePublished">2017-09-27</time>
 </a>
     </div>
   
@@ -279,7 +273,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      掌握React Native的Fetch Api
+      今日头条全站新闻文章数据爬取
     </h1>
   
 
@@ -290,7 +284,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ReactNative/">ReactNative</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HtmlAgilityPack/">HtmlAgilityPack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Newtonsoft-Json/">Newtonsoft.Json</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/今日头条/">今日头条</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -300,27 +294,121 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h1><p>这一章呢，不会只讲网络哦~</p>
-<h2 id="Mock-Api"><a href="#Mock-Api" class="headerlink" title="Mock Api"></a>Mock Api</h2><p>Mock Api是一项非常棒的服务，它可以帮助我们快速的模拟后端的REST Api并且不需要你自己的服务器，甚至代码都不用写，它的网址是<br><a href="http://www.mockapi.io/，" target="_blank" rel="external">http://www.mockapi.io/，</a> 可以注册也可以使用GitHub帐号登陆。<br><a id="more"></a><br>点击<code>+</code>来创建一个项目：</p>
-<p><img src="https://meowv.github.io/images/9.1.png" alt="PNG"></p>
-<p>填写项目名称和Api前缀(随便写就行)：</p>
-<p><img src="https://meowv.github.io/images/9.2.png" alt="PNG"></p>
-<p>接下来点击Create Resource来创建资源：</p>
-<p><img src="https://meowv.github.io/images/9.3.png" alt="PNG"></p>
-<p>然后填写资源名称，以及修改Schema，为了方便，我们就留下id和name：</p>
-<p><img src="https://meowv.github.io/images/9.4.png" alt="PNG"></p>
-<p>然后点击next按钮，这一步完了之后，我们就可以通过<code>xxxxxxx.mockapi.io/api/user</code>使用REST Api了。</p>
-<h2 id="Fetch"><a href="#Fetch" class="headerlink" title="Fetch"></a>Fetch</h2><p>在React Native中，我们可以使用Fetch来进行网络请求，由于Fetch API天然支持Promise规范，所以我们的代码可以变得很优雅。</p>
-<p>执行Get操作应该是最为简单的了，我们看下代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">fetch(&apos;http://xxx.mockapi.io/api/user&apos;)</div><div class="line">  .then((response) =&gt; &#123;</div><div class="line">    console.log(response);</div><div class="line">  &#125;)</div><div class="line">  .catch((err) =&gt; console.error(err);)</div></pre></td></tr></table></figure>
-<p>这样便可以在控制台打印出user下的所有内容。你可能会想：喵喵喵？React Native还有控制台？ 当然有啦，不过我们得打开远程调试，首先打开菜单：</p>
-<p><img src="https://meowv.github.io/images/9.5.png" alt="PNG"></p>
-<p>然后选择Debug Js Remotely，之后便会自动打开Chrome。自己打开Chrome的控制台便可以看到<code>console.log</code>的内容了。</p>
-<p>实际应用中，我们会在组件渲染的时候把数据丢到状态或别的地方，然后使用这些数据(一般会用作列表渲染)。不管怎么说，不会直接console就是了。</p>
-<p>然后是Post：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">fetch(&apos;http://xxxx.mockapi.io/api/user&apos;, &#123;</div><div class="line">  method: &apos;POST&apos;,</div><div class="line">  headers: &#123;</div><div class="line">    &apos;Accept&apos;: &apos;application/json&apos;,</div><div class="line">    &apos;Content-Type&apos;: &apos;application/json&apos;,</div><div class="line">  &#125;,</div><div class="line">  body: JSON.stringify(&#123;</div><div class="line">    name: &apos;meow&apos;,</div><div class="line">  &#125;)</div><div class="line">&#125;)</div><div class="line">  .then(xxxx)</div><div class="line">  .catch((err) =&gt; console.error(err))</div></pre></td></tr></table></figure>
-<p>我们可以加个then来处理在Post过程中要做的事情，并用catch来获取异常。</p>
-<p>至于Put和Delete参考Post就好啦~</p>
+        <h1 id="今日头条全站新闻文章数据爬取"><a href="#今日头条全站新闻文章数据爬取" class="headerlink" title="今日头条全站新闻文章数据爬取"></a>今日头条全站新闻文章数据爬取</h1><p>url:<a href="https://www.toutiao.com/api/pc/feed/" target="_blank" rel="external">https://www.toutiao.com/api/pc/feed/</a></p>
+<p>拼接参数：</p>
+<ul>
+<li><code>category</code>：见下<a href="#category">category</a>表格</li>
+<li><code>utm_source</code>：</li>
+<li><code>widen</code>：</li>
+<li><code>max_behot_time</code>：</li>
+<li><code>max_behot_time_tmp</code>：</li>
+<li><code>tadrequire</code>：</li>
+<li><code>as</code>：</li>
+<li><code>cp</code>：<a id="more"></a>
+<h2 id="category">category 列表</h2>
+
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th style="text-align:center">category值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>推荐</td>
+<td style="text-align:center">__all__</td>
+</tr>
+<tr>
+<td>热点</td>
+<td style="text-align:center">news_hot</td>
+</tr>
+<tr>
+<td>科技</td>
+<td style="text-align:center">news_tech</td>
+</tr>
+<tr>
+<td>社会</td>
+<td style="text-align:center">news_society</td>
+</tr>
+<tr>
+<td>娱乐</td>
+<td style="text-align:center">news_entertainment</td>
+</tr>
+<tr>
+<td>游戏</td>
+<td style="text-align:center">news_game</td>
+</tr>
+<tr>
+<td>体育</td>
+<td style="text-align:center">news_sports</td>
+</tr>
+<tr>
+<td>汽车</td>
+<td style="text-align:center">news_car</td>
+</tr>
+<tr>
+<td>财经</td>
+<td style="text-align:center">news_finance</td>
+</tr>
+<tr>
+<td>搞笑</td>
+<td style="text-align:center">funny</td>
+</tr>
+<tr>
+<td>段子</td>
+<td style="text-align:center">essay_joke</td>
+</tr>
+<tr>
+<td>军事</td>
+<td style="text-align:center">news_military</td>
+</tr>
+<tr>
+<td>国际</td>
+<td style="text-align:center">news_world</td>
+</tr>
+<tr>
+<td>时尚</td>
+<td style="text-align:center">news_fashion</td>
+</tr>
+<tr>
+<td>旅游</td>
+<td style="text-align:center">news_travel</td>
+</tr>
+<tr>
+<td>探索</td>
+<td style="text-align:center">news_discovery</td>
+</tr>
+<tr>
+<td>育儿</td>
+<td style="text-align:center">news_baby</td>
+</tr>
+<tr>
+<td>养生</td>
+<td style="text-align:center">news_regimen</td>
+</tr>
+<tr>
+<td>美文</td>
+<td style="text-align:center">news_essay</td>
+</tr>
+<tr>
+<td>历史</td>
+<td style="text-align:center">news_history</td>
+</tr>
+<tr>
+<td>美食</td>
+<td style="text-align:center">news_food</td>
+</tr>
+<tr>
+<td>…</td>
+<td style="text-align:center">…</td>
+</tr>
+</tbody>
+</table>
+<p>json接口示例:<a href="https://www.toutiao.com/api/pc/feed/?category=news_hot" target="_blank" rel="external">https://www.toutiao.com/api/pc/feed/?category=news_hot</a></p>
+<h1 id="源代码下载"><a href="#源代码下载" class="headerlink" title="源代码下载"></a>源代码下载</h1><p><a href="https://github.com/Meowv/ToutiaoNews" target="_blank" rel="external">ToutiaoNews</a></p>
 
       
       
@@ -375,13 +463,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/07/15/ReactNative-net/">掌握React Native的Fetch Api</a></p>
+        <p><span>本文标题:</span><a href="/2017/09/27/ToutiaoNews/">今日头条全站新闻文章数据爬取</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 阿星Plus 的个人博客">阿星Plus</a></p>
-        <p><span>发布时间:</span>2017年07月15日 - 16时43分</p>
-        <p><span>最后更新:</span>2017年07月21日 - 11时29分</p>
+        <p><span>发布时间:</span>2017年09月27日 - 14时23分</p>
+        <p><span>最后更新:</span>2017年09月27日 - 14时25分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/07/15/ReactNative-net/" title="掌握React Native的Fetch Api">http://xj8c.cc/2017/07/15/ReactNative-net/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://xj8c.cc/2017/07/15/ReactNative-net/　　作者: 阿星Plus" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/09/27/ToutiaoNews/" title="今日头条全站新闻文章数据爬取">http://xj8c.cc/2017/09/27/ToutiaoNews/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://xj8c.cc/2017/09/27/ToutiaoNews/　　作者: 阿星Plus" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -394,18 +482,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2017/07/16/ReactNative-build/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          打包你的App
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/07/14/ReactNative-navigation/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">是时候用上React Navigation了</div>
+    <a href="/2017/09/07/HtmlAgilityPack/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HtmlAgilityPack爬取美女图片、每日一文文章、小说</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -416,7 +495,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#网络"><span class="toc-number">1.</span> <span class="toc-text">网络</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mock-Api"><span class="toc-number">1.1.</span> <span class="toc-text">Mock Api</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fetch"><span class="toc-number">1.2.</span> <span class="toc-text">Fetch</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#今日头条全站新闻文章数据爬取"><span class="toc-number">1.</span> <span class="toc-text">今日头条全站新闻文章数据爬取</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#category"><span class="toc-number">1.1.</span> <span class="toc-text">category 列表</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#源代码下载"><span class="toc-number">2.</span> <span class="toc-text">源代码下载</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -463,7 +542,7 @@
 
     
       <!--PC和WAP自适应版-->
-<div id="SOHUCS" sid="掌握React Native的Fetch Api"></div> 
+<div id="SOHUCS" sid="今日头条全站新闻文章数据爬取"></div> 
 <script type="text/javascript"> 
 (function(){ 
 var appid = 'cyt1UJT89'; 
@@ -477,13 +556,11 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/07/16/ReactNative-build/" title="上一篇: 打包你的App">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2017/07/14/ReactNative-navigation/" title="下一篇: 是时候用上React Navigation了">
+            <a href="/2017/09/07/HtmlAgilityPack/" title="下一篇: HtmlAgilityPack爬取美女图片、每日一文文章、小说">
                 <i class="fa fa-angle-right"></i>
             </a>
         
