@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>正则表达式字符匹配攻略 | 当然我在瞎扯</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1. 第一章 正则表达式字符匹配攻略正则表达式是匹配模式，要么匹配字符，要么匹配位置。请记住这句话。 然而关于正则如何匹配字符的学习，大部分人都觉得这块比较杂乱。 毕竟元字符太多了，看起来没有系统性，不好记。本章就解决这个问题。 内容包括：  两种模糊匹配 字符组 量词 分支结构 案例分析  1.1. 两种模糊匹配  如果正则只有精确匹配是没多大意义的，比如 /hello/，也只能匹配字符串中的">
+<meta name="keywords" content="Regex,正则表达式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式字符匹配攻略">
+<meta property="og:url" content="http://xj8c.cc/2017/09/28/Regex-1/index.html">
+<meta property="og:site_name" content="当然我在瞎扯">
+<meta property="og:description" content="1. 第一章 正则表达式字符匹配攻略正则表达式是匹配模式，要么匹配字符，要么匹配位置。请记住这句话。 然而关于正则如何匹配字符的学习，大部分人都觉得这块比较杂乱。 毕竟元字符太多了，看起来没有系统性，不好记。本章就解决这个问题。 内容包括：  两种模糊匹配 字符组 量词 分支结构 案例分析  1.1. 两种模糊匹配  如果正则只有精确匹配是没多大意义的，比如 /hello/，也只能匹配字符串中的">
+<meta property="og:image" content="https://meowv.github.io/images/r.1.1.png">
+<meta property="og:image" content="https://meowv.github.io/images/r.1.2.png">
+<meta property="og:image" content="https://meowv.github.io/images/r.1.3.png">
+<meta property="og:image" content="https://meowv.github.io/images/r.1.4.png">
+<meta property="og:image" content="https://meowv.github.io/images/r.1.5.png">
+<meta property="og:image" content="https://meowv.github.io/images/r.1.6.png">
+<meta property="og:image" content="https://meowv.github.io/images/r.1.7.png">
+<meta property="og:image" content="https://meowv.github.io/images/r.1.8.png">
+<meta property="og:image" content="https://meowv.github.io/images/r.1.9.png">
+<meta property="og:image" content="https://meowv.github.io/images/r.1.10.png">
+<meta property="og:image" content="https://meowv.github.io/images/r.1.11.png">
+<meta property="og:updated_time" content="2017-09-28T04:49:12.413Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="正则表达式字符匹配攻略">
+<meta name="twitter:description" content="1. 第一章 正则表达式字符匹配攻略正则表达式是匹配模式，要么匹配字符，要么匹配位置。请记住这句话。 然而关于正则如何匹配字符的学习，大部分人都觉得这块比较杂乱。 毕竟元字符太多了，看起来没有系统性，不好记。本章就解决这个问题。 内容包括：  两种模糊匹配 字符组 量词 分支结构 案例分析  1.1. 两种模糊匹配  如果正则只有精确匹配是没多大意义的，比如 /hello/，也只能匹配字符串中的">
+<meta name="twitter:image" content="https://meowv.github.io/images/r.1.1.png">
+  
+    <link rel="alternative" href="/atom.xml" title="当然我在瞎扯" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+                <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+        </a>
+
+        <hgroup>
+            <h1 class="header-author">
+                <a href="/" title="Hello World">
+                    阿星Plus
+                </a>
+            </h1>
+        </hgroup>
+
+        
+            <p class="header-subtitle">
+                生命不息，奋斗不止
+            </p>
+            
+                
+                        
+                            <div id="switch-btn" class="switch-btn">
+                                <div class="icon">
+                                    <div class="icon-ctn">
+                                        <div class="icon-wrap icon-house" data-idx="0">
+                                            <div class="birdhouse"></div>
+                                            <div class="birdhouse_holes"></div>
+                                        </div>
+                                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                                            <div class="ribbon"></div>
+                                        </div>
+                                        
+                                            <div class="icon-wrap icon-link hide" data-idx="2">
+                                                <div class="loopback_l"></div>
+                                                <div class="loopback_r"></div>
+                                            </div>
+                                            
+                                                
+                                    </div>
+
+                                </div>
+                                <div class="tips-box hide">
+                                    <div class="tips-arrow"></div>
+                                    <ul class="tips-inner">
+                                        <li>菜单</li>
+                                        <li>标签</li>
+                                        
+                                            <li>友情链接</li>
+                                            
+                                                
+                                    </ul>
+                                </div>
+                            </div>
+                            
+
+                                <div id="switch-area" class="switch-area">
+                                    <div class="switch-wrap">
+                                        <section class="switch-part switch-part1">
+                                            <nav class="header-menu">
+                                                <ul>
+                                                    
+                                                        <li>
+                                                            <a href="/">
+                                                                Home
+                                                            </a>
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            <a href="/archives">
+                                                                Archives
+                                                            </a>
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            <a href="http://v.xj8c.cc/">
+                                                                VIP Movie Online
+                                                            </a>
+                                                        </li>
+                                                        
+                                                </ul>
+                                            </nav>
+                                            <nav class="header-nav">
+                                                <ul class="social">
+                                                    
+                                                        <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=w-Lx8IOupqy0te2grK4" title="mail">
+                                                            mail
+                                                        </a>
+                                                        
+                                                        <a class="fl weibo" target="_blank" href="http://weibo.com/Tencentgou" title="weibo">
+                                                            weibo
+                                                        </a>
+                                                        
+                                                        <a class="fl github" target="_blank" href="https://github.com/Meowv" title="github">
+                                                            github
+                                                        </a>
+                                                        
+                                                        <a class="fl twitter" target="_blank" href="https://twitter.com/hackxing" title="twitter">
+                                                            twitter
+                                                        </a>
+                                                        
+                                                        <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">
+                                                            zhihu
+                                                        </a>
+                                                        
+                                                        <a class="fl QQ" target="_blank" href="//wpa.qq.com/msgrd?uin=494910887" title="QQ">
+                                                            QQ
+                                                        </a>
+                                                        
+                                                        <a class="fl wechat" target="_blank" href="http://xj8c.cc/img/wechatimg.jpg" title="wechat">
+                                                            wechat
+                                                        </a>
+                                                        
+                                                        <a class="fl rss" target="_blank" href="/atom.xml" title="rss">
+                                                            rss
+                                                        </a>
+                                                        
+                                                </ul>
+                                            </nav>
+                                        </section>
+
+                                        
+                                            <section class="switch-part switch-part2">
+                                                <div class="widget tagcloud" id="js-tagcloud">
+                                                    <a href="/tags/ASP-NET/" style="font-size: 18.33px;">ASP.NET</a> <a href="/tags/C/" style="font-size: 11.67px;">C#</a> <a href="/tags/CEAC/" style="font-size: 10px;">CEAC</a> <a href="/tags/HtmlAgilityPack/" style="font-size: 11.67px;">HtmlAgilityPack</a> <a href="/tags/IT/" style="font-size: 11.67px;">IT</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Newtonsoft-Json/" style="font-size: 10px;">Newtonsoft.Json</a> <a href="/tags/Photoshop/" style="font-size: 10px;">Photoshop</a> <a href="/tags/ReactNative/" style="font-size: 20px;">ReactNative</a> <a href="/tags/Regex/" style="font-size: 10px;">Regex</a> <a href="/tags/SqlServer/" style="font-size: 10px;">SqlServer</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/get/" style="font-size: 10px;">get</a> <a href="/tags/office2010/" style="font-size: 13.33px;">office2010</a> <a href="/tags/post/" style="font-size: 10px;">post</a> <a href="/tags/win10/" style="font-size: 11.67px;">win10</a> <a href="/tags/win7/" style="font-size: 11.67px;">win7</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/三层架构/" style="font-size: 10px;">三层架构</a> <a href="/tags/互联网/" style="font-size: 13.33px;">互联网</a> <a href="/tags/今日头条/" style="font-size: 10px;">今日头条</a> <a href="/tags/原版系统/" style="font-size: 10px;">原版系统</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/实习/" style="font-size: 10px;">实习</a> <a href="/tags/实习感受/" style="font-size: 10px;">实习感受</a> <a href="/tags/小说/" style="font-size: 10px;">小说</a> <a href="/tags/年终总结/" style="font-size: 10px;">年终总结</a> <a href="/tags/微软/" style="font-size: 10px;">微软</a> <a href="/tags/快捷键/" style="font-size: 10px;">快捷键</a> <a href="/tags/手机/" style="font-size: 10px;">手机</a> <a href="/tags/技术教程/" style="font-size: 16.67px;">技术教程</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/春天/" style="font-size: 10px;">春天</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/毕业答辩/" style="font-size: 10px;">毕业答辩</a> <a href="/tags/爬虫/" style="font-size: 11.67px;">爬虫</a> <a href="/tags/琅琊榜/" style="font-size: 10px;">琅琊榜</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/知乎/" style="font-size: 10px;">知乎</a> <a href="/tags/程序员/" style="font-size: 10px;">程序员</a> <a href="/tags/绿色软件/" style="font-size: 15px;">绿色软件</a> <a href="/tags/编程/" style="font-size: 10px;">编程</a> <a href="/tags/计算机一级/" style="font-size: 10px;">计算机一级</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/诗文/" style="font-size: 10px;">诗文</a> <a href="/tags/软件测试/" style="font-size: 16.67px;">软件测试</a> <a href="/tags/进制转换/" style="font-size: 10px;">进制转换</a> <a href="/tags/逆袭/" style="font-size: 10px;">逆袭</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/黑客/" style="font-size: 10px;">黑客</a>
+                                                </div>
+                                            </section>
+                                            
+
+                                                
+                                                    <section class="switch-part switch-part3">
+                                                        <div id="js-friends">
+                                                            
+                                                                <a target="_blank" class="main-nav-link switch-friends-link" href="http://meowv.com/">
+                                                                    喵呜网
+                                                                </a>
+                                                                
+                                                                <a target="_blank" class="main-nav-link switch-friends-link" href="http://v.xj8c.cc/">
+                                                                    VIP电影在线播放
+                                                                </a>
+                                                                
+                                                        </div>
+                                                    </section>
+                                                    
+
+                                                        
+                                    </div>
+                                </div>
+    </header>
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">阿星Plus</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">阿星Plus</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">生命不息，奋斗不止</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">Home</a></li>
+                
+                    <li><a href="/archives">Archives</a></li>
+                
+                    <li><a href="http://v.xj8c.cc/">VIP Movie Online</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=w-Lx8IOupqy0te2grK4" title="mail">mail</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/Tencentgou" title="weibo">weibo</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/Meowv" title="github">github</a>
+                    
+                        <a class="twitter" target="_blank" href="https://twitter.com/hackxing" title="twitter">twitter</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">zhihu</a>
+                    
+                        <a class="QQ" target="_blank" href="//wpa.qq.com/msgrd?uin=494910887" title="QQ">QQ</a>
+                    
+                        <a class="wechat" target="_blank" href="http://xj8c.cc/img/wechatimg.jpg" title="wechat">wechat</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Regex-1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/28/Regex-1/" class="article-date">
+      <time datetime="2017-09-28T02:36:26.000Z" itemprop="datePublished">2017-09-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      正则表达式字符匹配攻略
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Regex/">Regex</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="1-第一章-正则表达式字符匹配攻略"><a href="#1-第一章-正则表达式字符匹配攻略" class="headerlink" title="1. 第一章 正则表达式字符匹配攻略"></a>1. 第一章 正则表达式字符匹配攻略</h2><p>正则表达式是匹配模式，要么匹配字符，要么匹配位置。请记住这句话。</p>
+<p>然而关于正则如何匹配字符的学习，大部分人都觉得这块比较杂乱。</p>
+<p>毕竟元字符太多了，看起来没有系统性，不好记。本章就解决这个问题。</p>
+<p>内容包括：</p>
+<ul>
+<li><a href="#两种模糊匹配">两种模糊匹配</a></li>
+<li><a href="#字符组">字符组</a></li>
+<li><a href="#量词">量词</a></li>
+<li><a href="#分支结构">分支结构</a></li>
+<li><a href="#案例分析">案例分析</a></li>
+</ul>
+<h3 id="两种模糊匹配">1.1. 两种模糊匹配</h3>
+
+<p>如果正则只有精确匹配是没多大意义的，比如 <strong>/hello/</strong>，也只能匹配字符串中的 <strong>“hello”</strong> 这个子串。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/hello/</span>;</div><div class="line"><span class="built_in">console</span>.log(regex.test(<span class="string">"hello"</span>));</div><div class="line"><span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>正则表达式之所以强大，是因为其能实现模糊匹配。</p>
+<p>而模糊匹配，有两个方向上的“模糊”：横向模糊和纵向模糊。</p>
+<h4 id="1-1-1-横向模糊匹配"><a href="#1-1-1-横向模糊匹配" class="headerlink" title="1.1.1. 横向模糊匹配"></a>1.1.1. 横向模糊匹配</h4><p>横向模糊指的是，一个正则可匹配的字符串的长度不是固定的，可以是多种情况的。</p>
+<p>其实现的方式是使用量词。譬如 <strong>{m,n}</strong>，表示连续出现最少 m 次，最多 n 次。</p>
+<p>比如正则 <strong>/ab{2,5}c/</strong> 表示匹配这样一个字符串：第一个字符是 <strong>“a”</strong>，接下来是 2 到 5 个字符 <strong>“b”</strong>，最后<br>是字符 <strong>“c”</strong>。</p>
+<p>其可视化形式如下：</p>
+<p><img src="https://meowv.github.io/images/r.1.1.png" alt="PNG"></p>
+<p>测试如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/ab&#123;2,5&#125;c/g</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"abc abbc abbbc abbbbc abbbbbc abbbbbbc"</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["abbc", "abbbc", "abbbbc", "abbbbbc"]</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>NOTE： 案例中用的正则是 <strong>/ab{2,5}c/g</strong>，其中 <strong>g</strong> 是正则的一个<strong>修饰符</strong>。表示全局匹配，即，在目<br>标字符串中按顺序找到满足匹配模式的所有子串，强调的是“所有”，而不只是“第一个”。<strong>g</strong> 是单词 global 的首字母。</p>
+</blockquote>
+<h4 id="1-1-2-纵向模糊匹配"><a href="#1-1-2-纵向模糊匹配" class="headerlink" title="1.1.2. 纵向模糊匹配"></a>1.1.2. 纵向模糊匹配</h4><p>纵向模糊指的是，一个正则匹配的字符串，具体到某一位字符时，它可以不是某个确定的字符，可以有多种<br>可能。</p>
+<p>其实现的方式是使用字符组。譬如 <strong>[abc]</strong>，表示该字符是可以字符 <strong>“a”、”b”、”c”</strong> 中的任何一个。</p>
+<p>比如 <strong>/a[123]b/</strong> 可以匹配如下三种字符串： <strong>“a1b”、”a2b”、”a3b”</strong>。</p>
+<p>其可视化形式如下：</p>
+<p><img src="https://meowv.github.io/images/r.1.2.png" alt="PNG"></p>
+<p>测试如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/a[123]b/g</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"a0b a1b a2b a3b a4b"</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["a1b", "a2b", "a3b"]</span></div></pre></td></tr></table></figure>
+<p>以上就是本章讲的主体内容，只要掌握横向和纵向模糊匹配，就能解决很大部分正则匹配问题。</p>
+<p>接下来，我们将具体展开来说。</p>
+<h3 id="字符组">1.2. 字符组</h3>
+
+<p>需要强调的是，虽叫字符组（字符类），但只是其中一个字符。</p>
+<p>例如 <strong>[abc]</strong>，表示匹配一个字符，它可以是 <strong>“a”、”b”、”c”</strong> 之一。</p>
+<h4 id="1-2-1-范围表示法"><a href="#1-2-1-范围表示法" class="headerlink" title="1.2.1. 范围表示法"></a>1.2.1. 范围表示法</h4><p>如果字符组里的字符特别多的话，怎么办？可以使用范围表示法。</p>
+<p>比如 <strong>[123456abcdefGHIJKLM]</strong>，可以写成 <strong>[1-6a-fG-M]</strong>。用连字符 - 来省略和简写。</p>
+<p>因为连字符有特殊用途，那么要匹配 <strong>“a”</strong>、<strong>“-“</strong>、<strong>“z”</strong> 这三者中任意一个字符，该怎么做呢？</p>
+<p>不能写成 <strong>[a-z]</strong>，因为其表示小写字符中的任何一个字符。</p>
+<p>可以写成如下的方式：<strong>[-az]</strong> 或 <strong>[az-]</strong> 或 <strong>[a-z]</strong>。</p>
+<p>即要么放在开头，要么放在结尾，要么转义。总之不会让引擎认为是范围表示法就行了。</p>
+<h4 id="1-2-2-排除字符组"><a href="#1-2-2-排除字符组" class="headerlink" title="1.2.2. 排除字符组"></a>1.2.2. 排除字符组</h4><p>纵向模糊匹配，还有一种情形就是，某位字符可以是任何东西，但就不能是 <strong>“a”</strong>、<strong>“b”</strong>、<strong>“c”</strong>。</p>
+<p>此时就是排除字符组（反义字符组）的概念。例如 <strong>[^abc]</strong>，表示是一个除 <strong>“a”</strong>、<strong>“b”</strong>、<strong>“c”</strong>之外的任意一个字<br>符。字符组的第一位放 <strong>^</strong>（脱字符），表示求反的概念。</p>
+<p>当然，也有相应的范围表示法。</p>
+<h4 id="1-2-3-常见的简写形式"><a href="#1-2-3-常见的简写形式" class="headerlink" title="1.2.3. 常见的简写形式"></a>1.2.3. 常见的简写形式</h4><p>有了字符组的概念后，一些常见的符号我们也就理解了。因为它们都是系统自带的简写形式。</p>
+<table>
+<thead>
+<tr>
+<th>字符组</th>
+<th>具体含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>\d</strong></td>
+<td>表示 <strong>[0-9]</strong>。表示是一位数字。<br>记忆方式：其英文是 digit（数字）。</td>
+</tr>
+<tr>
+<td><strong>\D</strong></td>
+<td>表示 <strong>[^0-9]</strong>。表示除数字外的任意字符。</td>
+</tr>
+<tr>
+<td><strong>\w</strong></td>
+<td>表示 <strong>[0-9a-zA-Z_]</strong>。表示数字、大小写字母和下划线。<br>记忆方式：w 是 word 的简写，也称单词字符。</td>
+</tr>
+<tr>
+<td><strong>\W</strong></td>
+<td>表示 <strong>[^0-9a-zA-Z_]</strong>。非单词字符。</td>
+</tr>
+<tr>
+<td><strong>\s</strong></td>
+<td>表示 <strong>[ \t\v\n\r\f]</strong>。表示空白符，包括空格、水平制表符、垂直制表符、换行符、回车符、换页符。<br>记忆方式：s 是 space 的首字母，空白符的单词是 white space。</td>
+</tr>
+<tr>
+<td><strong>\S</strong></td>
+<td>表示 <strong>[^ \t\v\n\r\f]</strong>。 非空白符。</td>
+</tr>
+<tr>
+<td><strong>.</strong></td>
+<td>表示 <strong>[^\n\r\u2028\u2029]</strong>。通配符，表示几乎任意字符。换行符、回车符、行分隔符和段分隔符除外。<br>记忆方式：想想省略号 … 中的每个点，都可以理解成占位符，表示任何类似的东西。</td>
+</tr>
+</tbody>
+</table>
+<p>如果要匹配任意字符怎么办？可以使用 <strong>[\d\D]</strong>、<strong>[\w\W]</strong>、<strong>[\s\S]</strong> 和 <strong>[^]</strong> 中任何的一个。</p>
+<p>以上各字符组对应的可视化形式是：</p>
+<p><img src="https://meowv.github.io/images/r.1.3.png" alt="PNG"></p>
+<h3 id="量词">1.3. 量词</h3>
+
+<p>量词也称重复。掌握 <strong>{m,n}</strong> 的准确含义后，只需要记住一些简写形式。</p>
+<h4 id="1-3-1-简写形式"><a href="#1-3-1-简写形式" class="headerlink" title="1.3.1. 简写形式"></a>1.3.1. 简写形式</h4><table>
+<thead>
+<tr>
+<th>量词</th>
+<th>具体含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>{m,}</strong></td>
+<td>表示至少出现 m 次。</td>
+</tr>
+<tr>
+<td><strong>{m}</strong></td>
+<td>等价于 <strong>{m,m}</strong>，表示出现 m 次。</td>
+</tr>
+<tr>
+<td><strong>?</strong></td>
+<td>等价于 <strong>{0,1}</strong>，表示出现或者不出现。<br>记忆方式：问号的意思表示，有吗？</td>
+</tr>
+<tr>
+<td><strong>+</strong></td>
+<td>等价于 <strong>{1,}</strong>，表示出现至少一次。<br>记忆方式：加号是追加的意思，得先有一个，然后才考虑追加。</td>
+</tr>
+<tr>
+<td><strong>*</strong></td>
+<td>等价于 <strong>{0,}</strong>，表示出现任意次，有可能不出现。记忆方式：看看天上的星星，可能一颗没有，可能零散有几颗，可能数也数不过来。</td>
+</tr>
+</tbody>
+</table>
+<p>以上量词对应的可视化形式是：</p>
+<p><img src="https://meowv.github.io/images/r.1.4.png" alt="PNG"></p>
+<h4 id="1-3-2-贪婪匹配与惰性匹配"><a href="#1-3-2-贪婪匹配与惰性匹配" class="headerlink" title="1.3.2. 贪婪匹配与惰性匹配"></a>1.3.2. 贪婪匹配与惰性匹配</h4><p>看如下的例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/\d&#123;2,5&#125;/g</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"123 1234 12345 123456"</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["123", "1234", "12345", "12345"]</span></div></pre></td></tr></table></figure>
+<p>其中正则 <strong>/\d{2,5}/</strong>，表示数字连续出现 2 到 5 次。会匹配 2 位、3 位、4 位、5 位连续数字。</p>
+<p>但是其是贪婪的，它会尽可能多的匹配。你能给我 6 个，我就要 5 个。你能给我 3 个，我就要 3 个。反正只要在能力范围内，越多越好。</p>
+<p>我们知道有时贪婪不是一件好事（请看文章最后一个例子）。而惰性匹配，就是尽可能少的匹配：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/\d&#123;2,5&#125;?/g</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"123 1234 12345 123456"</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["12", "12", "34", "12", "34", "12", "34", "56"]</span></div></pre></td></tr></table></figure>
+<p>其中 <strong>/\d{2,5}?/</strong> 表示，虽然 2 到 5 次都行，当 2 个就够的时候，就不再往下尝试了。</p>
+<p>通过在量词后面加个问号就能实现惰性匹配，因此所有惰性匹配情形如下：</p>
+<table>
+<thead>
+<tr>
+<th>惰性量词</th>
+<th>贪婪量词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>{m,n}?</strong></td>
+<td><strong>{m,n}</strong></td>
+</tr>
+<tr>
+<td><strong>{m,}?</strong></td>
+<td><strong>{m,}</strong></td>
+</tr>
+<tr>
+<td><strong>??</strong></td>
+<td><strong>?</strong></td>
+</tr>
+<tr>
+<td><strong>+?</strong></td>
+<td><strong>+</strong></td>
+</tr>
+<tr>
+<td><strong>*?</strong></td>
+<td><strong>*</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>TIP： 对惰性匹配的记忆方式是：量词后面加个问号，问一问你知足了吗，你很贪婪吗？</p>
+</blockquote>
+<p>以上惰性量词对应的可视化形式是：</p>
+<p><img src="https://meowv.github.io/images/r.1.5.png" alt="PNG"></p>
+<h3 id="分支结构">1.4. 多选分支</h3>
+
+<p>一个模式可以实现横向和纵向模糊匹配。而多选分支可以支持多个子模式任选其一。</p>
+<p>具体形式如下：<strong>(p1|p2|p3)</strong>，其中 <strong>p1</strong>、<strong>p2</strong> 和 <strong>p3</strong> 是子模式，用 <strong>|</strong>（管道符）分隔，表示其中任何之一。</p>
+<p>例如要匹配字符串 <strong>“good”</strong> 和 <strong>“nice”</strong> 可以使用 <strong>/good|nice/</strong>。</p>
+<p>可视化形式如下：</p>
+<p><img src="https://meowv.github.io/images/r.1.6.png" alt="PNG"></p>
+<p>测试如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/good|nice/g</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"good idea, nice try."</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["good", "nice"]</span></div></pre></td></tr></table></figure>
+<p>但有个事实我们应该注意，比如我用 <strong>/good|goodbye/</strong>，去匹配 <strong>“goodbye”</strong> 字符串时，结果是 <strong>“good”</strong>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/good|goodbye/g</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"goodbye"</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["good"]</span></div></pre></td></tr></table></figure>
+<p>而把正则改成 <strong>/goodbye|good/</strong>，结果是：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/goodbye|good/g</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"goodbye"</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["goodbye"]</span></div></pre></td></tr></table></figure>
+<p>也就是说，分支结构也是惰性的，即当前面的匹配上了，后面的就不再尝试了。</p>
+<h3 id="案例分析">1.5. 案例分析</h3>
+
+<p>匹配字符，无非就是字符组、量词和分支结构的组合使用罢了。</p>
+<p>下面找几个例子演练一下（其中，每个正则并不是只有唯一写法）：</p>
+<h4 id="1-5-1-匹配-16-进制颜色值"><a href="#1-5-1-匹配-16-进制颜色值" class="headerlink" title="1.5.1. 匹配 16 进制颜色值"></a>1.5.1. 匹配 16 进制颜色值</h4><p>要求匹配：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#ffbbad</div><div class="line">#Fc01DF</div><div class="line">#FFF</div><div class="line">#ffE</div></pre></td></tr></table></figure>
+<p>分析：</p>
+<p>表示一个 16 进制字符，可以用字符组 <strong>[0-9a-fA-F]</strong>。</p>
+<p>其中字符可以出现 3 或 6 次，需要是用量词和分支结构。</p>
+<p>使用分支结构时，需要注意顺序。</p>
+<p>正则如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/#([0-9a-fA-F]&#123;6&#125;|[0-9a-fA-F]&#123;3&#125;)/g</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"#ffbbad #Fc01DF #FFF #ffE"</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["#ffbbad", "#Fc01DF", "#FFF", "#ffE"]</span></div></pre></td></tr></table></figure>
+<p>其可视化形式：</p>
+<p><img src="https://meowv.github.io/images/r.1.7.png" alt="PNG"></p>
+<h4 id="1-5-2-匹配时间"><a href="#1-5-2-匹配时间" class="headerlink" title="1.5.2. 匹配时间"></a>1.5.2. 匹配时间</h4><p>以 24 小时制为例。</p>
+<p>要求匹配：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">23:59</div><div class="line">02:07</div></pre></td></tr></table></figure>
+<p>分析：</p>
+<p>共 4 位数字，第一位数字可以为 <strong>[0-2]</strong>。</p>
+<p>当第 1 位为 <strong>“2”</strong> 时，第 2 位可以为 <strong>[0-3]</strong>，其他情况时，第 2 位为 <strong>[0-9]</strong>。</p>
+<p>第 3 位数字为 <strong>[0-5]</strong>，第4位为 <strong>[0-9]</strong>。</p>
+<p>正则如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/^([01][0-9]|[2][0-3]):[0-5][0-9]$/</span>;</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"23:59"</span>) );</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"02:07"</span>) );</div><div class="line"><span class="comment">// =&gt; true</span></div><div class="line"><span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>NOTE： 正则中使用了 ^ 和 $，分别表示字符串开头和结尾。具体详细请参考第二章。</p>
+</blockquote>
+<p>如果也要求匹配 <strong>“7:9”</strong>，也就是说时分前面的 <strong>“0”</strong> 可以省略。</p>
+<p>此时正则变成：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/^(0?[0-9]|1[0-9]|[2][0-3]):(0?[0-9]|[1-5][0-9])$/</span>;</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"23:59"</span>) );</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"02:07"</span>) );</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"7:9"</span>) );</div><div class="line"><span class="comment">// =&gt; true</span></div><div class="line"><span class="comment">// =&gt; true</span></div><div class="line"><span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure>
+<p>其可视化形式：</p>
+<p><img src="https://meowv.github.io/images/r.1.8.png" alt="PNG"></p>
+<h4 id="1-5-3-匹配日期"><a href="#1-5-3-匹配日期" class="headerlink" title="1.5.3. 匹配日期"></a>1.5.3. 匹配日期</h4><p>比如 <strong>yyyy-mm-dd</strong> 格式为例。</p>
+<p>要求匹配：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">2017-06-10</div></pre></td></tr></table></figure>
+<p>分析：</p>
+<p>年，四位数字即可，可用 <strong>[0-9]{4}</strong>。</p>
+<p>月，共 12 个月，分两种情况 <strong>“01”</strong>、<strong>“02”</strong>、…、<strong>“09”</strong> 和 <strong>“10”</strong>、<strong>“11”</strong>、<strong>“12”</strong>，可用 <strong>(0[1-9]|1[0-2])</strong>。</p>
+<p>日，最大 31 天，可用 <strong>(0[1-9]|[12][0-9]|3[01])</strong>。</p>
+<p>正则如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/^[0-9]&#123;4&#125;-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/</span>;</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"2017-06-10"</span>) );</div><div class="line"><span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure>
+<p>其可视化形式：</p>
+<p><img src="https://meowv.github.io/images/r.1.9.png" alt="PNG"></p>
+<h4 id="1-5-4-window-操作系统文件路径"><a href="#1-5-4-window-操作系统文件路径" class="headerlink" title="1.5.4. window 操作系统文件路径"></a>1.5.4. window 操作系统文件路径</h4><p>要求匹配：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">F:\study\javascript\regex\regular expression.pdf</div><div class="line">F:\study\javascript\regex\</div><div class="line">F:\study\javascript</div><div class="line">F:\</div></pre></td></tr></table></figure>
+<p>分析：</p>
+<p>整体模式是: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">盘符:\文件夹\文件夹\文件夹\</div></pre></td></tr></table></figure>
+<p>其中匹配 <strong>“F:\”</strong>，需要使用 <strong>[a-zA-Z]:\</strong>，其中盘符不区分大小写，注意 \ 字符需要转义。</p>
+<p>文件名或者文件夹名，不能包含一些特殊字符，此时我们需要排除字符组 <strong>[^\:*&lt;&gt;|”?\r\n/]</strong> 来表示合法<br>字符。</p>
+<p>另外它们的名字不能为空名，至少有一个字符，也就是要使用量词 <strong>+</strong>。因此匹配 <strong>文件夹\</strong>，可用<strong>[^\:*&lt;&gt;|”?\r\n/]+\</strong>。</p>
+<p>另外 <strong>文件夹\</strong>，可以出现任意次。也就是 <strong>([^\:<em>&lt;&gt;|”?\r\n/]+\)</em></strong>。其中括号表示其内部正则是一个整体。具体详细请参考第三章。</p>
+<p>路径的最后一部分可以是 <strong>文件夹</strong>，没有 <strong>\</strong>，因此需要添加 <strong>([^\:*&lt;&gt;|”?\r\n/]+)?</strong>。</p>
+<p>最后拼接成了一个看起来比较复杂的正则：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/^[a-zA-Z]:\\([^\\:*&lt;&gt;|"?\r\n/]+\\)*([^\\:*&lt;&gt;|"?\r\n/]+)?$/</span>;</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"F:\\study\\javascript\\regex\\regular expression.pdf"</span>) );</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"F:\\study\\javascript\\regex\\"</span>) );</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"F:\\study\\javascript"</span>) );</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"F:\\"</span>) );</div><div class="line"><span class="comment">// =&gt; true</span></div><div class="line"><span class="comment">// =&gt; true</span></div><div class="line"><span class="comment">// =&gt; true</span></div><div class="line"><span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure>
+<p>其中，在JavaScript 中字符串要表示字符 <strong>\</strong> 时，也需要转义。</p>
+<p>其可视化形式：</p>
+<p><img src="https://meowv.github.io/images/r.1.10.png" alt="PNG"></p>
+<h4 id="1-5-5-匹配-id"><a href="#1-5-5-匹配-id" class="headerlink" title="1.5.5. 匹配 id"></a>1.5.5. 匹配 id</h4><p>要求从</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span> <span class="attr">class</span>=<span class="string">"main"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>提取出 <strong>id=”container”</strong>。</p>
+<p>可能最开始想到的正则是：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/id=".*"/</span></div><div class="line"><span class="keyword">var</span> string = <span class="string">'&lt;div id="container" class="main"&gt;&lt;/div&gt;'</span>;</div><div class="line"><span class="built_in">console</span>.log(string.match(regex)[<span class="number">0</span>]);</div><div class="line"><span class="comment">// =&gt; id="container" class="main"</span></div></pre></td></tr></table></figure>
+<p>其可视化形式：</p>
+<p><img src="https://meowv.github.io/images/r.1.11.png" alt="PNG"></p>
+<p>因为 <strong>.</strong> 是通配符，本身就匹配双引号的，而量词 <strong>*</strong> 又是贪婪的，当遇到 <strong>container</strong> 后面双引号时，是不会停下来，会继续匹配，直到遇到最后一个双引号为止。</p>
+<p>解决之道，可以使用惰性匹配：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/id=".*?"/</span></div><div class="line"><span class="keyword">var</span> string = <span class="string">'&lt;div id="container" class="main"&gt;&lt;/div&gt;'</span>;</div><div class="line"><span class="built_in">console</span>.log(string.match(regex)[<span class="number">0</span>]);</div><div class="line"><span class="comment">// =&gt; id="container"</span></div></pre></td></tr></table></figure>
+<p>当然，这样也会有个问题。效率比较低，因为其匹配原理会涉及到“回溯”这个概念（这里也只是顺便提一下，第四章会详细说明）。可以优化如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/id="[^"]*"/</span></div><div class="line"><span class="keyword">var</span> string = <span class="string">'&lt;div id="container" class="main"&gt;&lt;/div&gt;'</span>;</div><div class="line"><span class="built_in">console</span>.log(string.match(regex)[<span class="number">0</span>]);</div><div class="line"><span class="comment">// =&gt; id="container"</span></div></pre></td></tr></table></figure>
+<h3 id="1-6-本章小结"><a href="#1-6-本章小结" class="headerlink" title="1.6. 本章小结"></a>1.6. 本章小结</h3><p>掌握字符组和量词就能解决大部分常见的情形，也就是说，当你会了这二者，JavaScript 正则算是入门了。</p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">×</a>
+            <div class="shang_tit">
+              <p>谢谢你请我吃辣条</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/09/28/Regex-1/">正则表达式字符匹配攻略</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 阿星Plus 的个人博客">阿星Plus</a></p>
+        <p><span>发布时间:</span>2017年09月28日 - 10时36分</p>
+        <p><span>最后更新:</span>2017年09月28日 - 12时49分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/09/28/Regex-1/" title="正则表达式字符匹配攻略">http://xj8c.cc/2017/09/28/Regex-1/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://xj8c.cc/2017/09/28/Regex-1/　　作者: 阿星Plus" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/27/ToutiaoNews/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">今日头条全站新闻文章数据爬取</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-第一章-正则表达式字符匹配攻略"><span class="toc-number">1.</span> <span class="toc-text">1. 第一章 正则表达式字符匹配攻略</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#两种模糊匹配"><span class="toc-number">1.1.</span> <span class="toc-text">1.1. 两种模糊匹配</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-1-横向模糊匹配"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1.1. 横向模糊匹配</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-2-纵向模糊匹配"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.1.2. 纵向模糊匹配</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符组"><span class="toc-number">1.2.</span> <span class="toc-text">1.2. 字符组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-1-范围表示法"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.2.1. 范围表示法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-2-排除字符组"><span class="toc-number">1.2.2.</span> <span class="toc-text">1.2.2. 排除字符组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-3-常见的简写形式"><span class="toc-number">1.2.3.</span> <span class="toc-text">1.2.3. 常见的简写形式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#量词"><span class="toc-number">1.3.</span> <span class="toc-text">1.3. 量词</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-1-简写形式"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.3.1. 简写形式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-2-贪婪匹配与惰性匹配"><span class="toc-number">1.3.2.</span> <span class="toc-text">1.3.2. 贪婪匹配与惰性匹配</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分支结构"><span class="toc-number">1.4.</span> <span class="toc-text">1.4. 多选分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#案例分析"><span class="toc-number">1.5.</span> <span class="toc-text">1.5. 案例分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-1-匹配-16-进制颜色值"><span class="toc-number">1.5.1.</span> <span class="toc-text">1.5.1. 匹配 16 进制颜色值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-2-匹配时间"><span class="toc-number">1.5.2.</span> <span class="toc-text">1.5.2. 匹配时间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-3-匹配日期"><span class="toc-number">1.5.3.</span> <span class="toc-text">1.5.3. 匹配日期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-4-window-操作系统文件路径"><span class="toc-number">1.5.4.</span> <span class="toc-text">1.5.4. window 操作系统文件路径</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-5-匹配-id"><span class="toc-number">1.5.5.</span> <span class="toc-text">1.5.5. 匹配 id</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-本章小结"><span class="toc-number">1.6.</span> <span class="toc-text">1.6. 本章小结</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="正则表达式字符匹配攻略"></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cyt1UJT89'; 
+var conf = 'prod_a66df9b8bf4687f6662a946344b221b7'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2017/09/27/ToutiaoNews/" title="下一篇: 今日头条全站新闻文章数据爬取">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/Regex-1/">正则表达式字符匹配攻略</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/27/ToutiaoNews/">今日头条全站新闻文章数据爬取</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/HtmlAgilityPack/">HtmlAgilityPack爬取美女图片、每日一文文章、小说</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/18/ReactNative-resource/">ReactNative开发中一些有用的资源</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/17/ReactNative-styles/">ReactNative样式总览</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/16/ReactNative-build/">打包你的App</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/15/ReactNative-net/">掌握React Native的Fetch Api</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/14/ReactNative-navigation/">是时候用上React Navigation了</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/13/ReactNative-ListView-FlatList/">带你了解ListView及FlatList</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/12/ReactNative-storage/">存储：与AsyncStorage相比，Realm更应该作为重点掌握内容</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/11/ReactNative-style-layout/">React Native中的样式，Flexbox布局及其他内容</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/10/ReactNative-module/">React Native常用的组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/09/ReactNative-run/">启动你的第一个React Native 应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/08/ReactNative-base/">ReactNative基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/07/ReactNative-introduce/">ReactNative介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/01/my-internship-record/">我的实习记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/30/graduation-report-material/">毕业答辩汇报材料</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/04/2016-year-end-summary/">2016年终总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/31/csharp7/">C＃7.0中有哪些新特性？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/18/internship-experience/">武汉路博特工程科技有限公司实习“满月”工作感受</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/16/asp.net-knowledge-point-interview/">ASP.NET知识点面试篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/08/what-is-a-three-tier-architecture/">三层架构到底是个什么玩意？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/07/five-main-objects-in-dotnet/">ADO.NET中的五个主要对象？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/07/get-and-post/">所谓的Get和Post到底是何方神圣？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/10/the-students-with-poor-grades-reversed/">一个学渣的逆袭</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/21/computer-computing-infrastructure/">计算机运算基础荟萃</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/08/CEAC-office2010/">CEAC-office2010实操题练习评测系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/28/test-case-design-advanced(bottom)/">测试用例设计进阶(下)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/28/test-case-design-in-order(upper)/">测试用例设计进阶（上）</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/25/boundary-value/">边界值分析法相关概念 — 边界点相关概念</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/24/basic-knowledge-of-software-testing/">软件测试基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/24/overview-of-software-testing/">软件测试概述</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/20/xml-note-1/">XML学习笔记(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/12/when-the-deepest-counsel-comes-to-the-most-clear-ideal/">当最深沉的筹谋换来最清明的理想</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/01/10-best-javascript-development-practices/">10个最佳 javascript 开发实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/07/the-30-most-difficult-questions-to-answer-in-history/">史上最难回答的30个问题，没有一人都能答对！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/05/windows10-iso/">Win10正式版微软官方原版ISO系统镜像下载大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/02/the-work-of-a-programmer/">一本关于程序员的修真小说</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/02/Win10-ten-points/">Win10的十个亮点</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/01/Zhihu-god-reply/">一大波，知乎神回复在接近了！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/27/vs-shortcuts/">必须知道的 Visual Studio 快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/16/asp.net-knowledge-point-summary-5/">Asp.net知识点总结(五)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/13/ten-programming-languages/">你必须知道的十个编程语言</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/11/asp.net-knowledge-point-summary-4/">Asp.net知识点总结(四)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/07/asp.net-knowledge-point-summary-3/">Asp.net知识点总结(三)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/06/bigdata-internet-thinking-O2O-crowdfunding/">什么是大数据，什么是红海、蓝海、互联网思维？什么是O2O？什么是众筹？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/04/asp.net-knowledge-point-summary-2/">Asp.net知识点总结(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/03/asp.net-knowledge-point-summary-1/">Asp.net知识点总结(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/25/shopping-online/">Shopping Online</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/04/SqlServer2008/">sql数据库|SqlServer2008 R2_x86&x64</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/17/why-is-the-chinese-mobile-number-11/">揭秘：中国手机号码为什么是11位数？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/14/33-poems-of-the-most-artistic-conception-in-China/">中国最有意境的33句诗文，欣赏下吧！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/05/win7-cmd/">Win7运行命令大全|开始-运行-命令总汇</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/31/please-don't-be-a-fickle-IT-man/">请不要做浮躁的IT人</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/29/the-name-of-the-big-internet-companies/">各大互联网公司命名的由来，值得你了解。</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/25/30-the-hacker-movie/">30部黑客电影，你看过哪几部？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/22/top 10 IT jobs in 2015/">2015年 十大热门 IT 工作</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/10/a-years-plan-starts-with-spring/">A year's plan starts with spring ！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/28/cherish-every-day/">珍惜每一天</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/28/adobe-photoshop/">Adobe Photoshop 绿色安装版</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/20/national-computer-level-office2010/">全国计算机一级Office2010+win7版（未来教育）考试练习软件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/17/win7-shortcuts/">Win7电脑常用快捷键大全有哪些?</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/15/microsoft-office-2010/">Microsoft office 2010</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy;
+                2017
+                    阿星Plus
+            </div>
+            <div class="footer-right">
+                Blog By <a href="http://hexo.io/" target="_blank">Hexo</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站访问量: 
+                            <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                    </span>
+                    
+                        
+                            <span>, </span>
+                            
+                                
+                                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                                    </span>
+                                    </span>
+                                    
+            </div>
+            
+    </div>
+</footer>
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

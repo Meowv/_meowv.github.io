@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xj8c.cc/"/>
-  <updated>2017-09-27T06:25:38.165Z</updated>
+  <updated>2017-09-28T04:49:12.413Z</updated>
   <id>http://xj8c.cc/</id>
   
   <author>
@@ -14,6 +14,296 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>正则表达式字符匹配攻略</title>
+    <link href="http://xj8c.cc/2017/09/28/Regex-1/"/>
+    <id>http://xj8c.cc/2017/09/28/Regex-1/</id>
+    <published>2017-09-28T02:36:26.000Z</published>
+    <updated>2017-09-28T04:49:12.413Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-第一章-正则表达式字符匹配攻略"><a href="#1-第一章-正则表达式字符匹配攻略" class="headerlink" title="1. 第一章 正则表达式字符匹配攻略"></a>1. 第一章 正则表达式字符匹配攻略</h2><p>正则表达式是匹配模式，要么匹配字符，要么匹配位置。请记住这句话。</p>
+<p>然而关于正则如何匹配字符的学习，大部分人都觉得这块比较杂乱。</p>
+<p>毕竟元字符太多了，看起来没有系统性，不好记。本章就解决这个问题。</p>
+<p>内容包括：</p>
+<ul>
+<li><a href="#两种模糊匹配">两种模糊匹配</a></li>
+<li><a href="#字符组">字符组</a></li>
+<li><a href="#量词">量词</a></li>
+<li><a href="#分支结构">分支结构</a></li>
+<li><a href="#案例分析">案例分析</a></li>
+</ul>
+<h3 id="两种模糊匹配">1.1. 两种模糊匹配</h3>
+
+<p>如果正则只有精确匹配是没多大意义的，比如 <strong>/hello/</strong>，也只能匹配字符串中的 <strong>“hello”</strong> 这个子串。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/hello/</span>;</div><div class="line"><span class="built_in">console</span>.log(regex.test(<span class="string">"hello"</span>));</div><div class="line"><span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>正则表达式之所以强大，是因为其能实现模糊匹配。</p>
+<p>而模糊匹配，有两个方向上的“模糊”：横向模糊和纵向模糊。</p>
+<h4 id="1-1-1-横向模糊匹配"><a href="#1-1-1-横向模糊匹配" class="headerlink" title="1.1.1. 横向模糊匹配"></a>1.1.1. 横向模糊匹配</h4><p>横向模糊指的是，一个正则可匹配的字符串的长度不是固定的，可以是多种情况的。</p>
+<p>其实现的方式是使用量词。譬如 <strong>{m,n}</strong>，表示连续出现最少 m 次，最多 n 次。</p>
+<p>比如正则 <strong>/ab{2,5}c/</strong> 表示匹配这样一个字符串：第一个字符是 <strong>“a”</strong>，接下来是 2 到 5 个字符 <strong>“b”</strong>，最后<br>是字符 <strong>“c”</strong>。</p>
+<p>其可视化形式如下：</p>
+<p><img src="https://meowv.github.io/images/r.1.1.png" alt="PNG"></p>
+<p>测试如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/ab&#123;2,5&#125;c/g</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"abc abbc abbbc abbbbc abbbbbc abbbbbbc"</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["abbc", "abbbc", "abbbbc", "abbbbbc"]</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>NOTE： 案例中用的正则是 <strong>/ab{2,5}c/g</strong>，其中 <strong>g</strong> 是正则的一个<strong>修饰符</strong>。表示全局匹配，即，在目<br>标字符串中按顺序找到满足匹配模式的所有子串，强调的是“所有”，而不只是“第一个”。<strong>g</strong> 是单词 global 的首字母。</p>
+</blockquote>
+<h4 id="1-1-2-纵向模糊匹配"><a href="#1-1-2-纵向模糊匹配" class="headerlink" title="1.1.2. 纵向模糊匹配"></a>1.1.2. 纵向模糊匹配</h4><p>纵向模糊指的是，一个正则匹配的字符串，具体到某一位字符时，它可以不是某个确定的字符，可以有多种<br>可能。</p>
+<p>其实现的方式是使用字符组。譬如 <strong>[abc]</strong>，表示该字符是可以字符 <strong>“a”、”b”、”c”</strong> 中的任何一个。</p>
+<p>比如 <strong>/a[123]b/</strong> 可以匹配如下三种字符串： <strong>“a1b”、”a2b”、”a3b”</strong>。</p>
+<p>其可视化形式如下：</p>
+<p><img src="https://meowv.github.io/images/r.1.2.png" alt="PNG"></p>
+<p>测试如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/a[123]b/g</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"a0b a1b a2b a3b a4b"</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["a1b", "a2b", "a3b"]</span></div></pre></td></tr></table></figure>
+<p>以上就是本章讲的主体内容，只要掌握横向和纵向模糊匹配，就能解决很大部分正则匹配问题。</p>
+<p>接下来，我们将具体展开来说。</p>
+<h3 id="字符组">1.2. 字符组</h3>
+
+<p>需要强调的是，虽叫字符组（字符类），但只是其中一个字符。</p>
+<p>例如 <strong>[abc]</strong>，表示匹配一个字符，它可以是 <strong>“a”、”b”、”c”</strong> 之一。</p>
+<h4 id="1-2-1-范围表示法"><a href="#1-2-1-范围表示法" class="headerlink" title="1.2.1. 范围表示法"></a>1.2.1. 范围表示法</h4><p>如果字符组里的字符特别多的话，怎么办？可以使用范围表示法。</p>
+<p>比如 <strong>[123456abcdefGHIJKLM]</strong>，可以写成 <strong>[1-6a-fG-M]</strong>。用连字符 - 来省略和简写。</p>
+<p>因为连字符有特殊用途，那么要匹配 <strong>“a”</strong>、<strong>“-“</strong>、<strong>“z”</strong> 这三者中任意一个字符，该怎么做呢？</p>
+<p>不能写成 <strong>[a-z]</strong>，因为其表示小写字符中的任何一个字符。</p>
+<p>可以写成如下的方式：<strong>[-az]</strong> 或 <strong>[az-]</strong> 或 <strong>[a-z]</strong>。</p>
+<p>即要么放在开头，要么放在结尾，要么转义。总之不会让引擎认为是范围表示法就行了。</p>
+<h4 id="1-2-2-排除字符组"><a href="#1-2-2-排除字符组" class="headerlink" title="1.2.2. 排除字符组"></a>1.2.2. 排除字符组</h4><p>纵向模糊匹配，还有一种情形就是，某位字符可以是任何东西，但就不能是 <strong>“a”</strong>、<strong>“b”</strong>、<strong>“c”</strong>。</p>
+<p>此时就是排除字符组（反义字符组）的概念。例如 <strong>[^abc]</strong>，表示是一个除 <strong>“a”</strong>、<strong>“b”</strong>、<strong>“c”</strong>之外的任意一个字<br>符。字符组的第一位放 <strong>^</strong>（脱字符），表示求反的概念。</p>
+<p>当然，也有相应的范围表示法。</p>
+<h4 id="1-2-3-常见的简写形式"><a href="#1-2-3-常见的简写形式" class="headerlink" title="1.2.3. 常见的简写形式"></a>1.2.3. 常见的简写形式</h4><p>有了字符组的概念后，一些常见的符号我们也就理解了。因为它们都是系统自带的简写形式。</p>
+<table>
+<thead>
+<tr>
+<th>字符组</th>
+<th>具体含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>\d</strong></td>
+<td>表示 <strong>[0-9]</strong>。表示是一位数字。<br>记忆方式：其英文是 digit（数字）。</td>
+</tr>
+<tr>
+<td><strong>\D</strong></td>
+<td>表示 <strong>[^0-9]</strong>。表示除数字外的任意字符。</td>
+</tr>
+<tr>
+<td><strong>\w</strong></td>
+<td>表示 <strong>[0-9a-zA-Z_]</strong>。表示数字、大小写字母和下划线。<br>记忆方式：w 是 word 的简写，也称单词字符。</td>
+</tr>
+<tr>
+<td><strong>\W</strong></td>
+<td>表示 <strong>[^0-9a-zA-Z_]</strong>。非单词字符。</td>
+</tr>
+<tr>
+<td><strong>\s</strong></td>
+<td>表示 <strong>[ \t\v\n\r\f]</strong>。表示空白符，包括空格、水平制表符、垂直制表符、换行符、回车符、换页符。<br>记忆方式：s 是 space 的首字母，空白符的单词是 white space。</td>
+</tr>
+<tr>
+<td><strong>\S</strong></td>
+<td>表示 <strong>[^ \t\v\n\r\f]</strong>。 非空白符。</td>
+</tr>
+<tr>
+<td><strong>.</strong></td>
+<td>表示 <strong>[^\n\r\u2028\u2029]</strong>。通配符，表示几乎任意字符。换行符、回车符、行分隔符和段分隔符除外。<br>记忆方式：想想省略号 … 中的每个点，都可以理解成占位符，表示任何类似的东西。</td>
+</tr>
+</tbody>
+</table>
+<p>如果要匹配任意字符怎么办？可以使用 <strong>[\d\D]</strong>、<strong>[\w\W]</strong>、<strong>[\s\S]</strong> 和 <strong>[^]</strong> 中任何的一个。</p>
+<p>以上各字符组对应的可视化形式是：</p>
+<p><img src="https://meowv.github.io/images/r.1.3.png" alt="PNG"></p>
+<h3 id="量词">1.3. 量词</h3>
+
+<p>量词也称重复。掌握 <strong>{m,n}</strong> 的准确含义后，只需要记住一些简写形式。</p>
+<h4 id="1-3-1-简写形式"><a href="#1-3-1-简写形式" class="headerlink" title="1.3.1. 简写形式"></a>1.3.1. 简写形式</h4><table>
+<thead>
+<tr>
+<th>量词</th>
+<th>具体含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>{m,}</strong></td>
+<td>表示至少出现 m 次。</td>
+</tr>
+<tr>
+<td><strong>{m}</strong></td>
+<td>等价于 <strong>{m,m}</strong>，表示出现 m 次。</td>
+</tr>
+<tr>
+<td><strong>?</strong></td>
+<td>等价于 <strong>{0,1}</strong>，表示出现或者不出现。<br>记忆方式：问号的意思表示，有吗？</td>
+</tr>
+<tr>
+<td><strong>+</strong></td>
+<td>等价于 <strong>{1,}</strong>，表示出现至少一次。<br>记忆方式：加号是追加的意思，得先有一个，然后才考虑追加。</td>
+</tr>
+<tr>
+<td><strong>*</strong></td>
+<td>等价于 <strong>{0,}</strong>，表示出现任意次，有可能不出现。记忆方式：看看天上的星星，可能一颗没有，可能零散有几颗，可能数也数不过来。</td>
+</tr>
+</tbody>
+</table>
+<p>以上量词对应的可视化形式是：</p>
+<p><img src="https://meowv.github.io/images/r.1.4.png" alt="PNG"></p>
+<h4 id="1-3-2-贪婪匹配与惰性匹配"><a href="#1-3-2-贪婪匹配与惰性匹配" class="headerlink" title="1.3.2. 贪婪匹配与惰性匹配"></a>1.3.2. 贪婪匹配与惰性匹配</h4><p>看如下的例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/\d&#123;2,5&#125;/g</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"123 1234 12345 123456"</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["123", "1234", "12345", "12345"]</span></div></pre></td></tr></table></figure>
+<p>其中正则 <strong>/\d{2,5}/</strong>，表示数字连续出现 2 到 5 次。会匹配 2 位、3 位、4 位、5 位连续数字。</p>
+<p>但是其是贪婪的，它会尽可能多的匹配。你能给我 6 个，我就要 5 个。你能给我 3 个，我就要 3 个。反正只要在能力范围内，越多越好。</p>
+<p>我们知道有时贪婪不是一件好事（请看文章最后一个例子）。而惰性匹配，就是尽可能少的匹配：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/\d&#123;2,5&#125;?/g</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"123 1234 12345 123456"</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["12", "12", "34", "12", "34", "12", "34", "56"]</span></div></pre></td></tr></table></figure>
+<p>其中 <strong>/\d{2,5}?/</strong> 表示，虽然 2 到 5 次都行，当 2 个就够的时候，就不再往下尝试了。</p>
+<p>通过在量词后面加个问号就能实现惰性匹配，因此所有惰性匹配情形如下：</p>
+<table>
+<thead>
+<tr>
+<th>惰性量词</th>
+<th>贪婪量词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>{m,n}?</strong></td>
+<td><strong>{m,n}</strong></td>
+</tr>
+<tr>
+<td><strong>{m,}?</strong></td>
+<td><strong>{m,}</strong></td>
+</tr>
+<tr>
+<td><strong>??</strong></td>
+<td><strong>?</strong></td>
+</tr>
+<tr>
+<td><strong>+?</strong></td>
+<td><strong>+</strong></td>
+</tr>
+<tr>
+<td><strong>*?</strong></td>
+<td><strong>*</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>TIP： 对惰性匹配的记忆方式是：量词后面加个问号，问一问你知足了吗，你很贪婪吗？</p>
+</blockquote>
+<p>以上惰性量词对应的可视化形式是：</p>
+<p><img src="https://meowv.github.io/images/r.1.5.png" alt="PNG"></p>
+<h3 id="分支结构">1.4. 多选分支</h3>
+
+<p>一个模式可以实现横向和纵向模糊匹配。而多选分支可以支持多个子模式任选其一。</p>
+<p>具体形式如下：<strong>(p1|p2|p3)</strong>，其中 <strong>p1</strong>、<strong>p2</strong> 和 <strong>p3</strong> 是子模式，用 <strong>|</strong>（管道符）分隔，表示其中任何之一。</p>
+<p>例如要匹配字符串 <strong>“good”</strong> 和 <strong>“nice”</strong> 可以使用 <strong>/good|nice/</strong>。</p>
+<p>可视化形式如下：</p>
+<p><img src="https://meowv.github.io/images/r.1.6.png" alt="PNG"></p>
+<p>测试如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/good|nice/g</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"good idea, nice try."</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["good", "nice"]</span></div></pre></td></tr></table></figure>
+<p>但有个事实我们应该注意，比如我用 <strong>/good|goodbye/</strong>，去匹配 <strong>“goodbye”</strong> 字符串时，结果是 <strong>“good”</strong>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/good|goodbye/g</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"goodbye"</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["good"]</span></div></pre></td></tr></table></figure>
+<p>而把正则改成 <strong>/goodbye|good/</strong>，结果是：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/goodbye|good/g</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"goodbye"</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["goodbye"]</span></div></pre></td></tr></table></figure>
+<p>也就是说，分支结构也是惰性的，即当前面的匹配上了，后面的就不再尝试了。</p>
+<h3 id="案例分析">1.5. 案例分析</h3>
+
+<p>匹配字符，无非就是字符组、量词和分支结构的组合使用罢了。</p>
+<p>下面找几个例子演练一下（其中，每个正则并不是只有唯一写法）：</p>
+<h4 id="1-5-1-匹配-16-进制颜色值"><a href="#1-5-1-匹配-16-进制颜色值" class="headerlink" title="1.5.1. 匹配 16 进制颜色值"></a>1.5.1. 匹配 16 进制颜色值</h4><p>要求匹配：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#ffbbad</div><div class="line">#Fc01DF</div><div class="line">#FFF</div><div class="line">#ffE</div></pre></td></tr></table></figure>
+<p>分析：</p>
+<p>表示一个 16 进制字符，可以用字符组 <strong>[0-9a-fA-F]</strong>。</p>
+<p>其中字符可以出现 3 或 6 次，需要是用量词和分支结构。</p>
+<p>使用分支结构时，需要注意顺序。</p>
+<p>正则如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/#([0-9a-fA-F]&#123;6&#125;|[0-9a-fA-F]&#123;3&#125;)/g</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"#ffbbad #Fc01DF #FFF #ffE"</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["#ffbbad", "#Fc01DF", "#FFF", "#ffE"]</span></div></pre></td></tr></table></figure>
+<p>其可视化形式：</p>
+<p><img src="https://meowv.github.io/images/r.1.7.png" alt="PNG"></p>
+<h4 id="1-5-2-匹配时间"><a href="#1-5-2-匹配时间" class="headerlink" title="1.5.2. 匹配时间"></a>1.5.2. 匹配时间</h4><p>以 24 小时制为例。</p>
+<p>要求匹配：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">23:59</div><div class="line">02:07</div></pre></td></tr></table></figure>
+<p>分析：</p>
+<p>共 4 位数字，第一位数字可以为 <strong>[0-2]</strong>。</p>
+<p>当第 1 位为 <strong>“2”</strong> 时，第 2 位可以为 <strong>[0-3]</strong>，其他情况时，第 2 位为 <strong>[0-9]</strong>。</p>
+<p>第 3 位数字为 <strong>[0-5]</strong>，第4位为 <strong>[0-9]</strong>。</p>
+<p>正则如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/^([01][0-9]|[2][0-3]):[0-5][0-9]$/</span>;</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"23:59"</span>) );</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"02:07"</span>) );</div><div class="line"><span class="comment">// =&gt; true</span></div><div class="line"><span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>NOTE： 正则中使用了 ^ 和 $，分别表示字符串开头和结尾。具体详细请参考第二章。</p>
+</blockquote>
+<p>如果也要求匹配 <strong>“7:9”</strong>，也就是说时分前面的 <strong>“0”</strong> 可以省略。</p>
+<p>此时正则变成：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/^(0?[0-9]|1[0-9]|[2][0-3]):(0?[0-9]|[1-5][0-9])$/</span>;</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"23:59"</span>) );</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"02:07"</span>) );</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"7:9"</span>) );</div><div class="line"><span class="comment">// =&gt; true</span></div><div class="line"><span class="comment">// =&gt; true</span></div><div class="line"><span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure>
+<p>其可视化形式：</p>
+<p><img src="https://meowv.github.io/images/r.1.8.png" alt="PNG"></p>
+<h4 id="1-5-3-匹配日期"><a href="#1-5-3-匹配日期" class="headerlink" title="1.5.3. 匹配日期"></a>1.5.3. 匹配日期</h4><p>比如 <strong>yyyy-mm-dd</strong> 格式为例。</p>
+<p>要求匹配：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">2017-06-10</div></pre></td></tr></table></figure>
+<p>分析：</p>
+<p>年，四位数字即可，可用 <strong>[0-9]{4}</strong>。</p>
+<p>月，共 12 个月，分两种情况 <strong>“01”</strong>、<strong>“02”</strong>、…、<strong>“09”</strong> 和 <strong>“10”</strong>、<strong>“11”</strong>、<strong>“12”</strong>，可用 <strong>(0[1-9]|1[0-2])</strong>。</p>
+<p>日，最大 31 天，可用 <strong>(0[1-9]|[12][0-9]|3[01])</strong>。</p>
+<p>正则如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/^[0-9]&#123;4&#125;-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/</span>;</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"2017-06-10"</span>) );</div><div class="line"><span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure>
+<p>其可视化形式：</p>
+<p><img src="https://meowv.github.io/images/r.1.9.png" alt="PNG"></p>
+<h4 id="1-5-4-window-操作系统文件路径"><a href="#1-5-4-window-操作系统文件路径" class="headerlink" title="1.5.4. window 操作系统文件路径"></a>1.5.4. window 操作系统文件路径</h4><p>要求匹配：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">F:\study\javascript\regex\regular expression.pdf</div><div class="line">F:\study\javascript\regex\</div><div class="line">F:\study\javascript</div><div class="line">F:\</div></pre></td></tr></table></figure>
+<p>分析：</p>
+<p>整体模式是: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">盘符:\文件夹\文件夹\文件夹\</div></pre></td></tr></table></figure>
+<p>其中匹配 <strong>“F:\”</strong>，需要使用 <strong>[a-zA-Z]:\</strong>，其中盘符不区分大小写，注意 \ 字符需要转义。</p>
+<p>文件名或者文件夹名，不能包含一些特殊字符，此时我们需要排除字符组 <strong>[^\:*&lt;&gt;|”?\r\n/]</strong> 来表示合法<br>字符。</p>
+<p>另外它们的名字不能为空名，至少有一个字符，也就是要使用量词 <strong>+</strong>。因此匹配 <strong>文件夹\</strong>，可用<strong>[^\:*&lt;&gt;|”?\r\n/]+\</strong>。</p>
+<p>另外 <strong>文件夹\</strong>，可以出现任意次。也就是 <strong>([^\:<em>&lt;&gt;|”?\r\n/]+\)</em></strong>。其中括号表示其内部正则是一个整体。具体详细请参考第三章。</p>
+<p>路径的最后一部分可以是 <strong>文件夹</strong>，没有 <strong>\</strong>，因此需要添加 <strong>([^\:*&lt;&gt;|”?\r\n/]+)?</strong>。</p>
+<p>最后拼接成了一个看起来比较复杂的正则：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/^[a-zA-Z]:\\([^\\:*&lt;&gt;|"?\r\n/]+\\)*([^\\:*&lt;&gt;|"?\r\n/]+)?$/</span>;</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"F:\\study\\javascript\\regex\\regular expression.pdf"</span>) );</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"F:\\study\\javascript\\regex\\"</span>) );</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"F:\\study\\javascript"</span>) );</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"F:\\"</span>) );</div><div class="line"><span class="comment">// =&gt; true</span></div><div class="line"><span class="comment">// =&gt; true</span></div><div class="line"><span class="comment">// =&gt; true</span></div><div class="line"><span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure>
+<p>其中，在JavaScript 中字符串要表示字符 <strong>\</strong> 时，也需要转义。</p>
+<p>其可视化形式：</p>
+<p><img src="https://meowv.github.io/images/r.1.10.png" alt="PNG"></p>
+<h4 id="1-5-5-匹配-id"><a href="#1-5-5-匹配-id" class="headerlink" title="1.5.5. 匹配 id"></a>1.5.5. 匹配 id</h4><p>要求从</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span> <span class="attr">class</span>=<span class="string">"main"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>提取出 <strong>id=”container”</strong>。</p>
+<p>可能最开始想到的正则是：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/id=".*"/</span></div><div class="line"><span class="keyword">var</span> string = <span class="string">'&lt;div id="container" class="main"&gt;&lt;/div&gt;'</span>;</div><div class="line"><span class="built_in">console</span>.log(string.match(regex)[<span class="number">0</span>]);</div><div class="line"><span class="comment">// =&gt; id="container" class="main"</span></div></pre></td></tr></table></figure>
+<p>其可视化形式：</p>
+<p><img src="https://meowv.github.io/images/r.1.11.png" alt="PNG"></p>
+<p>因为 <strong>.</strong> 是通配符，本身就匹配双引号的，而量词 <strong>*</strong> 又是贪婪的，当遇到 <strong>container</strong> 后面双引号时，是不会停下来，会继续匹配，直到遇到最后一个双引号为止。</p>
+<p>解决之道，可以使用惰性匹配：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/id=".*?"/</span></div><div class="line"><span class="keyword">var</span> string = <span class="string">'&lt;div id="container" class="main"&gt;&lt;/div&gt;'</span>;</div><div class="line"><span class="built_in">console</span>.log(string.match(regex)[<span class="number">0</span>]);</div><div class="line"><span class="comment">// =&gt; id="container"</span></div></pre></td></tr></table></figure>
+<p>当然，这样也会有个问题。效率比较低，因为其匹配原理会涉及到“回溯”这个概念（这里也只是顺便提一下，第四章会详细说明）。可以优化如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/id="[^"]*"/</span></div><div class="line"><span class="keyword">var</span> string = <span class="string">'&lt;div id="container" class="main"&gt;&lt;/div&gt;'</span>;</div><div class="line"><span class="built_in">console</span>.log(string.match(regex)[<span class="number">0</span>]);</div><div class="line"><span class="comment">// =&gt; id="container"</span></div></pre></td></tr></table></figure>
+<h3 id="1-6-本章小结"><a href="#1-6-本章小结" class="headerlink" title="1.6. 本章小结"></a>1.6. 本章小结</h3><p>掌握字符组和量词就能解决大部分常见的情形，也就是说，当你会了这二者，JavaScript 正则算是入门了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1-第一章-正则表达式字符匹配攻略&quot;&gt;&lt;a href=&quot;#1-第一章-正则表达式字符匹配攻略&quot; class=&quot;headerlink&quot; title=&quot;1. 第一章 正则表达式字符匹配攻略&quot;&gt;&lt;/a&gt;1. 第一章 正则表达式字符匹配攻略&lt;/h2&gt;&lt;p&gt;正则表达式是匹配模式，要么匹配字符，要么匹配位置。请记住这句话。&lt;/p&gt;
+&lt;p&gt;然而关于正则如何匹配字符的学习，大部分人都觉得这块比较杂乱。&lt;/p&gt;
+&lt;p&gt;毕竟元字符太多了，看起来没有系统性，不好记。本章就解决这个问题。&lt;/p&gt;
+&lt;p&gt;内容包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#两种模糊匹配&quot;&gt;两种模糊匹配&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#字符组&quot;&gt;字符组&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#量词&quot;&gt;量词&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#分支结构&quot;&gt;分支结构&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#案例分析&quot;&gt;案例分析&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;两种模糊匹配&quot;&gt;1.1. 两种模糊匹配&lt;/h3&gt;
+
+&lt;p&gt;如果正则只有精确匹配是没多大意义的，比如 &lt;strong&gt;/hello/&lt;/strong&gt;，也只能匹配字符串中的 &lt;strong&gt;“hello”&lt;/strong&gt; 这个子串。&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; regex = &lt;span class=&quot;regexp&quot;&gt;/hello/&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(regex.test(&lt;span class=&quot;string&quot;&gt;&quot;hello&quot;&lt;/span&gt;));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// =&amp;gt; true&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="Regex" scheme="http://xj8c.cc/tags/Regex/"/>
+    
+      <category term="正则表达式" scheme="http://xj8c.cc/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>今日头条全站新闻文章数据爬取</title>
@@ -156,11 +446,11 @@
     </summary>
     
     
-      <category term="HtmlAgilityPack" scheme="http://xj8c.cc/tags/HtmlAgilityPack/"/>
+      <category term="今日头条" scheme="http://xj8c.cc/tags/%E4%BB%8A%E6%97%A5%E5%A4%B4%E6%9D%A1/"/>
     
       <category term="爬虫" scheme="http://xj8c.cc/tags/%E7%88%AC%E8%99%AB/"/>
     
-      <category term="今日头条" scheme="http://xj8c.cc/tags/%E4%BB%8A%E6%97%A5%E5%A4%B4%E6%9D%A1/"/>
+      <category term="HtmlAgilityPack" scheme="http://xj8c.cc/tags/HtmlAgilityPack/"/>
     
       <category term="Newtonsoft.Json" scheme="http://xj8c.cc/tags/Newtonsoft-Json/"/>
     
@@ -189,9 +479,9 @@
     </summary>
     
     
-      <category term="HtmlAgilityPack" scheme="http://xj8c.cc/tags/HtmlAgilityPack/"/>
-    
       <category term="爬虫" scheme="http://xj8c.cc/tags/%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="HtmlAgilityPack" scheme="http://xj8c.cc/tags/HtmlAgilityPack/"/>
     
   </entry>
   
@@ -2099,30 +2389,6 @@ const { navigate } = this.props.navigation;
     
     
       <category term="实习感受" scheme="http://xj8c.cc/tags/%E5%AE%9E%E4%B9%A0%E6%84%9F%E5%8F%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ASP.NET知识点面试篇</title>
-    <link href="http://xj8c.cc/2016/04/16/asp.net-knowledge-point-interview/"/>
-    <id>http://xj8c.cc/2016/04/16/asp.net-knowledge-point-interview/</id>
-    <published>2016-04-16T09:13:19.000Z</published>
-    <updated>2017-05-26T06:29:50.012Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="列举ASP-NET页面之间传递值的几种方式？"><a href="#列举ASP-NET页面之间传递值的几种方式？" class="headerlink" title="列举ASP.NET页面之间传递值的几种方式？"></a>列举ASP.NET页面之间传递值的几种方式？</h2><h3 id="1，使用QueryString，如：…Test-id-1-Redirect"><a href="#1，使用QueryString，如：…Test-id-1-Redirect" class="headerlink" title="1，使用QueryString，如：…Test?id=1 Redirect().."></a>1，使用QueryString，如：…Test?id=1 Redirect()..</h3><h3 id="2，使用Session变量"><a href="#2，使用Session变量" class="headerlink" title="2，使用Session变量"></a>2，使用Session变量</h3><h3 id="3，使用Server-Transfer"><a href="#3，使用Server-Transfer" class="headerlink" title="3，使用Server.Transfer"></a>3，使用Server.Transfer</h3><h3 id="4，Cookie传值"><a href="#4，Cookie传值" class="headerlink" title="4，Cookie传值"></a>4，Cookie传值</h3><a id="more"></a>
-<h2 id="什么是code-Behind技术"><a href="#什么是code-Behind技术" class="headerlink" title="什么是code-Behind技术"></a>什么是code-Behind技术</h2><h3 id="就是代码隐藏，在ASP-NET中通过ASPX页面指向cs文件的方法实现显示逻辑和处理逻辑的分离，这样有助于web应用程序的创建。比如分工，美工和编程的可以各干各的，不用再像以前asp那样代码和HTML代码混在一起，难以维护。"><a href="#就是代码隐藏，在ASP-NET中通过ASPX页面指向cs文件的方法实现显示逻辑和处理逻辑的分离，这样有助于web应用程序的创建。比如分工，美工和编程的可以各干各的，不用再像以前asp那样代码和HTML代码混在一起，难以维护。" class="headerlink" title="就是代码隐藏，在ASP.NET中通过ASPX页面指向cs文件的方法实现显示逻辑和处理逻辑的分离，这样有助于web应用程序的创建。比如分工，美工和编程的可以各干各的，不用再像以前asp那样代码和HTML代码混在一起，难以维护。"></a>就是代码隐藏，在ASP.NET中通过ASPX页面指向cs文件的方法实现显示逻辑和处理逻辑的分离，这样有助于web应用程序的创建。比如分工，美工和编程的可以各干各的，不用再像以前asp那样代码和HTML代码混在一起，难以维护。</h3><h2 id="请解释ASP-NET中的web页面与其隐藏类之间的关系"><a href="#请解释ASP-NET中的web页面与其隐藏类之间的关系" class="headerlink" title="请解释ASP.NET中的web页面与其隐藏类之间的关系"></a>请解释ASP.NET中的web页面与其隐藏类之间的关系</h2><h3 id="一个ASP-NET页面一般都应对一个隐藏类，一般都在ASP-NET页面的声明中指定了隐藏类例如一个页面Test-aspx的页面声明如下："><a href="#一个ASP-NET页面一般都应对一个隐藏类，一般都在ASP-NET页面的声明中指定了隐藏类例如一个页面Test-aspx的页面声明如下：" class="headerlink" title="一个ASP.NET页面一般都应对一个隐藏类，一般都在ASP.NET页面的声明中指定了隐藏类例如一个页面Test.aspx的页面声明如下："></a>一个ASP.NET页面一般都应对一个隐藏类，一般都在ASP.NET页面的声明中指定了隐藏类例如一个页面Test.aspx的页面声明如下：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%@ Page language=&quot;c#&quot; Codebehind=&quot;Test.aspx.cs&quot; AutoEventWireup=&quot;false&quot; Inherits=&quot;T1.Test&quot; %&gt;</div></pre></td></tr></table></figure>
-<h3 id="Codebehind-”Test-aspx-cs”表明经编译此页面时使用哪一个代码文件"><a href="#Codebehind-”Test-aspx-cs”表明经编译此页面时使用哪一个代码文件" class="headerlink" title="Codebehind=”Test.aspx.cs”表明经编译此页面时使用哪一个代码文件"></a>Codebehind=”Test.aspx.cs”表明经编译此页面时使用哪一个代码文件</h3><h3 id="Inherits-”T1-Test”表示运行时使用哪一个隐藏类"><a href="#Inherits-”T1-Test”表示运行时使用哪一个隐藏类" class="headerlink" title="Inherits=”T1.Test”表示运行时使用哪一个隐藏类"></a>Inherits=”T1.Test”表示运行时使用哪一个隐藏类</h3><h3 id="aspx页面会编译生成一个类，这个类从隐藏类继承"><a href="#aspx页面会编译生成一个类，这个类从隐藏类继承" class="headerlink" title="aspx页面会编译生成一个类，这个类从隐藏类继承"></a>aspx页面会编译生成一个类，这个类从隐藏类继承</h3><h2 id="通过超链接怎样传递中文参数？"><a href="#通过超链接怎样传递中文参数？" class="headerlink" title="通过超链接怎样传递中文参数？"></a>通过超链接怎样传递中文参数？</h2><h3 id="用URL编码，通过QueryString传递，用urlencode编码，urldecode解码"><a href="#用URL编码，通过QueryString传递，用urlencode编码，urldecode解码" class="headerlink" title="用URL编码，通过QueryString传递，用urlencode编码，urldecode解码"></a>用URL编码，通过QueryString传递，用urlencode编码，urldecode解码</h3><h2 id="Server-Transfer和Response-Redirect的区别是什么？"><a href="#Server-Transfer和Response-Redirect的区别是什么？" class="headerlink" title="Server.Transfer和Response.Redirect的区别是什么？"></a>Server.Transfer和Response.Redirect的区别是什么？</h2><h3 id="Server-Transfer仅是服务器中控制权的转向，在客户端浏览器地址栏中不会显示转向后的地址；Response-Redirect则是完全的跳转，浏览器将会得到跳转的地址，并重新发送请求链接。这样，从浏览器的地址栏中看到跳转后的链接地址。"><a href="#Server-Transfer仅是服务器中控制权的转向，在客户端浏览器地址栏中不会显示转向后的地址；Response-Redirect则是完全的跳转，浏览器将会得到跳转的地址，并重新发送请求链接。这样，从浏览器的地址栏中看到跳转后的链接地址。" class="headerlink" title="Server.Transfer仅是服务器中控制权的转向，在客户端浏览器地址栏中不会显示转向后的地址；Response.Redirect则是完全的跳转，浏览器将会得到跳转的地址，并重新发送请求链接。这样，从浏览器的地址栏中看到跳转后的链接地址。"></a>Server.Transfer仅是服务器中控制权的转向，在客户端浏览器地址栏中不会显示转向后的地址；Response.Redirect则是完全的跳转，浏览器将会得到跳转的地址，并重新发送请求链接。这样，从浏览器的地址栏中看到跳转后的链接地址。</h3><h3 id="Server-Transfer是服务器请求资源，服务器直接访问目标地址的URL，把那个URL的相应内容读取过来，然后把这些内容再发给浏览器，浏览器根本不知道服务器发送的内容是从哪里来的，所以它的地址栏还是原来的地址。这个过程中浏览器和web服务器之间经过一次交互。"><a href="#Server-Transfer是服务器请求资源，服务器直接访问目标地址的URL，把那个URL的相应内容读取过来，然后把这些内容再发给浏览器，浏览器根本不知道服务器发送的内容是从哪里来的，所以它的地址栏还是原来的地址。这个过程中浏览器和web服务器之间经过一次交互。" class="headerlink" title="Server.Transfer是服务器请求资源，服务器直接访问目标地址的URL，把那个URL的相应内容读取过来，然后把这些内容再发给浏览器，浏览器根本不知道服务器发送的内容是从哪里来的，所以它的地址栏还是原来的地址。这个过程中浏览器和web服务器之间经过一次交互。"></a>Server.Transfer是服务器请求资源，服务器直接访问目标地址的URL，把那个URL的相应内容读取过来，然后把这些内容再发给浏览器，浏览器根本不知道服务器发送的内容是从哪里来的，所以它的地址栏还是原来的地址。这个过程中浏览器和web服务器之间经过一次交互。</h3><h3 id="Response-Redirect就是服务端根据逻辑，发送一个状态吗，告诉浏览器重新去请求那个地址，一般来说浏览器会用刚才请求的所有参数重新请求。这个过程中浏览器和web服务器之间经过了两次交互。"><a href="#Response-Redirect就是服务端根据逻辑，发送一个状态吗，告诉浏览器重新去请求那个地址，一般来说浏览器会用刚才请求的所有参数重新请求。这个过程中浏览器和web服务器之间经过了两次交互。" class="headerlink" title="Response.Redirect就是服务端根据逻辑，发送一个状态吗，告诉浏览器重新去请求那个地址，一般来说浏览器会用刚才请求的所有参数重新请求。这个过程中浏览器和web服务器之间经过了两次交互。"></a>Response.Redirect就是服务端根据逻辑，发送一个状态吗，告诉浏览器重新去请求那个地址，一般来说浏览器会用刚才请求的所有参数重新请求。这个过程中浏览器和web服务器之间经过了两次交互。</h3><h2 id="说出一些常用的类，接口"><a href="#说出一些常用的类，接口" class="headerlink" title="说出一些常用的类，接口"></a>说出一些常用的类，接口</h2><h3 id="常用的类：StreamReader、WebClient、Dictionary、StringBuilder、SqlConnection、FileStream、File、Regex、List"><a href="#常用的类：StreamReader、WebClient、Dictionary、StringBuilder、SqlConnection、FileStream、File、Regex、List" class="headerlink" title="常用的类：StreamReader、WebClient、Dictionary、StringBuilder、SqlConnection、FileStream、File、Regex、List"></a>常用的类：StreamReader、WebClient、Dictionary<k,v>、StringBuilder、SqlConnection、FileStream、File、Regex、List<t></t></k,v></h3><h3 id="常用的接口：IDisposable、IEnumerable、IDbConnection、IComparable、ICollection、IList、IDictionary"><a href="#常用的接口：IDisposable、IEnumerable、IDbConnection、IComparable、ICollection、IList、IDictionary" class="headerlink" title="常用的接口：IDisposable、IEnumerable、IDbConnection、IComparable、ICollection、IList、IDictionary"></a>常用的接口：IDisposable、IEnumerable、IDbConnection、IComparable、ICollection、IList、IDictionary</h3><h2 id="post、get的区别"><a href="#post、get的区别" class="headerlink" title="post、get的区别"></a>post、get的区别</h2><h3 id="get的参数会显示在浏览器地址栏中，而post的参数不会显示在浏览器地址栏中"><a href="#get的参数会显示在浏览器地址栏中，而post的参数不会显示在浏览器地址栏中" class="headerlink" title="get的参数会显示在浏览器地址栏中，而post的参数不会显示在浏览器地址栏中"></a>get的参数会显示在浏览器地址栏中，而post的参数不会显示在浏览器地址栏中</h3><h3 id="使用post提交的页面再点击刷新按钮的时候浏览器一般会提示“是否重新提交”，而get则不会"><a href="#使用post提交的页面再点击刷新按钮的时候浏览器一般会提示“是否重新提交”，而get则不会" class="headerlink" title="使用post提交的页面再点击刷新按钮的时候浏览器一般会提示“是否重新提交”，而get则不会"></a>使用post提交的页面再点击刷新按钮的时候浏览器一般会提示“是否重新提交”，而get则不会</h3><h3 id="用get的页面可以被搜索引擎抓取，而用post的则不可以"><a href="#用get的页面可以被搜索引擎抓取，而用post的则不可以" class="headerlink" title="用get的页面可以被搜索引擎抓取，而用post的则不可以"></a>用get的页面可以被搜索引擎抓取，而用post的则不可以</h3><h3 id="用post可以进行文件的提交，而用get则不可以"><a href="#用post可以进行文件的提交，而用get则不可以" class="headerlink" title="用post可以进行文件的提交，而用get则不可以"></a>用post可以进行文件的提交，而用get则不可以</h3><h3 id="用post可以提交的数据量非常大，而用get可以提交的数据量则非常小-2K-，受限于网页地址的长度。"><a href="#用post可以提交的数据量非常大，而用get可以提交的数据量则非常小-2K-，受限于网页地址的长度。" class="headerlink" title="用post可以提交的数据量非常大，而用get可以提交的数据量则非常小(2K)，受限于网页地址的长度。"></a>用post可以提交的数据量非常大，而用get可以提交的数据量则非常小(2K)，受限于网页地址的长度。</h3><h2 id="Application、Cookie和Session两种会话有什么不同？"><a href="#Application、Cookie和Session两种会话有什么不同？" class="headerlink" title="Application、Cookie和Session两种会话有什么不同？"></a>Application、Cookie和Session两种会话有什么不同？</h2><h3 id="Application是用来存取整个网站全局的信息，而Session是用来存取与具体某个访问者关联的信息。Cookie是保存在客户端的，机密信息不能保存在Cookie中，只能放小数据；Session是保存在服务器端的，比较安全，可以放大数据。"><a href="#Application是用来存取整个网站全局的信息，而Session是用来存取与具体某个访问者关联的信息。Cookie是保存在客户端的，机密信息不能保存在Cookie中，只能放小数据；Session是保存在服务器端的，比较安全，可以放大数据。" class="headerlink" title="Application是用来存取整个网站全局的信息，而Session是用来存取与具体某个访问者关联的信息。Cookie是保存在客户端的，机密信息不能保存在Cookie中，只能放小数据；Session是保存在服务器端的，比较安全，可以放大数据。"></a>Application是用来存取整个网站全局的信息，而Session是用来存取与具体某个访问者关联的信息。Cookie是保存在客户端的，机密信息不能保存在Cookie中，只能放小数据；Session是保存在服务器端的，比较安全，可以放大数据。</h3><h2 id="http状态吗各是什么意思？"><a href="#http状态吗各是什么意思？" class="headerlink" title="http状态吗各是什么意思？"></a>http状态吗各是什么意思？</h2><h3 id="302：重定向"><a href="#302：重定向" class="headerlink" title="302：重定向"></a>302：重定向</h3><h3 id="301：永久重定向"><a href="#301：永久重定向" class="headerlink" title="301：永久重定向"></a>301：永久重定向</h3><h3 id="404：页面不存在"><a href="#404：页面不存在" class="headerlink" title="404：页面不存在"></a>404：页面不存在</h3><h3 id="500：服务器内部错误"><a href="#500：服务器内部错误" class="headerlink" title="500：服务器内部错误"></a>500：服务器内部错误</h3><h2 id="Session有什么重大的BUG，微软提出了什么方法加以解决？"><a href="#Session有什么重大的BUG，微软提出了什么方法加以解决？" class="headerlink" title="Session有什么重大的BUG，微软提出了什么方法加以解决？"></a>Session有什么重大的BUG，微软提出了什么方法加以解决？</h2><h3 id="iis中有由于有进程回收机制，系统繁忙的话Session会丢失，iis重启也会造成Session丢失。这样用户就要重新登录或者重新添加信息到Session中。可以用StateServer或SqlServer数据库的方式存储Session不过这种方式比较慢，而且无法捕获Session的end事件。但是我认为这不是bug，只能说是In-Proc方式存储Session的缺陷，缺陷和bug是不一样的，In-Proc方式存储Session会由服务器来决定什么时候释放Session，这是By-Design，In-Proc方式不满足要求的话完全可以用StateServer和数据库的方式。"><a href="#iis中有由于有进程回收机制，系统繁忙的话Session会丢失，iis重启也会造成Session丢失。这样用户就要重新登录或者重新添加信息到Session中。可以用StateServer或SqlServer数据库的方式存储Session不过这种方式比较慢，而且无法捕获Session的end事件。但是我认为这不是bug，只能说是In-Proc方式存储Session的缺陷，缺陷和bug是不一样的，In-Proc方式存储Session会由服务器来决定什么时候释放Session，这是By-Design，In-Proc方式不满足要求的话完全可以用StateServer和数据库的方式。" class="headerlink" title="iis中有由于有进程回收机制，系统繁忙的话Session会丢失，iis重启也会造成Session丢失。这样用户就要重新登录或者重新添加信息到Session中。可以用StateServer或SqlServer数据库的方式存储Session不过这种方式比较慢，而且无法捕获Session的end事件。但是我认为这不是bug，只能说是In-Proc方式存储Session的缺陷，缺陷和bug是不一样的，In-Proc方式存储Session会由服务器来决定什么时候释放Session，这是By Design，In-Proc方式不满足要求的话完全可以用StateServer和数据库的方式。"></a>iis中有由于有进程回收机制，系统繁忙的话Session会丢失，iis重启也会造成Session丢失。这样用户就要重新登录或者重新添加信息到Session中。可以用StateServer或SqlServer数据库的方式存储Session不过这种方式比较慢，而且无法捕获Session的end事件。但是我认为这不是bug，只能说是In-Proc方式存储Session的缺陷，缺陷和bug是不一样的，In-Proc方式存储Session会由服务器来决定什么时候释放Session，这是By Design，In-Proc方式不满足要求的话完全可以用StateServer和数据库的方式。</h3><h3 id="StsteServer还可以解决集群Session共享的问题"><a href="#StsteServer还可以解决集群Session共享的问题" class="headerlink" title="StsteServer还可以解决集群Session共享的问题"></a>StsteServer还可以解决集群Session共享的问题</h3><h3 id="配置StateServer的方法：略"><a href="#配置StateServer的方法：略" class="headerlink" title="配置StateServer的方法：略"></a>配置StateServer的方法：略</h3><h2 id="asp-net中-lt-gt-、-lt-gt-、-lt-的区别是什么？-gt"><a href="#asp-net中-lt-gt-、-lt-gt-、-lt-的区别是什么？-gt" class="headerlink" title="asp.net中&lt;% %&gt;、&lt;% = %&gt;、&lt;% # %的区别是什么？&gt;"></a>asp.net中&lt;% %&gt;、&lt;% = %&gt;、&lt;% # %的区别是什么？&gt;</h2><h3 id="lt-gt-是执行-lt-gt-中的C-代码，-lt-gt-是将-后的表达式的值输出到Response中，-lt-gt-是数据绑定，一般用来ListView、GridView、Repeater等控件的绑定中。数据绑定分为，Eval：单向绑定和Bind：双向绑定。"><a href="#lt-gt-是执行-lt-gt-中的C-代码，-lt-gt-是将-后的表达式的值输出到Response中，-lt-gt-是数据绑定，一般用来ListView、GridView、Repeater等控件的绑定中。数据绑定分为，Eval：单向绑定和Bind：双向绑定。" class="headerlink" title="&lt;% %&gt;是执行&lt;% %&gt;中的C#代码，&lt;% = %&gt;是将=后的表达式的值输出到Response中，&lt;% # %&gt;是数据绑定，一般用来ListView、GridView、Repeater等控件的绑定中。数据绑定分为，Eval：单向绑定和Bind：双向绑定。"></a>&lt;% %&gt;是执行&lt;% %&gt;中的C#代码，&lt;% = %&gt;是将=后的表达式的值输出到Response中，&lt;% # %&gt;是数据绑定，一般用来ListView、GridView、Repeater等控件的绑定中。数据绑定分为，Eval：单向绑定和Bind：双向绑定。</h3><h2 id="asp-net中的错误机制"><a href="#asp-net中的错误机制" class="headerlink" title="asp.net中的错误机制"></a>asp.net中的错误机制</h2><h3 id="定制错误页来将显示一个友好的报错页面"><a href="#定制错误页来将显示一个友好的报错页面" class="headerlink" title="定制错误页来将显示一个友好的报错页面"></a>定制错误页来将显示一个友好的报错页面</h3><h3 id="页面中未捕捉一样会触发Page-Error，应用程序中的未捕获异常会触发"><a href="#页面中未捕捉一样会触发Page-Error，应用程序中的未捕获异常会触发" class="headerlink" title="页面中未捕捉一样会触发Page_Error，应用程序中的未捕获异常会触发"></a>页面中未捕捉一样会触发Page_Error，应用程序中的未捕获异常会触发</h3><h3 id="Application-Error。通过HttpContext-Current-Server-GetLastError-拿到未捕捉异常，记录到Log4Net日志中。"><a href="#Application-Error。通过HttpContext-Current-Server-GetLastError-拿到未捕捉异常，记录到Log4Net日志中。" class="headerlink" title="Application_Error。通过HttpContext.Current.Server.GetLastError();拿到未捕捉异常，记录到Log4Net日志中。"></a>Application_Error。通过HttpContext.Current.Server.GetLastError();拿到未捕捉异常，记录到Log4Net日志中。</h3>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;列举ASP-NET页面之间传递值的几种方式？&quot;&gt;&lt;a href=&quot;#列举ASP-NET页面之间传递值的几种方式？&quot; class=&quot;headerlink&quot; title=&quot;列举ASP.NET页面之间传递值的几种方式？&quot;&gt;&lt;/a&gt;列举ASP.NET页面之间传递值的几种方式？&lt;/h2&gt;&lt;h3 id=&quot;1，使用QueryString，如：…Test-id-1-Redirect&quot;&gt;&lt;a href=&quot;#1，使用QueryString，如：…Test-id-1-Redirect&quot; class=&quot;headerlink&quot; title=&quot;1，使用QueryString，如：…Test?id=1 Redirect()..&quot;&gt;&lt;/a&gt;1，使用QueryString，如：…Test?id=1 Redirect()..&lt;/h3&gt;&lt;h3 id=&quot;2，使用Session变量&quot;&gt;&lt;a href=&quot;#2，使用Session变量&quot; class=&quot;headerlink&quot; title=&quot;2，使用Session变量&quot;&gt;&lt;/a&gt;2，使用Session变量&lt;/h3&gt;&lt;h3 id=&quot;3，使用Server-Transfer&quot;&gt;&lt;a href=&quot;#3，使用Server-Transfer&quot; class=&quot;headerlink&quot; title=&quot;3，使用Server.Transfer&quot;&gt;&lt;/a&gt;3，使用Server.Transfer&lt;/h3&gt;&lt;h3 id=&quot;4，Cookie传值&quot;&gt;&lt;a href=&quot;#4，Cookie传值&quot; class=&quot;headerlink&quot; title=&quot;4，Cookie传值&quot;&gt;&lt;/a&gt;4，Cookie传值&lt;/h3&gt;
-    
-    </summary>
-    
-    
-      <category term="ASP.NET" scheme="http://xj8c.cc/tags/ASP-NET/"/>
-    
-      <category term="面试" scheme="http://xj8c.cc/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
