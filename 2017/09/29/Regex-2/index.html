@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>正则表达式位置匹配攻略 | 当然我在瞎扯</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第二章 正则表达式位置匹配攻略正则表达式是匹配模式，要么匹配字符，要么匹配位置。请记住这句话。 然而大部分人学习正则时，对于匹配位置的重视程度没有那么高。 本章讲讲正则匹配位置的相关知识点。 内容包括：  什么是位置？ 如何匹配位置？ 位置的特性 几个应用实例分析  什么是位置呢？  位置（锚）是相邻字符之间的位置。比如，下图中箭头所指的地方：">
+<meta name="keywords" content="Regex,正则表达式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式位置匹配攻略">
+<meta property="og:url" content="http://xj8c.cc/2017/09/29/Regex-2/index.html">
+<meta property="og:site_name" content="当然我在瞎扯">
+<meta property="og:description" content="第二章 正则表达式位置匹配攻略正则表达式是匹配模式，要么匹配字符，要么匹配位置。请记住这句话。 然而大部分人学习正则时，对于匹配位置的重视程度没有那么高。 本章讲讲正则匹配位置的相关知识点。 内容包括：  什么是位置？ 如何匹配位置？ 位置的特性 几个应用实例分析  什么是位置呢？  位置（锚）是相邻字符之间的位置。比如，下图中箭头所指的地方：">
+<meta property="og:image" content="http://xj8c.cc/2017/09/29/images/r.2.1.png">
+<meta property="og:image" content="http://xj8c.cc/2017/09/29/images/r.2.2.png">
+<meta property="og:image" content="http://xj8c.cc/2017/09/29/images/r.2.3.png">
+<meta property="og:image" content="http://xj8c.cc/2017/09/29/images/r.2.4.png">
+<meta property="og:image" content="http://xj8c.cc/2017/09/29/images/r.2.5.png">
+<meta property="og:updated_time" content="2017-09-29T07:56:10.188Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="正则表达式位置匹配攻略">
+<meta name="twitter:description" content="第二章 正则表达式位置匹配攻略正则表达式是匹配模式，要么匹配字符，要么匹配位置。请记住这句话。 然而大部分人学习正则时，对于匹配位置的重视程度没有那么高。 本章讲讲正则匹配位置的相关知识点。 内容包括：  什么是位置？ 如何匹配位置？ 位置的特性 几个应用实例分析  什么是位置呢？  位置（锚）是相邻字符之间的位置。比如，下图中箭头所指的地方：">
+<meta name="twitter:image" content="http://xj8c.cc/2017/09/29/images/r.2.1.png">
+  
+    <link rel="alternative" href="/atom.xml" title="当然我在瞎扯" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+                <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+        </a>
+
+        <hgroup>
+            <h1 class="header-author">
+                <a href="/" title="Hello World">
+                    阿星Plus
+                </a>
+            </h1>
+        </hgroup>
+
+        
+            <p class="header-subtitle">
+                生命不息，奋斗不止
+            </p>
+            
+                
+                        
+                            <div id="switch-btn" class="switch-btn">
+                                <div class="icon">
+                                    <div class="icon-ctn">
+                                        <div class="icon-wrap icon-house" data-idx="0">
+                                            <div class="birdhouse"></div>
+                                            <div class="birdhouse_holes"></div>
+                                        </div>
+                                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                                            <div class="ribbon"></div>
+                                        </div>
+                                        
+                                            <div class="icon-wrap icon-link hide" data-idx="2">
+                                                <div class="loopback_l"></div>
+                                                <div class="loopback_r"></div>
+                                            </div>
+                                            
+                                                
+                                    </div>
+
+                                </div>
+                                <div class="tips-box hide">
+                                    <div class="tips-arrow"></div>
+                                    <ul class="tips-inner">
+                                        <li>菜单</li>
+                                        <li>标签</li>
+                                        
+                                            <li>友情链接</li>
+                                            
+                                                
+                                    </ul>
+                                </div>
+                            </div>
+                            
+
+                                <div id="switch-area" class="switch-area">
+                                    <div class="switch-wrap">
+                                        <section class="switch-part switch-part1">
+                                            <nav class="header-menu">
+                                                <ul>
+                                                    
+                                                        <li>
+                                                            <a href="/">
+                                                                Home
+                                                            </a>
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            <a href="/archives">
+                                                                Archives
+                                                            </a>
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            <a href="http://v.xj8c.cc/">
+                                                                VIP Movie Online
+                                                            </a>
+                                                        </li>
+                                                        
+                                                </ul>
+                                            </nav>
+                                            <nav class="header-nav">
+                                                <ul class="social">
+                                                    
+                                                        <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=w-Lx8IOupqy0te2grK4" title="mail">
+                                                            mail
+                                                        </a>
+                                                        
+                                                        <a class="fl weibo" target="_blank" href="http://weibo.com/Tencentgou" title="weibo">
+                                                            weibo
+                                                        </a>
+                                                        
+                                                        <a class="fl github" target="_blank" href="https://github.com/Meowv" title="github">
+                                                            github
+                                                        </a>
+                                                        
+                                                        <a class="fl twitter" target="_blank" href="https://twitter.com/hackxing" title="twitter">
+                                                            twitter
+                                                        </a>
+                                                        
+                                                        <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">
+                                                            zhihu
+                                                        </a>
+                                                        
+                                                        <a class="fl QQ" target="_blank" href="//wpa.qq.com/msgrd?uin=494910887" title="QQ">
+                                                            QQ
+                                                        </a>
+                                                        
+                                                        <a class="fl wechat" target="_blank" href="http://xj8c.cc/img/wechatimg.jpg" title="wechat">
+                                                            wechat
+                                                        </a>
+                                                        
+                                                        <a class="fl rss" target="_blank" href="/atom.xml" title="rss">
+                                                            rss
+                                                        </a>
+                                                        
+                                                </ul>
+                                            </nav>
+                                        </section>
+
+                                        
+                                            <section class="switch-part switch-part2">
+                                                <div class="widget tagcloud" id="js-tagcloud">
+                                                    <a href="/tags/ASP-NET/" style="font-size: 18.33px;">ASP.NET</a> <a href="/tags/C/" style="font-size: 11.67px;">C#</a> <a href="/tags/CEAC/" style="font-size: 10px;">CEAC</a> <a href="/tags/HtmlAgilityPack/" style="font-size: 11.67px;">HtmlAgilityPack</a> <a href="/tags/IT/" style="font-size: 11.67px;">IT</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Newtonsoft-Json/" style="font-size: 10px;">Newtonsoft.Json</a> <a href="/tags/Photoshop/" style="font-size: 10px;">Photoshop</a> <a href="/tags/ReactNative/" style="font-size: 20px;">ReactNative</a> <a href="/tags/Regex/" style="font-size: 11.67px;">Regex</a> <a href="/tags/SqlServer/" style="font-size: 10px;">SqlServer</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/get/" style="font-size: 10px;">get</a> <a href="/tags/office2010/" style="font-size: 13.33px;">office2010</a> <a href="/tags/post/" style="font-size: 10px;">post</a> <a href="/tags/win10/" style="font-size: 11.67px;">win10</a> <a href="/tags/win7/" style="font-size: 11.67px;">win7</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/三层架构/" style="font-size: 10px;">三层架构</a> <a href="/tags/互联网/" style="font-size: 13.33px;">互联网</a> <a href="/tags/今日头条/" style="font-size: 10px;">今日头条</a> <a href="/tags/原版系统/" style="font-size: 10px;">原版系统</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/实习/" style="font-size: 10px;">实习</a> <a href="/tags/实习感受/" style="font-size: 10px;">实习感受</a> <a href="/tags/小说/" style="font-size: 10px;">小说</a> <a href="/tags/年终总结/" style="font-size: 10px;">年终总结</a> <a href="/tags/微软/" style="font-size: 10px;">微软</a> <a href="/tags/快捷键/" style="font-size: 10px;">快捷键</a> <a href="/tags/手机/" style="font-size: 10px;">手机</a> <a href="/tags/技术教程/" style="font-size: 16.67px;">技术教程</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/春天/" style="font-size: 10px;">春天</a> <a href="/tags/正则表达式/" style="font-size: 11.67px;">正则表达式</a> <a href="/tags/毕业答辩/" style="font-size: 10px;">毕业答辩</a> <a href="/tags/爬虫/" style="font-size: 11.67px;">爬虫</a> <a href="/tags/琅琊榜/" style="font-size: 10px;">琅琊榜</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/知乎/" style="font-size: 10px;">知乎</a> <a href="/tags/程序员/" style="font-size: 10px;">程序员</a> <a href="/tags/绿色软件/" style="font-size: 15px;">绿色软件</a> <a href="/tags/编程/" style="font-size: 10px;">编程</a> <a href="/tags/计算机一级/" style="font-size: 10px;">计算机一级</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/诗文/" style="font-size: 10px;">诗文</a> <a href="/tags/软件测试/" style="font-size: 16.67px;">软件测试</a> <a href="/tags/进制转换/" style="font-size: 10px;">进制转换</a> <a href="/tags/逆袭/" style="font-size: 10px;">逆袭</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/黑客/" style="font-size: 10px;">黑客</a>
+                                                </div>
+                                            </section>
+                                            
+
+                                                
+                                                    <section class="switch-part switch-part3">
+                                                        <div id="js-friends">
+                                                            
+                                                                <a target="_blank" class="main-nav-link switch-friends-link" href="http://meowv.com/">
+                                                                    喵呜网
+                                                                </a>
+                                                                
+                                                                <a target="_blank" class="main-nav-link switch-friends-link" href="http://v.xj8c.cc/">
+                                                                    VIP电影在线播放
+                                                                </a>
+                                                                
+                                                        </div>
+                                                    </section>
+                                                    
+
+                                                        
+                                    </div>
+                                </div>
+    </header>
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">阿星Plus</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">阿星Plus</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">生命不息，奋斗不止</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">Home</a></li>
+                
+                    <li><a href="/archives">Archives</a></li>
+                
+                    <li><a href="http://v.xj8c.cc/">VIP Movie Online</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=w-Lx8IOupqy0te2grK4" title="mail">mail</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/Tencentgou" title="weibo">weibo</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/Meowv" title="github">github</a>
+                    
+                        <a class="twitter" target="_blank" href="https://twitter.com/hackxing" title="twitter">twitter</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">zhihu</a>
+                    
+                        <a class="QQ" target="_blank" href="//wpa.qq.com/msgrd?uin=494910887" title="QQ">QQ</a>
+                    
+                        <a class="wechat" target="_blank" href="http://xj8c.cc/img/wechatimg.jpg" title="wechat">wechat</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Regex-2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/29/Regex-2/" class="article-date">
+      <time datetime="2017-09-29T07:52:50.000Z" itemprop="datePublished">2017-09-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      正则表达式位置匹配攻略
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Regex/">Regex</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="第二章-正则表达式位置匹配攻略"><a href="#第二章-正则表达式位置匹配攻略" class="headerlink" title="第二章 正则表达式位置匹配攻略"></a>第二章 正则表达式位置匹配攻略</h2><p>正则表达式是匹配模式，要么匹配字符，要么匹配位置。请记住这句话。</p>
+<p>然而大部分人学习正则时，对于匹配位置的重视程度没有那么高。</p>
+<p>本章讲讲正则匹配位置的相关知识点。</p>
+<p>内容包括：</p>
+<ul>
+<li><a href="#什么是位置呢？">什么是位置？</a></li>
+<li><a href="#如何匹配位置呢？">如何匹配位置？</a></li>
+<li><a href="#位置的特性">位置的特性</a></li>
+<li><a href="#相关案例">几个应用实例分析</a></li>
+</ul>
+<h3 id="什么是位置呢？">什么是位置呢？</h3>
+
+<p>位置（锚）是相邻字符之间的位置。比如，下图中箭头所指的地方：</p>
+<p><img src="../images/r.2.1.png" alt="PNG"></p>
+<a id="more"></a>
+<h3 id="如何匹配位置呢？">如何匹配位置呢？</h3>
+
+<p>在 ES5 中，共有 6 个锚：</p>
+<p><code>^</code>、<code>$</code>、<code>\b</code>、<code>\B</code>、<code>(?=p)</code>、<code>(?!p)</code></p>
+<p>相应的可视化形式是：</p>
+<p><img src="../images/r.2.2.png" alt="PNG"></p>
+<h4 id="和"><a href="#和" class="headerlink" title="^ 和 $"></a><code>^</code> 和 <code>$</code></h4><p><code>^</code>（脱字符）匹配开头，在多行匹配中匹配行开头。</p>
+<p><code>$</code>（美元符号）匹配结尾，在多行匹配中匹配行结尾。</p>
+<p>比如我们把字符串的开头和结尾用 <code>&quot;#&quot;</code> 替换（位置可以替换成字符的！）：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = <span class="string">"hello"</span>.replace(<span class="regexp">/^|$/g</span>, <span class="string">'#'</span>);</div><div class="line"><span class="built_in">console</span>.log(result);</div><div class="line"><span class="comment">// =&gt; "#hello#"</span></div></pre></td></tr></table></figure>
+<p>多行匹配模式（即有修饰符 <code>m</code>）时，二者是行的概念，这一点需要我们注意：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = <span class="string">"I\nlove\njavascript"</span>.replace(<span class="regexp">/^|$/gm</span>, <span class="string">'#'</span>);</div><div class="line"><span class="built_in">console</span>.log(result);</div><div class="line"><span class="comment">/*</span></div><div class="line">#I#</div><div class="line">#love#</div><div class="line">#javascript#</div><div class="line">*/</div></pre></td></tr></table></figure>
+<h4 id="b-和-B"><a href="#b-和-B" class="headerlink" title="\b 和 \B"></a><code>\b</code> 和 <code>\B</code></h4><p><code>\b</code> 是单词边界，具体就是 <code>\w</code> 与 <code>\W</code> 之间的位置，也包括 <code>\w</code> 与 <code>^</code> 之间的位置，和 <code>\w</code> 与 <code>$</code> 之间的位置。</p>
+<p>比如考察文件名 <code>&quot;[JS] Lesson_01.mp4&quot;</code> 中的 <code>\b</code>，如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = <span class="string">"[JS] Lesson_01.mp4"</span>.replace(<span class="regexp">/\b/g</span>, <span class="string">'#'</span>);</div><div class="line"><span class="built_in">console</span>.log(result);</div><div class="line"><span class="comment">// =&gt; "[#JS#] #Lesson_01#.#mp4#"</span></div></pre></td></tr></table></figure>
+<p>为什么是这样呢？这需要仔细看看。</p>
+<p>首先，我们知道，<code>\w</code> 是字符组 <code>[0-9a-zA-Z_]</code> 的简写形式，即 <code>\w</code> 是字母数字或者下划线的中任何一个字符。而 <code>\W</code> 是排除字符组 <code>[^0-9a-zA-Z_]</code> 的简写形式，即 <code>\W</code> 是 <code>\w</code> 以外的任何一个字符。</p>
+<p>此时我们可以看看 <code>&quot;[#JS#] #Lesson_01#.#mp4#&quot;</code> 中的每一个井号 ，是怎么来的。</p>
+<ul>
+<li>第 1 个，两边字符是 <code>&quot;[&quot;</code> 与 <code>&quot;J&quot;</code>，是 <code>\W</code> 与 <code>\w</code> 之间的位置。</li>
+<li>第 2 个，两边字符是 <code>&quot;S&quot;</code> 与 <code>&quot;]&quot;</code>，也就是 <code>\w</code> 与 <code>\W</code> 之间的位置。</li>
+<li>第 3 个，两边字符是空格与 <code>&quot;L&quot;</code>，也就是 <code>\W</code> 与 <code>\w</code> 之间的位置。</li>
+<li>第 4 个，两边字符是 <code>&quot;1&quot;</code> 与 <code>&quot;.&quot;</code>，也就是 <code>\w</code> 与 <code>\W</code> 之间的位置。</li>
+<li>第 5 个，两边字符是 <code>&quot;.&quot;</code> 与 <code>&quot;m&quot;</code>，也就是 <code>\W</code> 与 <code>\w</code>之间的位置。</li>
+<li>第 6 个，位于结尾，前面的字符 <code>&quot;4&quot;</code> 是 <code>\w</code>，即 <code>\w</code> 与 <code>$</code> 之间的位置。</li>
+</ul>
+<p>知道了 <code>\b</code> 的概念后，那么 <code>\B</code> 也就相对好理解了。</p>
+<p><code>\B</code> 就是 <code>\b</code> 的反面的意思，非单词边界。例如在字符串中所有位置中，扣掉 <code>\b</code>，剩下的都是 <code>\B</code> 的。</p>
+<p>具体说来就是 <code>\w</code> 与 <code>\w</code>、 <code>\W</code> 与 <code>\W</code>、<code>^</code> 与 <code>\W</code>，<code>\W</code> 与 <code>$</code> 之间的位置。</p>
+<p>比如上面的例子，把所有 <code>\B</code> 替换成 <code>&quot;#&quot;</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = <span class="string">"[JS] Lesson_01.mp4"</span>.replace(<span class="regexp">/\B/g</span>, <span class="string">'#'</span>);</div><div class="line"><span class="built_in">console</span>.log(result);</div><div class="line"><span class="comment">// =&gt; "#[J#S]# L#e#s#s#o#n#_#0#1.m#p#4"</span></div></pre></td></tr></table></figure>
+<h4 id="p-和-p"><a href="#p-和-p" class="headerlink" title="(?=p) 和 (?!p)"></a><code>(?=p)</code> 和 <code>(?!p)</code></h4><p><code>(?=p)</code>，其中 <code>p</code> 是一个子模式，即 <code>p</code> 前面的位置，或者说，该位置后面的字符要匹配 <code>p</code>。</p>
+<p>比如 <code>(?=l)</code>，表示 <code>&quot;l&quot;</code> 字符前面的位置，例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = <span class="string">"hello"</span>.replace(<span class="regexp">/(?=l)/g</span>, <span class="string">'#'</span>);</div><div class="line"><span class="built_in">console</span>.log(result);</div><div class="line"><span class="comment">// =&gt; "he#l#lo"</span></div></pre></td></tr></table></figure>
+<p>而 <code>(?!p)</code> 就是 <code>(?=p)</code> 的反面意思，比如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = <span class="string">"hello"</span>.replace(<span class="regexp">/(?!l)/g</span>, <span class="string">'#'</span>);</div><div class="line"><span class="built_in">console</span>.log(result);</div><div class="line"><span class="comment">// =&gt; "#h#ell#o#"</span></div></pre></td></tr></table></figure>
+<p>二者的学名分别是 positive lookahead 和 negative lookahead。</p>
+<p>中文翻译分别是正向先行断言和负向先行断言。</p>
+<p>ES5 之后的版本，会支持 positive lookbehind 和 negative lookbehind。</p>
+<p>具体是 <code>(?&lt;=p)</code> 和 <code>(?&lt;!p)</code>。</p>
+<p>也有书上把这四个东西，翻译成环视，即看看右边和看看左边。</p>
+<p>但一般书上，没有很好强调这四者是个位置。</p>
+<p>比如 <code>(?=p)</code>，一般都理解成：要求接下来的字符与 <code>p</code> 匹配，但不能包括 <code>p</code> 匹配的那些字符。</p>
+<p>而在本人看来，<code>(?=p)</code> 就与 <code>^</code> 一样好理解，就是 <code>p</code> 前面的那个位置。</p>
+<h3 id="位置的特性">位置的特性</h3>
+
+<p>对于位置的理解，我们可以理解成空字符 <code>&quot;&quot;</code>。</p>
+<p>比如 <code>&quot;hello&quot;</code> 字符串等价于如下的形式：</p>
+<p><code>&quot;hello&quot; == &quot;&quot; + &quot;h&quot; + &quot;&quot; + &quot;e&quot; + &quot;&quot; + &quot;l&quot; + &quot;&quot; + &quot;l&quot; + &quot;o&quot; + &quot;&quot;;</code></p>
+<p>也等价于：</p>
+<p><code>&quot;hello&quot; == &quot;&quot; + &quot;&quot; + &quot;hello&quot;</code></p>
+<p>因此，把 <code>/\^hello$/</code> 写成 <code>/^^hello$$$/</code>，是没有任何问题的：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = <span class="regexp">/^^hello$$$/</span>.test(<span class="string">"hello"</span>);</div><div class="line"><span class="built_in">console</span>.log(result);</div><div class="line"><span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure>
+<p>甚至可以写成更复杂的:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = <span class="regexp">/(?=he)^^he(?=\w)llo$\b\b$/</span>.test(<span class="string">"hello"</span>);</div><div class="line"><span class="built_in">console</span>.log(result);</div><div class="line"><span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure>
+<p>也就是说字符之间的位置，可以写成多个。</p>
+<blockquote>
+<p>TIP： 把位置理解空字符，是对位置非常有效的理解方式。</p>
+</blockquote>
+<h3 id="相关案例">相关案例</h3>
+
+<h4 id="不匹配任何东西的正则"><a href="#不匹配任何东西的正则" class="headerlink" title="不匹配任何东西的正则"></a>不匹配任何东西的正则</h4><p>让你写个正则不匹配任何东西</p>
+<p>easy，<code>/.^/</code>。</p>
+<p>因为此正则要求只有一个字符，但该字符后面是开头，而这样的字符串是不存在的</p>
+<h4 id="数字的千位分隔符表示法"><a href="#数字的千位分隔符表示法" class="headerlink" title="数字的千位分隔符表示法"></a>数字的千位分隔符表示法</h4><p>比如把 <code>&quot;12345678&quot;</code>，变成 <code>&quot;12,345,678&quot;</code>。</p>
+<p>可见是需要把相应的位置替换成 <code>&quot;,&quot;</code>。</p>
+<p>思路是什么呢？</p>
+<h5 id="弄出最后一个逗号"><a href="#弄出最后一个逗号" class="headerlink" title="弄出最后一个逗号"></a>弄出最后一个逗号</h5><p>使用 <code>(?=\d{3}$)</code> 就可以做到：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = <span class="string">"12345678"</span>.replace(<span class="regexp">/(?=\d&#123;3&#125;$)/g</span>, <span class="string">','</span>)</div><div class="line"><span class="built_in">console</span>.log(result);</div><div class="line"><span class="comment">// =&gt; "12345,678"</span></div></pre></td></tr></table></figure>
+<p>其中，<code>(?=\d{3}$)</code> 匹配 <code>\d{3}$</code> 前面的位置。而 <code>\d{3}$</code> 匹配的是目标字符串最后那 3 位数字。</p>
+<h5 id="弄出所有的逗号"><a href="#弄出所有的逗号" class="headerlink" title="弄出所有的逗号"></a>弄出所有的逗号</h5><p>因为逗号出现的位置，要求后面 3 个数字一组，也就是 <code>\d{3}</code> 至少出现一次。</p>
+<p>此时可以使用量词 <code>+</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = <span class="string">"12345678"</span>.replace(<span class="regexp">/(?=(\d&#123;3&#125;)+$)/g</span>, <span class="string">','</span>)</div><div class="line"><span class="built_in">console</span>.log(result);</div><div class="line"><span class="comment">// =&gt; "12,345,678"</span></div></pre></td></tr></table></figure>
+<h5 id="匹配其余案例"><a href="#匹配其余案例" class="headerlink" title="匹配其余案例"></a>匹配其余案例</h5><p>写完正则后，要多验证几个案例，此时我们会发现问题：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = <span class="string">"123456789"</span>.replace(<span class="regexp">/(?=(\d&#123;3&#125;)+$)/g</span>, <span class="string">','</span>)</div><div class="line"><span class="built_in">console</span>.log(result);</div><div class="line"><span class="comment">// =&gt; ",123,456,789"</span></div></pre></td></tr></table></figure>
+<p>因为上面的正则，仅仅表示把从结尾向前数，一但是 3 的倍数，就把其前面的位置替换成逗号。因此才会出现这个问题。</p>
+<p>怎么解决呢？我们要求匹配的到这个位置不能是开头。</p>
+<p>我们知道匹配开头可以使用 <code>^</code>，但要求这个位置不是开头怎么办？</p>
+<p>easy，<code>(?!^)</code>，你想到了吗？测试如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/(?!^)(?=(\d&#123;3&#125;)+$)/g</span>;</div><div class="line"><span class="keyword">var</span> result = <span class="string">"12345678"</span>.replace(regex, <span class="string">','</span>)</div><div class="line"><span class="built_in">console</span>.log(result);</div><div class="line"><span class="comment">// =&gt; "12,345,678"</span></div><div class="line"></div><div class="line">result = <span class="string">"123456789"</span>.replace(regex, <span class="string">','</span>);</div><div class="line"><span class="built_in">console</span>.log(result);</div><div class="line"><span class="comment">// =&gt; "123,456,789"</span></div></pre></td></tr></table></figure>
+<h5 id="支持其他形式"><a href="#支持其他形式" class="headerlink" title="支持其他形式"></a>支持其他形式</h5><p>如果要把 <code>&quot;12345678 123456789&quot;</code> 替换成 <code>&quot;12,345,678 123,456,789&quot;</code>。</p>
+<p>此时我们需要修改正则，把里面的开头 <code>^</code> 和结尾 <code>$</code>，修改成 <code>\b</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> string = <span class="string">"12345678 123456789"</span>,</div><div class="line">regex = <span class="regexp">/(?!\b)(?=(\d&#123;3&#125;)+\b)/g</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> result = string.replace(regex, <span class="string">','</span>)</div><div class="line"><span class="built_in">console</span>.log(result);</div><div class="line"><span class="comment">// =&gt; "12,345,678 123,456,789"</span></div></pre></td></tr></table></figure>
+<p>其中 <code>(?!\b)</code> 怎么理解呢？</p>
+<p>要求当前是一个位置，但不是 <code>\b</code> 前面的位置，其实 <code>(?!\b)</code> 说的就是 <code>\B</code>。</p>
+<p>因此最终正则变成了：<code>/\B(?=(\d{3})+\b)/g</code>。</p>
+<p>可视化形式是：</p>
+<p><img src="../images/r.2.3.png" alt="PNG"></p>
+<h5 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h5><p>千分符表示法一个常见的应用就是货币格式化。</p>
+<p>比如把下面的字符串：<code>1888</code></p>
+<p>格式化成：<code>$ 1,888.00</code></p>
+<p>有了前面的铺垫，我们很容实现如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">format</span> (<span class="params">num</span>) </span>&#123;</div><div class="line"> <span class="keyword">return</span> num.toFixed(<span class="number">2</span>).replace(<span class="regexp">/\B(?=(\d&#123;3&#125;)+\b)/</span>, <span class="string">","</span>).replace(<span class="regexp">/^/</span>, <span class="string">"$$ "</span>);</div><div class="line">&#125;;</div><div class="line"><span class="built_in">console</span>.log( format(<span class="number">1888</span>) );</div><div class="line"><span class="comment">// =&gt; "$ 1,888.00"</span></div></pre></td></tr></table></figure>
+<h4 id="验证密码问题"><a href="#验证密码问题" class="headerlink" title="验证密码问题"></a>验证密码问题</h4><p>密码长度 6-12 位，由数字、小写字符和大写字母组成，但必须至少包括 2 种字符。</p>
+<p>此题，如果写成多个正则来判断，比较容易。但要写成一个正则就比较困难。</p>
+<p>那么，我们就来挑战一下。看看我们对位置的理解是否深刻。</p>
+<h5 id="简化"><a href="#简化" class="headerlink" title="简化"></a>简化</h5><p>不考虑“但必须至少包括 2 种字符”这一条件。我们可以容易写出：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/^[0-9A-Za-z]&#123;6,12&#125;$/</span>;</div></pre></td></tr></table></figure>
+<h5 id="判断是否包含有某一种字符"><a href="#判断是否包含有某一种字符" class="headerlink" title="判断是否包含有某一种字符"></a>判断是否包含有某一种字符</h5><p>假设，要求的必须包含数字，怎么办？此时我们可以使用 <code>(?=.*[0-9])</code> 来做。</p>
+<p>因此正则变成：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/(?=.*[0-9])^[0-9A-Za-z]&#123;6,12&#125;$/</span>;</div></pre></td></tr></table></figure>
+<h5 id="同时包含具体两种字符"><a href="#同时包含具体两种字符" class="headerlink" title="同时包含具体两种字符"></a>同时包含具体两种字符</h5><p>比如同时包含数字和小写字母，可以用 <code>(?=.[0-9])(?=.[a-z])</code> 来做。</p>
+<p>因此正则变成：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/(?=.*[0-9])(?=.*[a-z])^[0-9A-Za-z]&#123;6,12&#125;$/</span>;</div></pre></td></tr></table></figure>
+<h5 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h5><p>我们可以把原题变成下列几种情况之一：</p>
+<ul>
+<li>同时包含数字和小写字母</li>
+<li>同时包含数字和大写字母</li>
+<li>同时包含小写字母和大写字母</li>
+<li>同时包含数字、小写字母和大写字母</li>
+<li>以上的 4 种情况是或的关系（实际上，可以不用第 4 条）。</li>
+</ul>
+<p>最终答案是：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/((?=.*[0-9])(?=.*[a-z])|(?=.*[0-9])(?=.*[A-Z])|(?=.*[a-z])(?=.*[A-</span></div><div class="line">Z]))^[0-9A-Za-z]&#123;6,12&#125;$/;</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"1234567"</span>) ); <span class="comment">// false 全是数字</span></div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"abcdef"</span>) ); <span class="comment">// false 全是小写字母</span></div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"ABCDEFGH"</span>) ); <span class="comment">// false 全是大写字母</span></div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"ab23C"</span>) ); <span class="comment">// false 不足6位</span></div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"ABCDEF234"</span>) ); <span class="comment">// true 大写字母和数字</span></div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"abcdEF234"</span>) ); <span class="comment">// true 三者都有</span></div></pre></td></tr></table></figure>
+<p>可视化形式是：</p>
+<p><img src="../images/r.2.4.png" alt="PNG"></p>
+<h5 id="解惑"><a href="#解惑" class="headerlink" title="解惑"></a>解惑</h5><p>上面的正则看起来比较复杂，只要理解了第二步，其余就全部理解了。</p>
+<p><code>/(?=.*[0-9])^[0-9A-Za-z]{6,12}$/</code></p>
+<p>对于这个正则，我们只需要弄明白 <code>(?=.*[0-9])^</code> 即可。</p>
+<p>分开来看就是 <code>(?=.*[0-9])</code> 和 <code>^</code>。</p>
+<p>表示开头前面还有个位置（当然也是开头，即同一个位置，想想之前的空字符类比）。</p>
+<p><code>(?=.*[0-9])</code> 表示该位置后面的字符匹配 <code>.*[0-9]</code>，即，有任何多个任意字符，后面再跟个数字。</p>
+<p>翻译成大白话，就是接下来的字符，必须包含个数字。</p>
+<h5 id="另外一种解法"><a href="#另外一种解法" class="headerlink" title="另外一种解法"></a>另外一种解法</h5><p>“至少包含两种字符”的意思就是说，不能全部都是数字，也不能全部都是小写字母，也不能全部都是大写字母。</p>
+<p>那么要求“不能全部都是数字”，怎么做呢？ <code>(?!p)</code> 出马！</p>
+<p>对应的正则是：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/(?!^[0-9]&#123;6,12&#125;$)^[0-9A-Za-z]&#123;6,12&#125;$/</span>;</div></pre></td></tr></table></figure>
+<p>三种“都不能”呢？</p>
+<p>最终答案是：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/(?!^[0-9]&#123;6,12&#125;$)(?!^[a-z]&#123;6,12&#125;$)(?!^[A-Z]&#123;6,12&#125;$)^[0-9A-Za-z]&#123;6,12&#125;$/</span>;</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"1234567"</span>) ); <span class="comment">// false 全是数字</span></div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"abcdef"</span>) ); <span class="comment">// false 全是小写字母</span></div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"ABCDEFGH"</span>) ); <span class="comment">// false 全是大写字母</span></div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"ab23C"</span>) ); <span class="comment">// false 不足6位</span></div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"ABCDEF234"</span>) ); <span class="comment">// true 大写字母和数字</span></div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"abcdEF234"</span>) ); <span class="comment">// true 三者都有</span></div></pre></td></tr></table></figure>
+<p>其可视化形式是：</p>
+<p><img src="../images/r.2.5.png" alt="PNG"></p>
+<h3 id="本章小结"><a href="#本章小结" class="headerlink" title="本章小结"></a>本章小结</h3><p>重点掌握匹配位置的这 6 个锚，给我们的解决正则问题工具箱内添加了新工具。</p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">×</a>
+            <div class="shang_tit">
+              <p>谢谢你请我吃辣条</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/09/29/Regex-2/">正则表达式位置匹配攻略</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 阿星Plus 的个人博客">阿星Plus</a></p>
+        <p><span>发布时间:</span>2017年09月29日 - 15时52分</p>
+        <p><span>最后更新:</span>2017年09月29日 - 15时56分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/09/29/Regex-2/" title="正则表达式位置匹配攻略">http://xj8c.cc/2017/09/29/Regex-2/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://xj8c.cc/2017/09/29/Regex-2/　　作者: 阿星Plus" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/28/Regex-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">正则表达式字符匹配攻略</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第二章-正则表达式位置匹配攻略"><span class="toc-number">1.</span> <span class="toc-text">第二章 正则表达式位置匹配攻略</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是位置呢？"><span class="toc-number">1.1.</span> <span class="toc-text">什么是位置呢？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何匹配位置呢？"><span class="toc-number">1.2.</span> <span class="toc-text">如何匹配位置呢？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#和"><span class="toc-number">1.2.1.</span> <span class="toc-text">^ 和 $</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#b-和-B"><span class="toc-number">1.2.2.</span> <span class="toc-text">\b 和 \B</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#p-和-p"><span class="toc-number">1.2.3.</span> <span class="toc-text">(?=p) 和 (?!p)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#位置的特性"><span class="toc-number">1.3.</span> <span class="toc-text">位置的特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关案例"><span class="toc-number">1.4.</span> <span class="toc-text">相关案例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#不匹配任何东西的正则"><span class="toc-number">1.4.1.</span> <span class="toc-text">不匹配任何东西的正则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数字的千位分隔符表示法"><span class="toc-number">1.4.2.</span> <span class="toc-text">数字的千位分隔符表示法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#弄出最后一个逗号"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">弄出最后一个逗号</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#弄出所有的逗号"><span class="toc-number">1.4.2.2.</span> <span class="toc-text">弄出所有的逗号</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#匹配其余案例"><span class="toc-number">1.4.2.3.</span> <span class="toc-text">匹配其余案例</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#支持其他形式"><span class="toc-number">1.4.2.4.</span> <span class="toc-text">支持其他形式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#格式化"><span class="toc-number">1.4.2.5.</span> <span class="toc-text">格式化</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#验证密码问题"><span class="toc-number">1.4.3.</span> <span class="toc-text">验证密码问题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#简化"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">简化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#判断是否包含有某一种字符"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">判断是否包含有某一种字符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#同时包含具体两种字符"><span class="toc-number">1.4.3.3.</span> <span class="toc-text">同时包含具体两种字符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#解答"><span class="toc-number">1.4.3.4.</span> <span class="toc-text">解答</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#解惑"><span class="toc-number">1.4.3.5.</span> <span class="toc-text">解惑</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#另外一种解法"><span class="toc-number">1.4.3.6.</span> <span class="toc-text">另外一种解法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本章小结"><span class="toc-number">1.5.</span> <span class="toc-text">本章小结</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="正则表达式位置匹配攻略"></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cyt1UJT89'; 
+var conf = 'prod_a66df9b8bf4687f6662a946344b221b7'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2017/09/28/Regex-1/" title="下一篇: 正则表达式字符匹配攻略">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/09/29/Regex-2/">正则表达式位置匹配攻略</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/Regex-1/">正则表达式字符匹配攻略</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/27/ToutiaoNews/">今日头条全站新闻文章数据爬取</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/HtmlAgilityPack/">HtmlAgilityPack爬取美女图片、每日一文文章、小说</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/18/ReactNative-resource/">ReactNative开发中一些有用的资源</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/17/ReactNative-styles/">ReactNative样式总览</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/16/ReactNative-build/">打包你的App</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/15/ReactNative-net/">掌握React Native的Fetch Api</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/14/ReactNative-navigation/">是时候用上React Navigation了</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/13/ReactNative-ListView-FlatList/">带你了解ListView及FlatList</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/12/ReactNative-storage/">存储：与AsyncStorage相比，Realm更应该作为重点掌握内容</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/11/ReactNative-style-layout/">React Native中的样式，Flexbox布局及其他内容</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/10/ReactNative-module/">React Native常用的组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/09/ReactNative-run/">启动你的第一个React Native 应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/08/ReactNative-base/">ReactNative基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/07/ReactNative-introduce/">ReactNative介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/01/my-internship-record/">我的实习记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/30/graduation-report-material/">毕业答辩汇报材料</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/04/2016-year-end-summary/">2016年终总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/31/csharp7/">C＃7.0中有哪些新特性？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/18/internship-experience/">武汉路博特工程科技有限公司实习“满月”工作感受</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/16/asp.net-knowledge-point-interview/">ASP.NET知识点面试篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/08/what-is-a-three-tier-architecture/">三层架构到底是个什么玩意？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/07/five-main-objects-in-dotnet/">ADO.NET中的五个主要对象？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/07/get-and-post/">所谓的Get和Post到底是何方神圣？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/10/the-students-with-poor-grades-reversed/">一个学渣的逆袭</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/21/computer-computing-infrastructure/">计算机运算基础荟萃</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/08/CEAC-office2010/">CEAC-office2010实操题练习评测系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/28/test-case-design-advanced(bottom)/">测试用例设计进阶(下)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/28/test-case-design-in-order(upper)/">测试用例设计进阶（上）</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/25/boundary-value/">边界值分析法相关概念 — 边界点相关概念</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/24/basic-knowledge-of-software-testing/">软件测试基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/24/overview-of-software-testing/">软件测试概述</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/20/xml-note-1/">XML学习笔记(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/12/when-the-deepest-counsel-comes-to-the-most-clear-ideal/">当最深沉的筹谋换来最清明的理想</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/01/10-best-javascript-development-practices/">10个最佳 javascript 开发实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/07/the-30-most-difficult-questions-to-answer-in-history/">史上最难回答的30个问题，没有一人都能答对！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/05/windows10-iso/">Win10正式版微软官方原版ISO系统镜像下载大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/02/the-work-of-a-programmer/">一本关于程序员的修真小说</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/02/Win10-ten-points/">Win10的十个亮点</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/01/Zhihu-god-reply/">一大波，知乎神回复在接近了！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/27/vs-shortcuts/">必须知道的 Visual Studio 快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/16/asp.net-knowledge-point-summary-5/">Asp.net知识点总结(五)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/13/ten-programming-languages/">你必须知道的十个编程语言</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/11/asp.net-knowledge-point-summary-4/">Asp.net知识点总结(四)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/07/asp.net-knowledge-point-summary-3/">Asp.net知识点总结(三)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/06/bigdata-internet-thinking-O2O-crowdfunding/">什么是大数据，什么是红海、蓝海、互联网思维？什么是O2O？什么是众筹？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/04/asp.net-knowledge-point-summary-2/">Asp.net知识点总结(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/03/asp.net-knowledge-point-summary-1/">Asp.net知识点总结(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/25/shopping-online/">Shopping Online</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/04/SqlServer2008/">sql数据库|SqlServer2008 R2_x86&x64</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/17/why-is-the-chinese-mobile-number-11/">揭秘：中国手机号码为什么是11位数？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/14/33-poems-of-the-most-artistic-conception-in-China/">中国最有意境的33句诗文，欣赏下吧！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/05/win7-cmd/">Win7运行命令大全|开始-运行-命令总汇</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/31/please-don't-be-a-fickle-IT-man/">请不要做浮躁的IT人</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/29/the-name-of-the-big-internet-companies/">各大互联网公司命名的由来，值得你了解。</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/25/30-the-hacker-movie/">30部黑客电影，你看过哪几部？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/22/top 10 IT jobs in 2015/">2015年 十大热门 IT 工作</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/10/a-years-plan-starts-with-spring/">A year's plan starts with spring ！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/28/cherish-every-day/">珍惜每一天</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/28/adobe-photoshop/">Adobe Photoshop 绿色安装版</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/20/national-computer-level-office2010/">全国计算机一级Office2010+win7版（未来教育）考试练习软件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/17/win7-shortcuts/">Win7电脑常用快捷键大全有哪些?</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/15/microsoft-office-2010/">Microsoft office 2010</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy;
+                2017
+                    阿星Plus
+            </div>
+            <div class="footer-right">
+                Blog By <a href="http://hexo.io/" target="_blank">Hexo</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站访问量: 
+                            <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                    </span>
+                    
+                        
+                            <span>, </span>
+                            
+                                
+                                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                                    </span>
+                                    </span>
+                                    
+            </div>
+            
+    </div>
+</footer>
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
