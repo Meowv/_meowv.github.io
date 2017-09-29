@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xj8c.cc/"/>
-  <updated>2017-09-29T07:57:41.644Z</updated>
+  <updated>2017-09-29T07:58:57.839Z</updated>
   <id>http://xj8c.cc/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://xj8c.cc/2017/09/29/Regex-2/"/>
     <id>http://xj8c.cc/2017/09/29/Regex-2/</id>
     <published>2017-09-29T07:52:50.000Z</published>
-    <updated>2017-09-29T07:57:41.644Z</updated>
+    <updated>2017-09-29T07:58:57.839Z</updated>
     
     <content type="html"><![CDATA[<h2 id="第二章-正则表达式位置匹配攻略"><a href="#第二章-正则表达式位置匹配攻略" class="headerlink" title="第二章 正则表达式位置匹配攻略"></a>第二章 正则表达式位置匹配攻略</h2><p>正则表达式是匹配模式，要么匹配字符，要么匹配位置。请记住这句话。</p>
 <p>然而大部分人学习正则时，对于匹配位置的重视程度没有那么高。</p>
