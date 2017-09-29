@@ -12,16 +12,16 @@
 <meta property="og:url" content="http://xj8c.cc/2017/09/29/Regex-2/index.html">
 <meta property="og:site_name" content="当然我在瞎扯">
 <meta property="og:description" content="第二章 正则表达式位置匹配攻略正则表达式是匹配模式，要么匹配字符，要么匹配位置。请记住这句话。 然而大部分人学习正则时，对于匹配位置的重视程度没有那么高。 本章讲讲正则匹配位置的相关知识点。 内容包括：  什么是位置？ 如何匹配位置？ 位置的特性 几个应用实例分析  什么是位置呢？  位置（锚）是相邻字符之间的位置。比如，下图中箭头所指的地方：">
-<meta property="og:image" content="http://xj8c.cc/2017/09/29/images/r.2.1.png">
-<meta property="og:image" content="http://xj8c.cc/2017/09/29/images/r.2.2.png">
-<meta property="og:image" content="http://xj8c.cc/2017/09/29/images/r.2.3.png">
-<meta property="og:image" content="http://xj8c.cc/2017/09/29/images/r.2.4.png">
-<meta property="og:image" content="http://xj8c.cc/2017/09/29/images/r.2.5.png">
-<meta property="og:updated_time" content="2017-09-29T07:56:10.188Z">
+<meta property="og:image" content="https://meowv.github.io/images/r.2.1.png">
+<meta property="og:image" content="https://meowv.github.io/images/r.2.2.png">
+<meta property="og:image" content="https://meowv.github.io/images/r.2.3.png">
+<meta property="og:image" content="https://meowv.github.io/images/r.2.4.png">
+<meta property="og:image" content="https://meowv.github.io/images/r.2.5.png">
+<meta property="og:updated_time" content="2017-09-29T07:57:41.644Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式位置匹配攻略">
 <meta name="twitter:description" content="第二章 正则表达式位置匹配攻略正则表达式是匹配模式，要么匹配字符，要么匹配位置。请记住这句话。 然而大部分人学习正则时，对于匹配位置的重视程度没有那么高。 本章讲讲正则匹配位置的相关知识点。 内容包括：  什么是位置？ 如何匹配位置？ 位置的特性 几个应用实例分析  什么是位置呢？  位置（锚）是相邻字符之间的位置。比如，下图中箭头所指的地方：">
-<meta name="twitter:image" content="http://xj8c.cc/2017/09/29/images/r.2.1.png">
+<meta name="twitter:image" content="https://meowv.github.io/images/r.2.1.png">
   
     <link rel="alternative" href="/atom.xml" title="当然我在瞎扯" type="application/atom+xml">
   
@@ -317,14 +317,14 @@
 <h3 id="什么是位置呢？">什么是位置呢？</h3>
 
 <p>位置（锚）是相邻字符之间的位置。比如，下图中箭头所指的地方：</p>
-<p><img src="../images/r.2.1.png" alt="PNG"></p>
+<p><img src="https://meowv.github.io/images/r.2.1.png" alt="PNG"></p>
 <a id="more"></a>
 <h3 id="如何匹配位置呢？">如何匹配位置呢？</h3>
 
 <p>在 ES5 中，共有 6 个锚：</p>
 <p><code>^</code>、<code>$</code>、<code>\b</code>、<code>\B</code>、<code>(?=p)</code>、<code>(?!p)</code></p>
 <p>相应的可视化形式是：</p>
-<p><img src="../images/r.2.2.png" alt="PNG"></p>
+<p><img src="https://meowv.github.io/images/r.2.2.png" alt="PNG"></p>
 <h4 id="和"><a href="#和" class="headerlink" title="^ 和 $"></a><code>^</code> 和 <code>$</code></h4><p><code>^</code>（脱字符）匹配开头，在多行匹配中匹配行开头。</p>
 <p><code>$</code>（美元符号）匹配结尾，在多行匹配中匹配行结尾。</p>
 <p>比如我们把字符串的开头和结尾用 <code>&quot;#&quot;</code> 替换（位置可以替换成字符的！）：</p>
@@ -406,7 +406,7 @@
 <p>要求当前是一个位置，但不是 <code>\b</code> 前面的位置，其实 <code>(?!\b)</code> 说的就是 <code>\B</code>。</p>
 <p>因此最终正则变成了：<code>/\B(?=(\d{3})+\b)/g</code>。</p>
 <p>可视化形式是：</p>
-<p><img src="../images/r.2.3.png" alt="PNG"></p>
+<p><img src="https://meowv.github.io/images/r.2.3.png" alt="PNG"></p>
 <h5 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h5><p>千分符表示法一个常见的应用就是货币格式化。</p>
 <p>比如把下面的字符串：<code>1888</code></p>
 <p>格式化成：<code>$ 1,888.00</code></p>
@@ -434,7 +434,7 @@
 <p>最终答案是：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/((?=.*[0-9])(?=.*[a-z])|(?=.*[0-9])(?=.*[A-Z])|(?=.*[a-z])(?=.*[A-</span></div><div class="line">Z]))^[0-9A-Za-z]&#123;6,12&#125;$/;</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"1234567"</span>) ); <span class="comment">// false 全是数字</span></div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"abcdef"</span>) ); <span class="comment">// false 全是小写字母</span></div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"ABCDEFGH"</span>) ); <span class="comment">// false 全是大写字母</span></div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"ab23C"</span>) ); <span class="comment">// false 不足6位</span></div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"ABCDEF234"</span>) ); <span class="comment">// true 大写字母和数字</span></div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"abcdEF234"</span>) ); <span class="comment">// true 三者都有</span></div></pre></td></tr></table></figure>
 <p>可视化形式是：</p>
-<p><img src="../images/r.2.4.png" alt="PNG"></p>
+<p><img src="https://meowv.github.io/images/r.2.4.png" alt="PNG"></p>
 <h5 id="解惑"><a href="#解惑" class="headerlink" title="解惑"></a>解惑</h5><p>上面的正则看起来比较复杂，只要理解了第二步，其余就全部理解了。</p>
 <p><code>/(?=.*[0-9])^[0-9A-Za-z]{6,12}$/</code></p>
 <p>对于这个正则，我们只需要弄明白 <code>(?=.*[0-9])^</code> 即可。</p>
@@ -450,7 +450,7 @@
 <p>最终答案是：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/(?!^[0-9]&#123;6,12&#125;$)(?!^[a-z]&#123;6,12&#125;$)(?!^[A-Z]&#123;6,12&#125;$)^[0-9A-Za-z]&#123;6,12&#125;$/</span>;</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"1234567"</span>) ); <span class="comment">// false 全是数字</span></div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"abcdef"</span>) ); <span class="comment">// false 全是小写字母</span></div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"ABCDEFGH"</span>) ); <span class="comment">// false 全是大写字母</span></div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"ab23C"</span>) ); <span class="comment">// false 不足6位</span></div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"ABCDEF234"</span>) ); <span class="comment">// true 大写字母和数字</span></div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"abcdEF234"</span>) ); <span class="comment">// true 三者都有</span></div></pre></td></tr></table></figure>
 <p>其可视化形式是：</p>
-<p><img src="../images/r.2.5.png" alt="PNG"></p>
+<p><img src="https://meowv.github.io/images/r.2.5.png" alt="PNG"></p>
 <h3 id="本章小结"><a href="#本章小结" class="headerlink" title="本章小结"></a>本章小结</h3><p>重点掌握匹配位置的这 6 个锚，给我们的解决正则问题工具箱内添加了新工具。</p>
 
       
@@ -509,7 +509,7 @@
         <p><span>本文标题:</span><a href="/2017/09/29/Regex-2/">正则表达式位置匹配攻略</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 阿星Plus 的个人博客">阿星Plus</a></p>
         <p><span>发布时间:</span>2017年09月29日 - 15时52分</p>
-        <p><span>最后更新:</span>2017年09月29日 - 15时56分</p>
+        <p><span>最后更新:</span>2017年09月29日 - 15时57分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/09/29/Regex-2/" title="正则表达式位置匹配攻略">http://xj8c.cc/2017/09/29/Regex-2/</a>
             <span class="copy-path" data-clipboard-text="原文: http://xj8c.cc/2017/09/29/Regex-2/　　作者: 阿星Plus" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
