@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xj8c.cc/"/>
-  <updated>2017-10-11T05:47:31.211Z</updated>
+  <updated>2017-10-11T06:47:10.260Z</updated>
   <id>http://xj8c.cc/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://xj8c.cc/2017/10/11/Regex-5/"/>
     <id>http://xj8c.cc/2017/10/11/Regex-5/</id>
     <published>2017-10-11T05:12:10.000Z</published>
-    <updated>2017-10-11T05:47:31.211Z</updated>
+    <updated>2017-10-11T06:47:10.260Z</updated>
     
     <content type="html"><![CDATA[<h2 id="第五章-正则表达式的拆分"><a href="#第五章-正则表达式的拆分" class="headerlink" title="第五章 正则表达式的拆分"></a>第五章 正则表达式的拆分</h2><p>对于一门语言的掌握程度怎么样，可以有两个角度来衡量：读和写。</p>
 <p>不仅要求自己能解决问题，还要看懂别人的解决方案。代码是这样，正则表达式也是这样。</p>
@@ -70,8 +70,7 @@
 </tr>
 <tr>
 <td>分支</td>
-<td>多个子表达式多选一，比如 `abc</td>
-<td>bcd<code>，表达式匹配</code>“abc”<code>或者</code>“bcd”<code>字符子串。&lt;br&gt;反向引用，比如</code>\2`，表示引用第 2 个分组。</td>
+<td>多个子表达式多选一，比如 abc&#124;bcd，表达式匹配 <code>&quot;abc&quot;</code> 或者 <code>&quot;bcd&quot;</code> 字符子串。<br>反向引用，比如 <code>\2</code>，表示引用第 2 个分组。</td>
 </tr>
 </tbody>
 </table>
@@ -107,8 +106,7 @@
 </tr>
 <tr>
 <td>管道符（竖杠）</td>
-<td>`</td>
-<td>`</td>
+<td>&#124;</td>
 <td>5</td>
 </tr>
 </tbody>
