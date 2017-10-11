@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xj8c.cc/"/>
-  <updated>2017-10-10T03:23:33.011Z</updated>
+  <updated>2017-10-11T01:19:05.511Z</updated>
   <id>http://xj8c.cc/</id>
   
   <author>
@@ -14,6 +14,112 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>正则表达式回溯法原理</title>
+    <link href="http://xj8c.cc/2017/10/11/Regex-4/"/>
+    <id>http://xj8c.cc/2017/10/11/Regex-4/</id>
+    <published>2017-10-11T01:18:38.000Z</published>
+    <updated>2017-10-11T01:19:05.511Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="第四章-正则表达式回溯法原理"><a href="#第四章-正则表达式回溯法原理" class="headerlink" title="第四章 正则表达式回溯法原理"></a>第四章 正则表达式回溯法原理</h2><p>学习正则表达式，是需要懂点儿匹配原理的。</p>
+<p>而研究匹配原理时，有两个字出现的频率比较高：“回溯”。</p>
+<p>听起来挺高大上，事实上却是一个比较容易理解的概念。</p>
+<p>因此，本章就简单扼要地说清楚回溯到底是什么东西。</p>
+<p>内容包括：</p>
+<ul>
+<li><a href="#没有回溯的匹配">没有回溯的匹配</a></li>
+<li><a href="#有回溯的匹配">有回溯的匹配</a></li>
+<li><a href="#常见的回溯形式">常见的回溯形式</a></li>
+</ul>
+<a id="more"></a>
+<h3 id="没有回溯的匹配">没有回溯的匹配</h3>
+
+<p>假设我们的正则是 <code>/ab{1,3}c/</code>，其可视化形式是：</p>
+<p><img src="https://meowv.github.io/images/r.4.1.png" alt="PNG"></p>
+<p>而当目标字符串是 <code>&quot;abbbc&quot;</code> 时，就没有所谓的“回溯”。其匹配过程是：</p>
+<p><img src="https://meowv.github.io/images/r.4.2.png" alt="PNG"></p>
+<p>其中子表达式 <code>b{1,3}</code> 表示 <code>&quot;b&quot;</code> 字符连续出现 1 到 3 次。</p>
+<h3 id="有回溯的匹配">有回溯的匹配</h3>
+
+<p>如果目标字符串是”abbc”，中间就有回溯。</p>
+<p><img src="https://meowv.github.io/images/r.4.3.png" alt="PNG"></p>
+<p>图中第 5 步有红颜色，表示匹配不成功。此时 <code>b{1,3}</code> 已经匹配到了 2 个字符 <code>&quot;b&quot;</code>，准备尝试第三个时，结果发现接下来的字符是 <code>&quot;c&quot;</code>。那么就认为 <code>b{1,3}</code> 就已经匹配完毕。然后状态又回到之前的状态（即第 6 步与第 4 步一样），最后再用子表达式 <code>c</code>，去匹配字符 <code>&quot;c&quot;</code>。当然，此时整个表达式匹配成功了。</p>
+<p>图中的第 6 步，就是“回溯”。</p>
+<p>你可能对此没有感觉，这里我们再举一个例子。正则是：</p>
+<p><img src="https://meowv.github.io/images/r.4.4.png" alt="PNG"></p>
+<p>目标字符串是<code>&quot;abbbc&quot;</code>，匹配过程是：</p>
+<p><img src="https://meowv.github.io/images/r.4.5.png" alt="PNG"></p>
+<p>其中第 7 步和第 10 步是回溯。第 7 步与第 4 步一样，此时 <code>b{1,3}</code> 匹配了两个 <code>&quot;b&quot;</code>，而第 10 步与第 3 步一样，此时 <code>b{1,3}</code> 只匹配了一个 <code>&quot;b&quot;</code>，这也是 <code>b{1,3}</code> 的最终匹配结果。</p>
+<p>这里再看一个清晰的回溯，正则是：</p>
+<p><img src="https://meowv.github.io/images/r.4.6.png" alt="PNG"></p>
+<p>目标字符串是：<code>&quot;abc&quot;de</code>，匹配过程是：</p>
+<p><img src="https://meowv.github.io/images/r.4.7.png" alt="PNG"></p>
+<p>图中省略了尝试匹配双引号失败的过程。可以看出 <code>.*</code> 是非常影响效率的。</p>
+<p>为了减少一些不必要的回溯，可以把正则修改为 <code>/&quot;[^&quot;]*&quot;/</code>。</p>
+<h3 id="常见的回溯形式">常见的回溯形式</h3>
+
+<p>正则表达式匹配字符串的这种方式，有个学名，叫回溯法。</p>
+<blockquote>
+<p>回溯法也称试探法，它的基本思想是：从问题的某一种状态（初始状态）出发，搜索从这种状态出发<br>所能达到的所有“状态”，当一条路走到“尽头”的时候（不能再前进），再后退一步或若干步，从<br>另一种可能“状态”出发，继续搜索，直到所有的“路径”（状态）都试探过。这种不断“前进”、<br>不断“回溯”寻找解的方法，就称作“回溯法”。 — 百度百科</p>
+</blockquote>
+<p>本质上就是深度优先搜索算法。其中退到之前的某一步这一过程，我们称为“回溯”。从上面的描述过程中，可以看出，路走不通时，就会发生“回溯”。即，尝试匹配失败时，接下来的一步通常就是回溯。</p>
+<p>道理，我们是懂了。那么 JavaScript 中正则表达式会产生回溯的地方都有哪些呢？</p>
+<h4 id="贪婪量词"><a href="#贪婪量词" class="headerlink" title="贪婪量词"></a>贪婪量词</h4><p>之前的例子都是贪婪量词相关的。比如 <code>b{1,3}</code>，因为其是贪婪的，尝试可能的顺序是从多往少的方向去尝试。首先会尝试 <code>&quot;bbb&quot;</code>，然后再看整个正则是否能匹配。不能匹配时，吐出一个 “b”，即在 “bb” 的基础上，再继续尝试。如果还不行，再吐出一个，再试。如果还不行呢？只能说明匹配失败了。</p>
+<p>虽然局部匹配是贪婪的，但也要满足整体能正确匹配。否则，皮之不存，毛将焉附？</p>
+<p>此时我们不禁会问，如果当多个贪婪量词挨着存在，并相互有冲突时，此时会是怎样？</p>
+<p>答案是，先下手为强！因为深度优先搜索。测试如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> string = <span class="string">"12345"</span>;</div><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/(\d&#123;1,3&#125;)(\d&#123;1,3&#125;)/</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["12345", "123", "45", index: 0, input: "12345"]</span></div></pre></td></tr></table></figure>
+<p>其中，前面的 <code>\d{1,3}</code> 匹配的是 <code>&quot;123&quot;</code>，后面的 <code>\d{1,3}</code> 匹配的是 <code>&quot;45&quot;</code>。</p>
+<h4 id="惰性量词"><a href="#惰性量词" class="headerlink" title="惰性量词"></a>惰性量词</h4><p>惰性量词就是在贪婪量词后面加个问号。表示尽可能少的匹配，比如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> string = <span class="string">"12345"</span>;</div><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/(\d&#123;1,3&#125;?)(\d&#123;1,3&#125;)/</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["1234", "1", "234", index: 0, input: "12345"]</span></div></pre></td></tr></table></figure>
+<p>其中 <code>\d{1,3}?</code> 只匹配到一个字符 <code>&quot;1&quot;</code>，而后面的 <code>\d{1,3}</code> 匹配了 <code>&quot;234&quot;</code>。</p>
+<p>虽然惰性量词不贪，但也会有回溯的现象。比如正则是：</p>
+<p><img src="https://meowv.github.io/images/r.4.8.png" alt="PNG"></p>
+<p>目标字符串是”12345”，匹配过程是：</p>
+<p><img src="https://meowv.github.io/images/r.4.9.png" alt="PNG"></p>
+<p>知道你不贪、很知足，但是为了整体匹配成，没办法，也只能给你多塞点了。因此最后 <code>\d{1,3}?</code> 匹配的字<br>符是 <code>&quot;12&quot;</code>，是两个数字，而不是一个。</p>
+<h4 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h4><p>我们知道分支也是惰性的，比如 <code>/can|candy/</code>，去匹配字符串 <code>&quot;candy&quot;</code>，得到的结果是 <code>&quot;can&quot;</code>，因为分支会<br>一个一个尝试，如果前面的满足了，后面就不会再试验了。</p>
+<p>分支结构，可能前面的子模式会形成了局部匹配，如果接下来表达式整体不匹配时，仍会继续尝试剩下的分<br>支。这种尝试也可以看成一种回溯。</p>
+<p>比如正则：</p>
+<p><img src="https://meowv.github.io/images/r.4.10.png" alt="PNG"></p>
+<p>目标字符串是 <code>&quot;candy&quot;</code>，匹配过程：</p>
+<p><img src="https://meowv.github.io/images/r.4.11.png" alt="PNG"></p>
+<p>上面第 5 步，虽然没有回到之前的状态，但仍然回到了分支结构，尝试下一种可能。所以，可以认为它是一种回溯的。</p>
+<h3 id="本章小结"><a href="#本章小结" class="headerlink" title="本章小结"></a>本章小结</h3><p>其实回溯法，很容易掌握的。</p>
+<p>简单总结就是，正因为有多种可能，所以要一个一个试。直到，要么到某一步时，整体匹配成功了；要么最后都试完后，发现整体匹配不成功。</p>
+<ul>
+<li>贪婪量词“试”的策略是：买衣服砍价。价钱太高了，便宜点，不行，再便宜点。</li>
+<li>惰性量词“试”的策略是：卖东西加价。给少了，再多给点行不，还有点少啊，再给点。</li>
+<li>分支结构“试”的策略是：货比三家。这家不行，换一家吧，还不行，再换。</li>
+</ul>
+<p>既然有回溯的过程，那么匹配效率肯定低一些。相对谁呢？相对那些 DFA 引擎, DFA 是“确定型有限自动机”的简写。</p>
+<p>而 JavaScript 的正则引擎是 NFA，NFA 是“非确定型有限自动机”的简写。</p>
+<p>大部分语言中的正则都是 NFA，为啥它这么流行呢？</p>
+<p>答：你别看我匹配慢，但是我编译快啊，而且我还有趣哦。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;第四章-正则表达式回溯法原理&quot;&gt;&lt;a href=&quot;#第四章-正则表达式回溯法原理&quot; class=&quot;headerlink&quot; title=&quot;第四章 正则表达式回溯法原理&quot;&gt;&lt;/a&gt;第四章 正则表达式回溯法原理&lt;/h2&gt;&lt;p&gt;学习正则表达式，是需要懂点儿匹配原理的。&lt;/p&gt;
+&lt;p&gt;而研究匹配原理时，有两个字出现的频率比较高：“回溯”。&lt;/p&gt;
+&lt;p&gt;听起来挺高大上，事实上却是一个比较容易理解的概念。&lt;/p&gt;
+&lt;p&gt;因此，本章就简单扼要地说清楚回溯到底是什么东西。&lt;/p&gt;
+&lt;p&gt;内容包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#没有回溯的匹配&quot;&gt;没有回溯的匹配&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#有回溯的匹配&quot;&gt;有回溯的匹配&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#常见的回溯形式&quot;&gt;常见的回溯形式&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="Regex" scheme="http://xj8c.cc/tags/Regex/"/>
+    
+      <category term="正则表达式" scheme="http://xj8c.cc/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>正则表达式括号的作用</title>
@@ -2621,52 +2727,6 @@ const { navigate } = this.props.navigation;
     
     
       <category term="毕业答辩" scheme="http://xj8c.cc/tags/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2016年终总结</title>
-    <link href="http://xj8c.cc/2017/01/04/2016-year-end-summary/"/>
-    <id>http://xj8c.cc/2017/01/04/2016-year-end-summary/</id>
-    <published>2017-01-04T01:59:56.000Z</published>
-    <updated>2017-05-26T07:48:39.588Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="一、工作总结"><a href="#一、工作总结" class="headerlink" title="一、工作总结"></a>一、工作总结</h2><p>2016年对我来说意义非凡，结束掉学生生涯正式步入职场，进入“路博特”，开始我的编码生活。这一年不仅学到了更多的专业知识同时也长了不少见识。从入职到现在已有八个多月的时间，在公司担任.Net研发一职。<br><a id="more"></a></p>
-<h3 id="总的来说2016年实现了个人的预期目标，以下是2016年预期目标一览。"><a href="#总的来说2016年实现了个人的预期目标，以下是2016年预期目标一览。" class="headerlink" title="总的来说2016年实现了个人的预期目标，以下是2016年预期目标一览。"></a>总的来说2016年实现了个人的预期目标，以下是2016年预期目标一览。</h3><p>1.2016年4月18日入职“武汉路博特工程科技有限公司”</p>
-<p>2.2016年6月熟练掌握三层架构开发网站</p>
-<p>3.2016年9月ASP.NET MVC学习并入门</p>
-<p>4.2016年10月25日结束驾考生涯，驾驶证到手</p>
-<p>5.2016年11月可利用Entity Framework开发简单网站</p>
-<p>6.2016年12月对前端有了新的认识可开发自适应PC和手机屏幕的网页</p>
-<p>下面重点总结在公司开发过的网站以及参与过的项目。刚进公司主要是熟悉环境，了解行情，快速进行学习，适应公司的发展需要。最开始参与了一个教育局报名管理系统，负责了其部分JS特效及一些后台功能的实现。然后客串测试直至项目顺利上线。在这个小小的项目中，体会到了团队协同、效率、编码能力、测试等的至关重要。</p>
-<p>由于个人前端能力突出，紧接着便被安排编写设计院网站，在完成前端所有页面之后协同开发后台在短短不到一周的时间完成该项目。但是遗留下的问题却有很多，因为经验不足导致Bug众多。深深体会到维护一个项目远远比开发一个项目要难得多。从这个项目过渡，接下来的时间开发了至科网站、集团网站、路博特网站、至科检测人员资格查询系统前台、优仕德项目网站、江汉区交警大队网站、麦都教育网站等等公司一系列有关前台的页面。并且主导了域名的注册、备案、上线以及后期的维护工作。</p>
-<p>以上便是我2016入职以来的工作总结。</p>
-<h2 id="二、自我评价"><a href="#二、自我评价" class="headerlink" title="二、自我评价"></a>二、自我评价</h2><h3 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h3><p>1.环境适应能力强，能够很快适应新的工作环境</p>
-<p>2.具备团队合作意识，善于协调团队分工合作</p>
-<p>3.能够虚心接受他人的意见与建议，对符合的予以采纳</p>
-<p>4.各方面的知识都有涉猎，学习能力较快，接受新事物能力强</p>
-<p>5.能够在最短时间内完成Leader下发的任务，并自由合理分配时间</p>
-<p>6.在编程开发过程中，对项目有自己的见解以及问题解决方案</p>
-<h3 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h3><p>1.后半年积极度不高，比较懒散</p>
-<p>2.涉猎知识较多，但是都不精通</p>
-<p>3.个人能力和团队能力有限，不能更加完美的解决现有项目问题</p>
-<p>4.情绪化比较严重，不能合理控制自己的心情</p>
-<h3 id="对自己的要求："><a href="#对自己的要求：" class="headerlink" title="对自己的要求："></a>对自己的要求：</h3><p>1.合理控制自己的时间</p>
-<p>2.在现有项目的基础上，完善不足之处</p>
-<p>3.学而知不足，专一研究DotNet技术，由此进行发散学习</p>
-<h2 id="三、建议意见"><a href="#三、建议意见" class="headerlink" title="三、建议意见"></a>三、建议意见</h2><p>1.员工归属感需增强，实行奖惩制度，提高福利待遇</p>
-<p>2.希望公司可以大幅度提供住宿，家较远的员工可以给予公交补贴</p>
-<p>3.技术方面，向框架式开发渐进，框架开发速度快，效率高。急需一套属于公司内部的网站开发框架。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;一、工作总结&quot;&gt;&lt;a href=&quot;#一、工作总结&quot; class=&quot;headerlink&quot; title=&quot;一、工作总结&quot;&gt;&lt;/a&gt;一、工作总结&lt;/h2&gt;&lt;p&gt;2016年对我来说意义非凡，结束掉学生生涯正式步入职场，进入“路博特”，开始我的编码生活。这一年不仅学到了更多的专业知识同时也长了不少见识。从入职到现在已有八个多月的时间，在公司担任.Net研发一职。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="年终总结" scheme="http://xj8c.cc/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
