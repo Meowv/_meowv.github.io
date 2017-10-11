@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xj8c.cc/"/>
-  <updated>2017-10-11T06:47:10.260Z</updated>
+  <updated>2017-10-11T06:53:10.211Z</updated>
   <id>http://xj8c.cc/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://xj8c.cc/2017/10/11/Regex-5/"/>
     <id>http://xj8c.cc/2017/10/11/Regex-5/</id>
     <published>2017-10-11T05:12:10.000Z</published>
-    <updated>2017-10-11T06:47:10.260Z</updated>
+    <updated>2017-10-11T06:53:10.211Z</updated>
     
     <content type="html"><![CDATA[<h2 id="第五章-正则表达式的拆分"><a href="#第五章-正则表达式的拆分" class="headerlink" title="第五章 正则表达式的拆分"></a>第五章 正则表达式的拆分</h2><p>对于一门语言的掌握程度怎么样，可以有两个角度来衡量：读和写。</p>
 <p>不仅要求自己能解决问题，还要看懂别人的解决方案。代码是这样，正则表达式也是这样。</p>
@@ -150,7 +150,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> string = <span class="string">"^$.*+?|\\/[]&#123;&#125;=!:-,"</span>;</div><div class="line"><span class="keyword">var</span> string2 = <span class="string">"\^\$\.\*\+\?\|\\\/\[\]\&#123;\&#125;\=\!\:\-\,"</span>;</div><div class="line"><span class="built_in">console</span>.log( string == string2 );</div><div class="line"><span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure>
 <p>现在的问题是，是不是每个字符都需要转义呢？否，看情况。</p>
 <h5 id="字符组中的元字符"><a href="#字符组中的元字符" class="headerlink" title="字符组中的元字符"></a>字符组中的元字符</h5><p>跟字符组相关的元字符有 <code>[</code>、<code>]</code>、<code>^</code>、<code>-</code>。因此在会引起歧义的地方进行转义。例如开头的 <code>^</code> 必须转义，不然会把整个字符组，看成反义字符组。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> string = <span class="string">"^$.*+?|\\/[]&#123;&#125;=!:-,"</span>;</div><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/[\^$.*+?|\\/\[\]&#123;&#125;=!:\-,]/g</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["^", "$", ".", "*", "+", "?", "|", "\", "/", "[", "]", "&#123;", "&#125;", "=", "!", ":",</span></div><div class="line"><span class="string">"-"</span>, <span class="string">","</span>]</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> string = <span class="string">"^$.*+?|\\/[]&#123;&#125;=!:-,"</span>;</div><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/[\^$.*+?|\\/\[\]&#123;&#125;=!:\-,]/g</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["^", "$", ".", "*", "+", "?", "|", "\", "/", "[", "]", "&#123;", "&#125;", "=", "!", ":","-", ","]</span></div></pre></td></tr></table></figure>
 <h5 id="匹配-quot-abc-quot-和-quot-3-5-quot"><a href="#匹配-quot-abc-quot-和-quot-3-5-quot" class="headerlink" title="匹配 &quot;[abc]&quot; 和 &quot;{3,5}&quot;"></a>匹配 <code>&quot;[abc]&quot;</code> 和 <code>&quot;{3,5}&quot;</code></h5><p>我们知道 <code>[abc]</code>，是个字符组。如果要匹配字符串 <code>&quot;[abc]&quot;</code> 时，该怎么办？</p>
 <p>可以写成 <code>/\[abc\]/</code>，也可以写成 <code>/\[abc]/</code>，测试如下：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> string = <span class="string">"[abc]"</span>;</div><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/\[abc]/g</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex)[<span class="number">0</span>] );</div><div class="line"><span class="comment">// =&gt; "[abc]"</span></div></pre></td></tr></table></figure>
@@ -181,11 +181,11 @@
 <p><code>(0{0,2}\d|0?\d{2}|1\d{2}|2[0-4]\d|25[0-5])</code></p>
 <p>它是一个多选结构，分成5个部分：</p>
 <ul>
-<li>0{0,2}\d，匹配一位数，包括 “0” 补齐的。比如，”9”、”09”、”009”；</li>
-<li>0?\d{2}，匹配两位数，包括 “0” 补齐的，也包括一位数；</li>
-<li>1\d{2}，匹配 “100” 到 “199”;</li>
-<li>2[0-4]\d，匹配 “200” 到 “249”；</li>
-<li>25[0-5]，匹配 “250” 到 “255”。</li>
+<li><code>0{0,2}\d</code>，匹配一位数，包括 <code>&quot;0&quot;</code> 补齐的。比如，<code>&quot;9&quot;</code>、<code>&quot;09&quot;</code>、<code>&quot;009&quot;</code>；</li>
+<li><code>0?\d{2}</code>，匹配两位数，包括 <code>&quot;0&quot;</code> 补齐的，也包括一位数；</li>
+<li><code>1\d{2}</code>，匹配 <code>&quot;100&quot;</code> 到 <code>&quot;199&quot;</code>;</li>
+<li><code>2[0-4]\d</code>，匹配 <code>&quot;200&quot;</code> 到 <code>&quot;249&quot;</code>；</li>
+<li><code>25[0-5]</code>，匹配 <code>&quot;250&quot;</code> 到 <code>&quot;255&quot;</code>。</li>
 </ul>
 <p>最后来看一下其可视化形式：</p>
 <p><img src="https://meowv.github.io/images/r.5.6.png" alt="PNG"></p>
