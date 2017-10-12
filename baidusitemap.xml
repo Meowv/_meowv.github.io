@@ -4,6 +4,25 @@
 
     
   <url>
+    <loc>http://xj8c.cc/2017/10/12/Regex-7/</loc>
+    <lastmod>2017-10-12T09:54:18.991Z</lastmod>
+    <data>
+        <display>
+        <title>正则表达式编程</title>
+        <pubTime>2017-10-12T05:30:33.000Z</pubTime>
+        
+        <tag>Regex</tag>
+         
+        <tag>正则表达式</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xj8c.cc/2017/10/12/Regex-6/</loc>
     <lastmod>2017-10-12T02:30:38.705Z</lastmod>
     <data>
@@ -526,25 +545,6 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/08/02/Win10-ten-points/</loc>
-    <lastmod>2017-05-26T06:29:50.724Z</lastmod>
-    <data>
-        <display>
-        <title>Win10的十个亮点</title>
-        <pubTime>2015-08-02T01:45:08.000Z</pubTime>
-        
-        <tag>win10</tag>
-         
-        <tag>微软</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://xj8c.cc/2015/04/05/win7-cmd/</loc>
     <lastmod>2017-05-26T06:29:50.724Z</lastmod>
     <data>
@@ -555,6 +555,25 @@
         <tag>win7</tag>
          
         <tag>命令行</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xj8c.cc/2015/08/02/Win10-ten-points/</loc>
+    <lastmod>2017-05-26T06:29:50.724Z</lastmod>
+    <data>
+        <display>
+        <title>Win10的十个亮点</title>
+        <pubTime>2015-08-02T01:45:08.000Z</pubTime>
+        
+        <tag>win10</tag>
+         
+        <tag>微软</tag>
          
          
            
@@ -600,14 +619,14 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/07/27/vs-shortcuts/</loc>
+    <loc>http://xj8c.cc/2015/04/17/why-is-the-chinese-mobile-number-11/</loc>
     <lastmod>2017-05-26T06:29:50.633Z</lastmod>
     <data>
         <display>
-        <title>必须知道的 Visual Studio 快捷键</title>
-        <pubTime>2015-07-27T12:21:47.000Z</pubTime>
+        <title>揭秘：中国手机号码为什么是11位数？</title>
+        <pubTime>2015-04-17T08:37:14.000Z</pubTime>
         
-        <tag>Visual Studio</tag>
+        <tag>手机</tag>
          
          
            
@@ -617,14 +636,14 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/04/17/why-is-the-chinese-mobile-number-11/</loc>
+    <loc>http://xj8c.cc/2015/07/27/vs-shortcuts/</loc>
     <lastmod>2017-05-26T06:29:50.633Z</lastmod>
     <data>
         <display>
-        <title>揭秘：中国手机号码为什么是11位数？</title>
-        <pubTime>2015-04-17T08:37:14.000Z</pubTime>
+        <title>必须知道的 Visual Studio 快捷键</title>
+        <pubTime>2015-07-27T12:21:47.000Z</pubTime>
         
-        <tag>手机</tag>
+        <tag>Visual Studio</tag>
          
          
            
@@ -689,23 +708,6 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/12/10/the-students-with-poor-grades-reversed/</loc>
-    <lastmod>2017-05-26T06:29:50.551Z</lastmod>
-    <data>
-        <display>
-        <title>一个学渣的逆袭</title>
-        <pubTime>2015-12-10T08:05:19.000Z</pubTime>
-        
-        <tag>逆袭</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://xj8c.cc/2015/10/28/test-case-design-advanced(bottom)/</loc>
     <lastmod>2017-05-26T06:29:50.551Z</lastmod>
     <data>
@@ -738,18 +740,14 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/05/04/SqlServer2008/</loc>
-    <lastmod>2017-05-26T06:29:50.509Z</lastmod>
+    <loc>http://xj8c.cc/2015/12/10/the-students-with-poor-grades-reversed/</loc>
+    <lastmod>2017-05-26T06:29:50.551Z</lastmod>
     <data>
         <display>
-        <title>sql数据库|SqlServer2008 R2_x86&x64</title>
-        <pubTime>2015-05-04T13:13:08.000Z</pubTime>
+        <title>一个学渣的逆袭</title>
+        <pubTime>2015-12-10T08:05:19.000Z</pubTime>
         
-        <tag>绿色软件</tag>
-         
-        <tag>SqlServer</tag>
-         
-        <tag>数据库</tag>
+        <tag>逆袭</tag>
          
          
            
@@ -767,6 +765,27 @@
         <pubTime>2015-07-13T13:44:57.000Z</pubTime>
         
         <tag>编程</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xj8c.cc/2015/05/04/SqlServer2008/</loc>
+    <lastmod>2017-05-26T06:29:50.509Z</lastmod>
+    <data>
+        <display>
+        <title>sql数据库|SqlServer2008 R2_x86&x64</title>
+        <pubTime>2015-05-04T13:13:08.000Z</pubTime>
+        
+        <tag>绿色软件</tag>
+         
+        <tag>SqlServer</tag>
+         
+        <tag>数据库</tag>
          
          
            
