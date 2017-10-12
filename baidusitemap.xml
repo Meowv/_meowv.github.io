@@ -4,6 +4,25 @@
 
     
   <url>
+    <loc>http://xj8c.cc/2017/10/12/Regex-6/</loc>
+    <lastmod>2017-10-12T02:30:38.705Z</lastmod>
+    <data>
+        <display>
+        <title>正则表达式的构建</title>
+        <pubTime>2017-10-12T02:30:30.000Z</pubTime>
+        
+        <tag>Regex</tag>
+         
+        <tag>正则表达式</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xj8c.cc/2017/10/11/Regex-5/</loc>
     <lastmod>2017-10-11T06:53:10.211Z</lastmod>
     <data>
@@ -507,16 +526,16 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/08/05/windows10-iso/</loc>
+    <loc>http://xj8c.cc/2015/08/02/Win10-ten-points/</loc>
     <lastmod>2017-05-26T06:29:50.724Z</lastmod>
     <data>
         <display>
-        <title>Win10正式版微软官方原版ISO系统镜像下载大全</title>
-        <pubTime>2015-08-05T10:22:37.000Z</pubTime>
+        <title>Win10的十个亮点</title>
+        <pubTime>2015-08-02T01:45:08.000Z</pubTime>
         
         <tag>win10</tag>
          
-        <tag>原版系统</tag>
+        <tag>微软</tag>
          
          
            
@@ -545,16 +564,16 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/08/02/Win10-ten-points/</loc>
+    <loc>http://xj8c.cc/2015/08/05/windows10-iso/</loc>
     <lastmod>2017-05-26T06:29:50.724Z</lastmod>
     <data>
         <display>
-        <title>Win10的十个亮点</title>
-        <pubTime>2015-08-02T01:45:08.000Z</pubTime>
+        <title>Win10正式版微软官方原版ISO系统镜像下载大全</title>
+        <pubTime>2015-08-05T10:22:37.000Z</pubTime>
         
         <tag>win10</tag>
          
-        <tag>微软</tag>
+        <tag>原版系统</tag>
          
          
            
@@ -581,14 +600,14 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/04/17/why-is-the-chinese-mobile-number-11/</loc>
+    <loc>http://xj8c.cc/2015/07/27/vs-shortcuts/</loc>
     <lastmod>2017-05-26T06:29:50.633Z</lastmod>
     <data>
         <display>
-        <title>揭秘：中国手机号码为什么是11位数？</title>
-        <pubTime>2015-04-17T08:37:14.000Z</pubTime>
+        <title>必须知道的 Visual Studio 快捷键</title>
+        <pubTime>2015-07-27T12:21:47.000Z</pubTime>
         
-        <tag>手机</tag>
+        <tag>Visual Studio</tag>
          
          
            
@@ -598,14 +617,14 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/07/27/vs-shortcuts/</loc>
+    <loc>http://xj8c.cc/2015/04/17/why-is-the-chinese-mobile-number-11/</loc>
     <lastmod>2017-05-26T06:29:50.633Z</lastmod>
     <data>
         <display>
-        <title>必须知道的 Visual Studio 快捷键</title>
-        <pubTime>2015-07-27T12:21:47.000Z</pubTime>
+        <title>揭秘：中国手机号码为什么是11位数？</title>
+        <pubTime>2015-04-17T08:37:14.000Z</pubTime>
         
-        <tag>Visual Studio</tag>
+        <tag>手机</tag>
          
          
            
@@ -687,21 +706,6 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/08/07/the-30-most-difficult-questions-to-answer-in-history/</loc>
-    <lastmod>2017-05-26T06:29:50.551Z</lastmod>
-    <data>
-        <display>
-        <title>史上最难回答的30个问题，没有一人都能答对！</title>
-        <pubTime>2015-08-07T12:55:58.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://xj8c.cc/2015/10/28/test-case-design-advanced(bottom)/</loc>
     <lastmod>2017-05-26T06:29:50.551Z</lastmod>
     <data>
@@ -711,6 +715,21 @@
         
         <tag>软件测试</tag>
          
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xj8c.cc/2015/08/07/the-30-most-difficult-questions-to-answer-in-history/</loc>
+    <lastmod>2017-05-26T06:29:50.551Z</lastmod>
+    <data>
+        <display>
+        <title>史上最难回答的30个问题，没有一人都能答对！</title>
+        <pubTime>2015-08-07T12:55:58.000Z</pubTime>
+        
          
            
         </display>
@@ -757,21 +776,6 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/05/25/shopping-online/</loc>
-    <lastmod>2017-05-26T06:29:50.493Z</lastmod>
-    <data>
-        <display>
-        <title>Shopping Online</title>
-        <pubTime>2015-05-25T09:50:23.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://xj8c.cc/2015/10/24/overview-of-software-testing/</loc>
     <lastmod>2017-05-26T06:29:50.493Z</lastmod>
     <data>
@@ -781,6 +785,21 @@
         
         <tag>软件测试</tag>
          
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xj8c.cc/2015/05/25/shopping-online/</loc>
+    <lastmod>2017-05-26T06:29:50.493Z</lastmod>
+    <data>
+        <display>
+        <title>Shopping Online</title>
+        <pubTime>2015-05-25T09:50:23.000Z</pubTime>
+        
          
            
         </display>
@@ -1005,25 +1024,6 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/07/06/bigdata-internet-thinking-O2O-crowdfunding/</loc>
-    <lastmod>2017-05-26T06:29:50.154Z</lastmod>
-    <data>
-        <display>
-        <title>什么是大数据，什么是红海、蓝海、互联网思维？什么是O2O？什么是众筹？</title>
-        <pubTime>2015-07-06T07:41:52.000Z</pubTime>
-        
-        <tag>互联网</tag>
-         
-        <tag>大数据</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://xj8c.cc/2015/07/16/asp.net-knowledge-point-summary-5/</loc>
     <lastmod>2017-05-26T06:29:50.154Z</lastmod>
     <data>
@@ -1034,6 +1034,25 @@
         <tag>ASP.NET</tag>
          
         <tag>技术教程</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xj8c.cc/2015/07/06/bigdata-internet-thinking-O2O-crowdfunding/</loc>
+    <lastmod>2017-05-26T06:29:50.154Z</lastmod>
+    <data>
+        <display>
+        <title>什么是大数据，什么是红海、蓝海、互联网思维？什么是O2O？什么是众筹？</title>
+        <pubTime>2015-07-06T07:41:52.000Z</pubTime>
+        
+        <tag>互联网</tag>
+         
+        <tag>大数据</tag>
          
          
            
