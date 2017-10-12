@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xj8c.cc/"/>
-  <updated>2017-10-12T09:54:18.991Z</updated>
+  <updated>2017-10-12T09:56:57.636Z</updated>
   <id>http://xj8c.cc/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://xj8c.cc/2017/10/12/Regex-7/"/>
     <id>http://xj8c.cc/2017/10/12/Regex-7/</id>
     <published>2017-10-12T05:30:33.000Z</published>
-    <updated>2017-10-12T09:54:18.991Z</updated>
+    <updated>2017-10-12T09:56:57.636Z</updated>
     
     <content type="html"><![CDATA[<h2 id="第七章-正则表达式编程"><a href="#第七章-正则表达式编程" class="headerlink" title="第七章 正则表达式编程"></a>第七章 正则表达式编程</h2><p>什么叫知识，能指导我们实践的东西才叫知识。</p>
 <p>学习一样东西，如果不能使用，最多只能算作纸上谈兵。正则表达式的学习，也不例外。</p>
@@ -216,7 +216,7 @@
 <tr>
 <td><code>RegExp.leftContext</code></td>
 <td>目标字符串中lastMatch之前的文本</td>
-<td><code>RegExp[&quot;$</code>“]`</td>
+<td>RegExp[“$`”]</td>
 </tr>
 <tr>
 <td><code>RegExp.rightContext</code></td>
