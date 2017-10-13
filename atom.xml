@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xj8c.cc/"/>
-  <updated>2017-10-12T09:56:57.636Z</updated>
+  <updated>2017-10-13T01:44:09.530Z</updated>
   <id>http://xj8c.cc/</id>
   
   <author>
@@ -14,6 +14,711 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>正则表达式术语中英文对照表</title>
+    <link href="http://xj8c.cc/2017/10/13/Regex-chinese-english-comparison-table/"/>
+    <id>http://xj8c.cc/2017/10/13/Regex-chinese-english-comparison-table/</id>
+    <published>2017-10-13T01:37:20.000Z</published>
+    <updated>2017-10-13T01:44:09.530Z</updated>
+    
+    <content type="html"><![CDATA[<table>
+<thead>
+<tr>
+<th style="text-align:left">术语中英文对照表</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">正则表达式</td>
+<td style="text-align:left">regular expressions</td>
+</tr>
+<tr>
+<td style="text-align:left">字符组</td>
+<td style="text-align:left">character classes</td>
+</tr>
+<tr>
+<td style="text-align:left">反义字符组</td>
+<td style="text-align:left">negated character classes</td>
+</tr>
+<tr>
+<td style="text-align:left">范围表达式法</td>
+<td style="text-align:left">range expressions</td>
+</tr>
+<tr>
+<td style="text-align:left">元字符</td>
+<td style="text-align:left">metacharacters</td>
+</tr>
+<tr>
+<td style="text-align:left">通配符</td>
+<td style="text-align:left">wildcard character</td>
+</tr>
+<tr>
+<td style="text-align:left">换行符</td>
+<td style="text-align:left">newline charactor</td>
+</tr>
+<tr>
+<td style="text-align:left">回车符</td>
+<td style="text-align:left">carriage return character</td>
+</tr>
+<tr>
+<td style="text-align:left">水平制表符</td>
+<td style="text-align:left">tab character</td>
+</tr>
+<tr>
+<td style="text-align:left">垂直制表符</td>
+<td style="text-align:left">vertical tab charecter</td>
+</tr>
+<tr>
+<td style="text-align:left">换页符</td>
+<td style="text-align:left">form feed character</td>
+</tr>
+<tr>
+<td style="text-align:left">空白符</td>
+<td style="text-align:left">whitespace</td>
+</tr>
+<tr>
+<td style="text-align:left">段终止符</td>
+<td style="text-align:left">paragraph terminator</td>
+</tr>
+<tr>
+<td style="text-align:left">行终止符</td>
+<td style="text-align:left">line terminator</td>
+</tr>
+<tr>
+<td style="text-align:left">单词字符</td>
+<td style="text-align:left">word characters</td>
+</tr>
+<tr>
+<td style="text-align:left">非单词字符</td>
+<td style="text-align:left">non-word characters</td>
+</tr>
+<tr>
+<td style="text-align:left">数字字符</td>
+<td style="text-align:left">digits</td>
+</tr>
+<tr>
+<td style="text-align:left">非数字字符</td>
+<td style="text-align:left">non-digits</td>
+</tr>
+<tr>
+<td style="text-align:left">字母数字字符</td>
+<td style="text-align:left">alphanumeric characters</td>
+</tr>
+<tr>
+<td style="text-align:left">量词</td>
+<td style="text-align:left">quantifiers</td>
+</tr>
+<tr>
+<td style="text-align:left">贪婪量词</td>
+<td style="text-align:left">greedy quantifiers</td>
+</tr>
+<tr>
+<td style="text-align:left">惰性量词</td>
+<td style="text-align:left">lazy quantifiers</td>
+</tr>
+<tr>
+<td style="text-align:left">位置</td>
+<td style="text-align:left">positions</td>
+</tr>
+<tr>
+<td style="text-align:left">锚</td>
+<td style="text-align:left">anchors</td>
+</tr>
+<tr>
+<td style="text-align:left">行开头</td>
+<td style="text-align:left">beginning of a line</td>
+</tr>
+<tr>
+<td style="text-align:left">行结尾</td>
+<td style="text-align:left">end of a line</td>
+</tr>
+<tr>
+<td style="text-align:left">单词边界</td>
+<td style="text-align:left">word boundaries</td>
+</tr>
+<tr>
+<td style="text-align:left">非单词边界</td>
+<td style="text-align:left">non-word boundaries</td>
+</tr>
+<tr>
+<td style="text-align:left">向前查找</td>
+<td style="text-align:left">lookahead</td>
+</tr>
+<tr>
+<td style="text-align:left">正向向前查找</td>
+<td style="text-align:left">positive lookahead</td>
+</tr>
+<tr>
+<td style="text-align:left">负向向前查找</td>
+<td style="text-align:left">negative lookahead</td>
+</tr>
+<tr>
+<td style="text-align:left">向后查找</td>
+<td style="text-align:left">lookbehind</td>
+</tr>
+<tr>
+<td style="text-align:left">正向向后查找</td>
+<td style="text-align:left">positive lookbehind</td>
+</tr>
+<tr>
+<td style="text-align:left">负向向后查找</td>
+<td style="text-align:left">negative lookbehind</td>
+</tr>
+<tr>
+<td style="text-align:left">分组</td>
+<td style="text-align:left">groups</td>
+</tr>
+<tr>
+<td style="text-align:left">捕获分组</td>
+<td style="text-align:left">capturing groups</td>
+</tr>
+<tr>
+<td style="text-align:left">非捕获分组</td>
+<td style="text-align:left">non-capturing groups</td>
+</tr>
+<tr>
+<td style="text-align:left">分支结构</td>
+<td style="text-align:left">alternations</td>
+</tr>
+<tr>
+<td style="text-align:left">反向引用</td>
+<td style="text-align:left">back references</td>
+</tr>
+<tr>
+<td style="text-align:left">回溯</td>
+<td style="text-align:left">backtracks</td>
+</tr>
+<tr>
+<td style="text-align:left">运算符</td>
+<td style="text-align:left">operators</td>
+</tr>
+<tr>
+<td style="text-align:left">优先级</td>
+<td style="text-align:left">priority level</td>
+</tr>
+<tr>
+<td style="text-align:left">修饰符</td>
+<td style="text-align:left">flags</td>
+</tr>
+<tr>
+<td style="text-align:left">全局匹配修饰符</td>
+<td style="text-align:left">global flag</td>
+</tr>
+<tr>
+<td style="text-align:left">忽略大小写修饰符</td>
+<td style="text-align:left">ingnoreCase flag</td>
+</tr>
+<tr>
+<td style="text-align:left">多行匹配修饰符</td>
+<td style="text-align:left">multiline flag</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;术语中英文对照表&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text
+    
+    </summary>
+    
+    
+      <category term="Regex" scheme="http://xj8c.cc/tags/Regex/"/>
+    
+      <category term="正则表达式" scheme="http://xj8c.cc/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>正则表达式速查表</title>
+    <link href="http://xj8c.cc/2017/10/12/Regex-cheat-sheet/"/>
+    <id>http://xj8c.cc/2017/10/12/Regex-cheat-sheet/</id>
+    <published>2017-10-12T10:01:07.000Z</published>
+    <updated>2017-10-13T01:51:16.815Z</updated>
+    
+    <content type="html"><![CDATA[<table>
+<thead>
+<tr>
+<th style="text-align:left">字面量</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">模式</td>
+<td style="text-align:left">说明</td>
+</tr>
+<tr>
+<td style="text-align:left">字母、数字</td>
+<td style="text-align:left">匹配字面量本身。比如 <code>/f/</code>，匹配字母 <code>&quot;f&quot;</code>。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\0</code></td>
+<td style="text-align:left">匹配 NUL 字符。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\t</code></td>
+<td style="text-align:left">匹配水平制表符。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\v</code></td>
+<td style="text-align:left">匹配垂直制表符。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\n</code></td>
+<td style="text-align:left">匹配换行符。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\r</code></td>
+<td style="text-align:left">匹配回车符。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\f</code></td>
+<td style="text-align:left">匹配换页符。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\xnn</code></td>
+<td style="text-align:left">匹配拉丁字符。比如 <code>\xOA</code> 等价于 <code>\n</code>。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\uxxxx</code></td>
+<td style="text-align:left">匹配 Unicode 字符。比如 <code>\u2028</code> 匹配行终止符，<code>\u2029</code> 匹配段终止符。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\cX</code></td>
+<td style="text-align:left">匹配 ctrl+X。比如 <code>\cI</code> 匹配 ctrl+I，等价于 <code>\t</code>。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[\b]</code></td>
+<td style="text-align:left">匹配 Backspace 键（特殊记忆）。</td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字符组</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">模式</td>
+<td style="text-align:left">说明</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[abc]</code></td>
+<td style="text-align:left">匹配 <code>&quot;a&quot;</code>、<code>&quot;b&quot;</code>、<code>&quot;c&quot;</code> 其中任何一个字符。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[a-d1-4]</code></td>
+<td style="text-align:left">匹配 <code>&quot;a&quot;</code>、<code>&quot;b&quot;</code>、<code>&quot;c&quot;</code>、<code>&quot;d&quot;</code>、<code>&quot;1&quot;</code>、<code>&quot;2&quot;</code>、<code>&quot;3&quot;</code>、<code>&quot;4&quot;</code> 其中任何一个字符。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[^abc]</code></td>
+<td style="text-align:left">匹配除了 <code>&quot;a&quot;</code>、<code>&quot;b&quot;</code>、<code>&quot;c&quot;</code> 之外的任何一个字符。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[^a-d1-4]</code></td>
+<td style="text-align:left">匹配除了 <code>&quot;a&quot;</code>、<code>&quot;b&quot;</code>、<code>&quot;c&quot;</code>、<code>&quot;d&quot;</code>、<code>&quot;1&quot;</code>、<code>&quot;2&quot;</code>、<code>&quot;3&quot;</code>、<code>&quot;4&quot;</code> 之外的任何一个字符。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>.</code></td>
+<td style="text-align:left">通配符，匹配除了少数字符（<code>\n</code>）之外的任意字符。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\d</code></td>
+<td style="text-align:left">匹配数字，等价于 [0-9]。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\D</code></td>
+<td style="text-align:left">匹配非数字，等价于 [^0-9]。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\w</code></td>
+<td style="text-align:left">匹配单词字符，等价于 <code>[a-zA-Z0-9_]</code>。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\W</code></td>
+<td style="text-align:left">匹配非单词字符，等价于 <code>[^a-zA-Z0-9_]</code>。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\s</code></td>
+<td style="text-align:left">匹配空白符，等价于 [ \t\v\n\r\f]。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\S</code></td>
+<td style="text-align:left">匹配非空白符，等价于 <code>[^ \t\v\n\r\f]</code>。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">量词</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">模式</td>
+<td style="text-align:left">说明</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>{n,m}</code></td>
+<td style="text-align:left">连续出现 n 到 m 次。贪婪模式。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>{n,}</code></td>
+<td style="text-align:left">至少连续出现 n 次。贪婪模式。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>{n}</code></td>
+<td style="text-align:left">连续出现 n 次。贪婪模式。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>?</code></td>
+<td style="text-align:left">等价于 <code>{0,1}</code>。贪婪模式。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>+</code></td>
+<td style="text-align:left">等价于 <code>{1,}</code>。贪婪模式。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>*</code></td>
+<td style="text-align:left">等价于 <code>{0,}</code>。贪婪模式。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>{n,m}?</code></td>
+<td style="text-align:left">连续出现 n 到 m 次。惰性模式。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>{n,}?</code></td>
+<td style="text-align:left">至少连续出现 n 次。惰性模式。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>{n}?</code></td>
+<td style="text-align:left">连续出现 n 次。惰性模式。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>??</code></td>
+<td style="text-align:left">等价于 <code>{0,1}?</code>。惰性模式。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>+?</code></td>
+<td style="text-align:left">等价于 <code>{1,}?</code>。惰性模式。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>*?</code></td>
+<td style="text-align:left">等价于 <code>{0,}?</code>。惰性模式。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">位置</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">模式</td>
+<td style="text-align:left">说明</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>^</code></td>
+<td style="text-align:left">匹配开头的位置，当正则有修饰符 <code>m</code> 时，表示匹配行开头位置。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$</code></td>
+<td style="text-align:left">匹配结尾的位置，当正则有修饰符 <code>m</code> 时，表示匹配行结尾位置。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\b</code></td>
+<td style="text-align:left">匹配单词边界，即，<code>\w</code> 与 <code>\W</code>、<code>^</code> 与 <code>\w</code>、<code>\w</code> 与 <code>$</code> 之间的位置。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\B</code></td>
+<td style="text-align:left">匹配非单词边界，即，<code>\w</code> 与 <code>\w</code>、<code>\W</code> 与 <code>\W</code>、<code>^</code> 与 <code>\W</code>，<code>\W</code> 与 <code>$</code> 之间的位置。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>(?=abc)</code></td>
+<td style="text-align:left">匹配 <code>&quot;abc&quot;</code> 前面的位置，即此位置后面匹配 <code>&quot;abc&quot;</code>。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>(?!abc)</code></td>
+<td style="text-align:left">匹配非 <code>&quot;abc&quot;</code> 前面的位置，即此位置后面不匹配 <code>&quot;abc&quot;</code>。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">括号的作用</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">模式</td>
+<td style="text-align:left">说明</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>(ab)</code></td>
+<td style="text-align:left">捕获型分组。把 <code>&quot;ab&quot;</code> 当成一个整体，比如 <code>(ab)+</code> 表示 <code>&quot;ab&quot;</code> 至少连续出现一次。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>(?:ab)</code></td>
+<td style="text-align:left">非捕获型分组。与 <code>(ab)</code> 的区别是，它不捕获数据。</td>
+</tr>
+<tr>
+<td style="text-align:left">(good&#124;nice)</td>
+<td style="text-align:left">捕获型分支结构。匹配 <code>&quot;good&quot;</code> 或 <code>&quot;nice&quot;</code>。</td>
+</tr>
+<tr>
+<td style="text-align:left">(?:good&#124;nice)</td>
+<td style="text-align:left">非捕获型分支结构。与 (good&#124;nice) 的区别是，它不捕获数据。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\num</code></td>
+<td style="text-align:left">反向引用。比如 <code>\2</code>，表示引用的是第二个括号里的捕获的数据。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">修饰符</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">符号</td>
+<td style="text-align:left">说明</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>g</code></td>
+<td style="text-align:left">全局匹配，找到所有满足匹配的子串。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>i</code></td>
+<td style="text-align:left">匹配过程中，忽略英文字母大小写。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>m</code></td>
+<td style="text-align:left">多行匹配，把 <code>^</code> 和 <code>$</code> 变成行开头和行结尾。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">String相关实例方法</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">属性</td>
+<td style="text-align:left">方法作用说明</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>search</code></td>
+<td style="text-align:left">返回正则匹配到的第一个子串在目标字符串中的下标位置。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>split</code></td>
+<td style="text-align:left">以正则匹配到的子串，对目标字符串进行切分。返回一个数组。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>match</code></td>
+<td style="text-align:left">对目标字符串执行正则匹配操作，返回的匹配结果数组中包含具体的匹配信息。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>replace</code></td>
+<td style="text-align:left">对目标字符串进行替换操作。正则是其第一个参数。返回替换后的字符串。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">replace第二个参数中的特殊字符</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">字符</td>
+<td style="text-align:left">说明</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$1,$2,…,$99</code></td>
+<td style="text-align:left">匹配第 1-99 个分组里捕获的文本</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$&amp;</code></td>
+<td style="text-align:left">匹配到的子串文本</td>
+</tr>
+<tr>
+<td style="text-align:left">$`</td>
+<td style="text-align:left">匹配到的子串的左边文本</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$&#39;</code></td>
+<td style="text-align:left">匹配到的子串的右边文本</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$$</code></td>
+<td style="text-align:left">美元符号</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">RegExp相关实例方法</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">属性</td>
+<td style="text-align:left">方法作用说明</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>test</code></td>
+<td style="text-align:left">判断目标字符串中是否有满足正则匹配的子串。返回布尔值。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>exec</code></td>
+<td style="text-align:left">比 <code>match</code> 更强大的正则匹配操作。返回结果与 <code>match</code> 一致。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">RegExp静态属性</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">属性</td>
+<td style="text-align:left">方法作用说明</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$1,…,$9</code></td>
+<td style="text-align:left">最近一次第 1-9 个分组捕获的数据。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>input</code></td>
+<td style="text-align:left">最近一次目标字符串，可以简写成 <code>$_</code>。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>lastMatch</code></td>
+<td style="text-align:left">最近一次匹配的文本，可以简写成 <code>$&amp;</code>。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>lastParen</code></td>
+<td style="text-align:left">最近一次捕获的文本，可以简写成 <code>$+</code>。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>leftContext</code></td>
+<td style="text-align:left">目标字符串中 lastMatch 之前的文本，可以简写成 $`。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>rightContext</code></td>
+<td style="text-align:left">目标字符串中 lastMatch 之后的文本，可以简写成 <code>$&#39;</code>。</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;字面量&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;模式&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;说明&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;字母、数字&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;匹配字面量本身。比如 &lt;code&gt;/f/&lt;/code&gt;，匹配字母 &lt;code&gt;&amp;quot;f&amp;quot;&lt;/code&gt;。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;code&gt;\0&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;匹配 NUL 字符。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;code&gt;\t&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;匹配水平制表符。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;code&gt;\v&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;匹配垂直制表符。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;code&gt;\n&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;匹配换行符。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;code&gt;\r&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;匹配回车符。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;code&gt;\f&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;匹配换页符。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;code&gt;\xnn&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;匹配拉丁字符。比如 &lt;code&gt;\xOA&lt;/code&gt; 等价于 &lt;code&gt;\n&lt;/code&gt;。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;code&gt;\uxxxx&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;匹配 Unicode 字符。比如 &lt;code&gt;\u2028&lt;/code&gt; 匹配行终止符，&lt;code&gt;\u2029&lt;/code&gt; 匹配段终止符。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;code&gt;\cX&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;匹配 ctrl+X。比如 &lt;code&gt;\cI&lt;/code&gt; 匹配 ctrl+I，等价于 &lt;code&gt;\t&lt;/code&gt;。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;code&gt;[\b]&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;匹配 Backspace 键（特殊记忆）。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+    
+    </summary>
+    
+    
+      <category term="Regex" scheme="http://xj8c.cc/tags/Regex/"/>
+    
+      <category term="正则表达式" scheme="http://xj8c.cc/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>正则表达式编程</title>
@@ -2129,131 +2834,6 @@ const { navigate } = this.props.navigation;
 &lt;li&gt;第三方组件&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;很多组件是开发应用的基石，如果没有这些组件，那么是写不出来一个应用的，在这一章，我们来学习一些一定要知道的组件。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="ReactNative" scheme="http://xj8c.cc/tags/ReactNative/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>启动你的第一个React Native 应用</title>
-    <link href="http://xj8c.cc/2017/07/09/ReactNative-run/"/>
-    <id>http://xj8c.cc/2017/07/09/ReactNative-run/</id>
-    <published>2017-07-09T08:20:15.000Z</published>
-    <updated>2017-07-19T08:37:21.265Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="启动你的App"><a href="#启动你的App" class="headerlink" title="启动你的App"></a>启动你的App</h1><p>本章提要</p>
-<ul>
-<li>1.搭建React Native环境</li>
-<li>2.启动App</li>
-</ul>
-<h2 id="1-搭建React-Native环境"><a href="#1-搭建React-Native环境" class="headerlink" title="1.搭建React Native环境"></a>1.搭建React Native环境</h2><p>啊哈，我们即将近距离接触React Native了。不过，我们得在这之前安装一下React Native环境。<br><a id="more"></a><br>首先，我们来安装Node.js环境。<br>如果你的系统是Windows，那么到Node.js官网上下载安装包，一路next就行了。<br>如果是Linux或MacOS，那么作者君推荐使用神奇的nvm。<br>nvm的地址是:<br><a href="https://github.com/creationix/nvm" target="_blank" rel="external">https://github.com/creationix/nvm</a><br>按照说明安装即可。</p>
-<p>然后执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nvm install x.xx.x(要安装的版本号)</div></pre></td></tr></table></figure>
-<p>这样Node.js就安装完毕了。</p>
-<p>接下来，我们来安装Java环境。去Oracle的官网上下载安装包<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="external">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a><br>然后安装。</p>
-<p>同样的，Windows用户一路next然后设置JAVA_HOME环境变量即可。<br>对于Linux和MacOS用户来说，会稍稍麻烦一些。<br>首先把安装包解压到opt目录，然后在/etc/profile里加上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">export JAVA_HOME=/opt/(这里是安装包解压后的路径，别填错)</div><div class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</div><div class="line">export CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib</div><div class="line">export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH</div></pre></td></tr></table></figure></p>
-<p>最后别忘了执行一下<code>source /etc/profile</code></p>
-<p>如果执行<code>java -version</code>可以正常输出的话，那么恭喜啦，对很多人来说不怎么好装的Java环境被你安装好了哟</p>
-<p>然后安装安卓环境，我们先去Google的开发者网站<a href="https://developer.android.google.cn/studio/index.html" target="_blank" rel="external">https://developer.android.google.cn/studio/index.html</a> 上下载Android Studio。<br>安装好Android Studio，我们需要安装SDK及SDK Tools。首先，我们来安装SDK。在SDK Platforms，选择Show Package Details，然后勾选Android 6.0下的Google APIs，Android SDK Platform 23，Intel x86 Atom_64 System Image还有Google APIs Intel x86 Atom_64 System Image。接下来，在SDK Tools窗口中选择Show Package Details，然后选中有23.0.1的选项并下载。<br>最后，我们需要在/etc/profile中写入环境变量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export ANDROID_HOME=&apos;/home/elven/Android/Sdk&apos;</div></pre></td></tr></table></figure>
-<p>Windows用户也需要设置<code>ANDROID_HOME</code>这个环境变量。</p>
-<p>如果是老司机的话，Android Studio是不需要安装的，不过为了及时，方便的更新SDK，还是装上吧。</p>
-<p>再来三步，环境就安装好啦，如果感觉有些焦灼，给自己冲杯茶，咖啡或果汁是很好的选择~</p>
-<p>接下来，我们需要安装React Native。在终端中执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install react-native-cli -g</div></pre></td></tr></table></figure>
-<p>然后安装Yarn</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install yarn -g</div></pre></td></tr></table></figure>
-<p>最后安装Watchman，按照这里(<br><a href="https://facebook.github.io/watchman/docs/install.html#build-install" target="_blank" rel="external">https://facebook.github.io/watchman/docs/install.html#build-install</a></p>
-<p>)的说明一步步安装。<br>如果有报错的话，多半是有什么没装，按照报错里的信息装一下就Ok了。另外，Windows系统不需要安装Watchman（其实是Watchman不能在在这个系统运行）</p>
-<p>到这里，开发环境就搭建好了。</p>
-<h2 id="2-启动App"><a href="#2-启动App" class="headerlink" title="2.启动App"></a>2.启动App</h2><p>在启动App之前，我们得创建一个新的项目（啥都没有拿什么启动，哈哈）<br>在终端输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">react-native init 项目名</div></pre></td></tr></table></figure>
-<p>等待一会儿，进入项目目录。<br>好了，拿出你的小手机和数据线并与电脑相连。<br>新开一个终端，然后进入项目目录，执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">react-native start</div></pre></td></tr></table></figure>
-<p>回到原来的终端，执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">react-native run-android</div></pre></td></tr></table></figure>
-<p>如果是Windows的话，只要执行<code>run-android</code>这条命令就可以，packager可以自行启动，<br>这里分开是为了保证App可以正常启动。</p>
-<p>闭一会儿眼睛，稍稍休息下之后，你就会在手机上看到启动好的App了！</p>
-<p>作者君猜，你可能不知道项目中的index.android.js里的最后一句是什么意思，所以就在代码里小小的解释一下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">AppRegistry.registerComponent(&apos;项目名称&apos;, () =&gt; 组件名称);</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;启动你的App&quot;&gt;&lt;a href=&quot;#启动你的App&quot; class=&quot;headerlink&quot; title=&quot;启动你的App&quot;&gt;&lt;/a&gt;启动你的App&lt;/h1&gt;&lt;p&gt;本章提要&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;1.搭建React Native环境&lt;/li&gt;
-&lt;li&gt;2.启动App&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;1-搭建React-Native环境&quot;&gt;&lt;a href=&quot;#1-搭建React-Native环境&quot; class=&quot;headerlink&quot; title=&quot;1.搭建React Native环境&quot;&gt;&lt;/a&gt;1.搭建React Native环境&lt;/h2&gt;&lt;p&gt;啊哈，我们即将近距离接触React Native了。不过，我们得在这之前安装一下React Native环境。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="ReactNative" scheme="http://xj8c.cc/tags/ReactNative/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ReactNative基础</title>
-    <link href="http://xj8c.cc/2017/07/08/ReactNative-base/"/>
-    <id>http://xj8c.cc/2017/07/08/ReactNative-base/</id>
-    <published>2017-07-08T08:18:48.000Z</published>
-    <updated>2017-07-19T08:37:34.789Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="React-Native基础"><a href="#React-Native基础" class="headerlink" title="React Native基础"></a>React Native基础</h1><p>本章提要</p>
-<ul>
-<li>1.初识JSX</li>
-<li>2.组件</li>
-<li>3.Props和State</li>
-</ul>
-<h2 id="1-初识JSX"><a href="#1-初识JSX" class="headerlink" title="1.初识JSX"></a>1.初识JSX</h2><p>React Native抛弃了HTML，所以只好用JSX喽，在这里，我们来简单的了解一下JSX。<br><a id="more"></a><br>JSX是一个JS的语法糖，写起来就像XML。嗯，如果你不知道什么是XML的话，就脑补HTML吧，<br>它们都需要一些标签。比如这样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Text&gt;&lt;/Text&gt;</div></pre></td></tr></table></figure>
-<p>还有这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Image /&gt;</div></pre></td></tr></table></figure></p>
-<p>怎么样，有没有一丝熟悉的感觉？<br>JSX就是这样简单，我们只需要一个<code>&lt;</code>加上组件名字和<code>/&gt;</code>就可以了（其中Text，Image就是组件名）</p>
-<h2 id="2-组件"><a href="#2-组件" class="headerlink" title="2.组件"></a>2.组件</h2><p>在React Native中，有这么几种组件，无状态组件，正常的组件和高阶组件。</p>
-<blockquote>
-<p>高阶组件以后补上</p>
-</blockquote>
-<p>无状态组件，顾名思义，就是没有状态的组件，写一个无状态组件就和写一个函数一样简单。由于无状态组件的性能较高，我们<br>一般会在App性能优化的时候使用无状态组件。<br>下面是一个无状态组件的例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const Hello = () =&gt; &#123;</div><div class="line">    return (</div><div class="line">        &lt;Text&gt;我是一个无状态组件&lt;/Text&gt;</div><div class="line">    )</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>其中，Hello是组件的名字，这里有个友情提示，在React Native中，组件的名字最好都是首字母大写，这样可以避免一些奇怪的BUG。<br>然后在return中写组件的内容，注意，使用文字的时候，一定要在文字外面套上Text组件，否则会红屏报错。<br>如果想要用Props(属性)，要传一个props参数，就像这样</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">const Hello = (props) =&gt; &#123;...&#125;</div></pre></td></tr></table></figure>
-<p>如果不知道什么是Props的话，别着急，一会儿会说到的。</p>
-<p>接下来是正常的组件。<br>正常的组件能做的事情比无状态组件多了不少 (´・ω・`)。<br>写起来是酱紫的，稍微复杂一点：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">class Hello extends Component &#123;</div><div class="line">    constructor(props) &#123;</div><div class="line">    super(props);</div><div class="line">    this.state = &#123;&#125;;</div><div class="line">  &#125;</div><div class="line">    render() &#123;</div><div class="line">        return (</div><div class="line">            &lt;View&gt;</div><div class="line">                &lt;Text&gt;Hi,很高兴认识你&lt;/Text&gt;</div><div class="line">            &lt;/View&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>这是一个比较完整的组件，包含了Props和State(状态)。<br>在正常组件中使用state和props，我们需要使用constructor来初始化一下~<br>这里的super(props)是为了可以在constructor使用<code>this.props</code>，<br>当然，如果不需要这些，则不用写（虽然没写，但是按照ES6规范，class需要有一个constructor，所以constructor会被自动加上）。就像这样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">class Hello extends Component &#123;</div><div class="line">    render() &#123;</div><div class="line">        return (</div><div class="line">            &lt;View&gt;</div><div class="line">                &lt;Text&gt;略略略/Text&gt;</div><div class="line">            &lt;/View&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="3-Props和State"><a href="#3-Props和State" class="headerlink" title="3.Props和State"></a>3.Props和State</h2><p>嗯哼，刚才稍微提了一下Props和State，是不是很想知道这俩是啥嘞~<br>别着急，我这就说(´・ω・`)<br>Props的意思是属性，在React中，我们可以实现组件的复用(毕竟不复用组件太浪费了)。为了实现<br>组件的复用，我们希望可以对组件做些定制，这个时候，我们就需要使用Props了。往组件中传些不同的参数，从而使组件具有不同的功能。我们称这些<br>参数为Props。如果不太理解，没关系，来看这个栗子。</p>
-<p>设计师为衣服厂设计了一些衣服，但是为了照顾到不同的人群，所以要有不同的型号。高的，矮的，胖的，瘦的。虽然有不同的型号，但是<br>是同一款衣服，我们可以认为高矮胖瘦是参数，衣服的款式是一个组件。</p>
-<p>我们来看一下Props怎么用。首先写一个叫做Eat的组件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">class Eat extends Component &#123;</div><div class="line">    render() &#123;</div><div class="line">        return (</div><div class="line">                &lt;Text&gt;我想吃&lt;/Text&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>在组件里使用Props，我们需要一对花括号<code>{}</code>(写其他的JS语句也需要花括号)就像这样:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">return (</div><div class="line">    &lt;Text&gt;我想吃&#123;this.props.food&#125;&lt;/Text&gt;</div><div class="line">)</div></pre></td></tr></table></figure>
-<p>在props后面跟着的是属性的名字</p>
-<p>接下来，我们写另一个组件Dinner，并引入Eat组件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">class Dinner extends Component &#123;</div><div class="line">    render() &#123;</div><div class="line">        return (</div><div class="line">                &lt;Eat /&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>然后使用props:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Eat food=&apos;鱼&apos; /&gt;</div></pre></td></tr></table></figure>
-<p>这样最终会显示我想吃鱼，这里的鱼是food的值。到这里，Props的栗子就结束了，我们来看看State。</p>
-<p>一般来说，组件是需要和用户进行交互的，组件会随着随着交互而发生变化，这里的变化指的是State也就是状态。</p>
-<p>下面是一个用到了状态的组件:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">class NeedState extends Component &#123;</div><div class="line">    constructor(props) &#123;</div><div class="line">    super(props);</div><div class="line">    this.state = &#123; text: &apos;&apos; &#125;;</div><div class="line">  &#125;</div><div class="line">    render() &#123;</div><div class="line">        return (</div><div class="line">            &lt;View&gt;</div><div class="line">                &lt;Text onPress=&#123;() =&gt; &#123; this.setState(&#123; text: &apos;状态变了&apos; &#125;)&#125; &#125;&gt;点我！&lt;/Text&gt;</div><div class="line">                &lt;Text&gt;期待会发生的事情&lt;/Text&gt;</div><div class="line">            &lt;/View&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>首先，我们需要constructor函数来初始化状态，别忘记用<code>this.state</code>写入状态的名字。<code>onPress</code>可以帮我们在点了某个组件之后<br>执行一定的动作。我们在这里用它来触发<code>setState</code>来改变状态。</p>
-<p>如果没有什么奇怪的错误的话，点击<code>点我</code>这个文本之后，下面的文字会变成<code>状态变了</code>。</p>
-<p>State大概就是这么用的，没什么难度。在使用React Native的过程中，我们会时常用到Props和State，所以记下它们的用法还是很有必要的。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;React-Native基础&quot;&gt;&lt;a href=&quot;#React-Native基础&quot; class=&quot;headerlink&quot; title=&quot;React Native基础&quot;&gt;&lt;/a&gt;React Native基础&lt;/h1&gt;&lt;p&gt;本章提要&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;1.初识JSX&lt;/li&gt;
-&lt;li&gt;2.组件&lt;/li&gt;
-&lt;li&gt;3.Props和State&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;1-初识JSX&quot;&gt;&lt;a href=&quot;#1-初识JSX&quot; class=&quot;headerlink&quot; title=&quot;1.初识JSX&quot;&gt;&lt;/a&gt;1.初识JSX&lt;/h2&gt;&lt;p&gt;React Native抛弃了HTML，所以只好用JSX喽，在这里，我们来简单的了解一下JSX。&lt;br&gt;
     
     </summary>
     
