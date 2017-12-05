@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="当然我在瞎扯啊"><title>正则表达式回溯法原理 | 当然我在瞎扯</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">正则表达式回溯法原理</h1><a id="logo" href="/.">当然我在瞎扯</a><p class="description">生命不息，奋斗不止</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于我</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">正则表达式回溯法原理</h1><div class="post-meta">Oct 11, 2017<script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><div class="post-content"><h2 id="第四章-正则表达式回溯法原理"><a href="#第四章-正则表达式回溯法原理" class="headerlink" title="第四章 正则表达式回溯法原理"></a>第四章 正则表达式回溯法原理</h2><p>学习正则表达式，是需要懂点儿匹配原理的。</p>
+<p>而研究匹配原理时，有两个字出现的频率比较高：“回溯”。</p>
+<p>听起来挺高大上，事实上却是一个比较容易理解的概念。</p>
+<p>因此，本章就简单扼要地说清楚回溯到底是什么东西。</p>
+<p>内容包括：</p>
+<ul>
+<li><a href="#没有回溯的匹配">没有回溯的匹配</a></li>
+<li><a href="#有回溯的匹配">有回溯的匹配</a></li>
+<li><a href="#常见的回溯形式">常见的回溯形式</a></li>
+</ul>
+<a id="more"></a>
+<h3 id="没有回溯的匹配">没有回溯的匹配</h3>
+
+<p>假设我们的正则是 <code>/ab{1,3}c/</code>，其可视化形式是：</p>
+<p><img src="https://meowv.github.io/images/r.4.1.png" alt="PNG"></p>
+<p>而当目标字符串是 <code>&quot;abbbc&quot;</code> 时，就没有所谓的“回溯”。其匹配过程是：</p>
+<p><img src="https://meowv.github.io/images/r.4.2.png" alt="PNG"></p>
+<p>其中子表达式 <code>b{1,3}</code> 表示 <code>&quot;b&quot;</code> 字符连续出现 1 到 3 次。</p>
+<h3 id="有回溯的匹配">有回溯的匹配</h3>
+
+<p>如果目标字符串是”abbc”，中间就有回溯。</p>
+<p><img src="https://meowv.github.io/images/r.4.3.png" alt="PNG"></p>
+<p>图中第 5 步有红颜色，表示匹配不成功。此时 <code>b{1,3}</code> 已经匹配到了 2 个字符 <code>&quot;b&quot;</code>，准备尝试第三个时，结果发现接下来的字符是 <code>&quot;c&quot;</code>。那么就认为 <code>b{1,3}</code> 就已经匹配完毕。然后状态又回到之前的状态（即第 6 步与第 4 步一样），最后再用子表达式 <code>c</code>，去匹配字符 <code>&quot;c&quot;</code>。当然，此时整个表达式匹配成功了。</p>
+<p>图中的第 6 步，就是“回溯”。</p>
+<p>你可能对此没有感觉，这里我们再举一个例子。正则是：</p>
+<p><img src="https://meowv.github.io/images/r.4.4.png" alt="PNG"></p>
+<p>目标字符串是<code>&quot;abbbc&quot;</code>，匹配过程是：</p>
+<p><img src="https://meowv.github.io/images/r.4.5.png" alt="PNG"></p>
+<p>其中第 7 步和第 10 步是回溯。第 7 步与第 4 步一样，此时 <code>b{1,3}</code> 匹配了两个 <code>&quot;b&quot;</code>，而第 10 步与第 3 步一样，此时 <code>b{1,3}</code> 只匹配了一个 <code>&quot;b&quot;</code>，这也是 <code>b{1,3}</code> 的最终匹配结果。</p>
+<p>这里再看一个清晰的回溯，正则是：</p>
+<p><img src="https://meowv.github.io/images/r.4.6.png" alt="PNG"></p>
+<p>目标字符串是：<code>&quot;abc&quot;de</code>，匹配过程是：</p>
+<p><img src="https://meowv.github.io/images/r.4.7.png" alt="PNG"></p>
+<p>图中省略了尝试匹配双引号失败的过程。可以看出 <code>.*</code> 是非常影响效率的。</p>
+<p>为了减少一些不必要的回溯，可以把正则修改为 <code>/&quot;[^&quot;]*&quot;/</code>。</p>
+<h3 id="常见的回溯形式">常见的回溯形式</h3>
+
+<p>正则表达式匹配字符串的这种方式，有个学名，叫回溯法。</p>
+<blockquote>
+<p>回溯法也称试探法，它的基本思想是：从问题的某一种状态（初始状态）出发，搜索从这种状态出发<br>所能达到的所有“状态”，当一条路走到“尽头”的时候（不能再前进），再后退一步或若干步，从<br>另一种可能“状态”出发，继续搜索，直到所有的“路径”（状态）都试探过。这种不断“前进”、<br>不断“回溯”寻找解的方法，就称作“回溯法”。 — 百度百科</p>
+</blockquote>
+<p>本质上就是深度优先搜索算法。其中退到之前的某一步这一过程，我们称为“回溯”。从上面的描述过程中，可以看出，路走不通时，就会发生“回溯”。即，尝试匹配失败时，接下来的一步通常就是回溯。</p>
+<p>道理，我们是懂了。那么 JavaScript 中正则表达式会产生回溯的地方都有哪些呢？</p>
+<h4 id="贪婪量词"><a href="#贪婪量词" class="headerlink" title="贪婪量词"></a>贪婪量词</h4><p>之前的例子都是贪婪量词相关的。比如 <code>b{1,3}</code>，因为其是贪婪的，尝试可能的顺序是从多往少的方向去尝试。首先会尝试 <code>&quot;bbb&quot;</code>，然后再看整个正则是否能匹配。不能匹配时，吐出一个 “b”，即在 “bb” 的基础上，再继续尝试。如果还不行，再吐出一个，再试。如果还不行呢？只能说明匹配失败了。</p>
+<p>虽然局部匹配是贪婪的，但也要满足整体能正确匹配。否则，皮之不存，毛将焉附？</p>
+<p>此时我们不禁会问，如果当多个贪婪量词挨着存在，并相互有冲突时，此时会是怎样？</p>
+<p>答案是，先下手为强！因为深度优先搜索。测试如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> string = <span class="string">"12345"</span>;</div><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/(\d&#123;1,3&#125;)(\d&#123;1,3&#125;)/</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["12345", "123", "45", index: 0, input: "12345"]</span></div></pre></td></tr></table></figure>
+<p>其中，前面的 <code>\d{1,3}</code> 匹配的是 <code>&quot;123&quot;</code>，后面的 <code>\d{1,3}</code> 匹配的是 <code>&quot;45&quot;</code>。</p>
+<h4 id="惰性量词"><a href="#惰性量词" class="headerlink" title="惰性量词"></a>惰性量词</h4><p>惰性量词就是在贪婪量词后面加个问号。表示尽可能少的匹配，比如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> string = <span class="string">"12345"</span>;</div><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/(\d&#123;1,3&#125;?)(\d&#123;1,3&#125;)/</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["1234", "1", "234", index: 0, input: "12345"]</span></div></pre></td></tr></table></figure>
+<p>其中 <code>\d{1,3}?</code> 只匹配到一个字符 <code>&quot;1&quot;</code>，而后面的 <code>\d{1,3}</code> 匹配了 <code>&quot;234&quot;</code>。</p>
+<p>虽然惰性量词不贪，但也会有回溯的现象。比如正则是：</p>
+<p><img src="https://meowv.github.io/images/r.4.8.png" alt="PNG"></p>
+<p>目标字符串是”12345”，匹配过程是：</p>
+<p><img src="https://meowv.github.io/images/r.4.9.png" alt="PNG"></p>
+<p>知道你不贪、很知足，但是为了整体匹配成，没办法，也只能给你多塞点了。因此最后 <code>\d{1,3}?</code> 匹配的字<br>符是 <code>&quot;12&quot;</code>，是两个数字，而不是一个。</p>
+<h4 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h4><p>我们知道分支也是惰性的，比如 <code>/can|candy/</code>，去匹配字符串 <code>&quot;candy&quot;</code>，得到的结果是 <code>&quot;can&quot;</code>，因为分支会<br>一个一个尝试，如果前面的满足了，后面就不会再试验了。</p>
+<p>分支结构，可能前面的子模式会形成了局部匹配，如果接下来表达式整体不匹配时，仍会继续尝试剩下的分<br>支。这种尝试也可以看成一种回溯。</p>
+<p>比如正则：</p>
+<p><img src="https://meowv.github.io/images/r.4.10.png" alt="PNG"></p>
+<p>目标字符串是 <code>&quot;candy&quot;</code>，匹配过程：</p>
+<p><img src="https://meowv.github.io/images/r.4.11.png" alt="PNG"></p>
+<p>上面第 5 步，虽然没有回到之前的状态，但仍然回到了分支结构，尝试下一种可能。所以，可以认为它是一种回溯的。</p>
+<h3 id="本章小结"><a href="#本章小结" class="headerlink" title="本章小结"></a>本章小结</h3><p>其实回溯法，很容易掌握的。</p>
+<p>简单总结就是，正因为有多种可能，所以要一个一个试。直到，要么到某一步时，整体匹配成功了；要么最后都试完后，发现整体匹配不成功。</p>
+<ul>
+<li>贪婪量词“试”的策略是：买衣服砍价。价钱太高了，便宜点，不行，再便宜点。</li>
+<li>惰性量词“试”的策略是：卖东西加价。给少了，再多给点行不，还有点少啊，再给点。</li>
+<li>分支结构“试”的策略是：货比三家。这家不行，换一家吧，还不行，再换。</li>
+</ul>
+<p>既然有回溯的过程，那么匹配效率肯定低一些。相对谁呢？相对那些 DFA 引擎, DFA 是“确定型有限自动机”的简写。</p>
+<p>而 JavaScript 的正则引擎是 NFA，NFA 是“非确定型有限自动机”的简写。</p>
+<p>大部分语言中的正则都是 NFA，为啥它这么流行呢？</p>
+<p>答：你别看我匹配慢，但是我编译快啊，而且我还有趣哦。</p>
+</div><iframe src="/donate/?AliPayQR=/img/AliPayQR.png&amp;WeChatQR=/img/AliPayQR.png&amp;GitHub=https://github.com/Meowv&amp;BTCQR=undefined&amp;BTCKEY=undefined&amp;PayPal=undefined" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;" frameborder="0" scrolling="no"></iframe><div class="tags"><a href="/tags/Regex/">Regex</a><a href="/tags/正则表达式/">正则表达式</a></div><div class="post-nav"><a href="/2017/10/11/Regex-5/" class="pre">正则表达式的拆分</a><a href="/2017/10/10/Regex-3/" class="next">正则表达式括号的作用</a></div><div id="container"></div><link rel="stylesheet" href="/css/default.css?v=1.0.0"><script src="/js/gitment.browser.js?v=1.0.0"></script><script>var gitment = new Gitment({
+  owner: 'Meowv',
+  repo: 'meowv.github.io',
+  oauth: {
+    client_id: '8b9d5a517ebad5add0cc',
+    client_secret: '61ca179ff1d9c8aedd440e95521efd7240453d8b',
+  },
+})
+gitment.render('container')
+</script></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://xj8c.cc"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/C/" style="font-size: 15px;">C#</a> <a href="/tags/诗文/" style="font-size: 15px;">诗文</a> <a href="/tags/CEAC/" style="font-size: 15px;">CEAC</a> <a href="/tags/office2010/" style="font-size: 15px;">office2010</a> <a href="/tags/绿色软件/" style="font-size: 15px;">绿色软件</a> <a href="/tags/HtmlAgilityPack/" style="font-size: 15px;">HtmlAgilityPack</a> <a href="/tags/爬虫/" style="font-size: 15px;">爬虫</a> <a href="/tags/ReactNative/" style="font-size: 15px;">ReactNative</a> <a href="/tags/Regex/" style="font-size: 15px;">Regex</a> <a href="/tags/正则表达式/" style="font-size: 15px;">正则表达式</a> <a href="/tags/SqlServer/" style="font-size: 15px;">SqlServer</a> <a href="/tags/数据库/" style="font-size: 15px;">数据库</a> <a href="/tags/今日头条/" style="font-size: 15px;">今日头条</a> <a href="/tags/Newtonsoft-Json/" style="font-size: 15px;">Newtonsoft.Json</a> <a href="/tags/知乎/" style="font-size: 15px;">知乎</a> <a href="/tags/win10/" style="font-size: 15px;">win10</a> <a href="/tags/微软/" style="font-size: 15px;">微软</a> <a href="/tags/春天/" style="font-size: 15px;">春天</a> <a href="/tags/Photoshop/" style="font-size: 15px;">Photoshop</a> <a href="/tags/ASP-NET/" style="font-size: 15px;">ASP.NET</a> <a href="/tags/技术教程/" style="font-size: 15px;">技术教程</a> <a href="/tags/面试/" style="font-size: 15px;">面试</a> <a href="/tags/软件测试/" style="font-size: 15px;">软件测试</a> <a href="/tags/互联网/" style="font-size: 15px;">互联网</a> <a href="/tags/大数据/" style="font-size: 15px;">大数据</a> <a href="/tags/年终总结/" style="font-size: 15px;">年终总结</a> <a href="/tags/计算机基础/" style="font-size: 15px;">计算机基础</a> <a href="/tags/进制转换/" style="font-size: 15px;">进制转换</a> <a href="/tags/get/" style="font-size: 15px;">get</a> <a href="/tags/post/" style="font-size: 15px;">post</a> <a href="/tags/毕业答辩/" style="font-size: 15px;">毕业答辩</a> <a href="/tags/计算机一级/" style="font-size: 15px;">计算机一级</a> <a href="/tags/IT/" style="font-size: 15px;">IT</a> <a href="/tags/实习感受/" style="font-size: 15px;">实习感受</a> <a href="/tags/逆袭/" style="font-size: 15px;">逆袭</a> <a href="/tags/编程/" style="font-size: 15px;">编程</a> <a href="/tags/小说/" style="font-size: 15px;">小说</a> <a href="/tags/程序员/" style="font-size: 15px;">程序员</a> <a href="/tags/Visual-Studio/" style="font-size: 15px;">Visual Studio</a> <a href="/tags/三层架构/" style="font-size: 15px;">三层架构</a> <a href="/tags/琅琊榜/" style="font-size: 15px;">琅琊榜</a> <a href="/tags/手机/" style="font-size: 15px;">手机</a> <a href="/tags/win7/" style="font-size: 15px;">win7</a> <a href="/tags/快捷键/" style="font-size: 15px;">快捷键</a> <a href="/tags/命令行/" style="font-size: 15px;">命令行</a> <a href="/tags/原版系统/" style="font-size: 15px;">原版系统</a> <a href="/tags/xml/" style="font-size: 15px;">xml</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/黑客/" style="font-size: 15px;">黑客</a> <a href="/tags/电影/" style="font-size: 15px;">电影</a> <a href="/tags/实习/" style="font-size: 15px;">实习</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/10/13/Regex-chinese-english-comparison-table/">正则表达式术语中英文对照表</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/12/Regex-cheat-sheet/">正则表达式速查表</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/12/Regex-7/">正则表达式编程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/12/Regex-6/">正则表达式的构建</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/11/Regex-5/">正则表达式的拆分</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/11/Regex-4/">正则表达式回溯法原理</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/10/Regex-3/">正则表达式括号的作用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/29/Regex-2/">正则表达式位置匹配攻略</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/Regex-1/">正则表达式字符匹配攻略</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/27/ToutiaoNews/">今日头条全站新闻文章数据爬取</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://meowv.com/" title="喵呜网" target="_blank">喵呜网</a><ul></ul><a href="http://v.xj8c.cc/" title="VIP电影在线播放" target="_blank">VIP电影在线播放</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2015 - 2017 <a href="/." rel="nofollow">当然我在瞎扯.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script type="text/javascript" color="0,0,0" opacity="0.5" zIndex="-2" count="50" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>

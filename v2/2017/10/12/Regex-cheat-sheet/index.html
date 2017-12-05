@@ -1,0 +1,411 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="当然我在瞎扯啊"><title>正则表达式速查表 | 当然我在瞎扯</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">正则表达式速查表</h1><a id="logo" href="/.">当然我在瞎扯</a><p class="description">生命不息，奋斗不止</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于我</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">正则表达式速查表</h1><div class="post-meta">Oct 12, 2017<script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><div class="post-content"><table>
+<thead>
+<tr>
+<th style="text-align:left">字面量</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">模式</td>
+<td style="text-align:left">说明</td>
+</tr>
+<tr>
+<td style="text-align:left">字母、数字</td>
+<td style="text-align:left">匹配字面量本身。比如 <code>/f/</code>，匹配字母 <code>&quot;f&quot;</code>。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\0</code></td>
+<td style="text-align:left">匹配 NUL 字符。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\t</code></td>
+<td style="text-align:left">匹配水平制表符。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\v</code></td>
+<td style="text-align:left">匹配垂直制表符。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\n</code></td>
+<td style="text-align:left">匹配换行符。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\r</code></td>
+<td style="text-align:left">匹配回车符。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\f</code></td>
+<td style="text-align:left">匹配换页符。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\xnn</code></td>
+<td style="text-align:left">匹配拉丁字符。比如 <code>\xOA</code> 等价于 <code>\n</code>。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\uxxxx</code></td>
+<td style="text-align:left">匹配 Unicode 字符。比如 <code>\u2028</code> 匹配行终止符，<code>\u2029</code> 匹配段终止符。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\cX</code></td>
+<td style="text-align:left">匹配 ctrl+X。比如 <code>\cI</code> 匹配 ctrl+I，等价于 <code>\t</code>。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[\b]</code></td>
+<td style="text-align:left">匹配 Backspace 键（特殊记忆）。</td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字符组</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">模式</td>
+<td style="text-align:left">说明</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[abc]</code></td>
+<td style="text-align:left">匹配 <code>&quot;a&quot;</code>、<code>&quot;b&quot;</code>、<code>&quot;c&quot;</code> 其中任何一个字符。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[a-d1-4]</code></td>
+<td style="text-align:left">匹配 <code>&quot;a&quot;</code>、<code>&quot;b&quot;</code>、<code>&quot;c&quot;</code>、<code>&quot;d&quot;</code>、<code>&quot;1&quot;</code>、<code>&quot;2&quot;</code>、<code>&quot;3&quot;</code>、<code>&quot;4&quot;</code> 其中任何一个字符。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[^abc]</code></td>
+<td style="text-align:left">匹配除了 <code>&quot;a&quot;</code>、<code>&quot;b&quot;</code>、<code>&quot;c&quot;</code> 之外的任何一个字符。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[^a-d1-4]</code></td>
+<td style="text-align:left">匹配除了 <code>&quot;a&quot;</code>、<code>&quot;b&quot;</code>、<code>&quot;c&quot;</code>、<code>&quot;d&quot;</code>、<code>&quot;1&quot;</code>、<code>&quot;2&quot;</code>、<code>&quot;3&quot;</code>、<code>&quot;4&quot;</code> 之外的任何一个字符。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>.</code></td>
+<td style="text-align:left">通配符，匹配除了少数字符（<code>\n</code>）之外的任意字符。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\d</code></td>
+<td style="text-align:left">匹配数字，等价于 [0-9]。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\D</code></td>
+<td style="text-align:left">匹配非数字，等价于 [^0-9]。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\w</code></td>
+<td style="text-align:left">匹配单词字符，等价于 <code>[a-zA-Z0-9_]</code>。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\W</code></td>
+<td style="text-align:left">匹配非单词字符，等价于 <code>[^a-zA-Z0-9_]</code>。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\s</code></td>
+<td style="text-align:left">匹配空白符，等价于 [ \t\v\n\r\f]。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\S</code></td>
+<td style="text-align:left">匹配非空白符，等价于 <code>[^ \t\v\n\r\f]</code>。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">量词</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">模式</td>
+<td style="text-align:left">说明</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>{n,m}</code></td>
+<td style="text-align:left">连续出现 n 到 m 次。贪婪模式。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>{n,}</code></td>
+<td style="text-align:left">至少连续出现 n 次。贪婪模式。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>{n}</code></td>
+<td style="text-align:left">连续出现 n 次。贪婪模式。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>?</code></td>
+<td style="text-align:left">等价于 <code>{0,1}</code>。贪婪模式。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>+</code></td>
+<td style="text-align:left">等价于 <code>{1,}</code>。贪婪模式。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>*</code></td>
+<td style="text-align:left">等价于 <code>{0,}</code>。贪婪模式。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>{n,m}?</code></td>
+<td style="text-align:left">连续出现 n 到 m 次。惰性模式。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>{n,}?</code></td>
+<td style="text-align:left">至少连续出现 n 次。惰性模式。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>{n}?</code></td>
+<td style="text-align:left">连续出现 n 次。惰性模式。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>??</code></td>
+<td style="text-align:left">等价于 <code>{0,1}?</code>。惰性模式。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>+?</code></td>
+<td style="text-align:left">等价于 <code>{1,}?</code>。惰性模式。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>*?</code></td>
+<td style="text-align:left">等价于 <code>{0,}?</code>。惰性模式。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">位置</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">模式</td>
+<td style="text-align:left">说明</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>^</code></td>
+<td style="text-align:left">匹配开头的位置，当正则有修饰符 <code>m</code> 时，表示匹配行开头位置。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$</code></td>
+<td style="text-align:left">匹配结尾的位置，当正则有修饰符 <code>m</code> 时，表示匹配行结尾位置。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\b</code></td>
+<td style="text-align:left">匹配单词边界，即，<code>\w</code> 与 <code>\W</code>、<code>^</code> 与 <code>\w</code>、<code>\w</code> 与 <code>$</code> 之间的位置。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\B</code></td>
+<td style="text-align:left">匹配非单词边界，即，<code>\w</code> 与 <code>\w</code>、<code>\W</code> 与 <code>\W</code>、<code>^</code> 与 <code>\W</code>，<code>\W</code> 与 <code>$</code> 之间的位置。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>(?=abc)</code></td>
+<td style="text-align:left">匹配 <code>&quot;abc&quot;</code> 前面的位置，即此位置后面匹配 <code>&quot;abc&quot;</code>。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>(?!abc)</code></td>
+<td style="text-align:left">匹配非 <code>&quot;abc&quot;</code> 前面的位置，即此位置后面不匹配 <code>&quot;abc&quot;</code>。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">括号的作用</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">模式</td>
+<td style="text-align:left">说明</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>(ab)</code></td>
+<td style="text-align:left">捕获型分组。把 <code>&quot;ab&quot;</code> 当成一个整体，比如 <code>(ab)+</code> 表示 <code>&quot;ab&quot;</code> 至少连续出现一次。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>(?:ab)</code></td>
+<td style="text-align:left">非捕获型分组。与 <code>(ab)</code> 的区别是，它不捕获数据。</td>
+</tr>
+<tr>
+<td style="text-align:left">(good&#124;nice)</td>
+<td style="text-align:left">捕获型分支结构。匹配 <code>&quot;good&quot;</code> 或 <code>&quot;nice&quot;</code>。</td>
+</tr>
+<tr>
+<td style="text-align:left">(?:good&#124;nice)</td>
+<td style="text-align:left">非捕获型分支结构。与 (good&#124;nice) 的区别是，它不捕获数据。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>\num</code></td>
+<td style="text-align:left">反向引用。比如 <code>\2</code>，表示引用的是第二个括号里的捕获的数据。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">修饰符</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">符号</td>
+<td style="text-align:left">说明</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>g</code></td>
+<td style="text-align:left">全局匹配，找到所有满足匹配的子串。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>i</code></td>
+<td style="text-align:left">匹配过程中，忽略英文字母大小写。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>m</code></td>
+<td style="text-align:left">多行匹配，把 <code>^</code> 和 <code>$</code> 变成行开头和行结尾。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">String相关实例方法</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">属性</td>
+<td style="text-align:left">方法作用说明</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>search</code></td>
+<td style="text-align:left">返回正则匹配到的第一个子串在目标字符串中的下标位置。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>split</code></td>
+<td style="text-align:left">以正则匹配到的子串，对目标字符串进行切分。返回一个数组。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>match</code></td>
+<td style="text-align:left">对目标字符串执行正则匹配操作，返回的匹配结果数组中包含具体的匹配信息。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>replace</code></td>
+<td style="text-align:left">对目标字符串进行替换操作。正则是其第一个参数。返回替换后的字符串。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">replace第二个参数中的特殊字符</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">字符</td>
+<td style="text-align:left">说明</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$1,$2,…,$99</code></td>
+<td style="text-align:left">匹配第 1-99 个分组里捕获的文本</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$&amp;</code></td>
+<td style="text-align:left">匹配到的子串文本</td>
+</tr>
+<tr>
+<td style="text-align:left">$`</td>
+<td style="text-align:left">匹配到的子串的左边文本</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$&#39;</code></td>
+<td style="text-align:left">匹配到的子串的右边文本</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$$</code></td>
+<td style="text-align:left">美元符号</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">RegExp相关实例方法</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">属性</td>
+<td style="text-align:left">方法作用说明</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>test</code></td>
+<td style="text-align:left">判断目标字符串中是否有满足正则匹配的子串。返回布尔值。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>exec</code></td>
+<td style="text-align:left">比 <code>match</code> 更强大的正则匹配操作。返回结果与 <code>match</code> 一致。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">RegExp静态属性</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">属性</td>
+<td style="text-align:left">方法作用说明</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$1,…,$9</code></td>
+<td style="text-align:left">最近一次第 1-9 个分组捕获的数据。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>input</code></td>
+<td style="text-align:left">最近一次目标字符串，可以简写成 <code>$_</code>。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>lastMatch</code></td>
+<td style="text-align:left">最近一次匹配的文本，可以简写成 <code>$&amp;</code>。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>lastParen</code></td>
+<td style="text-align:left">最近一次捕获的文本，可以简写成 <code>$+</code>。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>leftContext</code></td>
+<td style="text-align:left">目标字符串中 lastMatch 之前的文本，可以简写成 $`。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>rightContext</code></td>
+<td style="text-align:left">目标字符串中 lastMatch 之后的文本，可以简写成 <code>$&#39;</code>。</td>
+</tr>
+</tbody>
+</table>
+</div><iframe src="/donate/?AliPayQR=/img/AliPayQR.png&amp;WeChatQR=/img/AliPayQR.png&amp;GitHub=https://github.com/Meowv&amp;BTCQR=undefined&amp;BTCKEY=undefined&amp;PayPal=undefined" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;" frameborder="0" scrolling="no"></iframe><div class="tags"><a href="/tags/Regex/">Regex</a><a href="/tags/正则表达式/">正则表达式</a></div><div class="post-nav"><a href="/2017/10/13/Regex-chinese-english-comparison-table/" class="pre">正则表达式术语中英文对照表</a><a href="/2017/10/12/Regex-7/" class="next">正则表达式编程</a></div><div id="container"></div><link rel="stylesheet" href="/css/default.css?v=1.0.0"><script src="/js/gitment.browser.js?v=1.0.0"></script><script>var gitment = new Gitment({
+  owner: 'Meowv',
+  repo: 'meowv.github.io',
+  oauth: {
+    client_id: '8b9d5a517ebad5add0cc',
+    client_secret: '61ca179ff1d9c8aedd440e95521efd7240453d8b',
+  },
+})
+gitment.render('container')
+</script></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://xj8c.cc"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/C/" style="font-size: 15px;">C#</a> <a href="/tags/诗文/" style="font-size: 15px;">诗文</a> <a href="/tags/CEAC/" style="font-size: 15px;">CEAC</a> <a href="/tags/office2010/" style="font-size: 15px;">office2010</a> <a href="/tags/绿色软件/" style="font-size: 15px;">绿色软件</a> <a href="/tags/HtmlAgilityPack/" style="font-size: 15px;">HtmlAgilityPack</a> <a href="/tags/爬虫/" style="font-size: 15px;">爬虫</a> <a href="/tags/ReactNative/" style="font-size: 15px;">ReactNative</a> <a href="/tags/Regex/" style="font-size: 15px;">Regex</a> <a href="/tags/正则表达式/" style="font-size: 15px;">正则表达式</a> <a href="/tags/SqlServer/" style="font-size: 15px;">SqlServer</a> <a href="/tags/数据库/" style="font-size: 15px;">数据库</a> <a href="/tags/今日头条/" style="font-size: 15px;">今日头条</a> <a href="/tags/Newtonsoft-Json/" style="font-size: 15px;">Newtonsoft.Json</a> <a href="/tags/知乎/" style="font-size: 15px;">知乎</a> <a href="/tags/win10/" style="font-size: 15px;">win10</a> <a href="/tags/微软/" style="font-size: 15px;">微软</a> <a href="/tags/春天/" style="font-size: 15px;">春天</a> <a href="/tags/Photoshop/" style="font-size: 15px;">Photoshop</a> <a href="/tags/ASP-NET/" style="font-size: 15px;">ASP.NET</a> <a href="/tags/技术教程/" style="font-size: 15px;">技术教程</a> <a href="/tags/面试/" style="font-size: 15px;">面试</a> <a href="/tags/软件测试/" style="font-size: 15px;">软件测试</a> <a href="/tags/互联网/" style="font-size: 15px;">互联网</a> <a href="/tags/大数据/" style="font-size: 15px;">大数据</a> <a href="/tags/年终总结/" style="font-size: 15px;">年终总结</a> <a href="/tags/计算机基础/" style="font-size: 15px;">计算机基础</a> <a href="/tags/进制转换/" style="font-size: 15px;">进制转换</a> <a href="/tags/get/" style="font-size: 15px;">get</a> <a href="/tags/post/" style="font-size: 15px;">post</a> <a href="/tags/毕业答辩/" style="font-size: 15px;">毕业答辩</a> <a href="/tags/计算机一级/" style="font-size: 15px;">计算机一级</a> <a href="/tags/IT/" style="font-size: 15px;">IT</a> <a href="/tags/实习感受/" style="font-size: 15px;">实习感受</a> <a href="/tags/逆袭/" style="font-size: 15px;">逆袭</a> <a href="/tags/编程/" style="font-size: 15px;">编程</a> <a href="/tags/小说/" style="font-size: 15px;">小说</a> <a href="/tags/程序员/" style="font-size: 15px;">程序员</a> <a href="/tags/Visual-Studio/" style="font-size: 15px;">Visual Studio</a> <a href="/tags/三层架构/" style="font-size: 15px;">三层架构</a> <a href="/tags/琅琊榜/" style="font-size: 15px;">琅琊榜</a> <a href="/tags/手机/" style="font-size: 15px;">手机</a> <a href="/tags/win7/" style="font-size: 15px;">win7</a> <a href="/tags/快捷键/" style="font-size: 15px;">快捷键</a> <a href="/tags/命令行/" style="font-size: 15px;">命令行</a> <a href="/tags/原版系统/" style="font-size: 15px;">原版系统</a> <a href="/tags/xml/" style="font-size: 15px;">xml</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/黑客/" style="font-size: 15px;">黑客</a> <a href="/tags/电影/" style="font-size: 15px;">电影</a> <a href="/tags/实习/" style="font-size: 15px;">实习</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/10/13/Regex-chinese-english-comparison-table/">正则表达式术语中英文对照表</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/12/Regex-cheat-sheet/">正则表达式速查表</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/12/Regex-7/">正则表达式编程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/12/Regex-6/">正则表达式的构建</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/11/Regex-5/">正则表达式的拆分</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/11/Regex-4/">正则表达式回溯法原理</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/10/Regex-3/">正则表达式括号的作用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/29/Regex-2/">正则表达式位置匹配攻略</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/Regex-1/">正则表达式字符匹配攻略</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/27/ToutiaoNews/">今日头条全站新闻文章数据爬取</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://meowv.com/" title="喵呜网" target="_blank">喵呜网</a><ul></ul><a href="http://v.xj8c.cc/" title="VIP电影在线播放" target="_blank">VIP电影在线播放</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2015 - 2017 <a href="/." rel="nofollow">当然我在瞎扯.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script type="text/javascript" color="0,0,0" opacity="0.5" zIndex="-2" count="50" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>

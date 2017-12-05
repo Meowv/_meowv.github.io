@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="当然我在瞎扯啊"><title>正则表达式的构建 | 当然我在瞎扯</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">正则表达式的构建</h1><a id="logo" href="/.">当然我在瞎扯</a><p class="description">生命不息，奋斗不止</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于我</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">正则表达式的构建</h1><div class="post-meta">Oct 12, 2017<script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><div class="post-content"><h2 id="第六章-正则表达式的构建"><a href="#第六章-正则表达式的构建" class="headerlink" title="第六章 正则表达式的构建"></a>第六章 正则表达式的构建</h2><p>对于一门语言的掌握程度怎么样，可以有两个角度来衡量：读和写。</p>
+<p>不仅要看懂别人的解决方案，也要能独立地解决问题。代码是这样，正则表达式也是这样。</p>
+<p>与“读”相比，“写”往往更为重要，这个道理是不言而喻的。</p>
+<p>对正则的运用，首重就是：如何针对问题，构建一个合适的正则表达式？</p>
+<p>本章就解决该问题，内容包括：</p>
+<ul>
+<li><a href="#平衡法则">平衡法则</a></li>
+<li><a href="#构建正则前提">构建正则前提</a></li>
+<li><a href="#准确性">准确性</a></li>
+<li><a href="#效率">效率</a></li>
+</ul>
+<a id="more"></a>
+<h3 id="平衡法则">平衡法则</h3>
+
+<p>构建正则有一点非常重要，需要做到下面几点的平衡：</p>
+<ul>
+<li>匹配预期的字符串</li>
+<li>不匹配非预期的字符串</li>
+<li>可读性和可维护性</li>
+<li>效率</li>
+</ul>
+<h3 id="构建正则前提">构建正则前提</h3>
+
+<h4 id="是否能使用正则？"><a href="#是否能使用正则？" class="headerlink" title="是否能使用正则？"></a>是否能使用正则？</h4><p>正则太强大了，以至于我们随便遇到一个操作字符串问题时，都会下意识地去想，用正则该怎么做。但我们始终要提醒自己，正则虽然强大，但不是万能的，很多看似很简单的事情，还是做不到的。</p>
+<p>比如匹配这样的字符串：<code>1010010001…</code>.</p>
+<p>虽然很有规律，但是只靠正则就是无能为力。</p>
+<h4 id="是否有必要使用正则？"><a href="#是否有必要使用正则？" class="headerlink" title="是否有必要使用正则？"></a>是否有必要使用正则？</h4><p>要认识到正则的局限，不要去研究根本无法完成的任务。同时，也不能走入另一个极端：无所不用正则。能用字符串 API 解决的简单问题，就不该正则出马。</p>
+<p>比如，从日期中提取出年月日，虽然可以使用正则：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> string = <span class="string">"2017-07-01"</span>;</div><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/^(\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)/</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["2017-07-01", "2017", "07", "01", index: 0, input: "2017-07-01"]</span></div></pre></td></tr></table></figure>
+<p>其实，可以使用字符串的 split 方法来做，即可：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> string = <span class="string">"2017-07-01"</span>;</div><div class="line"><span class="keyword">var</span> result = string.split(<span class="string">"-"</span>);</div><div class="line"><span class="built_in">console</span>.log( result );</div><div class="line"><span class="comment">// =&gt; ["2017", "07", "01"]</span></div></pre></td></tr></table></figure>
+<p>比如，判断是否有问号，虽然可以使用：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> string = <span class="string">"?id=xx&amp;act=search"</span>;</div><div class="line"><span class="built_in">console</span>.log( string.search(<span class="regexp">/\?/</span>) );</div><div class="line"><span class="comment">// =&gt; 0</span></div></pre></td></tr></table></figure>
+<p>其实，可以使用字符串的 indexOf 方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> string = <span class="string">"?id=xx&amp;act=search"</span>;</div><div class="line"><span class="built_in">console</span>.log( string.indexOf(<span class="string">"?"</span>) );</div><div class="line"><span class="comment">// =&gt; 0</span></div></pre></td></tr></table></figure>
+<p>比如获取子串，虽然可以使用正则：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> string = <span class="string">"JavaScript"</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(<span class="regexp">/.&#123;4&#125;(.+)/</span>)[<span class="number">1</span>] );</div><div class="line"><span class="comment">// =&gt; Script</span></div></pre></td></tr></table></figure>
+<p>其实，可以直接使用字符串的 substring 或 substr 方法来做：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> string = <span class="string">"JavaScript"</span>;</div><div class="line"><span class="built_in">console</span>.log( string.substring(<span class="number">4</span>) );</div><div class="line"><span class="comment">// =&gt; Script</span></div></pre></td></tr></table></figure>
+<h4 id="是否有必要构建一个复杂的正则？"><a href="#是否有必要构建一个复杂的正则？" class="headerlink" title="是否有必要构建一个复杂的正则？"></a>是否有必要构建一个复杂的正则？</h4><p>比如密码匹配问题，要求密码长度 6-12 位，由数字、小写字符和大写字母组成，但必须至少包括 2 种字符。</p>
+<p>在第2章里，我们写出了正则是：</p>
+<p><code>/(?!^[0-9]{6,12}$)(?!^[a-z]{6,12}$)(?!^[A-Z]{6,12}$)^[0-9A-Za-z]{6,12}$/</code></p>
+<p>其实可以使用多个小正则来做：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex1 = <span class="regexp">/^[0-9A-Za-z]&#123;6,12&#125;$/</span>;</div><div class="line"><span class="keyword">var</span> regex2 = <span class="regexp">/^[0-9]&#123;6,12&#125;$/</span>;</div><div class="line"><span class="keyword">var</span> regex3 = <span class="regexp">/^[A-Z]&#123;6,12&#125;$/</span>;</div><div class="line"><span class="keyword">var</span> regex4 = <span class="regexp">/^[a-z]&#123;6,12&#125;$/</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkPassword</span> (<span class="params">string</span>) </span>&#123;</div><div class="line"> <span class="keyword">if</span> (!regex1.test(string)) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line"> <span class="keyword">if</span> (regex2.test(string)) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line"> <span class="keyword">if</span> (regex3.test(string)) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line"> <span class="keyword">if</span> (regex4.test(string)) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line"> <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="准确性">准确性</h3>
+
+<p>所谓准确性，就是能匹配预期的目标，并且不匹配非预期的目标。</p>
+<p>这里提到了“预期”二字，那么我们就需要知道目标的组成规则。</p>
+<p>不然没法界定什么样的目标字符串是符合预期的，什么样的又不是符合预期的。</p>
+<p>下面将举例说明，当目标字符串构成比较复杂时，该如何构建正则，并考虑到哪些平衡。</p>
+<h4 id="匹配固定电话"><a href="#匹配固定电话" class="headerlink" title="匹配固定电话"></a>匹配固定电话</h4><p>比如要匹配如下格式的固定电话号码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">055188888888</div><div class="line">0551-88888888</div><div class="line">(0551)88888888</div></pre></td></tr></table></figure>
+<p>第一步，了解各部分的模式规则。</p>
+<p>上面的电话，总体上分为区号和号码两部分（不考虑分机号和 <code>&quot;+86&quot;</code> 的情形）。</p>
+<p>区号是 <code>&quot;0&quot;</code> 开头的 3 到 4 位数字，对应的正则是：<code>0\d{2,3}</code>，</p>
+<p>号码是非 <code>&quot;0&quot;</code> 开头的 7 到 8 位数字，对应的正则是：<code>[1-9]\d{6,7}</code>，</p>
+<p>因此，匹配 <code>&quot;055188888888&quot;</code> 的正则是：<code>/^0\d{2,3}[1-9]\d{6,7}$/</code>，</p>
+<p>匹配 <code>&quot;0551-88888888&quot;</code> 的正则是：<code>/^0\d{2,3}-[1-9]\d{6,7}$/</code>，</p>
+<p>匹配 <code>&quot;(0551)88888888&quot;</code> 的正则是：<code>/^\(0\d{2,3}\)[1-9]\d{6,7}$/</code>。</p>
+<p>第二步，明确形式关系。</p>
+<p>这三者情形是或的关系，可以构建分支：</p>
+<p><code>/^0\d{2,3}[1-9]\d{6,7}$|^0\d{2,3}-[1-9]\d{6,7}$|^\(0\d{2,3}\)[1-9]\d{6,7}$/</code></p>
+<p>提取公共部分：</p>
+<p><code>/^(0\d{2,3}|0\d{2,3}-|\(0\d{2,3}\))[1-9]\d{6,7}$/</code></p>
+<p>进一步简写：</p>
+<p><code>/^(0\d{2,3}-?|\(0\d{2,3}\))[1-9]\d{6,7}$/</code></p>
+<p>其可视化形式：</p>
+<p><img src="https://meowv.github.io/images/r.6.1.png" alt="PNG"></p>
+<p>上面的正则构建过程略显罗嗦，但是这样做，能保证正则是准确的。</p>
+<p>上述三种情形是或的关系，这一点很重要，不然很容易按字符是否出现的情形把正则写成：</p>
+<p><code>/^\(?0\d{2,3}\)?-?[1-9]\d{6,7}$/</code></p>
+<p>虽然也能匹配上述目标字符串，但也会匹配 <code>&quot;(0551-88888888&quot;</code> 这样的字符串。当然，这不是我们想要的。</p>
+<p>其实这个正则也不是完美的，因为现实中，并不是每个 3 位数和 4 位数都是一个真实的区号。</p>
+<p>这就是一个平衡取舍问题，一般够用就行。</p>
+<h4 id="匹配浮点数"><a href="#匹配浮点数" class="headerlink" title="匹配浮点数"></a>匹配浮点数</h4><p>要求匹配如下的格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1.23、+1.23、-1.23</div><div class="line">10、+10、-10</div><div class="line">.2、+.2、-.2</div></pre></td></tr></table></figure>
+<p>可以看出正则分为三部分。</p>
+<p>符号部分：<code>[+-]</code>，</p>
+<p>整数部分：<code>\d+</code>，</p>
+<p>小数部分：<code>\.\d+</code>。</p>
+<p>上述三个部分，并不是全部都出现。如果此时很容易写出如下的正则：</p>
+<p><code>/^[-]?(\d)?(\.\d+)?$/</code></p>
+<p>此正则看似没问题，但这个正则也会匹配空字符 <code>&quot;&quot;</code>。</p>
+<p>因为目标字符串的形式关系不是要求每部分都是可选的。</p>
+<p>要匹配 <code>&quot;1.23&quot;</code>、<code>&quot;+1.23&quot;</code>、<code>&quot;-1.23&quot;</code>，可以用<code>/^[-]?\d\.\d+$/</code>，</p>
+<p>要匹配 <code>&quot;10&quot;</code>、<code>&quot;+10&quot;</code>、<code>&quot;-10&quot;</code>，可以用<code>/^[-]?\d$/</code>，</p>
+<p>要匹配 <code>&quot;.2&quot;</code>、<code>&quot;+.2&quot;</code>、<code>&quot;-.2&quot;</code>，可以用<code>/^[-]?\.\d$/</code>。</p>
+<p>因此整个正则是这三者的或的关系，提取公众部分后是：</p>
+<p><code>/^[-]?(\d\.\d+|\d+|\.\d+)$/</code></p>
+<p>其可视化形式是：</p>
+<p><img src="https://meowv.github.io/images/r.6.2.png" alt="PNG"></p>
+<p>如果要求不匹配 <code>&quot;+.2&quot;</code> 和 <code>&quot;-.2&quot;</code>，此时正则变成：</p>
+<p><img src="https://meowv.github.io/images/r.6.3.png" alt="PNG"></p>
+<p>当然，<code>/^[-]?(\d\.\d+|\d+|\.\d+)$/</code> 也不是完美的，我们也是做了些取舍，比如：</p>
+<p>它也会匹配 <code>&quot;012&quot;</code> 这样以 <code>&quot;0&quot;</code> 开头的整数。如果要求不匹配的话，需要修改整数部分的正则。一般进行验证操作之前，都要经过 <code>trim</code> 和判空。那样的话，也许那个错误正则也就够用了。也可以进一步改写成：<code>/^[-]?(\d)?(\.)?\d+$/</code>，这样我们就需要考虑可读性和可维护性了。</p>
+<h3 id="效率">效率</h3>
+
+<p>保证了准确性后，才需要是否要考虑要优化。大多数情形是不需要优化的，除非运行的非常慢。什么情形正则表达式运行才慢呢？我们需要考察正则表达式的运行过程（原理）。</p>
+<p>正则表达式的运行分为如下的阶段：</p>
+<ol>
+<li>编译；</li>
+<li>设定起始位置；</li>
+<li>尝试匹配；</li>
+<li>匹配失败的话，从下一位开始继续第 3 步；</li>
+<li>最终结果：匹配成功或失败。</li>
+</ol>
+<p>下面以代码为例，来看看这几个阶段都做了什么：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/\d+/g</span>;</div><div class="line"><span class="built_in">console</span>.log( regex.lastIndex, regex.exec(<span class="string">"123abc34def"</span>) );</div><div class="line"><span class="built_in">console</span>.log( regex.lastIndex, regex.exec(<span class="string">"123abc34def"</span>) );</div><div class="line"><span class="built_in">console</span>.log( regex.lastIndex, regex.exec(<span class="string">"123abc34def"</span>) );</div><div class="line"><span class="built_in">console</span>.log( regex.lastIndex, regex.exec(<span class="string">"123abc34def"</span>) );</div><div class="line"><span class="comment">// =&gt; 0 ["123", index: 0, input: "123abc34def"]</span></div><div class="line"><span class="comment">// =&gt; 3 ["34", index: 6, input: "123abc34def"]</span></div><div class="line"><span class="comment">// =&gt; 8 null</span></div><div class="line"><span class="comment">// =&gt; 0 ["123", index: 0, input: "123abc34def"]</span></div></pre></td></tr></table></figure>
+<p>具体分析如下：</p>
+<p><code>var regex = /\d+/g;</code></p>
+<p>当生成一个正则时，引擎会对其进行编译。报错与否出现这这个阶段。</p>
+<p><code>regex.exec(&quot;123abc34def&quot;)</code></p>
+<p>当尝试匹配时，需要确定从哪一位置开始匹配。一般情形都是字符串的开头，即第 0 位。</p>
+<p>但当使用 <code>test</code> 和 <code>exec</code> 方法，且正则有 <code>g</code> 时，起始位置是从正则对象的 <code>lastIndex</code> 属性开始。</p>
+<p>因此第一次 <code>exec</code> 是从第 0 位开始，而第二次是从 3 开始的。</p>
+<p>设定好起始位置后，就开始尝试匹配了。</p>
+<p>比如第一次 <code>exec，从</code> 0 开始，去尝试匹配，并且成功地匹配到 3 个数字。此时结束时的下标是 2，因此下一次的起始位置是 3。</p>
+<p>而第二次，起始下标是 3，但第 3 个字符是 <code>&quot;a&quot;</code>，并不是数字。但此时并不会直接报匹配失败，而是移动到下一位置，即从第 4 位开始继续尝试匹配，但该字符是 <code>&quot;b&quot;</code>，也不是数字。再移动到下一位，是 <code>&quot;c&quot;</code> 仍不行，再移动一位是数字 <code>&quot;3&quot;</code>，此时匹配到了两位数字 <code>&quot;34&quot;</code>。此时，下一次匹配的位置是 <code>&quot;d&quot;</code> 的位置，即第8 位。</p>
+<p>第三次，是从第 8 位开始匹配，直到试到最后一位，也没发现匹配的，因此匹配失败，返回 <code>null。同时设置</code> <code>lastIndex</code> 为 0，即，如要再尝试匹配的话，需从头开始。</p>
+<p>从上面可以看出，匹配会出现效率问题，主要出现在上面的第 3 阶段和第 4 阶段。</p>
+<p>因此，主要优化手法也是针对这两阶段的。</p>
+<h4 id="使用具体型字符组来代替通配符，来消除回溯"><a href="#使用具体型字符组来代替通配符，来消除回溯" class="headerlink" title="使用具体型字符组来代替通配符，来消除回溯"></a>使用具体型字符组来代替通配符，来消除回溯</h4><p>而在第三阶段，最大的问题就是回溯。</p>
+<p>例如，匹配双引用号之间的字符。如，匹配字符串 <code>123&quot;abc&quot;456</code> 中的 <code>&quot;abc&quot;</code>。</p>
+<p>如果正则用的是：<code>/&quot;.*&quot;/</code>，会在第 3 阶段产生 4 次回溯（粉色表示 <code>.*</code> 匹配的内容）：</p>
+<p><img src="https://meowv.github.io/images/r.6.4.png" alt="PNG"></p>
+<p>如果正则用的是：<code>/&quot;.*?&quot;/</code>，会产生 2 次回溯（粉色表示 <code>.*?</code> 匹配的内容）：</p>
+<p><img src="https://meowv.github.io/images/r.6.5.png" alt="PNG"></p>
+<p>因为回溯的存在，需要引擎保存多种可能中未尝试过的状态，以便后续回溯时使用。注定要占用一定的内存。</p>
+<p>此时要使用具体化的字符组，来代替通配符.，以便消除不必要的字符，此时使用正则 <code>/&quot;[^&quot;]*&quot;/</code>，即可。</p>
+<h4 id="使用非捕获型分组"><a href="#使用非捕获型分组" class="headerlink" title="使用非捕获型分组"></a>使用非捕获型分组</h4><p>因为括号的作用之一是，可以捕获分组和分支里的数据。那么就需要内存来保存它们。</p>
+<p>当我们不需要使用分组引用和反向引用时，此时可以使用非捕获分组。</p>
+<p>例如，<code>/^[-]?(\d\.\d+|\d+|\.\d+)$/</code> 可以修改成：<code>/^[-]?(?:\d\.\d+|\d+|\.\d+)$/</code>。</p>
+<h4 id="独立出确定字符"><a href="#独立出确定字符" class="headerlink" title="独立出确定字符"></a>独立出确定字符</h4><p>例如，<code>/a+/</code> 可以修改成 <code>/aa*/</code>。</p>
+<p>因为后者能比前者多确定了字符 <code>&quot;a&quot;</code>。这样会在第四步中，加快判断是否匹配失败，进而加快移位的速度。</p>
+<h4 id="提取分支公共部分"><a href="#提取分支公共部分" class="headerlink" title="提取分支公共部分"></a>提取分支公共部分</h4><p>比如，<code>/^abc|^def/</code> 修改成 <code>/^(?:abc|def)/</code>。</p>
+<p>又比如， <code>/this|that/</code>修改成 <code>/th(?:is|at)/</code>。</p>
+<p>这样做，可以减少匹配过程中可消除的重复。</p>
+<h4 id="减少分支的数量，缩小它们的范围"><a href="#减少分支的数量，缩小它们的范围" class="headerlink" title="减少分支的数量，缩小它们的范围"></a>减少分支的数量，缩小它们的范围</h4><p><code>/red|read/</code> 可以修改成 <code>/rea?d/</code>。</p>
+<p>此时分支和量词产生的回溯的成本是不一样的。但这样优化后，可读性会降低的。</p>
+<h3 id="本章小结"><a href="#本章小结" class="headerlink" title="本章小结"></a>本章小结</h3><p>本章涉及的内容并不多。</p>
+<p>一般情况下，针对某问题能写出一个满足需求的正则，基本上就可以了。</p>
+<p>至于准确性和效率方面的追求，纯属看个人要求了。我觉得够用就行了。</p>
+<p>关于准确性，本章关心的是最常用的解决思路：</p>
+<p>针对每种情形，分别写出正则，然用分支把它们合并在一起，再提取分支公共部分，就能得到准确的正则。</p>
+<p>至于优化，本章没有为了凑数，去写一大堆。了解了匹配原理，常见的优化手法也就这么几种。</p>
+</div><iframe src="/donate/?AliPayQR=/img/AliPayQR.png&amp;WeChatQR=/img/AliPayQR.png&amp;GitHub=https://github.com/Meowv&amp;BTCQR=undefined&amp;BTCKEY=undefined&amp;PayPal=undefined" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;" frameborder="0" scrolling="no"></iframe><div class="tags"><a href="/tags/Regex/">Regex</a><a href="/tags/正则表达式/">正则表达式</a></div><div class="post-nav"><a href="/2017/10/12/Regex-7/" class="pre">正则表达式编程</a><a href="/2017/10/11/Regex-5/" class="next">正则表达式的拆分</a></div><div id="container"></div><link rel="stylesheet" href="/css/default.css?v=1.0.0"><script src="/js/gitment.browser.js?v=1.0.0"></script><script>var gitment = new Gitment({
+  owner: 'Meowv',
+  repo: 'meowv.github.io',
+  oauth: {
+    client_id: '8b9d5a517ebad5add0cc',
+    client_secret: '61ca179ff1d9c8aedd440e95521efd7240453d8b',
+  },
+})
+gitment.render('container')
+</script></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://xj8c.cc"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/C/" style="font-size: 15px;">C#</a> <a href="/tags/诗文/" style="font-size: 15px;">诗文</a> <a href="/tags/CEAC/" style="font-size: 15px;">CEAC</a> <a href="/tags/office2010/" style="font-size: 15px;">office2010</a> <a href="/tags/绿色软件/" style="font-size: 15px;">绿色软件</a> <a href="/tags/HtmlAgilityPack/" style="font-size: 15px;">HtmlAgilityPack</a> <a href="/tags/爬虫/" style="font-size: 15px;">爬虫</a> <a href="/tags/ReactNative/" style="font-size: 15px;">ReactNative</a> <a href="/tags/Regex/" style="font-size: 15px;">Regex</a> <a href="/tags/正则表达式/" style="font-size: 15px;">正则表达式</a> <a href="/tags/SqlServer/" style="font-size: 15px;">SqlServer</a> <a href="/tags/数据库/" style="font-size: 15px;">数据库</a> <a href="/tags/今日头条/" style="font-size: 15px;">今日头条</a> <a href="/tags/Newtonsoft-Json/" style="font-size: 15px;">Newtonsoft.Json</a> <a href="/tags/知乎/" style="font-size: 15px;">知乎</a> <a href="/tags/win10/" style="font-size: 15px;">win10</a> <a href="/tags/微软/" style="font-size: 15px;">微软</a> <a href="/tags/春天/" style="font-size: 15px;">春天</a> <a href="/tags/Photoshop/" style="font-size: 15px;">Photoshop</a> <a href="/tags/ASP-NET/" style="font-size: 15px;">ASP.NET</a> <a href="/tags/技术教程/" style="font-size: 15px;">技术教程</a> <a href="/tags/面试/" style="font-size: 15px;">面试</a> <a href="/tags/软件测试/" style="font-size: 15px;">软件测试</a> <a href="/tags/互联网/" style="font-size: 15px;">互联网</a> <a href="/tags/大数据/" style="font-size: 15px;">大数据</a> <a href="/tags/年终总结/" style="font-size: 15px;">年终总结</a> <a href="/tags/计算机基础/" style="font-size: 15px;">计算机基础</a> <a href="/tags/进制转换/" style="font-size: 15px;">进制转换</a> <a href="/tags/get/" style="font-size: 15px;">get</a> <a href="/tags/post/" style="font-size: 15px;">post</a> <a href="/tags/毕业答辩/" style="font-size: 15px;">毕业答辩</a> <a href="/tags/计算机一级/" style="font-size: 15px;">计算机一级</a> <a href="/tags/IT/" style="font-size: 15px;">IT</a> <a href="/tags/实习感受/" style="font-size: 15px;">实习感受</a> <a href="/tags/逆袭/" style="font-size: 15px;">逆袭</a> <a href="/tags/编程/" style="font-size: 15px;">编程</a> <a href="/tags/小说/" style="font-size: 15px;">小说</a> <a href="/tags/程序员/" style="font-size: 15px;">程序员</a> <a href="/tags/Visual-Studio/" style="font-size: 15px;">Visual Studio</a> <a href="/tags/三层架构/" style="font-size: 15px;">三层架构</a> <a href="/tags/琅琊榜/" style="font-size: 15px;">琅琊榜</a> <a href="/tags/手机/" style="font-size: 15px;">手机</a> <a href="/tags/win7/" style="font-size: 15px;">win7</a> <a href="/tags/快捷键/" style="font-size: 15px;">快捷键</a> <a href="/tags/命令行/" style="font-size: 15px;">命令行</a> <a href="/tags/原版系统/" style="font-size: 15px;">原版系统</a> <a href="/tags/xml/" style="font-size: 15px;">xml</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/黑客/" style="font-size: 15px;">黑客</a> <a href="/tags/电影/" style="font-size: 15px;">电影</a> <a href="/tags/实习/" style="font-size: 15px;">实习</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/10/13/Regex-chinese-english-comparison-table/">正则表达式术语中英文对照表</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/12/Regex-cheat-sheet/">正则表达式速查表</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/12/Regex-7/">正则表达式编程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/12/Regex-6/">正则表达式的构建</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/11/Regex-5/">正则表达式的拆分</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/11/Regex-4/">正则表达式回溯法原理</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/10/Regex-3/">正则表达式括号的作用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/29/Regex-2/">正则表达式位置匹配攻略</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/Regex-1/">正则表达式字符匹配攻略</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/27/ToutiaoNews/">今日头条全站新闻文章数据爬取</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://meowv.com/" title="喵呜网" target="_blank">喵呜网</a><ul></ul><a href="http://v.xj8c.cc/" title="VIP电影在线播放" target="_blank">VIP电影在线播放</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2015 - 2017 <a href="/." rel="nofollow">当然我在瞎扯.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script type="text/javascript" color="0,0,0" opacity="0.5" zIndex="-2" count="50" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>

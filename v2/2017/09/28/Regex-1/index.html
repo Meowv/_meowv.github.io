@@ -1,0 +1,262 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="当然我在瞎扯啊"><title>正则表达式字符匹配攻略 | 当然我在瞎扯</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">正则表达式字符匹配攻略</h1><a id="logo" href="/.">当然我在瞎扯</a><p class="description">生命不息，奋斗不止</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于我</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">正则表达式字符匹配攻略</h1><div class="post-meta">Sep 28, 2017<script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><div class="post-content"><h2 id="第一章-正则表达式字符匹配攻略"><a href="#第一章-正则表达式字符匹配攻略" class="headerlink" title="第一章 正则表达式字符匹配攻略"></a>第一章 正则表达式字符匹配攻略</h2><p>正则表达式是匹配模式，要么匹配字符，要么匹配位置。请记住这句话。</p>
+<p>然而关于正则如何匹配字符的学习，大部分人都觉得这块比较杂乱。</p>
+<p>毕竟元字符太多了，看起来没有系统性，不好记。本章就解决这个问题。</p>
+<p>内容包括：</p>
+<ul>
+<li><a href="#两种模糊匹配">两种模糊匹配</a></li>
+<li><a href="#字符组">字符组</a></li>
+<li><a href="#量词">量词</a></li>
+<li><a href="#分支结构">分支结构</a></li>
+<li><a href="#案例分析">案例分析</a></li>
+</ul>
+<h3 id="两种模糊匹配">两种模糊匹配</h3>
+
+<p>如果正则只有精确匹配是没多大意义的，比如 <code>/hello/</code>，也只能匹配字符串中的 <code>&quot;hello&quot;</code> 这个子串。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/hello/</span>;</div><div class="line"><span class="built_in">console</span>.log(regex.test(<span class="string">"hello"</span>));</div><div class="line"><span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>正则表达式之所以强大，是因为其能实现模糊匹配。</p>
+<p>而模糊匹配，有两个方向上的“模糊”：横向模糊和纵向模糊。</p>
+<h4 id="横向模糊匹配"><a href="#横向模糊匹配" class="headerlink" title="横向模糊匹配"></a>横向模糊匹配</h4><p>横向模糊指的是，一个正则可匹配的字符串的长度不是固定的，可以是多种情况的。</p>
+<p>其实现的方式是使用量词。譬如 <code>{m,n}</code>，表示连续出现最少 m 次，最多 n 次。</p>
+<p>比如正则 <code>/ab{2,5}c/</code> 表示匹配这样一个字符串：第一个字符是 <code>&quot;a&quot;</code>，接下来是 2 到 5 个字符 <code>&quot;b&quot;</code>，最后是字符 <code>&quot;c&quot;</code>。</p>
+<p>其可视化形式如下：</p>
+<p><img src="https://meowv.github.io/images/r.1.1.png" alt="PNG"></p>
+<p>测试如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/ab&#123;2,5&#125;c/g</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"abc abbc abbbc abbbbc abbbbbc abbbbbbc"</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["abbc", "abbbc", "abbbbc", "abbbbbc"]</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>NOTE： 案例中用的正则是 <code>/ab{2,5}c/g</code>，其中 <code>g</code> 是正则的一个<code>修饰符</code>。表示全局匹配，即，在目标字符串中按顺序找到满足匹配模式的所有子串，强调的是“所有”，而不只是“第一个”。<code>g</code> 是单词 global 的首字母。</p>
+</blockquote>
+<h4 id="纵向模糊匹配"><a href="#纵向模糊匹配" class="headerlink" title="纵向模糊匹配"></a>纵向模糊匹配</h4><p>纵向模糊指的是，一个正则匹配的字符串，具体到某一位字符时，它可以不是某个确定的字符，可以有多种可能。</p>
+<p>其实现的方式是使用字符组。譬如 <code>[abc]</code>，表示该字符是可以字符 <code>&quot;a&quot;、&quot;b&quot;、&quot;c&quot;</code> 中的任何一个。</p>
+<p>比如 <code>/a[123]b/</code> 可以匹配如下三种字符串： <code>&quot;a1b&quot;、&quot;a2b&quot;、&quot;a3b&quot;</code>。</p>
+<p>其可视化形式如下：</p>
+<p><img src="https://meowv.github.io/images/r.1.2.png" alt="PNG"></p>
+<p>测试如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/a[123]b/g</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"a0b a1b a2b a3b a4b"</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["a1b", "a2b", "a3b"]</span></div></pre></td></tr></table></figure>
+<p>以上就是本章讲的主体内容，只要掌握横向和纵向模糊匹配，就能解决很大部分正则匹配问题。</p>
+<p>接下来，我们将具体展开来说。</p>
+<h3 id="字符组">字符组</h3>
+
+<p>需要强调的是，虽叫字符组（字符类），但只是其中一个字符。</p>
+<p>例如 <code>[abc]</code>，表示匹配一个字符，它可以是 <code>&quot;a&quot;、&quot;b&quot;、&quot;c&quot;</code> 之一。</p>
+<h4 id="范围表示法"><a href="#范围表示法" class="headerlink" title="范围表示法"></a>范围表示法</h4><p>如果字符组里的字符特别多的话，怎么办？可以使用范围表示法。</p>
+<p>比如 <code>[123456abcdefGHIJKLM]</code>，可以写成 <code>[1-6a-fG-M]</code>。用连字符 - 来省略和简写。</p>
+<p>因为连字符有特殊用途，那么要匹配 <code>&quot;a&quot;</code>、<code>&quot;-&quot;</code>、<code>&quot;z&quot;</code> 这三者中任意一个字符，该怎么做呢？</p>
+<p>不能写成 <code>[a-z]</code>，因为其表示小写字符中的任何一个字符。</p>
+<p>可以写成如下的方式：<code>[-az]</code> 或 <code>[az-]</code> 或 <code>[a\-z]</code>。</p>
+<p>即要么放在开头，要么放在结尾，要么转义。总之不会让引擎认为是范围表示法就行了。</p>
+<h4 id="排除字符组"><a href="#排除字符组" class="headerlink" title="排除字符组"></a>排除字符组</h4><p>纵向模糊匹配，还有一种情形就是，某位字符可以是任何东西，但就不能是 <code>&quot;a&quot;</code>、<code>&quot;b&quot;</code>、<code>&quot;c&quot;</code>。</p>
+<p>此时就是排除字符组（反义字符组）的概念。例如 <code>[^abc]</code>，表示是一个除 <code>&quot;a&quot;</code>、<code>&quot;b&quot;</code>、<code>&quot;c&quot;</code>之外的任意一个字<br>符。字符组的第一位放 <code>^</code>（脱字符），表示求反的概念。</p>
+<p>当然，也有相应的范围表示法。</p>
+<h4 id="常见的简写形式"><a href="#常见的简写形式" class="headerlink" title="常见的简写形式"></a>常见的简写形式</h4><p>有了字符组的概念后，一些常见的符号我们也就理解了。因为它们都是系统自带的简写形式。</p>
+<table>
+<thead>
+<tr>
+<th>字符组</th>
+<th>具体含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\d</code></td>
+<td>表示 <code>[0-9]</code>。表示是一位数字。<br>记忆方式：其英文是 digit（数字）。</td>
+</tr>
+<tr>
+<td><code>\D</code></td>
+<td>表示 <code>[^0-9]</code>。表示除数字外的任意字符。</td>
+</tr>
+<tr>
+<td><code>\w</code></td>
+<td>表示 <code>[0-9a-zA-Z_]</code>。表示数字、大小写字母和下划线。<br>记忆方式：w 是 word 的简写，也称单词字符。</td>
+</tr>
+<tr>
+<td><code>\W</code></td>
+<td>表示 <code>[^0-9a-zA-Z_]</code>。非单词字符。</td>
+</tr>
+<tr>
+<td><code>\s</code></td>
+<td>表示 <code>[ \t\v\n\r\f]</code>。表示空白符，包括空格、水平制表符、垂直制表符、换行符、回车符、换页符。<br>记忆方式：s 是 space 的首字母，空白符的单词是 white space。</td>
+</tr>
+<tr>
+<td><code>\S</code></td>
+<td>表示 <code>[^ \t\v\n\r\f]</code>。 非空白符。</td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td>表示 <code>[^\n\r\u2028\u2029]</code>。通配符，表示几乎任意字符。换行符、回车符、行分隔符和段分隔符除外。<br>记忆方式：想想省略号 … 中的每个点，都可以理解成占位符，表示任何类似的东西。</td>
+</tr>
+</tbody>
+</table>
+<p>如果要匹配任意字符怎么办？可以使用 <code>[\d\D]</code>、<code>[\w\W]</code>、<code>[\s\S]</code> 和 <code>[^]</code> 中任何的一个。</p>
+<p>以上各字符组对应的可视化形式是：</p>
+<p><img src="https://meowv.github.io/images/r.1.3.png" alt="PNG"></p>
+<h3 id="量词">量词</h3>
+
+<p>量词也称重复。掌握 <code>{m,n}</code> 的准确含义后，只需要记住一些简写形式。</p>
+<h4 id="简写形式"><a href="#简写形式" class="headerlink" title="简写形式"></a>简写形式</h4><table>
+<thead>
+<tr>
+<th>量词</th>
+<th>具体含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{m,}</code></td>
+<td>表示至少出现 m 次。</td>
+</tr>
+<tr>
+<td><code>{m}</code></td>
+<td>等价于 <code>{m,m}</code>，表示出现 m 次。</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>等价于 <code>{0,1}</code>，表示出现或者不出现。<br>记忆方式：问号的意思表示，有吗？</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>等价于 <code>{1,}</code>，表示出现至少一次。<br>记忆方式：加号是追加的意思，得先有一个，然后才考虑追加。</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>等价于 <code>{0,}</code>，表示出现任意次，有可能不出现。记忆方式：看看天上的星星，可能一颗没有，可能零散有几颗，可能数也数不过来。</td>
+</tr>
+</tbody>
+</table>
+<p>以上量词对应的可视化形式是：</p>
+<p><img src="https://meowv.github.io/images/r.1.4.png" alt="PNG"></p>
+<h4 id="贪婪匹配与惰性匹配"><a href="#贪婪匹配与惰性匹配" class="headerlink" title="贪婪匹配与惰性匹配"></a>贪婪匹配与惰性匹配</h4><p>看如下的例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/\d&#123;2,5&#125;/g</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"123 1234 12345 123456"</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["123", "1234", "12345", "12345"]</span></div></pre></td></tr></table></figure>
+<p>其中正则 <code>/\d{2,5}/</code>，表示数字连续出现 2 到 5 次。会匹配 2 位、3 位、4 位、5 位连续数字。</p>
+<p>但是其是贪婪的，它会尽可能多的匹配。你能给我 6 个，我就要 5 个。你能给我 3 个，我就要 3 个。反正只要在能力范围内，越多越好。</p>
+<p>我们知道有时贪婪不是一件好事（请看文章最后一个例子）。而惰性匹配，就是尽可能少的匹配：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/\d&#123;2,5&#125;?/g</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"123 1234 12345 123456"</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["12", "12", "34", "12", "34", "12", "34", "56"]</span></div></pre></td></tr></table></figure>
+<p>其中 <code>/\d{2,5}?/</code> 表示，虽然 2 到 5 次都行，当 2 个就够的时候，就不再往下尝试了。</p>
+<p>通过在量词后面加个问号就能实现惰性匹配，因此所有惰性匹配情形如下：</p>
+<table>
+<thead>
+<tr>
+<th>惰性量词</th>
+<th>贪婪量词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{m,n}?</code></td>
+<td><code>{m,n}</code></td>
+</tr>
+<tr>
+<td><code>{m,}?</code></td>
+<td><code>{m,}</code></td>
+</tr>
+<tr>
+<td><code>??</code></td>
+<td><code>?</code></td>
+</tr>
+<tr>
+<td><code>+?</code></td>
+<td><code>+</code></td>
+</tr>
+<tr>
+<td><code>*?</code></td>
+<td><code>*</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>TIP： 对惰性匹配的记忆方式是：量词后面加个问号，问一问你知足了吗，你很贪婪吗？</p>
+</blockquote>
+<p>以上惰性量词对应的可视化形式是：</p>
+<p><img src="https://meowv.github.io/images/r.1.5.png" alt="PNG"></p>
+<h3 id="分支结构">多选分支</h3>
+
+<p>一个模式可以实现横向和纵向模糊匹配。而多选分支可以支持多个子模式任选其一。</p>
+<p>具体形式如下：<code>(p1|p2|p3)</code>，其中 <code>p1</code>、<code>p2</code> 和 <code>p3</code> 是子模式，用 <code>|</code>（管道符）分隔，表示其中任何之一。</p>
+<p>例如要匹配字符串 <code>&quot;good&quot;</code> 和 <code>&quot;nice&quot;</code> 可以使用 <code>/good|nice/</code>。</p>
+<p>可视化形式如下：</p>
+<p><img src="https://meowv.github.io/images/r.1.6.png" alt="PNG"></p>
+<p>测试如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/good|nice/g</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"good idea, nice try."</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["good", "nice"]</span></div></pre></td></tr></table></figure>
+<p>但有个事实我们应该注意，比如我用 <code>/good|goodbye/</code>，去匹配 <code>&quot;goodbye&quot;</code> 字符串时，结果是 <code>&quot;good&quot;</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/good|goodbye/g</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"goodbye"</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["good"]</span></div></pre></td></tr></table></figure>
+<p>而把正则改成 <code>/goodbye|good/</code>，结果是：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/goodbye|good/g</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"goodbye"</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["goodbye"]</span></div></pre></td></tr></table></figure>
+<p>也就是说，分支结构也是惰性的，即当前面的匹配上了，后面的就不再尝试了。</p>
+<h3 id="案例分析">案例分析</h3>
+
+<p>匹配字符，无非就是字符组、量词和分支结构的组合使用罢了。</p>
+<p>下面找几个例子演练一下（其中，每个正则并不是只有唯一写法）：</p>
+<h4 id="匹配-16-进制颜色值"><a href="#匹配-16-进制颜色值" class="headerlink" title="匹配 16 进制颜色值"></a>匹配 16 进制颜色值</h4><p>要求匹配：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#ffbbad</div><div class="line">#Fc01DF</div><div class="line">#FFF</div><div class="line">#ffE</div></pre></td></tr></table></figure>
+<p>分析：</p>
+<p>表示一个 16 进制字符，可以用字符组 <code>[0-9a-fA-F]</code>。</p>
+<p>其中字符可以出现 3 或 6 次，需要是用量词和分支结构。</p>
+<p>使用分支结构时，需要注意顺序。</p>
+<p>正则如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/#([0-9a-fA-F]&#123;6&#125;|[0-9a-fA-F]&#123;3&#125;)/g</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"#ffbbad #Fc01DF #FFF #ffE"</span>;</div><div class="line"><span class="built_in">console</span>.log( string.match(regex) );</div><div class="line"><span class="comment">// =&gt; ["#ffbbad", "#Fc01DF", "#FFF", "#ffE"]</span></div></pre></td></tr></table></figure>
+<p>其可视化形式：</p>
+<p><img src="https://meowv.github.io/images/r.1.7.png" alt="PNG"></p>
+<h4 id="匹配时间"><a href="#匹配时间" class="headerlink" title="匹配时间"></a>匹配时间</h4><p>以 24 小时制为例。</p>
+<p>要求匹配：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">23:59</div><div class="line">02:07</div></pre></td></tr></table></figure>
+<p>分析：</p>
+<p>共 4 位数字，第一位数字可以为 <code>[0-2]</code>。</p>
+<p>当第 1 位为 <code>&quot;2&quot;</code> 时，第 2 位可以为 <code>[0-3]</code>，其他情况时，第 2 位为 <code>[0-9]</code>。</p>
+<p>第 3 位数字为 <code>[0-5]</code>，第4位为 <code>[0-9]</code>。</p>
+<p>正则如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/^([01][0-9]|[2][0-3]):[0-5][0-9]$/</span>;</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"23:59"</span>) );</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"02:07"</span>) );</div><div class="line"><span class="comment">// =&gt; true</span></div><div class="line"><span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>NOTE： 正则中使用了 <code>^</code> 和 <code>$</code>，分别表示字符串开头和结尾。具体详细请参考第二章。</p>
+</blockquote>
+<p>如果也要求匹配 <code>&quot;7:9&quot;</code>，也就是说时分前面的 <code>&quot;0&quot;</code> 可以省略。</p>
+<p>此时正则变成：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/^(0?[0-9]|1[0-9]|[2][0-3]):(0?[0-9]|[1-5][0-9])$/</span>;</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"23:59"</span>) );</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"02:07"</span>) );</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"7:9"</span>) );</div><div class="line"><span class="comment">// =&gt; true</span></div><div class="line"><span class="comment">// =&gt; true</span></div><div class="line"><span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure>
+<p>其可视化形式：</p>
+<p><img src="https://meowv.github.io/images/r.1.8.png" alt="PNG"></p>
+<h4 id="匹配日期"><a href="#匹配日期" class="headerlink" title="匹配日期"></a>匹配日期</h4><p>比如 <code>yyyy-mm-dd</code> 格式为例。</p>
+<p>要求匹配： <code>2017-06-10</code></p>
+<p>分析：</p>
+<p>年，四位数字即可，可用 <code>[0-9]{4}</code>。</p>
+<p>月，共 12 个月，分两种情况 <code>&quot;01&quot;</code>、<code>&quot;02&quot;</code>、…、<code>&quot;09&quot;</code> 和 <code>&quot;10&quot;</code>、<code>&quot;11&quot;</code>、<code>&quot;12&quot;</code>，可用 <code>(0[1-9]|1[0-2])</code>。</p>
+<p>日，最大 31 天，可用 <code>(0[1-9]|[12][0-9]|3[01])</code>。</p>
+<p>正则如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/^[0-9]&#123;4&#125;-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/</span>;</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"2017-06-10"</span>) );</div><div class="line"><span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure>
+<p>其可视化形式：</p>
+<p><img src="https://meowv.github.io/images/r.1.9.png" alt="PNG"></p>
+<h4 id="window-操作系统文件路径"><a href="#window-操作系统文件路径" class="headerlink" title="window 操作系统文件路径"></a>window 操作系统文件路径</h4><p>要求匹配：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">F:\study\javascript\regex\regular expression.pdf</div><div class="line">F:\study\javascript\regex\</div><div class="line">F:\study\javascript</div><div class="line">F:\</div></pre></td></tr></table></figure>
+<p>分析：</p>
+<p>整体模式是:  <code>盘符:\文件夹\文件夹\文件夹\</code></p>
+<p>其中匹配 <code>&quot;F:\&quot;</code>，需要使用 <code>[a-zA-Z]:\\</code>，其中盘符不区分大小写，注意 \ 字符需要转义。</p>
+<p>文件名或者文件夹名，不能包含一些特殊字符，此时我们需要排除字符组 <code>[^\\:*&lt;&gt;|&quot;?\r\n/]</code> 来表示合法<br>字符。</p>
+<p>另外它们的名字不能为空名，至少有一个字符，也就是要使用量词 <code>+</code>。因此匹配 <code>文件夹\</code>，可用<code>[^\\:*&lt;&gt;|&quot;?\r\n/]+\\</code>。</p>
+<p>另外 <code>文件夹\</code>，可以出现任意次。也就是 <code>([^\\:*&lt;&gt;|&quot;?\r\n/]+\\)*</code>。其中括号表示其内部正则是一个整体。具体详细请参考第三章。</p>
+<p>路径的最后一部分可以是 <code>文件夹</code>，没有 <code>\</code>，因此需要添加 <code>([^\\:*&lt;&gt;|&quot;?\r\n/]+)?</code>。</p>
+<p>最后拼接成了一个看起来比较复杂的正则：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/^[a-zA-Z]:\\([^\\:*&lt;&gt;|"?\r\n/]+\\)*([^\\:*&lt;&gt;|"?\r\n/]+)?$/</span>;</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"F:\\study\\javascript\\regex\\regular expression.pdf"</span>) );</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"F:\\study\\javascript\\regex\\"</span>) );</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"F:\\study\\javascript"</span>) );</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"F:\\"</span>) );</div><div class="line"><span class="comment">// =&gt; true</span></div><div class="line"><span class="comment">// =&gt; true</span></div><div class="line"><span class="comment">// =&gt; true</span></div><div class="line"><span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure>
+<p>其中，在JavaScript 中字符串要表示字符 <code>\</code> 时，也需要转义。</p>
+<p>其可视化形式：</p>
+<p><img src="https://meowv.github.io/images/r.1.10.png" alt="PNG"></p>
+<h4 id="匹配-id"><a href="#匹配-id" class="headerlink" title="匹配 id"></a>匹配 id</h4><p>要求从</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span> <span class="attr">class</span>=<span class="string">"main"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>提取出 <code>id=&quot;container&quot;</code>。</p>
+<p>可能最开始想到的正则是：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/id=".*"/</span></div><div class="line"><span class="keyword">var</span> string = <span class="string">'&lt;div id="container" class="main"&gt;&lt;/div&gt;'</span>;</div><div class="line"><span class="built_in">console</span>.log(string.match(regex)[<span class="number">0</span>]);</div><div class="line"><span class="comment">// =&gt; id="container" class="main"</span></div></pre></td></tr></table></figure>
+<p>其可视化形式：</p>
+<p><img src="https://meowv.github.io/images/r.1.11.png" alt="PNG"></p>
+<p>因为 <code>.</code> 是通配符，本身就匹配双引号的，而量词 <code>*</code> 又是贪婪的，当遇到 <code>container</code> 后面双引号时，是不会停下来，会继续匹配，直到遇到最后一个双引号为止。</p>
+<p>解决之道，可以使用惰性匹配：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/id=".*?"/</span></div><div class="line"><span class="keyword">var</span> string = <span class="string">'&lt;div id="container" class="main"&gt;&lt;/div&gt;'</span>;</div><div class="line"><span class="built_in">console</span>.log(string.match(regex)[<span class="number">0</span>]);</div><div class="line"><span class="comment">// =&gt; id="container"</span></div></pre></td></tr></table></figure>
+<p>当然，这样也会有个问题。效率比较低，因为其匹配原理会涉及到“回溯”这个概念（这里也只是顺便提一下，第四章会详细说明）。可以优化如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/id="[^"]*"/</span></div><div class="line"><span class="keyword">var</span> string = <span class="string">'&lt;div id="container" class="main"&gt;&lt;/div&gt;'</span>;</div><div class="line"><span class="built_in">console</span>.log(string.match(regex)[<span class="number">0</span>]);</div><div class="line"><span class="comment">// =&gt; id="container"</span></div></pre></td></tr></table></figure>
+<h3 id="本章小结"><a href="#本章小结" class="headerlink" title="本章小结"></a>本章小结</h3><p>掌握字符组和量词就能解决大部分常见的情形，也就是说，当你会了这二者，JavaScript 正则算是入门了。</p>
+</div><iframe src="/donate/?AliPayQR=/img/AliPayQR.png&amp;WeChatQR=/img/AliPayQR.png&amp;GitHub=https://github.com/Meowv&amp;BTCQR=undefined&amp;BTCKEY=undefined&amp;PayPal=undefined" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;" frameborder="0" scrolling="no"></iframe><div class="tags"><a href="/tags/Regex/">Regex</a><a href="/tags/正则表达式/">正则表达式</a></div><div class="post-nav"><a href="/2017/09/29/Regex-2/" class="pre">正则表达式位置匹配攻略</a><a href="/2017/09/27/ToutiaoNews/" class="next">今日头条全站新闻文章数据爬取</a></div><div id="container"></div><link rel="stylesheet" href="/css/default.css?v=1.0.0"><script src="/js/gitment.browser.js?v=1.0.0"></script><script>var gitment = new Gitment({
+  owner: 'Meowv',
+  repo: 'meowv.github.io',
+  oauth: {
+    client_id: '8b9d5a517ebad5add0cc',
+    client_secret: '61ca179ff1d9c8aedd440e95521efd7240453d8b',
+  },
+})
+gitment.render('container')
+</script></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://xj8c.cc"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/C/" style="font-size: 15px;">C#</a> <a href="/tags/诗文/" style="font-size: 15px;">诗文</a> <a href="/tags/CEAC/" style="font-size: 15px;">CEAC</a> <a href="/tags/office2010/" style="font-size: 15px;">office2010</a> <a href="/tags/绿色软件/" style="font-size: 15px;">绿色软件</a> <a href="/tags/HtmlAgilityPack/" style="font-size: 15px;">HtmlAgilityPack</a> <a href="/tags/爬虫/" style="font-size: 15px;">爬虫</a> <a href="/tags/ReactNative/" style="font-size: 15px;">ReactNative</a> <a href="/tags/Regex/" style="font-size: 15px;">Regex</a> <a href="/tags/正则表达式/" style="font-size: 15px;">正则表达式</a> <a href="/tags/SqlServer/" style="font-size: 15px;">SqlServer</a> <a href="/tags/数据库/" style="font-size: 15px;">数据库</a> <a href="/tags/今日头条/" style="font-size: 15px;">今日头条</a> <a href="/tags/Newtonsoft-Json/" style="font-size: 15px;">Newtonsoft.Json</a> <a href="/tags/知乎/" style="font-size: 15px;">知乎</a> <a href="/tags/win10/" style="font-size: 15px;">win10</a> <a href="/tags/微软/" style="font-size: 15px;">微软</a> <a href="/tags/春天/" style="font-size: 15px;">春天</a> <a href="/tags/Photoshop/" style="font-size: 15px;">Photoshop</a> <a href="/tags/ASP-NET/" style="font-size: 15px;">ASP.NET</a> <a href="/tags/技术教程/" style="font-size: 15px;">技术教程</a> <a href="/tags/面试/" style="font-size: 15px;">面试</a> <a href="/tags/软件测试/" style="font-size: 15px;">软件测试</a> <a href="/tags/互联网/" style="font-size: 15px;">互联网</a> <a href="/tags/大数据/" style="font-size: 15px;">大数据</a> <a href="/tags/年终总结/" style="font-size: 15px;">年终总结</a> <a href="/tags/计算机基础/" style="font-size: 15px;">计算机基础</a> <a href="/tags/进制转换/" style="font-size: 15px;">进制转换</a> <a href="/tags/get/" style="font-size: 15px;">get</a> <a href="/tags/post/" style="font-size: 15px;">post</a> <a href="/tags/毕业答辩/" style="font-size: 15px;">毕业答辩</a> <a href="/tags/计算机一级/" style="font-size: 15px;">计算机一级</a> <a href="/tags/IT/" style="font-size: 15px;">IT</a> <a href="/tags/实习感受/" style="font-size: 15px;">实习感受</a> <a href="/tags/逆袭/" style="font-size: 15px;">逆袭</a> <a href="/tags/编程/" style="font-size: 15px;">编程</a> <a href="/tags/小说/" style="font-size: 15px;">小说</a> <a href="/tags/程序员/" style="font-size: 15px;">程序员</a> <a href="/tags/Visual-Studio/" style="font-size: 15px;">Visual Studio</a> <a href="/tags/三层架构/" style="font-size: 15px;">三层架构</a> <a href="/tags/琅琊榜/" style="font-size: 15px;">琅琊榜</a> <a href="/tags/手机/" style="font-size: 15px;">手机</a> <a href="/tags/win7/" style="font-size: 15px;">win7</a> <a href="/tags/快捷键/" style="font-size: 15px;">快捷键</a> <a href="/tags/命令行/" style="font-size: 15px;">命令行</a> <a href="/tags/原版系统/" style="font-size: 15px;">原版系统</a> <a href="/tags/xml/" style="font-size: 15px;">xml</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/黑客/" style="font-size: 15px;">黑客</a> <a href="/tags/电影/" style="font-size: 15px;">电影</a> <a href="/tags/实习/" style="font-size: 15px;">实习</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/10/13/Regex-chinese-english-comparison-table/">正则表达式术语中英文对照表</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/12/Regex-cheat-sheet/">正则表达式速查表</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/12/Regex-7/">正则表达式编程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/12/Regex-6/">正则表达式的构建</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/11/Regex-5/">正则表达式的拆分</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/11/Regex-4/">正则表达式回溯法原理</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/10/Regex-3/">正则表达式括号的作用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/29/Regex-2/">正则表达式位置匹配攻略</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/Regex-1/">正则表达式字符匹配攻略</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/27/ToutiaoNews/">今日头条全站新闻文章数据爬取</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://meowv.com/" title="喵呜网" target="_blank">喵呜网</a><ul></ul><a href="http://v.xj8c.cc/" title="VIP电影在线播放" target="_blank">VIP电影在线播放</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2015 - 2017 <a href="/." rel="nofollow">当然我在瞎扯.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script type="text/javascript" color="0,0,0" opacity="0.5" zIndex="-2" count="50" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>
