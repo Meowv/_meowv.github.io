@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>当然我在瞎扯</title>
   <subtitle>生命不息，奋斗不止</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/v2/atom.xml" rel="self"/>
   
-  <link href="http://xj8c.cc/"/>
+  <link href="http://xj8c.cc/v2/"/>
   <updated>2017-10-13T01:44:09.530Z</updated>
-  <id>http://xj8c.cc/</id>
+  <id>http://xj8c.cc/v2/</id>
   
   <author>
     <name>阿星Plus</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>正则表达式术语中英文对照表</title>
-    <link href="http://xj8c.cc/2017/10/13/Regex-chinese-english-comparison-table/"/>
-    <id>http://xj8c.cc/2017/10/13/Regex-chinese-english-comparison-table/</id>
+    <link href="http://xj8c.cc/v2/2017/10/13/Regex-chinese-english-comparison-table/"/>
+    <id>http://xj8c.cc/v2/2017/10/13/Regex-chinese-english-comparison-table/</id>
     <published>2017-10-13T01:37:20.000Z</published>
     <updated>2017-10-13T01:44:09.530Z</updated>
     
@@ -234,16 +234,16 @@
     </summary>
     
     
-      <category term="Regex" scheme="http://xj8c.cc/tags/Regex/"/>
+      <category term="Regex" scheme="http://xj8c.cc/v2/tags/Regex/"/>
     
-      <category term="正则表达式" scheme="http://xj8c.cc/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+      <category term="正则表达式" scheme="http://xj8c.cc/v2/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>正则表达式速查表</title>
-    <link href="http://xj8c.cc/2017/10/12/Regex-cheat-sheet/"/>
-    <id>http://xj8c.cc/2017/10/12/Regex-cheat-sheet/</id>
+    <link href="http://xj8c.cc/v2/2017/10/12/Regex-cheat-sheet/"/>
+    <id>http://xj8c.cc/v2/2017/10/12/Regex-cheat-sheet/</id>
     <published>2017-10-12T10:01:07.000Z</published>
     <updated>2017-10-13T01:51:16.815Z</updated>
     
@@ -714,16 +714,16 @@
     </summary>
     
     
-      <category term="Regex" scheme="http://xj8c.cc/tags/Regex/"/>
+      <category term="Regex" scheme="http://xj8c.cc/v2/tags/Regex/"/>
     
-      <category term="正则表达式" scheme="http://xj8c.cc/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+      <category term="正则表达式" scheme="http://xj8c.cc/v2/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>正则表达式编程</title>
-    <link href="http://xj8c.cc/2017/10/12/Regex-7/"/>
-    <id>http://xj8c.cc/2017/10/12/Regex-7/</id>
+    <link href="http://xj8c.cc/v2/2017/10/12/Regex-7/"/>
+    <id>http://xj8c.cc/v2/2017/10/12/Regex-7/</id>
     <published>2017-10-12T05:30:33.000Z</published>
     <updated>2017-10-12T09:56:57.636Z</updated>
     
@@ -977,16 +977,16 @@
     </summary>
     
     
-      <category term="Regex" scheme="http://xj8c.cc/tags/Regex/"/>
+      <category term="Regex" scheme="http://xj8c.cc/v2/tags/Regex/"/>
     
-      <category term="正则表达式" scheme="http://xj8c.cc/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+      <category term="正则表达式" scheme="http://xj8c.cc/v2/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>正则表达式的构建</title>
-    <link href="http://xj8c.cc/2017/10/12/Regex-6/"/>
-    <id>http://xj8c.cc/2017/10/12/Regex-6/</id>
+    <link href="http://xj8c.cc/v2/2017/10/12/Regex-6/"/>
+    <id>http://xj8c.cc/v2/2017/10/12/Regex-6/</id>
     <published>2017-10-12T02:30:30.000Z</published>
     <updated>2017-10-12T02:30:38.705Z</updated>
     
@@ -1154,16 +1154,16 @@
     </summary>
     
     
-      <category term="Regex" scheme="http://xj8c.cc/tags/Regex/"/>
+      <category term="Regex" scheme="http://xj8c.cc/v2/tags/Regex/"/>
     
-      <category term="正则表达式" scheme="http://xj8c.cc/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+      <category term="正则表达式" scheme="http://xj8c.cc/v2/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>正则表达式的拆分</title>
-    <link href="http://xj8c.cc/2017/10/11/Regex-5/"/>
-    <id>http://xj8c.cc/2017/10/11/Regex-5/</id>
+    <link href="http://xj8c.cc/v2/2017/10/11/Regex-5/"/>
+    <id>http://xj8c.cc/v2/2017/10/11/Regex-5/</id>
     <published>2017-10-11T05:12:10.000Z</published>
     <updated>2017-10-11T06:53:10.211Z</updated>
     
@@ -1357,16 +1357,16 @@
     </summary>
     
     
-      <category term="Regex" scheme="http://xj8c.cc/tags/Regex/"/>
+      <category term="Regex" scheme="http://xj8c.cc/v2/tags/Regex/"/>
     
-      <category term="正则表达式" scheme="http://xj8c.cc/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+      <category term="正则表达式" scheme="http://xj8c.cc/v2/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>正则表达式回溯法原理</title>
-    <link href="http://xj8c.cc/2017/10/11/Regex-4/"/>
-    <id>http://xj8c.cc/2017/10/11/Regex-4/</id>
+    <link href="http://xj8c.cc/v2/2017/10/11/Regex-4/"/>
+    <id>http://xj8c.cc/v2/2017/10/11/Regex-4/</id>
     <published>2017-10-11T01:18:38.000Z</published>
     <updated>2017-10-11T01:19:05.511Z</updated>
     
@@ -1463,16 +1463,16 @@
     </summary>
     
     
-      <category term="Regex" scheme="http://xj8c.cc/tags/Regex/"/>
+      <category term="Regex" scheme="http://xj8c.cc/v2/tags/Regex/"/>
     
-      <category term="正则表达式" scheme="http://xj8c.cc/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+      <category term="正则表达式" scheme="http://xj8c.cc/v2/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>正则表达式括号的作用</title>
-    <link href="http://xj8c.cc/2017/10/10/Regex-3/"/>
-    <id>http://xj8c.cc/2017/10/10/Regex-3/</id>
+    <link href="http://xj8c.cc/v2/2017/10/10/Regex-3/"/>
+    <id>http://xj8c.cc/v2/2017/10/10/Regex-3/</id>
     <published>2017-10-10T03:21:05.000Z</published>
     <updated>2017-10-10T03:23:33.011Z</updated>
     
@@ -1640,16 +1640,16 @@
     </summary>
     
     
-      <category term="Regex" scheme="http://xj8c.cc/tags/Regex/"/>
+      <category term="Regex" scheme="http://xj8c.cc/v2/tags/Regex/"/>
     
-      <category term="正则表达式" scheme="http://xj8c.cc/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+      <category term="正则表达式" scheme="http://xj8c.cc/v2/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>正则表达式位置匹配攻略</title>
-    <link href="http://xj8c.cc/2017/09/29/Regex-2/"/>
-    <id>http://xj8c.cc/2017/09/29/Regex-2/</id>
+    <link href="http://xj8c.cc/v2/2017/09/29/Regex-2/"/>
+    <id>http://xj8c.cc/v2/2017/09/29/Regex-2/</id>
     <published>2017-09-29T07:52:50.000Z</published>
     <updated>2017-09-29T07:58:57.839Z</updated>
     
@@ -1823,16 +1823,16 @@
     </summary>
     
     
-      <category term="Regex" scheme="http://xj8c.cc/tags/Regex/"/>
+      <category term="Regex" scheme="http://xj8c.cc/v2/tags/Regex/"/>
     
-      <category term="正则表达式" scheme="http://xj8c.cc/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+      <category term="正则表达式" scheme="http://xj8c.cc/v2/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>正则表达式字符匹配攻略</title>
-    <link href="http://xj8c.cc/2017/09/28/Regex-1/"/>
-    <id>http://xj8c.cc/2017/09/28/Regex-1/</id>
+    <link href="http://xj8c.cc/v2/2017/09/28/Regex-1/"/>
+    <id>http://xj8c.cc/v2/2017/09/28/Regex-1/</id>
     <published>2017-09-28T02:36:26.000Z</published>
     <updated>2017-09-29T07:18:39.776Z</updated>
     
@@ -2111,16 +2111,16 @@
     </summary>
     
     
-      <category term="Regex" scheme="http://xj8c.cc/tags/Regex/"/>
+      <category term="Regex" scheme="http://xj8c.cc/v2/tags/Regex/"/>
     
-      <category term="正则表达式" scheme="http://xj8c.cc/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+      <category term="正则表达式" scheme="http://xj8c.cc/v2/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>今日头条全站新闻文章数据爬取</title>
-    <link href="http://xj8c.cc/2017/09/27/ToutiaoNews/"/>
-    <id>http://xj8c.cc/2017/09/27/ToutiaoNews/</id>
+    <link href="http://xj8c.cc/v2/2017/09/27/ToutiaoNews/"/>
+    <id>http://xj8c.cc/v2/2017/09/27/ToutiaoNews/</id>
     <published>2017-09-27T06:23:48.000Z</published>
     <updated>2017-09-27T06:25:38.165Z</updated>
     
@@ -2258,20 +2258,20 @@
     </summary>
     
     
-      <category term="HtmlAgilityPack" scheme="http://xj8c.cc/tags/HtmlAgilityPack/"/>
+      <category term="HtmlAgilityPack" scheme="http://xj8c.cc/v2/tags/HtmlAgilityPack/"/>
     
-      <category term="爬虫" scheme="http://xj8c.cc/tags/%E7%88%AC%E8%99%AB/"/>
+      <category term="爬虫" scheme="http://xj8c.cc/v2/tags/%E7%88%AC%E8%99%AB/"/>
     
-      <category term="今日头条" scheme="http://xj8c.cc/tags/%E4%BB%8A%E6%97%A5%E5%A4%B4%E6%9D%A1/"/>
+      <category term="今日头条" scheme="http://xj8c.cc/v2/tags/%E4%BB%8A%E6%97%A5%E5%A4%B4%E6%9D%A1/"/>
     
-      <category term="Newtonsoft.Json" scheme="http://xj8c.cc/tags/Newtonsoft-Json/"/>
+      <category term="Newtonsoft.Json" scheme="http://xj8c.cc/v2/tags/Newtonsoft-Json/"/>
     
   </entry>
   
   <entry>
     <title>HtmlAgilityPack爬取美女图片、每日一文文章、小说</title>
-    <link href="http://xj8c.cc/2017/09/07/HtmlAgilityPack/"/>
-    <id>http://xj8c.cc/2017/09/07/HtmlAgilityPack/</id>
+    <link href="http://xj8c.cc/v2/2017/09/07/HtmlAgilityPack/"/>
+    <id>http://xj8c.cc/v2/2017/09/07/HtmlAgilityPack/</id>
     <published>2017-09-07T01:23:53.000Z</published>
     <updated>2017-09-07T09:51:27.494Z</updated>
     
@@ -2291,16 +2291,16 @@
     </summary>
     
     
-      <category term="HtmlAgilityPack" scheme="http://xj8c.cc/tags/HtmlAgilityPack/"/>
+      <category term="HtmlAgilityPack" scheme="http://xj8c.cc/v2/tags/HtmlAgilityPack/"/>
     
-      <category term="爬虫" scheme="http://xj8c.cc/tags/%E7%88%AC%E8%99%AB/"/>
+      <category term="爬虫" scheme="http://xj8c.cc/v2/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
   <entry>
     <title>ReactNative开发中一些有用的资源</title>
-    <link href="http://xj8c.cc/2017/07/18/ReactNative-resource/"/>
-    <id>http://xj8c.cc/2017/07/18/ReactNative-resource/</id>
+    <link href="http://xj8c.cc/v2/2017/07/18/ReactNative-resource/"/>
+    <id>http://xj8c.cc/v2/2017/07/18/ReactNative-resource/</id>
     <published>2017-07-18T08:47:42.000Z</published>
     <updated>2017-07-21T03:29:24.226Z</updated>
     
@@ -2346,14 +2346,14 @@
     </summary>
     
     
-      <category term="ReactNative" scheme="http://xj8c.cc/tags/ReactNative/"/>
+      <category term="ReactNative" scheme="http://xj8c.cc/v2/tags/ReactNative/"/>
     
   </entry>
   
   <entry>
     <title>ReactNative样式总览</title>
-    <link href="http://xj8c.cc/2017/07/17/ReactNative-styles/"/>
-    <id>http://xj8c.cc/2017/07/17/ReactNative-styles/</id>
+    <link href="http://xj8c.cc/v2/2017/07/17/ReactNative-styles/"/>
+    <id>http://xj8c.cc/v2/2017/07/17/ReactNative-styles/</id>
     <published>2017-07-17T08:46:47.000Z</published>
     <updated>2017-07-21T03:32:22.998Z</updated>
     
@@ -2374,14 +2374,14 @@
     </summary>
     
     
-      <category term="ReactNative" scheme="http://xj8c.cc/tags/ReactNative/"/>
+      <category term="ReactNative" scheme="http://xj8c.cc/v2/tags/ReactNative/"/>
     
   </entry>
   
   <entry>
     <title>打包你的App</title>
-    <link href="http://xj8c.cc/2017/07/16/ReactNative-build/"/>
-    <id>http://xj8c.cc/2017/07/16/ReactNative-build/</id>
+    <link href="http://xj8c.cc/v2/2017/07/16/ReactNative-build/"/>
+    <id>http://xj8c.cc/v2/2017/07/16/ReactNative-build/</id>
     <published>2017-07-16T08:45:13.000Z</published>
     <updated>2017-07-21T03:29:02.638Z</updated>
     
@@ -2417,14 +2417,14 @@
     </summary>
     
     
-      <category term="ReactNative" scheme="http://xj8c.cc/tags/ReactNative/"/>
+      <category term="ReactNative" scheme="http://xj8c.cc/v2/tags/ReactNative/"/>
     
   </entry>
   
   <entry>
     <title>掌握React Native的Fetch Api</title>
-    <link href="http://xj8c.cc/2017/07/15/ReactNative-net/"/>
-    <id>http://xj8c.cc/2017/07/15/ReactNative-net/</id>
+    <link href="http://xj8c.cc/v2/2017/07/15/ReactNative-net/"/>
+    <id>http://xj8c.cc/v2/2017/07/15/ReactNative-net/</id>
     <published>2017-07-15T08:43:47.000Z</published>
     <updated>2017-07-21T03:29:11.611Z</updated>
     
@@ -2459,14 +2459,14 @@
     </summary>
     
     
-      <category term="ReactNative" scheme="http://xj8c.cc/tags/ReactNative/"/>
+      <category term="ReactNative" scheme="http://xj8c.cc/v2/tags/ReactNative/"/>
     
   </entry>
   
   <entry>
     <title>是时候用上React Navigation了</title>
-    <link href="http://xj8c.cc/2017/07/14/ReactNative-navigation/"/>
-    <id>http://xj8c.cc/2017/07/14/ReactNative-navigation/</id>
+    <link href="http://xj8c.cc/v2/2017/07/14/ReactNative-navigation/"/>
+    <id>http://xj8c.cc/v2/2017/07/14/ReactNative-navigation/</id>
     <published>2017-07-14T08:42:18.000Z</published>
     <updated>2017-07-21T03:29:06.068Z</updated>
     
@@ -2540,14 +2540,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="ReactNative" scheme="http://xj8c.cc/tags/ReactNative/"/>
+      <category term="ReactNative" scheme="http://xj8c.cc/v2/tags/ReactNative/"/>
     
   </entry>
   
   <entry>
     <title>带你了解ListView及FlatList</title>
-    <link href="http://xj8c.cc/2017/07/13/ReactNative-ListView-FlatList/"/>
-    <id>http://xj8c.cc/2017/07/13/ReactNative-ListView-FlatList/</id>
+    <link href="http://xj8c.cc/v2/2017/07/13/ReactNative-ListView-FlatList/"/>
+    <id>http://xj8c.cc/v2/2017/07/13/ReactNative-ListView-FlatList/</id>
     <published>2017-07-13T08:31:08.000Z</published>
     <updated>2017-07-21T03:28:53.113Z</updated>
     
@@ -2597,14 +2597,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="ReactNative" scheme="http://xj8c.cc/tags/ReactNative/"/>
+      <category term="ReactNative" scheme="http://xj8c.cc/v2/tags/ReactNative/"/>
     
   </entry>
   
   <entry>
     <title>存储：与AsyncStorage相比，Realm更应该作为重点掌握内容</title>
-    <link href="http://xj8c.cc/2017/07/12/ReactNative-storage/"/>
-    <id>http://xj8c.cc/2017/07/12/ReactNative-storage/</id>
+    <link href="http://xj8c.cc/v2/2017/07/12/ReactNative-storage/"/>
+    <id>http://xj8c.cc/v2/2017/07/12/ReactNative-storage/</id>
     <published>2017-07-12T08:28:22.000Z</published>
     <updated>2017-07-21T03:30:58.721Z</updated>
     
@@ -2679,14 +2679,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="ReactNative" scheme="http://xj8c.cc/tags/ReactNative/"/>
+      <category term="ReactNative" scheme="http://xj8c.cc/v2/tags/ReactNative/"/>
     
   </entry>
   
   <entry>
     <title>React Native中的样式，Flexbox布局及其他内容</title>
-    <link href="http://xj8c.cc/2017/07/11/ReactNative-style-layout/"/>
-    <id>http://xj8c.cc/2017/07/11/ReactNative-style-layout/</id>
+    <link href="http://xj8c.cc/v2/2017/07/11/ReactNative-style-layout/"/>
+    <id>http://xj8c.cc/v2/2017/07/11/ReactNative-style-layout/</id>
     <published>2017-07-11T08:25:59.000Z</published>
     <updated>2017-07-21T03:29:22.951Z</updated>
     
@@ -2770,14 +2770,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="ReactNative" scheme="http://xj8c.cc/tags/ReactNative/"/>
+      <category term="ReactNative" scheme="http://xj8c.cc/v2/tags/ReactNative/"/>
     
   </entry>
   
   <entry>
     <title>React Native常用的组件</title>
-    <link href="http://xj8c.cc/2017/07/10/ReactNative-module/"/>
-    <id>http://xj8c.cc/2017/07/10/ReactNative-module/</id>
+    <link href="http://xj8c.cc/v2/2017/07/10/ReactNative-module/"/>
+    <id>http://xj8c.cc/v2/2017/07/10/ReactNative-module/</id>
     <published>2017-07-10T08:24:39.000Z</published>
     <updated>2017-07-21T03:29:16.975Z</updated>
     
@@ -2838,14 +2838,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="ReactNative" scheme="http://xj8c.cc/tags/ReactNative/"/>
+      <category term="ReactNative" scheme="http://xj8c.cc/v2/tags/ReactNative/"/>
     
   </entry>
   
   <entry>
     <title>启动你的第一个React Native 应用</title>
-    <link href="http://xj8c.cc/2017/07/09/ReactNative-run/"/>
-    <id>http://xj8c.cc/2017/07/09/ReactNative-run/</id>
+    <link href="http://xj8c.cc/v2/2017/07/09/ReactNative-run/"/>
+    <id>http://xj8c.cc/v2/2017/07/09/ReactNative-run/</id>
     <published>2017-07-09T08:20:15.000Z</published>
     <updated>2017-07-19T08:37:21.265Z</updated>
     
@@ -2897,14 +2897,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="ReactNative" scheme="http://xj8c.cc/tags/ReactNative/"/>
+      <category term="ReactNative" scheme="http://xj8c.cc/v2/tags/ReactNative/"/>
     
   </entry>
   
   <entry>
     <title>ReactNative基础</title>
-    <link href="http://xj8c.cc/2017/07/08/ReactNative-base/"/>
-    <id>http://xj8c.cc/2017/07/08/ReactNative-base/</id>
+    <link href="http://xj8c.cc/v2/2017/07/08/ReactNative-base/"/>
+    <id>http://xj8c.cc/v2/2017/07/08/ReactNative-base/</id>
     <published>2017-07-08T08:18:48.000Z</published>
     <updated>2017-07-19T08:37:34.789Z</updated>
     
@@ -2963,14 +2963,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="ReactNative" scheme="http://xj8c.cc/tags/ReactNative/"/>
+      <category term="ReactNative" scheme="http://xj8c.cc/v2/tags/ReactNative/"/>
     
   </entry>
   
   <entry>
     <title>ReactNative介绍</title>
-    <link href="http://xj8c.cc/2017/07/07/ReactNative-introduce/"/>
-    <id>http://xj8c.cc/2017/07/07/ReactNative-introduce/</id>
+    <link href="http://xj8c.cc/v2/2017/07/07/ReactNative-introduce/"/>
+    <id>http://xj8c.cc/v2/2017/07/07/ReactNative-introduce/</id>
     <published>2017-07-07T08:17:29.000Z</published>
     <updated>2017-07-19T08:37:02.859Z</updated>
     
@@ -2993,14 +2993,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="ReactNative" scheme="http://xj8c.cc/tags/ReactNative/"/>
+      <category term="ReactNative" scheme="http://xj8c.cc/v2/tags/ReactNative/"/>
     
   </entry>
   
   <entry>
     <title>我的实习记录</title>
-    <link href="http://xj8c.cc/2017/06/01/my-internship-record/"/>
-    <id>http://xj8c.cc/2017/06/01/my-internship-record/</id>
+    <link href="http://xj8c.cc/v2/2017/06/01/my-internship-record/"/>
+    <id>http://xj8c.cc/v2/2017/06/01/my-internship-record/</id>
     <published>2017-05-31T16:00:00.000Z</published>
     <updated>2017-07-19T08:58:43.383Z</updated>
     
@@ -4027,14 +4027,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="实习" scheme="http://xj8c.cc/tags/%E5%AE%9E%E4%B9%A0/"/>
+      <category term="实习" scheme="http://xj8c.cc/v2/tags/%E5%AE%9E%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>毕业答辩汇报材料</title>
-    <link href="http://xj8c.cc/2017/03/30/graduation-report-material/"/>
-    <id>http://xj8c.cc/2017/03/30/graduation-report-material/</id>
+    <link href="http://xj8c.cc/v2/2017/03/30/graduation-report-material/"/>
+    <id>http://xj8c.cc/v2/2017/03/30/graduation-report-material/</id>
     <published>2017-03-30T04:47:00.000Z</published>
     <updated>2017-05-26T07:48:34.603Z</updated>
     
@@ -4074,14 +4074,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="毕业答辩" scheme="http://xj8c.cc/tags/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9/"/>
+      <category term="毕业答辩" scheme="http://xj8c.cc/v2/tags/%E6%AF%95%E4%B8%9A%E7%AD%94%E8%BE%A9/"/>
     
   </entry>
   
   <entry>
     <title>2016年终总结</title>
-    <link href="http://xj8c.cc/2017/01/04/2016-year-end-summary/"/>
-    <id>http://xj8c.cc/2017/01/04/2016-year-end-summary/</id>
+    <link href="http://xj8c.cc/v2/2017/01/04/2016-year-end-summary/"/>
+    <id>http://xj8c.cc/v2/2017/01/04/2016-year-end-summary/</id>
     <published>2017-01-04T01:59:56.000Z</published>
     <updated>2017-05-26T07:48:39.588Z</updated>
     
@@ -4120,14 +4120,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="年终总结" scheme="http://xj8c.cc/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
+      <category term="年终总结" scheme="http://xj8c.cc/v2/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
   <entry>
     <title>C＃7.0中有哪些新特性？</title>
-    <link href="http://xj8c.cc/2016/08/31/csharp7/"/>
-    <id>http://xj8c.cc/2016/08/31/csharp7/</id>
+    <link href="http://xj8c.cc/v2/2016/08/31/csharp7/"/>
+    <id>http://xj8c.cc/v2/2016/08/31/csharp7/</id>
     <published>2016-08-31T02:19:57.000Z</published>
     <updated>2017-05-26T06:29:50.340Z</updated>
     
@@ -4179,14 +4179,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="C#" scheme="http://xj8c.cc/tags/C/"/>
+      <category term="C#" scheme="http://xj8c.cc/v2/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>武汉路博特工程科技有限公司实习“满月”工作感受</title>
-    <link href="http://xj8c.cc/2016/05/18/internship-experience/"/>
-    <id>http://xj8c.cc/2016/05/18/internship-experience/</id>
+    <link href="http://xj8c.cc/v2/2016/05/18/internship-experience/"/>
+    <id>http://xj8c.cc/v2/2016/05/18/internship-experience/</id>
     <published>2016-05-18T07:27:30.000Z</published>
     <updated>2017-05-26T06:29:50.451Z</updated>
     
@@ -4200,14 +4200,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="实习感受" scheme="http://xj8c.cc/tags/%E5%AE%9E%E4%B9%A0%E6%84%9F%E5%8F%97/"/>
+      <category term="实习感受" scheme="http://xj8c.cc/v2/tags/%E5%AE%9E%E4%B9%A0%E6%84%9F%E5%8F%97/"/>
     
   </entry>
   
   <entry>
     <title>ASP.NET知识点面试篇</title>
-    <link href="http://xj8c.cc/2016/04/16/asp.net-knowledge-point-interview/"/>
-    <id>http://xj8c.cc/2016/04/16/asp.net-knowledge-point-interview/</id>
+    <link href="http://xj8c.cc/v2/2016/04/16/asp.net-knowledge-point-interview/"/>
+    <id>http://xj8c.cc/v2/2016/04/16/asp.net-knowledge-point-interview/</id>
     <published>2016-04-16T09:13:19.000Z</published>
     <updated>2017-05-26T06:29:50.012Z</updated>
     
@@ -4222,16 +4222,16 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="ASP.NET" scheme="http://xj8c.cc/tags/ASP-NET/"/>
+      <category term="ASP.NET" scheme="http://xj8c.cc/v2/tags/ASP-NET/"/>
     
-      <category term="面试" scheme="http://xj8c.cc/tags/%E9%9D%A2%E8%AF%95/"/>
+      <category term="面试" scheme="http://xj8c.cc/v2/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>三层架构到底是个什么玩意？</title>
-    <link href="http://xj8c.cc/2016/04/08/what-is-a-three-tier-architecture/"/>
-    <id>http://xj8c.cc/2016/04/08/what-is-a-three-tier-architecture/</id>
+    <link href="http://xj8c.cc/v2/2016/04/08/what-is-a-three-tier-architecture/"/>
+    <id>http://xj8c.cc/v2/2016/04/08/what-is-a-three-tier-architecture/</id>
     <published>2016-04-07T16:12:44.000Z</published>
     <updated>2017-05-26T06:29:50.633Z</updated>
     
@@ -4248,16 +4248,16 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="ASP.NET" scheme="http://xj8c.cc/tags/ASP-NET/"/>
+      <category term="ASP.NET" scheme="http://xj8c.cc/v2/tags/ASP-NET/"/>
     
-      <category term="三层架构" scheme="http://xj8c.cc/tags/%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84/"/>
+      <category term="三层架构" scheme="http://xj8c.cc/v2/tags/%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title>ADO.NET中的五个主要对象？</title>
-    <link href="http://xj8c.cc/2016/04/07/five-main-objects-in-dotnet/"/>
-    <id>http://xj8c.cc/2016/04/07/five-main-objects-in-dotnet/</id>
+    <link href="http://xj8c.cc/v2/2016/04/07/five-main-objects-in-dotnet/"/>
+    <id>http://xj8c.cc/v2/2016/04/07/five-main-objects-in-dotnet/</id>
     <published>2016-04-07T15:34:02.000Z</published>
     <updated>2017-05-26T06:29:50.350Z</updated>
     
@@ -4290,16 +4290,16 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="ASP.NET" scheme="http://xj8c.cc/tags/ASP-NET/"/>
+      <category term="ASP.NET" scheme="http://xj8c.cc/v2/tags/ASP-NET/"/>
     
-      <category term="C#" scheme="http://xj8c.cc/tags/C/"/>
+      <category term="C#" scheme="http://xj8c.cc/v2/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>所谓的Get和Post到底是何方神圣？</title>
-    <link href="http://xj8c.cc/2016/04/07/get-and-post/"/>
-    <id>http://xj8c.cc/2016/04/07/get-and-post/</id>
+    <link href="http://xj8c.cc/v2/2016/04/07/get-and-post/"/>
+    <id>http://xj8c.cc/v2/2016/04/07/get-and-post/</id>
     <published>2016-04-07T15:04:07.000Z</published>
     <updated>2017-07-18T02:30:00.724Z</updated>
     
@@ -4313,18 +4313,18 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="ASP.NET" scheme="http://xj8c.cc/tags/ASP-NET/"/>
+      <category term="ASP.NET" scheme="http://xj8c.cc/v2/tags/ASP-NET/"/>
     
-      <category term="get" scheme="http://xj8c.cc/tags/get/"/>
+      <category term="get" scheme="http://xj8c.cc/v2/tags/get/"/>
     
-      <category term="post" scheme="http://xj8c.cc/tags/post/"/>
+      <category term="post" scheme="http://xj8c.cc/v2/tags/post/"/>
     
   </entry>
   
   <entry>
     <title>一个学渣的逆袭</title>
-    <link href="http://xj8c.cc/2015/12/10/the-students-with-poor-grades-reversed/"/>
-    <id>http://xj8c.cc/2015/12/10/the-students-with-poor-grades-reversed/</id>
+    <link href="http://xj8c.cc/v2/2015/12/10/the-students-with-poor-grades-reversed/"/>
+    <id>http://xj8c.cc/v2/2015/12/10/the-students-with-poor-grades-reversed/</id>
     <published>2015-12-10T08:05:19.000Z</published>
     <updated>2017-05-26T06:29:50.551Z</updated>
     
@@ -4338,14 +4338,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="逆袭" scheme="http://xj8c.cc/tags/%E9%80%86%E8%A2%AD/"/>
+      <category term="逆袭" scheme="http://xj8c.cc/v2/tags/%E9%80%86%E8%A2%AD/"/>
     
   </entry>
   
   <entry>
     <title>计算机运算基础荟萃</title>
-    <link href="http://xj8c.cc/2015/11/21/computer-computing-infrastructure/"/>
-    <id>http://xj8c.cc/2015/11/21/computer-computing-infrastructure/</id>
+    <link href="http://xj8c.cc/v2/2015/11/21/computer-computing-infrastructure/"/>
+    <id>http://xj8c.cc/v2/2015/11/21/computer-computing-infrastructure/</id>
     <published>2015-11-20T17:24:48.000Z</published>
     <updated>2017-05-26T06:29:50.301Z</updated>
     
@@ -4419,16 +4419,16 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="计算机基础" scheme="http://xj8c.cc/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+      <category term="计算机基础" scheme="http://xj8c.cc/v2/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
-      <category term="进制转换" scheme="http://xj8c.cc/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/"/>
+      <category term="进制转换" scheme="http://xj8c.cc/v2/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/"/>
     
   </entry>
   
   <entry>
     <title>CEAC-office2010实操题练习评测系统</title>
-    <link href="http://xj8c.cc/2015/11/08/CEAC-office2010/"/>
-    <id>http://xj8c.cc/2015/11/08/CEAC-office2010/</id>
+    <link href="http://xj8c.cc/v2/2015/11/08/CEAC-office2010/"/>
+    <id>http://xj8c.cc/v2/2015/11/08/CEAC-office2010/</id>
     <published>2015-11-07T16:01:20.000Z</published>
     <updated>2017-05-26T06:29:50.245Z</updated>
     
@@ -4445,18 +4445,18 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="CEAC" scheme="http://xj8c.cc/tags/CEAC/"/>
+      <category term="CEAC" scheme="http://xj8c.cc/v2/tags/CEAC/"/>
     
-      <category term="office2010" scheme="http://xj8c.cc/tags/office2010/"/>
+      <category term="office2010" scheme="http://xj8c.cc/v2/tags/office2010/"/>
     
-      <category term="绿色软件" scheme="http://xj8c.cc/tags/%E7%BB%BF%E8%89%B2%E8%BD%AF%E4%BB%B6/"/>
+      <category term="绿色软件" scheme="http://xj8c.cc/v2/tags/%E7%BB%BF%E8%89%B2%E8%BD%AF%E4%BB%B6/"/>
     
   </entry>
   
   <entry>
     <title>测试用例设计进阶(下)</title>
-    <link href="http://xj8c.cc/2015/10/28/test-case-design-advanced(bottom)/"/>
-    <id>http://xj8c.cc/2015/10/28/test-case-design-advanced(bottom)/</id>
+    <link href="http://xj8c.cc/v2/2015/10/28/test-case-design-advanced(bottom)/"/>
+    <id>http://xj8c.cc/v2/2015/10/28/test-case-design-advanced(bottom)/</id>
     <published>2015-10-28T13:58:11.000Z</published>
     <updated>2017-05-26T06:29:50.551Z</updated>
     
@@ -4485,14 +4485,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="软件测试" scheme="http://xj8c.cc/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/"/>
+      <category term="软件测试" scheme="http://xj8c.cc/v2/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>测试用例设计进阶（上）</title>
-    <link href="http://xj8c.cc/2015/10/28/test-case-design-in-order(upper)/"/>
-    <id>http://xj8c.cc/2015/10/28/test-case-design-in-order(upper)/</id>
+    <link href="http://xj8c.cc/v2/2015/10/28/test-case-design-in-order(upper)/"/>
+    <id>http://xj8c.cc/v2/2015/10/28/test-case-design-in-order(upper)/</id>
     <published>2015-10-28T13:43:03.000Z</published>
     <updated>2017-05-26T06:29:50.818Z</updated>
     
@@ -4540,14 +4540,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="软件测试" scheme="http://xj8c.cc/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/"/>
+      <category term="软件测试" scheme="http://xj8c.cc/v2/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>边界值分析法相关概念 — 边界点相关概念</title>
-    <link href="http://xj8c.cc/2015/10/25/boundary-value/"/>
-    <id>http://xj8c.cc/2015/10/25/boundary-value/</id>
+    <link href="http://xj8c.cc/v2/2015/10/25/boundary-value/"/>
+    <id>http://xj8c.cc/v2/2015/10/25/boundary-value/</id>
     <published>2015-10-25T05:21:45.000Z</published>
     <updated>2017-05-26T06:29:50.154Z</updated>
     
@@ -4571,14 +4571,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="软件测试" scheme="http://xj8c.cc/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/"/>
+      <category term="软件测试" scheme="http://xj8c.cc/v2/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>软件测试基础知识</title>
-    <link href="http://xj8c.cc/2015/10/24/basic-knowledge-of-software-testing/"/>
-    <id>http://xj8c.cc/2015/10/24/basic-knowledge-of-software-testing/</id>
+    <link href="http://xj8c.cc/v2/2015/10/24/basic-knowledge-of-software-testing/"/>
+    <id>http://xj8c.cc/v2/2015/10/24/basic-knowledge-of-software-testing/</id>
     <published>2015-10-24T14:18:50.000Z</published>
     <updated>2017-05-26T06:29:50.348Z</updated>
     
@@ -4605,14 +4605,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="软件测试" scheme="http://xj8c.cc/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/"/>
+      <category term="软件测试" scheme="http://xj8c.cc/v2/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>软件测试概述</title>
-    <link href="http://xj8c.cc/2015/10/24/overview-of-software-testing/"/>
-    <id>http://xj8c.cc/2015/10/24/overview-of-software-testing/</id>
+    <link href="http://xj8c.cc/v2/2015/10/24/overview-of-software-testing/"/>
+    <id>http://xj8c.cc/v2/2015/10/24/overview-of-software-testing/</id>
     <published>2015-10-24T14:06:08.000Z</published>
     <updated>2017-05-26T06:29:50.493Z</updated>
     
@@ -4638,14 +4638,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="软件测试" scheme="http://xj8c.cc/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/"/>
+      <category term="软件测试" scheme="http://xj8c.cc/v2/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>XML学习笔记(一)</title>
-    <link href="http://xj8c.cc/2015/10/20/xml-note-1/"/>
-    <id>http://xj8c.cc/2015/10/20/xml-note-1/</id>
+    <link href="http://xj8c.cc/v2/2015/10/20/xml-note-1/"/>
+    <id>http://xj8c.cc/v2/2015/10/20/xml-note-1/</id>
     <published>2015-10-20T14:52:19.000Z</published>
     <updated>2017-05-26T06:29:50.786Z</updated>
     
@@ -4664,14 +4664,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="xml" scheme="http://xj8c.cc/tags/xml/"/>
+      <category term="xml" scheme="http://xj8c.cc/v2/tags/xml/"/>
     
   </entry>
   
   <entry>
     <title>当最深沉的筹谋换来最清明的理想</title>
-    <link href="http://xj8c.cc/2015/10/12/when-the-deepest-counsel-comes-to-the-most-clear-ideal/"/>
-    <id>http://xj8c.cc/2015/10/12/when-the-deepest-counsel-comes-to-the-most-clear-ideal/</id>
+    <link href="http://xj8c.cc/v2/2015/10/12/when-the-deepest-counsel-comes-to-the-most-clear-ideal/"/>
+    <id>http://xj8c.cc/v2/2015/10/12/when-the-deepest-counsel-comes-to-the-most-clear-ideal/</id>
     <published>2015-10-12T04:51:41.000Z</published>
     <updated>2017-05-26T06:29:50.687Z</updated>
     
@@ -4685,14 +4685,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="琅琊榜" scheme="http://xj8c.cc/tags/%E7%90%85%E7%90%8A%E6%A6%9C/"/>
+      <category term="琅琊榜" scheme="http://xj8c.cc/v2/tags/%E7%90%85%E7%90%8A%E6%A6%9C/"/>
     
   </entry>
   
   <entry>
     <title>10个最佳 javascript 开发实践</title>
-    <link href="http://xj8c.cc/2015/09/01/10-best-javascript-development-practices/"/>
-    <id>http://xj8c.cc/2015/09/01/10-best-javascript-development-practices/</id>
+    <link href="http://xj8c.cc/v2/2015/09/01/10-best-javascript-development-practices/"/>
+    <id>http://xj8c.cc/v2/2015/09/01/10-best-javascript-development-practices/</id>
     <published>2015-09-01T11:46:01.000Z</published>
     <updated>2017-05-26T06:29:49.940Z</updated>
     
@@ -4715,14 +4715,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="JavaScript" scheme="http://xj8c.cc/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://xj8c.cc/v2/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>史上最难回答的30个问题，没有一人都能答对！</title>
-    <link href="http://xj8c.cc/2015/08/07/the-30-most-difficult-questions-to-answer-in-history/"/>
-    <id>http://xj8c.cc/2015/08/07/the-30-most-difficult-questions-to-answer-in-history/</id>
+    <link href="http://xj8c.cc/v2/2015/08/07/the-30-most-difficult-questions-to-answer-in-history/"/>
+    <id>http://xj8c.cc/v2/2015/08/07/the-30-most-difficult-questions-to-answer-in-history/</id>
     <published>2015-08-07T12:55:58.000Z</published>
     <updated>2017-05-26T06:29:50.551Z</updated>
     
@@ -4761,8 +4761,8 @@ const { navigate } = this.props.navigation;
   
   <entry>
     <title>Win10正式版微软官方原版ISO系统镜像下载大全</title>
-    <link href="http://xj8c.cc/2015/08/05/windows10-iso/"/>
-    <id>http://xj8c.cc/2015/08/05/windows10-iso/</id>
+    <link href="http://xj8c.cc/v2/2015/08/05/windows10-iso/"/>
+    <id>http://xj8c.cc/v2/2015/08/05/windows10-iso/</id>
     <published>2015-08-05T10:22:37.000Z</published>
     <updated>2017-05-26T06:29:50.724Z</updated>
     
@@ -4787,16 +4787,16 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="win10" scheme="http://xj8c.cc/tags/win10/"/>
+      <category term="win10" scheme="http://xj8c.cc/v2/tags/win10/"/>
     
-      <category term="原版系统" scheme="http://xj8c.cc/tags/%E5%8E%9F%E7%89%88%E7%B3%BB%E7%BB%9F/"/>
+      <category term="原版系统" scheme="http://xj8c.cc/v2/tags/%E5%8E%9F%E7%89%88%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>一本关于程序员的修真小说</title>
-    <link href="http://xj8c.cc/2015/08/02/the-work-of-a-programmer/"/>
-    <id>http://xj8c.cc/2015/08/02/the-work-of-a-programmer/</id>
+    <link href="http://xj8c.cc/v2/2015/08/02/the-work-of-a-programmer/"/>
+    <id>http://xj8c.cc/v2/2015/08/02/the-work-of-a-programmer/</id>
     <published>2015-08-02T02:14:15.000Z</published>
     <updated>2017-05-26T06:29:50.573Z</updated>
     
@@ -4814,16 +4814,16 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="小说" scheme="http://xj8c.cc/tags/%E5%B0%8F%E8%AF%B4/"/>
+      <category term="小说" scheme="http://xj8c.cc/v2/tags/%E5%B0%8F%E8%AF%B4/"/>
     
-      <category term="程序员" scheme="http://xj8c.cc/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/"/>
+      <category term="程序员" scheme="http://xj8c.cc/v2/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/"/>
     
   </entry>
   
   <entry>
     <title>Win10的十个亮点</title>
-    <link href="http://xj8c.cc/2015/08/02/Win10-ten-points/"/>
-    <id>http://xj8c.cc/2015/08/02/Win10-ten-points/</id>
+    <link href="http://xj8c.cc/v2/2015/08/02/Win10-ten-points/"/>
+    <id>http://xj8c.cc/v2/2015/08/02/Win10-ten-points/</id>
     <published>2015-08-02T01:45:08.000Z</published>
     <updated>2017-05-26T06:29:50.724Z</updated>
     
@@ -4884,16 +4884,16 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="win10" scheme="http://xj8c.cc/tags/win10/"/>
+      <category term="win10" scheme="http://xj8c.cc/v2/tags/win10/"/>
     
-      <category term="微软" scheme="http://xj8c.cc/tags/%E5%BE%AE%E8%BD%AF/"/>
+      <category term="微软" scheme="http://xj8c.cc/v2/tags/%E5%BE%AE%E8%BD%AF/"/>
     
   </entry>
   
   <entry>
     <title>一大波，知乎神回复在接近了！</title>
-    <link href="http://xj8c.cc/2015/08/01/Zhihu-god-reply/"/>
-    <id>http://xj8c.cc/2015/08/01/Zhihu-god-reply/</id>
+    <link href="http://xj8c.cc/v2/2015/08/01/Zhihu-god-reply/"/>
+    <id>http://xj8c.cc/v2/2015/08/01/Zhihu-god-reply/</id>
     <published>2015-08-01T13:26:56.000Z</published>
     <updated>2017-05-26T06:29:50.767Z</updated>
     
@@ -5113,14 +5113,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="知乎" scheme="http://xj8c.cc/tags/%E7%9F%A5%E4%B9%8E/"/>
+      <category term="知乎" scheme="http://xj8c.cc/v2/tags/%E7%9F%A5%E4%B9%8E/"/>
     
   </entry>
   
   <entry>
     <title>必须知道的 Visual Studio 快捷键</title>
-    <link href="http://xj8c.cc/2015/07/27/vs-shortcuts/"/>
-    <id>http://xj8c.cc/2015/07/27/vs-shortcuts/</id>
+    <link href="http://xj8c.cc/v2/2015/07/27/vs-shortcuts/"/>
+    <id>http://xj8c.cc/v2/2015/07/27/vs-shortcuts/</id>
     <published>2015-07-27T12:21:47.000Z</published>
     <updated>2017-05-26T06:29:50.633Z</updated>
     
@@ -5137,14 +5137,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="Visual Studio" scheme="http://xj8c.cc/tags/Visual-Studio/"/>
+      <category term="Visual Studio" scheme="http://xj8c.cc/v2/tags/Visual-Studio/"/>
     
   </entry>
   
   <entry>
     <title>Asp.net知识点总结(五)</title>
-    <link href="http://xj8c.cc/2015/07/16/asp.net-knowledge-point-summary-5/"/>
-    <id>http://xj8c.cc/2015/07/16/asp.net-knowledge-point-summary-5/</id>
+    <link href="http://xj8c.cc/v2/2015/07/16/asp.net-knowledge-point-summary-5/"/>
+    <id>http://xj8c.cc/v2/2015/07/16/asp.net-knowledge-point-summary-5/</id>
     <published>2015-07-16T11:47:48.000Z</published>
     <updated>2017-05-26T06:29:50.154Z</updated>
     
@@ -5189,16 +5189,16 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="ASP.NET" scheme="http://xj8c.cc/tags/ASP-NET/"/>
+      <category term="ASP.NET" scheme="http://xj8c.cc/v2/tags/ASP-NET/"/>
     
-      <category term="技术教程" scheme="http://xj8c.cc/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+      <category term="技术教程" scheme="http://xj8c.cc/v2/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>你必须知道的十个编程语言</title>
-    <link href="http://xj8c.cc/2015/07/13/ten-programming-languages/"/>
-    <id>http://xj8c.cc/2015/07/13/ten-programming-languages/</id>
+    <link href="http://xj8c.cc/v2/2015/07/13/ten-programming-languages/"/>
+    <id>http://xj8c.cc/v2/2015/07/13/ten-programming-languages/</id>
     <published>2015-07-13T13:44:57.000Z</published>
     <updated>2017-05-26T06:29:50.509Z</updated>
     
@@ -5214,14 +5214,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="编程" scheme="http://xj8c.cc/tags/%E7%BC%96%E7%A8%8B/"/>
+      <category term="编程" scheme="http://xj8c.cc/v2/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>Asp.net知识点总结(四)</title>
-    <link href="http://xj8c.cc/2015/07/11/asp.net-knowledge-point-summary-4/"/>
-    <id>http://xj8c.cc/2015/07/11/asp.net-knowledge-point-summary-4/</id>
+    <link href="http://xj8c.cc/v2/2015/07/11/asp.net-knowledge-point-summary-4/"/>
+    <id>http://xj8c.cc/v2/2015/07/11/asp.net-knowledge-point-summary-4/</id>
     <published>2015-07-11T14:32:58.000Z</published>
     <updated>2017-05-26T06:29:50.097Z</updated>
     
@@ -5251,16 +5251,16 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="ASP.NET" scheme="http://xj8c.cc/tags/ASP-NET/"/>
+      <category term="ASP.NET" scheme="http://xj8c.cc/v2/tags/ASP-NET/"/>
     
-      <category term="技术教程" scheme="http://xj8c.cc/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+      <category term="技术教程" scheme="http://xj8c.cc/v2/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>Asp.net知识点总结(三)</title>
-    <link href="http://xj8c.cc/2015/07/07/asp.net-knowledge-point-summary-3/"/>
-    <id>http://xj8c.cc/2015/07/07/asp.net-knowledge-point-summary-3/</id>
+    <link href="http://xj8c.cc/v2/2015/07/07/asp.net-knowledge-point-summary-3/"/>
+    <id>http://xj8c.cc/v2/2015/07/07/asp.net-knowledge-point-summary-3/</id>
     <published>2015-07-07T12:30:58.000Z</published>
     <updated>2017-05-26T06:29:50.164Z</updated>
     
@@ -5314,16 +5314,16 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="ASP.NET" scheme="http://xj8c.cc/tags/ASP-NET/"/>
+      <category term="ASP.NET" scheme="http://xj8c.cc/v2/tags/ASP-NET/"/>
     
-      <category term="技术教程" scheme="http://xj8c.cc/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+      <category term="技术教程" scheme="http://xj8c.cc/v2/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>什么是大数据，什么是红海、蓝海、互联网思维？什么是O2O？什么是众筹？</title>
-    <link href="http://xj8c.cc/2015/07/06/bigdata-internet-thinking-O2O-crowdfunding/"/>
-    <id>http://xj8c.cc/2015/07/06/bigdata-internet-thinking-O2O-crowdfunding/</id>
+    <link href="http://xj8c.cc/v2/2015/07/06/bigdata-internet-thinking-O2O-crowdfunding/"/>
+    <id>http://xj8c.cc/v2/2015/07/06/bigdata-internet-thinking-O2O-crowdfunding/</id>
     <published>2015-07-06T07:41:52.000Z</published>
     <updated>2017-05-26T06:29:50.154Z</updated>
     
@@ -5373,16 +5373,16 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="互联网" scheme="http://xj8c.cc/tags/%E4%BA%92%E8%81%94%E7%BD%91/"/>
+      <category term="互联网" scheme="http://xj8c.cc/v2/tags/%E4%BA%92%E8%81%94%E7%BD%91/"/>
     
-      <category term="大数据" scheme="http://xj8c.cc/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+      <category term="大数据" scheme="http://xj8c.cc/v2/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
   </entry>
   
   <entry>
     <title>Asp.net知识点总结(二)</title>
-    <link href="http://xj8c.cc/2015/07/04/asp.net-knowledge-point-summary-2/"/>
-    <id>http://xj8c.cc/2015/07/04/asp.net-knowledge-point-summary-2/</id>
+    <link href="http://xj8c.cc/v2/2015/07/04/asp.net-knowledge-point-summary-2/"/>
+    <id>http://xj8c.cc/v2/2015/07/04/asp.net-knowledge-point-summary-2/</id>
     <published>2015-07-04T13:02:22.000Z</published>
     <updated>2017-05-26T06:29:50.076Z</updated>
     
@@ -5404,16 +5404,16 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="ASP.NET" scheme="http://xj8c.cc/tags/ASP-NET/"/>
+      <category term="ASP.NET" scheme="http://xj8c.cc/v2/tags/ASP-NET/"/>
     
-      <category term="技术教程" scheme="http://xj8c.cc/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+      <category term="技术教程" scheme="http://xj8c.cc/v2/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>Asp.net知识点总结(一)</title>
-    <link href="http://xj8c.cc/2015/07/03/asp.net-knowledge-point-summary-1/"/>
-    <id>http://xj8c.cc/2015/07/03/asp.net-knowledge-point-summary-1/</id>
+    <link href="http://xj8c.cc/v2/2015/07/03/asp.net-knowledge-point-summary-1/"/>
+    <id>http://xj8c.cc/v2/2015/07/03/asp.net-knowledge-point-summary-1/</id>
     <published>2015-07-03T10:25:50.000Z</published>
     <updated>2017-05-26T06:29:50.012Z</updated>
     
@@ -5523,16 +5523,16 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="ASP.NET" scheme="http://xj8c.cc/tags/ASP-NET/"/>
+      <category term="ASP.NET" scheme="http://xj8c.cc/v2/tags/ASP-NET/"/>
     
-      <category term="技术教程" scheme="http://xj8c.cc/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+      <category term="技术教程" scheme="http://xj8c.cc/v2/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>Shopping Online</title>
-    <link href="http://xj8c.cc/2015/05/25/shopping-online/"/>
-    <id>http://xj8c.cc/2015/05/25/shopping-online/</id>
+    <link href="http://xj8c.cc/v2/2015/05/25/shopping-online/"/>
+    <id>http://xj8c.cc/v2/2015/05/25/shopping-online/</id>
     <published>2015-05-25T09:50:23.000Z</published>
     <updated>2017-05-26T06:29:50.493Z</updated>
     
@@ -5553,8 +5553,8 @@ const { navigate } = this.props.navigation;
   
   <entry>
     <title>sql数据库|SqlServer2008 R2_x86&amp;x64</title>
-    <link href="http://xj8c.cc/2015/05/04/SqlServer2008/"/>
-    <id>http://xj8c.cc/2015/05/04/SqlServer2008/</id>
+    <link href="http://xj8c.cc/v2/2015/05/04/SqlServer2008/"/>
+    <id>http://xj8c.cc/v2/2015/05/04/SqlServer2008/</id>
     <published>2015-05-04T13:13:08.000Z</published>
     <updated>2017-05-26T06:29:50.509Z</updated>
     
@@ -5574,18 +5574,18 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="绿色软件" scheme="http://xj8c.cc/tags/%E7%BB%BF%E8%89%B2%E8%BD%AF%E4%BB%B6/"/>
+      <category term="绿色软件" scheme="http://xj8c.cc/v2/tags/%E7%BB%BF%E8%89%B2%E8%BD%AF%E4%BB%B6/"/>
     
-      <category term="SqlServer" scheme="http://xj8c.cc/tags/SqlServer/"/>
+      <category term="SqlServer" scheme="http://xj8c.cc/v2/tags/SqlServer/"/>
     
-      <category term="数据库" scheme="http://xj8c.cc/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://xj8c.cc/v2/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>揭秘：中国手机号码为什么是11位数？</title>
-    <link href="http://xj8c.cc/2015/04/17/why-is-the-chinese-mobile-number-11/"/>
-    <id>http://xj8c.cc/2015/04/17/why-is-the-chinese-mobile-number-11/</id>
+    <link href="http://xj8c.cc/v2/2015/04/17/why-is-the-chinese-mobile-number-11/"/>
+    <id>http://xj8c.cc/v2/2015/04/17/why-is-the-chinese-mobile-number-11/</id>
     <published>2015-04-17T08:37:14.000Z</published>
     <updated>2017-05-26T06:29:50.633Z</updated>
     
@@ -5607,14 +5607,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="手机" scheme="http://xj8c.cc/tags/%E6%89%8B%E6%9C%BA/"/>
+      <category term="手机" scheme="http://xj8c.cc/v2/tags/%E6%89%8B%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>中国最有意境的33句诗文，欣赏下吧！</title>
-    <link href="http://xj8c.cc/2015/04/14/33-poems-of-the-most-artistic-conception-in-China/"/>
-    <id>http://xj8c.cc/2015/04/14/33-poems-of-the-most-artistic-conception-in-China/</id>
+    <link href="http://xj8c.cc/v2/2015/04/14/33-poems-of-the-most-artistic-conception-in-China/"/>
+    <id>http://xj8c.cc/v2/2015/04/14/33-poems-of-the-most-artistic-conception-in-China/</id>
     <published>2015-04-13T16:00:38.000Z</published>
     <updated>2017-05-26T06:29:49.940Z</updated>
     
@@ -5663,14 +5663,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="诗文" scheme="http://xj8c.cc/tags/%E8%AF%97%E6%96%87/"/>
+      <category term="诗文" scheme="http://xj8c.cc/v2/tags/%E8%AF%97%E6%96%87/"/>
     
   </entry>
   
   <entry>
     <title>Win7运行命令大全|开始-运行-命令总汇</title>
-    <link href="http://xj8c.cc/2015/04/05/win7-cmd/"/>
-    <id>http://xj8c.cc/2015/04/05/win7-cmd/</id>
+    <link href="http://xj8c.cc/v2/2015/04/05/win7-cmd/"/>
+    <id>http://xj8c.cc/v2/2015/04/05/win7-cmd/</id>
     <published>2015-04-05T13:29:05.000Z</published>
     <updated>2017-05-26T06:29:50.724Z</updated>
     
@@ -5837,16 +5837,16 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="win7" scheme="http://xj8c.cc/tags/win7/"/>
+      <category term="win7" scheme="http://xj8c.cc/v2/tags/win7/"/>
     
-      <category term="命令行" scheme="http://xj8c.cc/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+      <category term="命令行" scheme="http://xj8c.cc/v2/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
     
   </entry>
   
   <entry>
     <title>请不要做浮躁的IT人</title>
-    <link href="http://xj8c.cc/2015/03/31/please-don&#39;t-be-a-fickle-IT-man/"/>
-    <id>http://xj8c.cc/2015/03/31/please-don&#39;t-be-a-fickle-IT-man/</id>
+    <link href="http://xj8c.cc/v2/2015/03/31/please-don&#39;t-be-a-fickle-IT-man/"/>
+    <id>http://xj8c.cc/v2/2015/03/31/please-don&#39;t-be-a-fickle-IT-man/</id>
     <published>2015-03-30T16:00:00.000Z</published>
     <updated>2017-05-26T06:29:50.457Z</updated>
     
@@ -5889,14 +5889,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="IT" scheme="http://xj8c.cc/tags/IT/"/>
+      <category term="IT" scheme="http://xj8c.cc/v2/tags/IT/"/>
     
   </entry>
   
   <entry>
     <title>各大互联网公司命名的由来，值得你了解。</title>
-    <link href="http://xj8c.cc/2015/03/29/the-name-of-the-big-internet-companies/"/>
-    <id>http://xj8c.cc/2015/03/29/the-name-of-the-big-internet-companies/</id>
+    <link href="http://xj8c.cc/v2/2015/03/29/the-name-of-the-big-internet-companies/"/>
+    <id>http://xj8c.cc/v2/2015/03/29/the-name-of-the-big-internet-companies/</id>
     <published>2015-03-29T09:00:17.000Z</published>
     <updated>2017-05-26T06:29:50.599Z</updated>
     
@@ -5920,14 +5920,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="互联网" scheme="http://xj8c.cc/tags/%E4%BA%92%E8%81%94%E7%BD%91/"/>
+      <category term="互联网" scheme="http://xj8c.cc/v2/tags/%E4%BA%92%E8%81%94%E7%BD%91/"/>
     
   </entry>
   
   <entry>
     <title>30部黑客电影，你看过哪几部？</title>
-    <link href="http://xj8c.cc/2015/03/25/30-the-hacker-movie/"/>
-    <id>http://xj8c.cc/2015/03/25/30-the-hacker-movie/</id>
+    <link href="http://xj8c.cc/v2/2015/03/25/30-the-hacker-movie/"/>
+    <id>http://xj8c.cc/v2/2015/03/25/30-the-hacker-movie/</id>
     <published>2015-03-25T15:03:56.000Z</published>
     <updated>2017-05-26T06:29:49.941Z</updated>
     
@@ -5972,16 +5972,16 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="黑客" scheme="http://xj8c.cc/tags/%E9%BB%91%E5%AE%A2/"/>
+      <category term="黑客" scheme="http://xj8c.cc/v2/tags/%E9%BB%91%E5%AE%A2/"/>
     
-      <category term="电影" scheme="http://xj8c.cc/tags/%E7%94%B5%E5%BD%B1/"/>
+      <category term="电影" scheme="http://xj8c.cc/v2/tags/%E7%94%B5%E5%BD%B1/"/>
     
   </entry>
   
   <entry>
     <title>2015年 十大热门 IT 工作</title>
-    <link href="http://xj8c.cc/2015/03/22/top%2010%20IT%20jobs%20in%202015/"/>
-    <id>http://xj8c.cc/2015/03/22/top 10 IT jobs in 2015/</id>
+    <link href="http://xj8c.cc/v2/2015/03/22/top%2010%20IT%20jobs%20in%202015/"/>
+    <id>http://xj8c.cc/v2/2015/03/22/top 10 IT jobs in 2015/</id>
     <published>2015-03-22T08:30:28.000Z</published>
     <updated>2017-05-26T06:29:50.786Z</updated>
     
@@ -6039,16 +6039,16 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="互联网" scheme="http://xj8c.cc/tags/%E4%BA%92%E8%81%94%E7%BD%91/"/>
+      <category term="互联网" scheme="http://xj8c.cc/v2/tags/%E4%BA%92%E8%81%94%E7%BD%91/"/>
     
-      <category term="IT" scheme="http://xj8c.cc/tags/IT/"/>
+      <category term="IT" scheme="http://xj8c.cc/v2/tags/IT/"/>
     
   </entry>
   
   <entry>
     <title>A year&#39;s plan starts with spring ！</title>
-    <link href="http://xj8c.cc/2015/03/10/a-years-plan-starts-with-spring/"/>
-    <id>http://xj8c.cc/2015/03/10/a-years-plan-starts-with-spring/</id>
+    <link href="http://xj8c.cc/v2/2015/03/10/a-years-plan-starts-with-spring/"/>
+    <id>http://xj8c.cc/v2/2015/03/10/a-years-plan-starts-with-spring/</id>
     <published>2015-03-10T09:30:33.000Z</published>
     <updated>2017-05-26T06:29:50.012Z</updated>
     
@@ -6068,14 +6068,14 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="春天" scheme="http://xj8c.cc/tags/%E6%98%A5%E5%A4%A9/"/>
+      <category term="春天" scheme="http://xj8c.cc/v2/tags/%E6%98%A5%E5%A4%A9/"/>
     
   </entry>
   
   <entry>
     <title>珍惜每一天</title>
-    <link href="http://xj8c.cc/2015/02/28/cherish-every-day/"/>
-    <id>http://xj8c.cc/2015/02/28/cherish-every-day/</id>
+    <link href="http://xj8c.cc/v2/2015/02/28/cherish-every-day/"/>
+    <id>http://xj8c.cc/v2/2015/02/28/cherish-every-day/</id>
     <published>2015-02-28T14:00:45.000Z</published>
     <updated>2017-05-26T06:29:50.243Z</updated>
     
@@ -6125,8 +6125,8 @@ const { navigate } = this.props.navigation;
   
   <entry>
     <title>Adobe Photoshop 绿色安装版</title>
-    <link href="http://xj8c.cc/2015/02/28/adobe-photoshop/"/>
-    <id>http://xj8c.cc/2015/02/28/adobe-photoshop/</id>
+    <link href="http://xj8c.cc/v2/2015/02/28/adobe-photoshop/"/>
+    <id>http://xj8c.cc/v2/2015/02/28/adobe-photoshop/</id>
     <published>2015-02-28T04:22:00.000Z</published>
     <updated>2017-05-26T06:29:50.012Z</updated>
     
@@ -6145,16 +6145,16 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="绿色软件" scheme="http://xj8c.cc/tags/%E7%BB%BF%E8%89%B2%E8%BD%AF%E4%BB%B6/"/>
+      <category term="绿色软件" scheme="http://xj8c.cc/v2/tags/%E7%BB%BF%E8%89%B2%E8%BD%AF%E4%BB%B6/"/>
     
-      <category term="Photoshop" scheme="http://xj8c.cc/tags/Photoshop/"/>
+      <category term="Photoshop" scheme="http://xj8c.cc/v2/tags/Photoshop/"/>
     
   </entry>
   
   <entry>
     <title>全国计算机一级Office2010+win7版（未来教育）考试练习软件</title>
-    <link href="http://xj8c.cc/2015/02/20/national-computer-level-office2010/"/>
-    <id>http://xj8c.cc/2015/02/20/national-computer-level-office2010/</id>
+    <link href="http://xj8c.cc/v2/2015/02/20/national-computer-level-office2010/"/>
+    <id>http://xj8c.cc/v2/2015/02/20/national-computer-level-office2010/</id>
     <published>2015-02-20T06:48:05.000Z</published>
     <updated>2017-05-26T06:29:50.411Z</updated>
     
@@ -6186,16 +6186,16 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="office2010" scheme="http://xj8c.cc/tags/office2010/"/>
+      <category term="office2010" scheme="http://xj8c.cc/v2/tags/office2010/"/>
     
-      <category term="计算机一级" scheme="http://xj8c.cc/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%80%E7%BA%A7/"/>
+      <category term="计算机一级" scheme="http://xj8c.cc/v2/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%80%E7%BA%A7/"/>
     
   </entry>
   
   <entry>
     <title>Win7电脑常用快捷键大全有哪些?</title>
-    <link href="http://xj8c.cc/2015/02/17/win7-shortcuts/"/>
-    <id>http://xj8c.cc/2015/02/17/win7-shortcuts/</id>
+    <link href="http://xj8c.cc/v2/2015/02/17/win7-shortcuts/"/>
+    <id>http://xj8c.cc/v2/2015/02/17/win7-shortcuts/</id>
     <published>2015-02-17T07:29:28.000Z</published>
     <updated>2017-07-18T02:29:46.661Z</updated>
     
@@ -6277,16 +6277,16 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="win7" scheme="http://xj8c.cc/tags/win7/"/>
+      <category term="win7" scheme="http://xj8c.cc/v2/tags/win7/"/>
     
-      <category term="快捷键" scheme="http://xj8c.cc/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+      <category term="快捷键" scheme="http://xj8c.cc/v2/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     
   </entry>
   
   <entry>
     <title>Microsoft office 2010</title>
-    <link href="http://xj8c.cc/2015/02/15/microsoft-office-2010/"/>
-    <id>http://xj8c.cc/2015/02/15/microsoft-office-2010/</id>
+    <link href="http://xj8c.cc/v2/2015/02/15/microsoft-office-2010/"/>
+    <id>http://xj8c.cc/v2/2015/02/15/microsoft-office-2010/</id>
     <published>2015-02-15T08:08:30.000Z</published>
     <updated>2017-05-26T06:29:50.389Z</updated>
     
@@ -6308,9 +6308,9 @@ const { navigate } = this.props.navigation;
     </summary>
     
     
-      <category term="office2010" scheme="http://xj8c.cc/tags/office2010/"/>
+      <category term="office2010" scheme="http://xj8c.cc/v2/tags/office2010/"/>
     
-      <category term="绿色软件" scheme="http://xj8c.cc/tags/%E7%BB%BF%E8%89%B2%E8%BD%AF%E4%BB%B6/"/>
+      <category term="绿色软件" scheme="http://xj8c.cc/v2/tags/%E7%BB%BF%E8%89%B2%E8%BD%AF%E4%BB%B6/"/>
     
   </entry>
   
