@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://xj8c.cc/2017/12/06/python-tutorial/</loc>
+    <lastmod>2017-12-06T02:56:25.782Z</lastmod>
+    <data>
+        <display>
+        <title>Python入门教程</title>
+        <pubTime>2017-12-06T02:49:27.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>入门教程</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
     <loc>http://xj8c.cc/2017/10/12/Regex-cheat-sheet/</loc>
     <lastmod>2017-10-13T01:51:16.815Z</lastmod>
     <data>
@@ -136,7 +156,6 @@
     </url>
 
     
-    
   <url>
     <loc>http://xj8c.cc/2017/09/29/Regex-2/</loc>
     <lastmod>2017-09-29T07:58:57.839Z</lastmod>
@@ -183,11 +202,11 @@
         <title>今日头条全站新闻文章数据爬取</title>
         <pubTime>2017-09-27T06:23:48.000Z</pubTime>
         
-        <tag>HtmlAgilityPack</tag>
+        <tag>今日头条</tag>
          
         <tag>爬虫</tag>
          
-        <tag>今日头条</tag>
+        <tag>HtmlAgilityPack</tag>
          
         <tag>Newtonsoft.Json</tag>
          
@@ -206,9 +225,9 @@
         <title>HtmlAgilityPack爬取美女图片、每日一文文章、小说</title>
         <pubTime>2017-09-07T01:23:53.000Z</pubTime>
         
-        <tag>HtmlAgilityPack</tag>
-         
         <tag>爬虫</tag>
+         
+        <tag>HtmlAgilityPack</tag>
          
          
            
@@ -530,23 +549,6 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/10/20/xml-note-1/</loc>
-    <lastmod>2017-05-26T06:29:50.786Z</lastmod>
-    <data>
-        <display>
-        <title>XML学习笔记(一)</title>
-        <pubTime>2015-10-20T14:52:19.000Z</pubTime>
-        
-        <tag>xml</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://xj8c.cc/2015/03/22/top%2010%20IT%20jobs%20in%202015/</loc>
     <lastmod>2017-05-26T06:29:50.786Z</lastmod>
     <data>
@@ -557,6 +559,23 @@
         <tag>互联网</tag>
          
         <tag>IT</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xj8c.cc/2015/10/20/xml-note-1/</loc>
+    <lastmod>2017-05-26T06:29:50.786Z</lastmod>
+    <data>
+        <display>
+        <title>XML学习笔记(一)</title>
+        <pubTime>2015-10-20T14:52:19.000Z</pubTime>
+        
+        <tag>xml</tag>
          
          
            
@@ -583,25 +602,6 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/04/05/win7-cmd/</loc>
-    <lastmod>2017-05-26T06:29:50.724Z</lastmod>
-    <data>
-        <display>
-        <title>Win7运行命令大全|开始-运行-命令总汇</title>
-        <pubTime>2015-04-05T13:29:05.000Z</pubTime>
-        
-        <tag>win7</tag>
-         
-        <tag>命令行</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://xj8c.cc/2015/08/05/windows10-iso/</loc>
     <lastmod>2017-05-26T06:29:50.724Z</lastmod>
     <data>
@@ -612,6 +612,25 @@
         <tag>win10</tag>
          
         <tag>原版系统</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xj8c.cc/2015/04/05/win7-cmd/</loc>
+    <lastmod>2017-05-26T06:29:50.724Z</lastmod>
+    <data>
+        <display>
+        <title>Win7运行命令大全|开始-运行-命令总汇</title>
+        <pubTime>2015-04-05T13:29:05.000Z</pubTime>
+        
+        <tag>win7</tag>
+         
+        <tag>命令行</tag>
          
          
            
@@ -746,6 +765,23 @@
 
     
   <url>
+    <loc>http://xj8c.cc/2015/12/10/the-students-with-poor-grades-reversed/</loc>
+    <lastmod>2017-05-26T06:29:50.551Z</lastmod>
+    <data>
+        <display>
+        <title>一个学渣的逆袭</title>
+        <pubTime>2015-12-10T08:05:19.000Z</pubTime>
+        
+        <tag>逆袭</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xj8c.cc/2015/08/07/the-30-most-difficult-questions-to-answer-in-history/</loc>
     <lastmod>2017-05-26T06:29:50.551Z</lastmod>
     <data>
@@ -769,23 +805,6 @@
         <pubTime>2015-10-28T13:58:11.000Z</pubTime>
         
         <tag>软件测试</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xj8c.cc/2015/12/10/the-students-with-poor-grades-reversed/</loc>
-    <lastmod>2017-05-26T06:29:50.551Z</lastmod>
-    <data>
-        <display>
-        <title>一个学渣的逆袭</title>
-        <pubTime>2015-12-10T08:05:19.000Z</pubTime>
-        
-        <tag>逆袭</tag>
          
          
            
@@ -833,6 +852,21 @@
 
     
   <url>
+    <loc>http://xj8c.cc/2015/05/25/shopping-online/</loc>
+    <lastmod>2017-05-26T06:29:50.493Z</lastmod>
+    <data>
+        <display>
+        <title>Shopping Online</title>
+        <pubTime>2015-05-25T09:50:23.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xj8c.cc/2015/10/24/overview-of-software-testing/</loc>
     <lastmod>2017-05-26T06:29:50.493Z</lastmod>
     <data>
@@ -842,21 +876,6 @@
         
         <tag>软件测试</tag>
          
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xj8c.cc/2015/05/25/shopping-online/</loc>
-    <lastmod>2017-05-26T06:29:50.493Z</lastmod>
-    <data>
-        <display>
-        <title>Shopping Online</title>
-        <pubTime>2015-05-25T09:50:23.000Z</pubTime>
-        
          
            
         </display>
@@ -925,9 +944,9 @@
         <title>Microsoft office 2010</title>
         <pubTime>2015-02-15T08:08:30.000Z</pubTime>
         
-        <tag>绿色软件</tag>
-         
         <tag>office2010</tag>
+         
+        <tag>绿色软件</tag>
          
          
            
@@ -1016,11 +1035,11 @@
         <title>CEAC-office2010实操题练习评测系统</title>
         <pubTime>2015-11-07T16:01:20.000Z</pubTime>
         
-        <tag>绿色软件</tag>
+        <tag>CEAC</tag>
          
         <tag>office2010</tag>
          
-        <tag>CEAC</tag>
+        <tag>绿色软件</tag>
          
          
            
@@ -1064,16 +1083,16 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/07/16/asp.net-knowledge-point-summary-5/</loc>
+    <loc>http://xj8c.cc/2015/07/06/bigdata-internet-thinking-O2O-crowdfunding/</loc>
     <lastmod>2017-05-26T06:29:50.154Z</lastmod>
     <data>
         <display>
-        <title>Asp.net知识点总结(五)</title>
-        <pubTime>2015-07-16T11:47:48.000Z</pubTime>
+        <title>什么是大数据，什么是红海、蓝海、互联网思维？什么是O2O？什么是众筹？</title>
+        <pubTime>2015-07-06T07:41:52.000Z</pubTime>
         
-        <tag>ASP.NET</tag>
+        <tag>互联网</tag>
          
-        <tag>技术教程</tag>
+        <tag>大数据</tag>
          
          
            
@@ -1100,16 +1119,16 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/07/06/bigdata-internet-thinking-O2O-crowdfunding/</loc>
+    <loc>http://xj8c.cc/2015/07/16/asp.net-knowledge-point-summary-5/</loc>
     <lastmod>2017-05-26T06:29:50.154Z</lastmod>
     <data>
         <display>
-        <title>什么是大数据，什么是红海、蓝海、互联网思维？什么是O2O？什么是众筹？</title>
-        <pubTime>2015-07-06T07:41:52.000Z</pubTime>
+        <title>Asp.net知识点总结(五)</title>
+        <pubTime>2015-07-16T11:47:48.000Z</pubTime>
         
-        <tag>互联网</tag>
+        <tag>ASP.NET</tag>
          
-        <tag>大数据</tag>
+        <tag>技术教程</tag>
          
          
            
@@ -1157,25 +1176,6 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/02/28/adobe-photoshop/</loc>
-    <lastmod>2017-05-26T06:29:50.012Z</lastmod>
-    <data>
-        <display>
-        <title>Adobe Photoshop 绿色安装版</title>
-        <pubTime>2015-02-28T04:22:00.000Z</pubTime>
-        
-        <tag>Photoshop</tag>
-         
-        <tag>绿色软件</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://xj8c.cc/2016/04/16/asp.net-knowledge-point-interview/</loc>
     <lastmod>2017-05-26T06:29:50.012Z</lastmod>
     <data>
@@ -1205,6 +1205,25 @@
         <tag>ASP.NET</tag>
          
         <tag>技术教程</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xj8c.cc/2015/02/28/adobe-photoshop/</loc>
+    <lastmod>2017-05-26T06:29:50.012Z</lastmod>
+    <data>
+        <display>
+        <title>Adobe Photoshop 绿色安装版</title>
+        <pubTime>2015-02-28T04:22:00.000Z</pubTime>
+        
+        <tag>绿色软件</tag>
+         
+        <tag>Photoshop</tag>
          
          
            
