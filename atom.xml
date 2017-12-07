@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xj8c.cc/"/>
-  <updated>2017-12-06T02:56:25.782Z</updated>
+  <updated>2017-12-07T03:14:44.145Z</updated>
   <id>http://xj8c.cc/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux 命令行一览</title>
+    <link href="http://xj8c.cc/2017/12/07/linux-cmd-list/"/>
+    <id>http://xj8c.cc/2017/12/07/linux-cmd-list/</id>
+    <published>2017-12-07T02:28:18.000Z</published>
+    <updated>2017-12-07T03:14:44.145Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> date  显示系统当前时间和日期</div><div class="line"><span class="meta"></span></div><div class="line">$ cal 显示当前月份的日历</div><div class="line"><span class="meta"></span></div><div class="line">$ df  查看磁盘剩余空间的数量</div><div class="line"><span class="meta"></span></div><div class="line">$ free  显示空闲内存的数量</div><div class="line"><span class="meta"></span></div><div class="line">$ exit  结束终端会话</div><div class="line"></div><div class="line">&lt;!--more--&gt;</div><div class="line"><span class="meta"></span></div><div class="line">$ pwd 打印出当前工作目录名</div><div class="line"><span class="meta"></span></div><div class="line">$ cd  更改目录</div><div class="line"><span class="meta"></span></div><div class="line">$ ls  列出目录内容</div><div class="line"><span class="meta"></span></div><div class="line">$ file  确定文件类型</div><div class="line"><span class="meta"></span></div><div class="line">$ less  浏览文件内容</div><div class="line"><span class="meta"></span></div><div class="line">$ cp  复制文件和目录</div><div class="line"><span class="meta"></span></div><div class="line">$ mv  移动/重命名文件和目录</div><div class="line"><span class="meta"></span></div><div class="line">$ mkdir 创建目录</div><div class="line"><span class="meta"></span></div><div class="line">$ rm  删除文件和目录</div><div class="line"><span class="meta"></span></div><div class="line">$ ln  创建硬链接和符号链接</div><div class="line"><span class="meta"></span></div><div class="line">$ type  说明怎样解释一个命令名</div><div class="line"><span class="meta"></span></div><div class="line">$ which 显示会执行哪个可执行程序</div><div class="line"><span class="meta"></span></div><div class="line">$ man 显示命令手册页</div><div class="line"><span class="meta"></span></div><div class="line">$ apropos 显示一系列适合的命令</div><div class="line"><span class="meta"></span></div><div class="line">$ info  显示命令 info</div><div class="line"><span class="meta"></span></div><div class="line">$ whatis  显示一个命令的简洁描述</div><div class="line"><span class="meta"></span></div><div class="line">$ alias 创建命令别名</div><div class="line"><span class="meta"></span></div><div class="line">$ unalias 删除命令别名</div><div class="line"><span class="meta"></span></div><div class="line">$ cat 连接文件</div><div class="line"><span class="meta"></span></div><div class="line">$ sort  排序文本行</div><div class="line"><span class="meta"></span></div><div class="line">$ uniq  报道或省略重复行</div><div class="line"><span class="meta"></span></div><div class="line">$ grep  打印匹配行</div><div class="line"><span class="meta"></span></div><div class="line">$ wc  打印文件中换行符，字，和字节个数</div><div class="line"><span class="meta"></span></div><div class="line">$ head  输出文件第一部分</div><div class="line"><span class="meta"></span></div><div class="line">$ tail  输出文件最后一部分</div><div class="line"><span class="meta"></span></div><div class="line">$ echo  显示一行文本</div><div class="line"><span class="meta"></span></div><div class="line">$ clear 清空屏幕</div><div class="line"><span class="meta"></span></div><div class="line">$ history 显示历史列表内容</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/di
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://xj8c.cc/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Python入门教程</title>
@@ -2286,11 +2306,11 @@
     </summary>
     
     
-      <category term="今日头条" scheme="http://xj8c.cc/tags/%E4%BB%8A%E6%97%A5%E5%A4%B4%E6%9D%A1/"/>
+      <category term="HtmlAgilityPack" scheme="http://xj8c.cc/tags/HtmlAgilityPack/"/>
     
       <category term="爬虫" scheme="http://xj8c.cc/tags/%E7%88%AC%E8%99%AB/"/>
     
-      <category term="HtmlAgilityPack" scheme="http://xj8c.cc/tags/HtmlAgilityPack/"/>
+      <category term="今日头条" scheme="http://xj8c.cc/tags/%E4%BB%8A%E6%97%A5%E5%A4%B4%E6%9D%A1/"/>
     
       <category term="Newtonsoft.Json" scheme="http://xj8c.cc/tags/Newtonsoft-Json/"/>
     
@@ -2319,9 +2339,9 @@
     </summary>
     
     
-      <category term="爬虫" scheme="http://xj8c.cc/tags/%E7%88%AC%E8%99%AB/"/>
-    
       <category term="HtmlAgilityPack" scheme="http://xj8c.cc/tags/HtmlAgilityPack/"/>
+    
+      <category term="爬虫" scheme="http://xj8c.cc/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
