@@ -5,7 +5,7 @@
   <link href="/v2/atom.xml" rel="self"/>
   
   <link href="http://xj8c.cc/v2/"/>
-  <updated>2017-12-07T03:14:44.145Z</updated>
+  <updated>2018-01-02T13:02:10.227Z</updated>
   <id>http://xj8c.cc/v2/</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2017年终总结</title>
+    <link href="http://xj8c.cc/v2/2018/01/02/2017-year-end-summary/"/>
+    <id>http://xj8c.cc/v2/2018/01/02/2017-year-end-summary/</id>
+    <published>2018-01-02T13:01:11.000Z</published>
+    <updated>2018-01-02T13:02:10.227Z</updated>
+    
+    <content type="html"><![CDATA[<p>眼看17年就要过去了，还是动动手指向自己汇报汇报今年的流水账吧！</p>
+<p>2017年2月10日我辞掉了第一家公司的实习工作，在武汉陪着女朋友嗨了一周之后独自一人踏上了前往魔都上海的旅途。至此，魔都漂泊的日子正式开始了。</p>
+<p>在经历了几天的挤地铁，投简历和一系列面试之后，于2017年2月22日正式拿到上海盖世汽车网络技术有限公司的offer。</p>
+<p>接下来便是找房子、租房子、熟悉环境，五天之后正式入职。</p>
+<p>4月份请假回校答辩，6月底再次回校，大学生涯结束了，正式毕业拿到毕业证，顺便还正式成为了一名中华人民共和国党员。</p>
+<p>2017年7月正式签订劳动合同，转正，实习期结束。</p>
+<p>一晃一年过去了，这一年我过的很充实，虽然很辛苦但是乐在其中。</p>
+<p>作为一名程序员，最开心的莫过于技术的提升。这一年的工作中，接触了许多新技术，我也不断学习着进步着。</p>
+<p>刚从学校走出来的我，主要做web开发，其它的都只是有所了解浅尝辄止，从来没有真正的去做过项目，借着公司的项目，现在会了微信小程序开发、Native App开发。</p>
+<p>在公司主要用.NET开发网站，写写脚本，小工具，爬虫等等。慢慢接触了ReactNative、APICloud、WebApi、WebService、Asp.Net MVC、Asp.Net Core、Linux、Nginx、微信小程序，并且能够上手简单使用，同时做了几个网站，小程序和App 并且全部上线使用中。</p>
+<p>新的一年，给自己先定一个不能达到的小目标，比方说我先挣它一个亿。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;眼看17年就要过去了，还是动动手指向自己汇报汇报今年的流水账吧！&lt;/p&gt;
+&lt;p&gt;2017年2月10日我辞掉了第一家公司的实习工作，在武汉陪着女朋友嗨了一周之后独自一人踏上了前往魔都上海的旅途。至此，魔都漂泊的日子正式开始了。&lt;/p&gt;
+&lt;p&gt;在经历了几天的挤地铁，投简历和一系
+    
+    </summary>
+    
+    
+      <category term="年终总结" scheme="http://xj8c.cc/v2/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux 命令行一览</title>
