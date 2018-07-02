@@ -4,8 +4,48 @@
 
     
   <url>
+    <loc>http://xj8c.cc/2018/01/02/2017-year-end-summary/</loc>
+    <lastmod>2018-07-02T12:47:03.578Z</lastmod>
+    <data>
+        <display>
+        <title>2017年终总结</title>
+        <pubTime>2018-01-02T13:01:11.000Z</pubTime>
+        
+        <tag>年终总结</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xj8c.cc/2018/07/02/asp.net-core-introduce/</loc>
+    <lastmod>2018-07-02T12:46:51.426Z</lastmod>
+    <data>
+        <display>
+        <title>ASP.NET Core 简单介绍</title>
+        <pubTime>2018-07-02T08:00:00.000Z</pubTime>
+        
+        <tag>.NET</tag>
+         
+        <tag>.ASP.NET</tag>
+         
+        <tag>.NET Core</tag>
+         
+        <tag>.ASP.NET Core</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xj8c.cc/2018/07/02/asp.net-core-getting-started/</loc>
-    <lastmod>2018-07-02T12:24:36.575Z</lastmod>
+    <lastmod>2018-07-02T12:46:39.535Z</lastmod>
     <data>
         <display>
         <title>ASP.NET Core 入门</title>
@@ -28,7 +68,7 @@
     
   <url>
     <loc>http://xj8c.cc/2018/07/02/dotnet-core-introduce/</loc>
-    <lastmod>2018-07-02T10:07:45.516Z</lastmod>
+    <lastmod>2018-07-02T12:46:19.124Z</lastmod>
     <data>
         <display>
         <title>.NET Core 简单介绍</title>
@@ -41,46 +81,6 @@
         <tag>.NET Core</tag>
          
         <tag>.ASP.NET Core</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xj8c.cc/2018/07/02/asp.net-core-introduce/</loc>
-    <lastmod>2018-07-02T10:04:23.689Z</lastmod>
-    <data>
-        <display>
-        <title>ASP.NET Core 简单介绍</title>
-        <pubTime>2018-07-02T08:00:00.000Z</pubTime>
-        
-        <tag>.NET</tag>
-         
-        <tag>.ASP.NET</tag>
-         
-        <tag>.NET Core</tag>
-         
-        <tag>.ASP.NET Core</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xj8c.cc/2018/01/02/2017-year-end-summary/</loc>
-    <lastmod>2018-01-02T13:02:10.227Z</lastmod>
-    <data>
-        <display>
-        <title>2017年终总结</title>
-        <pubTime>2018-01-02T13:01:11.000Z</pubTime>
-        
-        <tag>年终总结</tag>
          
          
            
@@ -779,23 +779,6 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/04/17/why-is-the-chinese-mobile-number-11/</loc>
-    <lastmod>2017-05-26T06:29:50.633Z</lastmod>
-    <data>
-        <display>
-        <title>揭秘：中国手机号码为什么是11位数？</title>
-        <pubTime>2015-04-17T08:37:14.000Z</pubTime>
-        
-        <tag>手机</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://xj8c.cc/2016/04/08/what-is-a-three-tier-architecture/</loc>
     <lastmod>2017-05-26T06:29:50.633Z</lastmod>
     <data>
@@ -823,6 +806,23 @@
         <pubTime>2015-07-27T12:21:47.000Z</pubTime>
         
         <tag>Visual Studio</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xj8c.cc/2015/04/17/why-is-the-chinese-mobile-number-11/</loc>
+    <lastmod>2017-05-26T06:29:50.633Z</lastmod>
+    <data>
+        <display>
+        <title>揭秘：中国手机号码为什么是11位数？</title>
+        <pubTime>2015-04-17T08:37:14.000Z</pubTime>
+        
+        <tag>手机</tag>
          
          
            
@@ -868,21 +868,6 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/08/07/the-30-most-difficult-questions-to-answer-in-history/</loc>
-    <lastmod>2017-05-26T06:29:50.551Z</lastmod>
-    <data>
-        <display>
-        <title>史上最难回答的30个问题，没有一人都能答对！</title>
-        <pubTime>2015-08-07T12:55:58.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://xj8c.cc/2015/12/10/the-students-with-poor-grades-reversed/</loc>
     <lastmod>2017-05-26T06:29:50.551Z</lastmod>
     <data>
@@ -917,15 +902,13 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/07/13/ten-programming-languages/</loc>
-    <lastmod>2017-05-26T06:29:50.509Z</lastmod>
+    <loc>http://xj8c.cc/2015/08/07/the-30-most-difficult-questions-to-answer-in-history/</loc>
+    <lastmod>2017-05-26T06:29:50.551Z</lastmod>
     <data>
         <display>
-        <title>你必须知道的十个编程语言</title>
-        <pubTime>2015-07-13T13:44:57.000Z</pubTime>
+        <title>史上最难回答的30个问题，没有一人都能答对！</title>
+        <pubTime>2015-08-07T12:55:58.000Z</pubTime>
         
-        <tag>编程</tag>
-         
          
            
         </display>
@@ -946,6 +929,23 @@
         <tag>SqlServer</tag>
          
         <tag>数据库</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xj8c.cc/2015/07/13/ten-programming-languages/</loc>
+    <lastmod>2017-05-26T06:29:50.509Z</lastmod>
+    <data>
+        <display>
+        <title>你必须知道的十个编程语言</title>
+        <pubTime>2015-07-13T13:44:57.000Z</pubTime>
+        
+        <tag>编程</tag>
          
          
            
@@ -1186,6 +1186,23 @@
 
     
   <url>
+    <loc>http://xj8c.cc/2015/10/25/boundary-value/</loc>
+    <lastmod>2017-05-26T06:29:50.154Z</lastmod>
+    <data>
+        <display>
+        <title>边界值分析法相关概念 — 边界点相关概念</title>
+        <pubTime>2015-10-25T05:21:45.000Z</pubTime>
+        
+        <tag>软件测试</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xj8c.cc/2015/07/16/asp.net-knowledge-point-summary-5/</loc>
     <lastmod>2017-05-26T06:29:50.154Z</lastmod>
     <data>
@@ -1215,23 +1232,6 @@
         <tag>互联网</tag>
          
         <tag>大数据</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xj8c.cc/2015/10/25/boundary-value/</loc>
-    <lastmod>2017-05-26T06:29:50.154Z</lastmod>
-    <data>
-        <display>
-        <title>边界值分析法相关概念 — 边界点相关概念</title>
-        <pubTime>2015-10-25T05:21:45.000Z</pubTime>
-        
-        <tag>软件测试</tag>
          
          
            
@@ -1298,23 +1298,6 @@
 
     
   <url>
-    <loc>http://xj8c.cc/2015/03/10/a-years-plan-starts-with-spring/</loc>
-    <lastmod>2017-05-26T06:29:50.012Z</lastmod>
-    <data>
-        <display>
-        <title>A year's plan starts with spring ！</title>
-        <pubTime>2015-03-10T09:30:33.000Z</pubTime>
-        
-        <tag>春天</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://xj8c.cc/2015/02/28/adobe-photoshop/</loc>
     <lastmod>2017-05-26T06:29:50.012Z</lastmod>
     <data>
@@ -1325,6 +1308,23 @@
         <tag>绿色软件</tag>
          
         <tag>Photoshop</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xj8c.cc/2015/03/10/a-years-plan-starts-with-spring/</loc>
+    <lastmod>2017-05-26T06:29:50.012Z</lastmod>
+    <data>
+        <display>
+        <title>A year's plan starts with spring ！</title>
+        <pubTime>2015-03-10T09:30:33.000Z</pubTime>
+        
+        <tag>春天</tag>
          
          
            
