@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>.NET Core 简单介绍 | 当然我在瞎扯</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content=".NET Core 入门.NET Core 可以在 Windows、Linux 和 macOS/OS X 上运行。 Windows在 Windows 上安装 .NET Core。  Linux在 Linux 上安装 .NET Core。 OS X/macOS安装适用于 macOS 的 .NET Core。 .NET Core 可在 OS X El Capitan（版本 10.11）和 macOS">
+<meta name="keywords" content=".NET,.ASP.NET,.NET Core,.ASP.NET Core">
+<meta property="og:type" content="article">
+<meta property="og:title" content=".NET Core 简单介绍">
+<meta property="og:url" content="http://xj8c.cc/2018/07/02/dotnet-core-introduce/index.html">
+<meta property="og:site_name" content="当然我在瞎扯">
+<meta property="og:description" content=".NET Core 入门.NET Core 可以在 Windows、Linux 和 macOS/OS X 上运行。 Windows在 Windows 上安装 .NET Core。  Linux在 Linux 上安装 .NET Core。 OS X/macOS安装适用于 macOS 的 .NET Core。 .NET Core 可在 OS X El Capitan（版本 10.11）和 macOS">
+<meta property="og:image" content="https://meowv.github.io/images/dnc/package-framework.png">
+<meta property="og:updated_time" content="2018-07-02T10:07:45.516Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content=".NET Core 简单介绍">
+<meta name="twitter:description" content=".NET Core 入门.NET Core 可以在 Windows、Linux 和 macOS/OS X 上运行。 Windows在 Windows 上安装 .NET Core。  Linux在 Linux 上安装 .NET Core。 OS X/macOS安装适用于 macOS 的 .NET Core。 .NET Core 可在 OS X El Capitan（版本 10.11）和 macOS">
+<meta name="twitter:image" content="https://meowv.github.io/images/dnc/package-framework.png">
+  
+    <link rel="alternative" href="/atom.xml" title="当然我在瞎扯" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <a href="/v2"><img style="position: fixed; top: 0; right: 0; border: 0; z-index: 99;" src="/images/xj8c.v2.png"></a>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+                <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+        </a>
+
+        <hgroup>
+            <h1 class="header-author">
+                <a href="/" title="Hello World">
+                    阿星Plus
+                </a>
+            </h1>
+        </hgroup>
+
+        
+            <p class="header-subtitle">
+                生命不息，奋斗不止
+            </p>
+            
+                
+                        
+                            <div id="switch-btn" class="switch-btn">
+                                <div class="icon">
+                                    <div class="icon-ctn">
+                                        <div class="icon-wrap icon-house" data-idx="0">
+                                            <div class="birdhouse"></div>
+                                            <div class="birdhouse_holes"></div>
+                                        </div>
+                                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                                            <div class="ribbon"></div>
+                                        </div>
+                                        
+                                            <div class="icon-wrap icon-link hide" data-idx="2">
+                                                <div class="loopback_l"></div>
+                                                <div class="loopback_r"></div>
+                                            </div>
+                                            
+                                                
+                                    </div>
+
+                                </div>
+                                <div class="tips-box hide">
+                                    <div class="tips-arrow"></div>
+                                    <ul class="tips-inner">
+                                        <li>菜单</li>
+                                        <li>标签</li>
+                                        
+                                            <li>友情链接</li>
+                                            
+                                                
+                                    </ul>
+                                </div>
+                            </div>
+                            
+
+                                <div id="switch-area" class="switch-area">
+                                    <div class="switch-wrap">
+                                        <section class="switch-part switch-part1">
+                                            <nav class="header-menu">
+                                                <ul>
+                                                    
+                                                        <li>
+                                                            <a href="/">
+                                                                首页
+                                                            </a>
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            <a href="/archives">
+                                                                归档
+                                                            </a>
+                                                        </li>
+                                                        
+                                                        <li>
+                                                            <a href="/about">
+                                                                关于我
+                                                            </a>
+                                                        </li>
+                                                        
+                                                </ul>
+                                            </nav>
+                                            <nav class="header-nav">
+                                                <ul class="social">
+                                                    
+                                                        <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=w-Lx8IOupqy0te2grK4" title="mail">
+                                                            mail
+                                                        </a>
+                                                        
+                                                        <a class="fl weibo" target="_blank" href="http://weibo.com/Tencentgou" title="weibo">
+                                                            weibo
+                                                        </a>
+                                                        
+                                                        <a class="fl github" target="_blank" href="https://github.com/Meowv" title="github">
+                                                            github
+                                                        </a>
+                                                        
+                                                        <a class="fl twitter" target="_blank" href="https://twitter.com/hackxing" title="twitter">
+                                                            twitter
+                                                        </a>
+                                                        
+                                                        <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">
+                                                            zhihu
+                                                        </a>
+                                                        
+                                                        <a class="fl QQ" target="_blank" href="//wpa.qq.com/msgrd?uin=494910887" title="QQ">
+                                                            QQ
+                                                        </a>
+                                                        
+                                                        <a class="fl wechat" target="_blank" href="http://xj8c.cc/img/wechatimg.jpg" title="wechat">
+                                                            wechat
+                                                        </a>
+                                                        
+                                                        <a class="fl rss" target="_blank" href="/atom.xml" title="rss">
+                                                            rss
+                                                        </a>
+                                                        
+                                                </ul>
+                                            </nav>
+                                        </section>
+
+                                        
+                                            <section class="switch-part switch-part2">
+                                                <div class="widget tagcloud" id="js-tagcloud">
+                                                    <a href="/tags/ASP-NET/" style="font-size: 13.33px;">.ASP.NET</a> <a href="/tags/ASP-NET-Core/" style="font-size: 13.33px;">.ASP.NET Core</a> <a href="/tags/NET/" style="font-size: 13.33px;">.NET</a> <a href="/tags/NET-Core/" style="font-size: 13.33px;">.NET Core</a> <a href="/tags/ASP-NET/" style="font-size: 18.33px;">ASP.NET</a> <a href="/tags/C/" style="font-size: 11.67px;">C#</a> <a href="/tags/CEAC/" style="font-size: 10px;">CEAC</a> <a href="/tags/HtmlAgilityPack/" style="font-size: 11.67px;">HtmlAgilityPack</a> <a href="/tags/IT/" style="font-size: 11.67px;">IT</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Newtonsoft-Json/" style="font-size: 10px;">Newtonsoft.Json</a> <a href="/tags/Photoshop/" style="font-size: 10px;">Photoshop</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/ReactNative/" style="font-size: 20px;">ReactNative</a> <a href="/tags/Regex/" style="font-size: 18.33px;">Regex</a> <a href="/tags/SqlServer/" style="font-size: 10px;">SqlServer</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/get/" style="font-size: 10px;">get</a> <a href="/tags/office2010/" style="font-size: 13.33px;">office2010</a> <a href="/tags/post/" style="font-size: 10px;">post</a> <a href="/tags/win10/" style="font-size: 11.67px;">win10</a> <a href="/tags/win7/" style="font-size: 11.67px;">win7</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/三层架构/" style="font-size: 10px;">三层架构</a> <a href="/tags/互联网/" style="font-size: 13.33px;">互联网</a> <a href="/tags/今日头条/" style="font-size: 10px;">今日头条</a> <a href="/tags/入门教程/" style="font-size: 10px;">入门教程</a> <a href="/tags/原版系统/" style="font-size: 10px;">原版系统</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/实习/" style="font-size: 10px;">实习</a> <a href="/tags/实习感受/" style="font-size: 10px;">实习感受</a> <a href="/tags/小说/" style="font-size: 10px;">小说</a> <a href="/tags/年终总结/" style="font-size: 11.67px;">年终总结</a> <a href="/tags/微软/" style="font-size: 10px;">微软</a> <a href="/tags/快捷键/" style="font-size: 10px;">快捷键</a> <a href="/tags/手机/" style="font-size: 10px;">手机</a> <a href="/tags/技术教程/" style="font-size: 16.67px;">技术教程</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/春天/" style="font-size: 10px;">春天</a> <a href="/tags/正则表达式/" style="font-size: 18.33px;">正则表达式</a> <a href="/tags/毕业答辩/" style="font-size: 10px;">毕业答辩</a> <a href="/tags/爬虫/" style="font-size: 11.67px;">爬虫</a> <a href="/tags/琅琊榜/" style="font-size: 10px;">琅琊榜</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/知乎/" style="font-size: 10px;">知乎</a> <a href="/tags/程序员/" style="font-size: 10px;">程序员</a> <a href="/tags/绿色软件/" style="font-size: 15px;">绿色软件</a> <a href="/tags/编程/" style="font-size: 10px;">编程</a> <a href="/tags/计算机一级/" style="font-size: 10px;">计算机一级</a> <a href="/tags/计算机基础/" style="font-size: 10px;">计算机基础</a> <a href="/tags/诗文/" style="font-size: 10px;">诗文</a> <a href="/tags/软件测试/" style="font-size: 16.67px;">软件测试</a> <a href="/tags/进制转换/" style="font-size: 10px;">进制转换</a> <a href="/tags/逆袭/" style="font-size: 10px;">逆袭</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/黑客/" style="font-size: 10px;">黑客</a>
+                                                </div>
+                                            </section>
+                                            
+
+                                                
+                                                    <section class="switch-part switch-part3">
+                                                        <div id="js-friends">
+                                                            
+                                                                <a target="_blank" class="main-nav-link switch-friends-link" href="http://meowv.com/">
+                                                                    喵呜网
+                                                                </a>
+                                                                
+                                                                <a target="_blank" class="main-nav-link switch-friends-link" href="http://v.xj8c.cc/">
+                                                                    VIP电影在线播放
+                                                                </a>
+                                                                
+                                                        </div>
+                                                    </section>
+                                                    
+
+                                                        
+                                    </div>
+                                </div>
+    </header>
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">阿星Plus</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">阿星Plus</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">生命不息，奋斗不止</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">首页</a></li>
+                
+                    <li><a href="/archives">归档</a></li>
+                
+                    <li><a href="/about">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=w-Lx8IOupqy0te2grK4" title="mail">mail</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/Tencentgou" title="weibo">weibo</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/Meowv" title="github">github</a>
+                    
+                        <a class="twitter" target="_blank" href="https://twitter.com/hackxing" title="twitter">twitter</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/meowv/activities" title="zhihu">zhihu</a>
+                    
+                        <a class="QQ" target="_blank" href="//wpa.qq.com/msgrd?uin=494910887" title="QQ">QQ</a>
+                    
+                        <a class="wechat" target="_blank" href="http://xj8c.cc/img/wechatimg.jpg" title="wechat">wechat</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-dotnet-core-introduce" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/07/02/dotnet-core-introduce/" class="article-date">
+      <time datetime="2018-07-02T06:00:00.000Z" itemprop="datePublished">2018-07-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      .NET Core 简单介绍
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ASP-NET/">.ASP.NET</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ASP-NET-Core/">.ASP.NET Core</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NET/">.NET</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NET-Core/">.NET Core</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="NET-Core-入门"><a href="#NET-Core-入门" class="headerlink" title=".NET Core 入门"></a><a name="get-started-with-net-core"></a>.NET Core 入门</h1><p>.NET Core 可以在 <a href="#windows">Windows</a>、<a href="#linux">Linux</a> 和 <a href="#os-x--macos">macOS/OS X</a> 上运行。</p>
+<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a><a name="windows"></a>Windows</h2><p>在 <a href="https://www.microsoft.com/net/core#windows" target="_blank" rel="external">Windows</a> 上安装 .NET Core。 </p>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a><a name="linux"></a>Linux</h2><p>在 <a href="https://www.microsoft.com/net/core#linuxredhat" target="_blank" rel="external">Linux</a> 上安装 .NET Core。</p>
+<h2 id="OS-X-macOS"><a href="#OS-X-macOS" class="headerlink" title="OS X/macOS"></a><a name="os-x--macos"></a>OS X/macOS</h2><p>安装适用于 <a href="https://www.microsoft.com/net/core#macos" target="_blank" rel="external">macOS</a> 的 .NET Core。 .NET Core 可在 OS X El Capitan（版本 10.11）和 macOS Sierra（版本 10.12）上使用。</p>
+<h1 id="NET-体系结构组件"><a href="#NET-体系结构组件" class="headerlink" title=".NET 体系结构组件"></a>.NET 体系结构组件</h1><p>.NET 应用开发用于并运行于一个或多个 .NET 实现。  .NET 实现包括 .NET Framework、.NET Core 和 Mono。 .NET 的所有实现都有一个名为 .NET Standard 的通用 API 规范。 本文简要介绍了每个概念。</p>
+<h2 id="NET-Standard"><a href="#NET-Standard" class="headerlink" title=".NET Standard"></a><a name="net-standard"></a>.NET Standard</h2><p>.NET Standard 是一组由 .NET 实现的基类库实现的 API。 更正式地说，它是构成协定统一集（这些协定是编写代码的依据）的特定 .NET API 组。 这些协定在每个 .NET 实现中实现。 这可实现不同 .NET 实现间的可移植性，有效地使代码可在任何位置运行。</p>
+<p>.NET Standard 也是一个目标框架。 如果代码面向 .NET Standard 版本，则它可在支持该 .NET Standard 版本的任何 .NET 实现上运行。</p>
+<h2 id="NET-实现"><a href="#NET-实现" class="headerlink" title=".NET 实现"></a><a name="net-implementations"></a>.NET 实现</h2><p>.NET 的每个实现都具有以下组件：</p>
+<ul>
+<li>一个或多个运行时。 示例：用于 .NET Framework 的 CLR、CoreCLR 和用于 .NET Core 的 CoreRT。</li>
+<li>实现 .NET Standard 并且可实现其他 API 的类库。 示例：.NET Framework 基类库、.NET Core 基类库。</li>
+<li>可选择包含一个或多个应用程序框架。 示例： ASP.NET、Windows 窗体和 Windows Presentation Foundation (WPF) 包含在 .NET Framework 中。</li>
+<li>可包含开发工具。 某些开发工具在多个实现之间共享。</li>
+</ul>
+<p>Microsoft 积极开发和维护的主要 .NET 实现有 4 个：.NET Core、.NET Framework、Mono 和 UWP。</p>
+<h3 id="NET-Core"><a href="#NET-Core" class="headerlink" title=".NET Core"></a><a name="net-core"></a>.NET Core</h3><p>.NET Core 是 .NET 的跨平台实现，专用于处理大规模的服务器和云工作负荷。 可在 Windows、macOS 和 Linux 上运行。 它实现 .NET Standard，因此面向 .NET Standard 的代码都可在 .NET Core 上运行。 ASP.NET Core 在 .NET Core 上运行。 </p>
+<h3 id="NET-Framework"><a href="#NET-Framework" class="headerlink" title=".NET Framework"></a><a name="net-framework"></a>.NET Framework</h3><p>.Net Framework 是自 2002 年起就已存在的原始 .NET 实现。 它是当前 .NET 开发人员经常使用的 .NET Framework。 4.5 版以及更高版本实现 .NET Standard，因此面向 .NET Standard 的代码都可在这些版本的 .NET Framework 上运行。 它还包含一些特定于 Windows 的 API，如通过 Windows 窗体和 WPF 进行 Windows 桌面开发的 API。 .NET Framework 非常适合用于生成 Windows 桌面应用程序。</p>
+<h3 id="Mono"><a href="#Mono" class="headerlink" title="Mono"></a><a name="mono"></a>Mono</h3><p>Mono 是主要在需要小型运行时使用的 .NET 实现。 它是在 Android、Mac、iOS、tvOS 和 watchOS 上驱动 Xamarin 应用程序的运行时，且主要针对小内存占用。 Mono 还支持使用 Unity 引擎生成的游戏。</p>
+<p>它支持所有当前已发布的 .NET Standard 版本。</p>
+<p>以前，Mono 实现更大的 .NET Framework API 并模拟一些 Unix 上最常用的功能。 有时使用它运行依赖 Unix 上的这些功能的 .NET 应用程序。</p>
+<p>Mono 通常与实时编译器一起使用，但它也提供在 iOS 之类的平台使用的完整静态编译器（预先编译）。</p>
+<h3 id="通用-Windows-平台-UWP"><a href="#通用-Windows-平台-UWP" class="headerlink" title="通用 Windows 平台 (UWP)"></a><a name="universal-windows-platform-uwp"></a>通用 Windows 平台 (UWP)</h3><p>UWP 是用于为物联网 (IoT) 生成新式触控 Windows 应用程序和软件的 .NET 实现。 它旨在统一可能想要以其为目标的不同类型的设备，包括电脑、平板电脑、平板手机、电话，甚至 Xbox。 UWP 提供许多服务，如集中式应用商店、执行环境 (AppContainer) 和一组 Windows API（用于代替 Win32 (WinRT)）。 应用可采用 C++、C#、VB.NET 和 JavaScript 编写。 使用 C# 和 VB.NET 时，.NET API 由 .NET Core 提供。</p>
+<h2 id="NET-运行时"><a href="#NET-运行时" class="headerlink" title=".NET 运行时"></a><a name="net-runtimes"></a>.NET 运行时</h2><p>运行时是用于托管程序的执行环境。 OS 属于运行时环境，但不属于 .NET 运行时。 下面是 .NET 运行时的一些示例：</p>
+<ul>
+<li>.NET Framework 公共语言运行时 (CLR)</li>
+<li>.NET Core 核心公共语言运行时 (CoreCLR)</li>
+<li>适用于通用 Windows 平台的 .NET Native </li>
+<li>用于 Xamarin.iOS、Xamarin.Android、Xamarin.Mac 和 Mono 桌面框架的 Mono 运行时</li>
+</ul>
+<h2 id="NET-工具和常见基础结构"><a href="#NET-工具和常见基础结构" class="headerlink" title=".NET 工具和常见基础结构"></a><a name="net-tooling-and-common-infrastructure"></a>.NET 工具和常见基础结构</h2><p>可访问一整套适用于每种 .NET 实现的工具和基础结构组件。 包括（但不限于）以下几种：</p>
+<ul>
+<li>.NET 语言及其编译器</li>
+<li>.NET 项目系统（基于 .csproj.vbproj 和 .fsproj 文件）</li>
+<li>MSBuild（用于生成项目的生成引擎）</li>
+<li>NuGet（适用于.NET 的 Microsoft 程序包管理器）</li>
+<li>开放源生成业务流程工具，例如 <a href="https://cakebuild.net/" target="_blank" rel="external">CAKE</a> 和 <a href="https://fake.build/" target="_blank" rel="external">FAKE</a></li>
+</ul>
+<h1 id="包、元包和框架"><a href="#包、元包和框架" class="headerlink" title="包、元包和框架"></a><a name="packages-metapackages-and-frameworks"></a>包、元包和框架</h1><p>.NET Core 是一种由 NuGet 包组成的平台。 有些产品体验受益于包的细粒度定义，而另一些受益于粗粒度的定义。 为了适应这种二元定义，一款好的产品应该作为一组细粒度的包发布，然后在更粗的粒度组块中进行描述，单个包的正式的名字叫做“元包”。</p>
+<p>每个 .Net Core 包都支持以框架形式通过多个 .Net 实现代码运行。 其中有些框架是传统框架，例如表示 .NET Framework 的 <code>net46</code>。 而另一些则是新框架，可视为是“基于包的框架”，这种是框架的另外一种新的定义模型。 这些基于包的框架整个都是由包组成的，它们自身也被定义成包，这就在包与框架之间形成了一种比较密切的关系。</p>
+<h2 id="包"><a href="#包" class="headerlink" title="包"></a><a name="packages"></a>包</h2><p>.NET Core 被分成一组包，它们提供了基元类型，以及更高层的数据类型，应用组合类型和通用实用工具。 每一个包都代表着单独的同名程序集。 例如，<a href="https://www.nuget.org/packages/System.Runtime" target="_blank" rel="external">System.Runtime</a> 这个包就包含了 System.Runtime.dll 程序集。 </p>
+<p>以细粒度方式定义这些包具有以下好处：</p>
+<ul>
+<li>细粒度的包可以在它自己的计划内交付，只需完成仅对相关的其他有限的包进行测试即可。</li>
+<li>细粒度的包可以提供不同的 OS 和 CPU 支持。</li>
+<li>细粒度的包可以单独依赖于某一个库。</li>
+<li>应用可以变得更小，因为没有引用的包不会变成应用发行的一部分。</li>
+</ul>
+<p>上述某些好处只适用于某些特定场合。 例如，.NET Core 的所有包通常都会在同一计划内提供对同一平台的支持。 在这种情况下，补丁与更新会以小的单独包的形式发布和安装。 由于这种小范围的变化，补丁的验证与时间花费，都可以限制到单个库的需求范围中。</p>
+<p>以下是 .NET Core 重要的 NuGet 包列表：</p>
+<ul>
+<li><a href="https://www.nuget.org/packages/System.Runtime" target="_blank" rel="external">System.Runtime</a> - 最基础的 .NET Core 包，包括 <xref:system.object>、<xref:system.string>、<xref:system.array>、<xref:system.action> 和 <xref:system.collections.generic.ilist%601>。</xref:system.collections.generic.ilist%601></xref:system.action></xref:system.array></xref:system.string></xref:system.object></li>
+<li><a href="https://www.nuget.org/packages/System.Collections" target="_blank" rel="external">System.Collections</a> - 一组（主要）泛型集合，包括 <xref:system.collections.generic.list%601> 和 <xref:system.collections.generic.dictionary%602>。</xref:system.collections.generic.dictionary%602></xref:system.collections.generic.list%601></li>
+<li><a href="https://www.nuget.org/packages/System.Net.Http" target="_blank" rel="external">System.Net.Http</a> - 一组用于 HTTP 网络通信的类型，包括 <xref:system.net.http.httpclient> 和 <xref:system.net.http.httpresponsemessage>。</xref:system.net.http.httpresponsemessage></xref:system.net.http.httpclient></li>
+<li><a href="https://www.nuget.org/packages/System.IO.FileSystem" target="_blank" rel="external">System.IO.FileSystem</a> - 一组用于读写到本地或网络磁盘存储的类型，包括 <xref:system.io.file> 和 <xref:system.io.directory>。</xref:system.io.directory></xref:system.io.file></li>
+<li><a href="https://www.nuget.org/packages/System.Linq" target="_blank" rel="external">System.Linq</a> - 一组用于查询对象的类型，包括 <code>Enumerable</code> 和 <xref:system.linq.ilookup%602>。</xref:system.linq.ilookup%602></li>
+<li><a href="https://www.nuget.org/packages/System.Reflection" target="_blank" rel="external">System.Reflection</a> - 一组用于加载、检查和激活类型的类型，包括 <xref:system.reflection.assembly>、<xref:system.reflection.typeinfo> 和 <xref:system.reflection.methodinfo>。</xref:system.reflection.methodinfo></xref:system.reflection.typeinfo></xref:system.reflection.assembly></li>
+</ul>
+<p>通常情况下，相较于逐个地将包包含在项目中，包含<em>元包</em>会简单得多，元包是指通常配合在一起使用的一组包。 （有关元包的更多信息，请参见下一部分。）但是当需要单个包时，可以按以下示例所示的那样来包含它，此示例引用 <a href="https://www.nuget.org/packages/System.Runtime/" target="_blank" rel="external">System.Runtime</a> 包。 </p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Project</span> <span class="attr">Sdk</span>=<span class="string">"Microsoft.NET.Sdk"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">PropertyGroup</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">TargetFramework</span>&gt;</span>netstandard1.6<span class="tag">&lt;/<span class="name">TargetFramework</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">PropertyGroup</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">ItemGroup</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">PackageReference</span> <span class="attr">Include</span>=<span class="string">"System.Runtime"</span> <span class="attr">Version</span>=<span class="string">"4.3.0"</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">ItemGroup</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">Project</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="元包"><a href="#元包" class="headerlink" title="元包"></a><a name="metapackages"></a>元包</h2><p>元包就是一个 NuGet 包约定，描述了一组意义相关的包。 开发团队利用依赖项来描述这一组包。 他们通过这一组包来描述一个框架，然后有选择地发布出去。 </p>
+<p>默认情况下，早期版本的 .NET Core 工具（同时基于 project.json 和 csproj 的工具）指定一个框架和一个元包。 但目前，由目标框架隐式引用元包，以便将每个元包绑定到一个目标框架。 例如，<code>netstandard1.6</code> 框架引用 NetStandard.Library 1.6.0 版元包。 同样， <code>netcoreapp1.1</code> 框架引用 Microsoft.NETCore.App 1.1.0 版元包。 </p>
+<p>以某个框架为目标以及隐式引用元包，这实际上是添加了对元包中每一个独立包的引用依赖。 这使这些包中的所有库都可用于 IntelliSense（或类似体验），同时也可用于发布应用。  </p>
+<p>使用元包具有以下好处：</p>
+<ul>
+<li>在引用大量细粒度包方面，提供了一种方便的用户体验。 </li>
+<li>定义了一组经过充分测试且运行良好的包（包括指定的各种版本）。</li>
+</ul>
+<p>.NET Standard 元包为：</p>
+<ul>
+<li><a href="https://www.nuget.org/packages/NETStandard.Library" target="_blank" rel="external">NETStandard.Library</a> - 描述了属于“.NET Standard”一部分的各种库。 适用于所有支持 .NET Standard 的 .NET 实现（例如，.NET Framework、.NET Core 和 Mono）。 也就是“netstandard”框架。</li>
+</ul>
+<p>重要的 .NET Core 元包有：</p>
+<ul>
+<li><a href="https://www.nuget.org/packages/Microsoft.NETCore.App" target="_blank" rel="external">Microsoft.NETCore.App</a> - 描述了属于 .NET Core 发行版的部分库。 也就是 <a href="https://github.com/dotnet/core-setup/blob/release/1.1.0/pkg/projects/Microsoft.NETCore.App/Microsoft.NETCore.App.pkgproj" target="_blank" rel="external"><code>.NETCoreApp</code> 框架</a>。 它依赖于更小的 <code>NETStandard.Library</code>。</li>
+<li><a href="https://www.nuget.org/packages/Microsoft.AspNetCore.All" target="_blank" rel="external">Microsoft.AspNetCore.All</a> - 包含来自 ASP.NET Core、Entity Framework Core 以及 ASP.NET Core 和 Entity Framework Core 使用的内部和第三方依赖项的所有受支持包。 </li>
+<li><a href="https://www.nuget.org/packages/Microsoft.NETCore.Portable.Compatibility" target="_blank" rel="external">Microsoft.NETCore.Portable.Compatibility</a> - 一组兼容外观，使基于 mscorlib 的可移植类库(PCL) 得以在 .Net Core上运行。</li>
+</ul>
+<h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a><a name="frameworks"></a>框架</h2><p>每个 .NET Core 包支持一组运行时框架。 框架描述了一组可用的 API（以及潜在的其他特性），所以你可以在指定一个目标框架时使用这些功能。 添加新的 API 时，它们就会进入版本控制流程。</p>
+<p>例如，<a href="https://www.nuget.org/packages/System.IO.FileSystem" target="_blank" rel="external">System.IO.FileSystem</a> 支持以下框架：</p>
+<ul>
+<li>.NETFramework,Version=4.6</li>
+<li>.NETStandard,Version=1.3</li>
+<li>6 种 Xamarin 平台（例如，xamarinios10）</li>
+</ul>
+<p>将前两个框架进行对比很有帮助，因为它们各自代表了一种不同的框架定义方式。</p>
+<p><code>.NETFramework,Version=4.6</code> 框架表示 .NET Framework 4.6 中可用的 API。 你可以生成使用 .NET Framework 4.6 引用程序集编译的库，并以NuGet 包的方式在 net46 lib 文件夹中发布这些库。 这样，你的库就会被那些基于或者兼容 .Net Framework 4.6 的应用所使用。 这是所有框架的传统工作原理。</p>
+<p><code>.NETStandard,Version=1.3</code> 框架是一个基于包的框架。 它依赖基于框架的包，来定义和公开与框架有关的 API。</p>
+<h2 id="基于包的框架"><a href="#基于包的框架" class="headerlink" title="基于包的框架"></a><a name="package-based-frameworks"></a>基于包的框架</h2><p>框架和包之间是一种双向关系。 首先是为一个给定的框架定义了 API，例如 <code>netstandard1.3</code>。 以 <code>netstandard1.3</code> 为目标的包（或兼容的框架，如 <code>netstandard1.0</code>）定义了适用于 <code>netstandard1.3</code> 的 API。 听起来像是循环定义，然而并不是。 从“基于包的”这个词本身的角度来讲，框架的 API 定义是来自于包的。 框架本身并不定义任何 API。</p>
+<p>其次，是这个双向关系中的资产选择。 包可以包含多个框架的资产。 对于一组包和/或元包的引用，框架需要决定它应选择哪些资产，例如，是 <code>net46</code> 还是 <code>netstandard1.3</code>。 选择正确的资产很重要。 例如，<code>net46</code> 资产可能并不与 .NET Framework 4.0 或 .NET Core 1.0 兼容。</p>
+<p>可以在下图中看到这种关系。 <em>API</em> 选择框架作为目标并定义了框架。 而<em>框架</em>用于<em>资产选择</em>。 <em>资产</em>实现了 API。</p>
+<p><img src="https://meowv.github.io/images/dnc/package-framework.png" alt="PNG"></p>
+<p>在 .Net Core 基础之上，基于包的框架主要有两个：</p>
+<ul>
+<li><code>netstandard</code></li>
+<li><code>netcoreapp</code></li>
+</ul>
+<h3 id="NET-Standard-1"><a href="#NET-Standard-1" class="headerlink" title=".NET Standard"></a><a name="net-standard"></a>.NET Standard</h3><p>.NET Standard（目标框架名字对象：<code>netstandard</code>）框架表示在 <a href="../standard/net-standard.md">.NET Standard</a> 基础之上生成并由其定义的 API。 如果构建的库将用于在多个运行时上运行，就应将此框架作为目标。 这样便可在任何一种兼容 .NET 标准的运行时上受支持，例如 .NET Core、.NET Framework 和 Mono/Xamarin。 每个运行时都支持一组 .NET Standard 版本，具体取决于实现的 API。</p>
+<p><code>netstandard</code> 框架隐式引用 <a href="https://www.nuget.org/packages/NETStandard.Library" target="_blank" rel="external"><code>NETStandard.Library</code></a> 元包。 例如，以下 MSBuild 项目文件指示项目以 <code>netstandard1.6</code> 为目标，其引用 <a href="https://www.nuget.org/packages/NETStandard.Library/1.6.0" target="_blank" rel="external"><code>NETStandard.Library</code> 1.6 版</a>元包。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Project</span> <span class="attr">Sdk</span>=<span class="string">"Microsoft.NET.Sdk"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">PropertyGroup</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">TargetFramework</span>&gt;</span>netstandard1.6<span class="tag">&lt;/<span class="name">TargetFramework</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">PropertyGroup</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">Project</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>但项目文件中的框架和元包引用不需要匹配，并且可使用项目文件中的 <code>&lt;NetStandardImplicitPackageVersion&gt;</code> 元素指定低于元包版本的框架版本。 例如，以下项目文件有效。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Project</span> <span class="attr">Sdk</span>=<span class="string">"Microsoft.NET.Sdk"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">PropertyGroup</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">TargetFramework</span>&gt;</span>netstandard1.3<span class="tag">&lt;/<span class="name">TargetFramework</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">NetStandardImplicitPackageVersion</span>&gt;</span>1.6.0<span class="tag">&lt;/<span class="name">NetStandardImplicitPackageVersion</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">PropertyGroup</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">Project</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>面向 <code>netstandard1.3</code> 却使用 <code>NETStandard.Library</code> 1.6.0 版本，这一点很奇怪。 然而，这是一个有效的用例，因为元包支持更旧的 <code>netstandard</code> 版本。 可能恰好你已将 1.6.0 版的元包进行了标准化，然后将其用于所有库，而这些库可以面向各种 <code>netstandard</code> 版本。 使用此方法，只需还原 <code>NETStandard.Library</code> 1.6.0，无需加载早期版本。 </p>
+<p>反之，把 <code>netstandard1.6</code> 设为目标，却使用 1.3.0 版的 <code>NETStandard.Library</code> 也是无效的。 你不能把更高版本的框架设为目标，却使用更低版本的元包，因为更低版本的元包不会公开任何更高版本框架的资产。 元包资产的版本控制方案与描述框架的最高版本匹配。 借助于版本控制方案，<code>NETStandard.Library</code> 的第一个版本是 v1.6.0，因为它包含 <code>netstandard1.6</code> 资产。 而上例中的 v1.3.0 版本，只是为了举例方便，实际上并不存在。</p>
+<h3 id="NET-Core-应用程序"><a href="#NET-Core-应用程序" class="headerlink" title=".NET Core 应用程序"></a><a name="net-core-application"></a>.NET Core 应用程序</h3><p>.NET Core 应用程序 (TFM: <code>netcoreapp</code>) 框架表示 .NET Core 发行版及其提供的控制台应用程序模型附带的包和相关 API。 .NET Core 必须使用此框架，因为必须要使用其中的控制台应用程序模型。同时只运行于 .Net Core 平台的库也应使用此模型。 使用此框架后，所有应用和库将只能够在 .Net Core 上运行。 </p>
+<p><code>Microsoft.NETCore.App</code> 元包的目标框架是 <code>netcoreapp</code>。 它提供了约 60 个库的访问权限，其中约 40 个由 <code>NETStandard.Library</code> 包提供，还有另外 20 个库。 可以引用目标框架为 <code>netcoreapp</code> 或与框架（如 <code>netstandard</code>）兼容的库获得对其他 API 的访问权限。 </p>
+<p>由 <code>Microsoft.NETCore.App</code> 提供的大部分其他库还可以使用 <code>netstandard</code> 作为目标，如果其他 <code>netstandard</code> 库满足这些框架的依赖项的话。 这意味着，<code>netstandard</code> 库也可以引用这些包作为依赖项。 </p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">×</a>
+            <div class="shang_tit">
+              <p>谢谢你请我吃辣条</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/07/02/dotnet-core-introduce/">.NET Core 简单介绍</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 阿星Plus 的个人博客">阿星Plus</a></p>
+        <p><span>发布时间:</span>2018年07月02日 - 14时00分</p>
+        <p><span>最后更新:</span>2018年07月02日 - 18时07分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/07/02/dotnet-core-introduce/" title=".NET Core 简单介绍">http://xj8c.cc/2018/07/02/dotnet-core-introduce/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://xj8c.cc/2018/07/02/dotnet-core-introduce/　　作者: 阿星Plus" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2018/07/02/asp.net-core-introduce/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          ASP.NET Core 简单介绍
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/02/2017-year-end-summary/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2017年终总结</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#NET-Core-入门"><span class="toc-number">1.</span> <span class="toc-text">.NET Core 入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Windows"><span class="toc-number">1.1.</span> <span class="toc-text">Windows</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux"><span class="toc-number">1.2.</span> <span class="toc-text">Linux</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OS-X-macOS"><span class="toc-number">1.3.</span> <span class="toc-text">OS X/macOS</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#NET-体系结构组件"><span class="toc-number">2.</span> <span class="toc-text">.NET 体系结构组件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#NET-Standard"><span class="toc-number">2.1.</span> <span class="toc-text">.NET Standard</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NET-实现"><span class="toc-number">2.2.</span> <span class="toc-text">.NET 实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NET-Core"><span class="toc-number">2.2.1.</span> <span class="toc-text">.NET Core</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NET-Framework"><span class="toc-number">2.2.2.</span> <span class="toc-text">.NET Framework</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mono"><span class="toc-number">2.2.3.</span> <span class="toc-text">Mono</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通用-Windows-平台-UWP"><span class="toc-number">2.2.4.</span> <span class="toc-text">通用 Windows 平台 (UWP)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NET-运行时"><span class="toc-number">2.3.</span> <span class="toc-text">.NET 运行时</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NET-工具和常见基础结构"><span class="toc-number">2.4.</span> <span class="toc-text">.NET 工具和常见基础结构</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#包、元包和框架"><span class="toc-number">3.</span> <span class="toc-text">包、元包和框架</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#包"><span class="toc-number">3.1.</span> <span class="toc-text">包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#元包"><span class="toc-number">3.2.</span> <span class="toc-text">元包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#框架"><span class="toc-number">3.3.</span> <span class="toc-text">框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基于包的框架"><span class="toc-number">3.4.</span> <span class="toc-text">基于包的框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NET-Standard-1"><span class="toc-number">3.4.1.</span> <span class="toc-text">.NET Standard</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NET-Core-应用程序"><span class="toc-number">3.4.2.</span> <span class="toc-text">.NET Core 应用程序</span></a></li></ol></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid=".NET Core 简单介绍"></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cyt1UJT89'; 
+var conf = 'prod_a66df9b8bf4687f6662a946344b221b7'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2018/07/02/asp.net-core-introduce/" title="上一篇: ASP.NET Core 简单介绍">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2018/01/02/2017-year-end-summary/" title="下一篇: 2017年终总结">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/07/02/asp.net-core-getting-started/">ASP.NET Core 入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/02/asp.net-core-introduce/">ASP.NET Core 简单介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/02/dotnet-core-introduce/">.NET Core 简单介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/02/2017-year-end-summary/">2017年终总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/07/linux-cmd-list/">Linux 命令行一览</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/06/python-tutorial/">Python入门教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/13/Regex-chinese-english-comparison-table/">正则表达式术语中英文对照表</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/12/Regex-cheat-sheet/">正则表达式速查表</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/12/Regex-7/">正则表达式编程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/12/Regex-6/">正则表达式的构建</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/11/Regex-5/">正则表达式的拆分</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/11/Regex-4/">正则表达式回溯法原理</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/10/Regex-3/">正则表达式括号的作用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/29/Regex-2/">正则表达式位置匹配攻略</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/Regex-1/">正则表达式字符匹配攻略</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/27/ToutiaoNews/">今日头条全站新闻文章数据爬取</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/HtmlAgilityPack/">HtmlAgilityPack爬取美女图片、每日一文文章、小说</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/18/ReactNative-resource/">ReactNative开发中一些有用的资源</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/17/ReactNative-styles/">ReactNative样式总览</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/16/ReactNative-build/">打包你的App</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/15/ReactNative-net/">掌握React Native的Fetch Api</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/14/ReactNative-navigation/">是时候用上React Navigation了</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/13/ReactNative-ListView-FlatList/">带你了解ListView及FlatList</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/12/ReactNative-storage/">存储：与AsyncStorage相比，Realm更应该作为重点掌握内容</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/11/ReactNative-style-layout/">React Native中的样式，Flexbox布局及其他内容</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/10/ReactNative-module/">React Native常用的组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/09/ReactNative-run/">启动你的第一个React Native 应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/08/ReactNative-base/">ReactNative基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/07/ReactNative-introduce/">ReactNative介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/01/my-internship-record/">我的实习记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/30/graduation-report-material/">毕业答辩汇报材料</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/04/2016-year-end-summary/">2016年终总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/31/csharp7/">C＃7.0中有哪些新特性？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/18/internship-experience/">武汉路博特工程科技有限公司实习“满月”工作感受</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/16/asp.net-knowledge-point-interview/">ASP.NET知识点面试篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/08/what-is-a-three-tier-architecture/">三层架构到底是个什么玩意？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/07/five-main-objects-in-dotnet/">ADO.NET中的五个主要对象？</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/07/get-and-post/">所谓的Get和Post到底是何方神圣？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/10/the-students-with-poor-grades-reversed/">一个学渣的逆袭</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/21/computer-computing-infrastructure/">计算机运算基础荟萃</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/08/CEAC-office2010/">CEAC-office2010实操题练习评测系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/28/test-case-design-advanced(bottom)/">测试用例设计进阶(下)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/28/test-case-design-in-order(upper)/">测试用例设计进阶（上）</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/25/boundary-value/">边界值分析法相关概念 — 边界点相关概念</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/24/basic-knowledge-of-software-testing/">软件测试基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/24/overview-of-software-testing/">软件测试概述</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/20/xml-note-1/">XML学习笔记(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/12/when-the-deepest-counsel-comes-to-the-most-clear-ideal/">当最深沉的筹谋换来最清明的理想</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/01/10-best-javascript-development-practices/">10个最佳 javascript 开发实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/07/the-30-most-difficult-questions-to-answer-in-history/">史上最难回答的30个问题，没有一人都能答对！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/05/windows10-iso/">Win10正式版微软官方原版ISO系统镜像下载大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/02/the-work-of-a-programmer/">一本关于程序员的修真小说</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/02/Win10-ten-points/">Win10的十个亮点</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/01/Zhihu-god-reply/">一大波，知乎神回复在接近了！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/27/vs-shortcuts/">必须知道的 Visual Studio 快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/16/asp.net-knowledge-point-summary-5/">Asp.net知识点总结(五)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/13/ten-programming-languages/">你必须知道的十个编程语言</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/11/asp.net-knowledge-point-summary-4/">Asp.net知识点总结(四)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/07/asp.net-knowledge-point-summary-3/">Asp.net知识点总结(三)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/06/bigdata-internet-thinking-O2O-crowdfunding/">什么是大数据，什么是红海、蓝海、互联网思维？什么是O2O？什么是众筹？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/04/asp.net-knowledge-point-summary-2/">Asp.net知识点总结(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/03/asp.net-knowledge-point-summary-1/">Asp.net知识点总结(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/25/shopping-online/">Shopping Online</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/04/SqlServer2008/">sql数据库|SqlServer2008 R2_x86&x64</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/17/why-is-the-chinese-mobile-number-11/">揭秘：中国手机号码为什么是11位数？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/14/33-poems-of-the-most-artistic-conception-in-China/">中国最有意境的33句诗文，欣赏下吧！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/05/win7-cmd/">Win7运行命令大全|开始-运行-命令总汇</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/31/please-don't-be-a-fickle-IT-man/">请不要做浮躁的IT人</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/29/the-name-of-the-big-internet-companies/">各大互联网公司命名的由来，值得你了解。</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/25/30-the-hacker-movie/">30部黑客电影，你看过哪几部？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/22/top 10 IT jobs in 2015/">2015年 十大热门 IT 工作</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/10/a-years-plan-starts-with-spring/">A year's plan starts with spring ！</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/28/cherish-every-day/">珍惜每一天</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/28/adobe-photoshop/">Adobe Photoshop 绿色安装版</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/20/national-computer-level-office2010/">全国计算机一级Office2010+win7版（未来教育）考试练习软件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/17/win7-shortcuts/">Win7电脑常用快捷键大全有哪些?</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/15/microsoft-office-2010/">Microsoft office 2010</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy;
+                2018
+                    阿星Plus
+            </div>
+            <div class="footer-right">
+                Blog By <a href="http://hexo.io/" target="_blank">Hexo</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站访问量: 
+                            <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                    </span>
+                    
+                        
+                            <span>, </span>
+                            
+                                
+                                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                                    </span>
+                                    </span>
+                                    
+            </div>
+            
+    </div>
+</footer>
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

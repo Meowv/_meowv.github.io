@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xj8c.cc/"/>
-  <updated>2018-01-02T13:02:10.227Z</updated>
+  <updated>2018-07-02T12:24:36.575Z</updated>
   <id>http://xj8c.cc/</id>
   
   <author>
@@ -14,6 +14,250 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ASP.NET Core 入门</title>
+    <link href="http://xj8c.cc/2018/07/02/asp.net-core-getting-started/"/>
+    <id>http://xj8c.cc/2018/07/02/asp.net-core-getting-started/</id>
+    <published>2018-07-02T12:24:30.000Z</published>
+    <updated>2018-07-02T12:24:36.575Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="ASP-NET-Core-入门"><a href="#ASP-NET-Core-入门" class="headerlink" title="ASP.NET Core 入门"></a><a name="get-started-with-aspnet-core"></a>ASP.NET Core 入门</h1><p>安装 <a href="https://www.microsoft.com/net/download/all" target="_blank" rel="external">.NET Core 2.1 SDK or later</a>。</p>
+<p>创建 ASP.NET Core 项目。 打开命令行界面，输入以下命令：</p>
+  <figure class="highlight console"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dotnet new webapp -o aspnetcoreapp</div></pre></td></tr></table></figure>
+<p>信任 HTTPS 开发证书：</p>
+<h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a><a name="windowstabwindows"></a>Windows</h1><pre><code><figure class="highlight console"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dotnet dev-certs https --trust</div></pre></td></tr></table></figure>
+</code></pre><p>The preceding command displays the following dialog:</p>
+<p><img src="https://meowv.github.io/images/dnc/cert.png" alt="PNG"></p>
+<p>Select <strong>Yes</strong> if you agree to trust the development certificate.</p>
+<h1 id="macOS"><a href="#macOS" class="headerlink" title="macOS"></a><a name="macostabmacos"></a>macOS</h1><pre><code><figure class="highlight console"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dotnet dev-certs https --trust</div></pre></td></tr></table></figure>
+</code></pre><p>The preceding command displays the following message:</p>
+<p><em>Trusting the HTTPS development certificate was requested. If the certificate is not already trusted we will run the following command:</em></p>
+<p><code>&#39;sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain &lt;&lt;certificate&gt;&gt;&#39;</code></p>
+<p><em>This command might prompt you for your password to install the certificate on the system keychain.Password:</em></p>
+<p>Enter your password if you agree to trust the development certificate.</p>
+<h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a><a name="linuxtablinux"></a>Linux</h1><h2 id="See-the-documentation-for-your-Linux-distribution-on-how-to-trust-the-HTTPS-development-certificate"><a href="#See-the-documentation-for-your-Linux-distribution-on-how-to-trust-the-HTTPS-development-certificate" class="headerlink" title="See the documentation for your Linux distribution on how to trust the HTTPS development certificate"></a>See the documentation for your Linux distribution on how to trust the HTTPS development certificate</h2><p>运行应用：</p>
+<pre><code><figure class="highlight console"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd aspnetcoreapp</div><div class="line">dotnet run</div></pre></td></tr></table></figure>
+</code></pre><p>浏览到 <a href="http://localhost:5001" target="_blank" rel="external">http://localhost:5001</a>。  单击“接受”，接受隐私和 cookie 政策。 此应用不保留个人信息。</p>
+<p>打开 Pages/About.cshtml，修改该页面，浏览到 <a href="http://localhost:5001/About" target="_blank" rel="external">http://localhost:5001/About</a> 并验证是否显示更改。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;ASP-NET-Core-入门&quot;&gt;&lt;a href=&quot;#ASP-NET-Core-入门&quot; class=&quot;headerlink&quot; title=&quot;ASP.NET Core 入门&quot;&gt;&lt;/a&gt;&lt;a name=&quot;get-started-with-aspnet-core&quot;&gt;&lt;/
+    
+    </summary>
+    
+    
+      <category term=".NET" scheme="http://xj8c.cc/tags/NET/"/>
+    
+      <category term=".ASP.NET" scheme="http://xj8c.cc/tags/ASP-NET/"/>
+    
+      <category term=".NET Core" scheme="http://xj8c.cc/tags/NET-Core/"/>
+    
+      <category term=".ASP.NET Core" scheme="http://xj8c.cc/tags/ASP-NET-Core/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ASP.NET Core 简单介绍</title>
+    <link href="http://xj8c.cc/2018/07/02/asp.net-core-introduce/"/>
+    <id>http://xj8c.cc/2018/07/02/asp.net-core-introduce/</id>
+    <published>2018-07-02T08:00:00.000Z</published>
+    <updated>2018-07-02T10:04:23.689Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="ASP-NET-Core-简介"><a href="#ASP-NET-Core-简介" class="headerlink" title="ASP.NET Core 简介"></a><a name="introduction-to-aspnet-core"></a>ASP.NET Core 简介</h1><p>ASP.NET Core 是一个跨平台的高性能<a href="https://github.com/aspnet/home" target="_blank" rel="external">开源</a>框架，用于生成基于云且连接 Internet 的新式应用程序。 使用 ASP.NET Core，您可以：</p>
+<ul>
+<li>建置 Web 应用程式和服务、<a href="https://www.microsoft.com/internet-of-things/" target="_blank" rel="external">IoT</a> 应用和移动后端。</li>
+<li>在 Windows、macOS 和 Linux 上使用喜爱的开发工具。</li>
+<li>部署到云或本地。</li>
+<li>在 .NET Core 或 .NET Framework 上运行。</li>
+</ul>
+<h2 id="为何使用-ASP-NET-Core？"><a href="#为何使用-ASP-NET-Core？" class="headerlink" title="为何使用 ASP.NET Core？"></a><a name="why-use-aspnet-core"></a>为何使用 ASP.NET Core？</h2><p>数百万开发人员使用过（并将继续使用）<a href="https://docs.microsoft.com/aspnet/overview" target="_blank" rel="external">ASP.NET 4.x</a> 创建 Web 应用。 ASP.NET Core 是重新设计的 ASP.NET 4.x，更改了体系结构，形成了更精简的模块化框架。</p>
+<p>ASP.NET Core 具有如下优点：</p>
+<ul>
+<li>生成 Web UI 和 Web API 的统一场景。</li>
+<li>集成新式客户端框架和开发工作流。</li>
+<li>基于环境的云就绪配置系统。</li>
+<li>内置依赖项注入。</li>
+<li>轻型的高性能模块化 HTTP 请求管道。</li>
+<li>能够在 IIS、Nginx、Apache、Docker 上进行托管或在自己的进程中进行自托管。</li>
+<li>定目标到 .NET Core 时，可以使用并行应用版本控制。</li>
+<li>简化新式 Web 开发的工具。</li>
+<li>能够在 Windows、macOS 和 Linux 进行生成和运行。</li>
+<li>开放源代码和<a href="https://live.asp.net/" target="_blank" rel="external">以社区为中心</a>。</li>
+</ul>
+<p>ASP.NET Core 完全作为 <a href="https://www.nuget.org/" target="_blank" rel="external">NuGet</a> 包的一部分提供。 借助 NuGet 包，可以将应用优化为只包含必需的依赖项。 实际上，定目标到 .NET Core 的 ASP.NET Core 2.x 应用只需要使用一个 NuGet 包。 较小的应用图面区域的优势包括：提升安全性、减少维护和提高性能。</p>
+<h2 id="使用-ASP-NET-Core-MVC-生成-Web-API-和-Web-UI"><a href="#使用-ASP-NET-Core-MVC-生成-Web-API-和-Web-UI" class="headerlink" title="使用 ASP.NET Core MVC 生成 Web API 和 Web UI"></a><a name="build-web-apis-and-web-ui-using-aspnet-core-mvc"></a>使用 ASP.NET Core MVC 生成 Web API 和 Web UI</h2><p>ASP.NET Core MVC 提供生成 Web API 和 Web 应用所需的功能：</p>
+<ul>
+<li>Model-View-Controller (MVC) 模式 使 Web API 和 Web 应用可测试。</li>
+<li>ASP.NET Core 2.0 中新增的 Razor 页面是基于页面的编程模型，可简化 Web UI 生成并提高工作效率。</li>
+<li>Razor 标记提供了适用于 Razor 页面和 MVC 视图的高效语法。</li>
+<li>标记帮助程序使服务器端代码可以在 Razor 文件中参与创建和呈现 HTML 元素。</li>
+<li>内置的多数据格式和内容协商支持使 Web API 可访问多种客户端，包括浏览器和移动设备。</li>
+<li>模型绑定自动将 HTTP 请求中的数据映射到操作方法参数。</li>
+<li>模型验证自动执行客户端和服务器端验证。</li>
+</ul>
+<h2 id="客户端开发"><a href="#客户端开发" class="headerlink" title="客户端开发"></a><a name="client-side-development"></a>客户端开发</h2><p>ASP.NET Core 与常用客户端框架和库（包括 Angular、React 和 Bootstrap）无缝集成。 有关详细信息，请参阅客户端开发。</p>
+<h2 id="面向-NET-Framework-的-ASP-NET-Core"><a href="#面向-NET-Framework-的-ASP-NET-Core" class="headerlink" title="面向 .NET Framework 的 ASP.NET Core"></a><a name="aspnet-core-targeting-net-framework"></a>面向 .NET Framework 的 ASP.NET Core</h2><p>ASP.NET Core 可以面向 .NET Core 或 .NET Framework。 面向 .NET Framework 的 ASP.NET Core 应用无法跨平台，它们仅在 Windows 上运行。 没有计划删除 ASP.NET Core 中对面向 .NET Framework 的支持。 通常，ASP.NET Core 由 .NET Standard 库组成。 使用 .NET Standard 2.0 编写的应用可在 NET Standard 2.0 支持的任何位置运行。</p>
+<p>面向 .NET Core 有以下几个优势，并且这些优势会随着每次发布增加。 与 .NET Framework 相比，.NET Core 的部分优势包括：</p>
+<ul>
+<li>跨平台。 在 macOS、Linux 和 Windows 上运行。</li>
+<li>提高的性能</li>
+<li>并行版本控制</li>
+<li>新 API</li>
+<li>开源</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;ASP-NET-Core-简介&quot;&gt;&lt;a href=&quot;#ASP-NET-Core-简介&quot; class=&quot;headerlink&quot; title=&quot;ASP.NET Core 简介&quot;&gt;&lt;/a&gt;&lt;a name=&quot;introduction-to-aspnet-core&quot;&gt;&lt;/a
+    
+    </summary>
+    
+    
+      <category term=".NET" scheme="http://xj8c.cc/tags/NET/"/>
+    
+      <category term=".ASP.NET" scheme="http://xj8c.cc/tags/ASP-NET/"/>
+    
+      <category term=".NET Core" scheme="http://xj8c.cc/tags/NET-Core/"/>
+    
+      <category term=".ASP.NET Core" scheme="http://xj8c.cc/tags/ASP-NET-Core/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>.NET Core 简单介绍</title>
+    <link href="http://xj8c.cc/2018/07/02/dotnet-core-introduce/"/>
+    <id>http://xj8c.cc/2018/07/02/dotnet-core-introduce/</id>
+    <published>2018-07-02T06:00:00.000Z</published>
+    <updated>2018-07-02T10:07:45.516Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="NET-Core-入门"><a href="#NET-Core-入门" class="headerlink" title=".NET Core 入门"></a><a name="get-started-with-net-core"></a>.NET Core 入门</h1><p>.NET Core 可以在 <a href="#windows">Windows</a>、<a href="#linux">Linux</a> 和 <a href="#os-x--macos">macOS/OS X</a> 上运行。</p>
+<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a><a name="windows"></a>Windows</h2><p>在 <a href="https://www.microsoft.com/net/core#windows" target="_blank" rel="external">Windows</a> 上安装 .NET Core。 </p>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a><a name="linux"></a>Linux</h2><p>在 <a href="https://www.microsoft.com/net/core#linuxredhat" target="_blank" rel="external">Linux</a> 上安装 .NET Core。</p>
+<h2 id="OS-X-macOS"><a href="#OS-X-macOS" class="headerlink" title="OS X/macOS"></a><a name="os-x--macos"></a>OS X/macOS</h2><p>安装适用于 <a href="https://www.microsoft.com/net/core#macos" target="_blank" rel="external">macOS</a> 的 .NET Core。 .NET Core 可在 OS X El Capitan（版本 10.11）和 macOS Sierra（版本 10.12）上使用。</p>
+<h1 id="NET-体系结构组件"><a href="#NET-体系结构组件" class="headerlink" title=".NET 体系结构组件"></a>.NET 体系结构组件</h1><p>.NET 应用开发用于并运行于一个或多个 .NET 实现。  .NET 实现包括 .NET Framework、.NET Core 和 Mono。 .NET 的所有实现都有一个名为 .NET Standard 的通用 API 规范。 本文简要介绍了每个概念。</p>
+<h2 id="NET-Standard"><a href="#NET-Standard" class="headerlink" title=".NET Standard"></a><a name="net-standard"></a>.NET Standard</h2><p>.NET Standard 是一组由 .NET 实现的基类库实现的 API。 更正式地说，它是构成协定统一集（这些协定是编写代码的依据）的特定 .NET API 组。 这些协定在每个 .NET 实现中实现。 这可实现不同 .NET 实现间的可移植性，有效地使代码可在任何位置运行。</p>
+<p>.NET Standard 也是一个目标框架。 如果代码面向 .NET Standard 版本，则它可在支持该 .NET Standard 版本的任何 .NET 实现上运行。</p>
+<h2 id="NET-实现"><a href="#NET-实现" class="headerlink" title=".NET 实现"></a><a name="net-implementations"></a>.NET 实现</h2><p>.NET 的每个实现都具有以下组件：</p>
+<ul>
+<li>一个或多个运行时。 示例：用于 .NET Framework 的 CLR、CoreCLR 和用于 .NET Core 的 CoreRT。</li>
+<li>实现 .NET Standard 并且可实现其他 API 的类库。 示例：.NET Framework 基类库、.NET Core 基类库。</li>
+<li>可选择包含一个或多个应用程序框架。 示例： ASP.NET、Windows 窗体和 Windows Presentation Foundation (WPF) 包含在 .NET Framework 中。</li>
+<li>可包含开发工具。 某些开发工具在多个实现之间共享。</li>
+</ul>
+<p>Microsoft 积极开发和维护的主要 .NET 实现有 4 个：.NET Core、.NET Framework、Mono 和 UWP。</p>
+<h3 id="NET-Core"><a href="#NET-Core" class="headerlink" title=".NET Core"></a><a name="net-core"></a>.NET Core</h3><p>.NET Core 是 .NET 的跨平台实现，专用于处理大规模的服务器和云工作负荷。 可在 Windows、macOS 和 Linux 上运行。 它实现 .NET Standard，因此面向 .NET Standard 的代码都可在 .NET Core 上运行。 ASP.NET Core 在 .NET Core 上运行。 </p>
+<h3 id="NET-Framework"><a href="#NET-Framework" class="headerlink" title=".NET Framework"></a><a name="net-framework"></a>.NET Framework</h3><p>.Net Framework 是自 2002 年起就已存在的原始 .NET 实现。 它是当前 .NET 开发人员经常使用的 .NET Framework。 4.5 版以及更高版本实现 .NET Standard，因此面向 .NET Standard 的代码都可在这些版本的 .NET Framework 上运行。 它还包含一些特定于 Windows 的 API，如通过 Windows 窗体和 WPF 进行 Windows 桌面开发的 API。 .NET Framework 非常适合用于生成 Windows 桌面应用程序。</p>
+<h3 id="Mono"><a href="#Mono" class="headerlink" title="Mono"></a><a name="mono"></a>Mono</h3><p>Mono 是主要在需要小型运行时使用的 .NET 实现。 它是在 Android、Mac、iOS、tvOS 和 watchOS 上驱动 Xamarin 应用程序的运行时，且主要针对小内存占用。 Mono 还支持使用 Unity 引擎生成的游戏。</p>
+<p>它支持所有当前已发布的 .NET Standard 版本。</p>
+<p>以前，Mono 实现更大的 .NET Framework API 并模拟一些 Unix 上最常用的功能。 有时使用它运行依赖 Unix 上的这些功能的 .NET 应用程序。</p>
+<p>Mono 通常与实时编译器一起使用，但它也提供在 iOS 之类的平台使用的完整静态编译器（预先编译）。</p>
+<h3 id="通用-Windows-平台-UWP"><a href="#通用-Windows-平台-UWP" class="headerlink" title="通用 Windows 平台 (UWP)"></a><a name="universal-windows-platform-uwp"></a>通用 Windows 平台 (UWP)</h3><p>UWP 是用于为物联网 (IoT) 生成新式触控 Windows 应用程序和软件的 .NET 实现。 它旨在统一可能想要以其为目标的不同类型的设备，包括电脑、平板电脑、平板手机、电话，甚至 Xbox。 UWP 提供许多服务，如集中式应用商店、执行环境 (AppContainer) 和一组 Windows API（用于代替 Win32 (WinRT)）。 应用可采用 C++、C#、VB.NET 和 JavaScript 编写。 使用 C# 和 VB.NET 时，.NET API 由 .NET Core 提供。</p>
+<h2 id="NET-运行时"><a href="#NET-运行时" class="headerlink" title=".NET 运行时"></a><a name="net-runtimes"></a>.NET 运行时</h2><p>运行时是用于托管程序的执行环境。 OS 属于运行时环境，但不属于 .NET 运行时。 下面是 .NET 运行时的一些示例：</p>
+<ul>
+<li>.NET Framework 公共语言运行时 (CLR)</li>
+<li>.NET Core 核心公共语言运行时 (CoreCLR)</li>
+<li>适用于通用 Windows 平台的 .NET Native </li>
+<li>用于 Xamarin.iOS、Xamarin.Android、Xamarin.Mac 和 Mono 桌面框架的 Mono 运行时</li>
+</ul>
+<h2 id="NET-工具和常见基础结构"><a href="#NET-工具和常见基础结构" class="headerlink" title=".NET 工具和常见基础结构"></a><a name="net-tooling-and-common-infrastructure"></a>.NET 工具和常见基础结构</h2><p>可访问一整套适用于每种 .NET 实现的工具和基础结构组件。 包括（但不限于）以下几种：</p>
+<ul>
+<li>.NET 语言及其编译器</li>
+<li>.NET 项目系统（基于 .csproj.vbproj 和 .fsproj 文件）</li>
+<li>MSBuild（用于生成项目的生成引擎）</li>
+<li>NuGet（适用于.NET 的 Microsoft 程序包管理器）</li>
+<li>开放源生成业务流程工具，例如 <a href="https://cakebuild.net/" target="_blank" rel="external">CAKE</a> 和 <a href="https://fake.build/" target="_blank" rel="external">FAKE</a></li>
+</ul>
+<h1 id="包、元包和框架"><a href="#包、元包和框架" class="headerlink" title="包、元包和框架"></a><a name="packages-metapackages-and-frameworks"></a>包、元包和框架</h1><p>.NET Core 是一种由 NuGet 包组成的平台。 有些产品体验受益于包的细粒度定义，而另一些受益于粗粒度的定义。 为了适应这种二元定义，一款好的产品应该作为一组细粒度的包发布，然后在更粗的粒度组块中进行描述，单个包的正式的名字叫做“元包”。</p>
+<p>每个 .Net Core 包都支持以框架形式通过多个 .Net 实现代码运行。 其中有些框架是传统框架，例如表示 .NET Framework 的 <code>net46</code>。 而另一些则是新框架，可视为是“基于包的框架”，这种是框架的另外一种新的定义模型。 这些基于包的框架整个都是由包组成的，它们自身也被定义成包，这就在包与框架之间形成了一种比较密切的关系。</p>
+<h2 id="包"><a href="#包" class="headerlink" title="包"></a><a name="packages"></a>包</h2><p>.NET Core 被分成一组包，它们提供了基元类型，以及更高层的数据类型，应用组合类型和通用实用工具。 每一个包都代表着单独的同名程序集。 例如，<a href="https://www.nuget.org/packages/System.Runtime" target="_blank" rel="external">System.Runtime</a> 这个包就包含了 System.Runtime.dll 程序集。 </p>
+<p>以细粒度方式定义这些包具有以下好处：</p>
+<ul>
+<li>细粒度的包可以在它自己的计划内交付，只需完成仅对相关的其他有限的包进行测试即可。</li>
+<li>细粒度的包可以提供不同的 OS 和 CPU 支持。</li>
+<li>细粒度的包可以单独依赖于某一个库。</li>
+<li>应用可以变得更小，因为没有引用的包不会变成应用发行的一部分。</li>
+</ul>
+<p>上述某些好处只适用于某些特定场合。 例如，.NET Core 的所有包通常都会在同一计划内提供对同一平台的支持。 在这种情况下，补丁与更新会以小的单独包的形式发布和安装。 由于这种小范围的变化，补丁的验证与时间花费，都可以限制到单个库的需求范围中。</p>
+<p>以下是 .NET Core 重要的 NuGet 包列表：</p>
+<ul>
+<li><a href="https://www.nuget.org/packages/System.Runtime" target="_blank" rel="external">System.Runtime</a> - 最基础的 .NET Core 包，包括 <xref:system.object>、<xref:system.string>、<xref:system.array>、<xref:system.action> 和 <xref:system.collections.generic.ilist%601>。</xref:system.collections.generic.ilist%601></xref:system.action></xref:system.array></xref:system.string></xref:system.object></li>
+<li><a href="https://www.nuget.org/packages/System.Collections" target="_blank" rel="external">System.Collections</a> - 一组（主要）泛型集合，包括 <xref:system.collections.generic.list%601> 和 <xref:system.collections.generic.dictionary%602>。</xref:system.collections.generic.dictionary%602></xref:system.collections.generic.list%601></li>
+<li><a href="https://www.nuget.org/packages/System.Net.Http" target="_blank" rel="external">System.Net.Http</a> - 一组用于 HTTP 网络通信的类型，包括 <xref:system.net.http.httpclient> 和 <xref:system.net.http.httpresponsemessage>。</xref:system.net.http.httpresponsemessage></xref:system.net.http.httpclient></li>
+<li><a href="https://www.nuget.org/packages/System.IO.FileSystem" target="_blank" rel="external">System.IO.FileSystem</a> - 一组用于读写到本地或网络磁盘存储的类型，包括 <xref:system.io.file> 和 <xref:system.io.directory>。</xref:system.io.directory></xref:system.io.file></li>
+<li><a href="https://www.nuget.org/packages/System.Linq" target="_blank" rel="external">System.Linq</a> - 一组用于查询对象的类型，包括 <code>Enumerable</code> 和 <xref:system.linq.ilookup%602>。</xref:system.linq.ilookup%602></li>
+<li><a href="https://www.nuget.org/packages/System.Reflection" target="_blank" rel="external">System.Reflection</a> - 一组用于加载、检查和激活类型的类型，包括 <xref:system.reflection.assembly>、<xref:system.reflection.typeinfo> 和 <xref:system.reflection.methodinfo>。</xref:system.reflection.methodinfo></xref:system.reflection.typeinfo></xref:system.reflection.assembly></li>
+</ul>
+<p>通常情况下，相较于逐个地将包包含在项目中，包含<em>元包</em>会简单得多，元包是指通常配合在一起使用的一组包。 （有关元包的更多信息，请参见下一部分。）但是当需要单个包时，可以按以下示例所示的那样来包含它，此示例引用 <a href="https://www.nuget.org/packages/System.Runtime/" target="_blank" rel="external">System.Runtime</a> 包。 </p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Project</span> <span class="attr">Sdk</span>=<span class="string">"Microsoft.NET.Sdk"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">PropertyGroup</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">TargetFramework</span>&gt;</span>netstandard1.6<span class="tag">&lt;/<span class="name">TargetFramework</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">PropertyGroup</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">ItemGroup</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">PackageReference</span> <span class="attr">Include</span>=<span class="string">"System.Runtime"</span> <span class="attr">Version</span>=<span class="string">"4.3.0"</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">ItemGroup</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">Project</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="元包"><a href="#元包" class="headerlink" title="元包"></a><a name="metapackages"></a>元包</h2><p>元包就是一个 NuGet 包约定，描述了一组意义相关的包。 开发团队利用依赖项来描述这一组包。 他们通过这一组包来描述一个框架，然后有选择地发布出去。 </p>
+<p>默认情况下，早期版本的 .NET Core 工具（同时基于 project.json 和 csproj 的工具）指定一个框架和一个元包。 但目前，由目标框架隐式引用元包，以便将每个元包绑定到一个目标框架。 例如，<code>netstandard1.6</code> 框架引用 NetStandard.Library 1.6.0 版元包。 同样， <code>netcoreapp1.1</code> 框架引用 Microsoft.NETCore.App 1.1.0 版元包。 </p>
+<p>以某个框架为目标以及隐式引用元包，这实际上是添加了对元包中每一个独立包的引用依赖。 这使这些包中的所有库都可用于 IntelliSense（或类似体验），同时也可用于发布应用。  </p>
+<p>使用元包具有以下好处：</p>
+<ul>
+<li>在引用大量细粒度包方面，提供了一种方便的用户体验。 </li>
+<li>定义了一组经过充分测试且运行良好的包（包括指定的各种版本）。</li>
+</ul>
+<p>.NET Standard 元包为：</p>
+<ul>
+<li><a href="https://www.nuget.org/packages/NETStandard.Library" target="_blank" rel="external">NETStandard.Library</a> - 描述了属于“.NET Standard”一部分的各种库。 适用于所有支持 .NET Standard 的 .NET 实现（例如，.NET Framework、.NET Core 和 Mono）。 也就是“netstandard”框架。</li>
+</ul>
+<p>重要的 .NET Core 元包有：</p>
+<ul>
+<li><a href="https://www.nuget.org/packages/Microsoft.NETCore.App" target="_blank" rel="external">Microsoft.NETCore.App</a> - 描述了属于 .NET Core 发行版的部分库。 也就是 <a href="https://github.com/dotnet/core-setup/blob/release/1.1.0/pkg/projects/Microsoft.NETCore.App/Microsoft.NETCore.App.pkgproj" target="_blank" rel="external"><code>.NETCoreApp</code> 框架</a>。 它依赖于更小的 <code>NETStandard.Library</code>。</li>
+<li><a href="https://www.nuget.org/packages/Microsoft.AspNetCore.All" target="_blank" rel="external">Microsoft.AspNetCore.All</a> - 包含来自 ASP.NET Core、Entity Framework Core 以及 ASP.NET Core 和 Entity Framework Core 使用的内部和第三方依赖项的所有受支持包。 </li>
+<li><a href="https://www.nuget.org/packages/Microsoft.NETCore.Portable.Compatibility" target="_blank" rel="external">Microsoft.NETCore.Portable.Compatibility</a> - 一组兼容外观，使基于 mscorlib 的可移植类库(PCL) 得以在 .Net Core上运行。</li>
+</ul>
+<h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a><a name="frameworks"></a>框架</h2><p>每个 .NET Core 包支持一组运行时框架。 框架描述了一组可用的 API（以及潜在的其他特性），所以你可以在指定一个目标框架时使用这些功能。 添加新的 API 时，它们就会进入版本控制流程。</p>
+<p>例如，<a href="https://www.nuget.org/packages/System.IO.FileSystem" target="_blank" rel="external">System.IO.FileSystem</a> 支持以下框架：</p>
+<ul>
+<li>.NETFramework,Version=4.6</li>
+<li>.NETStandard,Version=1.3</li>
+<li>6 种 Xamarin 平台（例如，xamarinios10）</li>
+</ul>
+<p>将前两个框架进行对比很有帮助，因为它们各自代表了一种不同的框架定义方式。</p>
+<p><code>.NETFramework,Version=4.6</code> 框架表示 .NET Framework 4.6 中可用的 API。 你可以生成使用 .NET Framework 4.6 引用程序集编译的库，并以NuGet 包的方式在 net46 lib 文件夹中发布这些库。 这样，你的库就会被那些基于或者兼容 .Net Framework 4.6 的应用所使用。 这是所有框架的传统工作原理。</p>
+<p><code>.NETStandard,Version=1.3</code> 框架是一个基于包的框架。 它依赖基于框架的包，来定义和公开与框架有关的 API。</p>
+<h2 id="基于包的框架"><a href="#基于包的框架" class="headerlink" title="基于包的框架"></a><a name="package-based-frameworks"></a>基于包的框架</h2><p>框架和包之间是一种双向关系。 首先是为一个给定的框架定义了 API，例如 <code>netstandard1.3</code>。 以 <code>netstandard1.3</code> 为目标的包（或兼容的框架，如 <code>netstandard1.0</code>）定义了适用于 <code>netstandard1.3</code> 的 API。 听起来像是循环定义，然而并不是。 从“基于包的”这个词本身的角度来讲，框架的 API 定义是来自于包的。 框架本身并不定义任何 API。</p>
+<p>其次，是这个双向关系中的资产选择。 包可以包含多个框架的资产。 对于一组包和/或元包的引用，框架需要决定它应选择哪些资产，例如，是 <code>net46</code> 还是 <code>netstandard1.3</code>。 选择正确的资产很重要。 例如，<code>net46</code> 资产可能并不与 .NET Framework 4.0 或 .NET Core 1.0 兼容。</p>
+<p>可以在下图中看到这种关系。 <em>API</em> 选择框架作为目标并定义了框架。 而<em>框架</em>用于<em>资产选择</em>。 <em>资产</em>实现了 API。</p>
+<p><img src="https://meowv.github.io/images/dnc/package-framework.png" alt="PNG"></p>
+<p>在 .Net Core 基础之上，基于包的框架主要有两个：</p>
+<ul>
+<li><code>netstandard</code></li>
+<li><code>netcoreapp</code></li>
+</ul>
+<h3 id="NET-Standard-1"><a href="#NET-Standard-1" class="headerlink" title=".NET Standard"></a><a name="net-standard"></a>.NET Standard</h3><p>.NET Standard（目标框架名字对象：<code>netstandard</code>）框架表示在 <a href="../standard/net-standard.md">.NET Standard</a> 基础之上生成并由其定义的 API。 如果构建的库将用于在多个运行时上运行，就应将此框架作为目标。 这样便可在任何一种兼容 .NET 标准的运行时上受支持，例如 .NET Core、.NET Framework 和 Mono/Xamarin。 每个运行时都支持一组 .NET Standard 版本，具体取决于实现的 API。</p>
+<p><code>netstandard</code> 框架隐式引用 <a href="https://www.nuget.org/packages/NETStandard.Library" target="_blank" rel="external"><code>NETStandard.Library</code></a> 元包。 例如，以下 MSBuild 项目文件指示项目以 <code>netstandard1.6</code> 为目标，其引用 <a href="https://www.nuget.org/packages/NETStandard.Library/1.6.0" target="_blank" rel="external"><code>NETStandard.Library</code> 1.6 版</a>元包。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Project</span> <span class="attr">Sdk</span>=<span class="string">"Microsoft.NET.Sdk"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">PropertyGroup</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">TargetFramework</span>&gt;</span>netstandard1.6<span class="tag">&lt;/<span class="name">TargetFramework</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">PropertyGroup</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">Project</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>但项目文件中的框架和元包引用不需要匹配，并且可使用项目文件中的 <code>&lt;NetStandardImplicitPackageVersion&gt;</code> 元素指定低于元包版本的框架版本。 例如，以下项目文件有效。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Project</span> <span class="attr">Sdk</span>=<span class="string">"Microsoft.NET.Sdk"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">PropertyGroup</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">TargetFramework</span>&gt;</span>netstandard1.3<span class="tag">&lt;/<span class="name">TargetFramework</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">NetStandardImplicitPackageVersion</span>&gt;</span>1.6.0<span class="tag">&lt;/<span class="name">NetStandardImplicitPackageVersion</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">PropertyGroup</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">Project</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>面向 <code>netstandard1.3</code> 却使用 <code>NETStandard.Library</code> 1.6.0 版本，这一点很奇怪。 然而，这是一个有效的用例，因为元包支持更旧的 <code>netstandard</code> 版本。 可能恰好你已将 1.6.0 版的元包进行了标准化，然后将其用于所有库，而这些库可以面向各种 <code>netstandard</code> 版本。 使用此方法，只需还原 <code>NETStandard.Library</code> 1.6.0，无需加载早期版本。 </p>
+<p>反之，把 <code>netstandard1.6</code> 设为目标，却使用 1.3.0 版的 <code>NETStandard.Library</code> 也是无效的。 你不能把更高版本的框架设为目标，却使用更低版本的元包，因为更低版本的元包不会公开任何更高版本框架的资产。 元包资产的版本控制方案与描述框架的最高版本匹配。 借助于版本控制方案，<code>NETStandard.Library</code> 的第一个版本是 v1.6.0，因为它包含 <code>netstandard1.6</code> 资产。 而上例中的 v1.3.0 版本，只是为了举例方便，实际上并不存在。</p>
+<h3 id="NET-Core-应用程序"><a href="#NET-Core-应用程序" class="headerlink" title=".NET Core 应用程序"></a><a name="net-core-application"></a>.NET Core 应用程序</h3><p>.NET Core 应用程序 (TFM: <code>netcoreapp</code>) 框架表示 .NET Core 发行版及其提供的控制台应用程序模型附带的包和相关 API。 .NET Core 必须使用此框架，因为必须要使用其中的控制台应用程序模型。同时只运行于 .Net Core 平台的库也应使用此模型。 使用此框架后，所有应用和库将只能够在 .Net Core 上运行。 </p>
+<p><code>Microsoft.NETCore.App</code> 元包的目标框架是 <code>netcoreapp</code>。 它提供了约 60 个库的访问权限，其中约 40 个由 <code>NETStandard.Library</code> 包提供，还有另外 20 个库。 可以引用目标框架为 <code>netcoreapp</code> 或与框架（如 <code>netstandard</code>）兼容的库获得对其他 API 的访问权限。 </p>
+<p>由 <code>Microsoft.NETCore.App</code> 提供的大部分其他库还可以使用 <code>netstandard</code> 作为目标，如果其他 <code>netstandard</code> 库满足这些框架的依赖项的话。 这意味着，<code>netstandard</code> 库也可以引用这些包作为依赖项。 </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;NET-Core-入门&quot;&gt;&lt;a href=&quot;#NET-Core-入门&quot; class=&quot;headerlink&quot; title=&quot;.NET Core 入门&quot;&gt;&lt;/a&gt;&lt;a name=&quot;get-started-with-net-core&quot;&gt;&lt;/a&gt;.NET Core 入门
+    
+    </summary>
+    
+    
+      <category term=".NET" scheme="http://xj8c.cc/tags/NET/"/>
+    
+      <category term=".ASP.NET" scheme="http://xj8c.cc/tags/ASP-NET/"/>
+    
+      <category term=".NET Core" scheme="http://xj8c.cc/tags/NET-Core/"/>
+    
+      <category term=".ASP.NET Core" scheme="http://xj8c.cc/tags/ASP-NET-Core/"/>
+    
+  </entry>
   
   <entry>
     <title>2017年终总结</title>
@@ -101,7 +345,7 @@
     <link href="http://xj8c.cc/2017/10/13/Regex-chinese-english-comparison-table/"/>
     <id>http://xj8c.cc/2017/10/13/Regex-chinese-english-comparison-table/</id>
     <published>2017-10-13T01:37:20.000Z</published>
-    <updated>2017-10-13T01:44:09.530Z</updated>
+    <updated>2017-10-13T01:44:09.531Z</updated>
     
     <content type="html"><![CDATA[<table>
 <thead>
@@ -1449,7 +1693,7 @@
     <link href="http://xj8c.cc/2017/10/11/Regex-4/"/>
     <id>http://xj8c.cc/2017/10/11/Regex-4/</id>
     <published>2017-10-11T01:18:38.000Z</published>
-    <updated>2017-10-11T01:19:05.511Z</updated>
+    <updated>2017-10-11T01:19:05.512Z</updated>
     
     <content type="html"><![CDATA[<h2 id="第四章-正则表达式回溯法原理"><a href="#第四章-正则表达式回溯法原理" class="headerlink" title="第四章 正则表达式回溯法原理"></a>第四章 正则表达式回溯法原理</h2><p>学习正则表达式，是需要懂点儿匹配原理的。</p>
 <p>而研究匹配原理时，有两个字出现的频率比较高：“回溯”。</p>
@@ -2464,7 +2708,7 @@
     <link href="http://xj8c.cc/2017/07/16/ReactNative-build/"/>
     <id>http://xj8c.cc/2017/07/16/ReactNative-build/</id>
     <published>2017-07-16T08:45:13.000Z</published>
-    <updated>2017-07-21T03:29:02.638Z</updated>
+    <updated>2017-07-21T03:29:02.639Z</updated>
     
     <content type="html"><![CDATA[<h1 id="打包应用"><a href="#打包应用" class="headerlink" title="打包应用"></a>打包应用</h1><p>假设你的应用做完了，总不能还在后台开着packager就把应用发布出去吧。很明显，我们需要让应用可以离线，下边所要讲的就是<br>一个让应用脱离packager的过程<br><a id="more"></a></p>
 <h2 id="生成签名"><a href="#生成签名" class="headerlink" title="生成签名"></a>生成签名</h2><p>没签名直接打包应用是不行的，我们需要实现生成一个签名。在Linux下，我们执行这条命令：</p>
@@ -2549,7 +2793,7 @@
     <link href="http://xj8c.cc/2017/07/14/ReactNative-navigation/"/>
     <id>http://xj8c.cc/2017/07/14/ReactNative-navigation/</id>
     <published>2017-07-14T08:42:18.000Z</published>
-    <updated>2017-07-21T03:29:06.068Z</updated>
+    <updated>2017-07-21T03:29:06.069Z</updated>
     
     <content type="html"><![CDATA[<h1 id="导航器"><a href="#导航器" class="headerlink" title="导航器"></a>导航器</h1><p>一个应用（普通的那种），总是有好多个界面，只有一个界面的应用怎么能留得住用户呢？（虽然有很多界面的也不一定留得住）<br>所以说，做应用一般不会只做一个页面。我们知道，网页之间可以自由跳转，通过一个<code>&lt;a&gt;&lt;/a&gt;</code>就可以搞定了，但是<br>开发应用不是写网页，React Native中也没有<code>&lt;a&gt;</code>，那当我们需要做界面跳转的时候该怎么办呢？答案是使用<code>Navigator</code>组件。<br>哈哈，逗你的，在0.42版本前使用<code>Navigator</code>来实现导航效果没问题，不过呢，自从0.43版本之后React Native将停止维护这个组件了，<br>因为出现了更好用的<code>React Navigation</code>（半官方）。<br><a id="more"></a><br>首先我们来安装它：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save react-navigation</div></pre></td></tr></table></figure>
@@ -2769,7 +3013,7 @@ const { navigate } = this.props.navigation;
     <link href="http://xj8c.cc/2017/07/11/ReactNative-style-layout/"/>
     <id>http://xj8c.cc/2017/07/11/ReactNative-style-layout/</id>
     <published>2017-07-11T08:25:59.000Z</published>
-    <updated>2017-07-21T03:29:22.951Z</updated>
+    <updated>2017-07-21T03:29:22.952Z</updated>
     
     <content type="html"><![CDATA[<h1 id="是时候说说样式与布局了"><a href="#是时候说说样式与布局了" class="headerlink" title="是时候说说样式与布局了"></a>是时候说说样式与布局了</h1><p>本章提要</p>
 <ul>
@@ -2860,7 +3104,7 @@ const { navigate } = this.props.navigation;
     <link href="http://xj8c.cc/2017/07/10/ReactNative-module/"/>
     <id>http://xj8c.cc/2017/07/10/ReactNative-module/</id>
     <published>2017-07-10T08:24:39.000Z</published>
-    <updated>2017-07-21T03:29:16.975Z</updated>
+    <updated>2017-07-21T03:29:16.976Z</updated>
     
     <content type="html"><![CDATA[<h1 id="一些一定要知道的组件"><a href="#一些一定要知道的组件" class="headerlink" title="一些一定要知道的组件"></a>一些一定要知道的组件</h1><p>本章提要</p>
 <ul>
@@ -2928,7 +3172,7 @@ const { navigate } = this.props.navigation;
     <link href="http://xj8c.cc/2017/07/09/ReactNative-run/"/>
     <id>http://xj8c.cc/2017/07/09/ReactNative-run/</id>
     <published>2017-07-09T08:20:15.000Z</published>
-    <updated>2017-07-19T08:37:21.265Z</updated>
+    <updated>2017-07-19T08:37:21.266Z</updated>
     
     <content type="html"><![CDATA[<h1 id="启动你的App"><a href="#启动你的App" class="headerlink" title="启动你的App"></a>启动你的App</h1><p>本章提要</p>
 <ul>
@@ -3053,7 +3297,7 @@ const { navigate } = this.props.navigation;
     <link href="http://xj8c.cc/2017/07/07/ReactNative-introduce/"/>
     <id>http://xj8c.cc/2017/07/07/ReactNative-introduce/</id>
     <published>2017-07-07T08:17:29.000Z</published>
-    <updated>2017-07-19T08:37:02.859Z</updated>
+    <updated>2017-07-19T08:37:02.860Z</updated>
     
     <content type="html"><![CDATA[<h1 id="React-Native介绍"><a href="#React-Native介绍" class="headerlink" title="React Native介绍"></a>React Native介绍</h1><p>虽然，你可能已经对React Native有一定的了解了，但是按照惯例，还是要简单介绍一下。</p>
 <p>React是由Facebook的工程师们在2013年开源的一款前端框架，现在已成为最火热的前端框架之一。<br>React Native则是使用React来开发移动应用的方式。<br><a id="more"></a><br>React Native底层使用JS与原生进行通信，这使得其性能比Hybird强了不少，如果觉得Hybird使你的应用变得卡顿，<br>那么投入React Native的怀抱是一个好的选择~</p>
@@ -3083,7 +3327,7 @@ const { navigate } = this.props.navigation;
     <link href="http://xj8c.cc/2017/06/01/my-internship-record/"/>
     <id>http://xj8c.cc/2017/06/01/my-internship-record/</id>
     <published>2017-05-31T16:00:00.000Z</published>
-    <updated>2017-07-19T08:58:43.383Z</updated>
+    <updated>2017-07-19T08:58:43.384Z</updated>
     
     <content type="html"><![CDATA[<h3 id="2017年7月"><a href="#2017年7月" class="headerlink" title="2017年7月"></a>2017年7月</h3><p>1、签订劳动合同，转正，实习期结束</p>
 <p>2、React-Native 学习研究</p>
@@ -4382,7 +4626,7 @@ const { navigate } = this.props.navigation;
     <link href="http://xj8c.cc/2016/04/07/get-and-post/"/>
     <id>http://xj8c.cc/2016/04/07/get-and-post/</id>
     <published>2016-04-07T15:04:07.000Z</published>
-    <updated>2017-07-18T02:30:00.724Z</updated>
+    <updated>2017-07-18T02:30:00.725Z</updated>
     
     <content type="html"><![CDATA[<h2 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h2><h3 id="Get和Post是表单提交数据的两种基本方式，Get请求数据通过域名后缀URL传送，用户可见，不安全，Post请求数据通过在请求报文正文里面传输，相对来说比较安全。"><a href="#Get和Post是表单提交数据的两种基本方式，Get请求数据通过域名后缀URL传送，用户可见，不安全，Post请求数据通过在请求报文正文里面传输，相对来说比较安全。" class="headerlink" title="Get和Post是表单提交数据的两种基本方式，Get请求数据通过域名后缀URL传送，用户可见，不安全，Post请求数据通过在请求报文正文里面传输，相对来说比较安全。"></a>Get和Post是表单提交数据的两种基本方式，Get请求数据通过域名后缀URL传送，用户可见，不安全，Post请求数据通过在请求报文正文里面传输，相对来说比较安全。</h3><h3 id="Get是通过URL传递表单值，Post通过URL看不到表单域的值；"><a href="#Get是通过URL传递表单值，Post通过URL看不到表单域的值；" class="headerlink" title="Get是通过URL传递表单值，Post通过URL看不到表单域的值；"></a>Get是通过URL传递表单值，Post通过URL看不到表单域的值；</h3><h3 id="Get传递的数据量是有限的，如果要传递大量数据则不能用Get，比如type-”file”上传文章、type-”password”传递密码或者用-gt-textarea-lt-发表大段文章，Post则没有这个限制；"><a href="#Get传递的数据量是有限的，如果要传递大量数据则不能用Get，比如type-”file”上传文章、type-”password”传递密码或者用-gt-textarea-lt-发表大段文章，Post则没有这个限制；" class="headerlink" title="Get传递的数据量是有限的，如果要传递大量数据则不能用Get，比如type=”file”上传文章、type=”password”传递密码或者用&gt;textarea&lt;发表大段文章，Post则没有这个限制；"></a>Get传递的数据量是有限的，如果要传递大量数据则不能用Get，比如type=”file”上传文章、type=”password”传递密码或者用&gt;textarea&lt;发表大段文章，Post则没有这个限制；</h3><h3 id="Post会有浏览器提示重新提交表单的问题，Get则没有。"><a href="#Post会有浏览器提示重新提交表单的问题，Get则没有。" class="headerlink" title="Post会有浏览器提示重新提交表单的问题，Get则没有。"></a>Post会有浏览器提示重新提交表单的问题，Get则没有。</h3><h3 id="对于Post的表单重新敲地址栏再刷新就不会提示重新提交了，因为重新敲地址就没有偷偷提交的的数据了。"><a href="#对于Post的表单重新敲地址栏再刷新就不会提示重新提交了，因为重新敲地址就没有偷偷提交的的数据了。" class="headerlink" title="对于Post的表单重新敲地址栏再刷新就不会提示重新提交了，因为重新敲地址就没有偷偷提交的的数据了。"></a>对于Post的表单重新敲地址栏再刷新就不会提示重新提交了，因为重新敲地址就没有偷偷提交的的数据了。</h3><h3 id="Post方式的正确的地址很难直接发给他人。"><a href="#Post方式的正确的地址很难直接发给他人。" class="headerlink" title="Post方式的正确的地址很难直接发给他人。"></a>Post方式的正确的地址很难直接发给他人。</h3><a id="more"></a>
 <h2 id="GET和POST的区别："><a href="#GET和POST的区别：" class="headerlink" title="GET和POST的区别："></a>GET和POST的区别：</h2><h3 id="1-Get提交的数据会放在URL之后，以？分割URL和传输数据，参数之间以-amp-相连，如Edit-aspx-name-test1-amp-id-123456。Post方法是把提交的数据放在http包的body中。"><a href="#1-Get提交的数据会放在URL之后，以？分割URL和传输数据，参数之间以-amp-相连，如Edit-aspx-name-test1-amp-id-123456。Post方法是把提交的数据放在http包的body中。" class="headerlink" title="1. Get提交的数据会放在URL之后，以？分割URL和传输数据，参数之间以&amp;相连，如Edit.aspx?name=test1&amp;id=123456。Post方法是把提交的数据放在http包的body中。"></a>1. Get提交的数据会放在URL之后，以？分割URL和传输数据，参数之间以&amp;相连，如Edit.aspx?name=test1&amp;id=123456。Post方法是把提交的数据放在http包的body中。</h3><h3 id="2-Get提交的数据大小有限制，因为浏览器对URL的长度是有所限制的，感兴趣的可以自己了解一下。而Post方法是提交的数据没有限制。"><a href="#2-Get提交的数据大小有限制，因为浏览器对URL的长度是有所限制的，感兴趣的可以自己了解一下。而Post方法是提交的数据没有限制。" class="headerlink" title="2. Get提交的数据大小有限制，因为浏览器对URL的长度是有所限制的，感兴趣的可以自己了解一下。而Post方法是提交的数据没有限制。"></a>2. Get提交的数据大小有限制，因为浏览器对URL的长度是有所限制的，感兴趣的可以自己了解一下。而Post方法是提交的数据没有限制。</h3><h3 id="3-Get方式需要使用Request-QueryString来取得变量的值，而Post方式通过Request-Form来获取变量的值。"><a href="#3-Get方式需要使用Request-QueryString来取得变量的值，而Post方式通过Request-Form来获取变量的值。" class="headerlink" title="3. Get方式需要使用Request.QueryString来取得变量的值，而Post方式通过Request.Form来获取变量的值。"></a>3. Get方式需要使用Request.QueryString来取得变量的值，而Post方式通过Request.Form来获取变量的值。</h3><h3 id="4-Get方式提交数据，会带来安全问题，比如一个登录页面，通过Get方式提交数据时，用户名和密码将出现在URL上，如果页面可以被缓存或者其他人可以访问此电脑，就可以从历史记录获得该用户的账号和密码。"><a href="#4-Get方式提交数据，会带来安全问题，比如一个登录页面，通过Get方式提交数据时，用户名和密码将出现在URL上，如果页面可以被缓存或者其他人可以访问此电脑，就可以从历史记录获得该用户的账号和密码。" class="headerlink" title="4. Get方式提交数据，会带来安全问题，比如一个登录页面，通过Get方式提交数据时，用户名和密码将出现在URL上，如果页面可以被缓存或者其他人可以访问此电脑，就可以从历史记录获得该用户的账号和密码。"></a>4. Get方式提交数据，会带来安全问题，比如一个登录页面，通过Get方式提交数据时，用户名和密码将出现在URL上，如果页面可以被缓存或者其他人可以访问此电脑，就可以从历史记录获得该用户的账号和密码。</h3><h3 id="Get是从服务器上获取数据，Post是向服务器传送数据。"><a href="#Get是从服务器上获取数据，Post是向服务器传送数据。" class="headerlink" title="Get是从服务器上获取数据，Post是向服务器传送数据。"></a>Get是从服务器上获取数据，Post是向服务器传送数据。</h3><h3 id="Get是把参数数据队列加到提交表单的action属性所指的URL中，值和表单内各个字段一一对应，在URL中可以看到。Post是通过http-post机制，将表单内各个字段与其内容放置在HTML-HEADER-内一起传送到action属性所指的URL地址。用户是看不到这个过程的。"><a href="#Get是把参数数据队列加到提交表单的action属性所指的URL中，值和表单内各个字段一一对应，在URL中可以看到。Post是通过http-post机制，将表单内各个字段与其内容放置在HTML-HEADER-内一起传送到action属性所指的URL地址。用户是看不到这个过程的。" class="headerlink" title="Get是把参数数据队列加到提交表单的action属性所指的URL中，值和表单内各个字段一一对应，在URL中可以看到。Post是通过http post机制，将表单内各个字段与其内容放置在HTML HEADER 内一起传送到action属性所指的URL地址。用户是看不到这个过程的。"></a>Get是把参数数据队列加到提交表单的action属性所指的URL中，值和表单内各个字段一一对应，在URL中可以看到。Post是通过http post机制，将表单内各个字段与其内容放置在HTML HEADER 内一起传送到action属性所指的URL地址。用户是看不到这个过程的。</h3><h3 id="对于Get方式，服务器端用Request-QueryString获取变量的值，对于Post方式，服务器端用Request-Form获取提交的数据。"><a href="#对于Get方式，服务器端用Request-QueryString获取变量的值，对于Post方式，服务器端用Request-Form获取提交的数据。" class="headerlink" title="对于Get方式，服务器端用Request.QueryString获取变量的值，对于Post方式，服务器端用Request.Form获取提交的数据。"></a>对于Get方式，服务器端用Request.QueryString获取变量的值，对于Post方式，服务器端用Request.Form获取提交的数据。</h3><h3 id="Get传送的数据量小，不能大于2kb-还是因为受URL长度的限制-。Post传送的数据量大，一般被默认为不受限制。但理论上，限制取决于服务器的处理能力。"><a href="#Get传送的数据量小，不能大于2kb-还是因为受URL长度的限制-。Post传送的数据量大，一般被默认为不受限制。但理论上，限制取决于服务器的处理能力。" class="headerlink" title="Get传送的数据量小，不能大于2kb(还是因为受URL长度的限制)。Post传送的数据量大，一般被默认为不受限制。但理论上，限制取决于服务器的处理能力。"></a>Get传送的数据量小，不能大于2kb(还是因为受URL长度的限制)。Post传送的数据量大，一般被默认为不受限制。但理论上，限制取决于服务器的处理能力。</h3><h3 id="Get安全性较低，Post安全性较高。因为Get在传输过程，数据被放在请求的URL中，而如今有很多服务器、代理服务器或者用户代理都会讲请求URL记录到日志文件中，然后放在某个地方，这样就可能会有一些隐私的信息被第三方看到。另外，用户也可以在浏览器上之间看到提交的数据，一些系统内部消息将会一同显示在用户面前。Post的所有操作对用户来说都是不可见的。"><a href="#Get安全性较低，Post安全性较高。因为Get在传输过程，数据被放在请求的URL中，而如今有很多服务器、代理服务器或者用户代理都会讲请求URL记录到日志文件中，然后放在某个地方，这样就可能会有一些隐私的信息被第三方看到。另外，用户也可以在浏览器上之间看到提交的数据，一些系统内部消息将会一同显示在用户面前。Post的所有操作对用户来说都是不可见的。" class="headerlink" title="Get安全性较低，Post安全性较高。因为Get在传输过程，数据被放在请求的URL中，而如今有很多服务器、代理服务器或者用户代理都会讲请求URL记录到日志文件中，然后放在某个地方，这样就可能会有一些隐私的信息被第三方看到。另外，用户也可以在浏览器上之间看到提交的数据，一些系统内部消息将会一同显示在用户面前。Post的所有操作对用户来说都是不可见的。"></a>Get安全性较低，Post安全性较高。因为Get在传输过程，数据被放在请求的URL中，而如今有很多服务器、代理服务器或者用户代理都会讲请求URL记录到日志文件中，然后放在某个地方，这样就可能会有一些隐私的信息被第三方看到。另外，用户也可以在浏览器上之间看到提交的数据，一些系统内部消息将会一同显示在用户面前。Post的所有操作对用户来说都是不可见的。</h3>]]></content>
@@ -6278,7 +6522,7 @@ const { navigate } = this.props.navigation;
     <link href="http://xj8c.cc/2015/02/17/win7-shortcuts/"/>
     <id>http://xj8c.cc/2015/02/17/win7-shortcuts/</id>
     <published>2015-02-17T07:29:28.000Z</published>
-    <updated>2017-07-18T02:29:46.661Z</updated>
+    <updated>2017-07-18T02:29:46.662Z</updated>
     
     <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>记得有位电脑达人说过，真正的电脑高手其实是很少使用鼠标操作电脑的，键盘为主，鼠标为辅，不管你信不信，会一些电脑日常操作的快捷键真的很方便。</p>
 <p>1.很多时候，需要暂时离开座位去做别的事情，如果对自己的电脑安全很重视，不妨按住windows键后，再按L键，这样电脑就直接锁屏了，这样就不用担心电脑的资料外泄啦 </p>

@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://xj8c.cc/2018/07/02/asp.net-core-getting-started/</loc>
+    
+    <lastmod>2018-07-02T12:24:36.575Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://xj8c.cc/2018/07/02/dotnet-core-introduce/</loc>
+    
+    <lastmod>2018-07-02T10:07:45.516Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://xj8c.cc/2018/07/02/asp.net-core-introduce/</loc>
+    
+    <lastmod>2018-07-02T10:04:23.689Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://xj8c.cc/2018/01/02/2017-year-end-summary/</loc>
     
     <lastmod>2018-01-02T13:02:10.227Z</lastmod>
@@ -25,7 +46,7 @@
   <url>
     <loc>http://xj8c.cc/about/index.html</loc>
     
-    <lastmod>2017-12-05T05:11:19.249Z</lastmod>
+    <lastmod>2017-12-05T05:11:19.250Z</lastmod>
     
   </url>
   
@@ -39,7 +60,7 @@
   <url>
     <loc>http://xj8c.cc/2017/10/13/Regex-chinese-english-comparison-table/</loc>
     
-    <lastmod>2017-10-13T01:44:09.530Z</lastmod>
+    <lastmod>2017-10-13T01:44:09.531Z</lastmod>
     
   </url>
   
@@ -67,7 +88,7 @@
   <url>
     <loc>http://xj8c.cc/2017/10/11/Regex-4/</loc>
     
-    <lastmod>2017-10-11T01:19:05.511Z</lastmod>
+    <lastmod>2017-10-11T01:19:05.512Z</lastmod>
     
   </url>
   
@@ -130,14 +151,14 @@
   <url>
     <loc>http://xj8c.cc/2017/07/11/ReactNative-style-layout/</loc>
     
-    <lastmod>2017-07-21T03:29:22.951Z</lastmod>
+    <lastmod>2017-07-21T03:29:22.952Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://xj8c.cc/2017/07/10/ReactNative-module/</loc>
     
-    <lastmod>2017-07-21T03:29:16.975Z</lastmod>
+    <lastmod>2017-07-21T03:29:16.976Z</lastmod>
     
   </url>
   
@@ -151,14 +172,14 @@
   <url>
     <loc>http://xj8c.cc/2017/07/14/ReactNative-navigation/</loc>
     
-    <lastmod>2017-07-21T03:29:06.068Z</lastmod>
+    <lastmod>2017-07-21T03:29:06.069Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://xj8c.cc/2017/07/16/ReactNative-build/</loc>
     
-    <lastmod>2017-07-21T03:29:02.638Z</lastmod>
+    <lastmod>2017-07-21T03:29:02.639Z</lastmod>
     
   </url>
   
@@ -172,7 +193,7 @@
   <url>
     <loc>http://xj8c.cc/2017/06/01/my-internship-record/</loc>
     
-    <lastmod>2017-07-19T08:58:43.383Z</lastmod>
+    <lastmod>2017-07-19T08:58:43.384Z</lastmod>
     
   </url>
   
@@ -186,28 +207,28 @@
   <url>
     <loc>http://xj8c.cc/2017/07/09/ReactNative-run/</loc>
     
-    <lastmod>2017-07-19T08:37:21.265Z</lastmod>
+    <lastmod>2017-07-19T08:37:21.266Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://xj8c.cc/2017/07/07/ReactNative-introduce/</loc>
     
-    <lastmod>2017-07-19T08:37:02.859Z</lastmod>
+    <lastmod>2017-07-19T08:37:02.860Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://xj8c.cc/2016/04/07/get-and-post/</loc>
     
-    <lastmod>2017-07-18T02:30:00.724Z</lastmod>
+    <lastmod>2017-07-18T02:30:00.725Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://xj8c.cc/2015/02/17/win7-shortcuts/</loc>
     
-    <lastmod>2017-07-18T02:29:46.661Z</lastmod>
+    <lastmod>2017-07-18T02:29:46.662Z</lastmod>
     
   </url>
   
@@ -233,14 +254,14 @@
   </url>
   
   <url>
-    <loc>http://xj8c.cc/2015/03/22/top%2010%20IT%20jobs%20in%202015/</loc>
+    <loc>http://xj8c.cc/2015/10/20/xml-note-1/</loc>
     
     <lastmod>2017-05-26T06:29:50.786Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://xj8c.cc/2015/10/20/xml-note-1/</loc>
+    <loc>http://xj8c.cc/2015/03/22/top%2010%20IT%20jobs%20in%202015/</loc>
     
     <lastmod>2017-05-26T06:29:50.786Z</lastmod>
     
@@ -282,13 +303,6 @@
   </url>
   
   <url>
-    <loc>http://xj8c.cc/2015/07/27/vs-shortcuts/</loc>
-    
-    <lastmod>2017-05-26T06:29:50.633Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://xj8c.cc/2015/04/17/why-is-the-chinese-mobile-number-11/</loc>
     
     <lastmod>2017-05-26T06:29:50.633Z</lastmod>
@@ -297,6 +311,13 @@
   
   <url>
     <loc>http://xj8c.cc/2016/04/08/what-is-a-three-tier-architecture/</loc>
+    
+    <lastmod>2017-05-26T06:29:50.633Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://xj8c.cc/2015/07/27/vs-shortcuts/</loc>
     
     <lastmod>2017-05-26T06:29:50.633Z</lastmod>
     
@@ -317,14 +338,14 @@
   </url>
   
   <url>
-    <loc>http://xj8c.cc/2015/12/10/the-students-with-poor-grades-reversed/</loc>
+    <loc>http://xj8c.cc/2015/08/07/the-30-most-difficult-questions-to-answer-in-history/</loc>
     
     <lastmod>2017-05-26T06:29:50.551Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://xj8c.cc/2015/08/07/the-30-most-difficult-questions-to-answer-in-history/</loc>
+    <loc>http://xj8c.cc/2015/12/10/the-students-with-poor-grades-reversed/</loc>
     
     <lastmod>2017-05-26T06:29:50.551Z</lastmod>
     
@@ -352,14 +373,14 @@
   </url>
   
   <url>
-    <loc>http://xj8c.cc/2015/10/24/overview-of-software-testing/</loc>
+    <loc>http://xj8c.cc/2015/05/25/shopping-online/</loc>
     
     <lastmod>2017-05-26T06:29:50.493Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://xj8c.cc/2015/05/25/shopping-online/</loc>
+    <loc>http://xj8c.cc/2015/10/24/overview-of-software-testing/</loc>
     
     <lastmod>2017-05-26T06:29:50.493Z</lastmod>
     
@@ -443,13 +464,6 @@
   </url>
   
   <url>
-    <loc>http://xj8c.cc/2015/10/25/boundary-value/</loc>
-    
-    <lastmod>2017-05-26T06:29:50.154Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://xj8c.cc/2015/07/16/asp.net-knowledge-point-summary-5/</loc>
     
     <lastmod>2017-05-26T06:29:50.154Z</lastmod>
@@ -458,6 +472,13 @@
   
   <url>
     <loc>http://xj8c.cc/2015/07/06/bigdata-internet-thinking-O2O-crowdfunding/</loc>
+    
+    <lastmod>2017-05-26T06:29:50.154Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://xj8c.cc/2015/10/25/boundary-value/</loc>
     
     <lastmod>2017-05-26T06:29:50.154Z</lastmod>
     
@@ -478,21 +499,7 @@
   </url>
   
   <url>
-    <loc>http://xj8c.cc/2015/07/03/asp.net-knowledge-point-summary-1/</loc>
-    
-    <lastmod>2017-05-26T06:29:50.012Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://xj8c.cc/2016/04/16/asp.net-knowledge-point-interview/</loc>
-    
-    <lastmod>2017-05-26T06:29:50.012Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://xj8c.cc/2015/02/28/adobe-photoshop/</loc>
     
     <lastmod>2017-05-26T06:29:50.012Z</lastmod>
     
@@ -506,6 +513,20 @@
   </url>
   
   <url>
+    <loc>http://xj8c.cc/2015/02/28/adobe-photoshop/</loc>
+    
+    <lastmod>2017-05-26T06:29:50.012Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://xj8c.cc/2015/07/03/asp.net-knowledge-point-summary-1/</loc>
+    
+    <lastmod>2017-05-26T06:29:50.012Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://xj8c.cc/2015/03/25/30-the-hacker-movie/</loc>
     
     <lastmod>2017-05-26T06:29:49.941Z</lastmod>
@@ -513,14 +534,14 @@
   </url>
   
   <url>
-    <loc>http://xj8c.cc/2015/09/01/10-best-javascript-development-practices/</loc>
+    <loc>http://xj8c.cc/2015/04/14/33-poems-of-the-most-artistic-conception-in-China/</loc>
     
     <lastmod>2017-05-26T06:29:49.940Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://xj8c.cc/2015/04/14/33-poems-of-the-most-artistic-conception-in-China/</loc>
+    <loc>http://xj8c.cc/2015/09/01/10-best-javascript-development-practices/</loc>
     
     <lastmod>2017-05-26T06:29:49.940Z</lastmod>
     
