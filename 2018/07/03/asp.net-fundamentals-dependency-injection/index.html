@@ -5,20 +5,20 @@
   
   <title>在 ASP.NET Core 依赖注入 | 当然我在瞎扯</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在 ASP.NET Core 依赖注入ASP.NET Core 的设计从头至尾以支持和利用依赖注入为目标。 ASP.NET Core 应用程序可以通过将内置框架服务注入 Startup 类的方法中来对其加以利用，应用程序服务也可以进行注入配置。 由 ASP.NET Core 提供的默认服务容器提供了一个最小功能集合，并非用于替换其他容器。 什么是依赖注入？依赖注入 (DI) 是一种用于在对象与其协">
+  <meta name="description" content="在 ASP.NET Core 依赖注入ASP.NET Core 的设计从头至尾以支持和利用依赖注入为目标。 ASP.NET Core 应用程序可以通过将内置框架服务注入 Startup 类的方法中来对其加以利用，应用程序服务也可以进行注入配置。 由 ASP.NET Core 提供的默认服务容器提供了一个最小功能集合，并非用于替换其他容器。">
 <meta name="keywords" content=".NET,.ASP.NET,.NET Core,.ASP.NET Core">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在 ASP.NET Core 依赖注入">
 <meta property="og:url" content="http://xj8c.cc/2018/07/03/asp.net-fundamentals-dependency-injection/index.html">
 <meta property="og:site_name" content="当然我在瞎扯">
-<meta property="og:description" content="在 ASP.NET Core 依赖注入ASP.NET Core 的设计从头至尾以支持和利用依赖注入为目标。 ASP.NET Core 应用程序可以通过将内置框架服务注入 Startup 类的方法中来对其加以利用，应用程序服务也可以进行注入配置。 由 ASP.NET Core 提供的默认服务容器提供了一个最小功能集合，并非用于替换其他容器。 什么是依赖注入？依赖注入 (DI) 是一种用于在对象与其协">
+<meta property="og:description" content="在 ASP.NET Core 依赖注入ASP.NET Core 的设计从头至尾以支持和利用依赖注入为目标。 ASP.NET Core 应用程序可以通过将内置框架服务注入 Startup 类的方法中来对其加以利用，应用程序服务也可以进行注入配置。 由 ASP.NET Core 提供的默认服务容器提供了一个最小功能集合，并非用于替换其他容器。">
 <meta property="og:image" content="https://meowv.github.io/images/dnc/lifetimes_request1.png">
 <meta property="og:image" content="https://meowv.github.io/images/dnc/lifetimes_request2.png">
 <meta property="og:image" content="https://meowv.github.io/images/dnc/request-services.png">
-<meta property="og:updated_time" content="2018-07-03T02:02:57.970Z">
+<meta property="og:updated_time" content="2018-07-03T02:20:26.825Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在 ASP.NET Core 依赖注入">
-<meta name="twitter:description" content="在 ASP.NET Core 依赖注入ASP.NET Core 的设计从头至尾以支持和利用依赖注入为目标。 ASP.NET Core 应用程序可以通过将内置框架服务注入 Startup 类的方法中来对其加以利用，应用程序服务也可以进行注入配置。 由 ASP.NET Core 提供的默认服务容器提供了一个最小功能集合，并非用于替换其他容器。 什么是依赖注入？依赖注入 (DI) 是一种用于在对象与其协">
+<meta name="twitter:description" content="在 ASP.NET Core 依赖注入ASP.NET Core 的设计从头至尾以支持和利用依赖注入为目标。 ASP.NET Core 应用程序可以通过将内置框架服务注入 Startup 类的方法中来对其加以利用，应用程序服务也可以进行注入配置。 由 ASP.NET Core 提供的默认服务容器提供了一个最小功能集合，并非用于替换其他容器。">
 <meta name="twitter:image" content="https://meowv.github.io/images/dnc/lifetimes_request1.png">
   
     <link rel="alternative" href="/atom.xml" title="当然我在瞎扯" type="application/atom+xml">
@@ -304,6 +304,7 @@
       
           
         <h1 id="在-ASP-NET-Core-依赖注入"><a href="#在-ASP-NET-Core-依赖注入" class="headerlink" title="在 ASP.NET Core 依赖注入"></a><a name="dependency-injection-in-aspnet-core"></a>在 ASP.NET Core 依赖注入</h1><p>ASP.NET Core 的设计从头至尾以支持和利用依赖注入为目标。 ASP.NET Core 应用程序可以通过将内置框架服务注入 Startup 类的方法中来对其加以利用，应用程序服务也可以进行注入配置。 由 ASP.NET Core 提供的默认服务容器提供了一个最小功能集合，并非用于替换其他容器。</p>
+<a id="more"></a>
 <h2 id="什么是依赖注入？"><a href="#什么是依赖注入？" class="headerlink" title="什么是依赖注入？"></a><a name="what-is-dependency-injection"></a>什么是依赖注入？</h2><p>依赖注入 (DI) 是一种用于在对象与其协作者或依赖项之间实现松散耦合的技术。 该技术不是直接实例化协作者或使用静态引用，而是以某种方式向类提供该类执行其操作所需的对象。 大多数情况下，类通过其构造函数声明它们的依赖项，从而允许它们遵循<a href="http://deviq.com/explicit-dependencies-principle/" target="_blank" rel="external">显式依赖关系原则</a>。 此方法称为”构造函数注入”。</p>
 <p>在遵循 DI 原则来设计类时，由于它们与其协作者没有直接的，硬编码的依赖关系，所以它们之间的耦合更为松散。 这遵循<a href="http://deviq.com/dependency-inversion-principle/" target="_blank" rel="external">依赖倒置原则</a>，其中指出 <em>“高级模块不应依赖于低级模块; 同时两者都应依赖于抽象”。</em> 类请求在该类被构造时提供给它们的抽象（通常是 <code>interfaces</code>），而不是引用特定的实现。 将依赖关系提取到接口中并将这些接口的实现作为参数提供也是<a href="http://deviq.com/strategy-design-pattern/" target="_blank" rel="external">策略设计模式</a> 的一个例子。</p>
 <p>当系统被设计为使用 DI 时，许多类通过其构造函数 （或属性）来请求它们的依赖项，所以有一个专门用来创建这些类以及它们相关的依赖项的类是很有帮助的。 这些类统称为<em>容器</em>，或更具体地说，<a href="http://deviq.com/inversion-of-control/" target="_blank" rel="external">控制反转 (IoC)</a> 容器或依赖注入 (DI) 容器。 容器本质上是一个工厂，它负责提供从中请求的类型的实例。 如果给定的类型已声明它具有依赖项，并且容器已经被配置为提供这些依赖类型，那么它将在创建请求实例时创建依赖项。 通过这种方式，可以为类提供复杂的依赖关系图，而无需任何硬编码对象构造。 除了创建包含依赖项的对象外，容器通常还可以管理应用程序中的对象生命周期。</p>
@@ -561,7 +562,7 @@
         <p><span>本文标题:</span><a href="/2018/07/03/asp.net-fundamentals-dependency-injection/">在 ASP.NET Core 依赖注入</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 阿星Plus 的个人博客">阿星Plus</a></p>
         <p><span>发布时间:</span>2018年07月03日 - 13时02分</p>
-        <p><span>最后更新:</span>2018年07月03日 - 10时02分</p>
+        <p><span>最后更新:</span>2018年07月03日 - 10时20分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/07/03/asp.net-fundamentals-dependency-injection/" title="在 ASP.NET Core 依赖注入">http://xj8c.cc/2018/07/03/asp.net-fundamentals-dependency-injection/</a>
             <span class="copy-path" data-clipboard-text="原文: http://xj8c.cc/2018/07/03/asp.net-fundamentals-dependency-injection/　　作者: 阿星Plus" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
